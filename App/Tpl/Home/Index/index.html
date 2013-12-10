@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+<!--[if IE 6]>
+<!--背景图片透明方法-->
+<script src="/js/iepng.js" type="text/javascript"></script>
+<!--插入图片透明方法-->
+<script type="text/javascript">
+   EvPNG.fix('div, ul, img, li, input');  //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
+</script>
+<![endif]-->
+<title>惠桂林首页</title>
+</head>
+<body>
+<!-- 顶部订阅分享区域+Logo区域 -->
+	<include file="./App/Tpl/Home/Public/header.html" />
+<!-- 顶部订阅分享区域+Logo区域结束 -->
+<!--  导航区域 -->
+	<div id="top_nav_box">
+		<div id="left_collection">
+			<img class="left_img" src="__PUBLIC__/images/ico_02.png" alt="" />
+			<span>全部分类</span>
+		</div>
+		<ul id="nav">
+			<li class="one"><a href="">首页</a></li>
+			<li><a href="{:U("Coupon/coupon")}" class="one">优惠券</a></li>
+			<li><a href="{:U("Card/card")}" class="one">会员卡</a></li>
+			<li class="four"><a href="" class="one">商户</a></li>
+		</ul>
+		<form action="" id="search_box">
+			<input id="search_con" type="text" value="桂林环球美食节" />
+			<input id="search_btn" type="button"/>
+		</form>
+	</div>
+<!-- 导航区域结束-->
+<!-- 内容区域 -->
+	<div id="main">
+		<!-- 左边内容区域 -->
+		<div id="main_left">
+			<ul id="nav_content">
+				<li><a href="">美食</a></li>
+				<li class="two"><a href="">休闲娱乐</a></li>
+				<li class="three"><a href="">生活便民</a></li>
+				<li class="four"><a href="">旅游酒店</a></li>
+				<li class="five"><a href="">打折信息</a></li>
+			</ul>
+			<p>小道消息</p>
+            <ul id="msg_content">
+            <foreach name="news" item="n">
+            <li><a href="" class="one">{$n['words']}</a></li>
+            </foreach>
+			</ul>
+		</div>
+		<!-- 左边内容区域结束 -->
+		<!-- 中间内容区域 -->
+		<div id="main_middle">
+			<div id="ad">
+                <foreach name="ads" item="a">
+                <img src="__PUBLIC__/{$a['img_path']}" />
+                </foreach>
+                <ul>
+                <foreach name="ads" item="a" key="i">
+                <if condition="$i eq 0"> 
+                <li class="hover">1</li>
+                <else/>
+                <li>{$i+1}</li>
+                </if>
+                </foreach>
+				</ul>	
+			</div>
+			<p class="one">惠字头吃货小分队</p>
+			<div id="map">
+				<img class="bg_bus" src="__PUBLIC__/images/bg_bus.png">
+				<img class="bus" src="__PUBLIC__/images/bus.png">
+				<div id="map_imgs">
+					<img class="light01" src="__PUBLIC__/images/ico_09.png">
+					<img class="light02" src="__PUBLIC__/images/ico_09.png">
+					<img class="light03" src="__PUBLIC__/images/ico_09.png">
+					<img class="light04" src="__PUBLIC__/images/ico_09.png">
+					<img class="light05" src="__PUBLIC__/images/ico_09.png">
+					<img class="light06" src="__PUBLIC__/images/ico_09.png">
+					<img class="light07" src="__PUBLIC__/images/ico_09.png">
+					<img class="light08" src="__PUBLIC__/images/ico_09.png">
+					<img class="light09" src="__PUBLIC__/images/ico_09.png">
+				</div>	
+				<p class="map_102">102路</p>
+				<p class="map_title">线路介绍</p>
+                <p class="map_comment">春记烧鹅独家签约，会员卡免费办理，即刻享受9折优惠，机会难得!</p>
+                <foreach name="partners" item="p">
+                <a class="one" href="">{$p['name']}</a>
+                </foreach>
+			</div>
+
+			<div id="tj_content">
+				<p class="two">惠字头小编推荐</p>
+                <ul>
+                <foreach name="recommends" item="r">
+                <li>
+                <img src="__PUBLIC__/{$r['picture_path']}">
+                <div>
+                <img src="__PUBLIC__/images/ico_10.png">
+                <span>{$r['tag']}</span>
+                </div>
+                <a>{$r['name']}</a>
+                <img class="ico" src="__PUBLIC__/images/ico_08.png">
+                <p class="three">推荐理由:</p>
+                <p class="four">{$r['description']}</p>
+                </li>
+                </foreach>
+				</ul>
+			</div>
+			<p class="comment">惠字头号外评论</p>
+			<div id="comment_content">
+            <ul>
+            <foreach name="evaluations" item="e">
+            <li>
+            <p class="bold">{$e['nickname']}@</p>
+            <a href="" class="red">{$e['name']}</a>
+            <p class="env">环境:{$e['environment_rate']}</p>
+            <p class="taste">口味:{$e['taste_rate']}</p>
+            <p class="service">服务:{$e['server_rate']}</p>
+            <p class="time">{$e['createtime']}</p>
+            <p class="p_bottom">{$e['evaluation']}</p>
+            </li>
+            </foreach>
+				</ul>
+			</div>
+		</div>
+		<!-- 中间内容区域结束 -->
+		<!-- 右边内容区域 -->
+		<div id="main_right">
+			<div id="app">
+				<p>扫一下,关注惠桂林微信</p>
+				<img src="__PUBLIC__/images/barcode.png" alt="二维码">
+				<a>点击下载手机APP</a>
+			</div>
+			<div class="hot_box">
+				<p class="rqw">人气王</p>
+                <ul>
+                <foreach name="hot_partners" item="h">
+                <li>
+                <a href="" class="title">{$h['name']}</a>
+                <img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
+                <p class="yhj">优惠劵</p>
+                <p class="hyk">会员卡</p>
+                <p class="one">[8]</p>
+                <p class="two">[2]</p>
+                <p class="vip">VIP</p>
+                </li>
+                </foreach>
+				</ul>
+			</div>
+			<div class="hot_box">
+				<p class="rqw">热门优惠劵</p>
+                <ul>
+                <foreach name="card" item="ca">
+                <li>
+                <a href="" class="title title2">{$ca['name']}</a>
+                <p class="six">{$ca['description']}</p>
+                <div>
+                <img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
+                </div>
+                </li>
+                </foreach>
+				</ul>
+			</div>
+			<div class="hot_box">
+				<p class="rqw">热门会员卡</p>
+				<ul>
+					<li>
+						<a href="" class="title title2">李记米粉</a>
+						<p class="six">会员专享8.8折</p>
+						<div>
+							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
+						</div>
+					</li>
+					<li>
+						<a href="" class="title title3">刘姥姥奶酪</a>
+						<p class="seven">会员专享8.8折</p>
+						<div class="blue">
+							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
+						</div>
+					</li>
+					<li class="no_border_bottom">
+						<a href="" class="title title2">大时代烤肉</a>
+						<p class="six">会员专享8.8折</p>
+						<div class="purple">
+							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 右边内容区域结束 -->		
+	</div>
+<!-- 内容区域结束 -->
+<!-- 最底部区域 -->
+	<include file="./App/Tpl/Home/Public/footer.html" />
+
+<!-- 最底部区域结束 -->
+
+</body>
+</html>

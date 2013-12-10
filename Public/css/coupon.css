@@ -1,0 +1,730 @@
+/*图片轮换板区域*/
+#advertising{
+	width: 960px;
+	height: 81px;
+	margin: 0 auto;
+	margin-top: 8px;
+	border-radius: 5px;
+	position: relative;
+}
+#advertising img{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#advertising ul{
+	position: absolute;
+	top: 65px;
+	right: 0px;
+	width: 63px;
+	height: 15px;
+	
+}
+#advertising ul li{
+	float: left;
+	width: 20px;
+	height: 15px;
+	line-height: 15px;
+	text-align: center;
+	background: #E4E4E4;
+	margin-right: 1px;
+}
+#advertising ul li.hover{
+	background: #ED5565;
+}
+#advertising a{
+	position: absolute;
+	top: 0px;
+	right:10px;
+	font-size: 18px;
+}
+/*图片轮换板区域结束*/
+/*热门标签+地点区域*/
+#classcification{
+	width: 960px;
+	height: 136px;
+	margin:0 auto;
+	margin-top: 8px;
+	border:1px solid #E4E4E4;
+	border-bottom:3px solid #E4E4E4;
+	/*border-radius: 5px;*/
+	background: white;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	behavior: url(Layouts/js/border-radius.htc);
+}
+#classcification ul{
+	width: 930px;
+	height: 44px;
+	border-bottom:1px solid #E4E4E4;
+	margin-left: 15px;
+	margin-right: 10px;
+}
+#classcification ul li{
+	float:left;
+	height: 42px;
+	width: 70px;
+	position: relative;
+}
+#classcification ul li.one{
+	padding-right: 20px;
+}
+#classcification ul li p{
+	color: #333;
+	font-size: 14px;
+	font-weight: bold;
+	height: 44px;
+	line-height: 44px;
+}
+#classcification ul li a{
+	display:inline-block;
+	height: 25px;
+	width: 60px;
+	line-height: 25px;
+	text-align:center;
+	position: absolute;
+	top: 10px;
+}
+#classcification #lable li a{
+	font-size: 14px;
+}
+#classcification #lable li a:hover{
+	text-decoration: underline;
+}
+#classcification #lable li a.one{
+	color: #0000CC;
+}
+#classcification #lable li a.two{
+	color: #FF0000;
+}
+#classcification #lable li a.three{
+	color: #FF6600;
+}
+#classcification #lable li a.four{
+	color: #339900;
+}
+#classcification #lable li a.five{
+	color: #CC00FF;
+}
+#classcification #lable li a.six{
+	color: #FF9900;
+}
+#classcification #location li a{
+	color: #4467A3;
+}
+#classcification #location li a.one{
+	background: #4466A3;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
+}
+#classcification #location li a:hover{
+	background: #4466A3;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
+}
+#classcification #type li a{
+	color: #4467A3
+}
+#classcification #type li a.one{
+	background: #4466A3;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
+	
+}
+#classcification #type li a:hover{
+	background: #4466A3;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
+}
+/*热门标签+地点区域结束*/
+/*排序+价格范围区域*/
+#sort{
+	width: 960px;
+	height: 44px;
+	margin:0 auto;
+	margin-top: 8px;
+	/*border-radius:5px;*/
+	background: #E4E4E4;
+	position: relative;
+
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	behavior: url(Layouts/js/border-radius.htc);
+}
+#sort p{
+	width: 60px;
+	height: 20px;
+	color: #ED5565;
+	font-size: 14px;
+	
+}
+#sort p.one{
+	position: absolute;
+	top: 13px;
+	left:10px;
+	font-weight: bold;
+}
+#sort p.two{
+	position: absolute;
+	top: 13px;
+	left:372px;
+	font-weight: bold;
+}
+#sort p.three{
+	position: absolute;
+	top: 13px;
+	left:697px;
+	font-weight: bold;
+}
+#sort ul{
+	position: absolute;
+	top: 10px;
+	left: 95px;
+	width: 240px;
+	height: 25px;
+}
+#sort ul li{
+	float: left;
+	width: 79px;
+	height: 25px;
+	margin-right: 1px;
+	background: #FFFFFF;
+}
+#sort ul li a{
+	color: #797979;
+	display: inline-block;
+	width: 77px;
+	height: 24px;
+	line-height: 25px;
+	text-align: center;
+}
+#sort ul li a.one{
+	color: black;
+	border:1px solid #4367A3;
+}
+#sort ul li a:hover{
+	color: black;
+	border:1px solid #4367A3;
+}
+#sort #price_id{
+	position: absolute;
+	top: 10px;
+	left: 450px;
+	width: 150px;
+	height: 25px;
+}
+#sort #price_id option{
+	padding-left: 5px;
+}
+#sort #booking_id{
+	position: absolute;
+	top: 15px;
+	right: 270px;	
+}
+/*排序+价格范围区域结束*/
+/*主要内容区域*/
+#main{
+	width: 960px;
+	height: 1265px;
+	margin: 0 auto;
+	margin-top: 8px;
+	position: relative;
+}
+/*右边主要内容区域*/
+#main #right{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 234px;
+}
+#main #right p.one{
+	color: #333;
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: #F6F8FA;
+	width: 224px;
+	height: 40px;
+	line-height: 40px;
+	padding-left:10px;
+}
+#main #right #hot_business{
+	height: 170px;
+	width: 224px;
+	border-bottom:1px solid #E3E4E8;
+	position: absolute;
+	top: 40px;
+	left: 0px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+#main #right #hot_business p{
+	color: #333;
+	font-weight: bold;
+	height: 22px;
+	width: 220px;
+	line-height: 32px;
+	padding-left: 8px;
+}
+#main #right #hot_business img.one{
+	position: absolute;
+	top: 28px;
+	left: 8px;
+}
+#main #right #hot_business img.two{
+	position: absolute;
+	top: 118px;
+	left: 8px;
+	width: 38px;
+	height: 38px;
+}
+#main #right #hot_business img.three{
+	position: absolute;
+	top: 118px;
+	left: 115px;
+	width: 38px;
+	height: 38px;
+}
+#main #right #hot_business a{
+	color: #333333;
+	position: absolute;
+	top: 28px;
+	right: 3px;
+	display: inline-block;
+	width: 120px;
+	height: 70;
+}
+#main #right #hot_business a:hover{
+	color: #4466A3;
+	text-decoration: underline;
+	
+}
+#main #right #hot_business span.one{
+	position: absolute;
+	top: 120px;
+	left: 55px;
+}
+#main #right #hot_business span.two{
+	position: absolute;
+	top: 120px;
+	left: 162px;
+}
+#main #right #hot_business span.three{
+	position: absolute;
+	top: 140px;
+	left: 55px;
+}
+#main #right #hot_business span.four{
+	position: absolute;
+	top: 140px;
+	left: 162px;
+}
+#main #right #hot_business_02{
+	height: 170px;
+	width: 224px;
+	border-bottom:1px solid #E3E4E8;
+	position: absolute;
+	top: 215px;
+	left: 0px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+#main #right #hot_business_02 p{
+	color: #333;
+	font-weight: bold;
+	height: 22px;
+	width: 220px;
+	line-height: 32px;
+	padding-left: 8px;
+}
+#main #right #hot_business_02 img.one{
+	position: absolute;
+	top: 28px;
+	left: 8px;
+}
+#main #right #hot_business_02 img.two{
+	position: absolute;
+	top: 118px;
+	left: 8px;
+	width: 38px;
+	height: 38px;
+}
+#main #right #hot_business_02 img.three{
+	position: absolute;
+	top: 118px;
+	left: 115px;
+	width: 38px;
+	height: 38px;
+}
+#main #right #hot_business_02 a{
+	color: #333333;
+	position: absolute;
+	top: 28px;
+	right: 3px;
+	display: inline-block;
+	width: 120px;
+	height: 70;
+}
+#main #right #hot_business_02 a:hover{
+	color: #4466A3;
+	text-decoration: underline;
+	
+}
+#main #right #hot_business_02 span.one{
+	position: absolute;
+	top: 120px;
+	left: 55px;
+}
+#main #right #hot_business_02 span.two{
+	position: absolute;
+	top: 120px;
+	left: 162px;
+}
+#main #right #hot_business_02 span.three{
+	position: absolute;
+	top: 140px;
+	left: 55px;
+}
+#main #right #hot_business_02 span.four{
+	position: absolute;
+	top: 140px;
+	left: 162px;
+}
+#main #right #hot_business_03{
+	height: 170px;
+	width: 224px;
+	border-bottom:1px solid #E3E4E8;
+	position: absolute;
+	top: 390px;
+	left: 0px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+#main #right #hot_business_03 p{
+	color: #333;
+	font-weight: bold;
+	height: 22px;
+	width: 220px;
+	line-height: 32px;
+	padding-left: 8px;
+}
+#main #right #hot_business_03 img.one{
+	position: absolute;
+	top: 28px;
+	left: 8px;
+}
+#main #right #hot_business_03 img.two{
+	position: absolute;
+	top: 118px;
+	left: 8px;
+	width: 38px;
+	height: 38px;
+}
+#main #right #hot_business_03 img.three{
+	position: absolute;
+	top: 118px;
+	left: 115px;
+	width: 38px;
+	height: 38px;
+}
+#main #right #hot_business_03 a{
+	color: #333333;
+	position: absolute;
+	top: 28px;
+	right: 3px;
+	display: inline-block;
+	width: 120px;
+	height: 70;
+}
+#main #right #hot_business_03 a:hover{
+	color: #4466A3;
+	text-decoration: underline;
+	
+}
+#main #right #hot_business_03 span.one{
+	position: absolute;
+	top: 120px;
+	left: 55px;
+}
+#main #right #hot_business_03 span.two{
+	position: absolute;
+	top: 120px;
+	left: 162px;
+}
+#main #right #hot_business_03 span.three{
+	position: absolute;
+	top: 140px;
+	left: 55px;
+}
+#main #right #hot_business_03 span.four{
+	position: absolute;
+	top: 140px;
+	left: 162px;
+}
+#main #right #hot_business_04{
+	height: 170px;
+	width: 224px;
+	border-bottom:3px solid #E3E4E8;
+	position: absolute;
+	top: 565px;
+	left: 0px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+#main #right #hot_business_04 p{
+	color: #333;
+	font-weight: bold;
+	height: 22px;
+	width: 220px;
+	line-height: 32px;
+	padding-left: 8px;
+}
+#main #right #hot_business_04 img.one{
+	position: absolute;
+	top: 28px;
+	left: 8px;
+}
+#main #right #hot_business_04 img.two{
+	position: absolute;
+	top: 118px;
+	left: 8px;
+	width: 38px;
+	height: 38px;
+}
+#main #right #hot_business_04 img.three{
+	position: absolute;
+	top: 118px;
+	left: 115px;
+	width: 38px;
+	height: 38px;
+}
+#main #right #hot_business_04 a{
+	color: #333333;
+	position: absolute;
+	top: 28px;
+	right: 3px;
+	display: inline-block;
+	width: 120px;
+	height: 70;
+}
+#main #right #hot_business_04 a:hover{
+	color: #4466A3;
+	text-decoration: underline;
+	
+}
+#main #right #hot_business_04 span.one{
+	position: absolute;
+	top: 120px;
+	left: 55px;
+}
+#main #right #hot_business_04 span.two{
+	position: absolute;
+	top: 120px;
+	left: 162px;
+}
+#main #right #hot_business_04 span.three{
+	position: absolute;
+	top: 140px;
+	left: 55px;
+}
+#main #right #hot_business_04 span.four{
+	position: absolute;
+	top: 140px;
+	left: 162px;
+}
+/*右边主要内容区域结束*/
+/*左边主要内容区域*/
+#main #left{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 726px;
+}
+#main #left ul{
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	width: 716px;
+	height: 740px;
+}
+#main #left ul li{
+	float: left;
+	width: 715px;
+	height: 243px;
+	border-bottom:3px solid #E3E4E8;
+	position: relative;
+}
+#main #left ul li img.one{
+	position: absolute;
+	top: 25px;
+	left: 25px;
+}
+#main #left ul li img.two{
+	position: absolute;
+	top: 5px;
+	right: 0px;
+}
+#main #left ul li img.three{
+	position: absolute;
+	top: 34px;
+	right: 0px;
+}
+#main #left ul li img.four{
+	position: absolute;
+	top: 5px;
+	right: 0px;
+}
+#main #left ul li a.title{
+	position: absolute;
+	top: 28px;
+	left: 65px;
+	color: #ED5565;
+	font-size: 14px;
+	font-weight: bold;
+}
+#main #left ul li a.content{
+	position: absolute;
+	top: 60px;
+	left: 25px;
+	display: inline-block;
+	width: 380px;
+	height: 100px;
+	text-decoration: none;
+}
+#main #left ul li a.btn{
+	position: absolute;
+	top: 180px;
+	left: 25px;
+	color: #fff;
+	font-size: 14px;
+	background: #ED5565;
+	display: inline-block;
+	width: 92px;
+	height: 41px;
+	border-radius: 5px;
+	line-height: 41px;
+	text-align: center;
+}
+#main #left ul li div{
+	position: absolute;
+	top:209px;
+	right: 0px;
+	background: url(../images/bg_01.png);
+	width: 254px;
+	height: 35px;
+	display: none;
+}
+#main #left ul li div.display{
+	display: block;
+	color: white;
+}
+#main #left ul li div img{
+	position: absolute;
+	top: 9px;
+	left: 10px;
+}
+#main #left ul li div p{
+	position: absolute;
+	top: 11px;
+	left: 30px;
+}
+/*左边主要内容区域结束*/
+/*中间内容区域*/
+#main #middle{
+	position: absolute;
+	top: 738px;
+	left: 0px;
+	width: 960px;
+	height: 500px;
+}
+#main #middle ul{
+	width: 960px;
+	height: 500px;
+}
+#main #middle ul li{
+	float: left;
+	height: 260px;
+	width: 473px;
+	border-bottom:3px solid #E3E4E8;
+	position: relative;
+	margin-right: 5px;
+}
+#main #middle ul li img.one{
+	position: absolute;
+	top: 30px;
+	left: 20px;
+}
+#main #middle ul li img.two{
+	position: absolute;
+	top: 18px;
+	right: 0px;
+	width: 276px;
+	height: 239px;
+}
+#main #middle ul li a.title{
+	position: absolute;
+	top: 33px;
+	left: 55px;
+	color: #ED5565;
+	font-size: 14px;
+	font-weight: bold;
+}
+#main #middle ul li a.content{
+	position: absolute;
+	top: 70px;
+	left: 20px;
+	display: inline-block;
+	width: 170px;
+	height: 100px;
+	text-decoration: none;
+}
+#main #middle ul li a.btn{
+	position: absolute;
+	top: 200px;
+	left: 20px;
+	color: #fff;
+	font-size: 14px;
+	background: #ED5565;
+	display: inline-block;
+	width: 92px;
+	height: 41px;
+	border-radius: 5px;
+	line-height: 41px;
+	text-align: center;
+}
+#main #middle ul li div{
+	position: absolute;
+	top:222px;
+	right: 0px;
+	background: url(../images/bg_01.png);
+	width: 279px;
+	height: 35px;
+	color: white;
+	display: none;
+}
+#main #middle ul li div.display{
+	display: block;
+}
+#main #middle ul li div img{
+	position: absolute;
+	top: 9px;
+	left: 10px;
+}
+#main #middle ul li div p{
+	position: absolute;
+	top: 11px;
+	left: 30px;
+}
+
+
+
+/*中间内容区域结束*/
+/*主要内容区域结束

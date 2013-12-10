@@ -1,0 +1,30 @@
+
+/*左边主要内容区域*/
+#main #left_card{
+	position: relative;
+	width: 715px;
+	height: 530px;
+	border: 2px solid #F7F8FA;
+}
+#main #left_card p.one{
+	color: #EB5B4C;
+	font-size:20px;
+	font-weight: bold;
+	position: absolute;
+	top: 25px;
+	left: 40px;	
+	border-bottom: #E4E4E4 2px solid;
+	width: 630px;
+	height: 35px;
+}
+#main #left_card p.two{
+	position: absolute;
+	top: 75px;
+	left: 40px;
+	width: 610px;
+	color: #515151;
+	font-size: 14px;
+	text-indent: 25px;
+}
+
+/*左边主要内容区域结束*/

@@ -1,0 +1,90 @@
+/*左边主要内容区域*/
+#main #left_card{
+	position: relative;
+	width: 715px;
+	height: 640px;
+	border: 2px solid #F7F8FA;
+}
+#main #left_card p.one{
+	color: #EB5B4C;
+	font-size:20px;
+	font-weight: bold;
+	position: absolute;
+	top: 15px;
+	left: 30px;	
+}
+#main #left_card p.two{
+	position: absolute;
+	top: 60px;
+	left: 45px;
+	width: 610px;
+
+}
+#main #left_card p.three{
+	position: absolute;
+	top: 135px;
+	left: 45px;	
+}
+#main #left_card p.four{
+	position: absolute;
+	top: 165px;
+	left: 45px;	
+}
+
+
+#main #left_card ul{
+	position: absolute;
+	top: 220px;
+	left: 45px;
+	height: 400px;
+	width: 610px;	
+
+}
+#main #left_card ul li{
+	width: 610px;
+	height: 100px;
+	position: relative;
+}
+#main #left_card ul li img{
+
+	
+}
+#main #left_card ul li p.one{
+	position: absolute;
+	top: 0px;
+	left: 110px;
+	font-weight: bold;
+	font-size:13px;
+	color: #333;
+}
+#main #left_card ul li p.two{
+	position: absolute;
+	top: 30px;
+	left:110px;
+	width:480px;
+}
+#main #left_card ul li p.three{
+	position: absolute;
+	top: 45px;
+	left:110px;
+	width:480px;
+}
+#main #left_card ul li p.four{
+	position: absolute;
+	top: 60px;
+	left:110px;
+	width:480px;
+}
+#main #left_card ul li p.two a{ 
+	color: #ED5565;
+}
+#main #left_card ul li p.two a:hover{ 
+	text-decoration: underline;
+}
+#main #left_card ul li p.four a{ 
+	color: #ED5565;
+}
+#main #left_card ul li p.four a:hover{ 
+	text-decoration: underline;
+}
+/*左边主要内容区域结束*/

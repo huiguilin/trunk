@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/card.css">
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+<title>会员卡</title>
+<!--[if IE 6]>
+<!--背景图片透明方法-->
+<script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
+<!--插入图片透明方法-->
+<script type="text/javascript">
+   EvPNG.fix('div, ul, img, li, input');  //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
+</script>
+<![endif]-->
+</head>
+<body>
+<!-- 顶部订阅分享区域+Logo区域 -->
+	<include file="./App/Tpl/Home/Public/header.html" />
+<!-- 顶部订阅分享区域+Logo区域结束 -->
+<!--  导航区域 -->
+	<include file="./App/Tpl/Home/Public/nav.html" />
+<!-- 导航区域结束-->
+<!-- 内容区域 -->
+	<!-- 图片轮换板区域 -->
+	<div id="advertising">
+		<img src="__PUBLIC__/images/flash/c_1.png" alt="" />
+		<img src="__PUBLIC__/images/flash/c_2.png" alt="" />
+		<img src="__PUBLIC__/images/flash/c_3.png" alt="" />
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<a href="">x</a>
+	</div>
+	<!-- 图片轮换板区域结束 -->
+	<!-- 热门标签+地点区域 -->
+	<div id="classcification">
+		<ul id="lable">
+			<li class="one"><p>热门标签</p></li>
+			<li><a href="" class="one">江上人家</a></li>
+			<li><a href="" class="two">巴山蜀水</a></li>
+			<li><a href="" class="three">印象漓江</a></li>
+			<li><a href="" class="four">李记米粉</a></li>
+			<li><a href="" class="five">果粉甜品</a></li>
+			<li><a href="" class="six">门前小馆</a></li>
+		</ul>
+		<ul id="location">
+			<li class="one"><p>地点</p></li>
+			<li><a href="" class="one">全部</a></li>
+			<li><a href="">秀峰区</a></li>
+			<li><a href="">景山区</a></li>
+			<li><a href="">叠彩区</a></li>
+			<li><a href="">雁山区</a></li>
+			<li><a href="">七星区</a></li>
+		</ul>
+		<ul id="type" style="border:none">
+			<li class="one"><p>类型</p></li>
+			<li><a href="" class="one">全部</a></li>
+			<li><a href="">美食</a></li>
+			<li><a href="">KTV</a></li>
+			<li><a href="">电影</a></li>
+			<li><a href="">酒吧</a></li>
+			<li><a href="">桌游</a></li>
+			<li><a href="">美发美体</a></li>
+			<li><a href="">旅游</a></li>
+			<li><a href="">酒店</a></li>
+		</ul>
+	</div>
+	<!-- 热门标签+地点区域结束 -->
+	<!-- 排序+价格范围区域 -->
+	<div id="sort">
+		<p class="one">排序</p>
+		<p class="two">价格范围</p>
+		<ul>
+			<li><a href="" class="one">默认</a></li>
+			<li><a href="">人气</a></li>
+			<li><a href="">折扣</a></li>
+		</ul>
+		<select name="price" id="price_id">
+			<option value="">全部</option>
+			<option value="">100-200</option>
+			<option value="">200-300</option>
+			<option value="">300-400</option>
+			<option value="">400-500</option>
+		</select>
+		<input type="checkbox" name="booking" value="" id="booking_id">
+		<p class="three">只显示没有成为会员的商户</p>
+	</div>
+	<!-- 排序+价格范围区域结束 -->
+	<!-- 主要内容区域 -->
+	<div id="main">
+		<!-- 左边内容区域 -->
+		<div id="left_card">
+			<ul>
+				<li class="one">
+					<a class="one" href="">漓江盛宴会所</a>
+					<a class="two" href="">去看看</a>
+					<p>会员专享8.8~9.5折</p>
+					<img src="__PUBLIC__/images/vipcard.png" alt="" />
+				</li>
+				<li class="two">
+					<a class="one" href="">漓江盛宴会所</a>
+					<a class="two" href="">去看看</a>
+					<p>会员专享8.8~9.5折</p>
+					<img src="__PUBLIC__/images/vipcard.png" alt="" />
+				</li>
+				<li class="three">
+					<a class="one" href="">漓江盛宴会所</a>
+					<a class="two" href="">去看看</a>
+					<p>会员专享8.8~9.5折</p>
+					<img src="__PUBLIC__/images/vipcard.png" alt="" />
+				</li>
+				<li class="four">
+					<a class="one" href="">漓江盛宴会所</a>
+					<a class="two" href="">去看看</a>
+					<p>会员专享8.8~9.5折</p>
+					<img src="__PUBLIC__/images/vipcard.png" alt="" />
+				</li>
+				<li class="five">
+					<a class="one" href="">漓江盛宴会所</a>
+					<a class="two" href="">去看看</a>
+					<p>会员专享8.8~9.5折</p>
+					<img src="__PUBLIC__/images/vipcard.png" alt="" />
+				</li>
+				<li class="six">
+					<a class="one" href="">漓江盛宴会所</a>
+					<a class="two" href="">去看看</a>
+					<p>会员专享8.8~9.5折</p>
+					<img src="__PUBLIC__/images/vipcard.png" alt="" />
+				</li>
+				<li class="seven">
+					<a class="one" href="">漓江盛宴会所</a>
+					<a class="two" href="">去看看</a>
+					<p>会员专享8.8~9.5折</p>
+					<img src="__PUBLIC__/images/vipcard.png" alt="" />
+				</li>
+				<li class="eight">
+					<a class="one" href="">漓江盛宴会所</a>
+					<a class="two" href="">去看看</a>
+					<p>会员专享8.8~9.5折</p>
+					<img src="__PUBLIC__/images/vipcard.png" alt="" />
+				</li>
+			</ul>
+		</div>
+		<!-- 左边内容区域结束 -->
+		<!-- 右边内容区域 -->
+		<div id="right">
+			<p class="one">热门商家</p>
+			<div id="hot_business">
+				<p>李记米粉</p>
+				<img class="one" src="__PUBLIC__/images/pic/2.png" alt="" />
+				<a href="">桂林米粉产生于秦代，上面的“离合器”完完全全就是秦时的农具“耒”的形象。</a>
+				<img class="two" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<img class="three" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<span class="one">优惠劵</span>
+				<span class="two">会员卡</span>
+				<span class="three">[ 8 ]</span>
+				<span class="four">[ 2 ]</span>
+			</div>
+			<div id="hot_business_02">
+				<p>李记米粉</p>
+				<img class="one" src="__PUBLIC__/images/pic/2.png" alt="" />
+				<a href="">桂林米粉产生于秦代，上面的“离合器”完完全全就是秦时的农具“耒”的形象。</a>
+				<img class="two" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<img class="three" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<span class="one">优惠劵</span>
+				<span class="two">会员卡</span>
+				<span class="three">[ 8 ]</span>
+				<span class="four">[ 2 ]</span>
+			</div>
+			<div id="hot_business_03">
+				<p>李记米粉</p>
+				<img class="one" src="__PUBLIC__/images/pic/2.png" alt="" />
+				<a href="">桂林米粉产生于秦代，上面的“离合器”完完全全就是秦时的农具“耒”的形象。</a>
+				<img class="two" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<img class="three" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<span class="one">优惠劵</span>
+				<span class="two">会员卡</span>
+				<span class="three">[ 8 ]</span>
+				<span class="four">[ 2 ]</span>
+			</div>
+			<div id="hot_business_04">
+				<p>李记米粉</p>
+				<img class="one" src="__PUBLIC__/images/pic/2.png" alt="" />
+				<a href="">桂林米粉产生于秦代，上面的“离合器”完完全全就是秦时的农具“耒”的形象。</a>
+				<img class="two" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<img class="three" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<span class="one">优惠劵</span>
+				<span class="two">会员卡</span>
+				<span class="three">[ 8 ]</span>
+				<span class="four">[ 2 ]</span>
+			</div>
+		</div>
+		<!-- 右边内容区域结束 -->
+		<!-- 中间内容区域 -->
+		<div id="middle_card">
+			<ul>
+				<li class="one">
+					<a class="one" href="">漓江盛宴会所</a>
+					<a class="two" href="">去看看</a>
+					<p>会员专享8.8~9.5折</p>
+					<img src="__PUBLIC__/images/vipcard.png" alt="" />
+				</li>
+				<li class="two">
+					<a class="one" href="">漓江盛宴会所</a>
+					<a class="two" href="">去看看</a>
+					<p>会员专享8.8~9.5折</p>
+					<img src="__PUBLIC__/images/vipcard.png" alt="" />
+				</li>
+				<li class="three">
+					<a class="one" href="">漓江盛宴会所</a>
+					<a class="two" href="">去看看</a>
+					<p>会员专享8.8~9.5折</p>
+					<img src="__PUBLIC__/images/vipcard.png" alt="" />
+				</li>
+				<li class="four">
+					<a class="one" href="">漓江盛宴会所</a>
+					<a class="two" href="">去看看</a>
+					<p>会员专享8.8~9.5折</p>
+					<img src="__PUBLIC__/images/vipcard.png" alt="" />
+				</li>
+				<li class="five">
+					<a class="one" href="">漓江盛宴会所</a>
+					<a class="two" href="">去看看</a>
+					<p>会员专享8.8~9.5折</p>
+					<img src="__PUBLIC__/images/vipcard.png" alt="" />
+				</li>
+				<li class="six">
+					<a class="one" href="">漓江盛宴会所</a>
+					<a class="two" href="">去看看</a>
+					<p>会员专享8.8~9.5折</p>
+					<img src="__PUBLIC__/images/vipcard.png" alt="" />
+				</li>
+			</ul>
+		</div>
+		<!-- 中间内容区域结束 -->
+	</div>
+
+	<!-- 主要内容区域结束 -->
+<!-- 内容区域结束 -->
+<!-- 最底部区域 -->
+	<include file="./App/Tpl/Home/Public/footer.html" />
+<!-- 最底部区域结束 -->
+</body>
+</html>

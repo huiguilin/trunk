@@ -1,0 +1,945 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-size: 13px;
+	font-family: "Arial,宋体";
+}
+a{
+	text-decoration: none;
+	color: #333333;
+}
+ul li{
+	list-style: none;
+}
+input{
+	border: none;
+}
+/*顶部订阅分享区域*/
+#top_rss{
+	width: 100%;
+	height: 30px;
+	background: #F6F8FA;
+	border-bottom: 3px solid #E3E4E8;
+}
+#top_rss #top_rss_box{
+	width: 960px;
+	height: 28px;
+	margin: 0 auto;
+	position: relative;
+}
+#top_rss #top_rss_box img{
+	position: absolute;
+	top:6px;
+	left: 4px;
+}
+#top_rss #top_rss_box .left_ul li{
+	float: left;
+}
+#top_rss #top_rss_box .left_ul li.one{
+	width: 49px;
+	height: 13px;
+	position: absolute;
+	top: 10px;
+	left: 25px;
+	border-right: 1px solid #434A54;
+}
+#top_rss #top_rss_box .left_ul li.two{
+	width: 61px;
+	height: 13px;
+	position: absolute;
+	top: 10px;
+	left: 84px;
+}
+#top_rss #top_rss_box .left_ul li a{
+	color: #434A54;
+	display: block;
+	height: 13px;
+	line-height: 13px;
+}
+#top_rss #top_rss_box .left_ul li a:hover{
+	text-decoration: underline;
+}
+#top_rss #top_rss_box .right_ul{
+	position: absolute;
+	top: 10px;
+	right: 0px;
+}
+#top_rss #top_rss_box .right_ul li{
+	float: left;
+	width: 50px;
+	height:13px;
+	background: url(../images/ico_01.png) no-repeat 28px 1px;
+}
+#top_rss #top_rss_box .right_ul li.two{
+	border-left: 1px solid #434A54;
+	padding-left: 9px;
+	background-position: 37px 1px;
+}
+#top_rss #top_rss_box .right_ul li a{
+	color: #434A54;
+	display: block;
+	height: 13px;
+	line-height: 13px;
+}
+#top_rss #top_rss_box .right_ul li a:hover{
+	text-decoration: underline;
+}
+/*顶部订阅分享区域结束*/
+/*Logo区域*/
+#top_logo_box{
+	width: 960px;
+	height: 52px;
+	margin: 0 auto;
+	position: relative;
+}
+#Userreg_box{
+	display: none;
+	background: white;
+	width: 683px;
+	height: 590px;
+	border-radius: 5px;
+	
+}
+#Userreg_box #u_top{
+	background: #ED5565;
+	width: 683px;
+	height: 62px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom: 4px solid #DA4453;
+	position: relative;
+}
+#Userreg_box #u_top p{
+	font-size: 21px;
+	font-weight: bold;
+	color: white;
+	position: absolute;
+	top: 20px;
+	left: 40px;
+}
+#Userreg_box #u_top #a_closed2{
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	top: 4px;
+	right: 8px;
+}
+#Userreg_box #u_bottom{
+	
+}
+#Userreg_box #u_bottom ul{
+	width: 600px;
+	height: 41px;
+	margin: 0 auto;
+	border-bottom: 2px solid #E4E4E4;
+}
+#Userreg_box #u_bottom ul li{
+	width: 120px;
+	height: 41px;
+	float: left;
+}
+#Userreg_box #u_bottom ul li.one{
+	border-bottom: 2px solid #ED5565;
+}
+#Userreg_box #u_bottom ul li a{
+	color: #999999;
+	font-size: 14px;
+	font-weight:bold;
+	display: block;
+	width: 120px;
+	height: 41px;
+	line-height: 41px;
+	text-align: center;
+}
+#Userreg_box #u_bottom ul li a.one{
+	color: #ED5565;
+}
+#Userreg_box #u_bottom #email_box{
+	margin: 0 auto;
+	width: 600px;
+	height: 400px;
+	margin-top: 20px;
+	position: relative;
+}
+#Userreg_box #u_bottom #email_box form p{
+	color: #333333;
+	font-size: 14px;
+}
+#Userreg_box #u_bottom #email_box form p.one{
+	position: absolute;
+	top: 20px;
+	left: 6px;
+}
+#Userreg_box #u_bottom #email_box form p.two{
+	position: absolute;
+	top: 80px;
+	left: 6px;
+}
+#Userreg_box #u_bottom #email_box form p.three{
+	position: absolute;
+	top: 155px;
+	left: 6px;
+}
+#Userreg_box #u_bottom #email_box form p.four{
+	position: absolute;
+	top: 210px;
+	left: 6px;
+}
+#Userreg_box #u_bottom #email_box form p.five{
+	position: absolute;
+	top: 272px;
+	left: 95px;
+	font-size: 13px;
+}
+#Userreg_box #u_bottom #email_box form p.five a{
+	color: #4467A3;
+}
+#Userreg_box #u_bottom #email_box form p.six{
+	position: absolute;
+	top: 390px;
+	left: 120px;
+	font-size: 13px;
+}
+#Userreg_box #u_bottom #email_box form p.six a{
+	color: #4467A3;
+	font-weight:bold;
+
+}
+#Userreg_box #u_bottom #email_box form p.seven{
+	color: #999;
+	font-size: 13px;
+	position: absolute;
+	top: 20px;
+	left:390px;
+	padding-left: 20px;
+}
+#Userreg_box #u_bottom #email_box form p.eight{
+	color: #999;
+	font-size: 13px;
+	position: absolute;
+	top: 80px;
+	left:390px;
+	padding-left: 20px;
+}
+#Userreg_box #u_bottom #email_box form p.nine{
+	color: #999;
+	font-size: 13px;
+	position: absolute;
+	top: 155px;
+	left:390px;
+	padding-left: 20px;
+}
+#Userreg_box #u_bottom #email_box form p.ten{
+	color: #999;
+	font-size: 13px;
+	position: absolute;
+	top: 210px;
+	left:390px;
+	padding-left: 20px;
+}
+#Userreg_box #u_bottom #email_box form p.eleven{
+	background: url(../images/ico_13.png) no-repeat;
+}
+#Userreg_box #u_bottom #email_box form p.twelve{
+	background: url(../images/ico_12.png) no-repeat;
+}
+#Userreg_box #u_bottom #email_box form p.thirteen{
+	background: url(../images/ico_14.png) no-repeat;
+}
+#Userreg_box #u_bottom #email_box form input{
+	border: 1px solid #C9C9C9;
+	border-radius: 5px;
+	width: 306px;
+	height: 41px;
+}
+#Userreg_box #u_bottom #email_box form ul{
+	width: 306px;
+	height: 15px;
+	position: absolute;
+	top: 118px;
+	left: 77px;
+	border-bottom: none;
+}
+#Userreg_box #u_bottom #email_box form ul li{
+	float: left;
+	width: 100px;
+	height: 15px;
+	background: #C9E0DD;
+	border-right: 1px solid white;
+	color: white;
+	text-align: center;
+}
+#Userreg_box #u_bottom #email_box form ul li.red{
+	background: #ED5565;
+}
+#Userreg_box #u_bottom #email_box form input.one{
+	position: absolute;
+	top: 10px;
+	left:75px;
+}
+#Userreg_box #u_bottom #email_box form input.two{
+	position: absolute;
+	top: 70px;
+	left:75px;
+}
+#Userreg_box #u_bottom #email_box form input.three{
+	position: absolute;
+	top: 145px;
+	left:75px;
+}
+#Userreg_box #u_bottom #email_box form input.four{
+	position: absolute;
+	top: 205px;
+	left:75px;
+}
+#Userreg_box #u_bottom #email_box form input.five{
+	position: absolute;
+	top: 270px;
+	left:74px;
+	width: 20px;
+	height: 20px;
+}
+#Userreg_box #u_bottom #email_box form #login_btn{
+	position: absolute;
+	top: 315px;
+	left:75px;
+	width: 306px;
+	height:46px;
+	border-radius: 5px;
+	background:#ED5565;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 46px;
+}
+#Userreg_box #u_bottom #cellphone_box{
+	margin: 0 auto;
+	width: 600px;
+	height: 400px;
+	margin-top: 20px;
+	position: relative;
+	display: none;
+}
+#Userreg_box #u_bottom #cellphone_box form p{
+	color: #333333;
+	font-size: 14px;
+}
+#Userreg_box #u_bottom #cellphone_box form p.one{
+	position: absolute;
+	top: 20px;
+	left: 6px;
+}
+#Userreg_box #u_bottom #cellphone_box form p.two{
+	position: absolute;
+	top: 160px;
+	left: 6px;
+}
+#Userreg_box #u_bottom #cellphone_box form p.three{
+	position: absolute;
+	top: 235px;
+	left: 6px;
+}
+#Userreg_box #u_bottom #cellphone_box form p.four{
+	position: absolute;
+	top: 285px;
+	left: 6px;
+}
+#Userreg_box #u_bottom #cellphone_box form p.five{
+	position: absolute;
+	top: 337px;
+	left: 95px;
+	font-size: 13px;
+}
+#Userreg_box #u_bottom #cellphone_box form p.five a{
+	color: #4467A3;
+}
+#Userreg_box #u_bottom #cellphone_box form p.six{
+	position: absolute;
+	top: 430px;
+	left: 120px;
+	font-size: 13px;
+}
+#Userreg_box #u_bottom #cellphone_box form p.six a{
+	color: #4467A3;
+	font-weight:bold;
+}
+#Userreg_box #u_bottom #cellphone_box form p.seven{
+	position: absolute;
+	top: 105px;
+	left: 6px;
+}
+#Userreg_box #u_bottom #cellphone_box form input{
+	border: 1px solid #C9C9C9;
+	border-radius: 5px;
+	width: 306px;
+	height: 41px;
+}
+#Userreg_box #u_bottom #cellphone_box form ul{
+	width: 306px;
+	height: 15px;
+	position: absolute;
+	top: 200px;
+	left: 77px;
+	border-bottom: none;
+}
+#Userreg_box #u_bottom #cellphone_box form ul li{
+	float: left;
+	width: 100px;
+	height: 15px;
+	background: #C9E0DD;
+	border-right: 1px solid white;
+	color: white;
+	text-align: center;
+
+
+}
+#Userreg_box #u_bottom #cellphone_box form input.one{
+	position: absolute;
+	top: 10px;
+	left:75px;
+}
+#Userreg_box #u_bottom #cellphone_box form input.two{
+	position: absolute;
+	top: 150px;
+	left:75px;
+}
+#Userreg_box #u_bottom #cellphone_box form input.three{
+	position: absolute;
+	top: 225px;
+	left:75px;
+}
+#Userreg_box #u_bottom #cellphone_box form input.four{
+	position: absolute;
+	top: 280px;
+	left:75px;
+}
+#Userreg_box #u_bottom #cellphone_box form input.five{
+	position: absolute;
+	top: 335px;
+	left:74px;
+	width: 20px;
+	height: 20px;
+}
+#Userreg_box #u_bottom #cellphone_box form input.six{
+	position: absolute;
+	top: 95px;
+	left:75px;
+}
+#Userreg_box #u_bottom #cellphone_box form #login_btn{
+	position: absolute;
+	top: 365px;
+	left:75px;
+	width: 306px;
+	height:46px;
+	border-radius: 5px;
+	background:#ED5565;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 46px;
+}
+#Userreg_box #u_bottom #cellphone_box form #sendcode{
+	position: absolute;
+	top: 60px;
+	left:75px;
+	width: 116px;
+	height:25px;
+	border-radius: 5px;
+	background:#D3DDED;
+	color: black;
+	font-size: 13px;
+	text-align: center;
+	line-height: 25px;
+}
+#Userlogin_box{
+	display: none;
+	background: white;
+	width: 627px;
+	height: 479px;
+	border-radius: 5px;
+	
+}
+
+#Userlogin_box #u_top_box{
+	background: #ED5565;
+	width: 627px;
+	height: 61px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom: 4px solid #DA4453;
+	position: relative;
+}
+#Userlogin_box #u_top_box p{
+	color: white;
+	font-size: 21px;
+	font-weight: 700;
+	position: absolute;
+	top: 20px;
+	left:40px;
+}
+#Userlogin_box #u_top_box #a_closed{
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	top: 4px;
+	right: 8px;
+}
+
+#Userlogin_box #u_middle_box{
+	width: 627px;
+	height: 288px;
+	position: relative;
+}
+#Userlogin_box #u_middle_box form #btn_login{
+	position: absolute;
+	top: 180px;
+	left:100px;
+	width: 256px;
+	height:46px;
+	border-radius: 5px;
+	background:#ED5565;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 46px;
+}
+#Userlogin_box #u_middle_box form #forgetpwd{
+	position: absolute;
+	top: 97px;
+	left:380px;
+	color: #4467A3;
+	
+}
+#Userlogin_box #u_middle_box form p.one{
+	position: absolute;
+	top: 30px;
+	left: 40px;
+	font-size: 14px;
+}
+#Userlogin_box #u_middle_box form p.two{
+	position: absolute;
+	top: 90px;
+	left: 40px;
+	font-size: 14px;
+}
+#Userlogin_box #u_middle_box form p.three{
+	position: absolute;
+	top: 142px;
+	left: 120px;
+}
+#Userlogin_box #u_middle_box form p.four{
+	position: absolute;
+	top: 142px;
+	left: 260px;
+}
+#Userlogin_box #u_middle_box form p.five{
+	position: absolute;
+	top: 248px;
+	left: 160px;
+}
+#Userlogin_box #u_middle_box form p.five a{
+	color: #4467A3;
+	font-weight: bold;
+}
+#Userlogin_box #u_middle_box form p.six{
+	color: #F14B2B;
+	font-size: 12px;
+	background: url(../images/ico_13.png) no-repeat;
+	position: absolute;
+	top: 35px;
+	left: 370px;
+	padding-left: 20px;
+	display: none;
+}
+#Userlogin_box #u_middle_box form p.seven{
+	color: #F14B2B;
+	font-size: 12px;
+	background: url(../images/ico_13.png) no-repeat;
+	position: absolute;
+	top: 97px;
+	left: 450px;
+	padding-left: 20px;
+	display: none;
+}
+#Userlogin_box #u_middle_box form input{
+	border: 1px solid #C9C9C9;
+	border-radius: 5px;
+	width: 256px;
+	height: 41px;
+}
+#Userlogin_box #u_middle_box form input.one{
+	position: absolute;
+	top: 20px;
+	left: 100px;
+}
+#Userlogin_box #u_middle_box form input.two{
+	position: absolute;
+	top: 80px;
+	left: 100px;
+}
+#Userlogin_box #u_middle_box form input.three{
+	position: absolute;
+	top: 140px;
+	left: 100px;
+	width: 20px;
+	height: 20px;
+}
+#Userlogin_box #u_middle_box form input.four{
+	position: absolute;
+	top: 140px;
+	left: 240px;
+	width: 20px;
+	height: 20px;
+}
+
+#Userlogin_box #u_bottom_box{
+	width: 627px;
+	height: 130px;
+	background: #E4E4E4;
+	position: relative;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+#Userlogin_box #u_bottom_box p{
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	color: #333;
+	font-size: 14px;
+}
+#Userlogin_box #u_bottom_box ul{
+	width: 500px;
+	height: 18px;
+	position: absolute;
+	top: 70px;
+	left: 4px;	
+}
+#Userlogin_box #u_bottom_box ul li{
+	float: left;
+	padding-left: 25px;
+	
+}
+#Userlogin_box #u_bottom_box ul li a{
+	padding-left: 20px;
+	background:url('../images/iconbg_a109284.png') no-repeat;
+}
+#Userlogin_box #u_bottom_box ul li a.one{
+	background-position: 0px -1339px;
+}
+#Userlogin_box #u_bottom_box ul li a.two{
+	background-position: 0px -1374px;
+}
+#Userlogin_box #u_bottom_box ul li a.three{
+	background-position: 0px -1192px;
+}
+#Userlogin_box #u_bottom_box ul li a.four{
+	background-position: 0px -1228px;
+}
+#Userlogin_box #u_bottom_box ul li a.five{
+	background-position: 0px -1300px;
+}
+
+#UserForgetpwd_box{
+	display: none;
+	background: white;
+	width: 627px;
+	height: 415px;
+	border-radius: 5px;
+	position: relative;
+	
+}
+#UserForgetpwd_box #return_userlogin{
+	color: #4467A3;
+	position: absolute;
+	top: 360px;
+	left: 120px;
+}
+#UserForgetpwd_box ul{
+	width: 627px;
+	height: 340px;
+	
+}
+#UserForgetpwd_box ul li{
+	width: 627px;
+	height: 170px;
+	position: relative;
+}
+#UserForgetpwd_box ul li img{
+	position: absolute;
+	top: 30px;
+	left: 40px;
+}
+#UserForgetpwd_box ul li p.one{
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	top: 33px;
+	left: 120px;
+}
+#UserForgetpwd_box ul li p.one span{
+	color: #ED5565;
+	font-weight: bold;
+	font-size: 14px;
+}
+#UserForgetpwd_box ul li p.two{
+	position: absolute;
+	top: 57px;
+	left: 120px;
+}
+#UserForgetpwd_box ul li p.three{
+	position: absolute;
+	top: 92px;
+	left: 390px;
+	color: #F14B2B;
+	font-size: 12px;
+	background: url(../images/ico_13.png) no-repeat;
+	padding-left: 20px;
+	display: none;
+}
+#UserForgetpwd_box ul li input{
+	position: absolute;
+	top: 80px;
+	left: 120px;
+	border: 1px solid #C9C9C9;
+	border-radius: 5px;
+	width: 256px;
+	height: 40px;
+
+}
+#UserForgetpwd_box ul li a{
+	background: #D3DDED;
+	display: block;
+	width: 82px;
+	height: 36px;
+	border-radius: 5px;
+	line-height: 36px;
+	text-align: center;
+	position: absolute;
+	top: 133px;
+	left: 120px;
+}
+#top_logo_box a{
+}
+#top_logo_box a #logo{
+	position: absolute;
+	top: 11px;
+	left:16px;
+	width: 114px;
+	height:35px;
+	border: none;
+}
+#top_logo_box a #slogan{
+	position: absolute;
+	top: 25px;
+	left:138px;
+	border: none;
+}
+#top_logo_box #login{
+	position: absolute;
+	top: 22px;
+	right: 5px;
+}
+#top_logo_box #login li{
+	width: 56px;
+	height: 16px;
+	float: left;
+	border-left: 1px solid gray;
+}
+#top_logo_box #login li.one{
+	background: url(../images/login.png) no-repeat 0 -2px;
+	border: none;
+}
+#top_logo_box #login li a{
+	display: block;
+	width: 56px;
+	height: 16px;
+	color: #ED5565;
+	line-height: 16px;
+}
+#top_logo_box #login li a:hover{
+	text-decoration: underline;
+}
+#top_logo_box #login li a.one{
+	padding-left: 22px;
+}
+#top_logo_box #login li a.two{
+	padding-left: 6px;
+}
+/*Logo区域结束*/
+/*导航区域*/
+#top_nav_box{
+	width: 960px;
+	height: 47px;
+	margin: 0 auto;
+	border-bottom:2px solid #DB4453;
+	/*border-radius: 5px;*/
+	background: #ED5565;
+	position: relative;
+
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	behavior: url(Layouts/js/border-radius.htc);
+
+}
+#top_nav_box #left_collection{
+	position: absolute;
+	top:8px;
+	left: 9px;
+	width: 145px;
+	height: 35px;
+	background: white;
+	/*border-radius: 5px;*/
+
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	behavior: url(Layouts/js/border-radius.htc);
+}
+#top_nav_box #left_collection .left_img{
+	position: absolute;
+	top:4px;
+	left:10px;
+}
+#top_nav_box #left_collection span{
+	color: #ED5565;
+	font-weight:bold;
+	font-size: 18px;
+	position: absolute;
+	top: 9px;
+	left: 50px;
+}
+#top_nav_box #nav{
+	position: absolute;
+	top:0px;
+	left:165px;
+}
+#top_nav_box #nav li{
+	float: left;
+	width: 112px;
+	height: 48px;
+	border-left: 1px solid #DB4453;
+}
+#top_nav_box #nav li.one{
+	background: #DB4453;
+}
+#top_nav_box #nav li.four{
+	border-right: 1px solid #DB4453;
+}
+#top_nav_box #nav li a{
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	display: inline-block;
+	height: 48px;
+	line-height: 48px;
+	width: 112px;
+	text-align: center;
+}
+#top_nav_box #nav li a.one:hover{
+	display: inline-block;
+	background: #F6808B;
+}
+/*搜索框区域*/
+#top_nav_box #search_box{
+	width: 236px;
+	height: 32px;
+	/*border-radius: 5px;*/
+	position: absolute;
+	top: 9px;
+	right: 20px;
+	background:url(../images/bg_search.png);
+	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	behavior: url(Layouts/js/border-radius.htc);
+
+}
+#top_nav_box #search_box input{
+	outline: none;
+}
+#top_nav_box #search_box #search_con{
+	width: 198px;
+	height: 25px;
+	position: absolute;
+	top: 3px;
+	left: 7px;
+	background: none;
+}
+#top_nav_box #search_btn{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 1px;
+	right: 0px;
+	background: none;
+}
+/*搜索框区域结束*/
+/*导航区域结束*/
+
+/*最底部区域*/
+#bottom_info{
+	width: 100%;
+	height: 180px;
+	background: #DB4453;
+	margin-top: 50px;
+}
+#bottom_info #bottom_box{
+	width: 960px;
+	height: 180px;
+	margin:0 auto;
+	position: relative;
+}
+#bottom_info #bottom_box p{
+	color: white;
+	font-size: 14px;
+}
+#bottom_info #bottom_box img{
+	position: absolute;
+	top: 20px;
+	left:850px;
+}
+#bottom_info #bottom_box ul{
+	position: absolute;
+	top: 28px;
+	left: 0px;
+}
+#bottom_info #bottom_box ul li{
+	float: left;
+	width:75px;
+	height: 14px;
+	border-right: 1px solid white;
+	padding-left: 10px;
+}
+#bottom_info #bottom_box ul li.one{
+	padding-left: 0px;
+}
+#bottom_info #bottom_box ul li.six{
+	border:none;
+}
+#bottom_info #bottom_box ul li a{
+	color: white;
+	font-size: 14px;
+}
+#bottom_info #bottom_box ul li a:hover{
+	text-decoration: underline;
+}
+#bottom_info #bottom_box .p_box {
+	position: absolute;
+	top: 70px;
+	left: 0px;
+}
+#bottom_info #bottom_box .p_box a{
+	color: white;
+	font-size: 14px;
+}
+#bottom_info #bottom_box .p_box a:hover{
+	text-decoration: underline;
+}
+/*最底部区域结束*/

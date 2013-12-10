@@ -1,0 +1,93 @@
+#main{
+	height: 500px;
+}
+/*左边主要内容区域*/
+#main #left_card{
+	position: relative;
+	width: 715px;
+	height: 480px;
+	border: 2px solid #F7F8FA;
+}
+#main #left_card p.one{
+	color: #EB5B4C;
+	font-size:20px;
+	font-weight: bold;
+	position: absolute;
+	top: 25px;
+	left: 40px;	
+	border-bottom: #E4E4E4 2px solid;
+	width: 630px;
+	height: 35px;
+}
+#main #left_card p.two{
+	position: absolute;
+	top: 75px;
+	left: 40px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #616161;
+
+}
+#main #left_card ul{
+	width: 630px;
+	height: 400px;
+	position: absolute;
+	top: 100px;
+	left: 40px;
+}
+#main #left_card a{
+	display: block;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+	position: absolute;
+	top: 400px;
+	left: 200px;
+	line-height: 30px;
+	text-align: center;
+	background: #ED5565;
+}
+#main #left_card ul li{
+
+	width: 630px;
+	height: 50px;
+	position: relative;
+}
+#main #left_card ul li.one{
+	height: 75px;
+}
+#main #left_card ul li.two{
+	height: 145px;
+}
+#main #left_card ul li p{
+	position: absolute;
+	top: 20px;
+	left: 30px;
+}
+#main #left_card ul li p.tip{
+	position: absolute;
+	top: 55px;
+	left: 160px;
+	color: #616161;
+}
+#main #left_card ul li input{
+	border: 1px solid #C9C9C9;
+	border-radius: 5px;
+	width: 371px;
+	height: 39px;
+}
+#main #left_card ul li input.one{
+	position: absolute;
+	top: 5px;
+	left: 160px;
+}
+#main #left_card ul li textarea{
+	position: absolute;
+	top: 5px;
+	left: 160px;
+
+}
+/*左边主要内容区域结束*/

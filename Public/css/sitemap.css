@@ -1,0 +1,337 @@
+
+/*左边主要内容区域*/
+#main #left_card{
+	position: relative;
+	width: 715px;
+	height: 930px;
+	border: 2px solid #F7F8FA;
+}
+#main #left_card p.one{
+	color: #EB5B4C;
+	font-size:20px;
+	font-weight: bold;
+	position: absolute;
+	top: 25px;
+	left: 40px;	
+	border-bottom: #E4E4E4 2px solid;
+	width: 630px;
+	height: 35px;
+}
+
+#main #left_card p.two{
+	color: #ED5565;
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	top:78px;
+	left: 40px;
+
+}
+#main #left_card p.three{
+	color: #ED5565;
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	top:678px;
+	left: 40px;
+
+}
+#main #left_card #food_box{
+	width: 630px;
+	height: 200px;
+	position: absolute;
+	top: 110px;
+	left: 40px;
+
+}
+#main #left_card #food_box ul{
+	width: 540px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+#main #left_card #food_box ul li{
+	float:left;
+	width: 88px;
+	height: 20px;
+}
+#main #left_card #food_box ul li a{
+	color: #0B72A4;
+	border-right: 1px solid #757575;
+	height: 10px;
+	display: block;
+	line-height: 10px;
+	text-align: center;
+}
+#main #left_card #food_box ul li a:hover{
+	text-decoration: underline;
+}
+#main #left_card #entertainment_box{
+	width: 630px;
+	height: 200px;
+	position: absolute;
+	top: 250px;
+	left: 40px;
+}
+#main #left_card #entertainment_box ul{
+	width: 540px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+#main #left_card #entertainment_box ul li{
+	float:left;
+	width: 88px;
+	height: 20px;
+}
+#main #left_card #entertainment_box ul li a{
+	color: #0B72A4;
+	border-right: 1px solid #757575;
+	height: 10px;
+	display: block;
+	line-height: 10px;
+	text-align: center;
+}
+#main #left_card #entertainment_box ul li a:hover{
+	text-decoration: underline;
+}
+#main #left_card #life_box{
+	width: 630px;
+	height: 200px;
+	position: absolute;
+	top: 410px;
+	left: 40px;
+}
+#main #left_card #life_box ul{
+	width: 540px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+#main #left_card #life_box ul li{
+	float:left;
+	width: 88px;
+	height: 20px;
+}
+#main #left_card #life_box ul li a{
+	color: #0B72A4;
+	border-right: 1px solid #757575;
+	height: 10px;
+	display: block;
+	line-height: 10px;
+	text-align: center;
+}
+#main #left_card #life_box ul li a:hover{
+	text-decoration: underline;
+}
+#main #left_card #hotel_box{
+	width: 630px;
+	height: 200px;
+	position: absolute;
+	top: 570px;
+	left: 40px;
+
+}
+#main #left_card #hotel_box ul{
+	width: 540px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+#main #left_card #hotel_box ul li{
+	float:left;
+	width: 88px;
+	height: 20px;
+}
+#main #left_card #hotel_box ul li a{
+	color: #0B72A4;
+	border-right: 1px solid #757575;
+	height: 10px;
+	display: block;
+	line-height: 10px;
+	text-align: center;
+}
+#main #left_card #hotel_box ul li a:hover{
+	text-decoration: underline;
+}
+#main #left_card #discount_box{
+	width: 630px;
+	height: 200px;
+	position: absolute;
+	top: 610px;
+	left: 40px;
+
+}
+#main #left_card #discount_box ul{
+	width: 540px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+#main #left_card #discount_box ul li{
+	float:left;
+	width: 88px;
+	height: 20px;
+}
+#main #left_card #discount_box ul li a{
+	color: #0B72A4;
+	border-right: 1px solid #757575;
+	height: 10px;
+	display: block;
+	line-height: 10px;
+	text-align: center;
+}
+#main #left_card #discount_box ul li a:hover{
+	text-decoration: underline;
+}
+#main #left_card #xiufeng_box{
+	width: 630px;
+	height: 200px;
+	position: absolute;
+	top: 710px;
+	left: 40px;
+
+}
+#main #left_card #xiufeng_box ul{
+	width: 540px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+#main #left_card #xiufeng_box ul li{
+	float:left;
+	width: 88px;
+	height: 20px;
+}
+#main #left_card #xiufeng_box ul li a{
+	color: #0B72A4;
+	border-right: 1px solid #757575;
+	height: 10px;
+	display: block;
+	line-height: 10px;
+	text-align: center;
+}
+#main #left_card #xiufeng_box ul li a:hover{
+	text-decoration: underline;
+}
+#main #left_card #xiangshan_box{
+	width: 630px;
+	height: 200px;
+	position: absolute;
+	top: 740px;
+	left: 40px;
+
+}
+#main #left_card #xiangshan_box ul{
+	width: 540px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+#main #left_card #xiangshan_box ul li{
+	float:left;
+	width: 88px;
+	height: 20px;
+}
+#main #left_card #xiangshan_box ul li a{
+	color: #0B72A4;
+	border-right: 1px solid #757575;
+	height: 10px;
+	display: block;
+	line-height: 10px;
+	text-align: center;
+}
+#main #left_card #xiangshan_box ul li a:hover{
+	text-decoration: underline;
+}
+#main #left_card #diecai_box{
+	width: 630px;
+	height: 200px;
+	position: absolute;
+	top: 770px;
+	left: 40px;
+
+}
+#main #left_card #diecai_box ul{
+	width: 540px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+#main #left_card #diecai_box ul li{
+	float:left;
+	width: 88px;
+	height: 20px;
+}
+#main #left_card #diecai_box ul li a{
+	color: #0B72A4;
+	border-right: 1px solid #757575;
+	height: 10px;
+	display: block;
+	line-height: 10px;
+	text-align: center;
+}
+#main #left_card #diecai_box ul li a:hover{
+	text-decoration: underline;
+}
+#main #left_card #yanshan_box{
+	width: 630px;
+	height: 200px;
+	position: absolute;
+	top: 800px;
+	left: 40px;
+
+}
+#main #left_card #yanshan_box ul{
+	width: 540px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+#main #left_card #yanshan_box ul li{
+	float:left;
+	width: 88px;
+	height: 20px;
+}
+#main #left_card #yanshan_box ul li a{
+	color: #0B72A4;
+	border-right: 1px solid #757575;
+	height: 10px;
+	display: block;
+	line-height: 10px;
+	text-align: center;
+}
+#main #left_card #yanshan_box ul li a:hover{
+	text-decoration: underline;
+}
+#main #left_card #qixing_box{
+	width: 630px;
+	height: 200px;
+	position: absolute;
+	top: 830px;
+	left: 40px;
+
+}
+#main #left_card #qixing_box ul{
+	width: 540px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+#main #left_card #qixing_box ul li{
+	float:left;
+	width: 88px;
+	height: 20px;
+}
+#main #left_card #qixing_box ul li a{
+	color: #0B72A4;
+	border-right: 1px solid #757575;
+	height: 10px;
+	display: block;
+	line-height: 10px;
+	text-align: center;
+}
+#main #left_card #qixing_box ul li a:hover{
+	text-decoration: underline;
+}
+/*左边主要内容区域结束*/
