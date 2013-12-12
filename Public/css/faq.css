@@ -1,0 +1,159 @@
+
+/*左边主要内容区域*/
+#main #faq01_box{
+	position: relative;
+	width: 955px;
+	height: 1380px;
+	border: 2px solid #F7F8FA;
+}
+#main #faq01_box p.one{
+	color: #EB5B4C;
+	font-size:20px;
+	font-weight: bold;
+	position: absolute;
+	top: 25px;
+	left: 40px;	
+	border-bottom: #E4E4E4 2px solid;
+	width: 860px;
+	height: 35px;
+}
+#main #faq01_box #left_nav_box{
+	width: 220px;
+	height: 500px;
+	position: absolute;
+	top: 70px;
+	left: 40px;
+}
+#main #faq01_box #left_nav_box ul{
+	width: 187px;
+	height: 235px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border: 1px solid #F2F2F2;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-left: 4px;
+	padding-right: 4px;
+	background: #F2F2F2;
+}
+#main #faq01_box #left_nav_box ul li{
+	width: 185px;
+	height: 36px;
+	border: 1px solid #F2F2F2;
+	border-radius: 5px;
+	margin-top: 5px;
+	background: #FFFFFF;
+}
+#main #faq01_box #left_nav_box ul li a{
+	display: block;
+	height: 36px;
+	line-height: 36px;
+	padding-left: 15px;
+}
+#main #faq01_box #left_nav_box ul li a.red{
+	background: #ED5565;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 5px;
+}
+#main #faq01_box #left_nav_box ul li a.red:hover{
+	
+	color: white;
+	font-size: 14px;
+	font-weight: bold;	
+}
+#main #faq01_box #left_nav_box ul li a:hover{
+	color: #333;
+	font-size: 14px;
+	font-weight: bold;
+	
+}
+#main #faq01_box #left_nav_box div{
+	width: 198px;
+	height: 142px;
+	background: #F2F2F2;
+	position: absolute;
+	top: 260px;
+	left: 0px;
+	border-radius: 5px;
+}
+#main #faq01_box #left_nav_box div p{
+	position: absolute;
+	top: 15px;
+	left: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+#main #faq01_box #left_nav_box div input{
+	border: 1px solid #C9C9C9;
+	border-radius: 5px;
+	width: 180px;
+	height: 33px;
+	position: absolute;
+	top: 40px;
+	left: 8px;
+	
+}
+#main #faq01_box #left_nav_box div a{
+	color: white;
+	position: absolute;
+	top: 90px;
+	left: 10px;
+	display: block;
+	height: 33px;
+	width: 60px;
+	line-height: 33px;
+	text-align: center;
+	background: #ED5565;
+	border-radius:5px;
+	font-weight: bold;
+}
+#main #faq01_box #right_content_box{
+	width: 640px;
+	position: absolute;
+	top: 70px;
+	left: 260px;
+}
+#main #faq01_box #right_content_box #directory{
+	width: 640px;
+	
+}
+#main #faq01_box #right_content_box #directory p{
+	font-size: 14px;
+	font-weight: bold;
+}
+#main #faq01_box #right_content_box #directory ul{
+	width: 600px;
+	margin-top: 18px;
+	margin-left: 20px;
+}
+#main #faq01_box #right_content_box #directory ul li{
+	
+}
+#main #faq01_box #right_content_box #directory ul li a{
+	color: #4467A3;
+}
+#main #faq01_box #right_content_box #content{
+	margin-top: 20px;
+}
+#main #faq01_box #right_content_box #content p.title{
+	font-size: 14px;
+	font-weight: bold;
+}
+#main #faq01_box #right_content_box #content ul{
+	
+	margin-top: 15px;
+}
+#main #faq01_box #right_content_box #content ul li{
+	
+}
+#main #faq01_box #right_content_box #content ul a.answer_title{
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+#main #faq01_box #right_content_box #content ul p.answer_content{
+	margin-bottom: 20px;
+}
+/*左边主要内容区域结束*/

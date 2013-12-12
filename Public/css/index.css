@@ -52,9 +52,8 @@
 }
 #top_rss #top_rss_box .right_ul li{
 	float: left;
-	width: 50px;
-	height:13px;
-	background: url(../images/ico_01.png) no-repeat 28px 1px;
+	width: 55px;
+	height: 33px;
 }
 #top_rss #top_rss_box .right_ul li.two{
 	border-left: 1px solid #434A54;

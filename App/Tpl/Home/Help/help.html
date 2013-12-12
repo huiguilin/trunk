@@ -1,0 +1,43 @@
+
+<include file="./App/Tpl/Home/Public/about_tpl_top.html" />
+<load href="__PUBLIC__/css/help.css" />
+<!-- 关于我们页面的内容 -->
+<div id="left_card">
+	<p class="one">网站帮助</p>
+	<div id="seach_box">
+		<img src="__PUBLIC__/images/ico_help.png">
+		<p>请输入您想要询问的<span>关键词</span>，查找相关问题的答案：</p>
+		<input name="help_search" type="text" placeholder='例如输入"优惠劵",查找"优惠劵"相关问题的答案' />
+		<a href="">搜索</a>
+	</div>
+	<ul>
+		<li>
+			<img src="__PUBLIC__/images/help_ico01.png">
+			<a href="{:U("Help/faq01")}" class="one">优惠劵</a>
+			<p class='three'>包括如何获取优惠券、优惠段的使用。</p>
+		</li>
+		<li>
+			<img src="__PUBLIC__/images/help_ico02.png">
+			<a href="{:U("Help/faq02")}" class="one">会员卡/礼品</a>
+			<p class='three'>包括电子会员卡的申请，使用以及原实体会员卡积分，礼品券兑换等问题。</p>
+		</li>
+		<li>
+			<img src="__PUBLIC__/images/help_ico03.png">
+			<a href="{:U("Help/faq03")}" class="one">商户/点评</a>
+			<p class='three'>包括商户收录标准，商户打分和星级是怎么来的？默认点评是什么？哪些是不符合规定的点评？</p>
+		</li>
+		<li>
+			<img src="__PUBLIC__/images/help_ico02.png">
+			<a href="{:U("Help/faq04")}" class="one">手机</a>
+			<p class='three'>包括如何用手机客户端找到商户、抢获优惠券、迁到等等各种问题。</p>
+		</li>
+		<li>
+			<img src="__PUBLIC__/images/help_ico04.png">
+			<a href="{:U("Help/faq05")}" class="one">订阅/关注</a>
+			<p class='three'>包括怎样订阅惠桂林优惠信息，会员卡信息，商户促销信息等问题。</p>
+		</li>		
+	</ul>
+				
+</div>
+<!-- 关于我们页面的内容结束 -->
+<include file="./App/Tpl/Home/Public/about_tpl_bottom.html" />

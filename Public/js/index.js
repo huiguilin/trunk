@@ -25,6 +25,7 @@ $(function(){
 	 }
 	//图片轮换板特效结束
 
+
 	//惠字头小分队特效
 	var autobus_timer=setInterval(autobus,1000);
 	var i = 0;
@@ -417,55 +418,189 @@ $(function(){
 	//忘记密码页面的验证结束
 
 	$('#reg_now').click(function(event) {
-		
-  		var login_zindex = $('#Userlogin_box').css('z-index');
-  		var reg_zindex = $('#Userreg_box').css('z-index');
-  		var display = $('#Userreg_box').css('display');
-  		if(display == "none"){
-  			$('#Userreg_box').bPopup({
+		var reg_zindex = $('#Userreg_box').css('z-index');
+		var login_zindex = $('#Userlogin_box').css('z-index');
+		var temp;
+		if(reg_zindex == "auto" || login_zindex =="auto"){
+			$('#Userreg_box').bPopup({
            		modalClose: false,
 	        	opacity: 0.6,
 	        	position: [320, 15],//x, y  
         	});
-  		}
+        	
+		}
   		else{
-  			$('#Userlogin_box').hide();
-        	$('#Userreg_box').bPopup({
-           		modalClose: false,
-	        	opacity: 0.6,
-	        	position: [320, 15],//x, y 
-	        	
-        	});
-        	var v = parseInt(login_zindex)+2000;
-        	$('#Userreg_box').css('z-index', v);
+  			temp = reg_zindex;
+  			reg_zindex = login_zindex;
+  			login_zindex =temp;
+  			$('#Userlogin_box').css('z-index', login_zindex);
+  			$('#Userreg_box').css('z-index', reg_zindex);
+  			$('#Userreg_box').css('display', 'block');
+  			$('#Userlogin_box').css('display', 'none');
+  			
   		}
   		return false;
 		
 	});
 
 	$('#login_now').click(function(event) {
+
+		var reg_zindex = $('#Userreg_box').css('z-index');
 		var login_zindex = $('#Userlogin_box').css('z-index');
-  		var reg_zindex = $('#Userreg_box').css('z-index');
-  		var display = $('#Userlogin_box').css('display');
-  		if(display == "none"){
-  			$('#Userlogin_box').bPopup({
+		var temp;
+		if(reg_zindex == "auto" || login_zindex =="auto"){
+			$('#Userlogin_box').bPopup({
            		modalClose: false,
 	        	opacity: 0.6,
 	        	position: [320, 15],//x, y  
         	});
-  		}
-  		else{
-  			$('#Userreg_box').hide();
-        	$('#Userlogin_box').bPopup({
-           		modalClose: false,
-	        	opacity: 0.6,
-	        	position: [320, 15],//x, y  
-        	});
-        	var v = parseInt(reg_zindex)+1000;
-        	$('#Userlogin_box').css('z-index', v);
-  		}
+        	
+		}
+		else{
+			
+			temp = reg_zindex;
+  			reg_zindex = login_zindex;
+  			login_zindex =temp;
+  			$('#Userlogin_box').css('z-index', login_zindex);
+  			$('#Userreg_box').css('z-index', reg_zindex);
+  			$('#Userreg_box').css('display', 'none');
+  			$('#Userlogin_box').css('display', 'block');
+		}
   		return false;
 	});
+	
 
+	//关闭按钮特效结束
 	//用户注册弹框效果结束
+
+	//Header订阅的效果
+	$('#subscription').hover(function() {
+		
+	}, function() {
+		
+	});
+
+
+	//Header订阅的效果结束
+
+	//手机版弹窗效果
+	$('#cellphone_version').click(function(event) {
+		$('#cellphone_version_box').bPopup({
+           	modalClose: false,
+	        opacity: 0.6,
+	        position: [250, 20],//x, y
+        });
+		
+		$('#cellphone_version_box').show();
+		return false;
+	});
+
+	//手机版弹窗效果结束
+
+	//手机APP下载切换效果
+	$('#cellphone_version_box a.iphone').click(function(event) {
+		$(this).css('background-color', '#FABAC0');
+		$('#cellphone_version_box a.android').css('background-color', '#98E606');
+		$('#cellphone_version_box a.wp').css('background-color', '#3399FF');
+		$('#cellphone_version_box #wp_box').hide();
+		$('#cellphone_version_box #iphone_box').show();
+		$('#cellphone_version_box #android_box').hide();
+		return false;
+	});
+	$('#cellphone_version_box a.android').click(function(event) {
+		$(this).css('background-color', '#C1FB57');
+		$('#cellphone_version_box a.iphone').css('background-color', '#ED5565');
+		$('#cellphone_version_box a.wp').css('background-color', '#3399FF');
+		$('#cellphone_version_box #iphone_box').hide();
+		$('#cellphone_version_box #android_box').show();
+		$('#cellphone_version_box #wp_box').hide();
+		return false;
+	});
+	$('#cellphone_version_box a.wp').click(function(event) {
+		$(this).css('background-color', '#7DBEFF');
+		$('#cellphone_version_box a.iphone').css('background-color', '#ED5565');
+		$('#cellphone_version_box a.android').css('background-color', '#98E606');
+		$('#cellphone_version_box #iphone_box').hide();
+		$('#cellphone_version_box #wp_box').show();
+		$('#cellphone_version_box #android_box').hide();
+		return false;
+	});
+	//手机APP下载切换效果结束
+
+	//手机APP下载弹窗中的图片轮换特效
+
+	var app_timer = setInterval(app_autoRun,5000);
+	var app_sta = 0;//记录当前展示到哪张图片了
+	function app_autoRun(){
+	 	app_sta++;//sta自增
+	 	app_sta = (app_sta == 2)?0:app_sta;//判断是不是到最后一张了，如果是，就切换到第一张
+	 	app_change(app_sta);//切换效果
+	 }
+
+	 $('#cellphone_version_box #appbtn_box a img').hover(function(){
+	 	clearInterval(app_timer);//清理定时器
+	 	app_sta = $(this).index('#cellphone_version_box #appbtn_box a img');//获得鼠标移入到第几个li上了
+	 	app_change(app_sta);//切换效果
+	 },function(){
+	 	app_timer = setInterval(app_autoRun,5000);//恢复定时器
+	 })
+
+	 function app_change(num){//用来控制切换图片和下标样式的函数
+	 	$('#cellphone_version_box #apppics_box img').hide();//先把所有的图片隐藏
+	 	$('#cellphone_version_box #apppics_box img').eq(num).fadeIn(200);//让对应的图片显示出来
+	 	$('#cellphone_version_box #appbtn_box a img').attr('src', '/HuiGL/Public/images/ico_19.png');
+	 	$('#cellphone_version_box #appbtn_box a img').eq(num).attr('src', '/HuiGL/Public/images/ico_18.png');
+	 	
+	 }
+
+	//手机APP下载弹窗中的图片轮换特效结束
+
+	
+
+	//手机APP关闭特效结束
+
+	//订阅Hover特效
+	$('#subscription_li').hover(function() {
+		$('#subscription_box').show();
+		$(this).addClass('hover');
+		$('#subscription').css('border-right', 'none');
+	}, function() {
+		$('#subscription_box').hide();
+		$(this).removeClass('hover');
+		$('#subscription').css('border-right', '1px solid black');
+	});
+
+	$('#subscription_box').hover(function() {
+		$('#subscription_box').show();
+		$('#subscription_li').addClass('hover');
+		$('#subscription').css('border-right', 'none');
+	}, function() {
+		$('#subscription_box').hide();
+		$('#subscription_li').removeClass('hover');
+		$('#subscription').css('border-right', '1px solid black');
+	});
+	//订阅Hover特效结束
+
+	//关注Hover特效
+	$('#share_li').hover(function() {
+		$('#share_box').show();
+		$(this).addClass('hover');
+		$('#subscription').css('border-right', 'none');
+	}, function() {
+		$('#share_box').hide();
+		$(this).removeClass('hover');
+		$('#subscription').css('border-right', '1px solid black');
+	});
+
+	$('#share_box').hover(function() {
+		$('#share_box').show();
+		$('#share_li').addClass('hover');
+		$('#subscription').css('border-right', 'none');
+	}, function() {
+		$('#share_box').hide();
+		$('#share_li').removeClass('hover');
+		$('#subscription').css('border-right', '1px solid black');
+	});
+
+	//关注Hover特效结束
 })

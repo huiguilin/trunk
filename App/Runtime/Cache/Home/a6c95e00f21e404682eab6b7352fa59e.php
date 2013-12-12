@@ -24,14 +24,94 @@
 		<div id="top_rss_box">
 			<img src="__PUBLIC__/images/cellphone.png">
 			<ul class="left_ul">
-				<li class="one"><a href="">手机版</a></li>
-				<li class="two"><a href="">使用帮助</a></li>
+				<li class="one"><a href="" id="cellphone_version">手机版</a></li>
+				<li class="two"><a href="<?php echo U("Help/help");?>">使用帮助</a></li>
 			</ul>
 			<ul class="right_ul">
-				<li><a href="#">订阅</a></li>
-				<li class="two"><a href="">分享</a></li>
+				<li id="subscription_li">
+					<a href="#" id="subscription">订阅</a>
+				</li>
+				<li id="share_li"><a id="share" href="" class="one">分享</a></li>
 			</ul>
-			
+			<div id="subscription_box">
+				<input type="text" placeholder="输入邮箱,订阅惠桂林信息"/>
+				<a href="">订阅</a>
+			</div>
+			<div id="share_box">
+				<ul>
+					<li><a href="" class="weibo">分享到新浪微博</a></li>
+					<li><a href="" class="qzone">分享到QQ空间</a></li>
+					<li><a href="" class="renren">分享到人人网</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="cellphone_version_box">
+		<p class="one">惠桂林手机手机客户端</p>	
+		<p class="two">吃喝玩乐，惠享生活！</p>
+		<a class="iphone" href="">iPhone</a>
+		<a class="android" href="">Android</a>
+		<a class="wp" href="">WP/Win8</a>
+		<p class="version_comment_title">版本说明:</p>
+		<p class="version_comment_content">该版本支持ios5.0、Android 2.1、WindowsPhone8及以上系统.</p>
+		<div id="app_closed_box">
+			<a class="app_closed" href=""><img src="__PUBLIC__/images/app_closed.png"></a>
+		</div>
+		<div id="apppics_box">
+			<img id="phone_pic01" src="__PUBLIC__/images/pic/phone_pic01.png">
+			<img id="phone_pic02" src="__PUBLIC__/images/pic/phone_pic02.png">
+		</div>
+		<div id="appbtn_box">	
+			<a class="imgbtn_01" href="javascript:void(0)"><img src="__PUBLIC__/images/ico_19.png"></a>
+			<a class="imgbtn_02" href="javascript:void(0)"><img src="__PUBLIC__/images/ico_19.png"></a>
+		</div>
+		<div id="iphone_box">
+			<img src="__PUBLIC__/images/ico_15.png">
+			<ul>
+				<li>
+					<p><span>方法一：</span><a href="">去AppStore下载</a></p>
+				</li>
+				<li>
+					<p><span>方法二：</span>用手机在AppStore中搜索"惠桂林"下载</p>
+				</li>
+				<li class="one">
+					<p><span>方法三：</span>手机扫描二维码下载</p>
+					<img src="__PUBLIC__/images/barcode.png">
+					<p class="four">（或手机浏览器输入<a href="" >http://dpurl.cn/KjG下载）</a></p>
+				</li>
+			</ul>
+		</div>
+		<div id="android_box">
+			<img src="__PUBLIC__/images/ico_16.png">
+			<ul>
+				<li>
+					<p><span>方法一：</span><a href="">下载安装包</a></p>
+				</li>
+				<li>
+					<p><span>方法二：</span>在Android Market中搜索"惠桂林"下载</p>
+				</li>
+				<li class="one">
+					<p><span>方法三：</span>手机扫描二维码下载</p>
+					<img src="__PUBLIC__/images/barcode.png">
+					<p class="four">（或手机浏览器输入<a href="" >http://dpurl.cn/KjG下载）</a></p>
+				</li>
+			</ul>
+		</div>
+		<div id="wp_box">
+			<img src="__PUBLIC__/images/ico_17.png">
+			<ul>
+				<li>
+					<p><span>方法一：</span><a href="">下载安装包</a></p>
+				</li>
+				<li>
+					<p><span>方法二：</span>在Windows Market中搜索"惠桂林"下载</p>
+				</li>
+				<li class="one">
+					<p><span>方法三：</span>手机扫描二维码下载</p>
+					<img src="__PUBLIC__/images/barcode.png">
+					<p class="four">（或手机浏览器输入<a href="" >http://dpurl.cn/KjG下载）</a></p>
+				</li>
+			</ul>
 		</div>
 	</div>
 <!-- 顶部订阅分享区域结束 -->
@@ -174,10 +254,10 @@
 			<span>全部分类</span>
 		</div>
 		<ul id="nav">
-			<li class="one" style="background:#ED5565"><a href="<?php echo U("Index/index");?>" class="one">首页</a></li>
-			<li><a href="<?php echo U("Coupon/coupon");?>" class="one">优惠券</a></li>
-			<li style="background:#DB4453"><a href="<?php echo U("Card/card");?>">会员卡</a></li>
-			<li class="four"><a href="" class="one">商户</a></li>
+			<li style="background:#DA4453"><a href="<?php echo U("Index/index");?>">首页</a></li>
+			<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+			<li><a href="<?php echo U("Card/card");?>">会员卡</a></li>
+			<li class="border_right "><a href="">商户</a></li>
 		</ul>
 		<form action="" id="search_box">
 			<input id="search_con" type="text" value="桂林环球美食节" />
