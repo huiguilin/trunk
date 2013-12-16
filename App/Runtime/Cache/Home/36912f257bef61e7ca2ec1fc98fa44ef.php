@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/about_tpl.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
 <title>会员卡</title>
 <!--[if IE 6]>
@@ -32,7 +33,7 @@
 				<li id="subscription_li">
 					<a href="#" id="subscription">订阅</a>
 				</li>
-				<li id="share_li"><a id="share" href="" class="one">分享</a></li>
+				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
 				<input type="text" placeholder="输入邮箱,订阅惠桂林信息"/>
@@ -40,9 +41,9 @@
 			</div>
 			<div id="share_box">
 				<ul>
-					<li><a href="" class="weibo">分享到新浪微博</a></li>
-					<li><a href="" class="qzone">分享到QQ空间</a></li>
-					<li><a href="" class="renren">分享到人人网</a></li>
+					<li><a href="http://www.baidu.com" class="weibo">惠桂林新浪微博</a></li>
+					<li><a href="http://www.baidu.com" class="qzone">惠桂林QQ空间</a></li>
+					<li><a href="http://www.baidu.com" class="renren">惠桂林腾讯微博</a></li>
 				</ul>
 			</div>
 		</div>
@@ -126,7 +127,7 @@
 		</ul>
 		<div id="Userreg_box">
 			<div id="u_top">
-				<a href="" id="a_closed2">X</a>
+				<a href="" id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
 				<p>用户注册</p>
 			</div>
 			<div id="u_bottom">
@@ -191,7 +192,7 @@
 		</div>
 		<div id="Userlogin_box">
 			<div id="u_top_box">
-				<a href="" id="a_closed">X</a>
+				<a href="" id="a_closed"><img src="__PUBLIC__/images/login_closed.png"></a>
 				<p>用户登录</p>
 			</div>
 			<div id="u_middle_box">
@@ -282,54 +283,57 @@
 <div id="left_card">
 	<p class="one">商务合作</p>
 	<p class="two">如果您想与惠桂林合作，请花些时间填写一下信息</p>
-	<ul>
-		<li>
-			<p class="title">您的称呼</p>
-			<input type="text" name="nickname" class="one"/>
-		</li>
-		<li>
-			<p class="title">您的电话</p>
-			<input type="text" name="cellphone" class="one"/>
-		</li>
-		<li class="one">
-			<p class="title">其他联系方式</p>
-			<input type="text" name="othercommunication" class="one"/>
-			<p class="othercommunication">请留下其他联系方式，如QQ, Email等。方便我们回复</p>
-		</li>
-		<li class="two">
-			<p class="title title2">区域</p>
-			<select name="area" class="one">
-				<option value="">桂林</option>
-				<option value="">南宁</option>
-				<option value="">柳州</option>
-				<option value="">梧州</option>
-			</select>
-		</li>
-		<li>
-			<p class="title">参与优惠商户名称</p>
-			<input type="text" name="shopname" class="one"/>
-		</li>
-		<li>
-			<p class="title">公司地址</p>
-			<input type="text" name="company_address" class="one"/>
-		</li>
-		<li class="three">
-			<p class="title title2">类别</p>
-			<select name="classification" class="two">
-				<option value="">美食</option>
-				<option value="">休闲</option>
-				<option value="">健康</option>
-				<option value="">运动</option>
-				<option value="">网购</option>
-				<option value="">其他</option>
-			</select>
-		</li>
-		<li class="four">
-			<p class="title">优惠内容描述</p>
-			<textarea cols="50" rows="8" class="one"></textarea>
-		</li>
-	</ul>
-	<a href="" class="submit">提交</a>					
+	<p class="three">感谢您的支持，如果有合作意向，我们的销售代表会尽快的和你联系！</p>
+	<form id="intention_sumbit_form">
+		<ul>
+			<li>
+				<p class="title">您的称呼</p>
+				<input type="text" name="nickname" class="one" id="intention_username"/>
+			</li>
+			<li>
+				<p class="title">您的电话</p>
+				<input type="text" name="cellphone" class="one" id="intention_cellphone"/>
+			</li>
+			<li class="one">
+				<p class="title">其他联系方式</p>
+				<input type="text" name="othercommunication" class="one"/>
+				<p class="othercommunication">请留下其他联系方式，如QQ, Email等。方便我们回复</p>
+			</li>
+			<li class="two">
+				<p class="title title2">区域</p>
+				<select name="area" class="one">
+					<option value="">桂林</option>
+					<option value="">南宁</option>
+					<option value="">柳州</option>
+					<option value="">梧州</option>
+				</select>
+			</li>
+			<li>
+				<p class="title">参与优惠商户名称</p>
+				<input type="text" name="shopname" class="one" id="intention_business"/>
+			</li>
+			<li>
+				<p class="title">公司地址</p>
+				<input type="text" name="company_address" class="one"/>
+			</li>
+			<li class="three">
+				<p class="title title2">类别</p>
+				<select name="classification" class="two">
+					<option value="">美食</option>
+					<option value="">休闲</option>
+					<option value="">健康</option> 
+					<option value="">运动</option>
+					<option value="">网购</option>
+					<option value="">其他</option>
+				</select>
+			</li>
+			<li class="four">
+				<p class="title">优惠内容描述</p>
+				<textarea cols="50" rows="8" class="one" id="intention_content"></textarea>
+			</li>
+		</ul>
+		<input id="intention_btn_submit" type="bottom" value="提交">
+	</form>				
 </div>
 <!-- 关于我们页面的内容结束 -->
 

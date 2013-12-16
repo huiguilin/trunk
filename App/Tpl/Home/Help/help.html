@@ -7,8 +7,10 @@
 	<div id="seach_box">
 		<img src="__PUBLIC__/images/ico_help.png">
 		<p>请输入您想要询问的<span>关键词</span>，查找相关问题的答案：</p>
-		<input name="help_search" type="text" placeholder='例如输入"优惠劵",查找"优惠劵"相关问题的答案' />
-		<a href="">搜索</a>
+		<form method="get">
+			<input name="help_search" type="text" placeholder='例如输入"优惠劵",查找"优惠劵"相关问题的答案' id="help_search_textbox" />
+			<input name="help_btn_search" id="help_btn_search" type="submit" value="搜索"/>
+		</form>
 	</div>
 	<ul>
 		<li>

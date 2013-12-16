@@ -31,7 +31,7 @@
 				<li id="subscription_li">
 					<a href="#" id="subscription">订阅</a>
 				</li>
-				<li id="share_li"><a id="share" href="" class="one">分享</a></li>
+				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
 				<input type="text" placeholder="输入邮箱,订阅惠桂林信息"/>
@@ -39,9 +39,9 @@
 			</div>
 			<div id="share_box">
 				<ul>
-					<li><a href="" class="weibo">分享到新浪微博</a></li>
-					<li><a href="" class="qzone">分享到QQ空间</a></li>
-					<li><a href="" class="renren">分享到人人网</a></li>
+					<li><a href="http://www.baidu.com" class="weibo">惠桂林新浪微博</a></li>
+					<li><a href="http://www.baidu.com" class="qzone">惠桂林QQ空间</a></li>
+					<li><a href="http://www.baidu.com" class="renren">惠桂林腾讯微博</a></li>
 				</ul>
 			</div>
 		</div>
@@ -125,7 +125,7 @@
 		</ul>
 		<div id="Userreg_box">
 			<div id="u_top">
-				<a href="" id="a_closed2">X</a>
+				<a href="" id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
 				<p>用户注册</p>
 			</div>
 			<div id="u_bottom">
@@ -190,7 +190,7 @@
 		</div>
 		<div id="Userlogin_box">
 			<div id="u_top_box">
-				<a href="" id="a_closed">X</a>
+				<a href="" id="a_closed"><img src="__PUBLIC__/images/login_closed.png"></a>
 				<p>用户登录</p>
 			</div>
 			<div id="u_middle_box">
@@ -254,9 +254,9 @@
 			<span>全部分类</span>
 		</div>
 		<ul id="nav">
-			<li style="background:#DA4453"><a href="<?php echo U("Index/index");?>">首页</a></li>
+			<li><a href="<?php echo U("Index/index");?>">首页</a></li>
 			<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-			<li><a href="<?php echo U("Card/card");?>">会员卡</a></li>
+			<li style="background:#DA4453"><a href="<?php echo U("Card/card");?>">会员卡</a></li>
 			<li class="border_right "><a href="">商户</a></li>
 		</ul>
 		<form action="" id="search_box">

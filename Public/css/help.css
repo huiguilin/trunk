@@ -37,7 +37,7 @@
 	font-size: 14px;
 	
 }
-#main #left_card #seach_box input{
+#main #left_card #seach_box form #help_search_textbox{
 	border: 1px solid #C9C9C9;
 	border-radius: 5px;
 	width: 350px;
@@ -46,7 +46,7 @@
 	top: 62px;
 	left: 150px;
 }
-#main #left_card #seach_box a{
+#main #left_card #seach_box form #help_btn_search{
 	font-weight: bold;
 	font-size: 15px;
 	color: white;
@@ -59,8 +59,9 @@
 	position: absolute;
 	top: 62px;
 	left: 520px;
+	cursor: pointer;
 }
-#main #left_card #seach_box a:hover{
+#main #left_card #seach_box form #help_btn_search:hover{
 	background: #DA4453;
 }
 #main #left_card ul{

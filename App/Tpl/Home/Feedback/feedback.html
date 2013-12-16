@@ -5,24 +5,25 @@
 <div id="left_card">
 	<p class="one">意见反馈</p>
 	<p class="two">您的意见很重要，我们一直在聆听</p>
-	<ul>
-		<li>
-			<p>你的称呼:</p>
-			<input type="text" name="username" class="one" />
-		</li>
-		<li class="one">
-			<p>联系方式:</p>
-			<input type="text" name="communication_way" class="one" />
-			<p class="tip">请留下您的Email 或 QQ 号，方便我们回复</p>
-		</li>
-		<li class="two">
-			<p>内容:</p>
-			<textarea rows="7" cols="50">
-				
-			</textarea>
-		</li>
-	</ul>
-	<a href="">提交</a>		
+	<p class="three">谢谢您的支持，您的建议反馈我们会认真讨论和借鉴，我们会不断的把惠桂林做得更好!</p>
+	<form id="online_submit_form">
+		<ul>
+			<li>
+				<p>你的称呼:</p>
+				<input type="text" name="username" class="one" id="online_submit_username" placeholder="请留下您的称呼" />
+			</li>
+			<li class="one">
+				<p>联系方式:</p>
+				<input type="text" name="communication_way" class="one" id="online_submit_cellphone" placeholder="请留下您的联系方式"/>
+				<p class="tip">请留下您的Email 或 QQ 号，方便我们回复</p>
+			</li>
+			<li class="two">
+				<p>内容:</p>
+				<textarea rows="7" cols="50" id="online_submit_content" name="content" ></textarea>
+			</li>
+		</ul>
+		<input id="btn_submit" type="button" value="提交">
+	</form>
 </div>
 <!-- 关于我们页面的内容结束 -->
 </div>

@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/about_tpl.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
 <title>会员卡</title>
 <!--[if IE 6]>
@@ -277,298 +278,34 @@
 		
 		<!-- 左边内容区域结束 -->
 		
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/sitemap.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/feedback.css" />
 <!-- 关于我们页面的内容 -->
 <div id="left_card">
-	<p class="one">网站地图</p>
-	<p class="two">类别</p>
-	<div id="food_box">
-		<p>美食:</p>
+	<p class="one">意见反馈</p>
+	<p class="two">您的意见很重要，我们一直在聆听</p>
+	<p class="three">谢谢您的支持，您的建议反馈我们会认真讨论和借鉴，我们会不断的把惠桂林做得更好!</p>
+	<form id="online_submit_form">
 		<ul>
-			<li><a href="">美食</a></li>
-			<li><a href="">美容SPA</a></li>
-			<li><a href="">聚会火锅</a></li>
-			<li><a href="">教育培训</a></li>
-			<li><a href="">体检</a></li>
-			<li><a href="">烤鸭</a></li>
-			<li><a href="">云南菜</a></li>
-			<li><a href="">四川火锅</a></li>
-			<li><a href="">韩国料理</a></li>
-			<li><a href="">日本料理</a></li>
-			<li><a href="">东北菜</a></li>
-			<li><a href="">烤鱼</a></li>
-			<li><a href="">四川火锅</a></li>
-			<li><a href="">韩国料理</a></li>
-			<li><a href="">美食</a></li>
-			<li><a href="">美容SPA</a></li>		
-			<li><a href="">烤鸭</a></li>
-			<li><a href="">云南菜</a></li>
-			<li><a href="">四川火锅</a></li>
-			<li><a href="">韩国料理</a></li>
-			<li><a href="">日本料理</a></li>
-			<li><a href="">东北菜</a></li>
-			<li><a href="">烤鱼</a></li>
-			<li><a href="">聚会火锅</a></li>
-			<li><a href="">教育培训</a></li>
-			<li><a href="">体检</a></li>
-			<li><a href="">日本料理</a></li>
-			<li><a href="">东北菜</a></li>
-			<li><a href="">烤鱼</a></li>
-			<li><a href="">聚会火锅</a></li>
-			<li><a href="">教育培训</a></li>
+			<li>
+				<p>你的称呼:</p>
+				<input type="text" name="username" class="one" id="online_submit_username" placeholder="请留下您的称呼" />
+			</li>
+			<li class="one">
+				<p>联系方式:</p>
+				<input type="text" name="communication_way" class="one" id="online_submit_cellphone" placeholder="请留下您的联系方式"/>
+				<p class="tip">请留下您的Email 或 QQ 号，方便我们回复</p>
+			</li>
+			<li class="two">
+				<p>内容:</p>
+				<textarea rows="7" cols="50" id="online_submit_content" name="content" ></textarea>
+			</li>
 		</ul>
-	</div>
-	<div id="entertainment_box">
-		<p>休闲娱乐:</p>
-		<ul>
-			<li><a href="">美食</a></li>
-			<li><a href="">美容SPA</a></li>
-			<li><a href="">聚会火锅</a></li>
-			<li><a href="">教育培训</a></li>
-			<li><a href="">体检</a></li>
-			<li><a href="">烤鸭</a></li>
-			<li><a href="">云南菜</a></li>
-			<li><a href="">四川火锅</a></li>
-			<li><a href="">韩国料理</a></li>
-			<li><a href="">日本料理</a></li>
-			<li><a href="">东北菜</a></li>
-			<li><a href="">烤鱼</a></li>
-			<li><a href="">四川火锅</a></li>
-			<li><a href="">韩国料理</a></li>
-			<li><a href="">美食</a></li>
-			<li><a href="">美容SPA</a></li>		
-			<li><a href="">烤鸭</a></li>
-			<li><a href="">云南菜</a></li>
-			<li><a href="">四川火锅</a></li>
-			<li><a href="">韩国料理</a></li>
-			<li><a href="">日本料理</a></li>
-			<li><a href="">东北菜</a></li>
-			<li><a href="">烤鱼</a></li>
-			<li><a href="">聚会火锅</a></li>
-			<li><a href="">教育培训</a></li>
-			<li><a href="">体检</a></li>
-			<li><a href="">日本料理</a></li>
-			<li><a href="">东北菜</a></li>
-			<li><a href="">烤鱼</a></li>
-			<li><a href="">聚会火锅</a></li>
-			<li><a href="">教育培训</a></li>
-		</ul>
-	</div>
-	<div id="life_box">
-		<p>生活便民:</p>
-		<ul>
-			<li><a href="">美食</a></li>
-			<li><a href="">美容SPA</a></li>
-			<li><a href="">聚会火锅</a></li>
-			<li><a href="">教育培训</a></li>
-			<li><a href="">体检</a></li>
-			<li><a href="">烤鸭</a></li>
-			<li><a href="">云南菜</a></li>
-			<li><a href="">四川火锅</a></li>
-			<li><a href="">韩国料理</a></li>
-			<li><a href="">日本料理</a></li>
-			<li><a href="">东北菜</a></li>
-			<li><a href="">烤鱼</a></li>
-			<li><a href="">四川火锅</a></li>
-			<li><a href="">韩国料理</a></li>
-			<li><a href="">美食</a></li>
-			<li><a href="">美容SPA</a></li>		
-			<li><a href="">烤鸭</a></li>
-			<li><a href="">云南菜</a></li>
-			<li><a href="">四川火锅</a></li>
-			<li><a href="">韩国料理</a></li>
-			<li><a href="">日本料理</a></li>
-			<li><a href="">东北菜</a></li>
-			<li><a href="">烤鱼</a></li>
-			<li><a href="">聚会火锅</a></li>
-			<li><a href="">教育培训</a></li>
-			<li><a href="">体检</a></li>
-			<li><a href="">日本料理</a></li>
-			<li><a href="">东北菜</a></li>
-			<li><a href="">烤鱼</a></li>
-			<li><a href="">聚会火锅</a></li>
-			<li><a href="">教育培训</a></li>
-		</ul>
-	</div>
-	<div id="hotel_box">
-		<p>旅游酒店:</p>
-		<ul>
-			<li><a href="">景点门票</a></li>
-			<li><a href="">酒店</a></li>
-			<li><a href="">租车服务</a></li>
-		</ul>
-	</div>
-	<div id="discount_box">
-		<p>打折信息:</p>
-		<ul>
-			<li><a href="">景点门票</a></li>
-			<li><a href="">酒店</a></li>
-			<li><a href="">租车服务</a></li>
-		</ul>
-	</div>
-	<p class="three">区域</p>
-	<div id="xiufeng_box">
-		<p>秀峰区:</p>
-		<ul>
-			<li><a href="">景点门票</a></li>
-			<li><a href="">酒店</a></li>
-			<li><a href="">租车服务</a></li>
-		</ul>
-	</div>
-	<div id="xiangshan_box">
-		<p>象山区:</p>
-		<ul>
-			<li><a href="">景点门票</a></li>
-			<li><a href="">酒店</a></li>
-			<li><a href="">租车服务</a></li>
-		</ul>
-	</div>
-	<div id="diecai_box">
-		<p>叠彩区:</p>
-		<ul>
-			<li><a href="">景点门票</a></li>
-			<li><a href="">酒店</a></li>
-			<li><a href="">租车服务</a></li>
-		</ul>
-	</div>
-	<div id="yanshan_box">
-		<p>雁山区:</p>
-		<ul>
-			<li><a href="">景点门票</a></li>
-			<li><a href="">酒店</a></li>
-			<li><a href="">租车服务</a></li>
-		</ul>
-	</div>
-	<div id="qixing_box">
-		<p>七星区:</p>
-		<ul>
-			<li><a href="">景点门票</a></li>
-			<li><a href="">酒店</a></li>
-			<li><a href="">租车服务</a></li>
-		</ul>
-	</div>
+		<input id="btn_submit" type="button" value="提交">
+	</form>
 </div>
 <!-- 关于我们页面的内容结束 -->
+</div>
 
-		<!-- 右边内容区域 -->
-		<div id="main_right">
-			<div id="app">
-				<p>扫一下,关注惠桂林微信</p>
-				<img src="__PUBLIC__/images/barcode.png" alt="二维码">
-				<a>点击下载手机APP</a>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">人气王</p>
-				<ul>
-					<li>
-						<a href="" class="title">李记米粉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li>
-						<a href="" class="title">刘姥姥奶酪</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title">大时代烤肉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-				</ul>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">人气王</p>
-				<ul>
-					<li>
-						<a href="" class="title">李记米粉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li>
-						<a href="" class="title">刘姥姥奶酪</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title">大时代烤肉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-				</ul>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">热门优惠劵</p>
-				<ul>
-					<li>
-						<a href="" class="title">李记米粉</a>
-						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
-					</li>
-					<li>
-						<a href="" class="title">刘姥姥奶酪</a>
-						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title">大时代烤肉</a>
-						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
-					</li>
-				</ul>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">热门会员卡</p>
-				<ul>
-					<li>
-						<a href="" class="title title2">李记米粉</a>
-						<p class="six">会员专享8.8折</p>
-						<div>
-							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-						</div>
-					</li>
-					<li>
-						<a href="" class="title title3">刘姥姥奶酪</a>
-						<p class="seven">会员专享8.8折</p>
-						<div class="blue">
-							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-						</div>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title title2">大时代烤肉</a>
-						<p class="six">会员专享8.8折</p>
-						<div class="purple">
-							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<!-- 右边内容区域结束 -->
-	</div>
-	<!-- 主要内容区域结束 -->
-<!-- 内容区域结束 -->
 <!-- 最底部区域 -->
 	<div id="bottom_info">
 		<div id="bottom_box">
@@ -590,5 +327,3 @@
 		</div>
 </div>
 <!-- 最底部区域结束 -->
-</body>
-</html>

@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
@@ -31,7 +31,7 @@
 				<li id="subscription_li">
 					<a href="#" id="subscription">订阅</a>
 				</li>
-				<li id="share_li"><a id="share" href="" class="one">分享</a></li>
+				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
 				<input type="text" placeholder="输入邮箱,订阅惠桂林信息"/>
@@ -39,9 +39,9 @@
 			</div>
 			<div id="share_box">
 				<ul>
-					<li><a href="" class="weibo">分享到新浪微博</a></li>
-					<li><a href="" class="qzone">分享到QQ空间</a></li>
-					<li><a href="" class="renren">分享到人人网</a></li>
+					<li><a href="http://www.baidu.com" class="weibo">惠桂林新浪微博</a></li>
+					<li><a href="http://www.baidu.com" class="qzone">惠桂林QQ空间</a></li>
+					<li><a href="http://www.baidu.com" class="renren">惠桂林腾讯微博</a></li>
 				</ul>
 			</div>
 		</div>
@@ -125,7 +125,7 @@
 		</ul>
 		<div id="Userreg_box">
 			<div id="u_top">
-				<a href="" id="a_closed2">X</a>
+				<a href="" id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
 				<p>用户注册</p>
 			</div>
 			<div id="u_bottom">
@@ -190,7 +190,7 @@
 		</div>
 		<div id="Userlogin_box">
 			<div id="u_top_box">
-				<a href="" id="a_closed">X</a>
+				<a href="" id="a_closed"><img src="__PUBLIC__/images/login_closed.png"></a>
 				<p>用户登录</p>
 			</div>
 			<div id="u_middle_box">
@@ -247,22 +247,24 @@
 <!-- Logo区域结束 -->
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!--  导航区域 -->
+	<!--  导航区域 -->
 	<div id="top_nav_box">
 		<div id="left_collection">
 			<img class="left_img" src="__PUBLIC__/images/ico_02.png" alt="" />
 			<span>全部分类</span>
 		</div>
 		<ul id="nav">
-			<li class="one"><a href="">首页</a></li>
-			<li><a href="<?php echo U("Coupon/coupon");?>" class="one">优惠券</a></li>
-			<li><a href="<?php echo U("Card/card");?>" class="one">会员卡</a></li>
-			<li class="four"><a href="" class="one">商户</a></li>
+			<li style="background:#DA4453"><a href="<?php echo U("Index/index");?>">首页</a></li>
+			<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+			<li><a href="<?php echo U("Card/card");?>">会员卡</a></li>
+			<li class="border_right "><a href="">商户</a></li>
 		</ul>
 		<form action="" id="search_box">
 			<input id="search_con" type="text" value="桂林环球美食节" />
 			<input id="search_btn" type="button"/>
 		</form>
 	</div>
+<!-- 导航区域结束-->
 <!-- 导航区域结束-->
 <!-- 内容区域 -->
 	<div id="main">

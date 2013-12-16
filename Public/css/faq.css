@@ -86,7 +86,7 @@
 	font-size: 14px;
 	font-weight: bold;
 }
-#main #faq01_box #left_nav_box div input{
+#main #faq01_box #left_nav_box div form #faq01_search_textbox{
 	border: 1px solid #C9C9C9;
 	border-radius: 5px;
 	width: 180px;
@@ -96,7 +96,103 @@
 	left: 8px;
 	
 }
-#main #faq01_box #left_nav_box div a{
+#main #faq01_box #left_nav_box div form #faq01_btn_search{
+	color: white;
+	position: absolute;
+	top: 90px;
+	left: 10px;
+	display: block;
+	height: 33px;
+	width: 60px;
+	line-height: 33px;
+	text-align: center;
+	background: #ED5565;
+	border-radius:5px;
+	font-weight: bold;
+}
+#main #faq01_box #left_nav_box div form #faq02_search_textbox{
+	border: 1px solid #C9C9C9;
+	border-radius: 5px;
+	width: 180px;
+	height: 33px;
+	position: absolute;
+	top: 40px;
+	left: 8px;
+	
+}
+#main #faq01_box #left_nav_box div form #faq02_btn_search{
+	color: white;
+	position: absolute;
+	top: 90px;
+	left: 10px;
+	display: block;
+	height: 33px;
+	width: 60px;
+	line-height: 33px;
+	text-align: center;
+	background: #ED5565;
+	border-radius:5px;
+	font-weight: bold;
+}
+#main #faq01_box #left_nav_box div form #faq03_search_textbox{
+	border: 1px solid #C9C9C9;
+	border-radius: 5px;
+	width: 180px;
+	height: 33px;
+	position: absolute;
+	top: 40px;
+	left: 8px;
+	
+}
+#main #faq01_box #left_nav_box div form #faq03_btn_search{
+	color: white;
+	position: absolute;
+	top: 90px;
+	left: 10px;
+	display: block;
+	height: 33px;
+	width: 60px;
+	line-height: 33px;
+	text-align: center;
+	background: #ED5565;
+	border-radius:5px;
+	font-weight: bold;
+}
+#main #faq01_box #left_nav_box div form #faq04_search_textbox{
+	border: 1px solid #C9C9C9;
+	border-radius: 5px;
+	width: 180px;
+	height: 33px;
+	position: absolute;
+	top: 40px;
+	left: 8px;
+	
+}
+#main #faq01_box #left_nav_box div form #faq04_btn_search{
+	color: white;
+	position: absolute;
+	top: 90px;
+	left: 10px;
+	display: block;
+	height: 33px;
+	width: 60px;
+	line-height: 33px;
+	text-align: center;
+	background: #ED5565;
+	border-radius:5px;
+	font-weight: bold;
+}
+#main #faq01_box #left_nav_box div form #faq05_search_textbox{
+	border: 1px solid #C9C9C9;
+	border-radius: 5px;
+	width: 180px;
+	height: 33px;
+	position: absolute;
+	top: 40px;
+	left: 8px;
+	
+}
+#main #faq01_box #left_nav_box div form #faq05_btn_search{
 	color: white;
 	position: absolute;
 	top: 90px;

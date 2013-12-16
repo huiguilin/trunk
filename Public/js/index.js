@@ -16,7 +16,6 @@ $(function(){
 	 },function(){
 	 	timer = setInterval(autoRun,5000);//恢复定时器
 	 })
-
 	 function change(num){//用来控制切换图片和下标样式的函数
 	 	$('#main #main_middle #ad img').hide();//先把所有的图片隐藏
 	 	$('#main #main_middle #ad img').eq(num).fadeIn(200);//让对应的图片显示出来
@@ -24,8 +23,118 @@ $(function(){
 	 	$('#main #main_middle #ad ul li').eq(num).addClass('hover');//给对应的li加上hover样式
 	 }
 	//图片轮换板特效结束
+	//优惠劵页面地点选择器特效
+	$('#classcification #location li a').click(function(event) {
+		$('#classcification #location li a').removeClass();
+		$(this).addClass('one');
+		return false;
+	});
+	//优惠劵页面地点选择器特效结束
+	//优惠劵页面类型选择器特效
+	$('#classcification #type li a').click(function(event) {
+		$('#classcification #type li a').removeClass();
+		$(this).addClass('one');
+		return false;
+	});
+	//优惠劵页面类型选择器特效结束
+	//优惠劵页面排序选择器特效
+	$('#sort ul li a').click(function(event) {
+		$('#sort ul li a').removeClass();
+		$(this).addClass('one');
+		return false;
+	});
+	//优惠劵页面排序选择器特效结束
+	//在线提交表单验证
+	$('#main #left_card form #btn_submit').click(function(event) {
+	
+		var username=$('#online_submit_username').val();
+		var cellphone=$('#online_submit_cellphone').val();
+		var content=$.trim($('#online_submit_content').val());
+		if(username == ""){
+			alert("请留下您的称呼!");
+		}
+		else{
+			if(cellphone==""){
+				alert('请留下您的联系方式！');
 
+			}
+			else{
+				if(content==""){
+					alert('请留下您的意见！');
+				}
+				else{
+					$.ajax({
+						url: '/path/to/file',
+						type: 'GET',
+						dataType: 'html',
+						data: {feedback_username: username,feedback_cellphone: cellphone,feedback_content:content},
+					})
+					.done(function() {
+						console.log("success");
+					})
+					.fail(function() {
+						console.log("error");
+					})
+					.always(function() {
+						console.log("complete");
+					});
+					$('#main #left_card p.three').css('display', 'block');
+					$('#online_submit_form').addClass('one');
+					$('#main #left_card form ul li input').val("");
+					$('#main #left_card form ul li textarea').val("");
+				}
+			}
+		}
+	});
+	//商务合作意向表单验证
+	$('#intention_btn_submit').click(function(event) {
+		var intention_username =$('#intention_username').val();
+		var intention_cellphone =$('#intention_cellphone').val();
+		var intention_business =$('#intention_business').val();
+		var intention_content =$('#intention_content').val();
+		if(intention_username ==""){
+			alert('请留下您的姓名!');
+		}else{
+			if(intention_cellphone == ""){
+				alert('请留下您的联系方式!');
+			}else{
+				if(intention_business ==""){
+					alert('请留下您公司名称');
+				}else{
+					if(intention_content ==""){
+						alert('请留下您的相关内容');
+					}
+					else{
+						$.ajax({
+							url: '/path/to/file',
+							type: 'POST',
+							dataType: 'html',
+							data: {intention_username: intention_username,intention_cellphone: intention_cellphone,intention_business:intention_business,intention_content:intention_content},
+						})
+						.done(function() {
+							console.log("success");
+						})
+						.fail(function() {
+							console.log("error");
+						})
+						.always(function() {
+							console.log("complete");
+						});
+						
 
+						$('#main #left_card p.three').css('display', 'block');
+						$('#intention_sumbit_form').addClass('one');
+						$('#main #left_card form ul li input').val("");
+						$('#main #left_card form ul li textarea').val("");
+					}
+				}
+			}
+		}
+		
+	});
+	//商务合作意向表单验证结束
+	
+	//在线提交表单验证结束
 	//惠字头小分队特效
 	var autobus_timer=setInterval(autobus,1000);
 	var i = 0;
@@ -52,8 +161,10 @@ $(function(){
 
 	//小编推荐内容特效
 	$('#main #main_middle #tj_content ul li').hover(function() {
-		$(this).find('p').css('color', '#4FC1E9');
-		$(this).find('p').css('text-decoration', 'underline');
+		$(this).find('p').css({
+			'color': '#4FC1E9',
+			'text-decoration': 'underline'
+		});
 		$(this).find('a').css('color', '#4FC1E9');
 		$(this).find('div').addClass('display')
 		$(this).addClass('hide')
@@ -603,4 +714,5 @@ $(function(){
 	});
 
 	//关注Hover特效结束
+
 })

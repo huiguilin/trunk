@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/about.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
 <title>会员卡</title>
@@ -15,62 +16,64 @@
 <script type="text/javascript">
    EvPNG.fix('div, ul, img, li, input');  //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
 </script>
-
 <![endif]-->
+
 <script>
-	$(function(){
-		$('#input1').click(function(event) {
+$().ready(function() {
+ 	$("#signupForm").validate({
+ 		 rules: {
+ 		 	firstname: "required",
+ 		 	email: {
+    			required: true,
+    			email: true
+   			},
 
-			$('#div1').bPopup({
-	            modalClose: false,
-	            opacity: 0.6,
-	            positionStyle: 'fixed' //'fixed' or 'absolute'
-        	});
-		});
 
-		$('#input2').click(function(event) {
+ 		 },
+ 		 messages: {
 
-			$('#div2').bPopup({
-	            modalClose: false,
-	            opacity: 0.6,
-	            positionStyle: 'fixed' //'fixed' or 'absolute'
-        	});
-        	
-       
-		});
-		$('#input3').click(function(event) {
-			$('#div1').bPopup({
-				loadUrl:
-	            modalClose: false,
-	            opacity: 0.6,
-	            positionStyle: 'fixed' //'fixed' or 'absolute'
-        	});
-		});
-	});
+ 		 	firstname: "请输入姓名",
+ 		 }
+
+
+ 	});
+});
 </script>
 <style type="text/css">
-	.demo{
-		background: red;
-		width: 300px;
-		height: 300px;
-		display: none;
-	}
-	.demo2{
-		background: green;
-		width: 400px;
-		height: 500px;
-		display: none;
-	}
+input{
+	border:1px solid black;
+}
+input.error{
+	border:1px solid red;
+}
+label.error{
+	background: red;
+	border:1px solid black;
+  margin-left: 20px;
+}
 </style>
 </head>
 <body>
-<input name="demo" type="submit" id="input1"/>
-<div class="demo" id="div1">
-	
-	<input name="demo" type="submit" id="input2"/>
-</div>
-<div class="demo2" id="div2">
-	<input name="demo" type="submit" id="input3"/>
-</div>
+<form id="signupForm" method="get" action="">
+    <p>
+        <label for="firstname">Firstname</label>
+        <input id="firstname" name="firstname" />
+    </p>
+ <p>
+  <label for="email">E-Mail</label>
+  <input id="email" name="email"/>
+ </p>
+ <p>
+  <label for="password">Password</label>
+  <input id="password" name="password" type="password" />
+ </p>
+ <p>
+  <label for="confirm_password">确认密码</label>
+  <input id="confirm_password" name="confirm_password" type="password" />
+ </p>
+    <p>
+        <input class="submit" type="submit" value="Submit"/>
+    </p>
+</form>
 </body>
 </html>

@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/about_tpl.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
 <title>会员卡</title>
 <!--[if IE 6]>
@@ -32,7 +33,7 @@
 				<li id="subscription_li">
 					<a href="#" id="subscription">订阅</a>
 				</li>
-				<li id="share_li"><a id="share" href="" class="one">分享</a></li>
+				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
 				<input type="text" placeholder="输入邮箱,订阅惠桂林信息"/>
@@ -40,9 +41,9 @@
 			</div>
 			<div id="share_box">
 				<ul>
-					<li><a href="" class="weibo">分享到新浪微博</a></li>
-					<li><a href="" class="qzone">分享到QQ空间</a></li>
-					<li><a href="" class="renren">分享到人人网</a></li>
+					<li><a href="http://www.baidu.com" class="weibo">惠桂林新浪微博</a></li>
+					<li><a href="http://www.baidu.com" class="qzone">惠桂林QQ空间</a></li>
+					<li><a href="http://www.baidu.com" class="renren">惠桂林腾讯微博</a></li>
 				</ul>
 			</div>
 		</div>
@@ -126,7 +127,7 @@
 		</ul>
 		<div id="Userreg_box">
 			<div id="u_top">
-				<a href="" id="a_closed2">X</a>
+				<a href="" id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
 				<p>用户注册</p>
 			</div>
 			<div id="u_bottom">
@@ -191,7 +192,7 @@
 		</div>
 		<div id="Userlogin_box">
 			<div id="u_top_box">
-				<a href="" id="a_closed">X</a>
+				<a href="" id="a_closed"><img src="__PUBLIC__/images/login_closed.png"></a>
 				<p>用户登录</p>
 			</div>
 			<div id="u_middle_box">
@@ -291,8 +292,10 @@
 		</ul>
 		<div>
 			<p>问题搜索</p>
-			<input type="text" placeholder="请输入问题关键字"/>
-			<a href="">搜索</a>
+			<form>
+				<input type="text" placeholder="请输入问题关键字" id="faq02_search_textbox" name="faq02_search_textbox"/>
+				<input name="faq02_btn_search" id="faq02_btn_search" type="submit" value="搜索"/>
+			</form>
 		</div>
 	</div>
 	<div id="right_content_box">
