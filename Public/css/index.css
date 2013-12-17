@@ -136,11 +136,7 @@
 	background: url(../images/nav.png) repeat-x;
 	background: #ED5565;
 	position: relative;
-	
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	behavior: url(Layouts/js/border-radius.htc);
 }
 #top_nav_box #left_collection{
 	position: absolute;
@@ -201,16 +197,11 @@
 #top_nav_box #search_box{
 	width: 236px;
 	height: 32px;
-	/*border-radius: 5px;*/
+	border-radius: 5px;
 	position: absolute;
 	top: 9px;
 	right: 20px;
-	background:url(../images/bg_search.png);
-	
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	behavior: url(Layouts/js/border-radius.htc);
+
 
 }
 #top_nav_box #search_box input{
@@ -350,7 +341,7 @@
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	behavior: url(Layouts/js/border-radius.htc);
+	behavior: url(http://localhost/Trunk/Public/js/border-radius.htc);
 	
 }
 #main #main_right #app p{
@@ -381,7 +372,7 @@
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	behavior: url(Layouts/js/border-radius.htc);
+	behavior: url(http://localhost/Trunk/Public/js/border-radius.htc);
 }
 #main #main_right #app a:hover{
 	font-weight: bold;

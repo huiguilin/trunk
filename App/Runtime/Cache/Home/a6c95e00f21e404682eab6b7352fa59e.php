@@ -34,7 +34,7 @@
 				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
-				<input type="text" placeholder="输入邮箱,订阅惠桂林信息"/>
+				<input type="text" placeholder="输入邮箱,订阅惠桂林信息" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
 				<a href="">订阅</a>
 			</div>
 			<div id="share_box">
@@ -55,15 +55,15 @@
 		<p class="version_comment_title">版本说明:</p>
 		<p class="version_comment_content">该版本支持ios5.0、Android 2.1、WindowsPhone8及以上系统.</p>
 		<div id="app_closed_box">
-			<a class="app_closed" href=""><img src="__PUBLIC__/images/app_closed.png"></a>
+			<a class="app_closed" href=""><img src="__PUBLIC__/images/login_closed.png"></a>
 		</div>
 		<div id="apppics_box">
 			<img id="phone_pic01" src="__PUBLIC__/images/pic/phone_pic01.png">
 			<img id="phone_pic02" src="__PUBLIC__/images/pic/phone_pic02.png">
 		</div>
 		<div id="appbtn_box">	
-			<a class="imgbtn_01" href="javascript:void(0)"><img src="__PUBLIC__/images/ico_19.png"></a>
-			<a class="imgbtn_02" href="javascript:void(0)"><img src="__PUBLIC__/images/ico_19.png"></a>
+			<a class="imgbtn_01" href="javascript:void(0)"><img src="__PUBLIC__/images/ico_19.jpg"></a>
+			<a class="imgbtn_02" href="javascript:void(0)"><img src="__PUBLIC__/images/ico_19.jpg"></a>
 		</div>
 		<div id="iphone_box">
 			<img src="__PUBLIC__/images/ico_15.png">
@@ -259,9 +259,9 @@
 			<li><a href="<?php echo U("Card/card");?>">会员卡</a></li>
 			<li class="border_right "><a href="">商户</a></li>
 		</ul>
-		<form action="" id="search_box">
-			<input id="search_con" type="text" value="桂林环球美食节" />
-			<input id="search_btn" type="button"/>
+		<form action="" id="search_box" method="get">
+			<input id="search_con" type="text" placeholder="桂林环球美食节" name="search_con"/>
+			<input id="search_btn" type="submit" value="" name="search_btn"/>
 		</form>
 	</div>
 <!-- 导航区域结束-->

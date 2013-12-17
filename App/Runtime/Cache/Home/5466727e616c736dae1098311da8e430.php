@@ -1,25 +1,24 @@
-<?php if (!defined('THINK_PATH')) exit();?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/about_tpl.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
-<title>会员卡</title>
+
 <!--[if IE 6]>
 <!--背景图片透明方法-->
-<script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
+<script src="/js/iepng.js" type="text/javascript"></script>
 <!--插入图片透明方法-->
 <script type="text/javascript">
    EvPNG.fix('div, ul, img, li, input');  //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
 </script>
 <![endif]-->
+<title>惠桂林首页</title>
 </head>
 <body>
 <!-- 顶部订阅分享区域+Logo区域 -->
@@ -271,58 +270,85 @@
 <!-- 导航区域结束-->
 <!-- 导航区域结束-->
 <!-- 内容区域 -->
-	 	
-	
-	<!-- 主要内容区域 -->
 	<div id="main">
-		
 		<!-- 左边内容区域 -->
-		
+		<div id="main_left">
+			<ul id="nav_content">
+				<li><a href="">美食</a></li>
+				<li class="two"><a href="">休闲娱乐</a></li>
+				<li class="three"><a href="">生活便民</a></li>
+				<li class="four"><a href="">旅游酒店</a></li>
+				<li class="five"><a href="">打折信息</a></li>
+			</ul>
+			<p>小道消息</p>
+            <ul id="msg_content">
+            <?php if(is_array($news)): foreach($news as $key=>$n): ?><li><a href="" class="one"><?php echo ($n['words']); ?></a></li><?php endforeach; endif; ?>
+			</ul>
+		</div>
 		<!-- 左边内容区域结束 -->
-		
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/help.css" />
-<!-- 关于我们页面的内容 -->
-<div id="left_card">
-	<p class="one">网站帮助</p>
-	<div id="seach_box">
-		<img src="__PUBLIC__/images/ico_help.png">
-		<p>请输入您想要询问的<span>关键词</span>，查找相关问题的答案：</p>
-		<form method="get">
-			<input name="help_search" type="text" placeholder='例如输入"优惠劵",查找"优惠劵"相关问题的答案' id="help_search_textbox" />
-			<input name="help_btn_search" id="help_btn_search" type="submit" value="搜索"/>
-		</form>
-	</div>
-	<ul>
-		<li>
-			<img src="__PUBLIC__/images/help_ico01.png">
-			<a href="<?php echo U("Help/faq01");?>" class="one">优惠劵</a>
-			<p class='three'>包括如何获取优惠券、优惠段的使用。</p>
-		</li>
-		<li>
-			<img src="__PUBLIC__/images/help_ico02.png">
-			<a href="<?php echo U("Help/faq02");?>" class="one">会员卡/礼品</a>
-			<p class='three'>包括电子会员卡的申请，使用以及原实体会员卡积分，礼品券兑换等问题。</p>
-		</li>
-		<li>
-			<img src="__PUBLIC__/images/help_ico03.png">
-			<a href="<?php echo U("Help/faq03");?>" class="one">商户/点评</a>
-			<p class='three'>包括商户收录标准，商户打分和星级是怎么来的？默认点评是什么？哪些是不符合规定的点评？</p>
-		</li>
-		<li>
-			<img src="__PUBLIC__/images/help_ico02.png">
-			<a href="<?php echo U("Help/faq04");?>" class="one">手机</a>
-			<p class='three'>包括如何用手机客户端找到商户、抢获优惠券、迁到等等各种问题。</p>
-		</li>
-		<li>
-			<img src="__PUBLIC__/images/help_ico04.png">
-			<a href="<?php echo U("Help/faq05");?>" class="one">订阅/关注</a>
-			<p class='three'>包括怎样订阅惠桂林优惠信息，会员卡信息，商户促销信息等问题。</p>
-		</li>		
-	</ul>
-				
-</div>
-<!-- 关于我们页面的内容结束 -->
+		<!-- 中间内容区域 -->
+		<div id="main_middle">
+			<div id="ad">
+                <?php if(is_array($ads)): foreach($ads as $key=>$a): ?><img src="__PUBLIC__/<?php echo ($a['img_path']); ?>" /><?php endforeach; endif; ?>
+                <ul>
+                <?php if(is_array($ads)): foreach($ads as $i=>$a): if($i == 0): ?><li class="hover">1</li>
+                <?php else: ?>
+                <li><?php echo ($i+1); ?></li><?php endif; endforeach; endif; ?>
+				</ul>	
+			</div>
+			<p class="one">惠字头吃货小分队</p>
+			<div id="map">
+				<img class="bg_bus" src="__PUBLIC__/images/bg_bus.png">
+				<img class="bus" src="__PUBLIC__/images/bus.png">
+				<div id="map_imgs">
+					<img class="light01" src="__PUBLIC__/images/ico_09.png">
+					<img class="light02" src="__PUBLIC__/images/ico_09.png">
+					<img class="light03" src="__PUBLIC__/images/ico_09.png">
+					<img class="light04" src="__PUBLIC__/images/ico_09.png">
+					<img class="light05" src="__PUBLIC__/images/ico_09.png">
+					<img class="light06" src="__PUBLIC__/images/ico_09.png">
+					<img class="light07" src="__PUBLIC__/images/ico_09.png">
+					<img class="light08" src="__PUBLIC__/images/ico_09.png">
+					<img class="light09" src="__PUBLIC__/images/ico_09.png">
+				</div>	
+				<p class="map_102">102路</p>
+				<p class="map_title">线路介绍</p>
+                <p class="map_comment">春记烧鹅独家签约，会员卡免费办理，即刻享受9折优惠，机会难得!</p>
+                <?php if(is_array($partners)): foreach($partners as $key=>$p): ?><a class="one" href=""><?php echo ($p['name']); ?></a><?php endforeach; endif; ?>
+			</div>
 
+			<div id="tj_content">
+				<p class="two">惠字头小编推荐</p>
+                <ul>
+                <?php if(is_array($recommends)): foreach($recommends as $key=>$r): ?><li>
+                <img src="__PUBLIC__/<?php echo ($r['picture_path']); ?>">
+                <div>
+                <img src="__PUBLIC__/images/ico_10.png">
+                <span><?php echo ($r['tag']); ?></span>
+                </div>
+                <a><?php echo ($r['name']); ?></a>
+                <img class="ico" src="__PUBLIC__/images/ico_08.png">
+                <p class="three">推荐理由:</p>
+                <p class="four"><?php echo ($r['description']); ?></p>
+                </li><?php endforeach; endif; ?>
+				</ul>
+			</div>
+			<p class="comment">惠字头号外评论</p>
+			<div id="comment_content">
+            <ul>
+            <?php if(is_array($evaluations)): foreach($evaluations as $key=>$e): ?><li>
+            <p class="bold"><?php echo ($e['nickname']); ?>@</p>
+            <a href="" class="red"><?php echo ($e['name']); ?></a>
+            <p class="env">环境:<?php echo ($e['environment_rate']); ?></p>
+            <p class="taste">口味:<?php echo ($e['taste_rate']); ?></p>
+            <p class="service">服务:<?php echo ($e['server_rate']); ?></p>
+            <p class="time"><?php echo ($e['createtime']); ?></p>
+            <p class="p_bottom"><?php echo ($e['evaluation']); ?></p>
+            </li><?php endforeach; endif; ?>
+				</ul>
+			</div>
+		</div>
+		<!-- 中间内容区域结束 -->
 		<!-- 右边内容区域 -->
 		<div id="main_right">
 			<div id="app">
@@ -332,83 +358,28 @@
 			</div>
 			<div class="hot_box">
 				<p class="rqw">人气王</p>
-				<ul>
-					<li>
-						<a href="" class="title">李记米粉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li>
-						<a href="" class="title">刘姥姥奶酪</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title">大时代烤肉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-				</ul>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">人气王</p>
-				<ul>
-					<li>
-						<a href="" class="title">李记米粉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li>
-						<a href="" class="title">刘姥姥奶酪</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title">大时代烤肉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
+                <ul>
+                <?php if(is_array($hot_partners)): foreach($hot_partners as $key=>$h): ?><li>
+                <a href="" class="title"><?php echo ($h['name']); ?></a>
+                <img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
+                <p class="yhj">优惠劵</p>
+                <p class="hyk">会员卡</p>
+                <p class="one">[8]</p>
+                <p class="two">[2]</p>
+                <p class="vip">VIP</p>
+                </li><?php endforeach; endif; ?>
 				</ul>
 			</div>
 			<div class="hot_box">
 				<p class="rqw">热门优惠劵</p>
-				<ul>
-					<li>
-						<a href="" class="title">李记米粉</a>
-						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
-					</li>
-					<li>
-						<a href="" class="title">刘姥姥奶酪</a>
-						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title">大时代烤肉</a>
-						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
-					</li>
+                <ul>
+                <?php if(is_array($card)): foreach($card as $key=>$ca): ?><li>
+                <a href="" class="title title2"><?php echo ($ca['name']); ?></a>
+                <p class="six"><?php echo ($ca['description']); ?></p>
+                <div>
+                <img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
+                </div>
+                </li><?php endforeach; endif; ?>
 				</ul>
 			</div>
 			<div class="hot_box">
@@ -438,9 +409,8 @@
 				</ul>
 			</div>
 		</div>
-		<!-- 右边内容区域结束 -->
+		<!-- 右边内容区域结束 -->		
 	</div>
-	<!-- 主要内容区域结束 -->
 <!-- 内容区域结束 -->
 <!-- 最底部区域 -->
 	<div id="bottom_info">
@@ -462,6 +432,8 @@
 			</ul>
 		</div>
 </div>
+
 <!-- 最底部区域结束 -->
+
 </body>
 </html>

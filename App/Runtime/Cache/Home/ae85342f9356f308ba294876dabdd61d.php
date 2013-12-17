@@ -38,7 +38,7 @@
 				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
-				<input type="text" placeholder="输入邮箱,订阅惠桂林信息" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
+				<input type="text" placeholder="输入邮箱,订阅惠桂林信息"/>
 				<a href="">订阅</a>
 			</div>
 			<div id="share_box">
@@ -263,7 +263,7 @@
 			<li><a href="<?php echo U("Card/card");?>">会员卡</a></li>
 			<li class="border_right "><a href="">商户</a></li>
 		</ul>
-		<form id="search_box">
+		<form action="" id="search_box" method="get">
 			<input id="search_con" type="text" placeholder="桂林环球美食节" name="search_con"/>
 			<input id="search_btn" type="submit" value="" name="search_btn"/>
 		</form>
@@ -280,168 +280,110 @@
 		
 		<!-- 左边内容区域结束 -->
 		
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/help.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/faq.css" />
 <!-- 关于我们页面的内容 -->
-<div id="left_card">
+<div id="faq01_box">
 	<p class="one">网站帮助</p>
-	<div id="seach_box">
-		<img src="__PUBLIC__/images/ico_help.png">
-		<p>请输入您想要询问的<span>关键词</span>，查找相关问题的答案：</p>
-		<form method="get">
-			<input name="help_search" type="text" placeholder='例如输入"优惠劵",查找"优惠劵"相关问题的答案' id="help_search_textbox" />
-			<input name="help_btn_search" id="help_btn_search" type="submit" value="搜索"/>
-		</form>
+	<div id="left_nav_box">
+		<ul>
+			<li><a href="<?php echo U("Help/faq01");?>">优惠券</a></li>
+			<li><a href="<?php echo U("Help/faq02");?>">会员卡/礼品</a></li>
+			<li><a href="<?php echo U("Help/faq03");?>">商户/点评</a></li>
+			<li><a href="<?php echo U("Help/faq04");?>" class="red">手机</a></li>
+			<li><a href="<?php echo U("Help/faq05");?>">订阅/关注</a></li>
+		</ul>
+		<div>
+			<p>问题搜索</p>
+			<form>
+				<input type="text" placeholder="请输入问题关键字" id="faq04_search_textbox" name="faq04_search_textbox"/>
+				<input name="faq04_btn_search" id="faq04_btn_search" type="submit" value="搜索"/>
+			</form>
+		</div>
 	</div>
-	<ul>
-		<li>
-			<img src="__PUBLIC__/images/help_ico01.png">
-			<a href="<?php echo U("Help/faq01");?>" class="one">优惠劵</a>
-			<p class='three'>包括如何获取优惠券、优惠段的使用。</p>
-		</li>
-		<li>
-			<img src="__PUBLIC__/images/help_ico02.png">
-			<a href="<?php echo U("Help/faq02");?>" class="one">会员卡/礼品</a>
-			<p class='three'>包括电子会员卡的申请，使用以及原实体会员卡积分，礼品券兑换等问题。</p>
-		</li>
-		<li>
-			<img src="__PUBLIC__/images/help_ico03.png">
-			<a href="<?php echo U("Help/faq03");?>" class="one">商户/点评</a>
-			<p class='three'>包括商户收录标准，商户打分和星级是怎么来的？默认点评是什么？哪些是不符合规定的点评？</p>
-		</li>
-		<li>
-			<img src="__PUBLIC__/images/help_ico02.png">
-			<a href="<?php echo U("Help/faq04");?>" class="one">手机</a>
-			<p class='three'>包括如何用手机客户端找到商户、抢获优惠券、迁到等等各种问题。</p>
-		</li>
-		<li>
-			<img src="__PUBLIC__/images/help_ico04.png">
-			<a href="<?php echo U("Help/faq05");?>" class="one">订阅/关注</a>
-			<p class='three'>包括怎样订阅惠桂林优惠信息，会员卡信息，商户促销信息等问题。</p>
-		</li>		
-	</ul>
-				
+	<div id="right_content_box">
+		<div id="directory">
+			<p>优惠券相关的常见问题</p>
+			<ul>
+				<li><a href="#q1">Q1：什么是大众点评团购?</a></li>
+				<li><a href="#q2">Q2：怎么参加团购呢?</a></li>
+				<li><a href="#q3">Q3：团购时，如何支付呢?</a></li>
+				<li><a href="#q4">Q4：办公室电脑不方便支付怎么办?</a></li>
+				<li><a href="#q5">Q5：我已支付成功，为什么订单还显示让我去付款?</a></li>
+				<li><a href="#q6">Q6：团购券序列号短信没收到怎么办?</a></li>
+				<li><a href="#q7">Q7：团购成功了，到商户后具体怎么使用呢?</a></li>
+				<li><a href="#q8">Q8：团购券是否能与其他优惠同享?</a></li>
+				<li><a href="#q9">Q9：我的团购券，可以转让或给其他人使用吗?</a></li>
+				<li><a href="#q10">Q10：团购在什么情况下可以退款?如何办理退款?</a></li>
+				<li><a href="#q11">Q11：退款成功后多长时间可以到帐?</a></li>
+				<li><a href="#q12">Q12：如果商户不让我使用团购券怎么办?</a></li>
+				<li><a href="#q13">Q13：有新的团购产品了，你们会通知我吗?</a></li>
+				<li><a href="#q14">Q14：抵用券的使用规则</a></li>
+				<li><a href="#q15">Q15：如何选座购票?</a></li>
+				<li><a href="#q16">Q16：如何取票？</a></li>
+				<li><a href="#q17">Q17：关于退票</a></li>
+				<li><a href="#q18">Q18：终端机故障</a></li>
+				<li><a href="#q19">Q19：停止售票时间</a></li>
+				<li><a href="#q20">Q20：电影的取票短信不小心删除了怎么办？</a></li>
+				<li><a href="#q21">Q21：电影开场时间已经过了，还能取票吗？</a></li>
+				<li><a href="#q22">Q22：我选定的座位，系统会一直保留吗？</a></li>
+				<li><a href="#q23">Q23：支付成功，购买失败怎么办？</a></li>
+			</ul>
+		</div>
+		<div id="content">
+			<p class="title">我们的回答</p>
+			<ul>
+				<li>
+					<a class="answer_title" name="q1">Q1：什么是大众点评团购?</a>
+					<p class="answer_content">由大众点评网为您精选餐厅、SPA、美发店、瑜伽馆等特色商家，定期为您提供一单精品消费。</p>
+				</li>
+				<li>
+					<a class="answer_title" name="q2">Q2：怎么参加团购呢?</a>
+					<p class="answer_content">只需在团购截止时间之前点击“抢购”按钮，根据提示流程付款购买即可。我们将通过邮件和短信的方式通知您购买成功，同时，我们将通过短信将大众点评网团购券序列号发送到您购买时填写的手机号码上。</p>
+				</li>
+				<li>
+					<a class="answer_title" name="q3">Q3：团购时，如何支付呢?</a>
+					<p class="answer_content">目前大众点评网已开通支付宝和网银。您在线支付成功后，会收到支付成功的邮件和短信通知。</p>
+				</li>
+				<li>
+					<a class="answer_title" name="q4">Q4：什么是大众点评团购?</a>
+					<p class="answer_content">由大众点评网为您精选餐厅、SPA、美发店、瑜伽馆等特色商家，定期为您提供一单精品消费。</p>
+				</li>
+				<li>
+					<a class="answer_title" name="q5">Q5：办公室电脑不方便支付怎么办?</a>
+					<p class="answer_content">您可以提前在自行使用的电脑上预先充值到点评团账户，然后就能随意购买了。（“充值”链接进入 http://t.dianping.com/charge）</p>
+				</li>
+				<li>
+					<a class="answer_title" name="q6">Q6：什么是大众点评团购?</a>
+					<p class="answer_content">由大众点评网为您精选餐厅、SPA、美发店、瑜伽馆等特色商家，定期为您提供一单精品消费。</p>
+				</li>
+				<li>
+					<a class="answer_title" name="q7">Q7：我已支付成功，为什么订单还显示让我去付款?</a>
+					<p class="answer_content">可能是因为我们还没收到支付宝/网银返回的信息，请耐心等待10分钟，再查看一 下。若此时订单状态还未改变，请联系我们的客服部为您解决。大众点评网全国统一客服热线：400 820 5527，工作时间：每天8:00-21:00，在线答疑时间：每天 8:00-21:00，我们的客服邮箱：tuan@dianping.com。</p>
+				</li>
+				<li>
+					<a class="answer_title" name="q8">Q8：团购券序列号短信没收到怎么办?</a>
+					<p class="answer_content">您不用担心！如果您没有收到团购券序列号短信，可以在“我的点评团”－>“我的团购券”中查阅并下载及打印团购券。注：个别需物流配送的产品不产生团购券序列号，您购买后耐心等待产品送达即可。</p>
+				</li>
+				<li>
+					<a class="answer_title" name="q9">Q9：团购成功了，到商户后具体怎么使用呢?</a>
+					<p class="answer_content">您在消费时，出示打印的团购券序列号凭证或团购券序列号短信即可。商户会验证的。无论您选择哪种方式，每个团购券序列号只能使用一次。</p>
+				</li>
+				<li>
+					<a class="answer_title" name="q10">Q10：团购券是否能与其他优惠同享?</a>
+					<p class="answer_content">一般不可以。如果可以，我们会在团购提示里特别说明，敬请留意。</p>
+				</li>
+				<li>
+					<a class="answer_title" name="q11">Q11：我的团购券，可以转让或给其他人使用吗?</a>
+					<p class="answer_content">可以。但每个团购券序列号只能使用一次，因此，转让时请注意转让信息安全。</p>
+				</li>
+
+			</ul>
+		</div>
+	</div>
 </div>
 <!-- 关于我们页面的内容结束 -->
+</div>
 
-		<!-- 右边内容区域 -->
-		<div id="main_right">
-			<div id="app">
-				<p>扫一下,关注惠桂林微信</p>
-				<img src="__PUBLIC__/images/barcode.png" alt="二维码">
-				<a>点击下载手机APP</a>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">人气王</p>
-				<ul>
-					<li>
-						<a href="" class="title">李记米粉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li>
-						<a href="" class="title">刘姥姥奶酪</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title">大时代烤肉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-				</ul>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">人气王</p>
-				<ul>
-					<li>
-						<a href="" class="title">李记米粉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li>
-						<a href="" class="title">刘姥姥奶酪</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title">大时代烤肉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-				</ul>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">热门优惠劵</p>
-				<ul>
-					<li>
-						<a href="" class="title">李记米粉</a>
-						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
-					</li>
-					<li>
-						<a href="" class="title">刘姥姥奶酪</a>
-						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title">大时代烤肉</a>
-						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
-					</li>
-				</ul>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">热门会员卡</p>
-				<ul>
-					<li>
-						<a href="" class="title title2">李记米粉</a>
-						<p class="six">会员专享8.8折</p>
-						<div>
-							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-						</div>
-					</li>
-					<li>
-						<a href="" class="title title3">刘姥姥奶酪</a>
-						<p class="seven">会员专享8.8折</p>
-						<div class="blue">
-							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-						</div>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title title2">大时代烤肉</a>
-						<p class="six">会员专享8.8折</p>
-						<div class="purple">
-							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<!-- 右边内容区域结束 -->
-	</div>
-	<!-- 主要内容区域结束 -->
-<!-- 内容区域结束 -->
 <!-- 最底部区域 -->
 	<div id="bottom_info">
 		<div id="bottom_box">
@@ -463,5 +405,3 @@
 		</div>
 </div>
 <!-- 最底部区域结束 -->
-</body>
-</html>

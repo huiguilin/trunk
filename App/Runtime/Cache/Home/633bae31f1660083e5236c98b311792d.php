@@ -1,17 +1,15 @@
-<?php if (!defined('THINK_PATH')) exit();?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/about_tpl.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/coupon.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
-<title>会员卡</title>
+<title>优惠劵</title>
 <!--[if IE 6]>
 <!--背景图片透明方法-->
 <script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
@@ -258,12 +256,12 @@
 			<span>全部分类</span>
 		</div>
 		<ul id="nav">
-			<li style="background:#DA4453"><a href="<?php echo U("Index/index");?>">首页</a></li>
-			<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+			<li><a href="<?php echo U("Index/index");?>">首页</a></li>
+			<li style="background:#DA4453"><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 			<li><a href="<?php echo U("Card/card");?>">会员卡</a></li>
 			<li class="border_right "><a href="">商户</a></li>
 		</ul>
-		<form id="search_box">
+		<form action="" id="search_box" method="get">
 			<input id="search_con" type="text" placeholder="桂林环球美食节" name="search_con"/>
 			<input id="search_btn" type="submit" value="" name="search_btn"/>
 		</form>
@@ -271,175 +269,161 @@
 <!-- 导航区域结束-->
 <!-- 导航区域结束-->
 <!-- 内容区域 -->
-	 	
-	
+	<!-- 图片轮换板区域 -->
+	<div id="advertising">
+		<img src="__PUBLIC__/images/flash/c_1.png" alt="" />
+		<img src="__PUBLIC__/images/flash/c_2.png" alt="" />
+		<img src="__PUBLIC__/images/flash/c_3.png" alt="" />
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<a href="">x</a>
+	</div>
+	<!-- 图片轮换板区域结束 -->
+	<!-- 热门标签+地点区域 -->
+	<div id="classcification">
+		<ul id="lable">
+			<li class="one"><p>热门商家</p></li>
+			<li><a href="" class="one">江上人家</a></li>
+			<li><a href="" class="two">巴山蜀水</a></li>
+			<li><a href="" class="three">印象漓江</a></li>
+			<li><a href="" class="four">李记米粉</a></li>
+			<li><a href="" class="five">果粉甜品</a></li>
+			<li><a href="" class="six">门前小馆</a></li>
+		</ul>
+		<ul id="location">
+			<li class="one"><p>地点</p></li>
+			<li><a href="" class="one">全部</a></li>
+			<li><a href="">秀峰区</a></li>
+			<li><a href="">景山区</a></li>
+			<li><a href="">叠彩区</a></li>
+			<li><a href="">雁山区</a></li>
+			<li><a href="">七星区</a></li>
+		</ul>
+		<ul id="type" style="border:none">
+			<li class="one"><p>类型</p></li>
+			<li><a href="" class="one">全部</a></li>
+			<li><a href="">美食</a></li>
+			<li><a href="">KTV</a></li>
+			<li><a href="">电影</a></li>
+			<li><a href="">酒吧</a></li>
+			<li><a href="">桌游</a></li>
+			<li><a href="">美发美体</a></li>
+			<li><a href="">旅游</a></li>
+			<li><a href="">酒店</a></li>
+		</ul>
+	</div>
+	<!-- 热门标签+地点区域结束 -->
+	<!-- 排序+价格范围区域 -->
+	<div id="sort">
+		<p class="one">排序</p>
+		<p class="two">价格范围</p>
+		<ul>
+			<li><a href="" class="one">默认</a></li>
+			<li><a href="">优惠价格</a></li>
+			<li><a href="">折扣</a></li>
+		</ul>
+		<select name="price" id="price_id">
+			<option value="">全部</option>
+			<option value="">100-200</option>
+			<option value="">200-300</option>
+			<option value="">300-400</option>
+			<option value="">400-500</option>
+		</select>
+		<input type="checkbox" name="booking" value="" id="booking_id">
+		<p class="three">免预约</p>
+	</div>
+	<!-- 排序+价格范围区域结束 -->
 	<!-- 主要内容区域 -->
 	<div id="main">
-		
 		<!-- 左边内容区域 -->
-		
+		<div id="left">
+			<ul>
+                <?php if(is_array($coupons)): foreach($coupons as $key=>$c): ?><li>
+                    <img class="one" src="__PUBLIC__/images/ico_11.png" alt="" />
+                    <a class="title" href=""><?php echo ($c['name']); ?></a>
+                    <a href="" class="content"><?php echo ($c['description']); ?></a>
+                    <a href="" class="btn">去看看</a>
+                    <img class="two" src="__PUBLIC__/<?php echo ($c['header_path']); ?>" alt="" />
+                    <div>
+                        <img src="__PUBLIC__/images/ico_10.png" alt="" />                        <p><?php echo ($c['tag']); ?></p>
+                    </div>  
+                    <?php if($c['label_type'] % 10 == 1): ?><img class="three" src="__PUBLIC__/images/mrq.png" alt="" /><?php endif; ?>
+                    <?php if(number_format(($c['label_type'] % 100) / 10, 0) == 1): ?><img class="four" src="__PUBLIC__/images/myy.png" alt="" /><?php endif; ?> 
+                </li><?php endforeach; endif; ?>
+			</ul>
+		</div>
 		<!-- 左边内容区域结束 -->
-		
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/help.css" />
-<!-- 关于我们页面的内容 -->
-<div id="left_card">
-	<p class="one">网站帮助</p>
-	<div id="seach_box">
-		<img src="__PUBLIC__/images/ico_help.png">
-		<p>请输入您想要询问的<span>关键词</span>，查找相关问题的答案：</p>
-		<form method="get">
-			<input name="help_search" type="text" placeholder='例如输入"优惠劵",查找"优惠劵"相关问题的答案' id="help_search_textbox" />
-			<input name="help_btn_search" id="help_btn_search" type="submit" value="搜索"/>
-		</form>
-	</div>
-	<ul>
-		<li>
-			<img src="__PUBLIC__/images/help_ico01.png">
-			<a href="<?php echo U("Help/faq01");?>" class="one">优惠劵</a>
-			<p class='three'>包括如何获取优惠券、优惠段的使用。</p>
-		</li>
-		<li>
-			<img src="__PUBLIC__/images/help_ico02.png">
-			<a href="<?php echo U("Help/faq02");?>" class="one">会员卡/礼品</a>
-			<p class='three'>包括电子会员卡的申请，使用以及原实体会员卡积分，礼品券兑换等问题。</p>
-		</li>
-		<li>
-			<img src="__PUBLIC__/images/help_ico03.png">
-			<a href="<?php echo U("Help/faq03");?>" class="one">商户/点评</a>
-			<p class='three'>包括商户收录标准，商户打分和星级是怎么来的？默认点评是什么？哪些是不符合规定的点评？</p>
-		</li>
-		<li>
-			<img src="__PUBLIC__/images/help_ico02.png">
-			<a href="<?php echo U("Help/faq04");?>" class="one">手机</a>
-			<p class='three'>包括如何用手机客户端找到商户、抢获优惠券、迁到等等各种问题。</p>
-		</li>
-		<li>
-			<img src="__PUBLIC__/images/help_ico04.png">
-			<a href="<?php echo U("Help/faq05");?>" class="one">订阅/关注</a>
-			<p class='three'>包括怎样订阅惠桂林优惠信息，会员卡信息，商户促销信息等问题。</p>
-		</li>		
-	</ul>
-				
-</div>
-<!-- 关于我们页面的内容结束 -->
-
 		<!-- 右边内容区域 -->
-		<div id="main_right">
-			<div id="app">
-				<p>扫一下,关注惠桂林微信</p>
-				<img src="__PUBLIC__/images/barcode.png" alt="二维码">
-				<a>点击下载手机APP</a>
+		<div id="right">
+			<p class="one">热门商家</p>
+			<div id="hot_business">
+				<p>李记米粉</p>
+				<img class="one" src="__PUBLIC__/images/pic/2.png" alt="" />
+				<a href="">桂林米粉产生于秦代，上面的“离合器”完完全全就是秦时的农具“耒”的形象。</a>
+				<img class="two" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<img class="three" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<span class="one">优惠劵</span>
+				<span class="two">会员卡</span>
+				<span class="three">[ 8 ]</span>
+				<span class="four">[ 2 ]</span>
 			</div>
-			<div class="hot_box">
-				<p class="rqw">人气王</p>
-				<ul>
-					<li>
-						<a href="" class="title">李记米粉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li>
-						<a href="" class="title">刘姥姥奶酪</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title">大时代烤肉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-				</ul>
+			<div id="hot_business_02">
+				<p>李记米粉</p>
+				<img class="one" src="__PUBLIC__/images/pic/2.png" alt="" />
+				<a href="">桂林米粉产生于秦代，上面的“离合器”完完全全就是秦时的农具“耒”的形象。</a>
+				<img class="two" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<img class="three" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<span class="one">优惠劵</span>
+				<span class="two">会员卡</span>
+				<span class="three">[ 8 ]</span>
+				<span class="four">[ 2 ]</span>
 			</div>
-			<div class="hot_box">
-				<p class="rqw">人气王</p>
-				<ul>
-					<li>
-						<a href="" class="title">李记米粉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li>
-						<a href="" class="title">刘姥姥奶酪</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title">大时代烤肉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-				</ul>
+			<div id="hot_business_03">
+				<p>李记米粉</p>
+				<img class="one" src="__PUBLIC__/images/pic/2.png" alt="" />
+				<a href="">桂林米粉产生于秦代，上面的“离合器”完完全全就是秦时的农具“耒”的形象。</a>
+				<img class="two" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<img class="three" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<span class="one">优惠劵</span>
+				<span class="two">会员卡</span>
+				<span class="three">[ 8 ]</span>
+				<span class="four">[ 2 ]</span>
 			</div>
-			<div class="hot_box">
-				<p class="rqw">热门优惠劵</p>
-				<ul>
-					<li>
-						<a href="" class="title">李记米粉</a>
-						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
-					</li>
-					<li>
-						<a href="" class="title">刘姥姥奶酪</a>
-						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title">大时代烤肉</a>
-						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
-					</li>
-				</ul>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">热门会员卡</p>
-				<ul>
-					<li>
-						<a href="" class="title title2">李记米粉</a>
-						<p class="six">会员专享8.8折</p>
-						<div>
-							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-						</div>
-					</li>
-					<li>
-						<a href="" class="title title3">刘姥姥奶酪</a>
-						<p class="seven">会员专享8.8折</p>
-						<div class="blue">
-							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-						</div>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title title2">大时代烤肉</a>
-						<p class="six">会员专享8.8折</p>
-						<div class="purple">
-							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-						</div>
-					</li>
-				</ul>
+			<div id="hot_business_04">
+				<p>李记米粉</p>
+				<img class="one" src="__PUBLIC__/images/pic/2.png" alt="" />
+				<a href="">桂林米粉产生于秦代，上面的“离合器”完完全全就是秦时的农具“耒”的形象。</a>
+				<img class="two" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<img class="three" src="__PUBLIC__/images/ico_08.png" alt="" />
+				<span class="one">优惠劵</span>
+				<span class="two">会员卡</span>
+				<span class="three">[ 8 ]</span>
+				<span class="four">[ 2 ]</span>
 			</div>
 		</div>
 		<!-- 右边内容区域结束 -->
+		<!-- 中间内容区域 -->
+		<div id="middle">
+			<ul>
+                <?php if(is_array($coupons_two)): foreach($coupons_two as $key=>$c): ?><li>
+                    <img class="one" src="__PUBLIC__/images/ico_11.png" alt="" />
+                    <a class="title" href=""><?php echo ($c['name']); ?></a>
+                    <a href="" class="content"><?php echo ($c['description']); ?></a>
+                    <a href="" class="btn">去看看</a>
+                    <img class="two" src="__PUBLIC__/<?php echo ($c['picture_path']); ?>" alt="" />
+                    <div>
+                        <img src="__PUBLIC__/images/ico_10.png" alt="" />
+                        <p><?php echo ($c['tag']); ?></p>
+                    </div>
+                </li><?php endforeach; endif; ?>
+			</ul>
+		</div>
+		<!-- 中间内容区域结束 -->
 	</div>
+
 	<!-- 主要内容区域结束 -->
 <!-- 内容区域结束 -->
 <!-- 最底部区域 -->

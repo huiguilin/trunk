@@ -20,8 +20,10 @@ input{
 	background: white;
 	width: 856px;
 	height: 570px;
-	border-radius: 5px;
 	position: relative;
+	border-radius: 5px;
+
+	
 }
 #cellphone_version_box #app_closed_box{
 	position: absolute;
@@ -29,7 +31,14 @@ input{
 	right: 0px;
 	
 }
-
+#cellphone_version_box #app_closed_box a{
+	border:none;
+}
+#cellphone_version_box #app_closed_box a img{
+	border:none;
+	width: 30px;
+	height: 30px;
+}
 #cellphone_version_box #apppics_box #phone_pic01{
 	position: absolute;
 	top: 100px;
@@ -86,9 +95,11 @@ input{
 	font-family: Arial;
 	background: url("../images/iphone_ico.png") no-repeat 15px 12px #FABAC0;
 	padding-left: 42px;
+	border:none;
+
+	
 
 }
-
 #cellphone_version_box a.android{
 	display: block;
 	width: 68px;
@@ -105,6 +116,7 @@ input{
 	font-family: Arial;
 	background: url("../images/android_ico.png") no-repeat 15px 12px #98E606;
 	padding-left: 42px;
+	border:none;
 }
 #cellphone_version_box a.wp{
 	display: block;
@@ -122,18 +134,26 @@ input{
 	font-family: Arial;
 	background: url("../images/wp_ico.png") no-repeat 15px 12px #3399FF;
 	padding-left: 42px;
+	border:none;
 }
 #cellphone_version_box #appbtn_box a.imgbtn_01{
 	position: absolute;
 	top: 465px;
 	right: 210px;
+	border:none;
+}
+#cellphone_version_box #appbtn_box a.imgbtn_01 img{
+	border:none;
 }
 #cellphone_version_box #appbtn_box a.imgbtn_02{
 	position: absolute;
 	top: 465px;
 	right: 225px;
+	border:none;
 }
-
+#cellphone_version_box #appbtn_box a.imgbtn_02 img{
+	border:none;
+}
 #cellphone_version_box #iphone_box{
 	position: absolute;
 	top: 153px;
@@ -361,7 +381,7 @@ input{
 	background: white;
 	display: none;
 }
-#top_rss #top_rss_box #subscription_box input{
+#top_rss #top_rss_box #subscription_box #subscription_email_textbox{
 	border: 1px solid #C9C9C9;
 	border-radius: 5px;
 	width: 200px;
@@ -369,6 +389,7 @@ input{
 	position: absolute;
 	top: 20px;
 	left: 7px;
+
 }
 #top_rss #top_rss_box #subscription_box a{
 	display: block;
@@ -545,6 +566,12 @@ input{
 	position: absolute;
 	top: 4px;
 	right: 8px;
+	border:none;
+}
+#Userreg_box #u_top #a_closed2 img{
+	border:none;
+	width: 30px;
+	height: 30px;
 }
 #Userreg_box #u_bottom{
 	
@@ -908,8 +935,13 @@ input{
 	position: absolute;
 	top: 4px;
 	right: 8px;
+	border:none;
 }
-
+#Userlogin_box #u_top_box #a_closed img{
+	border:none;
+	width: 30px;
+	height: 30px;
+}
 #Userlogin_box #u_middle_box{
 	width: 627px;
 	height: 288px;
@@ -1159,6 +1191,7 @@ input{
 	top: 25px;
 	left:138px;
 	border: none;
+
 }
 #top_logo_box #login{
 	position: absolute;
@@ -1288,11 +1321,15 @@ input{
 }
 #top_nav_box #search_box #search_con{
 	width: 198px;
-	height: 25px;
 	position: absolute;
 	top: 3px;
 	left: 7px;
-	background: none;
+
+	height: 25px; height/*\**/: 5px \9;
+	
+	padding-top: 0px; padding-top/*\**/:10px \9;
+	padding-bottom: 0px; padding-bottom/*\**/:10px \9;
+	line-height: 25px; line-height/*\**/: 5px \9;
 }
 #top_nav_box #search_btn{
 	width: 30px;
@@ -1301,6 +1338,7 @@ input{
 	top: 1px;
 	right: 0px;
 	background: none;
+	cursor: pointer;
 }
 /*搜索框区域结束*/
 /*导航区域结束*/

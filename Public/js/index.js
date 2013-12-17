@@ -1,6 +1,6 @@
 $(function(){
 
-	//图片轮换板特效
+	//首页图片轮换板特效
 	var timer = setInterval(autoRun,5000);
 	var sta = 0;//记录当前展示到哪张图片了
 	function autoRun(){
@@ -22,62 +22,35 @@ $(function(){
 	 	$('#main #main_middle #ad ul li').removeClass('hover');//移除掉所有li上面的hover样式
 	 	$('#main #main_middle #ad ul li').eq(num).addClass('hover');//给对应的li加上hover样式
 	 }
-	//图片轮换板特效结束
-	//优惠劵页面地点选择器特效
-	$('#classcification #location li a').click(function(event) {
-		$('#classcification #location li a').removeClass();
-		$(this).addClass('one');
-		return false;
-	});
-	//优惠劵页面地点选择器特效结束
-	//优惠劵页面类型选择器特效
-	$('#classcification #type li a').click(function(event) {
-		$('#classcification #type li a').removeClass();
-		$(this).addClass('one');
-		return false;
-	});
-	//优惠劵页面类型选择器特效结束
-	//优惠劵页面排序选择器特效
-	$('#sort ul li a').click(function(event) {
-		$('#sort ul li a').removeClass();
-		$(this).addClass('one');
-		return false;
-	});
-	//优惠劵页面排序选择器特效结束
+	//首页图片轮换板特效结束
+	
 	//在线提交表单验证
 	$('#main #left_card form #btn_submit').click(function(event) {
 	
-		var username=$('#online_submit_username').val();
-		var cellphone=$('#online_submit_cellphone').val();
-		var content=$.trim($('#online_submit_content').val());
-		if(username == ""){
+		var username=$('#online_submit_username');
+		var cellphone=$('#online_submit_cellphone');
+		var content=$('#online_submit_content');
+		if(username.val() == ""){
 			alert("请留下您的称呼!");
+			username.focus(); //获取焦点
 		}
 		else{
-			if(cellphone==""){
+			if(cellphone.val()==""){
 				alert('请留下您的联系方式！');
-
+				cellphone.focus(); //获取焦点
 			}
 			else{
-				if(content==""){
+				if($.trim(content.val())==""){
 					alert('请留下您的意见！');
+					content.focus(); //获取焦点
 				}
 				else{
-					$.ajax({
-						url: '/path/to/file',
-						type: 'GET',
-						dataType: 'html',
-						data: {feedback_username: username,feedback_cellphone: cellphone,feedback_content:content},
-					})
-					.done(function() {
-						console.log("success");
-					})
-					.fail(function() {
-						console.log("error");
-					})
-					.always(function() {
-						console.log("complete");
-					});
+					//ajax发送请求
+					var handleURL = "/Trunk/index.php/home/Feedback/handle"; //外挂js文件不认识U方法
+					$.post(handleURL, {feedback_username:username.val(),feedback_cellphone:cellphone.val(),feedback_content:content.val()}, function(data, textStatus, xhr){
+
+					}, 'josn');
+					//ajax发送请求结束
 					$('#main #left_card p.three').css('display', 'block');
 					$('#online_submit_form').addClass('one');
 					$('#main #left_card form ul li input').val("");
@@ -88,40 +61,30 @@ $(function(){
 	});
 	//商务合作意向表单验证
 	$('#intention_btn_submit').click(function(event) {
-		var intention_username =$('#intention_username').val();
-		var intention_cellphone =$('#intention_cellphone').val();
-		var intention_business =$('#intention_business').val();
-		var intention_content =$('#intention_content').val();
-		if(intention_username ==""){
+		var intention_username =$('#intention_username');
+		var intention_cellphone =$('#intention_cellphone');
+		var intention_business =$('#intention_business');
+		var intention_content =$('#intention_content');
+		if(intention_username.val() ==""){
 			alert('请留下您的姓名!');
 		}else{
-			if(intention_cellphone == ""){
+			if(intention_cellphone.val() == ""){
 				alert('请留下您的联系方式!');
 			}else{
-				if(intention_business ==""){
+				if(intention_business.val() ==""){
 					alert('请留下您公司名称');
 				}else{
-					if(intention_content ==""){
+					if(intention_content.val() ==""){
 						alert('请留下您的相关内容');
 					}
 					else{
-						$.ajax({
-							url: '/path/to/file',
-							type: 'POST',
-							dataType: 'html',
-							data: {intention_username: intention_username,intention_cellphone: intention_cellphone,intention_business:intention_business,intention_content:intention_content},
-						})
-						.done(function() {
-							console.log("success");
-						})
-						.fail(function() {
-							console.log("error");
-						})
-						.always(function() {
-							console.log("complete");
-						});
 						
+						//ajax发送请求
+						var handleURL = "/Trunk/index.php/home/Intention/handle"; //外挂js文件不认识U方法
+						$.post(handleURL, {intention_username:intention_username.val(),intention_cellphone:intention_cellphone.val(),intention_business:intention_business.val(),intention_content:intention_content.val()}, function(data, textStatus, xhr){
 
+						}, 'josn');
+						//ajax发送请求结束
 						$('#main #left_card p.three').css('display', 'block');
 						$('#intention_sumbit_form').addClass('one');
 						$('#main #left_card form ul li input').val("");
@@ -176,81 +139,6 @@ $(function(){
 	});
 	//小编推荐内容特效结束
 
-	//搜索框特效
-	$('#top_nav_box #search_box #search_con').focus(function(){
-		$(this).val('');
-	})
-	$('#top_nav_box #search_box #search_con').blur(function(){
-		$(this).val('桂林环球美食节');
-	})
-	//搜索框特效结束
-
-	// 优惠劵页面左边主要内容特效
-	$('#main #left ul li').hover(function() {
-		$(this).find('div').addClass('display')
-		$(this).find('a.content').css('color', '#4466A3');
-		$(this).find('a.content').css('text-decoration', 'underline');
-		$(this).find('a.title').css('color', '#4466A3');
-	}, function() {
-		$(this).find('div').removeClass('display')
-		$(this).find('a.content').css('color', 'black');
-		$(this).find('a.content').css('text-decoration', 'none');
-		$(this).find('a.title').css('color', '#ED5565');
-		
-	});
-	$('#main #left ul li a.btn').hover(function() {
-		$(this).css('background', '#F6808B');
-	}, function() {
-		$(this).css('background', '#ED5565');
-	});
-	// 优惠劵页面左边主要内容特效结束
-	// 优惠劵页面中间主要内容特效
-	$('#main #middle ul li').hover(function() {
-		$(this).find('a.content').css('color', '#4466A3');
-		$(this).find('a.content').css('text-decoration', 'underline');
-		$(this).find('a.title').css('color', '#4466A3');
-		$(this).find('div').addClass('display')
-	}, function() {
-		$(this).find('a.content').css('color', 'black');
-		$(this).find('a.content').css('text-decoration', 'none');
-		$(this).find('a.title').css('color', '#ED5565');
-		$(this).find('div').removeClass('display')
-	});
-	$('#main #middle ul li a.btn').hover(function() {
-		$(this).css('background', '#F6808B');
-	}, function() {
-		$(this).css('background', '#ED5565');
-	});
-	// 优惠劵页面中间主要内容特效结束
-	// 优惠劵页面图片轮换板特效
-	$('#advertising a').click(function() {
-		$('#advertising').hide();
-		return false;
-	});
-
-	var timer_coupon = setInterval(autoRun_coupon,5000);
-	var sta_coupon = 0;//记录当前展示到哪张图片了
-	function autoRun_coupon(){
-	 	sta_coupon++;//sta自增
-	 	sta_coupon = (sta_coupon == 3)?0:sta_coupon;//判断是不是到最后一张了，如果是，就切换到第一张
-	 	change_coupon(sta_coupon);//切换效果
-	 }
-
-	 $('#advertising ul li').hover(function(){
-	 	clearInterval(timer_coupon);//清理定时器
-	 	sta_coupon = $(this).index();//获得鼠标移入到第几个li上了
-	 	change_coupon(sta_coupon);//切换效果
-	 },function(){
-	 	timer_coupon = setInterval(autoRun_coupon,5000);//恢复定时器
-	 })
-
-	 function change_coupon(num){//用来控制切换图片和下标样式的函数
-	 	$('#advertising img').hide();//先把所有的图片隐藏
-	 	$('#advertising img').eq(num).fadeIn(200);//让对应的图片显示出来
-	 	$('#advertising ul li').removeClass('hover');//移除掉所有li上面的hover样式
-	 	$('#advertising ul li').eq(num).addClass('hover');//给对应的li加上hover样式
-	 }
-	// 优惠劵页面图片轮换板特效结束
 	// 会员卡左边内容区域hover特效
 	$('#main #left_card ul li').hover(function() {
 		$(this).addClass('hover');
@@ -282,6 +170,53 @@ $(function(){
 	});
 	// 会员卡中间内容区域hover特效结束
 
+	
+
+
+	//订阅Hover特效
+	$('#subscription_li').hover(function() {
+		$('#subscription_box').show();
+		$(this).addClass('hover');
+		$('#subscription').css('border-right', 'none');
+	}, function() {
+		$('#subscription_box').hide();
+		$(this).removeClass('hover');
+		$('#subscription').css('border-right', '1px solid black');
+	});
+
+	$('#subscription_box').hover(function() {
+		$('#subscription_box').show();
+		$('#subscription_li').addClass('hover');
+		$('#subscription').css('border-right', 'none');
+	}, function() {
+		$('#subscription_box').hide();
+		$('#subscription_li').removeClass('hover');
+		$('#subscription').css('border-right', '1px solid black');
+	});
+	//订阅Hover特效结束
+
+	//关注Hover特效
+	$('#share_li').hover(function() {
+		$('#share_box').show();
+		$(this).addClass('hover');
+		$('#subscription').css('border-right', 'none');
+	}, function() {
+		$('#share_box').hide();
+		$(this).removeClass('hover');
+		$('#subscription').css('border-right', '1px solid black');
+	});
+
+	$('#share_box').hover(function() {
+		$('#share_box').show();
+		$('#share_li').addClass('hover');
+		$('#subscription').css('border-right', 'none');
+	}, function() {
+		$('#share_box').hide();
+		$('#share_li').removeClass('hover');
+		$('#subscription').css('border-right', '1px solid black');
+	});
+	//关注Hover特效结束
+	////////////////////////用户注册+用户登录+忘记密码特效全部代码区域////////////////////
 	//用户注册弹框效果
 	$('#Userreg').click(function(event) {
 		$('#Userreg_box').bPopup({
@@ -342,7 +277,6 @@ $(function(){
 	});
 	//忘记密码操作后返回登录界面结束
 	//用户注册页面验证
-
 	//密码复杂度判断
 	$('#Userreg_box #u_bottom #email_box form input.two').keyup(function(event) {
 
@@ -372,7 +306,6 @@ $(function(){
 		}
 	});
 	//密码复杂度判断结束
-
 	$('#Userreg_box #u_bottom #email_box form input').focus(function(event) {
 		var name= $(this).attr('name');
 
@@ -527,7 +460,6 @@ $(function(){
 		}
 	});
 	//忘记密码页面的验证结束
-
 	$('#reg_now').click(function(event) {
 		var reg_zindex = $('#Userreg_box').css('z-index');
 		var login_zindex = $('#Userlogin_box').css('z-index');
@@ -579,21 +511,98 @@ $(function(){
 		}
   		return false;
 	});
-	
-
-	//关闭按钮特效结束
 	//用户注册弹框效果结束
-
-	//Header订阅的效果
-	$('#subscription').hover(function() {
-		
+	////////////////////////用户注册+用户登录+忘记密码特效全部代码区域结束////////////////////
+	////////////////////////优惠劵一级页面全部特效代码区域////////////////////////////////
+	//优惠劵页面地点选择器特效
+	$('#classcification #location li a').click(function(event) {
+		$('#classcification #location li a').removeClass();
+		$(this).addClass('one');
+		return false;
+	});
+	//优惠劵页面地点选择器特效结束
+	//优惠劵页面类型选择器特效
+	$('#classcification #type li a').click(function(event) {
+		$('#classcification #type li a').removeClass();
+		$(this).addClass('one');
+		return false;
+	});
+	//优惠劵页面类型选择器特效结束
+	//优惠劵页面排序选择器特效
+	$('#sort ul li a').click(function(event) {
+		$('#sort ul li a').removeClass();
+		$(this).addClass('one');
+		return false;
+	});
+	//优惠劵页面排序选择器特效结束
+	// 优惠劵页面左边主要内容特效
+	$('#main #left ul li').hover(function() {
+		$(this).find('div').addClass('display')
+		$(this).find('a.content').css('color', '#4466A3');
+		$(this).find('a.content').css('text-decoration', 'underline');
+		$(this).find('a.title').css('color', '#4466A3');
 	}, function() {
+		$(this).find('div').removeClass('display')
+		$(this).find('a.content').css('color', 'black');
+		$(this).find('a.content').css('text-decoration', 'none');
+		$(this).find('a.title').css('color', '#ED5565');
 		
 	});
+	$('#main #left ul li a.btn').hover(function() {
+		$(this).css('background', '#F6808B');
+	}, function() {
+		$(this).css('background', '#ED5565');
+	});
+	// 优惠劵页面左边主要内容特效结束
+	// 优惠劵页面中间主要内容特效
+	$('#main #middle ul li').hover(function() {
+		$(this).find('a.content').css('color', '#4466A3');
+		$(this).find('a.content').css('text-decoration', 'underline');
+		$(this).find('a.title').css('color', '#4466A3');
+		$(this).find('div').addClass('display')
+	}, function() {
+		$(this).find('a.content').css('color', 'black');
+		$(this).find('a.content').css('text-decoration', 'none');
+		$(this).find('a.title').css('color', '#ED5565');
+		$(this).find('div').removeClass('display')
+	});
+	$('#main #middle ul li a.btn').hover(function() {
+		$(this).css('background', '#F6808B');
+	}, function() {
+		$(this).css('background', '#ED5565');
+	});
+	// 优惠劵页面中间主要内容特效结束
+	// 优惠劵页面图片轮换板特效
+	$('#advertising a').click(function() {
+		$('#advertising').hide();
+		return false;
+	});
 
+	var timer_coupon = setInterval(autoRun_coupon,5000);
+	var sta_coupon = 0;//记录当前展示到哪张图片了
+	function autoRun_coupon(){
+	 	sta_coupon++;//sta自增
+	 	sta_coupon = (sta_coupon == 3)?0:sta_coupon;//判断是不是到最后一张了，如果是，就切换到第一张
+	 	change_coupon(sta_coupon);//切换效果
+	 }
+	 $('#advertising ul li').hover(function(){
+	 	clearInterval(timer_coupon);//清理定时器
+	 	sta_coupon = $(this).index();//获得鼠标移入到第几个li上了
+	 	change_coupon(sta_coupon);//切换效果
+	 },function(){
+	 	timer_coupon = setInterval(autoRun_coupon,5000);//恢复定时器
+	 })
 
-	//Header订阅的效果结束
+	 function change_coupon(num){//用来控制切换图片和下标样式的函数
+	 	$('#advertising img').hide();//先把所有的图片隐藏
+	 	$('#advertising img').eq(num).fadeIn(200);//让对应的图片显示出来
+	 	$('#advertising ul li').removeClass('hover');//移除掉所有li上面的hover样式
+	 	$('#advertising ul li').eq(num).addClass('hover');//给对应的li加上hover样式
+	 }
+	// 优惠劵页面图片轮换板特效结束
+	////////////////////////优惠劵一级页面全部特效代码区域结束////////////////////////////
 
+	////////////////////////手机版弹窗中的全部特效代码区域////////////////////////////////
 	//手机版弹窗效果
 	$('#cellphone_version').click(function(event) {
 		$('#cellphone_version_box').bPopup({
@@ -601,14 +610,12 @@ $(function(){
 	        opacity: 0.6,
 	        position: [250, 20],//x, y
         });
-		
-		$('#cellphone_version_box').show();
+		// $('#cellphone_version_box').show();
 		return false;
 	});
-
 	//手机版弹窗效果结束
 
-	//手机APP下载切换效果
+	//手机APP弹窗区域中下载区域切换效果
 	$('#cellphone_version_box a.iphone').click(function(event) {
 		$(this).css('background-color', '#FABAC0');
 		$('#cellphone_version_box a.android').css('background-color', '#98E606');
@@ -636,10 +643,9 @@ $(function(){
 		$('#cellphone_version_box #android_box').hide();
 		return false;
 	});
-	//手机APP下载切换效果结束
+	//手机APP弹窗区域中下载区域切换效果结束
 
-	//手机APP下载弹窗中的图片轮换特效
-
+	//手机APP弹窗区域中图片轮换特效
 	var app_timer = setInterval(app_autoRun,5000);
 	var app_sta = 0;//记录当前展示到哪张图片了
 	function app_autoRun(){
@@ -647,7 +653,6 @@ $(function(){
 	 	app_sta = (app_sta == 2)?0:app_sta;//判断是不是到最后一张了，如果是，就切换到第一张
 	 	app_change(app_sta);//切换效果
 	 }
-
 	 $('#cellphone_version_box #appbtn_box a img').hover(function(){
 	 	clearInterval(app_timer);//清理定时器
 	 	app_sta = $(this).index('#cellphone_version_box #appbtn_box a img');//获得鼠标移入到第几个li上了
@@ -655,7 +660,6 @@ $(function(){
 	 },function(){
 	 	app_timer = setInterval(app_autoRun,5000);//恢复定时器
 	 })
-
 	 function app_change(num){//用来控制切换图片和下标样式的函数
 	 	$('#cellphone_version_box #apppics_box img').hide();//先把所有的图片隐藏
 	 	$('#cellphone_version_box #apppics_box img').eq(num).fadeIn(200);//让对应的图片显示出来
@@ -663,56 +667,13 @@ $(function(){
 	 	$('#cellphone_version_box #appbtn_box a img').eq(num).attr('src', '/HuiGL/Public/images/ico_18.png');
 	 	
 	 }
+	//手机APP弹窗区域中图片轮换特效结束
 
-	//手机APP下载弹窗中的图片轮换特效结束
-
-	
-
-	//手机APP关闭特效结束
-
-	//订阅Hover特效
-	$('#subscription_li').hover(function() {
-		$('#subscription_box').show();
-		$(this).addClass('hover');
-		$('#subscription').css('border-right', 'none');
-	}, function() {
-		$('#subscription_box').hide();
-		$(this).removeClass('hover');
-		$('#subscription').css('border-right', '1px solid black');
+	//手机APP弹窗区域中关闭特效
+	$('#cellphone_version_box #app_closed_box a img').click(function(event) {
+		$('#cellphone_version_box').bPopup().close();
 	});
-
-	$('#subscription_box').hover(function() {
-		$('#subscription_box').show();
-		$('#subscription_li').addClass('hover');
-		$('#subscription').css('border-right', 'none');
-	}, function() {
-		$('#subscription_box').hide();
-		$('#subscription_li').removeClass('hover');
-		$('#subscription').css('border-right', '1px solid black');
-	});
-	//订阅Hover特效结束
-
-	//关注Hover特效
-	$('#share_li').hover(function() {
-		$('#share_box').show();
-		$(this).addClass('hover');
-		$('#subscription').css('border-right', 'none');
-	}, function() {
-		$('#share_box').hide();
-		$(this).removeClass('hover');
-		$('#subscription').css('border-right', '1px solid black');
-	});
-
-	$('#share_box').hover(function() {
-		$('#share_box').show();
-		$('#share_li').addClass('hover');
-		$('#subscription').css('border-right', 'none');
-	}, function() {
-		$('#share_box').hide();
-		$('#share_li').removeClass('hover');
-		$('#subscription').css('border-right', '1px solid black');
-	});
-
-	//关注Hover特效结束
+	//手机APP弹窗区域中关闭特效结束
+	////////////////////////手机版弹窗中的全部特效代码区域结束////////////////////////////
 
 })
