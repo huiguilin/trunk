@@ -512,27 +512,38 @@ $(function(){
   		return false;
 	});
 	//用户注册弹框效果结束
+	//用户注册弹框关闭
+	$('#a_closed2').click(function(event) {
+		$('#Userreg_box').bPopup().close();
+	});
+	//用户注册弹框关闭结束
+	//用户登录弹框关闭
+	$('#a_closed').click(function(event) {
+		$('#Userlogin_box').bPopup().close();
+	});
+	//用户登录弹框关闭结束
 	////////////////////////用户注册+用户登录+忘记密码特效全部代码区域结束////////////////////
 	////////////////////////优惠劵一级页面全部特效代码区域////////////////////////////////
 	//优惠劵页面地点选择器特效
 	$('#classcification #location li a').click(function(event) {
 		$('#classcification #location li a').removeClass();
 		$(this).addClass('one');
-		return false;
+
 	});
 	//优惠劵页面地点选择器特效结束
 	//优惠劵页面类型选择器特效
 	$('#classcification #type li a').click(function(event) {
 		$('#classcification #type li a').removeClass();
 		$(this).addClass('one');
-		return false;
+		
+		
 	});
 	//优惠劵页面类型选择器特效结束
 	//优惠劵页面排序选择器特效
 	$('#sort ul li a').click(function(event) {
 		$('#sort ul li a').removeClass();
 		$(this).addClass('one');
-		return false;
+		
 	});
 	//优惠劵页面排序选择器特效结束
 	// 优惠劵页面左边主要内容特效
@@ -670,7 +681,7 @@ $(function(){
 	//手机APP弹窗区域中图片轮换特效结束
 
 	//手机APP弹窗区域中关闭特效
-	$('#cellphone_version_box #app_closed_box a img').click(function(event) {
+	$('#cellphone_version_box #app_closed_box a').click(function(event) {
 		$('#cellphone_version_box').bPopup().close();
 	});
 	//手机APP弹窗区域中关闭特效结束

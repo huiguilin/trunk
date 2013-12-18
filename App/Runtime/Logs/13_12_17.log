@@ -27932,3 +27932,787 @@ INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000973s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001208s ]
 ERR: 非法操作:Layouts
 
+[ 2013-12-17T23:32:13+08:00 ] 127.0.0.1 /Trunk/index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001870s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002237s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001113s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001335s ]
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.085204s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.002146s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.017586s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.000853s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.004015s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,5,4,3,2,6) )  [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.004327s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (1,2,3) )  [ RunTime:0.000547s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004019s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000749s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004132s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000675s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004098s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000615s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004060s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000508s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.046671s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.001013s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.004432s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (1,1,1,1) )  [ RunTime:0.000782s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005208s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.000676s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: card C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 377 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.352773s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.353058s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001960s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001754s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001071s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001674s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007346s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001689s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001992s ]
+
+[ 2013-12-17T23:32:23+08:00 ] 127.0.0.1 /Trunk/index.php/Index/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002040s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002292s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002184s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002435s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:32:24+08:00 ] 127.0.0.1 /Trunk/index.php/Index/none
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001137s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001377s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001193s ]
+ERR: 非法操作:none
+
+[ 2013-12-17T23:32:29+08:00 ] 127.0.0.1 /Trunk/index.php/Coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002282s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002541s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001439s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.005627s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE (  1 = 1 )  [ RunTime:0.027166s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.005782s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.083108s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.189745s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.189997s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001680s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001220s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000751s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001063s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005485s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001248s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001473s ]
+
+[ 2013-12-17T23:32:31+08:00 ] 127.0.0.1 /Trunk/index.php/Coupon/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001810s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002062s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001547s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:32:40+08:00 ] 127.0.0.1 /Trunk/index.php/Card/card.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001600s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001843s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000996s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001235s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.061952s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062624s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002095s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001825s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000791s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002235s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008202s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002554s ]
+INFO: [ view_end ] --END-- [ RunTime:0.003744s ]
+
+[ 2013-12-17T23:32:41+08:00 ] 127.0.0.1 /Trunk/index.php/Card/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001901s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002146s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000936s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001153s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:32:45+08:00 ] 127.0.0.1 /Trunk/index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002509s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003575s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.012977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013556s ]
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.005035s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001428s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004280s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.001053s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.011759s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,5,4,3,2,6) )  [ RunTime:0.000876s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.004371s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (1,2,3) )  [ RunTime:0.000561s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005792s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.001139s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.005002s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.006509s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.005044s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.005382s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000920s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.006156s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.001263s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.005381s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (1,1,1,1) )  [ RunTime:0.001325s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006100s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.001864s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: card C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 377 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.057821s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.058356s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001157s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001860s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000544s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001426s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005597s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001961s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002175s ]
+
+[ 2013-12-17T23:32:49+08:00 ] 127.0.0.1 /Trunk/index.php/Index/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001179s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001413s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001122s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:32:50+08:00 ] 127.0.0.1 /Trunk/index.php/Index/none
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001102s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001341s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001168s ]
+ERR: 非法操作:none
+
+[ 2013-12-17T23:32:52+08:00 ] 127.0.0.1 /Trunk/index.php/Help/help.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001308s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001571s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001840s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.035235s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035474s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001458s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001151s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000771s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000957s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004979s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001357s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002316s ]
+
+[ 2013-12-17T23:32:53+08:00 ] 127.0.0.1 /Trunk/index.php/Help/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002548s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002798s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001892s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:33:30+08:00 ] 127.0.0.1 /Trunk/index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001907s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002351s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001905s ]
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.005897s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001113s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006354s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.000909s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.004280s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,5,4,3,2,6) )  [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.004929s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (1,2,3) )  [ RunTime:0.000833s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005216s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000833s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.005172s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000711s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.012025s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000983s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004987s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.001056s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.005640s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000820s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.005487s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (1,1,1,1) )  [ RunTime:0.009150s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004942s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.000750s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: card C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 377 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.052670s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052914s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001349s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001010s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.004778s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001224s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009055s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001288s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001526s ]
+
+[ 2013-12-17T23:33:33+08:00 ] 127.0.0.1 /Trunk/index.php/Index/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001075s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001305s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000958s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001171s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:33:33+08:00 ] 127.0.0.1 /Trunk/index.php/Index/none
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001533s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001780s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001014s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001245s ]
+ERR: 非法操作:none
+
+[ 2013-12-17T23:33:36+08:00 ] 127.0.0.1 /Trunk/index.php/Coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001976s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002256s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002460s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006608s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE (  1 = 1 )  [ RunTime:0.000853s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.005872s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.000495s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.046710s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047097s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001830s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002424s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000685s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001453s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007494s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001812s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002047s ]
+
+[ 2013-12-17T23:33:37+08:00 ] 127.0.0.1 /Trunk/index.php/Coupon/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001211s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001515s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001665s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:33:39+08:00 ] 127.0.0.1 /Trunk/index.php/Card/card.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001419s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001682s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001146s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001457s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.032610s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032848s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001388s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001071s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001253s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001412s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005806s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001876s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002093s ]
+
+[ 2013-12-17T23:33:40+08:00 ] 127.0.0.1 /Trunk/index.php/Card/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001397s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002017s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001152s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001504s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:33:53+08:00 ] 127.0.0.1 /Trunk/index.php/home/Coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001632s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001879s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001126s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001787s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.005317s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE (  1 = 1 )  [ RunTime:0.000949s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.005138s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.000682s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.035800s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036031s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001258s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000784s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000731s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001156s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004530s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001163s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001387s ]
+
+[ 2013-12-17T23:33:53+08:00 ] 127.0.0.1 /Trunk/index.php/home/Coupon/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001352s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001610s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001290s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:33:56+08:00 ] 127.0.0.1 /Trunk/index.php/home/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001046s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001263s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000884s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001092s ]
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.004720s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001128s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004172s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.000981s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.004312s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,5,4,3,2,6) )  [ RunTime:0.000578s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.004713s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (1,2,3) )  [ RunTime:0.000669s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005133s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000857s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.014930s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000619s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.008444s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.001092s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004754s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000785s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.005263s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000834s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.004934s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (1,1,1,1) )  [ RunTime:0.001317s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.007509s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.000964s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: card C:\wamp\www\trunk\App\Runtime\Cache\Home\5466727e616c736dae1098311da8e430.php 第 377 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.051234s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051606s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001682s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001061s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000611s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001293s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005258s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001129s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001346s ]
+
+[ 2013-12-17T23:33:56+08:00 ] 127.0.0.1 /Trunk/index.php/home/Index/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001468s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001723s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001152s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001390s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:33:56+08:00 ] 127.0.0.1 /Trunk/index.php/home/Index/none
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001532s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001786s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003923s ]
+ERR: 非法操作:none
+
+[ 2013-12-17T23:33:57+08:00 ] 127.0.0.1 /Trunk/index.php/home/Card/card.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001253s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001720s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001070s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001315s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.037603s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037871s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001442s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001246s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000675s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001855s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005869s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001755s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002039s ]
+
+[ 2013-12-17T23:33:58+08:00 ] 127.0.0.1 /Trunk/index.php/home/Card/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001450s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001699s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001004s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001230s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:34:08+08:00 ] 127.0.0.1 /Trunk/index.php/Coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001831s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002809s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001894s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002290s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004905s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE (  1 = 1 )  [ RunTime:0.000863s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.005542s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.001354s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.047290s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047578s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002095s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001222s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.002714s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001810s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008757s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001949s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002275s ]
+
+[ 2013-12-17T23:34:16+08:00 ] 127.0.0.1 /Trunk/index.php/Coupon/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001635s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001882s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001152s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001384s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:34:17+08:00 ] 127.0.0.1 /Trunk/index.php/Card/card.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001208s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001444s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000951s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001164s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.048421s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048665s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001270s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000971s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000788s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001167s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004797s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001182s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001399s ]
+
+[ 2013-12-17T23:34:19+08:00 ] 127.0.0.1 /Trunk/index.php/Card/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001183s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001631s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001070s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001288s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:34:20+08:00 ] 127.0.0.1 /Trunk/index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001531s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001793s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001476s ]
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.006484s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.002956s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.007658s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.001896s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.013870s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,5,4,3,2,6) )  [ RunTime:0.001356s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.009971s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (1,2,3) )  [ RunTime:0.001120s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005945s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.001574s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.006344s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000939s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.007168s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000851s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.005839s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000832s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.008027s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.001381s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.007074s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (1,1,1,1) )  [ RunTime:0.001067s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005853s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.001524s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: card C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 377 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.051121s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051364s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001829s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001188s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000595s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001050s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005447s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001405s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001617s ]
+
+[ 2013-12-17T23:34:22+08:00 ] 127.0.0.1 /Trunk/index.php/Index/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001231s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001485s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000955s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001174s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:34:22+08:00 ] 127.0.0.1 /Trunk/index.php/Index/none
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001486s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001736s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001015s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001407s ]
+ERR: 非法操作:none
+
+[ 2013-12-17T23:34:29+08:00 ] 127.0.0.1 /Trunk/index.php/Coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001794s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002042s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001512s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.007501s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE (  1 = 1 )  [ RunTime:0.001024s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.006364s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.000995s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.040311s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040569s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001525s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001244s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000576s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001608s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005566s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001535s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001774s ]
+
+[ 2013-12-17T23:34:40+08:00 ] 127.0.0.1 /Trunk/index.php/Coupon/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002105s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002363s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001411s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002167s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:59:01+08:00 ] 127.0.0.1 /Trunk/index.php/Index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001624s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002040s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001821s ]
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.024684s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001462s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.005858s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.001129s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.006493s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,5,4,3,2,6) )  [ RunTime:0.001501s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.005235s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (1,2,3) )  [ RunTime:0.000614s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005242s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.001252s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.008431s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000850s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.008676s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.001188s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.005333s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000940s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.005264s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000709s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.005912s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (1,1,1,1) )  [ RunTime:0.000863s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005631s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.001503s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: card C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 377 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.068106s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.068358s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001733s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001533s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000784s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002574s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007858s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001729s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002025s ]
+
+[ 2013-12-17T23:59:09+08:00 ] 127.0.0.1 /Trunk/index.php/Index/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001573s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001925s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001320s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:59:09+08:00 ] 127.0.0.1 /Trunk/index.php/Index/none
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001076s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001306s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000969s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001207s ]
+ERR: 非法操作:none
+
+[ 2013-12-17T23:59:18+08:00 ] 127.0.0.1 /Trunk/index.php/Index/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001437s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001682s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001749s ]
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.004541s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.002659s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006378s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.000952s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.004034s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,5,4,3,2,6) )  [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.006862s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (1,2,3) )  [ RunTime:0.000650s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004835s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000839s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.003937s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000782s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006742s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.001012s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.051178s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000708s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.004315s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000837s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.004762s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (1,1,1,1) )  [ RunTime:0.000951s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004471s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.000757s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: card C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 377 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.065400s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065647s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001685s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000917s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000791s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001228s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005609s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001523s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001970s ]
+
+[ 2013-12-17T23:59:19+08:00 ] 127.0.0.1 /Trunk/index.php/Index/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001163s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001407s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000940s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001200s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:59:19+08:00 ] 127.0.0.1 /Trunk/index.php/Index/none
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001173s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001414s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000998s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001228s ]
+ERR: 非法操作:none
+
+[ 2013-12-17T23:59:27+08:00 ] 127.0.0.1 /Trunk/index.php/Help/help.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001470s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001723s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001116s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001375s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.041543s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041796s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001221s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001031s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000617s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001201s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004705s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001410s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001637s ]
+
+[ 2013-12-17T23:59:29+08:00 ] 127.0.0.1 /Trunk/index.php/Help/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001240s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001492s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001173s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002946s ]
+ERR: 非法操作:Layouts
+
+[ 2013-12-17T23:59:31+08:00 ] 127.0.0.1 /Trunk/index.php/Help/
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001600s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001861s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001108s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001342s ]
+ERR: 非法操作:index
+
+[ 2013-12-17T23:59:35+08:00 ] 127.0.0.1 /Trunk/index.php/Help/Layouts/js/border-radius.htc
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001215s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001459s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000946s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001164s ]
+ERR: 非法操作:Layouts
+

@@ -8,6 +8,8 @@
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
 <title>会员卡</title>
 <!--[if IE 6]>
@@ -26,7 +28,7 @@
 		<div id="top_rss_box">
 			<img src="__PUBLIC__/images/cellphone.png">
 			<ul class="left_ul">
-				<li class="one"><a href="" id="cellphone_version">手机版</a></li>
+				<li class="one"><a id="cellphone_version">手机版</a></li>
 				<li class="two"><a href="<?php echo U("Help/help");?>">使用帮助</a></li>
 			</ul>
 			<ul class="right_ul">
@@ -36,7 +38,7 @@
 				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
-				<input type="text" placeholder="输入邮箱,订阅惠桂林信息"/>
+				<input type="text" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
 				<a href="">订阅</a>
 			</div>
 			<div id="share_box">
@@ -57,15 +59,15 @@
 		<p class="version_comment_title">版本说明:</p>
 		<p class="version_comment_content">该版本支持ios5.0、Android 2.1、WindowsPhone8及以上系统.</p>
 		<div id="app_closed_box">
-			<a class="app_closed" href=""><img src="__PUBLIC__/images/app_closed.JPG"></a>
+			<a class="app_closed"><img src="__PUBLIC__/images/login_closed.png"></a>
 		</div>
 		<div id="apppics_box">
 			<img id="phone_pic01" src="__PUBLIC__/images/pic/phone_pic01.png">
 			<img id="phone_pic02" src="__PUBLIC__/images/pic/phone_pic02.png">
 		</div>
 		<div id="appbtn_box">	
-			<a class="imgbtn_01" href="javascript:void(0)"><img src="__PUBLIC__/images/ico_19.png"></a>
-			<a class="imgbtn_02" href="javascript:void(0)"><img src="__PUBLIC__/images/ico_19.png"></a>
+			<a class="imgbtn_01" href="javascript:void(0)"><img src="__PUBLIC__/images/ico_19.jpg"></a>
+			<a class="imgbtn_02" href="javascript:void(0)"><img src="__PUBLIC__/images/ico_19.jpg"></a>
 		</div>
 		<div id="iphone_box">
 			<img src="__PUBLIC__/images/ico_15.png">
@@ -122,12 +124,12 @@
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/logo.png" alt="惠桂林" id="logo" /></a>
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/slogan.png" alt="吃喝玩乐，惠享生活" id="slogan" /></a>
 		<ul id="login">
-			<li class="one"><a href="" class="one" id="Userlogin">登录</a></li>
-			<li><a href="" class="two" id="Userreg">快速注册</a></li>
+			<li class="one"><a class="one" id="Userlogin">登录</a></li>
+			<li><a class="two" id="Userreg">快速注册</a></li>
 		</ul>
 		<div id="Userreg_box">
 			<div id="u_top">
-				<a href="" id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
+				<a id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
 				<p>用户注册</p>
 			</div>
 			<div id="u_bottom">
@@ -192,7 +194,7 @@
 		</div>
 		<div id="Userlogin_box">
 			<div id="u_top_box">
-				<a href="" id="a_closed"><img src="__PUBLIC__/images/login_closed.png"></a>
+				<a id="a_closed"><img src="__PUBLIC__/images/login_closed.png"></a>
 				<p>用户登录</p>
 			</div>
 			<div id="u_middle_box">
@@ -261,7 +263,7 @@
 			<li><a href="<?php echo U("Card/card");?>">会员卡</a></li>
 			<li class="border_right "><a href="">商户</a></li>
 		</ul>
-		<form action="" id="search_box" method="get">
+		<form id="search_box">
 			<input id="search_con" type="text" placeholder="桂林环球美食节" name="search_con"/>
 			<input id="search_btn" type="submit" value="" name="search_btn"/>
 		</form>

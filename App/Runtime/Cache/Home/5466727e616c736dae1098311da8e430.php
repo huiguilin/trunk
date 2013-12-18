@@ -12,12 +12,13 @@
 
 <!--[if IE 6]>
 <!--背景图片透明方法-->
-<script src="/js/iepng.js" type="text/javascript"></script>
+<script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
 <!--插入图片透明方法-->
 <script type="text/javascript">
    EvPNG.fix('div, ul, img, li, input');  //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
 </script>
-<![endif]-->
+<!-- <![endif]-->
+
 <title>惠桂林首页</title>
 </head>
 <body>

@@ -28,7 +28,7 @@
 		<div id="top_rss_box">
 			<img src="__PUBLIC__/images/cellphone.png">
 			<ul class="left_ul">
-				<li class="one"><a href="" id="cellphone_version">手机版</a></li>
+				<li class="one"><a id="cellphone_version">手机版</a></li>
 				<li class="two"><a href="<?php echo U("Help/help");?>">使用帮助</a></li>
 			</ul>
 			<ul class="right_ul">
@@ -38,7 +38,7 @@
 				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
-				<input type="text" placeholder="输入邮箱,订阅惠桂林信息" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
+				<input type="text" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
 				<a href="">订阅</a>
 			</div>
 			<div id="share_box">
@@ -59,7 +59,7 @@
 		<p class="version_comment_title">版本说明:</p>
 		<p class="version_comment_content">该版本支持ios5.0、Android 2.1、WindowsPhone8及以上系统.</p>
 		<div id="app_closed_box">
-			<a class="app_closed" href=""><img src="__PUBLIC__/images/login_closed.png"></a>
+			<a class="app_closed"><img src="__PUBLIC__/images/login_closed.png"></a>
 		</div>
 		<div id="apppics_box">
 			<img id="phone_pic01" src="__PUBLIC__/images/pic/phone_pic01.png">
@@ -124,12 +124,12 @@
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/logo.png" alt="惠桂林" id="logo" /></a>
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/slogan.png" alt="吃喝玩乐，惠享生活" id="slogan" /></a>
 		<ul id="login">
-			<li class="one"><a href="" class="one" id="Userlogin">登录</a></li>
-			<li><a href="" class="two" id="Userreg">快速注册</a></li>
+			<li class="one"><a class="one" id="Userlogin">登录</a></li>
+			<li><a class="two" id="Userreg">快速注册</a></li>
 		</ul>
 		<div id="Userreg_box">
 			<div id="u_top">
-				<a href="" id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
+				<a id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
 				<p>用户注册</p>
 			</div>
 			<div id="u_bottom">
@@ -194,7 +194,7 @@
 		</div>
 		<div id="Userlogin_box">
 			<div id="u_top_box">
-				<a href="" id="a_closed"><img src="__PUBLIC__/images/login_closed.png"></a>
+				<a id="a_closed"><img src="__PUBLIC__/images/login_closed.png"></a>
 				<p>用户登录</p>
 			</div>
 			<div id="u_middle_box">

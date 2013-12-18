@@ -33,6 +33,7 @@ input{
 }
 #cellphone_version_box #app_closed_box a{
 	border:none;
+	cursor: pointer;
 }
 #cellphone_version_box #app_closed_box a img{
 	border:none;
@@ -385,10 +386,14 @@ input{
 	border: 1px solid #C9C9C9;
 	border-radius: 5px;
 	width: 200px;
-	height: 35px;
 	position: absolute;
 	top: 20px;
 	left: 7px;
+
+	height: 35px; height/*\**/: 15px \9;
+	padding-top: 0px; padding-top/*\**/:10px \9;
+	padding-bottom: 0px; padding-bottom/*\**/:10px \9;
+	line-height: 35px; line-height/*\**/: 15px \9;
 
 }
 #top_rss #top_rss_box #subscription_box a{
@@ -479,6 +484,7 @@ input{
 	display: block;
 	height: 13px;
 	line-height: 13px;
+	cursor: pointer;
 }
 #top_rss #top_rss_box .left_ul li a:hover{
 	text-decoration: underline;
@@ -567,6 +573,7 @@ input{
 	top: 4px;
 	right: 8px;
 	border:none;
+	cursor: pointer;
 }
 #Userreg_box #u_top #a_closed2 img{
 	border:none;
@@ -936,6 +943,7 @@ input{
 	top: 4px;
 	right: 8px;
 	border:none;
+	cursor: pointer;
 }
 #Userlogin_box #u_top_box #a_closed img{
 	border:none;
@@ -1214,6 +1222,7 @@ input{
 	height: 16px;
 	color: #ED5565;
 	line-height: 16px;
+	cursor: pointer;
 }
 #top_logo_box #login li a:hover{
 	text-decoration: underline;

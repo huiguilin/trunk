@@ -38,7 +38,7 @@
 				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
-				<input type="text" placeholder="输入邮箱,订阅惠桂林信息" id="subscription_email_textbox" value="aaaa" name="subscription_email_textbox"/>
+				<input type="text" placeholder="输入邮箱,订阅惠桂林信息" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
 				<a href="">订阅</a>
 			</div>
 			<div id="share_box">
@@ -263,7 +263,7 @@
 			<li><a href="<?php echo U("Card/card");?>">会员卡</a></li>
 			<li class="border_right "><a href="">商户</a></li>
 		</ul>
-		<form action="" id="search_box" method="get">
+		<form id="search_box">
 			<input id="search_con" type="text" placeholder="桂林环球美食节" name="search_con"/>
 			<input id="search_btn" type="submit" value="" name="search_btn"/>
 		</form>
