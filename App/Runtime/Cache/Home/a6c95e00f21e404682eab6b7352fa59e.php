@@ -21,7 +21,7 @@
 </head>
 <body>
 <!-- 顶部订阅分享区域+Logo区域 -->
-	<!-- 顶部订阅分享区域 -->
+	<!-- 顶部订阅分享区域 --> 
 	<div id="top_rss">
 		<div id="top_rss_box">
 			<img src="__PUBLIC__/images/cellphone.png">
@@ -154,7 +154,8 @@
 						<p class="five">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
 						</p>
-						<a href="" id="login_btn">注册</a>
+						<input type="submit" name="email_reg_btn" id="email_reg_btn" value="注册"/>
+						<!-- <a href="" id="login_btn">注册</a> -->
 						<p class="six">已经是惠桂林的用户？点击<a href="" id="login_now">登录.</a></p>
 						<p class="seven" id="reg_hidebox01"></p>
 						<p class="eight" id="reg_hidebox02"></p>
@@ -184,10 +185,52 @@
 						<p class="five">
 							我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
 						</p>
-						<a href="" id="login_btn">注册</a>
+						<input type="submit" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
+						<!-- <a href="" id="login_btn">注册</a> -->
 						<p class="six">已经是惠桂林的用户？点击<a href="">登录.</a></p>
 					</form>
 				</div>	
+			</div>
+			<div id="UserregSuccess_email">
+				<div id="tips_box">
+					<img src="__PUBLIC__/images/regsucess.png">
+					<p class="one">注册成功并已登录惠桂林网！</p>
+					<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠桂林网首页</a></p>
+				</div>
+				<div id="bindingcellphone_box">
+					<p class="one">30秒绑定手机号，更方便获取优惠券以及会员卡：</p>
+					<ul>
+						<li>
+							<p class="title">手机号码</p>
+							<input class="one" type="text" name="bingdingcellphone_No">
+							<input class="two" type="submit" value="获取验证码">
+							<p class="validate">请输入手机号</p>
+						</li>
+						<li>
+							<p class="title">验证码</p>
+							<input class="one" type="text" name="bingdingcellphone_vcode">
+							<input class="two" type="submit" value="绑定手机号">
+							<p class="validate">请输入验证码</p>
+						</li>
+					</ul>
+					<div id="bindingcellphone_tips">
+						<p class="two">绑定手机号后，您可以</p>
+						<ul>
+							<li>直接使用手机号登录</li>
+							<li>更容易找回被忘记的密码</li>
+							<li>更方便快捷获取优惠券和会员卡</li>
+						</ul>
+						<p class="three">请惠粉们放心，我们会保密您的手机号，非经同意，是不会发送任何广告的~</p>
+					</div>
+				</div>
+			</div>
+			<div id="UserregSuccess_cellphone">
+				<div id="tips_box2">
+					<img src="__PUBLIC__/images/regsucess.png">
+					<p class="one">注册成功并已登录惠桂林网！</p>
+					<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠桂林网首页</a></p>
+				</div>
+				<p class="count">如果没有选择，页面将在<span>10秒</span>后自动关闭此窗口。</p>
 			</div>
 		</div>
 		<div id="Userlogin_box">
@@ -244,9 +287,8 @@
 				<a href="" id="return_userlogin">返回登录页面</a>
 			</div>
 		</div>
-		
 	</div>
-<!-- Logo区域结束 -->
+<!-- Logo区域结束
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!--  导航区域 -->
 	<!--  导航区域 -->
@@ -285,7 +327,7 @@
 	<!-- 热门标签+地点区域 -->
 	<div id="classcification">
 		<ul id="lable">
-			<li class="one"><p>热门商家</p></li>
+			<li class="one"><p>热门优惠劵</p></li>
 			<li><a class="one">江上人家</a></li>
 			<li><a class="two">巴山蜀水</a></li>
 			<li><a class="three">印象漓江</a></li>

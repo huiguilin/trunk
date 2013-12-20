@@ -23,7 +23,7 @@
 </head>
 <body>
 <!-- 顶部订阅分享区域+Logo区域 -->
-	<!-- 顶部订阅分享区域 --> 
+	<!-- 顶部订阅分享区域 -->
 	<div id="top_rss">
 		<div id="top_rss_box">
 			<img src="__PUBLIC__/images/cellphone.png">
@@ -156,8 +156,7 @@
 						<p class="five">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
 						</p>
-						<input type="submit" name="email_reg_btn" id="email_reg_btn" value="注册"/>
-						<!-- <a href="" id="login_btn">注册</a> -->
+						<a href="" id="login_btn">注册</a>
 						<p class="six">已经是惠桂林的用户？点击<a href="" id="login_now">登录.</a></p>
 						<p class="seven" id="reg_hidebox01"></p>
 						<p class="eight" id="reg_hidebox02"></p>
@@ -187,52 +186,10 @@
 						<p class="five">
 							我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
 						</p>
-						<input type="submit" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
-						<!-- <a href="" id="login_btn">注册</a> -->
+						<a href="" id="login_btn">注册</a>
 						<p class="six">已经是惠桂林的用户？点击<a href="">登录.</a></p>
 					</form>
 				</div>	
-			</div>
-			<div id="UserregSuccess_email">
-				<div id="tips_box">
-					<img src="__PUBLIC__/images/regsucess.png">
-					<p class="one">注册成功并已登录惠桂林网！</p>
-					<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠桂林网首页</a></p>
-				</div>
-				<div id="bindingcellphone_box">
-					<p class="one">30秒绑定手机号，更方便获取优惠券以及会员卡：</p>
-					<ul>
-						<li>
-							<p class="title">手机号码</p>
-							<input class="one" type="text" name="bingdingcellphone_No">
-							<input class="two" type="submit" value="获取验证码">
-							<p class="validate">请输入手机号</p>
-						</li>
-						<li>
-							<p class="title">验证码</p>
-							<input class="one" type="text" name="bingdingcellphone_vcode">
-							<input class="two" type="submit" value="绑定手机号">
-							<p class="validate">请输入验证码</p>
-						</li>
-					</ul>
-					<div id="bindingcellphone_tips">
-						<p class="two">绑定手机号后，您可以</p>
-						<ul>
-							<li>直接使用手机号登录</li>
-							<li>更容易找回被忘记的密码</li>
-							<li>更方便快捷获取优惠券和会员卡</li>
-						</ul>
-						<p class="three">请惠粉们放心，我们会保密您的手机号，非经同意，是不会发送任何广告的~</p>
-					</div>
-				</div>
-			</div>
-			<div id="UserregSuccess_cellphone">
-				<div id="tips_box2">
-					<img src="__PUBLIC__/images/regsucess.png">
-					<p class="one">注册成功并已登录惠桂林网！</p>
-					<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠桂林网首页</a></p>
-				</div>
-				<p class="count">如果没有选择，页面将在<span>10秒</span>后自动关闭此窗口。</p>
 			</div>
 		</div>
 		<div id="Userlogin_box">
@@ -289,8 +246,9 @@
 				<a href="" id="return_userlogin">返回登录页面</a>
 			</div>
 		</div>
+		
 	</div>
-<!-- Logo区域结束
+<!-- Logo区域结束 -->
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!--  导航区域 -->
 	<!--  导航区域 -->
@@ -322,16 +280,171 @@
 		
 		<!-- 左边内容区域结束 -->
 		
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/contactus.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/help_search.css" />
 <!-- 关于我们页面的内容 -->
 <div id="left_card">
-	<p class="one">联系我们</p>
-	<p class="two">此处填写联系我们的信息</p>
-	
+	<p class="one">网站帮助</p>
+	<div id="seach_box">
+		<img src="__PUBLIC__/images/ico_help.png">
+		<p>请输入您想要询问的<span>关键词</span>，查找相关问题的答案：</p>
+		<form method="get">
+			<input name="help_search" type="text" placeholder='例如输入"优惠劵",查找"优惠劵"相关问题的答案' id="help_search_textbox" />
+			<input name="help_btn_search" id="help_btn_search" type="submit" value="搜索"/>
+		</form>
+	</div>
+	<p class="two">找到"<span class="red">手机</span>"相关的内容<span class="red"> 12 </span>条</p>
+	<ul id="help_search_result">
+		<li class="one">
+			<a href="">如何申请电子会员卡?</a>
+			<p>您可以通过以下两种方...手机添加会员卡方法二：网站直接添加会员卡。</p>
+		</li>
+		<li>
+			<a href="">电子会员卡如何使用？</a>
+			<p>无论通过何种方式添加...都会存在于大众点评手机客户端>我的>我的会员卡中（如下图所示），消费前出示电子会员卡优惠界面即可享受会员专享优惠；</p>
+		</li>
+		<li>
+			<a href="">手机上可以写点评或上传商户照片吗?</a>
+			<p>目前iPhone及Android手机客户端都可以添加点评或上传商户照片。点击商户页下方的按钮即可操作。其他手机客户端暂不支持此功能。</p>
+		</li>
+		<li>
+			<a href="">商户信息有误怎么办?</a>
+			<p>如果您发现商户地址、...在iPhone及Android手机客户端上，商户页下方就有“信息报错”按钮，您可以点击并选择相应类别进行报错。小编审核后就会更新商户的相应信息。点评网的海量信息需要你我共同维护哦！</p>
+		</li>
+		<li>
+			<a href="">原大众点评会员卡还可以继续使用吗？</a>
+			<p>随着大众点评会员卡升...轻松2步直接把卡装进手机里，携带和使用更方便。</p>
+		</li>
+		<li>
+			<a href="">为什么我的手机大众点评客户端里找不到我的会员卡？</a>
+			<p>请检查您的大众点评手机客户端是否已升级至5.2版本及以上；2、目前电子会员卡仅支持iPhone和Android系统手机，其他手机机型暂不适配；3、目前已开通电子会员卡城市：上海、北京、广州、深圳、南京、杭州、天津、苏州、无锡、成都、重庆、西安、武汉、沈阳。其他城市后期将陆续开通，敬请期待。</p>
+		</li>
+		<li>
+			<a href="">电子会员卡有什么用？</a>
+			<p>大众点评网会员凭会员...把喜爱的会员卡统统装进手机，吃货滴人生就是五彩缤纷；会员专享：各种给力会员专享特权，VIP就是不一样；信息直达：及时获得喜爱的商家各种活动和新品推荐;</p>
+		</li>
+	</ul>			
 </div>
 <!-- 关于我们页面的内容结束 -->
-</div>
 
+		<!-- 右边内容区域 -->
+		<div id="main_right">
+			<div id="app">
+				<p>扫一下,关注惠桂林微信</p>
+				<img src="__PUBLIC__/images/barcode.png" alt="二维码">
+				<a>点击下载手机APP</a>
+			</div>
+			<div class="hot_box">
+				<p class="rqw">人气王</p>
+				<ul>
+					<li>
+						<a href="" class="title">李记米粉</a>
+						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
+						<p class="yhj">优惠劵</p>
+						<p class="hyk">会员卡</p>
+						<p class="one">[8]</p>
+						<p class="two">[2]</p>
+						<p class="vip">VIP</p>
+					</li>
+					<li>
+						<a href="" class="title">刘姥姥奶酪</a>
+						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
+						<p class="yhj">优惠劵</p>
+						<p class="hyk">会员卡</p>
+						<p class="one">[8]</p>
+						<p class="two">[2]</p>
+						<p class="vip">VIP</p>
+					</li>
+					<li class="no_border_bottom">
+						<a href="" class="title">大时代烤肉</a>
+						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
+						<p class="yhj">优惠劵</p>
+						<p class="hyk">会员卡</p>
+						<p class="one">[8]</p>
+						<p class="two">[2]</p>
+						<p class="vip">VIP</p>
+					</li>
+				</ul>
+			</div>
+			<div class="hot_box">
+				<p class="rqw">人气王</p>
+				<ul>
+					<li>
+						<a href="" class="title">李记米粉</a>
+						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
+						<p class="yhj">优惠劵</p>
+						<p class="hyk">会员卡</p>
+						<p class="one">[8]</p>
+						<p class="two">[2]</p>
+						<p class="vip">VIP</p>
+					</li>
+					<li>
+						<a href="" class="title">刘姥姥奶酪</a>
+						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
+						<p class="yhj">优惠劵</p>
+						<p class="hyk">会员卡</p>
+						<p class="one">[8]</p>
+						<p class="two">[2]</p>
+						<p class="vip">VIP</p>
+					</li>
+					<li class="no_border_bottom">
+						<a href="" class="title">大时代烤肉</a>
+						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
+						<p class="yhj">优惠劵</p>
+						<p class="hyk">会员卡</p>
+						<p class="one">[8]</p>
+						<p class="two">[2]</p>
+						<p class="vip">VIP</p>
+					</li>
+				</ul>
+			</div>
+			<div class="hot_box">
+				<p class="rqw">热门优惠劵</p>
+				<ul>
+					<li>
+						<a href="" class="title">李记米粉</a>
+						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
+					</li>
+					<li>
+						<a href="" class="title">刘姥姥奶酪</a>
+						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
+					</li>
+					<li class="no_border_bottom">
+						<a href="" class="title">大时代烤肉</a>
+						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
+					</li>
+				</ul>
+			</div>
+			<div class="hot_box">
+				<p class="rqw">热门会员卡</p>
+				<ul>
+					<li>
+						<a href="" class="title title2">李记米粉</a>
+						<p class="six">会员专享8.8折</p>
+						<div>
+							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
+						</div>
+					</li>
+					<li>
+						<a href="" class="title title3">刘姥姥奶酪</a>
+						<p class="seven">会员专享8.8折</p>
+						<div class="blue">
+							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
+						</div>
+					</li>
+					<li class="no_border_bottom">
+						<a href="" class="title title2">大时代烤肉</a>
+						<p class="six">会员专享8.8折</p>
+						<div class="purple">
+							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 右边内容区域结束 -->
+	</div>
+	<!-- 主要内容区域结束 -->
+<!-- 内容区域结束 -->
 <!-- 最底部区域 -->
 	<div id="bottom_info">
 		<div id="bottom_box">
@@ -353,3 +466,5 @@
 		</div>
 </div>
 <!-- 最底部区域结束 -->
+</body>
+</html>

@@ -75,6 +75,8 @@
 	font-weight: bold;
 	height: 44px;
 	line-height: 44px;
+	width: 80px;
+	
 }
 #classcification ul li a{
 	display:inline-block;

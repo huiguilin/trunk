@@ -581,7 +581,7 @@ input{
 	height: 30px;
 }
 #Userreg_box #u_bottom{
-	
+	display: block;
 }
 #Userreg_box #u_bottom ul{
 	width: 600px;
@@ -755,7 +755,7 @@ input{
 	width: 20px;
 	height: 20px;
 }
-#Userreg_box #u_bottom #email_box form #login_btn{
+#Userreg_box #u_bottom #email_box form #email_reg_btn{
 	position: absolute;
 	top: 315px;
 	left:75px;
@@ -768,6 +768,7 @@ input{
 	font-weight: bold;
 	text-align: center;
 	line-height: 46px;
+	cursor: pointer;
 }
 #Userreg_box #u_bottom #cellphone_box{
 	margin: 0 auto;
@@ -882,7 +883,7 @@ input{
 	top: 95px;
 	left:75px;
 }
-#Userreg_box #u_bottom #cellphone_box form #login_btn{
+#Userreg_box #u_bottom #cellphone_box form #cellphone_reg_btn{
 	position: absolute;
 	top: 365px;
 	left:75px;
@@ -909,13 +910,202 @@ input{
 	text-align: center;
 	line-height: 25px;
 }
+#Userreg_box #UserregSuccess_email{
+	display: none;
+}
+#Userreg_box #UserregSuccess_email #tips_box{
+	width: 620px;
+	height: 75px;
+	background: #E7FFCE;
+	border-radius: 5px;
+	position: absolute;
+	top: 25px;
+	left: 30px;
+	position: relative;
+	
+}
+#Userreg_box #UserregSuccess_email #tips_box img{
+	position: absolute;
+	top: 15px;
+	left: 10px;
+}
+#Userreg_box #UserregSuccess_email #tips_box p{
+	font-size: 14px;
+}
+#Userreg_box #UserregSuccess_email #tips_box p.one{
+	position: absolute;
+	top: 20px;
+	left: 75px;
+	font-weight: bold;
+}
+#Userreg_box #UserregSuccess_email #tips_box p.two{
+	position: absolute;
+	top: 42px;
+	left: 75px;
+}
+#Userreg_box #UserregSuccess_email #tips_box p.two a{
+	font-size: 14px;
+	color: #4467A3;
+}
+#Userreg_box #UserregSuccess_email #tips_box p.two a:hover{
+	text-decoration: underline;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box{
+	width: 650px;
+	height: 300px;
+	position: absolute;
+	top: 55px;
+	left: 30px;
+	position: relative;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box p.one{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box ul{
+	width: 450px;
+	height: 300px;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li{
+	position: relative;
+	height: 100px;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li input.one{
+	border: 1px solid #C9C9C9;
+	border-radius: 5px;
+	width: 200px;
+	height: 41px;
+	position: absolute;
+	top: 50px;
+	left: 70px;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li input.two{
+	border: 1px solid #C9C9C9;
+	border-radius: 5px;
+	width: 100px;
+	height: 31px;
+	position: absolute;
+	top: 100px;
+	left: 70px;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li p.title{
+	position: absolute;
+	top: 62px;
+	left: 0px;
+	font-size: 14px;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li p.validate{
+	position: absolute;
+	top: 62px;
+	left: 280px;
+	font-size: 14px;
+	color: #F14B2B;
+	font-size: 12px;
+	background: url('../images/ico_13.png') no-repeat;
+	padding-left: 22px;
+}
+
+#Userreg_box #UserregSuccess_email #bindingcellphone_box #bindingcellphone_tips{
+	width: 200px;
+	height: 190px;
+	background: #F2F2F2;
+	position: absolute;
+	top: 40px;
+	right: 30px;
+	border-radius: 5px;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box #bindingcellphone_tips p.two{
+	color: #515151;
+	font-size: 12px;
+	font-weight: bold;
+	position: absolute;
+	top: 10px;
+	left: 8px;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box #bindingcellphone_tips p.three{
+	color: #797979;
+	font-size: 12px;
+	position: absolute;
+	top: 130px;
+	left: 8px;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box #bindingcellphone_tips ul{
+	width: 165px;
+	height: 60px;
+	position: absolute;
+	top: 45px;
+	left: 30px;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box #bindingcellphone_tips ul li{
+	height: 20px;
+	list-style: circle;
+	color: #515151;
+}
+
+
+#Userreg_box #UserregSuccess_cellphone{
+	position: relative;
+	display: none;
+}
+#Userreg_box #UserregSuccess_cellphone p.count{
+	position: absolute;
+	top: 130px;
+	left: 80px;
+	font-size: 13px;
+}
+#Userreg_box #UserregSuccess_cellphone p.count span{
+	color: #ED5565;
+	font-size: 16px;
+	font-weight: bold;
+}
+#Userreg_box #UserregSuccess_cellphone #tips_box2{
+	width: 620px;
+	height: 75px;
+	background: #E7FFCE;
+	border-radius: 5px;
+	position: absolute;
+	top: 25px;
+	left: 30px;
+	position: relative;
+	
+}
+#Userreg_box #UserregSuccess_cellphone #tips_box2 img{
+	position: absolute;
+	top: 15px;
+	left: 10px;
+}
+#Userreg_box #UserregSuccess_cellphone #tips_box2 p{
+	font-size: 14px;
+}
+#Userreg_box #UserregSuccess_cellphone #tips_box2 p.one{
+	position: absolute;
+	top: 20px;
+	left: 75px;
+	font-weight: bold;
+}
+#Userreg_box #UserregSuccess_cellphone #tips_box2 p.two{
+	position: absolute;
+	top: 42px;
+	left: 75px;
+}
+#Userreg_box #UserregSuccess_cellphone #tips_box2 p.two a{
+	font-size: 14px;
+	color: #4467A3;
+}
+#Userreg_box #UserregSuccess_cellphone #tips_box2 p.two a:hover{
+	text-decoration: underline;
+}
+
+
+
 #Userlogin_box{
 	display: none;
 	background: white;
 	width: 627px;
 	height: 479px;
 	border-radius: 5px;
-	
 }
 
 #Userlogin_box #u_top_box{

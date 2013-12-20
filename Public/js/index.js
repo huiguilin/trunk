@@ -237,6 +237,7 @@ $(function(){
 		return false;
 	});
 	//用户登录弹窗效果结束
+
 	//邮箱注册和手机注册tap切换
 	$('#cellphone_reg').click(function(event) {
 		$('#email_box').css('display', 'none');
@@ -522,6 +523,21 @@ $(function(){
 		$('#Userlogin_box').bPopup().close();
 	});
 	//用户登录弹框关闭结束
+	//邮箱注册注册button特效
+	$('#Userreg_box #u_bottom #email_box form #email_reg_btn').click(function(event) {
+		$('#Userreg_box #u_bottom').css('display', 'none');
+		$('#Userreg_box #UserregSuccess_email').css('display', 'block');
+		return false;
+	});
+	//邮箱注册注册button特效结束
+	//手机注册注册button特效
+	$('#Userreg_box #u_bottom #cellphone_box form #cellphone_reg_btn').click(function(event) {
+		$('#Userreg_box #u_bottom').css('display', 'none');
+		$('#Userreg_box #UserregSuccess_cellphone').css('display', 'block');
+		return false;
+	});
+	
+	//手机注册注册button特效结束
 	////////////////////////用户注册+用户登录+忘记密码特效全部代码区域结束////////////////////
 	////////////////////////优惠劵一级页面全部特效代码区域////////////////////////////////
 	//优惠劵页面地点选择器特效
@@ -686,5 +702,14 @@ $(function(){
 	});
 	//手机APP弹窗区域中关闭特效结束
 	////////////////////////手机版弹窗中的全部特效代码区域结束////////////////////////////
+
+
+	//使用帮助Search结果条目Title跳转
+
+	$('#main #left_card #help_search_result li a').click(function(event) {
+		$(this).attr('href', 'http://localhost/Trunk/index.php/Help/faq01#q1');
+	});
+	//使用帮助Search结果条目Title跳转结束
+
 
 })

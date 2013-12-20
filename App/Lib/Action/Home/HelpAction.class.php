@@ -19,5 +19,7 @@ class HelpAction extends Action {
     public function faq05(){
     	$this->display();
     }
-    
+     public function search(){
+        $this->display();
+    }
 }
