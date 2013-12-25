@@ -87,9 +87,8 @@
 	background: #DA4453;
 }
 #main #left_card #help_search_result{
-	
 	width: 630px;
-	position: absolute;
+	position: relative;
 	top: 270px;
 	left: 40px;
 }
@@ -108,5 +107,12 @@
 }
 #main #left_card #help_search_result li p{
 	
+}
+#main #left_card #help_search_result #page{
+	width: 120px;
+	margin-top: 50px;
+	margin-left: 245px;
+
+
 }
 /*左边主要内容区域结束*/

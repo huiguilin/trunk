@@ -38,14 +38,16 @@
 				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
-				<input type="text" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
-				<a href="">订阅</a>
+				<form>
+					<input type="text" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
+					<input type="submit" value="订阅" name="subscription_email_btn" id="subscription_email_btn">
+				</form>
 			</div>
 			<div id="share_box">
 				<ul>
 					<li><a href="http://www.baidu.com" class="weibo">惠桂林新浪微博</a></li>
 					<li><a href="http://www.baidu.com" class="qzone">惠桂林QQ空间</a></li>
-					<li><a href="http://www.baidu.com" class="renren">惠桂林腾讯微博</a></li>
+					<li><a href="http://www.baidu.com" class="renren">惠桂林人人主页</a></li>
 				</ul>
 			</div>
 		</div>

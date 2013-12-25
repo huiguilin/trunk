@@ -382,7 +382,7 @@ input{
 	background: white;
 	display: none;
 }
-#top_rss #top_rss_box #subscription_box #subscription_email_textbox{
+#top_rss #top_rss_box #subscription_box form #subscription_email_textbox{
 	border: 1px solid #C9C9C9;
 	border-radius: 5px;
 	width: 200px;
@@ -396,7 +396,7 @@ input{
 	line-height: 35px; line-height/*\**/: 15px \9;
 
 }
-#top_rss #top_rss_box #subscription_box a{
+#top_rss #top_rss_box #subscription_box form #subscription_email_btn{
 	display: block;
 	width: 66px;
 	height: 35px;
@@ -644,69 +644,88 @@ input{
 #Userreg_box #u_bottom #email_box form p.five{
 	position: absolute;
 	top: 272px;
-	left: 95px;
-	font-size: 13px;
-}
-#Userreg_box #u_bottom #email_box form p.five a{
-	color: #4467A3;
+	left: 6px;
 }
 #Userreg_box #u_bottom #email_box form p.six{
 	position: absolute;
-	top: 390px;
-	left: 120px;
+	top: 325px;
+	left: 95px;
 	font-size: 13px;
 }
-#Userreg_box #u_bottom #email_box form p.six a{
+#Userreg_box #u_bottom #email_box form p.seven{
+	position: absolute;
+	top: 425px;
+	left: 115px;
+	font-size: 13px;
+}
+#Userreg_box #u_bottom #email_box form p.seven a{
 	color: #4467A3;
 	font-weight:bold;
 
-}
-#Userreg_box #u_bottom #email_box form p.seven{
-	color: #999;
-	font-size: 13px;
-	position: absolute;
-	top: 20px;
-	left:390px;
-	padding-left: 20px;
 }
 #Userreg_box #u_bottom #email_box form p.eight{
 	color: #999;
 	font-size: 13px;
 	position: absolute;
-	top: 80px;
+	top: 24px;
 	left:390px;
 	padding-left: 20px;
+	background: url(../images/ico_12.png) no-repeat;
 }
 #Userreg_box #u_bottom #email_box form p.nine{
 	color: #999;
 	font-size: 13px;
 	position: absolute;
-	top: 155px;
+	top: 84px;
 	left:390px;
 	padding-left: 20px;
+	background: url(../images/ico_12.png) no-repeat;
 }
 #Userreg_box #u_bottom #email_box form p.ten{
 	color: #999;
 	font-size: 13px;
 	position: absolute;
-	top: 210px;
+	top: 160px;
 	left:390px;
 	padding-left: 20px;
-}
-#Userreg_box #u_bottom #email_box form p.eleven{
-	background: url(../images/ico_13.png) no-repeat;
-}
-#Userreg_box #u_bottom #email_box form p.twelve{
 	background: url(../images/ico_12.png) no-repeat;
 }
-#Userreg_box #u_bottom #email_box form p.thirteen{
-	background: url(../images/ico_14.png) no-repeat;
+#Userreg_box #u_bottom #email_box form p.eleven{
+	color: #999;
+	font-size: 13px;
+	position: absolute;
+	top: 218px;
+	left:390px;
+	padding-left: 20px;
+	background: url(../images/ico_12.png) no-repeat;
+}
+#Userreg_box #u_bottom #email_box form p.twelve{
+	color: #999;
+	font-size: 13px;
+	position: absolute;
+	top: 278px;
+	left:390px;
+	padding-left: 20px;
+	background: url(../images/ico_12.png) no-repeat;
 }
 #Userreg_box #u_bottom #email_box form input{
 	border: 1px solid #C9C9C9;
 	border-radius: 5px;
 	width: 306px;
 	height: 41px;
+}
+#Userreg_box #u_bottom #email_box form #regemail_vcode_not_clear{
+	position: absolute;
+	top: 280px;
+	left: 290px;
+	font-size: 13px;
+	color: #4467A3;
+}
+#Userreg_box #u_bottom #email_box form img.one{
+	position: absolute;
+	top: 277px;
+	left: 335px;
+	
 }
 #Userreg_box #u_bottom #email_box form ul{
 	width: 306px;
@@ -750,14 +769,21 @@ input{
 }
 #Userreg_box #u_bottom #email_box form input.five{
 	position: absolute;
-	top: 270px;
+	top: 265px;
+	left:75px;
+	width: 200px;
+}
+#Userreg_box #u_bottom #email_box form input.six{
+	position: absolute;
+	top: 325px;
 	left:74px;
 	width: 20px;
 	height: 20px;
+	
 }
 #Userreg_box #u_bottom #email_box form #email_reg_btn{
 	position: absolute;
-	top: 315px;
+	top: 355px;
 	left:75px;
 	width: 306px;
 	height:46px;
@@ -825,6 +851,51 @@ input{
 	position: absolute;
 	top: 105px;
 	left: 6px;
+}
+#Userreg_box #u_bottom #cellphone_box form p.eight{
+	position: absolute;
+	top: 23px;
+	left: 390px;
+	color: #999;
+	font-size: 13px;
+	background: url(../images/ico_12.png) no-repeat;
+	padding-left: 20px;
+}
+#Userreg_box #u_bottom #cellphone_box form p.nine{
+	position: absolute;
+	top: 108px;
+	left: 390px;
+	color: #999;
+	font-size: 13px;
+	background: url(../images/ico_12.png) no-repeat;
+	padding-left: 20px;
+}
+#Userreg_box #u_bottom #cellphone_box form p.ten{
+	position: absolute;
+	top: 163px;
+	left: 390px;
+	color: #999;
+	font-size: 13px;
+	background: url(../images/ico_12.png) no-repeat;
+	padding-left: 20px;
+}
+#Userreg_box #u_bottom #cellphone_box form p.eleven{
+	position: absolute;
+	top: 238px;
+	left: 390px;
+	color: #999;
+	font-size: 13px;
+	background: url(../images/ico_12.png) no-repeat;
+	padding-left: 20px;
+}
+#Userreg_box #u_bottom #cellphone_box form p.twelve{
+	position: absolute;
+	top: 293px;
+	left: 390px;
+	color: #999;
+	font-size: 13px;
+	background: url(../images/ico_12.png) no-repeat;
+	padding-left: 20px;
 }
 #Userreg_box #u_bottom #cellphone_box form input{
 	border: 1px solid #C9C9C9;
@@ -957,16 +1028,19 @@ input{
 	top: 55px;
 	left: 30px;
 	position: relative;
+	
 }
 #Userreg_box #UserregSuccess_email #bindingcellphone_box p.one{
 	position: absolute;
 	top: 0px;
 	left: 0px;
-
 }
-#Userreg_box #UserregSuccess_email #bindingcellphone_box ul{
-	width: 450px;
-	height: 300px;
+#Userreg_box #UserregSuccess_email #bindingcellphone_box ul.one{
+	width: 410px;
+	height: 270px;
+	position: absolute;
+	top: 30px;
+	left: 0px;
 }
 #Userreg_box #UserregSuccess_email #bindingcellphone_box ul li{
 	position: relative;
@@ -978,35 +1052,79 @@ input{
 	width: 200px;
 	height: 41px;
 	position: absolute;
-	top: 50px;
+	top: 20px;
 	left: 70px;
 }
 #Userreg_box #UserregSuccess_email #bindingcellphone_box ul li input.two{
 	border: 1px solid #C9C9C9;
 	border-radius: 5px;
-	width: 100px;
+	width: 80px;
 	height: 31px;
 	position: absolute;
-	top: 100px;
+	top: 70px;
 	left: 70px;
+	
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li input.special{
+	font-weight: bold;
+	cursor: pointer;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li input.special2{
+	color: #BBB;
 }
 #Userreg_box #UserregSuccess_email #bindingcellphone_box ul li p.title{
 	position: absolute;
-	top: 62px;
+	top: 32px;
 	left: 0px;
 	font-size: 14px;
 }
 #Userreg_box #UserregSuccess_email #bindingcellphone_box ul li p.validate{
 	position: absolute;
-	top: 62px;
+	top: 32px;
 	left: 280px;
 	font-size: 14px;
 	color: #F14B2B;
 	font-size: 12px;
 	background: url('../images/ico_13.png') no-repeat;
 	padding-left: 22px;
+	display: none;
 }
-
+#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li p.errorTips{
+	position: absolute;
+	top: 78px;
+	left: 160px;
+	color: #BBB;
+	display: none;
+	
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box #bingdingcellphone_success{
+	width: 410px;
+	height: 190px;
+	position: absolute;
+	top: 40px;
+	left: 0px;
+	border-radius: 5px;
+	display: none;
+	background:#FFFFE1;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box #bingdingcellphone_success p.one{
+	position: absolute;
+	top: 50px;
+	left: 60px;
+	font-size: 14px;
+	font-weight: bold;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box #bingdingcellphone_success p.two{
+	position: absolute;
+	top: 100px;
+	left: 60px;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box #bingdingcellphone_success p.two a{
+	color: #5D6476;
+}
+#Userreg_box #UserregSuccess_email #bindingcellphone_box #bingdingcellphone_success p.two a:hover{
+	text-decoration: underline;
+}
 #Userreg_box #UserregSuccess_email #bindingcellphone_box #bindingcellphone_tips{
 	width: 200px;
 	height: 190px;
@@ -1142,29 +1260,42 @@ input{
 }
 #Userlogin_box #u_middle_box{
 	width: 627px;
-	height: 288px;
+	height: 318px;
 	position: relative;
 }
 #Userlogin_box #u_middle_box form #btn_login{
 	position: absolute;
-	top: 180px;
+	top: 230px;
 	left:100px;
 	width: 256px;
 	height:46px;
 	border-radius: 5px;
-	background:#ED5565;
+	background:#F3F3F3;
 	color: white;
 	font-size: 14px;
 	font-weight: bold;
 	text-align: center;
 	line-height: 46px;
+
 }
 #Userlogin_box #u_middle_box form #forgetpwd{
 	position: absolute;
 	top: 97px;
-	left:380px;
+	left:370px;
 	color: #4467A3;
 	
+}
+#Userlogin_box #u_middle_box form #vcode_not_clear{
+	position: absolute;
+	top: 155px;
+	left:370px;
+	color: #4467A3;
+}
+#Userlogin_box #u_middle_box form #vcode_img{
+	position: absolute;
+	top: 150px;
+	left:420px;
+	color: #4467A3;
 }
 #Userlogin_box #u_middle_box form p.one{
 	position: absolute;
@@ -1180,24 +1311,30 @@ input{
 }
 #Userlogin_box #u_middle_box form p.three{
 	position: absolute;
-	top: 142px;
-	left: 120px;
+	top: 150px;
+	left: 40px;
+	font-size: 14px;
 }
 #Userlogin_box #u_middle_box form p.four{
 	position: absolute;
-	top: 142px;
-	left: 260px;
+	top: 202px;
+	left: 120px;
 }
 #Userlogin_box #u_middle_box form p.five{
 	position: absolute;
-	top: 248px;
-	left: 160px;
+	top: 202px;
+	left: 250px;
 }
-#Userlogin_box #u_middle_box form p.five a{
+#Userlogin_box #u_middle_box form p.six{
+	position: absolute;
+	top: 290px;
+	left: 163px;
+}
+#Userlogin_box #u_middle_box form p.six a{
 	color: #4467A3;
 	font-weight: bold;
 }
-#Userlogin_box #u_middle_box form p.six{
+#Userlogin_box #u_middle_box form p.seven{
 	color: #F14B2B;
 	font-size: 12px;
 	background: url(../images/ico_13.png) no-repeat;
@@ -1206,8 +1343,9 @@ input{
 	left: 370px;
 	padding-left: 20px;
 	display: none;
+	
 }
-#Userlogin_box #u_middle_box form p.seven{
+#Userlogin_box #u_middle_box form p.eight{
 	color: #F14B2B;
 	font-size: 12px;
 	background: url(../images/ico_13.png) no-repeat;
@@ -1216,6 +1354,29 @@ input{
 	left: 450px;
 	padding-left: 20px;
 	display: none;
+	
+}
+#Userlogin_box #u_middle_box form p.nine{
+	color: #F14B2B;
+	font-size: 12px;
+	background: url(../images/ico_13.png) no-repeat;
+	position: absolute;
+	top: 155px;
+	right:45px;
+	padding-left: 20px;
+	display: none;
+	
+}
+#Userlogin_box #u_middle_box form p.ten{
+	color: #F14B2B;
+	font-size: 12px;
+	background: url(../images/ico_13.png) no-repeat;
+	position: absolute;
+	top: 245px;
+	left: 370px;
+	padding-left: 20px;
+	display: none
+	
 }
 #Userlogin_box #u_middle_box form input{
 	border: 1px solid #C9C9C9;
@@ -1237,13 +1398,18 @@ input{
 	position: absolute;
 	top: 140px;
 	left: 100px;
-	width: 20px;
-	height: 20px;
 }
 #Userlogin_box #u_middle_box form input.four{
 	position: absolute;
-	top: 140px;
-	left: 240px;
+	top: 200px;
+	left: 100px;
+	width: 20px;
+	height: 20px;
+}
+#Userlogin_box #u_middle_box form input.five	{
+	position: absolute;
+	top: 200px;
+	left: 230px;
 	width: 20px;
 	height: 20px;
 }
@@ -1258,7 +1424,7 @@ input{
 }
 #Userlogin_box #u_bottom_box p{
 	position: absolute;
-	top: 30px;
+	top: 40px;
 	left: 30px;
 	color: #333;
 	font-size: 14px;
@@ -1267,7 +1433,7 @@ input{
 	width: 500px;
 	height: 18px;
 	position: absolute;
-	top: 70px;
+	top: 80px;
 	left: 4px;	
 }
 #Userlogin_box #u_bottom_box ul li{
@@ -1278,6 +1444,9 @@ input{
 #Userlogin_box #u_bottom_box ul li a{
 	padding-left: 20px;
 	background:url('../images/iconbg_a109284.png') no-repeat;
+}
+#Userlogin_box #u_bottom_box ul li a:hover{
+	text-decoration: underline;
 }
 #Userlogin_box #u_bottom_box ul li a.one{
 	background-position: 0px -1339px;
@@ -1342,7 +1511,7 @@ input{
 	top: 57px;
 	left: 120px;
 }
-#UserForgetpwd_box ul li p.three{
+#UserForgetpwd_box ul li #forgetpwd_hidebox01{
 	position: absolute;
 	top: 92px;
 	left: 390px;
@@ -1352,7 +1521,17 @@ input{
 	padding-left: 20px;
 	display: none;
 }
-#UserForgetpwd_box ul li input{
+#UserForgetpwd_box ul li #forgetpwd_hidebox02{
+	position: absolute;
+	top: 92px;
+	left: 390px;
+	color: #F14B2B;
+	font-size: 12px;
+	background: url(../images/ico_13.png) no-repeat;
+	padding-left: 20px;
+	display: none;
+}
+#UserForgetpwd_box ul li form input{
 	position: absolute;
 	top: 80px;
 	left: 120px;
@@ -1362,7 +1541,7 @@ input{
 	height: 40px;
 
 }
-#UserForgetpwd_box ul li a{
+#UserForgetpwd_box ul li form a{
 	background: #D3DDED;
 	display: block;
 	width: 82px;

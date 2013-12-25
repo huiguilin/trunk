@@ -23,7 +23,7 @@
 </head>
 <body>
 <!-- 顶部订阅分享区域+Logo区域 -->
-	<!-- 顶部订阅分享区域 -->
+	<!-- 顶部订阅分享区域 --> 
 	<div id="top_rss">
 		<div id="top_rss_box">
 			<img src="__PUBLIC__/images/cellphone.png">
@@ -38,20 +38,22 @@
 				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
-				<input type="text" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
-				<a href="">订阅</a>
+				<form>
+					<input type="text" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
+					<input type="submit" value="订阅" name="subscription_email_btn" id="subscription_email_btn">
+				</form>
 			</div>
 			<div id="share_box">
 				<ul>
 					<li><a href="http://www.baidu.com" class="weibo">惠桂林新浪微博</a></li>
 					<li><a href="http://www.baidu.com" class="qzone">惠桂林QQ空间</a></li>
-					<li><a href="http://www.baidu.com" class="renren">惠桂林腾讯微博</a></li>
+					<li><a href="http://www.baidu.com" class="renren">惠桂林人人主页</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	<div id="cellphone_version_box">
-		<p class="one">惠桂林手机手机客户端</p>	
+		<p class="one">惠桂林手机客户端</p>	
 		<p class="two">吃喝玩乐，惠享生活！</p>
 		<a class="iphone" href="">iPhone</a>
 		<a class="android" href="">Android</a>
@@ -156,7 +158,8 @@
 						<p class="five">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
 						</p>
-						<a href="" id="login_btn">注册</a>
+						<input type="submit" name="email_reg_btn" id="email_reg_btn" value="注册"/>
+						<!-- <a href="" id="login_btn">注册</a> -->
 						<p class="six">已经是惠桂林的用户？点击<a href="" id="login_now">登录.</a></p>
 						<p class="seven" id="reg_hidebox01"></p>
 						<p class="eight" id="reg_hidebox02"></p>
@@ -186,10 +189,57 @@
 						<p class="five">
 							我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
 						</p>
-						<a href="" id="login_btn">注册</a>
+						<input type="submit" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
+						<!-- <a href="" id="login_btn">注册</a> -->
 						<p class="six">已经是惠桂林的用户？点击<a href="">登录.</a></p>
 					</form>
 				</div>	
+			</div>
+			<div id="UserregSuccess_email">
+				<div id="tips_box">
+					<img src="__PUBLIC__/images/regsucess.png">
+					<p class="one">注册成功并已登录惠桂林网！</p>
+					<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="" id="return_page">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠桂林网首页</a></p>
+				</div>
+				<div id="bindingcellphone_box">
+					<p class="one">30秒绑定手机号，更方便获取优惠券以及会员卡：</p>
+					<ul class="one">
+						<li>
+							<p class="title">手机号码</p>
+							<input class="one" type="text" name="bingdingcellphone_No" id="bingdingcellphone_No">
+							<input class="two special" type="submit" value="获取验证码" id="get_vcode">
+							<p class="validate" id="bingdingcellphone_No_hidden_tips"></p>
+							<p class="errorTips">如果长时间没收到验证码，请在60秒后重试</p>
+						</li>
+						<li>
+							<p class="title">验证码</p>
+							<input class="one" type="text" name="bingdingcellphone_vcode" id="bingdingcellphone_vcode">
+							<input class="two special2" type="submit" value="绑定手机号" id="validate_vcode" disabled="disabled">
+							<p class="validate" id="bingdingcellphone_vcode_hidden_tips"></p>
+						</li>
+					</ul>
+					<div id="bindingcellphone_tips">
+						<p class="two">绑定手机号后，您可以</p>
+						<ul>
+							<li>直接使用手机号登录</li>
+							<li>更容易找回被忘记的密码</li>
+							<li>更方便快捷获取优惠券和会员卡</li>
+						</ul>
+						<p class="three">请惠粉们放心，我们会保密您的手机号，非经同意，是不会发送任何广告的~</p>
+					</div>
+					<div id="bingdingcellphone_success">
+						<p class="one">已完成绑定,手机号为186****4143</p>
+						<p class="two">如需修改，请到 个人中心-<a href="">我的设置</a> 修改</p>
+					</div>
+				</div>
+			</div>
+			<div id="UserregSuccess_cellphone">
+				<div id="tips_box2">
+					<img src="__PUBLIC__/images/regsucess.png">
+					<p class="one">注册成功并已登录惠桂林网！</p>
+					<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠桂林网首页</a></p>
+				</div>
+				<p class="count">如果没有选择，页面将在<span>10秒</span>后自动关闭此窗口。</p>
 			</div>
 		</div>
 		<div id="Userlogin_box">
@@ -246,9 +296,8 @@
 				<a href="" id="return_userlogin">返回登录页面</a>
 			</div>
 		</div>
-		
 	</div>
-<!-- Logo区域结束 -->
+<!-- Logo区域结束
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!--  导航区域 -->
 	<!--  导航区域 -->
@@ -284,25 +333,25 @@
 <!-- 关于我们页面的内容 -->
 <div id="left_card">
 	<p class="one">商务合作</p>
-	<p class="two">如果您想与惠桂林合作，请花些时间填写一下信息</p>
-	<p class="three">感谢您的支持，如果有合作意向，我们的销售代表会尽快的和你联系！</p>
+	<p class="two">如果您有意与惠桂林合作，让自己的生意更上一层楼，请补充以下信息，尽快与我们取得联系！</p>
+	<p class="three">感谢您的支持，我们的销售代表会尽快与您联系！</p>
 	<form id="intention_sumbit_form">
 		<ul>
 			<li>
-				<p class="title">您的称呼</p>
+				<p class="title">您的称呼：</p>
 				<input type="text" name="nickname" class="one" id="intention_username" placeholder="请填写您的称呼"/>
 			</li>
 			<li>
-				<p class="title">您的电话</p>
+				<p class="title">您的电话：</p>
 				<input type="text" name="cellphone" class="one" id="intention_cellphone" placeholder="请填写您的联系方式"/>
 			</li>
 			<li class="one">
-				<p class="title">其他联系方式</p>
+				<p class="title">其他联系方式：</p>
 				<input type="text" name="othercommunication" class="one"/>
 				<p class="othercommunication">请留下其他联系方式，如QQ, Email等。方便我们回复</p>
 			</li>
 			<li class="two">
-				<p class="title title2">区域</p>
+				<p class="title title2">区域：</p>
 				<select name="area" class="one">
 					<option value="">桂林</option>
 					<option value="">南宁</option>
@@ -311,15 +360,15 @@
 				</select>
 			</li>
 			<li>
-				<p class="title">参与优惠商户名称</p>
+				<p class="title">参与优惠商户名称：</p>
 				<input type="text" name="shopname" class="one" id="intention_business" placeholder="请填写您公司的名称"/>
 			</li>
 			<li>
-				<p class="title">公司地址</p>
+				<p class="title">公司地址：</p>
 				<input type="text" name="company_address" class="one" placeholder="请填写您公司的地址"/>
 			</li>
 			<li class="three">
-				<p class="title title2">类别</p>
+				<p class="title title2">类别：</p>
 				<select name="classification" class="two">
 					<option value="">美食</option>
 					<option value="">休闲</option>
@@ -330,7 +379,7 @@
 				</select>
 			</li>
 			<li class="four">
-				<p class="title">优惠内容描述</p>
+				<p class="title">优惠内容描述：</p>
 				<textarea cols="50" rows="8" class="one" id="intention_content"></textarea>
 			</li>
 		</ul>

@@ -23,7 +23,7 @@
 </head>
 <body>
 <!-- 顶部订阅分享区域+Logo区域 -->
-	<!-- 顶部订阅分享区域 -->
+	<!-- 顶部订阅分享区域 --> 
 	<div id="top_rss">
 		<div id="top_rss_box">
 			<img src="__PUBLIC__/images/cellphone.png">
@@ -38,20 +38,22 @@
 				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
-				<input type="text" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
-				<a href="">订阅</a>
+				<form>
+					<input type="text" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
+					<input type="submit" value="订阅" name="subscription_email_btn" id="subscription_email_btn">
+				</form>
 			</div>
 			<div id="share_box">
 				<ul>
 					<li><a href="http://www.baidu.com" class="weibo">惠桂林新浪微博</a></li>
 					<li><a href="http://www.baidu.com" class="qzone">惠桂林QQ空间</a></li>
-					<li><a href="http://www.baidu.com" class="renren">惠桂林腾讯微博</a></li>
+					<li><a href="http://www.baidu.com" class="renren">惠桂林人人主页</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	<div id="cellphone_version_box">
-		<p class="one">惠桂林手机手机客户端</p>	
+		<p class="one">惠桂林手机客户端</p>	
 		<p class="two">吃喝玩乐，惠享生活！</p>
 		<a class="iphone" href="">iPhone</a>
 		<a class="android" href="">Android</a>
@@ -152,16 +154,21 @@
 						<input type="password" name="pwd2" class="three"/>
 						<p class="four">昵称</p>
 						<input type="text" name="nickname" class="four"/>
-						<input type="checkbox" name="license" class="five" checked="true">
-						<p class="five">
+						<p class="five">验证码</p>
+						<input type="text" name="reg_vcode" class="five"/>
+						<a href="" id="regemail_vcode_not_clear">看不清</a>
+						<img src="<?php echo U("Home/Register/verifyImg");?>" class="one">
+						<input type="checkbox" name="license" class="six" checked="true">
+						<p class="six">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
 						</p>
-						<a href="" id="login_btn">注册</a>
-						<p class="six">已经是惠桂林的用户？点击<a href="" id="login_now">登录.</a></p>
-						<p class="seven" id="reg_hidebox01"></p>
-						<p class="eight" id="reg_hidebox02"></p>
-						<p class="nine" id="reg_hidebox03"></p>
-						<p class="ten" id="reg_hidebox04"></p>
+						<input type="submit" name="email_reg_btn" id="email_reg_btn" value="注册"/>
+						<p class="seven">已经是惠桂林的用户？点击<a href="" id="login_now">登录.</a></p>
+						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
+						<p class="nine" id="reg_hidebox02">密码由6-32位的字母、数字或符号组成</p>
+						<p class="ten" id="reg_hidebox03">请再次输入密码</p>
+						<p class="eleven" id="reg_hidebox04">昵称不能超过12个汉字或24个字符</p>
+						<p class="twelve" id="reg_hidebox05"></p> 
 					</form>
 				</div>
 				<div id="cellphone_box" class="hide">
@@ -186,10 +193,60 @@
 						<p class="five">
 							我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
 						</p>
-						<a href="" id="login_btn">注册</a>
-						<p class="six">已经是惠桂林的用户？点击<a href="">登录.</a></p>
+						<input type="submit" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
+						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
+						<p class="nine" id="reg_hidebox02">请输入手机收到的短信验证码</p>
+						<p class="ten" id="reg_hidebox03">密码由6-32位的字母、数字或符号组成</p>
+						<p class="eleven" id="reg_hidebox04">请再次输入密码</p>
+						<p class="twelve" id="reg_hidebox05">昵称由1-16位的汉字、英文字母或数字组成</p> 
 					</form>
 				</div>	
+			</div>
+			<div id="UserregSuccess_email">
+				<div id="tips_box">
+					<img src="__PUBLIC__/images/regsucess.png">
+					<p class="one">注册成功并已登录惠桂林网！</p>
+					<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="" id="return_page">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠桂林网首页</a></p>
+				</div>
+				<div id="bindingcellphone_box">
+					<p class="one">30秒绑定手机号，更方便获取优惠券以及会员卡：</p>
+					<ul class="one">
+						<li>
+							<p class="title">手机号码</p>
+							<input class="one" type="text" name="bingdingcellphone_No" id="bingdingcellphone_No">
+							<input class="two special" type="submit" value="获取验证码" id="get_vcode">
+							<p class="validate" id="bingdingcellphone_No_hidden_tips"></p>
+							<p class="errorTips">如果长时间没收到验证码，请在60秒后重试</p>
+						</li>
+						<li>
+							<p class="title">验证码</p>
+							<input class="one" type="text" name="bingdingcellphone_vcode" id="bingdingcellphone_vcode">
+							<input class="two special2" type="submit" value="绑定手机号" id="validate_vcode" disabled="disabled">
+							<p class="validate" id="bingdingcellphone_vcode_hidden_tips"></p>
+						</li>
+					</ul>
+					<div id="bindingcellphone_tips">
+						<p class="two">绑定手机号后，您可以</p>
+						<ul>
+							<li>直接使用手机号登录</li>
+							<li>更容易找回被忘记的密码</li>
+							<li>更方便快捷获取优惠券和会员卡</li>
+						</ul>
+						<p class="three">请惠粉们放心，我们会保密您的手机号，非经同意，是不会发送任何广告的~</p>
+					</div>
+					<div id="bingdingcellphone_success">
+						<p class="one">已完成绑定,手机号为186****4143</p>
+						<p class="two">如需修改，请到 个人中心-<a href="">我的设置</a> 修改</p>
+					</div>
+				</div>
+			</div>
+			<div id="UserregSuccess_cellphone">
+				<div id="tips_box2">
+					<img src="__PUBLIC__/images/regsucess.png">
+					<p class="one">注册成功并已登录惠桂林网！</p>
+					<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="" id="return_page2">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠桂林网首页</a></p>
+				</div>
+				<p class="count">如果没有选择，页面将在<span>10秒</span>后自动关闭此窗口。</p>
 			</div>
 		</div>
 		<div id="Userlogin_box">
@@ -198,20 +255,27 @@
 				<p>用户登录</p>
 			</div>
 			<div id="u_middle_box">
-				<form action="" method="post">
+				<form>
 					<p class="one">账号</p>
 					<input type="text" name="username" class="one" />
 					<p class="two">密码</p>
 					<input type="password" name="password" class="two"/>
+					<p class="three">验证码</p>
+					<input type="textbox" name="vcode" class="three"/>
+					<a href="" id="vcode_not_clear">看不清</a>
+					<img src="<?php echo U("Home/Login/verifyImg");?>" id="vcode_img">
 					<a href="" id="forgetpwd">忘记密码?</a>
-					<input type="checkbox" name="rememberpwd" class="three">
-					<p class="three">记住密码</p>
-					<input type="checkbox" name="autologin" class="four">
-					<p class="four">下次自动登录</p>
-					<a href="" id="btn_login">登录</a>
-					<p class="five">还没有账户？<a href="" id="reg_now">立即注册</a></p>
-					<p class="six" id="login_hidebox01">请输入邮箱/手机号</p>
-					<p class="seven" id="login_hidebox02">请输入密码</p>
+					<input type="checkbox" name="rememberpwd" class="four">
+					<p class="four">记住密码</p>
+					<input type="checkbox" name="autologin" class="five">
+					<p class="five">下次自动登录</p>
+					<input type="submit" name="btn_login" id="btn_login" value="登录" disabled="disabled"/>
+					<p class="six">还没有账户？<a href="" id="reg_now">立即注册</a></p>
+					<p class="seven" id="login_hidebox01">请输入邮箱/手机号</p>
+					<p class="eight" id="login_hidebox02">请输入密码</p>
+					<p class="nine" id="login_hidebox03">请输入验证码</p>
+					<p class="ten" id="login_hidebox04">用户名或密码有误，请重新输入</p>
+					<input type="hidden" id="login_hidebox05" value="<?php echo U("Home/Login/verify");?>" />
 				</form>
 			</div>
 			<div id="u_bottom_box">
@@ -230,23 +294,26 @@
 						<img src="__PUBLIC__/images/forget_cellphone.png">
 						<p class="one">绑定手机号<span>用户只能通过手机号找回</span></p>
 						<p class="two">请输入您绑定的手机号，找回密码：</p>
-						<input type="text" name="cellphone_no" class="one" id="cellphone_no"/>
-						<a href="">发送</a>
-						<p class="three" id="forgetpwd_hidebox01">请输入注册时填写的手机号码</p>
+						<form>
+							<input type="text" name="cellphone_no" class="one" id="cellphone_no"/>
+							<a href="" id="cellphone_send_btn">发送</a>
+						</form>
+						<p id="forgetpwd_hidebox01"></p>
 					</li>
 					<li>
 						<img src="__PUBLIC__/images/forget_email.png">
 						<p class="one">未绑定手机号用户可以通过邮箱找</p>
 						<p class="two">请输入您登录的邮箱地址，找回密码：</p>
-						<input type="text" name="email_no" class="one" id="email_no"/>
-						<a href="">发送</a>
-						<p class="three" id="forgetpwd_hidebox02">请输入注册时填写的邮箱地址</p>
+						<form>
+							<input type="text" name="email_no" class="one" id="email_no"/>
+							<a href="" id="email_send_btn">发送</a>
+						</form>
+						<p id="forgetpwd_hidebox02"></p>
 					</li>
 				</ul>
 				<a href="" id="return_userlogin">返回登录页面</a>
 			</div>
 		</div>
-		
 	</div>
 <!-- Logo区域结束 -->
 <!-- 顶部订阅分享区域+Logo区域结束 -->
@@ -287,42 +354,26 @@
 	<div id="seach_box">
 		<img src="__PUBLIC__/images/ico_help.png">
 		<p>请输入您想要询问的<span>关键词</span>，查找相关问题的答案：</p>
-		<form method="get">
-			<input name="help_search" type="text" placeholder='例如输入"优惠劵",查找"优惠劵"相关问题的答案' id="help_search_textbox" />
+		<form action="<?php echo U('Help/search');?>" method="get">
+			<input name="keyword" type="text" placeholder='例如输入"优惠劵",查找"优惠劵"相关问题的答案' id="help_search_textbox" />
 			<input name="help_btn_search" id="help_btn_search" type="submit" value="搜索"/>
 		</form>
 	</div>
-	<p class="two">找到"<span class="red">手机</span>"相关的内容<span class="red"> 12 </span>条</p>
+	<p class="two">找到"<span class="red"><?php echo ($keyword); ?></span>"相关的内容<span class="red"> <?php echo ($count); ?> </span>条</p>
 	<ul id="help_search_result">
-		<li class="one">
-			<a href="">如何申请电子会员卡?</a>
-			<p>您可以通过以下两种方...手机添加会员卡方法二：网站直接添加会员卡。</p>
+    <?php if(is_array($data)): foreach($data as $num=>$vo): if($num == 0): ?><li class="one">
+			<a href="<?php echo ($vo["help_id"]); ?>"><?php echo ($vo["question"]); ?></a>
+			<p><?php echo ($vo["answer"]); ?></p>
 		</li>
+    <?php else: ?>
 		<li>
-			<a href="">电子会员卡如何使用？</a>
-			<p>无论通过何种方式添加...都会存在于大众点评手机客户端>我的>我的会员卡中（如下图所示），消费前出示电子会员卡优惠界面即可享受会员专享优惠；</p>
-		</li>
-		<li>
-			<a href="">手机上可以写点评或上传商户照片吗?</a>
-			<p>目前iPhone及Android手机客户端都可以添加点评或上传商户照片。点击商户页下方的按钮即可操作。其他手机客户端暂不支持此功能。</p>
-		</li>
-		<li>
-			<a href="">商户信息有误怎么办?</a>
-			<p>如果您发现商户地址、...在iPhone及Android手机客户端上，商户页下方就有“信息报错”按钮，您可以点击并选择相应类别进行报错。小编审核后就会更新商户的相应信息。点评网的海量信息需要你我共同维护哦！</p>
-		</li>
-		<li>
-			<a href="">原大众点评会员卡还可以继续使用吗？</a>
-			<p>随着大众点评会员卡升...轻松2步直接把卡装进手机里，携带和使用更方便。</p>
-		</li>
-		<li>
-			<a href="">为什么我的手机大众点评客户端里找不到我的会员卡？</a>
-			<p>请检查您的大众点评手机客户端是否已升级至5.2版本及以上；2、目前电子会员卡仅支持iPhone和Android系统手机，其他手机机型暂不适配；3、目前已开通电子会员卡城市：上海、北京、广州、深圳、南京、杭州、天津、苏州、无锡、成都、重庆、西安、武汉、沈阳。其他城市后期将陆续开通，敬请期待。</p>
-		</li>
-		<li>
-			<a href="">电子会员卡有什么用？</a>
-			<p>大众点评网会员凭会员...把喜爱的会员卡统统装进手机，吃货滴人生就是五彩缤纷；会员专享：各种给力会员专享特权，VIP就是不一样；信息直达：及时获得喜爱的商家各种活动和新品推荐;</p>
-		</li>
-	</ul>			
+			<a href="<?php echo ($vo["help_id"]); ?>"><?php echo ($vo["question"]); ?></a>
+			<p><?php echo ($vo["answer"]); ?></p>
+		</li><?php endif; endforeach; endif; ?>
+    <div class="clear"></div>
+    <div id="page"><?php echo ($page); ?></div>	
+	</ul>
+    
 </div>
 <!-- 关于我们页面的内容结束 -->
 

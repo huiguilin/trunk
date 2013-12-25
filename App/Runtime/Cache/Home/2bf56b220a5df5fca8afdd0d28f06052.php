@@ -36,20 +36,22 @@
 				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
-				<input type="text" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
-				<a href="">订阅</a>
+				<form>
+					<input type="text" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
+					<input type="submit" value="订阅" name="subscription_email_btn" id="subscription_email_btn">
+				</form>
 			</div>
 			<div id="share_box">
 				<ul>
 					<li><a href="http://www.baidu.com" class="weibo">惠桂林新浪微博</a></li>
 					<li><a href="http://www.baidu.com" class="qzone">惠桂林QQ空间</a></li>
-					<li><a href="http://www.baidu.com" class="renren">惠桂林腾讯微博</a></li>
+					<li><a href="http://www.baidu.com" class="renren">惠桂林人人主页</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	<div id="cellphone_version_box">
-		<p class="one">惠桂林手机手机客户端</p>	
+		<p class="one">惠桂林手机客户端</p>	
 		<p class="two">吃喝玩乐，惠享生活！</p>
 		<a class="iphone" href="">iPhone</a>
 		<a class="android" href="">Android</a>
@@ -202,15 +204,16 @@
 					<ul>
 						<li>
 							<p class="title">手机号码</p>
-							<input class="one" type="text" name="bingdingcellphone_No">
-							<input class="two" type="submit" value="获取验证码">
-							<p class="validate">请输入手机号</p>
+							<input class="one" type="text" name="bingdingcellphone_No" id="bingdingcellphone_No">
+							<input class="two special" type="submit" value="获取验证码" id="get_vcode">
+							<p class="validate" id="bingdingcellphone_No_hidden_tips"></p>
+							<p class="errorTips">如果长时间没收到验证码，请在60秒后重试</p>
 						</li>
 						<li>
 							<p class="title">验证码</p>
-							<input class="one" type="text" name="bingdingcellphone_vcode">
-							<input class="two" type="submit" value="绑定手机号">
-							<p class="validate">请输入验证码</p>
+							<input class="one" type="text" name="bingdingcellphone_vcode" id="bingdingcellphone_vcode">
+							<input class="two special2" type="submit" value="绑定手机号" id="validate_vcode">
+							<p class="validate" id="bingdingcellphone_vcode_hidden_tips"></p>
 						</li>
 					</ul>
 					<div id="bindingcellphone_tips">
@@ -221,6 +224,10 @@
 							<li>更方便快捷获取优惠券和会员卡</li>
 						</ul>
 						<p class="three">请惠粉们放心，我们会保密您的手机号，非经同意，是不会发送任何广告的~</p>
+					</div>
+					<div id="bingdingcellphone_success">
+						<p class="one">已完成绑定，<span>手机号为186****4143</span></p>
+						<p class="two">如需修改，请到 个人中心-<a>我的设置</a> 修改</p>
 					</div>
 				</div>
 			</div>

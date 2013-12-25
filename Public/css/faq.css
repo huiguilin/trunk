@@ -1,9 +1,12 @@
 
 /*左边主要内容区域*/
+#main{
+	height: 700px;
+}
 #main #faq01_box{
 	position: relative;
 	width: 955px;
-	height: 1380px;
+	height: 100%;
 	border: 2px solid #F7F8FA;
 }
 #main #faq01_box p.one{
