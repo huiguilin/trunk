@@ -1,0 +1,36 @@
+
+<include file="./App/Tpl/Home/Public/about_tpl_top.html" />
+<load href="__PUBLIC__/css/help_search.css" />
+<!-- 关于我们页面的内容 -->
+<div id="left_card">
+	<p class="one">网站帮助</p>
+	<div id="seach_box">
+		<img src="__PUBLIC__/images/ico_help.png">
+		<p>请输入您想要询问的<span>关键词</span>，查找相关问题的答案：</p>
+		<form action="{:U('Help/search')}" method="get">
+			<input name="keyword" type="text" placeholder='例如输入"优惠劵",查找"优惠劵"相关问题的答案' id="help_search_textbox" />
+			<input name="help_btn_search" id="help_btn_search" type="submit" value="搜索"/>
+		</form>
+	</div>
+	<p class="two">找到"<span class="red">{$keyword}</span>"相关的内容<span class="red"> {$count} </span>条</p>
+	<ul id="help_search_result">
+    <foreach name="data" key="num" item="vo">
+    <if condition="$num eq 0">
+		<li class="one">
+			<a href="{$vo.help_id}">{$vo.question}</a>
+			<p>{$vo.answer}</p>
+		</li>
+    <else />
+		<li>
+			<a href="{$vo.help_id}">{$vo.question}</a>
+			<p>{$vo.answer}</p>
+		</li>
+    </if>
+    </foreach>
+    <div class="clear"></div>
+    <div id="page">{$page}</div>	
+	</ul>
+    
+</div>
+<!-- 关于我们页面的内容结束 -->
+<include file="./App/Tpl/Home/Public/about_tpl_bottom.html" />

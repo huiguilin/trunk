@@ -11,5 +11,7 @@ return array(
     'DB_PWD'    => 'linhuazhu123', // 密码
     'DB_PORT'   => 3306, // 端口
     'DB_PREFIX' => 't_monkey_', // 数据库表前缀
+
+    'URL_HTML_SUFFIX' => '', //取消伪静态地址
 );
 ?>

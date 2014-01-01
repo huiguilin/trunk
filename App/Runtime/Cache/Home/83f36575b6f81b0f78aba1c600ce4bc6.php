@@ -165,9 +165,9 @@
 						<input type="submit" name="email_reg_btn" id="email_reg_btn" value="注册"/>
 						<p class="seven">已经是惠桂林的用户？点击<a href="" id="login_now">登录.</a></p>
 						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
-						<p class="nine" id="reg_hidebox02">密码由6-20位的字母、数字或符号组成</p>
+						<p class="nine" id="reg_hidebox02">密码由6-32位的字母、数字或符号组成</p>
 						<p class="ten" id="reg_hidebox03">请再次输入密码</p>
-						<p class="eleven" id="reg_hidebox04">昵称由1-16位的汉字、英文字母或数字组成</p>
+						<p class="eleven" id="reg_hidebox04">昵称不能超过12个汉字或24个字符</p>
 						<p class="twelve" id="reg_hidebox05"></p> 
 					</form>
 				</div>
@@ -194,6 +194,11 @@
 							我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
 						</p>
 						<input type="submit" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
+						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
+						<p class="nine" id="reg_hidebox02">请输入手机收到的短信验证码</p>
+						<p class="ten" id="reg_hidebox03">密码由6-32位的字母、数字或符号组成</p>
+						<p class="eleven" id="reg_hidebox04">请再次输入密码</p>
+						<p class="twelve" id="reg_hidebox05">昵称由1-16位的汉字、英文字母或数字组成</p> 
 					</form>
 				</div>	
 			</div>
@@ -342,34 +347,155 @@
 		
 		<!-- 左边内容区域结束 -->
 		
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/feedback.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/help_search.css" />
 <!-- 关于我们页面的内容 -->
 <div id="left_card">
-	<p class="one">意见反馈</p>
-	<p class="two">亲，您的意见很重要，我们一直在聆听</p>
-	<p class="three">谢谢您的支持，您的意见和建议，我们一定会认真考虑，有了您的不断帮助，惠桂林定会更好！</p>
-	<form id="online_submit_form">
-		<ul>
-			<li>
-				<p>您的称呼:</p>
-				<input type="text" name="username" class="one" id="online_submit_username" placeholder="请留下您的称呼" />
-			</li>
-			<li class="one">
-				<p>联系方式:</p>
-				<input type="text" name="communication_way" class="one" id="online_submit_cellphone" placeholder="请留下您的联系方式"/>
-				<p class="tip">可以是Email、微信、QQ或者手机号码，方便我们及时回复</p>
-			</li>
-			<li class="two">
-				<p>内容:</p>
-				<textarea rows="7" cols="50" id="online_submit_content" name="content" ></textarea>
-			</li>
-		</ul>
-		<input id="btn_submit" type="button" value="提交">
-	</form>
+	<p class="one">网站帮助</p>
+	<div id="seach_box">
+		<img src="__PUBLIC__/images/ico_help.png">
+		<p>请输入您想要询问的<span>关键词</span>，查找相关问题的答案：</p>
+		<form action="<?php echo U('Help/search');?>" method="get">
+			<input name="keyword" type="text" placeholder='例如输入"优惠劵",查找"优惠劵"相关问题的答案' id="help_search_textbox" />
+			<input name="help_btn_search" id="help_btn_search" type="submit" value="搜索"/>
+		</form>
+	</div>
+	<p class="two">找到"<span class="red"><?php echo ($keyword); ?></span>"相关的内容<span class="red"> <?php echo ($count); ?> </span>条</p>
+	<ul id="help_search_result">
+    <?php if(is_array($data)): foreach($data as $num=>$vo): if($num == 0): ?><li class="one">
+			<a href="<?php echo ($vo["help_id"]); ?>"><?php echo ($vo["question"]); ?></a>
+			<p><?php echo ($vo["answer"]); ?></p>
+		</li>
+    <?php else: ?>
+		<li>
+			<a href="<?php echo ($vo["help_id"]); ?>"><?php echo ($vo["question"]); ?></a>
+			<p><?php echo ($vo["answer"]); ?></p>
+		</li><?php endif; endforeach; endif; ?>
+    <div class="clear"></div>
+    <div id="page"><?php echo ($page); ?></div>	
+	</ul>
+    
 </div>
 <!-- 关于我们页面的内容结束 -->
-</div>
 
+		<!-- 右边内容区域 -->
+		<div id="main_right">
+			<div id="app">
+				<p>扫一下,关注惠桂林微信</p>
+				<img src="__PUBLIC__/images/barcode.png" alt="二维码">
+				<a>点击下载手机APP</a>
+			</div>
+			<div class="hot_box">
+				<p class="rqw">人气王</p>
+				<ul>
+					<li>
+						<a href="" class="title">李记米粉</a>
+						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
+						<p class="yhj">优惠劵</p>
+						<p class="hyk">会员卡</p>
+						<p class="one">[8]</p>
+						<p class="two">[2]</p>
+						<p class="vip">VIP</p>
+					</li>
+					<li>
+						<a href="" class="title">刘姥姥奶酪</a>
+						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
+						<p class="yhj">优惠劵</p>
+						<p class="hyk">会员卡</p>
+						<p class="one">[8]</p>
+						<p class="two">[2]</p>
+						<p class="vip">VIP</p>
+					</li>
+					<li class="no_border_bottom">
+						<a href="" class="title">大时代烤肉</a>
+						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
+						<p class="yhj">优惠劵</p>
+						<p class="hyk">会员卡</p>
+						<p class="one">[8]</p>
+						<p class="two">[2]</p>
+						<p class="vip">VIP</p>
+					</li>
+				</ul>
+			</div>
+			<div class="hot_box">
+				<p class="rqw">人气王</p>
+				<ul>
+					<li>
+						<a href="" class="title">李记米粉</a>
+						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
+						<p class="yhj">优惠劵</p>
+						<p class="hyk">会员卡</p>
+						<p class="one">[8]</p>
+						<p class="two">[2]</p>
+						<p class="vip">VIP</p>
+					</li>
+					<li>
+						<a href="" class="title">刘姥姥奶酪</a>
+						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
+						<p class="yhj">优惠劵</p>
+						<p class="hyk">会员卡</p>
+						<p class="one">[8]</p>
+						<p class="two">[2]</p>
+						<p class="vip">VIP</p>
+					</li>
+					<li class="no_border_bottom">
+						<a href="" class="title">大时代烤肉</a>
+						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
+						<p class="yhj">优惠劵</p>
+						<p class="hyk">会员卡</p>
+						<p class="one">[8]</p>
+						<p class="two">[2]</p>
+						<p class="vip">VIP</p>
+					</li>
+				</ul>
+			</div>
+			<div class="hot_box">
+				<p class="rqw">热门优惠劵</p>
+				<ul>
+					<li>
+						<a href="" class="title">李记米粉</a>
+						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
+					</li>
+					<li>
+						<a href="" class="title">刘姥姥奶酪</a>
+						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
+					</li>
+					<li class="no_border_bottom">
+						<a href="" class="title">大时代烤肉</a>
+						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
+					</li>
+				</ul>
+			</div>
+			<div class="hot_box">
+				<p class="rqw">热门会员卡</p>
+				<ul>
+					<li>
+						<a href="" class="title title2">李记米粉</a>
+						<p class="six">会员专享8.8折</p>
+						<div>
+							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
+						</div>
+					</li>
+					<li>
+						<a href="" class="title title3">刘姥姥奶酪</a>
+						<p class="seven">会员专享8.8折</p>
+						<div class="blue">
+							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
+						</div>
+					</li>
+					<li class="no_border_bottom">
+						<a href="" class="title title2">大时代烤肉</a>
+						<p class="six">会员专享8.8折</p>
+						<div class="purple">
+							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 右边内容区域结束 -->
+	</div>
+	<!-- 主要内容区域结束 -->
+<!-- 内容区域结束 -->
 <!-- 最底部区域 -->
 	<div id="bottom_info">
 		<div id="bottom_box">
@@ -391,3 +517,5 @@
 		</div>
 </div>
 <!-- 最底部区域结束 -->
+</body>
+</html>
