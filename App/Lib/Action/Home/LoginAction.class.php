@@ -3,7 +3,7 @@
 class LoginAction extends Action {
     public function verifyImg(){
 		import('ORG.Util.Image');
-		Image::buildImageVerify(4,3,'png');
+		Image::buildImageVerify(4,5,'png');
     }
     public function verify(){
     	// dump($_POST,1,'<pre>',0);
