@@ -308,24 +308,16 @@ $(function(){
 	});
 	
 	$('#Userlogin_box #u_middle_box form #btn_login').click(function(event) {
-<<<<<<< HEAD
-		
-=======
->>>>>>> cb7c22bf2e78ffe38f7882193fbac02f954b1803
 		var verifyURL = $("#login_hidebox05").val();
 		var username =$('#Userlogin_box #u_middle_box form input.one').val();
 		var password =$('#Userlogin_box #u_middle_box form input.two').val();
 		var vcode =$('#Userlogin_box #u_middle_box form input.three').val();
 		$.post("/index.php/user/checkLogin", { username: username, password: password, vcode: vcode },function(data){
-            if (data.status == 1) {
+            if (data.status === 1) {
                 $('#Userlogin_box').bPopup().close();
             }
 			
 		},"json");
-<<<<<<< HEAD
-	
-=======
->>>>>>> cb7c22bf2e78ffe38f7882193fbac02f954b1803
 		return false;
 		
 	});
@@ -840,11 +832,11 @@ $(function(){
 			(emailreg_nickname != "") &&
 			(emailreg_vcode != ""))
 		{
-			$.post("http://localhost/Trunk/index.php/Home/reg/verify", { emailreg_email: emailreg_email, 
-			emailreg_pwd: emailreg_pwd, emailreg_pwd2: emailreg_pwd2,emailreg_nickname:emailreg_nickname,
-			 emailreg_vcode:emailreg_vcode},function(data){
+			$.post("/index.php/user/register", { email: emailreg_email, 
+			pwd: emailreg_pwd, pwd2: emailreg_pwd2,nickname:emailreg_nickname,
+			 vcode:emailreg_vcode},function(data){
 			 	//做个判断，返回成功执行下面的代码，跳转到注册成功页面
-			 	if(data =="1"){
+			 	if(data.status === 1){
 			 		$('#Userreg_box #u_bottom').css('display', 'none');
 					$('#Userreg_box #UserregSuccess_email').css('display', 'block');
 			 	}
