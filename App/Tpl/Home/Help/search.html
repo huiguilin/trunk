@@ -1,5 +1,5 @@
 
-<include file="./App/Tpl/Home/Public/about_tpl_top.html" />
+<include file="Public:about_tpl_top" />
 <load href="__PUBLIC__/css/help_search.css" />
 <!-- 关于我们页面的内容 -->
 <div id="left_card">
@@ -17,12 +17,12 @@
     <foreach name="data" key="num" item="vo">
     <if condition="$num eq 0">
 		<li class="one">
-			<a href="{$vo.help_id}">{$vo.question}</a>
+			<a href="<php> echo U('faq'.str_pad($vo['type'],2,"0",STR_PAD_LEFT)).'#q'.$vo['help_id'];</php>">{$vo.question}</a>
 			<p>{$vo.answer}</p>
 		</li>
     <else />
 		<li>
-			<a href="{$vo.help_id}">{$vo.question}</a>
+			<a href="<php> echo U('faq'.str_pad($vo['type'],2,"0",STR_PAD_LEFT)).'#q'.$vo['help_id'];</php>">{$vo.question}</a>
 			<p>{$vo.answer}</p>
 		</li>
     </if>
@@ -33,4 +33,4 @@
     
 </div>
 <!-- 关于我们页面的内容结束 -->
-<include file="./App/Tpl/Home/Public/about_tpl_bottom.html" />
+<include file="Public:about_tpl_bottom" />

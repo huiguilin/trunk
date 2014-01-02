@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
+<!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css"> -->
+<link rel="stylesheet" type="text/css" href="/Trunk/Public/css/index.css" /> <!-- 模板中默认导入Css文件的方法，默认路径是public/css/index.css，css是文件夹名，index是css文件名，需不需要后缀 -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>

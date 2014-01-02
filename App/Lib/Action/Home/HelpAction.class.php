@@ -5,14 +5,13 @@ class HelpAction extends Action {
 	private $help_search_max_keyword = 10;	//搜索每次最大允许搜索的关键词数量
 	
     public function help(){
-	$this->display();
+		$this->display();
     }
     public function faq01(){
 		$m_help = D("Help");
 		$map['type'] = 1;
 		$map['status'] = 1;
 		$data = $m_help->getHelpInfoAll($map);
-		
 		$this->assign("data",$data);
     	$this->display();
     }
@@ -30,26 +29,29 @@ class HelpAction extends Action {
 		$map['type'] = 5;
 		$map['status'] = 1;
 		$data = $m_help->getHelpInfoAll($map);
-		
 		$this->assign("data",$data);
     	$this->display();
     }
     public function search(){
+
 		$keyword = strip_tags(trim($_GET["keyword"]));
 		$type = intval($_GET["type"]); //转化成int
+		
 		//关键词分解，支持空格/逗号分隔
 		$keyword_array = array();
-		$keyword = str_replace("+"," ",$keyword);
-		
+		$keyword = str_replace("+"," ",$keyword); //将+号替换成空
 		$keyword = str_replace("，",",",$keyword);	//将中文逗号替换为英文逗号
-		$keyword_array1 = array_filter(explode(" ",$keyword));
+		$keyword_array1 = array_filter(explode(" ",$keyword)); //对输入的字符串做处理
 		foreach($keyword_array1 as $item){
 			$keyword_array2 = explode(",",$item);
 			foreach($keyword_array2 as $item2){
 				array_push($keyword_array,"%".$item2."%");
 			}
 		}
-		if(count($keyword_array)>$this->help_search_max_keyword){ $keyword_array = array_slice($keyword_array,0,$this->help_search_max_keyword);}
+	
+		if(count($keyword_array)>$this->help_search_max_keyword){  //判断是否操作允许的最大输入长度
+			 $keyword_array = array_slice($keyword_array,0,$this->help_search_max_keyword);
+		}
 		$data = $show = array();
 		$count = 0;
 		if(count($keyword_array) > 0){

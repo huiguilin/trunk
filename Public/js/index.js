@@ -992,13 +992,4 @@ $(function(){
 	//手机APP弹窗区域中关闭特效结束
 	////////////////////////手机版弹窗中的全部特效代码区域结束////////////////////////////
 
-
-	//使用帮助Search结果条目Title跳转
-
-	$('#main #left_card #help_search_result li a').click(function(event) {
-		$(this).attr('href', 'http://localhost/Trunk/index.php/Help/faq01#q1');
-	});
-	//使用帮助Search结果条目Title跳转结束
-
-
 })
