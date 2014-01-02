@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?>dad 方法不存在

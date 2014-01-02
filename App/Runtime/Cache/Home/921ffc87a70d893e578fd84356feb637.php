@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?>demo4d 方法不存在

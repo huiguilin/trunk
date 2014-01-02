@@ -11,4 +11,11 @@ class DemoAction extends Action {
  		// dump($data);
  		$this->display();
    }
+   public function _empty($name){
+   		$this->show("$name 方法不存在");
+   }
+   public function _before_index(){
+   		echo 'qqq';
+   }
+
 }

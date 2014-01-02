@@ -11,7 +11,7 @@
 <script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
-<title>会员卡</title>
+<title>用户协议</title>
 <!--[if IE 6]>
 <!--背景图片透明方法-->
 <script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>

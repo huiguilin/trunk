@@ -308,7 +308,7 @@ $(function(){
 	});
 	
 	$('#Userlogin_box #u_middle_box form #btn_login').click(function(event) {
-		alert('1');
+		
 		var verifyURL = $("#login_hidebox05").val();
 		var username =$('#Userlogin_box #u_middle_box form input.one').val();
 		var password =$('#Userlogin_box #u_middle_box form input.two').val();
@@ -316,7 +316,7 @@ $(function(){
 		$.post("http://localhost/Trunk/index.php/Home/Login/verify", { username: username, password: password, vcode: vcode },function(data){
 			
 		},"json");
-		alert('2');
+	
 		return false;
 		
 	});
@@ -615,8 +615,11 @@ $(function(){
 				$('#Userreg_box #u_bottom #email_box form p.twelve').text('验证码输入不正确').css('color', '#F14B2B')
 				.css('background-image', backgroundURL_error);
 			}
-		}	
+		}
+
 	});
+	
+
 	$('#Userreg_box #u_bottom #cellphone_box form input.one').blur(function(event) {
 		var cellphone_account = $(this).val();
 		var backgroundURL='url("http://localhost/Trunk/Public/images/ico_12.png")'
@@ -814,9 +817,35 @@ $(function(){
 	//用户登录弹框关闭结束
 	//邮箱注册注册button特效
 	$('#Userreg_box #u_bottom #email_box form #email_reg_btn').click(function(event) {
-		$('#Userreg_box #u_bottom').css('display', 'none');
-		$('#Userreg_box #UserregSuccess_email').css('display', 'block');
+
+		var emailreg_email =$('#Userreg_box #u_bottom #email_box form input.one').val();
+		var emailreg_pwd =$('#Userreg_box #u_bottom #email_box form input.two').val();
+		var emailreg_pwd2 =$('#Userreg_box #u_bottom #email_box form input.three').val();
+		var emailreg_nickname =$('#Userreg_box #u_bottom #email_box form input.four').val();
+		var emailreg_vcode =$('#Userreg_box #u_bottom #email_box form input.five').val();
+		var email_reg=/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+
+		if((emailreg_email != "" && email_reg.test(emailreg_email)) && 
+			(emailreg_pwd != "" && emailreg_pwd.length>=6 && emailreg_pwd.length<32) && 
+			(emailreg_pwd2 != "" && emailreg_pwd==emailreg_pwd2) &&
+			(emailreg_nickname != "") &&
+			(emailreg_vcode != ""))
+		{
+			$.post("http://localhost/Trunk/index.php/Home/reg/verify", { emailreg_email: emailreg_email, 
+			emailreg_pwd: emailreg_pwd, emailreg_pwd2: emailreg_pwd2,emailreg_nickname:emailreg_nickname,
+			 emailreg_vcode:emailreg_vcode},function(data){
+			 	//做个判断，返回成功执行下面的代码，跳转到注册成功页面
+			 	if(data =="1"){
+			 		$('#Userreg_box #u_bottom').css('display', 'none');
+					$('#Userreg_box #UserregSuccess_email').css('display', 'block');
+			 	}
+				
+			},"json");
+
+		}
 		return false;
+
+		
 	});
 	//邮箱注册注册button特效结束
 	//手机注册注册button特效

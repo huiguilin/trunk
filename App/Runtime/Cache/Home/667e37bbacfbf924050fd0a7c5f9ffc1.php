@@ -8,11 +8,6 @@
 <title>惠桂林首页</title>
 </head>
 <body>
-<div style="border:2px solid red;">
 
-    <div style="position:relative;width:80px;height:80px;border:1px solid blue;">TEST DIV</div>
-
-    <div style="background-color:green;">d</div>
-</div>
 </body>
 </html>
