@@ -2,9 +2,14 @@
 class UserAction extends Action {
     public function checkLogin(){
         $userName = $_POST['username'];
-        $passwd = $_POST['passwd'];
-        if (empty($userName) || empty($passwd)) {
-            echo "TBC";
+        $passwd = $_POST['password'];
+        $verify = mb_strtolower($_POST['vcode']);
+        if (empty($userName) || empty($passwd) || empty($verify)) {
+            echo "empty important thing";
+            return TRUE;
+        }
+        if (session('verify') != md5($verify)) {
+            $this->error('验证码错误！');
             return TRUE;
         }
         $helper = new UserProfileModel();
@@ -16,8 +21,20 @@ class UserAction extends Action {
         $md5 = md5($passwd);
         if ($md5 == $data['password']) {
             $_SESSION['user'] = $data;
+            $data = array();
+            $data['status'] = 1;
+            $data['info'] = '登陆成功！';
+            $data['size'] = 9;
+            $data['url'] = "";
         }
-        redirect('/index.php', 1, '页面跳转中...');
+        else {
+            $data = array();
+            $data['status'] = 0;
+            $data['info'] = '密码错误！';
+            $data['size'] = 9;
+            $data['url'] = "";
+        }
+        $this->ajaxReturn($data,'JSON');
         return TRUE;
         $this->display();
     }

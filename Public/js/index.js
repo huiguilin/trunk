@@ -308,15 +308,16 @@ $(function(){
 	});
 	
 	$('#Userlogin_box #u_middle_box form #btn_login').click(function(event) {
-		alert('1');
 		var verifyURL = $("#login_hidebox05").val();
 		var username =$('#Userlogin_box #u_middle_box form input.one').val();
 		var password =$('#Userlogin_box #u_middle_box form input.two').val();
 		var vcode =$('#Userlogin_box #u_middle_box form input.three').val();
-		$.post("http://localhost/Trunk/index.php/Home/Login/verify", { username: username, password: password, vcode: vcode },function(data){
+		$.post("/index.php/user/checkLogin", { username: username, password: password, vcode: vcode },function(data){
+            if (data.status == 1) {
+                $('#Userlogin_box').bPopup().close();
+            }
 			
 		},"json");
-		alert('2');
 		return false;
 		
 	});

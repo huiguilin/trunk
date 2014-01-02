@@ -12,12 +12,12 @@ class UserProfileModel extends Model {
         return $data;
     }
 
-    public function getUserProfileByUserName($email = "", $userName = "") {
-        if (empty($userName)) {
+    public function getUserProfileByUserName($name = "") {
+        if (empty($name)) {
             return FALSE;
         }
-        $data = $this->where("nickname = '{$userName}' 
-                                OR email = '{$email}'")->select();
+        $data = $this->where("nickname = '{$name}' 
+                                OR email = '{$name}'")->select();
         $data = $data[0];
         return $data;
     }
