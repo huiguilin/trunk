@@ -362,12 +362,12 @@
 	<p class="two">找到"<span class="red"><?php echo ($keyword); ?></span>"相关的内容<span class="red"> <?php echo ($count); ?> </span>条</p>
 	<ul id="help_search_result">
     <?php if(is_array($data)): foreach($data as $num=>$vo): if($num == 0): ?><li class="one">
-			<a href="<?php echo ($vo["help_id"]); ?>"><?php echo ($vo["question"]); ?></a>
+			<a href="<?php echo U('faq'.str_pad($vo['type'],2,"0",STR_PAD_LEFT)).'#q'.$vo['help_id']; ?>"><?php echo ($vo["question"]); ?></a>
 			<p><?php echo ($vo["answer"]); ?></p>
 		</li>
     <?php else: ?>
 		<li>
-			<a href="<?php echo ($vo["help_id"]); ?>"><?php echo ($vo["question"]); ?></a>
+			<a href="<?php echo U('faq'.str_pad($vo['type'],2,"0",STR_PAD_LEFT)).'#q'.$vo['help_id']; ?>"><?php echo ($vo["question"]); ?></a>
 			<p><?php echo ($vo["answer"]); ?></p>
 		</li><?php endif; endforeach; endif; ?>
     <div class="clear"></div>

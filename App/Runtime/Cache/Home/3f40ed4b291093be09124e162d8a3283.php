@@ -165,9 +165,9 @@
 						<input type="submit" name="email_reg_btn" id="email_reg_btn" value="注册"/>
 						<p class="seven">已经是惠桂林的用户？点击<a href="" id="login_now">登录.</a></p>
 						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
-						<p class="nine" id="reg_hidebox02">密码由6-20位的字母、数字或符号组成</p>
+						<p class="nine" id="reg_hidebox02">密码由6-32位的字母、数字或符号组成</p>
 						<p class="ten" id="reg_hidebox03">请再次输入密码</p>
-						<p class="eleven" id="reg_hidebox04">昵称由1-16位的汉字、英文字母或数字组成</p>
+						<p class="eleven" id="reg_hidebox04">昵称不能超过12个汉字或24个字符</p>
 						<p class="twelve" id="reg_hidebox05"></p> 
 					</form>
 				</div>
@@ -194,6 +194,11 @@
 							我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
 						</p>
 						<input type="submit" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
+						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
+						<p class="nine" id="reg_hidebox02">请输入手机收到的短信验证码</p>
+						<p class="ten" id="reg_hidebox03">密码由6-32位的字母、数字或符号组成</p>
+						<p class="eleven" id="reg_hidebox04">请再次输入密码</p>
+						<p class="twelve" id="reg_hidebox05">昵称由1-16位的汉字、英文字母或数字组成</p> 
 					</form>
 				</div>	
 			</div>

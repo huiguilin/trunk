@@ -1,0 +1,164 @@
+#top_nav_box #left_collection{
+	position: absolute;
+	top:8px;
+	left: 6px;
+	width: 153px;
+	height: 43px;
+	background: white;
+
+}
+#main{
+	width: 960px;
+	height: 800px;
+	margin: 0 auto;
+}
+#main #category_ad_box{
+	width: 700px;
+	height: 260px;
+	position: relative;
+	float: left;
+}
+#main #category_ad_box ul.category_title{
+	border:2px solid #DA4453;
+	width: 150px;
+	height: 254px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	position: absolute;
+	top: 0px;
+	left: 6px;
+}
+#main #category_ad_box ul.category_title li{
+	width: 150px;
+	height: 40px;
+}
+#main #category_ad_box ul.category_title li a{
+	color: #666666;
+	font-size: 14px;
+	font-weight: bold;
+	display: block;
+	width: 141px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	padding-left: 9px;
+}
+#main #category_ad_box ul.category_title li a:hover{
+	color: white;
+}
+#main #category_ad_box ul.category_title li a.one{
+	background: url(../images/ico_02.png) no-repeat 8px 10px;
+}
+#main #category_ad_box ul.category_title li a.one:hover{
+	background: url(../images/ico_02.png) no-repeat 5px 10px #ED5565;
+}
+#main #category_ad_box ul.category_title li a.two{
+	background: url(../images/ico_03.png) no-repeat 12px 10px;
+}
+#main #category_ad_box ul.category_title li a.two:hover{
+	background: url(../images/ico_02.png) no-repeat 5px 10px #ED5565;
+}
+#main #category_ad_box ul.category_title li a.three{
+	background: url(../images/ico_04.png) no-repeat 12px 10px;
+}
+#main #category_ad_box ul.category_title li a.three:hover{
+	background: url(../images/ico_02.png) no-repeat 5px 10px #ED5565;
+}
+#main #category_ad_box ul.category_title li a.four{
+	background: url(../images/ico_05.png) no-repeat 12px 10px;
+}
+#main #category_ad_box ul.category_title li a.four:hover{
+	background: url(../images/ico_02.png) no-repeat 5px 10px #ED5565;
+}
+#main #category_ad_box ul.category_title li a.five{
+	background: url(../images/ico_06.png) no-repeat 12px 10px;
+}
+#main #category_ad_box ul.category_title li a.five:hover{
+	background: url(../images/ico_02.png) no-repeat 5px 10px #ED5565;
+}
+#main #category_ad_box ul.category_title li a.six{
+	background: url(../images/ico_07.png) no-repeat 12px 10px;
+}
+#main #category_ad_box ul.category_title li a.six:hover{
+	background: url(../images/ico_02.png) no-repeat 5px 10px #ED5565;
+}
+
+#main #category_ad_box ul.hot_navigation{
+	position: absolute;
+	top: 10px;
+	left: 165px;
+	border:1px solid #E4E4E4;
+	width: 530px;
+	height: 110px;
+	border-radius: 5px;
+	border-bottom: 3px solid #E4E4E4;
+}
+#main #category_ad_box ul.hot_navigation li{
+	height: 36px;
+	border-bottom: 1px solid #E4E4E4;
+	margin-left: 10px;
+	margin-right: 10px;	
+}
+#main #category_ad_box ul.hot_navigation li.no_bottom_border{
+	border-bottom: none;
+}
+
+#main #category_ad_box ul.hot_navigation li span{
+	color: #666666;
+	font-weight: bold;
+	display: inline-block;
+	height: 35px;
+	line-height: 35px;
+}
+#main #category_ad_box ul.hot_navigation li a{
+	color: #666666;
+	margin-right: 15px;
+}
+#main #category_ad_box ul.hot_navigation li a.one{
+	margin-left: 30px;
+}
+#main #category_ad_box #ad{
+	position: absolute;
+	top: 135px;
+	left: 165px;
+	border:1px solid #E4E4E4;
+	width: 530px;
+	height: 120px;
+}
+#main #QRcode_recommend_box{
+	
+	float: left;
+	width: 256px;
+	height: 255px;
+}
+#main #QRcode_recommend_box div.QRcode_box{
+	border-radius: 5px;
+	border:1px solid #E4E4E4;
+	width: 253px;
+	height: 140px;
+	border-bottom: 3px solid #E4E4E4;
+	margin-top: 10px;
+	margin-left: 2px;
+	position: relative;
+}
+#main #QRcode_recommend_box div.QRcode_box p{
+	position: absolute;
+	top: 15px;
+	left: 40px;
+	color: #666666;
+	font-weight: bold;
+}
+#main #QRcode_recommend_box div.QRcode_box img{
+	position: absolute;
+	top: 42px;
+	left: 88px;
+}
+#main #QRcode_recommend_box div.recommend_box{
+	border-radius: 5px;
+	border:1px solid #E4E4E4;
+	width: 253px;
+	height: 90px;
+	border-bottom: 3px solid #E4E4E4;
+	margin-top: 10px;
+	margin-left: 2px;
+}

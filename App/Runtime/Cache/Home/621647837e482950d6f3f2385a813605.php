@@ -372,14 +372,14 @@
 		<div id="directory">
 			<p>优惠券相关的常见问题</p>
 			<ul>
-            <?php if(is_array($data)): foreach($data as $num=>$vo): ?><li><a href="#q<?php echo ($num+1); ?>">Q<?php echo ($num+1); ?>：<?php echo ($vo["question"]); ?></a></li><?php endforeach; endif; ?>
+            <?php if(is_array($data)): foreach($data as $num=>$vo): ?><li><a href="#q<?php echo ($vo["help_id"]); ?>">Q<?php echo ($num+1); ?>：<?php echo ($vo["question"]); ?></a></li><?php endforeach; endif; ?>
 			</ul>
 		</div>
 		<div id="content">
 			<p class="title">我们的回答</p>
 			<ul>
             <?php if(is_array($data)): foreach($data as $num=>$vo): ?><li>
-					<a class="answer_title" name="q<?php echo ($num+1); ?>">Q<?php echo ($num+1); ?>：<?php echo ($vo["question"]); ?></a>
+					<a class="answer_title" name="q<?php echo ($vo["help_id"]); ?>">Q<?php echo ($num+1); ?>：<?php echo ($vo["question"]); ?></a>
 					<p class="answer_content"><?php echo ($vo["answer"]); ?></p>
 				</li><?php endforeach; endif; ?>
 			</ul>
@@ -390,7 +390,7 @@
 </div>
 
 <!-- 最底部区域 -->
-	<div id="bottom_info">
+<div id="bottom_info">
 		<div id="bottom_box">
 			<div class="p_box">
 				<p>版权归惠桂林所有，未经书面授权禁止复制或建立镜像。 Email：<a href="mailto:service@huigl.com">service@huigl.com</a></p>

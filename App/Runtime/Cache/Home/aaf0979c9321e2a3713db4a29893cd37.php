@@ -154,17 +154,21 @@
 						<input type="password" name="pwd2" class="three"/>
 						<p class="four">昵称</p>
 						<input type="text" name="nickname" class="four"/>
-						<input type="checkbox" name="license" class="five" checked="true">
-						<p class="five">
+						<p class="five">验证码</p>
+						<input type="text" name="reg_vcode" class="five"/>
+						<a href="" id="regemail_vcode_not_clear">看不清</a>
+						<img src="<?php echo U("Home/Register/verifyImg");?>" class="one">
+						<input type="checkbox" name="license" class="six" checked="true">
+						<p class="six">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
 						</p>
 						<input type="submit" name="email_reg_btn" id="email_reg_btn" value="注册"/>
-						<!-- <a href="" id="login_btn">注册</a> -->
-						<p class="six">已经是惠桂林的用户？点击<a href="" id="login_now">登录.</a></p>
-						<p class="seven" id="reg_hidebox01"></p>
-						<p class="eight" id="reg_hidebox02"></p>
-						<p class="nine" id="reg_hidebox03"></p>
-						<p class="ten" id="reg_hidebox04"></p>
+						<p class="seven">已经是惠桂林的用户？点击<a href="" id="login_now">登录.</a></p>
+						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
+						<p class="nine" id="reg_hidebox02">密码由6-32位的字母、数字或符号组成</p>
+						<p class="ten" id="reg_hidebox03">请再次输入密码</p>
+						<p class="eleven" id="reg_hidebox04">昵称不能超过12个汉字或24个字符</p>
+						<p class="twelve" id="reg_hidebox05"></p> 
 					</form>
 				</div>
 				<div id="cellphone_box" class="hide">
@@ -190,8 +194,11 @@
 							我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
 						</p>
 						<input type="submit" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
-						<!-- <a href="" id="login_btn">注册</a> -->
-						<p class="six">已经是惠桂林的用户？点击<a href="">登录.</a></p>
+						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
+						<p class="nine" id="reg_hidebox02">请输入手机收到的短信验证码</p>
+						<p class="ten" id="reg_hidebox03">密码由6-32位的字母、数字或符号组成</p>
+						<p class="eleven" id="reg_hidebox04">请再次输入密码</p>
+						<p class="twelve" id="reg_hidebox05">昵称由1-16位的汉字、英文字母或数字组成</p> 
 					</form>
 				</div>	
 			</div>
@@ -248,7 +255,7 @@
 				<p>用户登录</p>
 			</div>
 			<div id="u_middle_box">
-				<form action="<?php echo U("Home/Login/verify");?>" method="post">
+				<form>
 					<p class="one">账号</p>
 					<input type="text" name="username" class="one" />
 					<p class="two">密码</p>
@@ -268,6 +275,7 @@
 					<p class="eight" id="login_hidebox02">请输入密码</p>
 					<p class="nine" id="login_hidebox03">请输入验证码</p>
 					<p class="ten" id="login_hidebox04">用户名或密码有误，请重新输入</p>
+					<input type="hidden" id="login_hidebox05" value="<?php echo U("Home/Login/verify");?>" />
 				</form>
 			</div>
 			<div id="u_bottom_box">
@@ -286,24 +294,28 @@
 						<img src="__PUBLIC__/images/forget_cellphone.png">
 						<p class="one">绑定手机号<span>用户只能通过手机号找回</span></p>
 						<p class="two">请输入您绑定的手机号，找回密码：</p>
-						<input type="text" name="cellphone_no" class="one" id="cellphone_no"/>
-						<a href="">发送</a>
-						<p class="three" id="forgetpwd_hidebox01">请输入注册时填写的手机号码</p>
+						<form>
+							<input type="text" name="cellphone_no" class="one" id="cellphone_no"/>
+							<a href="" id="cellphone_send_btn">发送</a>
+						</form>
+						<p id="forgetpwd_hidebox01"></p>
 					</li>
 					<li>
 						<img src="__PUBLIC__/images/forget_email.png">
 						<p class="one">未绑定手机号用户可以通过邮箱找</p>
 						<p class="two">请输入您登录的邮箱地址，找回密码：</p>
-						<input type="text" name="email_no" class="one" id="email_no"/>
-						<a href="">发送</a>
-						<p class="three" id="forgetpwd_hidebox02">请输入注册时填写的邮箱地址</p>
+						<form>
+							<input type="text" name="email_no" class="one" id="email_no"/>
+							<a href="" id="email_send_btn">发送</a>
+						</form>
+						<p id="forgetpwd_hidebox02"></p>
 					</li>
 				</ul>
 				<a href="" id="return_userlogin">返回登录页面</a>
 			</div>
 		</div>
 	</div>
-<!-- Logo区域结束
+<!-- Logo区域结束 -->
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!--  导航区域 -->
 	<!--  导航区域 -->

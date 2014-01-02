@@ -1,5 +1,5 @@
 
-<include file="./App/Tpl/Home/Public/about_tpl_top.html" />
+<include file="Public:about_tpl_top" />
 <load href="__PUBLIC__/css/faq.css" />
 <!-- 关于我们页面的内容 -->
 <div id="faq01_box">
@@ -26,7 +26,7 @@
 			<p>优惠券相关的常见问题</p>
 			<ul>
             <foreach name="data" key="num" item="vo">
-				<li><a href="#q{$num+1}">Q{$num+1}：{$vo.question}</a></li>
+				<li><a href="#q{$vo.help_id}">Q{$num+1}：{$vo.question}</a></li>
             </foreach>
 			</ul>
 		</div>
@@ -35,7 +35,7 @@
 			<ul>
             <foreach name="data" key="num" item="vo">
 				<li>
-					<a class="answer_title" name="q{$num+1}">Q{$num+1}：{$vo.question}</a>
+					<a class="answer_title" name="q{$vo.help_id}">Q{$num+1}：{$vo.question}</a>
 					<p class="answer_content">{$vo.answer}</p>
 				</li>
             </foreach>
@@ -47,5 +47,5 @@
 </div>
 
 <!-- 最底部区域 -->
-	<include file="./App/Tpl/Home/Public/footer.html" />
+<include file="Public:footer" />
 <!-- 最底部区域结束 -->

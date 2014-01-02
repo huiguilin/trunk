@@ -3,77 +3,84 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/about.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/demo.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/jquery.validate.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
-<title>会员卡</title>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+
 <!--[if IE 6]>
 <!--背景图片透明方法-->
 <script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
 <!--插入图片透明方法-->
 <script type="text/javascript">
    EvPNG.fix('div, ul, img, li, input');  //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
+  
 </script>
-<![endif]-->
+<!-- <![endif]-->
 
-<script>
-$().ready(function() {
- 	$("#signupForm").validate({
- 		 rules: {
- 		 	firstname: "required",
- 		 	email: {
-    			required: true,
-    			email: true
-   			},
-
-
- 		 },
- 		 messages: {
-
- 		 	firstname: "请输入姓名",
- 		 }
-
-
- 	});
-});
-</script>
-<style type="text/css">
-input{
-	border:1px solid black;
-}
-input.error{
-	border:1px solid red;
-}
-label.error{
-	background: red;
-	border:1px solid black;
-  margin-left: 20px;
-}
-</style>
+<title>惠桂林首页</title>
 </head>
 <body>
-<form id="signupForm" method="get" action="">
-    <p>
-        <label for="firstname">Firstname</label>
-        <input id="firstname" name="firstname" />
-    </p>
- <p>
-  <label for="email">E-Mail</label>
-  <input id="email" name="email"/>
- </p>
- <p>
-  <label for="password">Password</label>
-  <input id="password" name="password" type="password" />
- </p>
- <p>
-  <label for="confirm_password">确认密码</label>
-  <input id="confirm_password" name="confirm_password" type="password" />
- </p>
-    <p>
-        <input class="submit" type="submit" value="Submit"/>
-    </p>
-</form>
+<!-- 顶部订阅分享区域+Logo区域 -->
+	<include file="./App/Tpl/Home/Public/header.html" />
+<!-- 顶部订阅分享区域+Logo区域结束 -->
+<!--  导航区域 -->
+	<include file="./App/Tpl/Home/Public/nav.html" />
+<!-- 导航区域结束-->
+<!-- 内容区域 -->
+	<div id="main">
+		<div id="category_ad_box">
+			<ul class="category_title">
+				<li><a href="" class="one">美食</a></li>
+				<li><a href="" class="two">休闲娱乐</a></li>
+				<li><a href="" class="three">生活服务</a></li>
+				<li><a href="" class="four">酒店</a></li>
+				<li><a href="" class="five">旅游</a></li>
+				<li><a href="" class="six">丽人</a></li>
+			</ul>
+			<ul class="hot_navigation">
+				<li>
+					<span>热门分类</span>
+					<a href="" class="one">火锅</a>
+					<a href="">KTV</a>
+					<a href="">电影院</a>
+					<a href="">足疗按摩</a>
+				</li>
+				<li>
+					<span>全部区域</span>
+					<a href="" class="one">七星区</a>
+					<a href="">秀峰区</a>
+					<a href="">象山区</a>
+					<a href="">叠彩区</a>
+					<a href="">雁山区</a>
+				</li>
+				<li class="no_bottom_border">
+					<span>热门商圈</span>
+					<a href="" class="one">中心广场</a>
+					<a href="">红街广场</a>
+					<a href="">联达广场</a>
+				</li>
+			</ul>
+			<div id="ad">
+				ad_img
+			</div>
+		</div>
+		<div id="QRcode_recommend_box">
+			<div class="QRcode_box">
+				<p>扫描我,关注惠桂林官方微信</p>
+				<img src="__PUBLIC__/images/barcode.png">
+			</div>
+			<div class="recommend_box">
+				<p>您推荐，我来谈</p>
+			</div>
+		</div>
+	</div>
+<!-- 内容区域结束 -->
+<!-- 最底部区域 -->
+	<!-- <include file="./App/Tpl/Home/Public/footer.html" /> -->
+<!-- 最底部区域结束 -->
+
 </body>
 </html>

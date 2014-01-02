@@ -373,7 +373,7 @@
 			<p>订阅/关注相关的常见问题</p>
 			<ul>
 			<ul>
-            <?php if(is_array($data)): foreach($data as $num=>$vo): ?><li><a href="#q<?php echo ($num+1); ?>">Q<?php echo ($num+1); ?>：<?php echo ($vo["question"]); ?></a></li><?php endforeach; endif; ?>
+            <?php if(is_array($data)): foreach($data as $num=>$vo): ?><li><a href="#q<?php echo ($vo["help_id"]); ?>">Q<?php echo ($num+1); ?>：<?php echo ($vo["question"]); ?></a></li><?php endforeach; endif; ?>
 			</ul>
 			</ul>
 		</div>
@@ -381,7 +381,7 @@
 			<p class="title">我们的回答</p>
 			<ul>
             <?php if(is_array($data)): foreach($data as $num=>$vo): ?><li>
-					<a class="answer_title" name="q<?php echo ($num+1); ?>">Q<?php echo ($num+1); ?>：<?php echo ($vo["question"]); ?></a>
+					<a class="answer_title" name="q<?php echo ($vo["help_id"]); ?>">Q<?php echo ($num+1); ?>：<?php echo ($vo["question"]); ?></a>
 					<p class="answer_content"><?php echo ($vo["answer"]); ?></p>
 				</li><?php endforeach; endif; ?>
 			</ul>
