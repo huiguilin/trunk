@@ -182,7 +182,20 @@ class UserAction extends Action {
     public function sendCheckcode() {
         $phoneNumber = $_POST['phone_number'];
         $code = mt_rand(0, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
-        $this->send($code);
+        $data = $this->send($code);
+        $this->ajaxReturn($data,'JSON');
+        return TRUE;
+    }
+
+    private function send($phoneNumber, $code) {
+        $_SESSION[$phoneNumber] = $code;
+        $result = sendCodeToMobile($phoneNumber, "您的激活码是【{$code}】，感谢您注册惠桂林");
+        $data = array(
+            'status' => 1,
+            'info' => '发送成功',
+        );
+        #$this->ajaxReturn($data,'JSON');
+        return $data;
     }
 
     public function active() {
@@ -206,5 +219,10 @@ class UserAction extends Action {
         $helper->updateUser($condition, $data);
         redirect('/index.php', 1, '页面跳转中...');
         return TRUE;
+    }
+
+    public function verifyImg(){
+		import('ORG.Util.Image');
+		Image::buildImageVerify(4,5,'png');
     }
 }
