@@ -24,7 +24,7 @@ function sendCodeToMobile($phoneNumber, $text, $timeout = 10) {
 function xml_to_array($xml) 
 { 
     $array = (array)(simplexml_load_string($xml)); 
-    foreach ($array as $key=&gt;$item){ 
+    foreach ($array as $key=> $item){ 
         $array[$key]  =  struct_to_array((array)$item); 
     } 
     return $array; 
