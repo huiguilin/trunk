@@ -1,0 +1,134 @@
+<include file="Account:account_tmp_top" title="我的惠桂林-我的设置"/>
+<load href="__PUBLIC__/css/mysetting.css" />
+	<p class="sub_title">个人资料</p>
+	<ul class="myinfo_box">
+		<li>
+			<p class="header">手机号</p>
+			<p class="info_item">184****3921</p>
+			<a href="" id="modify_cellphone">修改</a>
+		</li>
+		<li>
+			<p class="header">邮箱</p>
+			<p class="no_binding_email">尚未绑定邮箱</p>
+			<a href="" id="modify_email">立即绑定</a>
+		</li>
+		<li class="higher">
+			<p class="header">昵称</p>
+			<p class="info_item">鱼豆豆</p>
+			<a href="" id="modify_nickname">修改</a>
+			<p class="nickname_tips">用于点评时显示的称呼</p>
+		</li>
+		<li>
+			<p class="header">密码</p>
+			<p class="info_item">*********</p>
+			<a href="" id="modify_password">修改</a>
+		</li>
+	</ul>
+	<div id="modify_cellphone_hidden_box">
+		<div class="top_content_box">
+			<p>更换手机号码</p>
+			<img src="__PUBLIC__/images/login_closed.png" id="closed_modiy_cellphono_box_btn">
+		</div>
+		<div class="middle_content_box">
+			<form>
+				<ul>
+					<li>
+						<p class="label">已绑定手机号</p>
+						<input type="text" name="binding_old_phone" id="binding_old_phone"/>
+						<p class="hidden_error_tips" id="old_phone_error_tip">输入的手机号不能为空</p>
+					</li>
+					<li class="higher">
+						<p class="label">新手机号</p>
+						<input type="text" name="binding_new_phone" id="binding_new_phone" />
+						<a class="get_vcode" href="">获取验证码</a>
+						<p class="binding_note">将发送到新手机上</p>
+						<p class="hidden_error_tips" id="new_phone_error_tip">输入的新手机号不能为空</p>
+					</li>
+					<li class="higher">
+						<p class="label">验证码</p>
+						<input type="text" name="cellphone_vcode" id="cellphone_vcode" />
+						<p class="vcode_note">注意：绑定新手机号将会清空所有已绑定的手机号</p>
+						<p class="hidden_error_tips" id="cellphone_vcode_error_tip">输入的验证码不能为空</p>
+					</li>
+				</ul>
+				<input type="submit" value="绑定" name="binding_cellphone_submit_btn" id="binding_cellphone_submit_btn">
+			</form>
+		</div>
+	</div>
+	<div id="modify_email_hidden_box">
+		<div class="top_content_box">
+			<p>绑定邮箱</p>
+			<img src="__PUBLIC__/images/login_closed.png" id="closed_modiy_email_box_btn">
+		</div>
+		<div class="middle_content_box">
+			<form>
+				<ul>
+					<li>
+						<p class="label">邮箱地址</p>
+						<input type="text" name="binding_email" id="binding_email"/>
+						<p class="hidden_error_tips" id="email_error_tip">输入的邮箱不能为空</p>
+					</li>
+					<li>
+						<p class="label">验证码</p>
+						<input type="text" name="email_vcode" class="shorter" id="email_vcode"/>
+						<a href="" id="binding_email_vcode_not_clear">看不清</a>
+						<img src="{:U("Home/Login/verifyImg")}" id="binding_email_vcode_img">
+						<p class="hidden_error_tips" id="vcode_error_tip">输入的验证码不能为空</p>
+					</li>
+				</ul>
+				<input type="submit" value="绑定" name="binding_email_submit_btn" id="binding_email_submit_btn">
+			</form>
+		</div>
+	</div>
+	<div id="modify_nickname_hidden_box">
+		<div class="top_content_box">
+			<p>修改昵称</p>
+			<img src="__PUBLIC__/images/login_closed.png" id="closed_modiy_nickname_box_btn">
+		</div>
+		<div class="middle_content_box">
+			<form>
+				<ul>
+					<li>
+						<p class="label">当前昵称</p>
+						<p class="old_nickname">dushuren</p>
+					</li>
+					<li>
+						<p class="label">新昵称</p>
+						<input type="text" name="binding_nickname" />
+						<p class="hidden_error_tips">输入的昵称不能为空</p>
+					</li>
+				</ul>
+				<input type="submit" value="绑定" name="binding_nickname_submit_btn" id="binding_nickname_submit_btn">
+			</form>
+		</div>
+	</div>
+	<div id="modify_password_hidden_box">
+		<div class="top_content_box">
+			<p>修改密码</p>
+			<img src="__PUBLIC__/images/login_closed.png" id="closed_modiy_password_box_btn">
+		</div>
+		<div class="middle_content_box">
+			<form>
+				<ul>
+					<li>
+						<p class="label">当前密码</p>
+						<input type="text" name="binding_old_password" id="binding_old_password" value="*********"/>
+						<p class="hidden_error_tips" id="old_pwd_tip">输入的密码不能为空</p>
+					</li>
+					<li>
+						<p class="label">新密码</p>
+						<input type="text" name="binding_new_password" id="binding_new_password"/>
+						<p class="hidden_error_tips" id="new_pwd_tip">输入的密码不能为空</p>
+
+					</li>
+					<li>
+						<p class="label">确认新密码</p>
+						<input type="text" name="binding_new_password2" id="binding_new_password2"/>
+						<p class="hidden_error_tips" id="new_pwd2_tip">输入的密码不能为空</p>
+					</li>
+				</ul>
+				<input type="submit" value="绑定" name="binding_password_submit_btn" id="binding_password_submit_btn">
+			</form>
+		</div>
+	</div>
+<include file="Account:account_tmp_bottom"/>

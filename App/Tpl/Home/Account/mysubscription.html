@@ -1,0 +1,34 @@
+<include file="Account:account_tmp_top" title="我的惠桂林-我的邮件订阅"/>
+<load href="__PUBLIC__/css/mysubscription.css" />
+	<p class="subscription_title">邮件订阅</p>
+	<form>
+		<div class="frequency_box">
+			<p>邮件频率</p>
+			<ul>
+				<li>
+					<input type="radio" name="email_frequency" class="" checked="checked">
+					<label for="email_frequency">每天1封</label>
+				</li>
+				<li>
+					<input type="radio" name="email_frequency">
+					<label for="email_frequency">每周1封</label>
+				</li>
+				<li>
+					<input type="radio" name="email_frequency">
+					<label for="email_frequency">每月2封</label>
+				</li>
+				<li>
+					<input type="radio" name="email_frequency">
+					<label for="email_frequency">我拒绝接受任何邮件</label>
+				</li>
+			</ul>
+		</div>
+		<div class="binding_box">
+			<p class="title01">您接收的邮箱为</p>
+			<input type="text" name="emailaddress" value="dushuren@outlook.com" class="emailaddress" disabled="disabled">
+			<a href="">修改</a>
+			<p class="hidden_error_tips"></p>
+		</div>
+		<input type="submit" name="submit_btn" value="保存修改" class="submit_btn">
+	</form>
+<include file="Account:account_tmp_bottom"/>

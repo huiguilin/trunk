@@ -1,164 +1,373 @@
-#top_nav_box #left_collection{
-	position: absolute;
-	top:8px;
-	left: 6px;
-	width: 153px;
-	height: 43px;
-	background: white;
 
-}
 #main{
 	width: 960px;
-	height: 800px;
 	margin: 0 auto;
+	background-color: #F2F2F2;
 }
-#main #category_ad_box{
-	width: 700px;
-	height: 260px;
+#main #ad_box{
+	height: 85px;
 	position: relative;
-	float: left;
 }
-#main #category_ad_box ul.category_title{
-	border:2px solid #DA4453;
-	width: 150px;
-	height: 254px;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
+#main #ad_box img{
+	width: 944px;
+	height: 77px;
 	position: absolute;
-	top: 0px;
-	left: 6px;
+	top: 8px;
+	left: 8px;
 }
-#main #category_ad_box ul.category_title li{
-	width: 150px;
-	height: 40px;
+#main #ad_box ul{
+	position: absolute;
+	top: 68px;
+	right: 10px;
 }
-#main #category_ad_box ul.category_title li a{
-	color: #666666;
-	font-size: 14px;
-	font-weight: bold;
-	display: block;
-	width: 141px;
-	height: 40px;
-	line-height: 40px;
+#main #ad_box li{
+	float: left;
+	width: 23px;
+	border: 1px solid #CCCCCC;
 	text-align: center;
-	padding-left: 9px;
+	margin-right: 1px;
+	height: 14px;
+	line-height: 14px;
+	background: #CCCCCC;
 }
-#main #category_ad_box ul.category_title li a:hover{
-	color: white;
+#main #ad_box li.hover{
+	background: #ED5565;
 }
-#main #category_ad_box ul.category_title li a.one{
-	background: url(../images/ico_02.png) no-repeat 8px 10px;
-}
-#main #category_ad_box ul.category_title li a.one:hover{
-	background: url(../images/ico_02.png) no-repeat 5px 10px #ED5565;
-}
-#main #category_ad_box ul.category_title li a.two{
-	background: url(../images/ico_03.png) no-repeat 12px 10px;
-}
-#main #category_ad_box ul.category_title li a.two:hover{
-	background: url(../images/ico_02.png) no-repeat 5px 10px #ED5565;
-}
-#main #category_ad_box ul.category_title li a.three{
-	background: url(../images/ico_04.png) no-repeat 12px 10px;
-}
-#main #category_ad_box ul.category_title li a.three:hover{
-	background: url(../images/ico_02.png) no-repeat 5px 10px #ED5565;
-}
-#main #category_ad_box ul.category_title li a.four{
-	background: url(../images/ico_05.png) no-repeat 12px 10px;
-}
-#main #category_ad_box ul.category_title li a.four:hover{
-	background: url(../images/ico_02.png) no-repeat 5px 10px #ED5565;
-}
-#main #category_ad_box ul.category_title li a.five{
-	background: url(../images/ico_06.png) no-repeat 12px 10px;
-}
-#main #category_ad_box ul.category_title li a.five:hover{
-	background: url(../images/ico_02.png) no-repeat 5px 10px #ED5565;
-}
-#main #category_ad_box ul.category_title li a.six{
-	background: url(../images/ico_07.png) no-repeat 12px 10px;
-}
-#main #category_ad_box ul.category_title li a.six:hover{
-	background: url(../images/ico_02.png) no-repeat 5px 10px #ED5565;
-}
-
-#main #category_ad_box ul.hot_navigation{
+#main #ad_box a{
 	position: absolute;
 	top: 10px;
-	left: 165px;
-	border:1px solid #E4E4E4;
-	width: 530px;
-	height: 110px;
-	border-radius: 5px;
-	border-bottom: 3px solid #E4E4E4;
+	right: 10px;
+	font-size: 15px;
+	color: white;
 }
-#main #category_ad_box ul.hot_navigation li{
-	height: 36px;
-	border-bottom: 1px solid #E4E4E4;
-	margin-left: 10px;
-	margin-right: 10px;	
-}
-#main #category_ad_box ul.hot_navigation li.no_bottom_border{
-	border-bottom: none;
-}
-
-#main #category_ad_box ul.hot_navigation li span{
-	color: #666666;
-	font-weight: bold;
-	display: inline-block;
-	height: 35px;
-	line-height: 35px;
-}
-#main #category_ad_box ul.hot_navigation li a{
-	color: #666666;
-	margin-right: 15px;
-}
-#main #category_ad_box ul.hot_navigation li a.one{
-	margin-left: 30px;
-}
-#main #category_ad_box #ad{
-	position: absolute;
-	top: 135px;
-	left: 165px;
-	border:1px solid #E4E4E4;
-	width: 530px;
-	height: 120px;
-}
-#main #QRcode_recommend_box{
-	
-	float: left;
-	width: 256px;
-	height: 255px;
-}
-#main #QRcode_recommend_box div.QRcode_box{
-	border-radius: 5px;
-	border:1px solid #E4E4E4;
-	width: 253px;
-	height: 140px;
-	border-bottom: 3px solid #E4E4E4;
-	margin-top: 10px;
-	margin-left: 2px;
+#main #classification_location_box{
+	height: 190px;
 	position: relative;
 }
-#main #QRcode_recommend_box div.QRcode_box p{
+#main #classification_location_box #content_box{
+	width: 944px;
+	height: 182px;
 	position: absolute;
-	top: 15px;
-	left: 40px;
-	color: #666666;
+	top: 8px;
+	left: 8px;
+	background-color: white;
+	border-radius: 5px;
+}
+#main #classification_location_box #content_box #classification_box{
+	
+	height: 89px;
+	position: relative;
+}
+#main #classification_location_box #content_box #classification_box p{
+	height: 43px;
+	line-height: 43px;
+	position: absolute;
+	top: 0px;
+	left: 10px;
+	color: #ED5565;
+	font-weight: bold;
+	font-size: 14px;
+}
+#main #classification_location_box #content_box #classification_box ul.parent_classification{
+	height: 43px;
+	position: absolute;
+	top: 0px;
+	left: 70px;
+}
+#main #classification_location_box #content_box #classification_box ul.parent_classification li{
+	height: 43px;
+	float: left;
+	margin-right: 25px;
+}
+#main #classification_location_box #content_box #classification_box ul.parent_classification li a{
+	color: #4467A3;
+	display: block;
+	height: 27px;
+	line-height: 27px;
+	margin-top: 8px;
+	text-align: center;
+}
+#main #classification_location_box #content_box #classification_box ul.parent_classification li a:hover{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 5px;
+}
+#main #classification_location_box #content_box #classification_box ul.child_classification{
+	border:1px solid #DBE1EC;
+	height: 44px;
+	position: absolute;
+	top: 43px;
+	left: 70px;
+	background: #ECEFF5;
+	border-radius: 5px;
+}
+#main #classification_location_box #content_box #classification_box ul.child_classification li{
+	height: 15px;
+	border-right:1px solid #999;
+	float: left;
+	margin-top: 14px;
+	margin-right: 10px;
+	padding-right: 15px;
+	margin-left: 10px;
+}
+#main #classification_location_box #content_box #classification_box ul.child_classification li.no_right_border{
+	border-right: none;
+}
+#main #classification_location_box #content_box #classification_box ul.child_classification li a{
+	color: #4467A3;
+}
+#main #classification_location_box #content_box #location_box{
+	height: 88px;
+	position: relative;
+}
+#main #classification_location_box #content_box #location_box p{
+	height: 43px;
+	line-height: 43px;
+	position: absolute;
+	top: 0px;
+	left: 10px;
+	color: #ED5565;
+	font-weight: bold;
+	font-size: 14px;
+}
+#main #classification_location_box #content_box #location_box ul.parent_classification{
+	height: 43px;
+	position: absolute;
+	top: 0px;
+	left: 70px;
+}
+#main #classification_location_box #content_box #location_box ul.parent_classification li{
+	height: 43px;
+	float: left;
+	margin-right: 25px;
+}
+#main #classification_location_box #content_box #location_box ul.parent_classification li a{
+	color: #4467A3;
+	display: block;
+	height: 27px;
+	line-height: 27px;
+	margin-top: 8px;
+	text-align: center;
+}
+#main #classification_location_box #content_box #location_box ul.parent_classification li a:hover{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 5px;
+}
+#main #classification_location_box #content_box #location_box ul.child_classification{
+	border:1px solid #DBE1EC;
+	height: 44px;
+	position: absolute;
+	top: 43px;
+	left: 70px;
+	background: #ECEFF5;
+	border-radius: 5px;
+}
+#main #classification_location_box #content_box #location_box ul.child_classification li{
+	height: 15px;
+	border-right:1px solid #999;
+	float: left;
+	margin-top: 14px;
+	margin-right: 10px;
+	padding-right: 15px;
+	margin-left: 10px;
+}
+#main #classification_location_box #content_box #location_box ul.child_classification li.no_right_border{
+	border-right: none;
+}
+#main #classification_location_box #content_box #location_box ul.child_classification li a{
+	color: #4467A3;
+}
+#main #sort_price_box{
+	height: 45px;
+	position: relative;
+
+}
+#main #sort_price_box div.content_box{
+	height: 37px;
+	border-radius: 5px;
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	width: 944px;
+	background: #E4E4E4;
+}
+#main #sort_price_box div.content_box p.one{
+	position: absolute;
+	top: 11px;
+	left: 10px;
+	color: #ED5565;
+	font-size: 14px;
 	font-weight: bold;
 }
-#main #QRcode_recommend_box div.QRcode_box img{
+#main #sort_price_box div.content_box ul{
 	position: absolute;
-	top: 42px;
-	left: 88px;
+	top: 6px;
+	left: 77px;
+
 }
-#main #QRcode_recommend_box div.recommend_box{
+#main #sort_price_box div.content_box ul li{
+	float: left;
+	width: 68px;
+	height: 25px;
+	background:white;
+	margin-right: 1px;
+}
+#main #sort_price_box div.content_box ul li a{
+	display: block;
+	line-height: 24px;
+	height: 24px;
+	color: #797979;
+	text-align: center;
+	border:1px solid white;
+}
+#main #sort_price_box div.content_box ul li a:hover{
+	border:1px solid #4467A3;
+	color: black;
+}
+#main #coupon_box{
+	position: relative;
+}
+#main #coupon_box ul.coupon_content{
+	margin-top: 8px;
+	margin-left: 8px;
+	width: 694px;
+}
+#main #coupon_box ul.coupon_content li{
+	float: left;
+	width: 337px;
+	height: 181px;
+	background: white;
+	position: relative;
+	margin-right: 8px;
+	margin-bottom: 8px;
 	border-radius: 5px;
-	border:1px solid #E4E4E4;
-	width: 253px;
-	height: 90px;
-	border-bottom: 3px solid #E4E4E4;
-	margin-top: 10px;
-	margin-left: 2px;
+}
+#main #coupon_box ul.coupon_content li:hover{
+	background:url(../images/coupon-hover.png) no-repeat 0px 0px;
+	
+}
+#main #coupon_box ul.coupon_content li img{
+	width: 162px;
+	height: 162px;
+	position: absolute;
+	top: 10px;
+	left: 13px;
+}
+#main #coupon_box ul.coupon_content li p.one{
+	position: absolute;
+	top: 40px;
+	right: 9px;
+	width: 152px;
+	
+}
+#main #coupon_box ul.coupon_content li p.two{
+	position: absolute;
+	top: 100px;
+	right: 9px;
+	width: 152px;
+	color: #999999;
+}
+#main #coupon_box ul.coupon_content li p.three{
+	position: absolute;
+	top: 122px;
+	right: 9px;
+	width: 152px;
+	color: #999999;
+}
+#main #coupon_box ul.coupon_content li p.hidden_location{
+	position: absolute;
+	top: 132px;
+	left: 13px;
+	height: 40px;
+	width: 145px;
+	color: white;
+	background: red;
+	line-height: 40px;
+	background: url(../images/location.png) no-repeat 1px 10px;
+	background-color: black;
+	filter:alpha(opacity=50); 
+	-moz-opacity:0.5; 
+	opacity:0.5;
+	padding-left: 17px;
+	font-weight: bold;
+	display: none;
+}
+#main #coupon_box ul.coupon_content li a:hover{
+	text-decoration: underline;
+}
+#main #coupon_box ul.coupon_content li a.content_title{
+	color: #ED5565;
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	top: 13px;
+	right: 29px;
+}
+#main #coupon_box ul.coupon_content li a.download{
+	color: #ED5565;
+	position: absolute;
+	top: 154px;
+	right: 24px;
+	background: url(../images/download.png) no-repeat 0px -2px;
+	padding-left: 19px;
+	
+}
+#main #coupon_box #recommend_box{
+	background: white;
+	height: 181px;
+	width: 254px;
+	position: absolute;
+	top: 0px;
+	right: 8px;
+}
+#main #coupon_box #hot_coupon_box{
+	background: white;
+	width: 254px;
+	position: absolute;
+	top: 189px;
+	right: 8px;
+	background-color: white;
+}
+#main #coupon_box #hot_coupon_box p.title{
+	background: #E4E4E4;
+	height: 35px;
+	color: #666;
+	line-height: 35px;
+	padding-left: 8px;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon{
+	margin-top: 5px;
+	margin-left: 5px;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon li{
+	background: #ECEFF5;
+	height: 80px;
+	width: 244px;
+	margin-bottom: 5px;
+	position: relative;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon li a{
+	color: #ED5565;
+	font-weight: bold;
+	position: absolute;
+	top: 5px;
+	left: 8px;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon li a:hover{
+	text-decoration: underline;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon li p{
+	color: #666;
+	position: absolute;
+	top: 27px;
+	left: 8px;
+	width: 170px;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon li img{
+	width: 62px;
+	height: 62px;
+	position: absolute;
+	top: 10px;
+	right: 5px;
 }

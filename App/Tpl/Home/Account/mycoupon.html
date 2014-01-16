@@ -1,0 +1,99 @@
+<include file="Account:account_tmp_top" title="我的惠桂林-我的优惠劵"/>
+<load href="__PUBLIC__/css/mycoupon.css" />
+	<ul class="expire_filter_box">
+		<li><a href="" class="hover">全部</a></li>
+		<li><a href="">未到期</a></li>
+		<li><a href="">已到期</a></li>
+	</ul>
+	<div class="myconpon_items">
+		<table>
+			<tbody>
+				<tr>
+					<th class="one">优惠劵名称</th>
+					<th class="two">下载时间</th>
+					<th class="three">状态</th>
+					<th class="four">操作</th>
+				</tr>
+				<tr>
+					<td >江上人家：消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</td>
+					<td class="center">2012-12-13 19：21</td>
+					<td class="center green">未到期</td>
+					<td>
+						<a class="operation01">发送到手机</a><a href="{:U("Home/Account/mytocomment")}" class="operation02">我要评价</a><a href="{:U("Home/Account/mycommented")}" class="operation03">查看我的评价</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td >江上人家：消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</td>
+					<td class="center">2012-12-13 19：21</td>
+					<td class="center">已到期</td>
+					<td>
+						<a class="operation01">发送到手机</a><a href="{:U("Home/Account/mytocomment")}" class="operation02">我要评价</a><a href="{:U("Home/Account/mycommented")}" class="operation03">查看我的评价</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td >江上人家：消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</td>
+					<td class="center">2012-12-13 19：21</td>
+					<td class="center">已到期</td>
+					<td>
+						<a class="operation01">发送到手机</a><a href="{:U("Home/Account/mytocomment")}" class="operation02">我要评价</a><a href="{:U("Home/Account/mycommented")}" class="operation03">查看我的评价</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td >江上人家：消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</td>
+					<td class="center">2012-12-13 19：21</td>
+					<td class="center">已到期</td>
+					<td>
+						<a class="operation01">发送到手机</a><a href="{:U("Home/Account/mytocomment")}" class="operation02">我要评价</a><a href="{:U("Home/Account/mycommented")}" class="operation03">查看我的评价</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td >江上人家：消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</td>
+					<td class="center">2012-12-13 19：21</td>
+					<td class="center">已到期</td>
+					<td>
+						<a class="operation01">发送到手机</a><a href="{:U("Home/Account/mytocomment")}" class="operation02">我要评价</a><a href="{:U("Home/Account/mycommented")}" class="operation03">查看我的评价</a>
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="send_cellphone_hidden_box">
+			<div class="top_content_box">
+				<p>发送到手机</p>
+				<img src="__PUBLIC__/images/login_closed.png" id="closed_send_cellphono_box_btn">
+			</div>
+			<div class="middle_content_box">
+				<form>
+					<ul>
+						<li>
+							<p class="label">手机号</p>
+							<input type="text" name="send_phone" id="send_phone"/>
+							<p class="hidden_error_tips" id="send_phone_error_tip">输入的手机号不能为空</p>
+						</li>
+						<li>
+							<p class="label">验证码</p>
+							<input type="text" name="send_cellphone_vcode" id="send_cellphone_vcode" class="shorter" />
+							<a href="" id="send_cellphone_vcode_not_clear">看不清</a>
+							<img src="{:U("Home/Login/verifyImg")}" id="send_cellphone_vcode_img">
+							<p class="hidden_error_tips" id="send_vcode_error_tip">输入的验证码不能为空</p>
+						</li>
+					</ul>
+					<input type="submit" value="绑定" name="send_cellphone_submit_btn" id="send_cellphone_submit_btn">
+				</form>
+			</div>
+		</div>
+	</div>
+	<ul class="page_box">
+		<li class="one"><a href="" class="one">首页</a></li>
+		<li><a href=""><</a></li>
+		<li><a href="" class="red">1</a></li>
+		<li><a href="">2</a></li>
+		<li><a href="">3</a></li>
+		<li><a href="">></a></li>
+		<li class="one"><a href="" class="one">尾页</a></li>
+	</ul>
+<include file="Account:account_tmp_bottom"/>

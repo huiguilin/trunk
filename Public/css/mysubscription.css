@@ -1,0 +1,86 @@
+#main #left_content_box div.mycontent_box{
+	height: 500px;
+}
+#main #left_content_box div.mycontent_box ul.my_classification li a.five{
+	font-weight: bold;
+	color: #ED5565;
+	border-bottom: 2px solid #ED5565;
+}
+#main #left_content_box div.mycontent_box p.subscription_title{
+	color: #ED5565;
+	font-size: 14px;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-top: 20px;
+	padding-left: 10px;
+}
+#main #left_content_box div.mycontent_box form div.frequency_box{
+	position: relative;
+	height: 100px;
+}
+#main #left_content_box div.mycontent_box form div.frequency_box p{
+	font-size: 13px;
+	color: #666;
+	font-weight: normal;
+	position: absolute;
+	top: 25px;
+	left: 50px;
+}
+#main #left_content_box div.mycontent_box form div.frequency_box ul{
+	position: absolute;
+	top: 25px;
+	left: 200px;
+	color: #666;
+}
+#main #left_content_box div.mycontent_box form div.binding_box{
+	position: relative;
+	height:80px;
+	
+}
+#main #left_content_box div.mycontent_box form div.binding_box p.title01{
+	font-size: 13px;
+	color: #666;
+	font-weight: normal;
+	position: absolute;
+	top: 25px;
+	left: 50px;
+}
+#main #left_content_box div.mycontent_box form div.binding_box p.hidden_error_tips{
+	font-size: 13px;
+	color: #ED5565;
+	font-weight: normal;
+	position: absolute;
+	top: 27px;
+	left: 520px;
+	display: none;
+}
+#main #left_content_box div.mycontent_box form div.binding_box a{
+	position: absolute;
+	top: 27px;
+	left: 470px;
+	color: #4467A3;
+}
+#main #left_content_box div.mycontent_box form div.binding_box input.emailaddress{
+	position: absolute;
+	top: 15px;
+	left: 200px;
+	color: #666;
+	border:1px solid #C9C9C9;
+	height: 40px;
+	width: 250px;
+	border-radius: 5px;
+	background: #F2F2F2;
+}
+#main #left_content_box div.mycontent_box form input.submit_btn{
+	color: white;
+	border:1px solid #ED5565;
+	height: 35px;
+	width: 220px;
+	border-radius: 5px;
+	background: #ED5565;
+	font-size: 14px;
+	margin-top: 40px;
+	margin-left: 200px;
+	margin-bottom: 60px;
+
+}

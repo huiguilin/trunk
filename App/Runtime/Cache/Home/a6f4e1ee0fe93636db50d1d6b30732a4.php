@@ -1,1 +1,0 @@
-<?php if (!defined('THINK_PATH')) exit();?>dfdsf 该模块不存在

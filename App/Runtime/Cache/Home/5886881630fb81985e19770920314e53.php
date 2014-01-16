@@ -1,1 +1,0 @@
-<?php if (!defined('THINK_PATH')) exit();?>dasdasd 不存在

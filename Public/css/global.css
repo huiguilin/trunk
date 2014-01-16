@@ -14,6 +14,8 @@ ul li{
 input{
 	border: none;
 }
+.clearfix:after {content:"."; display:block; height:0; visibility:hidden; clear:both; }
+.clearfix { *zoom:1; }
 /*顶部订阅分享区域*/
 #cellphone_version_box{
 	display: none;
@@ -22,8 +24,6 @@ input{
 	height: 570px;
 	position: relative;
 	border-radius: 5px;
-
-	
 }
 #cellphone_version_box #app_closed_box{
 	position: absolute;
@@ -535,7 +535,7 @@ input{
 /*Logo区域*/
 #top_logo_box{
 	width: 960px;
-	height: 52px;
+	height: 60px;
 	margin: 0 auto;
 	position: relative;
 	z-index: 16;
@@ -1577,7 +1577,7 @@ input{
 }
 #top_logo_box a #logo{
 	position: absolute;
-	top: 11px;
+	top: 14px;
 	left:16px;
 	width: 114px;
 	height:35px;
@@ -1592,7 +1592,7 @@ input{
 }
 #top_logo_box #login{
 	position: absolute;
-	top: 22px;
+	top: 25px;
 	right: 5px;
 }
 #top_logo_box #login li{
@@ -1624,27 +1624,31 @@ input{
 }
 /*Logo区域结束*/
 /*导航区域*/
-#top_nav_box{
+#top_nav{
+	width: 100%;
+	background: #ED5565;
+}
+#top_nav #top_nav_box{
 	width: 960px;
-	height: 47px;
+	height: 39px;
 	margin: 0 auto;
-	border-bottom:2px solid #DB4453;
+	
 	/*border-radius: 5px;*/
 	background: #ED5565;
 	position: relative;
 
-	-moz-border-radius: 5px;
+	/*-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	behavior: url(Layouts/js/border-radius.htc);
+	behavior: url(Layouts/js/border-radius.htc);*/
 	z-index: 15;
 }
-#top_nav_box #left_collection{
+#top_nav #top_nav_box #left_collection{
 	position: absolute;
-	top:8px;
+	top:3px;
 	left: 9px;
 	width: 145px;
-	height: 35px;
+	height: 33px;
 	background: white;
 	border-radius: 5px;
 
@@ -1653,58 +1657,58 @@ input{
 	border-radius: 5px;
 	behavior: url(Layouts/js/border-radius.htc);*/
 }
-#top_nav_box #left_collection .left_img{
+#top_nav #top_nav_box #left_collection .left_img{
 	position: absolute;
-	top:4px;
-	left:10px;
+	top:3px;
+	left:13px;
 }
-#top_nav_box #left_collection span{
+#top_nav #top_nav_box #left_collection span{
 	color: #ED5565;
 	font-weight:bold;
 	font-size: 18px;
 	position: absolute;
-	top: 9px;
+	top: 7px;
 	left: 50px;
 }
-#top_nav_box #nav{
+#top_nav #top_nav_box #nav{
 	position: absolute;
 	top:0px;
 	left:165px;
 }
-#top_nav_box #nav li{
+#top_nav #top_nav_box #nav li{
 	float: left;
 	width: 112px;
-	height: 48px;
+	height: 38px;
 	border-left: 1px solid #DB4453;
 }
-#top_nav_box #nav li.border_right{
+#top_nav #top_nav_box #nav li.border_right{
 	border-right: 1px solid #DB4453;
 	display: none;
 }
-#top_nav_box #nav li:hover{
+#top_nav #top_nav_box #nav li:hover{
 	background: #F6808B;
-}
-#top_nav_box #nav li a{
-	color: white;
 	font-weight: bold;
+}
+#top_nav #top_nav_box #nav li a{
+	color: white;
 	font-size: 18px;
 	display: inline-block;
-	height: 48px;
-	line-height: 48px;
+	height: 38px;
+	line-height: 38px;
 	width: 112px;
 	text-align: center;
 }
-#top_nav_box #nav li a.one:hover{
+#top_nav #top_nav_box #nav li a.one:hover{
 	display: inline-block;
 	background: #F6808B;
 }
 /*搜索框区域*/
-#top_nav_box #search_box{
+#top_nav #top_nav_box #search_box{
 	width: 236px;
-	height: 32px;
+	height: 30px;
 	/*border-radius: 5px;*/
 	position: absolute;
-	top: 9px;
+	top: 5px;
 	right: 20px;
 	background:url(../images/bg_search.png);
 	
@@ -1712,12 +1716,11 @@ input{
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	behavior: url(Layouts/js/border-radius.htc);
-
 }
-#top_nav_box #search_box input{
+#top_nav #top_nav_box #search_box input{
 	outline: none;
 }
-#top_nav_box #search_box #search_con{
+#top_nav #top_nav_box #search_box #search_con{
 	width: 198px;
 	position: absolute;
 	top: 3px;
@@ -1729,7 +1732,7 @@ input{
 	padding-bottom: 0px; padding-bottom/*\**/:10px \9;
 	line-height: 25px; line-height/*\**/: 5px \9;
 }
-#top_nav_box #search_btn{
+#top_nav #top_nav_box #search_btn{
 	width: 30px;
 	height: 30px;
 	position: absolute;
@@ -1744,13 +1747,12 @@ input{
 /*最底部区域*/
 #bottom_info{
 	width: 100%;
-	height: 180px;
+	height: 150px;
 	background: #DB4453;
 	margin-top: 50px;
 }
 #bottom_info #bottom_box{
 	width: 960px;
-	height: 180px;
 	margin:0 auto;
 	position: relative;
 }
@@ -1759,9 +1761,34 @@ input{
 	font-size: 14px;
 }
 #bottom_info #bottom_box img{
+	width: 115px;
+	height: 38px;
+	cursor: pointer;
+}
+#bottom_info #bottom_box img.one{
 	position: absolute;
 	top: 20px;
-	left:850px;
+	right: 10px;
+}
+#bottom_info #bottom_box img.two{
+	position: absolute;
+	top: 20px;
+	right: 140px;
+}
+#bottom_info #bottom_box img.three{
+	position: absolute;
+	top: 20px;
+	right: 270px;
+}
+#bottom_info #bottom_box img.four{
+	position: absolute;
+	top: 65px;
+	right: 270px;
+}
+#bottom_info #bottom_box img.five{
+	position: absolute;
+	top: 65px;
+	right: 140px;
 }
 #bottom_info #bottom_box ul{
 	position: absolute;
@@ -1783,19 +1810,22 @@ input{
 }
 #bottom_info #bottom_box ul li a{
 	color: white;
-	font-size: 14px;
+	font-size: 13px;
 }
 #bottom_info #bottom_box ul li a:hover{
 	text-decoration: underline;
 }
 #bottom_info #bottom_box .p_box {
 	position: absolute;
-	top: 70px;
+	top: 59px;
 	left: 0px;
+}
+#bottom_info #bottom_box .p_box p{
+	font-size: 13px;
 }
 #bottom_info #bottom_box .p_box a{
 	color: white;
-	font-size: 14px;
+	font-size: 13px;
 }
 #bottom_info #bottom_box .p_box a:hover{
 	text-decoration: underline;

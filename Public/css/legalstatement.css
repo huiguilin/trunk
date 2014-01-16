@@ -1,10 +1,13 @@
 
 /*左边主要内容区域*/
+#main{
+	height: 500px;
+}
 #main #left_card{
 	position: relative;
 	width: 715px;
-	height: 530px;
-	border: 2px solid #F7F8FA;
+	height: 500px;
+	border: 1px solid #E3E3E3;
 }
 #main #left_card p.one{
 	color: #EB5B4C;

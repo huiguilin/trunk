@@ -1,16 +1,15 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 a//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css"> -->
-<link rel="stylesheet" type="text/css" href="/Trunk/Public/css/index.css" /> <!-- 模板中默认导入Css文件的方法，默认路径是public/css/index.css，css是文件夹名，index是css文件名，需不需要后缀 -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
-
+<script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 <!--[if IE 6]>
 <!--背景图片透明方法-->
 <script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
@@ -159,7 +158,7 @@
 						<p class="five">验证码</p>
 						<input type="text" name="reg_vcode" class="five"/>
 						<a href="" id="regemail_vcode_not_clear">看不清</a>
-						<img src="<?php echo U("Home/Register/verifyImg");?>" class="one">
+						<img src="<?php echo U("Home/Login/verifyImg");?>" class="one">
 						<input type="checkbox" name="license" class="six" checked="true">
 						<p class="six">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
@@ -319,170 +318,758 @@
 		</div>
 	</div>
 <!-- Logo区域结束 -->
+
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!--  导航区域 -->
 	<!--  导航区域 -->
-	<div id="top_nav_box">
-		<div id="left_collection">
-			<img class="left_img" src="__PUBLIC__/images/ico_02.png" alt="" />
-			<span>全部分类</span>
+	<div id="top_nav">
+		<div id="top_nav_box">
+			<div id="left_collection">
+				<img class="left_img" src="__PUBLIC__/images/classification/menu.png" alt="" />
+				<span>全部分类</span>
+			</div>
+			<ul id="nav">
+				<li style="background:#DA4453;font-weight:bold"><a href="<?php echo U("Index/index");?>">首页</a></li>
+				<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+				<li><a href="<?php echo U("Card/card");?>">会员卡</a></li>
+				<li class="border_right "><a href="">商户</a></li>
+			</ul>
+			<form id="search_box">
+				<input id="search_con" type="text" placeholder="桂林环球美食节" name="search_con"/>
+				<input id="search_btn" type="submit" value="" name="search_btn"/>
+			</form>
 		</div>
-		<ul id="nav">
-			<li style="background:#DA4453"><a href="<?php echo U("Index/index");?>">首页</a></li>
-			<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-			<li><a href="<?php echo U("Card/card");?>">会员卡</a></li>
-			<li class="border_right "><a href="">商户</a></li>
-		</ul>
-		<form id="search_box">
-			<input id="search_con" type="text" placeholder="桂林环球美食节" name="search_con"/>
-			<input id="search_btn" type="submit" value="" name="search_btn"/>
-		</form>
 	</div>
 <!-- 导航区域结束-->
 <!-- 导航区域结束-->
 <!-- 内容区域 -->
+	<div id="right_function_box">dad</div>
 	<div id="main">
-		<!-- 左边内容区域 -->
-		<div id="main_left">
-			<ul id="nav_content">
-				<li><a href="">美食</a></li>
-				<li class="two"><a href="">休闲娱乐</a></li>
-				<li class="three"><a href="">生活便民</a></li>
-				<li class="four"><a href="">旅游酒店</a></li>
-				<li class="five"><a href="">打折信息</a></li>
+		<!-- 主要内容顶部区域 -->
+		<div id="main_content_top_box">
+			<!-- 全部分类区域 -->
+			<ul class="category_title">
+				<li><a href="" class="one">美食</a></li>
+				<li><a href="" class="two">休闲娱乐</a></li>
+				<li><a href="" class="three">生活服务</a></li>
+				<li><a href="" class="four">酒店</a></li>
+				<li><a href="" class="five">旅游</a></li>
+				<li><a href="" class="six">丽人</a></li>
 			</ul>
-			<p>小道消息</p>
-            <ul id="msg_content">
-            <?php if(is_array($news)): foreach($news as $key=>$n): ?><li><a href="" class="one"><?php echo ($n['words']); ?></a></li><?php endforeach; endif; ?>
+			<!-- 全部分类区域结束 -->
+			<!-- 热门分类区域 -->
+			<ul class="hot_navigation">
+				<li>
+					<span>热门分类</span>
+					<a href="" class="one">火锅</a>
+					<a href="">KTV</a>
+					<a href="">电影院</a>
+					<a href="">足疗按摩</a>
+				</li>
+				<li>
+					<span>全部区域</span>
+					<a href="" class="one">七星区</a>
+					<a href="">秀峰区</a>
+					<a href="">象山区</a>
+					<a href="">叠彩区</a>
+					<a href="">雁山区</a>
+				</li>
+				<li class="no_bottom_border">
+					<span>热门商圈</span>
+					<a href="" class="one">中心广场</a>
+					<a href="">红街广场</a>
+					<a href="">联达广场</a>
+				</li>
 			</ul>
+			<!-- 热门分类区域结束 -->
+			<!-- 广告区域 -->
+			<div id="ad_box">
+				<img src="__PUBLIC__/images/flash/1.png">
+				<img src="__PUBLIC__/images/flash/2.png">
+				<img src="__PUBLIC__/images/flash/3.png">
+				<img src="__PUBLIC__/images/flash/4.png">
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+				</ul>
+			</div>
+			<!-- 广告区域结束 -->
+			<!-- 微信区域 -->
+			<div class="QRcode_box">
+				<p>扫描我,关注惠桂林官方微信</p>
+				<img src="__PUBLIC__/images/barcode.png">
+			</div>
+			<!-- 微信区域结束 -->
+			<!-- 我推荐你来谈区域 -->
+			<div class="recommend_box">
+				<p>您推荐，我来谈</p>
+			</div>
+			<!-- 我推荐你来谈区域结束 -->
 		</div>
-		<!-- 左边内容区域结束 -->
-		<!-- 中间内容区域 -->
-		<div id="main_middle">
-			<div id="ad">
-                <?php if(is_array($ads)): foreach($ads as $key=>$a): ?><img src="__PUBLIC__/<?php echo ($a['img_path']); ?>" /><?php endforeach; endif; ?>
-                <ul>
-                <?php if(is_array($ads)): foreach($ads as $i=>$a): if($i == 0): ?><li class="hover">1</li>
-                <?php else: ?>
-                <li><?php echo ($i+1); ?></li><?php endif; endforeach; endif; ?>
-				</ul>	
-			</div>
-			<p class="one">惠字头吃货小分队</p>
-			<div id="map">
-				<img class="bg_bus" src="__PUBLIC__/images/bg_bus.png">
-				<img class="bus" src="__PUBLIC__/images/bus.png">
-				<div id="map_imgs">
-					<img class="light01" src="__PUBLIC__/images/ico_09.png">
-					<img class="light02" src="__PUBLIC__/images/ico_09.png">
-					<img class="light03" src="__PUBLIC__/images/ico_09.png">
-					<img class="light04" src="__PUBLIC__/images/ico_09.png">
-					<img class="light05" src="__PUBLIC__/images/ico_09.png">
-					<img class="light06" src="__PUBLIC__/images/ico_09.png">
-					<img class="light07" src="__PUBLIC__/images/ico_09.png">
-					<img class="light08" src="__PUBLIC__/images/ico_09.png">
-					<img class="light09" src="__PUBLIC__/images/ico_09.png">
-				</div>	
-				<p class="map_102">102路</p>
-				<p class="map_title">线路介绍</p>
-                <p class="map_comment">春记烧鹅独家签约，会员卡免费办理，即刻享受9折优惠，机会难得!</p>
-                <?php if(is_array($partners)): foreach($partners as $key=>$p): ?><a class="one" href=""><?php echo ($p['name']); ?></a><?php endforeach; endif; ?>
-			</div>
-
-			<div id="tj_content">
-				<p class="two">惠字头小编推荐</p>
-                <ul>
-                <?php if(is_array($recommends)): foreach($recommends as $key=>$r): ?><li>
-                <img src="__PUBLIC__/<?php echo ($r['picture_path']); ?>">
-                <div>
-                <img src="__PUBLIC__/images/ico_10.png">
-                <span><?php echo ($r['tag']); ?></span>
-                </div>
-                <a><?php echo ($r['name']); ?></a>
-                <img class="ico" src="__PUBLIC__/images/ico_08.png">
-                <p class="three">推荐理由:</p>
-                <p class="four"><?php echo ($r['description']); ?></p>
-                </li><?php endforeach; endif; ?>
-				</ul>
-			</div>
-			<p class="comment">惠字头号外评论</p>
-			<div id="comment_content">
-            <ul>
-            <?php if(is_array($evaluations)): foreach($evaluations as $key=>$e): ?><li>
-            <p class="bold"><?php echo ($e['nickname']); ?>@</p>
-            <a href="" class="red"><?php echo ($e['name']); ?></a>
-            <p class="env">环境:<?php echo ($e['environment_rate']); ?></p>
-            <p class="taste">口味:<?php echo ($e['taste_rate']); ?></p>
-            <p class="service">服务:<?php echo ($e['server_rate']); ?></p>
-            <p class="time"><?php echo ($e['createtime']); ?></p>
-            <p class="p_bottom"><?php echo ($e['evaluation']); ?></p>
-            </li><?php endforeach; endif; ?>
-				</ul>
-			</div>
-		</div>
-		<!-- 中间内容区域结束 -->
-		<!-- 右边内容区域 -->
-		<div id="main_right">
-			<div id="app">
-				<p>扫一下,关注惠桂林微信</p>
-				<img src="__PUBLIC__/images/barcode.png" alt="二维码">
-				<a>点击下载手机APP</a>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">人气王</p>
-                <ul>
-                <?php if(is_array($hot_partners)): foreach($hot_partners as $key=>$h): ?><li>
-                <a href="" class="title"><?php echo ($h['name']); ?></a>
-                <img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-                <p class="yhj">优惠劵</p>
-                <p class="hyk">会员卡</p>
-                <p class="one">[8]</p>
-                <p class="two">[2]</p>
-                <p class="vip">VIP</p>
-                </li><?php endforeach; endif; ?>
-				</ul>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">热门优惠劵</p>
-                <ul>
-                <?php if(is_array($card)): foreach($card as $key=>$ca): ?><li>
-                <a href="" class="title title2"><?php echo ($ca['name']); ?></a>
-                <p class="six"><?php echo ($ca['description']); ?></p>
-                <div>
-                <img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-                </div>
-                </li><?php endforeach; endif; ?>
-				</ul>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">热门会员卡</p>
+		<!-- 主要内容顶部区域结束 -->
+		<!-- 热门品牌+新入驻品牌区域 -->
+		<div id="hot_and_new_brand_box">
+			<div class="hot_brand_box">
+				<p>热门品牌</p>
 				<ul>
 					<li>
-						<a href="" class="title title2">李记米粉</a>
-						<p class="six">会员专享8.8折</p>
-						<div>
-							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-						</div>
+						<a href="">春记烧鹅</a>
+						<img src="__PUBLIC__/images/pic/1.png">
 					</li>
 					<li>
-						<a href="" class="title title3">刘姥姥奶酪</a>
-						<p class="seven">会员专享8.8折</p>
-						<div class="blue">
-							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-						</div>
+						<a href="">春记烧鹅</a>
+						<img src="__PUBLIC__/images/pic/1.png">
 					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title title2">大时代烤肉</a>
-						<p class="six">会员专享8.8折</p>
-						<div class="purple">
-							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-						</div>
+					<li>
+						<a href="">春记烧鹅</a>
+						<img src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a href="">春记烧鹅</a>
+						<img src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a href="">春记烧鹅</a>
+						<img src="__PUBLIC__/images/pic/1.png">
+					</li>
+				</ul>
+
+			</div>
+			<div class="new_brand_box">
+				<p>新入驻品牌</p>
+				<ul>
+					<li>
+						<a href="">Brand</a>
+					</li>
+					<li>
+						<a href="">Brand</a>
+					</li>
+					<li>
+						<a href="">Brand</a>
+					</li>
+					<li>
+						<a href="">Brand</a>
+					</li>
+					<li>
+						<a href="">Brand</a>
+					</li>
+					<li>
+						<a href="">Brand</a>
+					</li>	
+				</ul>
+
+			</div>
+		</div>
+		<!-- 热门品牌+新入驻品牌区域结束 -->
+		<!-- 民以食为天+排行榜区域 -->
+		<div id="foot_and_footsort_box">
+			<div class="foot_box">
+				<p class="title">民以食为天</p>
+				<ul class="title_content">
+					<li><a href="">火锅</a></li>
+					<li><a href="">西餐</a></li>
+					<li><a href="">湘菜</a></li>
+					<li><a href="">粤菜</a></li>
+					<li><a href="" class="no_right_border">麻辣香锅</a></li>
+				</ul>
+				<ul class="content">
+					<li>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a href="" class="content_title">春记烧鹅9折优惠券</a>
+						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+						<p class="two">凭券可享：全场8.8折优惠</p>
+						<p class="three">下载：10 次</p>
+						<a href="" class="download">立即下载</a>
+						<p class="hidden_location">秀峰区，象山区，宝山路</p>
+					</li>
+					<li>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a href="" class="content_title">春记烧鹅9折优惠券</a>
+						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+						<p class="two">凭券可享：全场8.8折优惠</p>
+						<p class="three">下载：10 次</p>
+						<a href="" class="download">立即下载</a>
+						<p class="hidden_location">秀峰区，象山区，宝山路</p>
+					</li>
+					<li>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a href="" class="content_title">春记烧鹅9折优惠券</a>
+						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+						<p class="two">凭券可享：全场8.8折优惠</p>
+						<p class="three">下载：10 次</p>
+						<a href="" class="download">立即下载</a>
+						<p class="hidden_location">秀峰区，象山区，宝山路</p>
+					</li>
+					<li>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a href="" class="content_title">春记烧鹅9折优惠券</a>
+						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+						<p class="two">凭券可享：全场8.8折优惠</p>
+						<p class="three">下载：10 次</p>
+						<a href="" class="download">立即下载</a>
+						<p class="hidden_location">秀峰区，象山区，宝山路</p>
+					</li>
+				</ul>
+				<a href="" class="foot_type_more">查看更多</a>
+			</div>
+			<div class="footsort_box">
+				<p class="title title2" id="foot_hot_title">最热优惠劵排行</p><p class="title" id="foot_new_title">最新优惠劵排行</p>
+				<ul id="foot_hot_ul">
+					<li class="hover" id="footsort_box_fisrt_li">
+						<a class="two" href="">李记米粉1</a>
+						<p class="two">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a class="one hidden" href="">李记米粉1</a>
+						<p class="one hidden">8折优惠,全场通兑！</p>
+					</li>
+					<li>
+						<a class="one sort_id_02" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_03" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_04" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_05" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_06" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_07" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_08" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_09" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_10" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+				</ul>
+				<ul id="foot_new_ul" class="hidden" >
+					<li class="hover" id="footsort_box_fisrt_li">
+						<a class="two" href="">李记米粉2</a>
+						<p class="two">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a class="one hidden" href="">李记米粉2</a>
+						<p class="one hidden">8折优惠,全场通兑！</p>
+					</li>
+					<li>
+						<a class="one sort_id_02" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_03" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_04" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_05" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_06" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_07" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_08" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_09" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_10" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
 					</li>
 				</ul>
 			</div>
 		</div>
-		<!-- 右边内容区域结束 -->		
+		<!-- 民以食为天+排行榜区域结束 -->
+		<!-- 休闲娱乐+排行榜区域 -->
+		<div id="foot_and_footsort_box">
+			<div class="foot_box">
+				<p class="title">休闲娱乐</p>
+				<ul class="title_content">
+					<li><a href="">KTV</a></li>
+					<li><a href="">咖啡厅</a></li>
+					<li><a href="">酒吧</a></li>
+					<li><a href="">台球</a></li>
+					<li><a href="" class="no_right_border">网吧</a></li>
+				</ul>
+				<ul class="content">
+					<li>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a href="" class="content_title">春记烧鹅9折优惠券</a>
+						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+						<p class="two">凭券可享：全场8.8折优惠</p>
+						<p class="three">下载：10 次</p>
+						<a href="" class="download">立即下载</a>
+						<p class="hidden_location">秀峰区，象山区，宝山路</p>
+					</li>
+					<li>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a href="" class="content_title">春记烧鹅9折优惠券</a>
+						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+						<p class="two">凭券可享：全场8.8折优惠</p>
+						<p class="three">下载：10 次</p>
+						<a href="" class="download">立即下载</a>
+						<p class="hidden_location">秀峰区，象山区，宝山路</p>
+					</li>
+					<li>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a href="" class="content_title">春记烧鹅9折优惠券</a>
+						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+						<p class="two">凭券可享：全场8.8折优惠</p>
+						<p class="three">下载：10 次</p>
+						<a href="" class="download">立即下载</a>
+						<p class="hidden_location">秀峰区，象山区，宝山路</p>
+					</li>
+					<li>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a href="" class="content_title">春记烧鹅9折优惠券</a>
+						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+						<p class="two">凭券可享：全场8.8折优惠</p>
+						<p class="three">下载：10 次</p>
+						<a href="" class="download">立即下载</a>
+						<p class="hidden_location">秀峰区，象山区，宝山路</p>
+					</li>
+				</ul>
+				<a href="" class="foot_type_more">查看更多</a>
+			</div>
+			<div class="footsort_box">
+				<p class="title title2" id="ent_hot_title">最热优惠劵排行</p><p class="title" id="ent_new_title">最新优惠劵排行</p>
+				<ul id="ent_hot_ul">
+					<li class="hover" id="footsort_box_fisrt_li">
+						<a class="two" href="">李记米粉1</a>
+						<p class="two">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a class="one hidden" href="">李记米粉1</a>
+						<p class="one hidden">8折优惠,全场通兑！</p>
+					</li>
+					<li>
+						<a class="one sort_id_02" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_03" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_04" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_05" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_06" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_07" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_08" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_09" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_10" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+				</ul>
+				<ul id="ent_new_ul" class="hidden" >
+					<li class="hover" id="footsort_box_fisrt_li">
+						<a class="two" href="">李记米粉2</a>
+						<p class="two">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a class="one hidden" href="">李记米粉2</a>
+						<p class="one hidden">8折优惠,全场通兑！</p>
+					</li>
+					<li>
+						<a class="one sort_id_02" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_03" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_04" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_05" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_06" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_07" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_08" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_09" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_10" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 休闲娱乐+排行榜区域结束 -->
+		<!-- 生活服务+排行榜区域 -->
+		<div id="foot_and_footsort_box">
+			<div class="foot_box">
+				<p class="title">生活服务</p>
+				<ul class="title_content">
+					<li><a href="">摄影</a></li>
+					<li><a href="">汽车服务</a></li>
+					<li><a href="">配镜</a></li>
+					<li><a href="">体检保健</a></li>
+					<li><a href="" class="no_right_border">鲜花婚庆</a></li>
+				</ul>
+				<ul class="content">
+					<li>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a href="" class="content_title">春记烧鹅9折优惠券</a>
+						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+						<p class="two">凭券可享：全场8.8折优惠</p>
+						<p class="three">下载：10 次</p>
+						<a href="" class="download">立即下载</a>
+						<p class="hidden_location">秀峰区，象山区，宝山路</p>
+					</li>
+					<li>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a href="" class="content_title">春记烧鹅9折优惠券</a>
+						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+						<p class="two">凭券可享：全场8.8折优惠</p>
+						<p class="three">下载：10 次</p>
+						<a href="" class="download">立即下载</a>
+						<p class="hidden_location">秀峰区，象山区，宝山路</p>
+					</li>
+					<li>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a href="" class="content_title">春记烧鹅9折优惠券</a>
+						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+						<p class="two">凭券可享：全场8.8折优惠</p>
+						<p class="three">下载：10 次</p>
+						<a href="" class="download">立即下载</a>
+						<p class="hidden_location">秀峰区，象山区，宝山路</p>
+					</li>
+					<li>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a href="" class="content_title">春记烧鹅9折优惠券</a>
+						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+						<p class="two">凭券可享：全场8.8折优惠</p>
+						<p class="three">下载：10 次</p>
+						<a href="" class="download">立即下载</a>
+						<p class="hidden_location">秀峰区，象山区，宝山路</p>
+					</li>
+				</ul>
+				<a href="" class="foot_type_more">查看更多</a>
+			</div>
+			<div class="footsort_box">
+				<p class="title title2" id="life_hot_title">最热优惠劵排行</p><p class="title" id="life_new_title">最新优惠劵排行</p>
+				<ul id="life_hot_ul">
+					<li class="hover" id="footsort_box_fisrt_li">
+						<a class="two" href="">李记米粉1</a>
+						<p class="two">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a class="one hidden" href="">李记米粉1</a>
+						<p class="one hidden">8折优惠,全场通兑！</p>
+					</li>
+					<li>
+						<a class="one sort_id_02" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_03" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_04" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_05" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_06" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_07" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_08" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_09" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_10" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+				</ul>
+				<ul id="life_new_ul" class="hidden" >
+					<li class="hover" id="footsort_box_fisrt_li">
+						<a class="two" href="">李记米粉2</a>
+						<p class="two">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img src="__PUBLIC__/images/pic/1.png">
+						<a class="one hidden" href="">李记米粉2</a>
+						<p class="one hidden">8折优惠,全场通兑！</p>
+					</li>
+					<li>
+						<a class="one sort_id_02" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_03" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_04" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_05" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_06" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_07" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_08" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_09" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a class="one sort_id_10" href="">刘姥姥奶酪</a>
+						<p class="one">8折优惠,全场通兑！</p>
+						<a class="two hidden" href="">刘姥姥奶酪</a>
+						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 生活服务+排行榜区域结束 -->
 	</div>
 <!-- 内容区域结束 -->
+<!-- 右侧回到顶部区域 -->
+	<!-- <div id="right_function_box">
+		
+	</div> -->
+<!-- 右侧回到顶部区域结束 -->
 <!-- 最底部区域 -->
 	<div id="bottom_info">
 		<div id="bottom_box">
@@ -492,7 +1079,11 @@
 				<p>地址：桂林市中山中路39号南方大厦9-5号</p>
 				<p>经营许可证：桂B2-20040001</p>
 			</div>
-			<img src="__PUBLIC__/images/police.png" alt="" />
+			<img src="__PUBLIC__/images/footer_ico01.png" alt="" class="one"/>
+			<img src="__PUBLIC__/images/footer_ico02.png" alt="" class="two" />
+			<img src="__PUBLIC__/images/footer_ico03.png" alt="" class="three" />
+			<img src="__PUBLIC__/images/footer_ico04.png" alt="" class="four" />
+			<img src="__PUBLIC__/images/footer_ico05.png" alt="" class="five" />
 			<ul>
 				<li class="one"><a href="<?php echo U("About/about");?>">关于我们</a></li>
 				<li><a href="<?php echo U("Sitemap/sitemap");?>">网站地图</a></li>
@@ -503,7 +1094,6 @@
 			</ul>
 		</div>
 </div>
-
 <!-- 最底部区域结束 -->
 
 </body>

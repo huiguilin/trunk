@@ -408,12 +408,4 @@ abstract class Action {
         // 执行后续操作
         tag('action_end');
     }
-
-
-    public function _initialize() {
-        $user = session('user');
-        if (!empty($user)) {
-            $this->assign('user', $user);
-        }
-    }
 }

@@ -1,0 +1,184 @@
+#main{
+	width: 960px;
+	margin: 0 auto;
+	background-color: #F2F2F2;
+	padding-bottom: 8px;
+}
+#main #clear_float_div{
+	clear:both;
+}
+#main #left_content_box{
+	width: 694px;
+	float: left;
+}
+#main #left_content_box div.mycontent_box{
+	background: white;
+	margin-top: 8px;
+	margin-left: 8px;
+	width: 686px;
+	border-radius:5px;
+	position: relative;
+}
+#main #left_content_box div.mycontent_box p.title{
+	color: #ED5565;
+	font-size:20px;
+	font-weight: bold;
+	height: 60px;
+	line-height: 60px;
+	padding-left: 25px;
+}
+#main #left_content_box div.mycontent_box ul.my_classification{
+	margin-left: 25px;
+	margin-right: 25px;
+	border-bottom:2px solid #E3E3E3;
+}
+#main #left_content_box div.mycontent_box ul.my_classification li{
+	float: left;
+	height: 40px;
+	width: 105px;
+	
+}
+#main #left_content_box div.mycontent_box ul.my_classification li a{
+	color: #666666;
+	font-size:14px;
+	display: block;
+	height: 40px;
+	width: 105px;
+	line-height: 40px;
+	text-align: center;
+}
+#main #right_content_box{
+	width: 266px;
+	float:left;
+}
+#main #right_content_box div.account_photo{
+	height: 285px;
+	background: white;
+	margin-top: 8px;
+	margin-left: 8px;
+	width: 250px;
+	border-radius:5px;
+	position: relative;
+}
+#main #right_content_box div.account_photo p.title_box{
+	position: absolute;
+	top: 20px;
+	left: 15px;
+	color: #666;
+	font-size: 14px;
+}
+#main #right_content_box div.account_photo p.title_box span{
+	color: #666;
+	font-size: 14px;
+	font-weight: bold;
+}
+#main #right_content_box div.account_photo p.title_box a{
+	color: #4467A3;
+	margin-left: 10px;
+}
+#main #right_content_box div.account_photo p.cost_time{
+	position: absolute;
+	top: 197px;
+	left: 70px;
+	color: #666;
+}
+#main #right_content_box div.account_photo p.cost_time span{
+	color: #ED5565;
+	font-size: 20px;
+	font-style: Arial;
+	font-weight: bold;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+#main #right_content_box div.account_photo p.save_money{
+	position: absolute;
+	top: 223px;
+	left: 70px;
+	color: #666;
+}
+#main #right_content_box div.account_photo p.save_money span{
+	color: #ED5565;
+	font-size: 20px;
+	font-style: Arial;
+	font-weight: bold;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+#main #right_content_box div.account_photo img.photo{
+	position: absolute;
+	top: 65px;
+	left: 75px;
+	width: 100px;
+	height: 100px;
+	border:3px solid #D7D7D7;
+	border-radius: 5px;
+}
+#main #right_content_box div.account_photo img.sheng{
+	position: absolute;
+	top: 200px;
+	left: 15px;
+}
+#main #right_content_box div.hotline_number{
+	height: 88px;
+	background: white;
+	margin-top: 8px;
+	margin-left: 8px;
+	width: 250px;
+	border-radius:5px;
+	position: relative;
+}
+#main #right_content_box div.hotline_number p.title{
+	position: absolute;
+	top: 20px;
+	left: 40px;
+	color: #666;
+	font-size:14px;
+	background: url(../images/hotline_ico.png) no-repeat;
+	font-weight: bold;
+	padding-left: 30px;
+}
+#main #right_content_box div.hotline_number p.hotline{
+	position: absolute;
+	top: 44px;
+	left: 34px;
+	color: #ED5565;
+	font-size: 25px;
+	font-style: Arial;
+	font-weight: bold;
+}
+#main #right_content_box div.comment_tips{
+	height: 330px;
+	background: white;
+	margin-top: 8px;
+	margin-left: 8px;
+	width: 250px;
+	border-radius:5px;
+}
+#main #right_content_box div.comment_tips p.title{
+	width: 240px;
+	background: #E4E4E4;
+	height: 34px;
+	line-height: 34px;
+	color: #666;
+	font-size: 14px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding-left: 10px;
+
+}
+#main #right_content_box div.comment_tips p.tips_title{
+	color: #666666;
+	font-size: 14px;
+	margin-left: 10px;
+	margin-top: 15px;
+}
+#main #right_content_box div.comment_tips ul{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #666;
+	margin-left: 24px;
+}
+#main #right_content_box div.comment_tips ul li{
+	list-style-type:square;
+	width: 230px;
+}

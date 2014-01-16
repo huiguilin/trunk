@@ -1,1 +1,0 @@
-<?php if (!defined('THINK_PATH')) exit();?>ada 方法不存在

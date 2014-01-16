@@ -1,0 +1,163 @@
+#main #left_content_box div.mycontent_box{
+	height: 700px;
+}
+#main #left_content_box div.mycontent_box ul.my_classification li a.two{
+	font-weight: bold;
+	color: #ED5565;
+	border-bottom: 2px solid #ED5565;
+}
+#main #left_content_box div.mycontent_box ul.expire_filter_box{
+	margin-right: 25px;
+	margin-left: 530px;
+	margin-top: 10px;
+	height: 35px;
+}
+#main #left_content_box div.mycontent_box ul.expire_filter_box li{
+	float: left;
+	height: 35px;
+	width: 50px;
+}
+#main #left_content_box div.mycontent_box ul.expire_filter_box li a{
+	display: block;
+	height: 25px;
+	line-height: 25px;
+	width: 50px;
+	text-align: center;
+	color: #666;
+}
+#main #left_content_box div.mycontent_box ul.expire_filter_box li a.hover{
+	 color: white;
+	 background: #4467A3;
+	 border-radius: 5px;
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box{
+	margin-left: 25px;
+	margin-right: 25px;
+	
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li{
+	border:1px solid #F3F3F3;
+	margin-top: 10px;
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box{
+	height: 130px;
+	position: relative;
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box img.thumb{
+	width: 130px;
+	height: 120px;
+	position: absolute;
+	top: 10px;
+	left:10px;
+
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box p.coupon_title{
+	color: #666666;
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	top:22px;
+	left: 170px;
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box p.coupon_question{
+	color: #666666;
+	position: absolute;
+	top:58px;
+	left: 170px;
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box p.myrate{
+	color: #666666;
+	position: absolute;
+	top:92px;
+	left: 170px;
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box p.click_rating{
+	color: #999999;
+	position: absolute;
+	top:91px;
+	left: 420px;
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box p.rate_star{
+	position: absolute;
+	top:86px;
+	left: 260px;
+	
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box p.rate_star span{
+	background: url(../images/rate_stars.png) 0px 21px;
+	display: inline-block;
+	height: 21px;
+	width: 21px;
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.hidden_content_box{
+	height: 280px;
+	position: relative;
+	display: none;
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.hidden_content_box p.comment_desc{
+	position: absolute;
+	top: 0px;
+	left: 170px;
+	color: #666666;
+	font-size: 13px;
+	width: 420px;
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.hidden_content_box label.choose_branch{
+	position: absolute;
+	top: 40px;
+	left: 170px;
+	color: #666;
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.hidden_content_box select{
+	position: absolute;
+	top: 40px;
+	left: 340px;
+	width: 250px;
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.hidden_content_box textarea{
+	position: absolute;
+	top: 70px;
+	left: 170px;
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.hidden_content_box #post_comment{
+	color: white;
+	width: 110px;
+	height: 35px;
+	border-radius: 5px;
+	background: #ED5565;
+	position: absolute;
+	top: 230px;
+	left: 170px;
+	font-size: 14px;
+}
+#main #left_content_box div.mycontent_box ul.page_box{
+	margin-left: 380px;
+	margin-top: 40px;
+}
+#main #left_content_box div.mycontent_box ul.page_box li{
+	float: left;
+	height: 25px;
+	width: 30px;
+	background: #D7D7D7;
+	margin-right: 3px;
+}
+#main #left_content_box div.mycontent_box ul.page_box li.one{
+	width: 50px;
+
+}
+#main #left_content_box div.mycontent_box ul.page_box li a{
+	display: block;
+	height: 25px;
+	width:30px;
+	line-height: 25px;
+	color: #C3B5B5;
+	font-style: 微软雅黑;
+	text-align: center;
+}
+#main #left_content_box div.mycontent_box ul.page_box li a.one{
+	width: 50px;
+	font-weight: bold;
+}
+#main #left_content_box div.mycontent_box ul.page_box li a.red{
+	background: #EB5B4C;
+}

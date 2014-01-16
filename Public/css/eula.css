@@ -1,6 +1,6 @@
 #main{
 	
-	height: 3650px;
+	height: 3660px;
 	
 }
 /*左边主要内容区域*/
@@ -8,7 +8,7 @@
 	position: relative;
 	width: 715px;
 	height: 3650px;
-	border: 2px solid #F7F8FA;
+	border: 1px solid #E3E3E3;
 }
 #main #left_card p.one{
 	color: #EB5B4C;

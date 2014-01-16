@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 a//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -8,7 +8,9 @@
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/coupon.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/footer.js"></script>
 
 <!--[if IE 6]>
 <!--背景图片透明方法-->
@@ -27,59 +29,254 @@
 	<include file="./App/Tpl/Home/Public/header.html" />
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!--  导航区域 -->
-	<include file="./App/Tpl/Home/Public/nav.html" />
+	<include file="./App/Tpl/Home/Public/nav_coupon.html" />
 <!-- 导航区域结束-->
 <!-- 内容区域 -->
 	<div id="main">
-		<div id="category_ad_box">
-			<ul class="category_title">
-				<li><a href="" class="one">美食</a></li>
-				<li><a href="" class="two">休闲娱乐</a></li>
-				<li><a href="" class="three">生活服务</a></li>
-				<li><a href="" class="four">酒店</a></li>
-				<li><a href="" class="five">旅游</a></li>
-				<li><a href="" class="six">丽人</a></li>
+		<div id="ad_box">
+			<img src="__PUBLIC__/images/flash/c_1.png" alt="" />
+			<img src="__PUBLIC__/images/flash/c_2.png" alt="" />
+			<img src="__PUBLIC__/images/flash/c_3.png" alt="" />
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
 			</ul>
-			<ul class="hot_navigation">
-				<li>
-					<span>热门分类</span>
-					<a href="" class="one">火锅</a>
-					<a href="">KTV</a>
-					<a href="">电影院</a>
-					<a href="">足疗按摩</a>
-				</li>
-				<li>
-					<span>全部区域</span>
-					<a href="" class="one">七星区</a>
-					<a href="">秀峰区</a>
-					<a href="">象山区</a>
-					<a href="">叠彩区</a>
-					<a href="">雁山区</a>
-				</li>
-				<li class="no_bottom_border">
-					<span>热门商圈</span>
-					<a href="" class="one">中心广场</a>
-					<a href="">红街广场</a>
-					<a href="">联达广场</a>
-				</li>
-			</ul>
-			<div id="ad">
-				ad_img
+			<a href="">x</a>
+		</div>
+		<div id="classification_location_box">
+			<div id="content_box">
+				<div id="classification_box">
+					<p>分类</p>
+					<ul class="parent_classification">
+						<li><a href="">全部</a></li>
+						<li><a href="">美食</a></li>
+						<li><a href="">休闲娱乐</a></li>
+						<li><a href="">丽人</a></li>
+						<li><a href="">生活服务</a></li>
+						<li><a href="">酒店</a></li>
+						<li><a href="">旅游</a></li>
+					</ul>
+					<ul class="child_classification">
+						<li><a href="">火锅</a></li>
+						<li><a href="">自助餐</a></li>
+						<li><a href="">甜点饮品</a></li>
+						<li><a href="">西餐</a></li>
+						<li><a href="">中式菜</a></li>
+						<li><a href="">小吃快餐</a></li>
+						<li><a href="">烧烤烤肉</a></li>
+						<li class="no_right_border"><a href="">日本料理</a></li>
+					</ul>
+				</div>
+				<div id="location_box">
+					<p>区域</p>
+					<ul class="parent_classification">
+						<li><a href="">全部</a></li>
+						<li><a href="">秀峰区</a></li>
+						<li><a href="">象山区</a></li>
+						<li><a href="">叠彩区</a></li>
+						<li><a href="">雁山区</a></li>
+						<li><a href="">七星区</a></li>
+					</ul>
+					<ul class="child_classification">
+						<li><a href="">中心广场</a></li>
+						<li><a href="">甲天下广场</a></li>
+						<li><a href="">联达商业广场</a></li>
+						<li><a href="">红街商业广场</a></li>
+						<li><a href="">北极广场</a></li>
+						<li><a href="">汽车站</a></li>
+						<li class="no_right_border"><a href="">三里店广场</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
-		<div id="QRcode_recommend_box">
-			<div class="QRcode_box">
-				<p>扫描我,关注惠桂林官方微信</p>
-				<img src="__PUBLIC__/images/barcode.png">
-			</div>
-			<div class="recommend_box">
-				<p>您推荐，我来谈</p>
+		<div id="sort_price_box">
+			<div class="content_box">
+				<p class="one">排序</p>
+				<ul>
+					<li><a href="">默认</a></li>
+					<li><a href="">下载次数</a></li>
+					<li><a href="">价格</a></li>
+					<li><a href="">好评</a></li>
+					<li><a href="">发布时间</a></li>
+				</ul>
 			</div>
 		</div>
+		<div id="coupon_box">
+			<ul class="clearfix coupon_content">
+				<li>
+					<img src="__PUBLIC__/images/pic/1.png">
+					<a href="" class="content_title">春记烧鹅9折优惠券</a>
+					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+					<p class="two">凭券可享：全场8.8折优惠</p>
+					<p class="three">下载：10 次</p>
+					<a href="" class="download">立即下载</a>
+					<p class="hidden_location">秀峰区，象山区，宝山路</p>
+				</li>
+				<li>
+					<img src="__PUBLIC__/images/pic/1.png">
+					<a href="" class="content_title">春记烧鹅9折优惠券</a>
+					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+					<p class="two">凭券可享：全场8.8折优惠</p>
+					<p class="three">下载：10 次</p>
+					<a href="" class="download">立即下载</a>
+					<p class="hidden_location">秀峰区，象山区，宝山路</p>
+				</li>
+				<li>
+					<img src="__PUBLIC__/images/pic/1.png">
+					<a href="" class="content_title">春记烧鹅9折优惠券</a>
+					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+					<p class="two">凭券可享：全场8.8折优惠</p>
+					<p class="three">下载：10 次</p>
+					<a href="" class="download">立即下载</a>
+					<p class="hidden_location">秀峰区，象山区，宝山路</p>
+				</li>
+				<li>
+					<img src="__PUBLIC__/images/pic/1.png">
+					<a href="" class="content_title">春记烧鹅9折优惠券</a>
+					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+					<p class="two">凭券可享：全场8.8折优惠</p>
+					<p class="three">下载：10 次</p>
+					<a href="" class="download">立即下载</a>
+					<p class="hidden_location">秀峰区，象山区，宝山路</p>
+				</li>
+				<li>
+					<img src="__PUBLIC__/images/pic/1.png">
+					<a href="" class="content_title">春记烧鹅9折优惠券</a>
+					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+					<p class="two">凭券可享：全场8.8折优惠</p>
+					<p class="three">下载：10 次</p>
+					<a href="" class="download">立即下载</a>
+					<p class="hidden_location">秀峰区，象山区，宝山路</p>
+				</li>
+				<li>
+					<img src="__PUBLIC__/images/pic/1.png">
+					<a href="" class="content_title">春记烧鹅9折优惠券</a>
+					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+					<p class="two">凭券可享：全场8.8折优惠</p>
+					<p class="three">下载：10 次</p>
+					<a href="" class="download">立即下载</a>
+					<p class="hidden_location">秀峰区，象山区，宝山路</p>
+				</li>
+				<li>
+					<img src="__PUBLIC__/images/pic/1.png">
+					<a href="" class="content_title">春记烧鹅9折优惠券</a>
+					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+					<p class="two">凭券可享：全场8.8折优惠</p>
+					<p class="three">下载：10 次</p>
+					<a href="" class="download">立即下载</a>
+					<p class="hidden_location">秀峰区，象山区，宝山路</p>
+				</li>
+				<li>
+					<img src="__PUBLIC__/images/pic/1.png">
+					<a href="" class="content_title">春记烧鹅9折优惠券</a>
+					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+					<p class="two">凭券可享：全场8.8折优惠</p>
+					<p class="three">下载：10 次</p>
+					<a href="" class="download">立即下载</a>
+					<p class="hidden_location">秀峰区，象山区，宝山路</p>
+				</li>
+				<li>
+					<img src="__PUBLIC__/images/pic/1.png">
+					<a href="" class="content_title">春记烧鹅9折优惠券</a>
+					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+					<p class="two">凭券可享：全场8.8折优惠</p>
+					<p class="three">下载：10 次</p>
+					<a href="" class="download">立即下载</a>
+					<p class="hidden_location">秀峰区，象山区，宝山路</p>
+				</li>
+				<li>
+					<img src="__PUBLIC__/images/pic/1.png">
+					<a href="" class="content_title">春记烧鹅9折优惠券</a>
+					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+					<p class="two">凭券可享：全场8.8折优惠</p>
+					<p class="three">下载：10 次</p>
+					<a href="" class="download">立即下载</a>
+					<p class="hidden_location">秀峰区，象山区，宝山路</p>
+				</li>
+				<li>
+					<img src="__PUBLIC__/images/pic/1.png">
+					<a href="" class="content_title">春记烧鹅9折优惠券</a>
+					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+					<p class="two">凭券可享：全场8.8折优惠</p>
+					<p class="three">下载：10 次</p>
+					<a href="" class="download">立即下载</a>
+					<p class="hidden_location">秀峰区，象山区，宝山路</p>
+				</li>
+				<li>
+					<img src="__PUBLIC__/images/pic/1.png">
+					<a href="" class="content_title">春记烧鹅9折优惠券</a>
+					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+					<p class="two">凭券可享：全场8.8折优惠</p>
+					<p class="three">下载：10 次</p>
+					<a href="" class="download">立即下载</a>
+					<p class="hidden_location">秀峰区，象山区，宝山路</p>
+				</li>
+				<li>
+					<img src="__PUBLIC__/images/pic/1.png">
+					<a href="" class="content_title">春记烧鹅9折优惠券</a>
+					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+					<p class="two">凭券可享：全场8.8折优惠</p>
+					<p class="three">下载：10 次</p>
+					<a href="" class="download">立即下载</a>
+					<p class="hidden_location">秀峰区，象山区，宝山路</p>
+				</li>
+				<li>
+					<img src="__PUBLIC__/images/pic/1.png">
+					<a href="" class="content_title">春记烧鹅9折优惠券</a>
+					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
+					<p class="two">凭券可享：全场8.8折优惠</p>
+					<p class="three">下载：10 次</p>
+					<a href="" class="download">立即下载</a>
+					<p class="hidden_location">秀峰区，象山区，宝山路</p>
+				</li>
+
+			</ul>
+			<div id="recommend_box">
+
+			</div>
+			<div id="hot_coupon_box">
+				<p class="title">热门优惠劵</p>
+				<ul class="hot_coupon">
+					<li>
+						<a href="">刘姥姥奶酪</a>
+						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a href="">刘姥姥奶酪</a>
+						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a href="">刘姥姥奶酪</a>
+						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a href="">刘姥姥奶酪</a>
+						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a href="">刘姥姥奶酪</a>
+						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img src="__PUBLIC__/images/pic/1.png">
+					</li>
+					<li>
+						<a href="">刘姥姥奶酪</a>
+						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+						<img src="__PUBLIC__/images/pic/1.png">
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		
 	</div>
 <!-- 内容区域结束 -->
 <!-- 最底部区域 -->
-	<!-- <include file="./App/Tpl/Home/Public/footer.html" /> -->
+	<include file="./App/Tpl/Home/Public/footer.html" />
 <!-- 最底部区域结束 -->
 
 </body>
