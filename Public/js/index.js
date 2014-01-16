@@ -172,7 +172,6 @@ $(function(){
 
 	
 
-
 	//订阅Hover特效
 	$('#subscription_li').hover(function() {
 		$('#subscription_box').show();
@@ -851,8 +850,19 @@ $(function(){
 	//邮箱注册注册button特效结束
 	//手机注册注册button特效
 	$('#Userreg_box #u_bottom #cellphone_box form #cellphone_reg_btn').click(function(event) {
-		$('#Userreg_box #u_bottom').css('display', 'none');
-		$('#Userreg_box #UserregSuccess_cellphone').css('display', 'block');
+        var handleURL = "/index.php/user/register"; 
+        var data = {
+            phone: $('#phone').val(), 
+            vcode: $('#cellphone_box form input.six').val(),
+            pwd: $('#cellphone_box form input.two').val(),
+            nickname: $('#cellphone_box form input.four').val()
+        }
+        $.post(handleURL, data, function(result){
+            if (result.status == 1) {
+                $('#Userreg_box #u_bottom').css('display', 'none');
+                $('#Userreg_box #UserregSuccess_cellphone').css('display', 'block');
+            }
+        }, 'json');
 		return false;
 	});
 	
@@ -1020,6 +1030,20 @@ $(function(){
 		$('#cellphone_version_box').bPopup().close();
 	});
 	//手机APP弹窗区域中关闭特效结束
+
+    //手机发送验证码
+    $('#sendcode').click(function(event){
+            var handleURL = "/index.php/user/sendCheckcode"; 
+            var data = {
+                phoneNumber: $('#phone').val(), 
+                vcode: $('#cellphone_box form input.six').val(),
+                password: $('#cellphone_box form input.two').val(),
+                nickname: $('#cellphone_box form input.four').val()
+                }
+            $.post(handleURL, data, function(result){
+                }, 'json');
+        });
+
 	////////////////////////手机版弹窗中的全部特效代码区域结束////////////////////////////
 
 })

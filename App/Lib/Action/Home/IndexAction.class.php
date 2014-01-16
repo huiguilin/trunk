@@ -11,8 +11,6 @@ class IndexAction extends Action {
     private $ads = array();
 
     public function index(){
-        $result = sendCodeToMobile(18600500862, "welcome!!!!");
-        var_dump($result);exit;
         $helper = new CmsIndexModel();
         $cmsData = $helper->readCmsIndex();
         $this->releaseData($cmsData);

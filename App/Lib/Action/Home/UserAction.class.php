@@ -53,7 +53,7 @@ class UserAction extends Action {
             $result = $this->mailRegister($mail, $nickname, $password, $verify);
         }
         else {
-            $result = $this->phoneRegister($phone, $password);
+            $result = $this->phoneRegister($phone, $nickname, $password, $verify);
         }
 
         if ($result == TRUE) {
@@ -143,7 +143,10 @@ class UserAction extends Action {
         return $activeCode;
     }
 
-    public function phoneRegister($phone, $password) {
+    private function phoneRegister($phone, $nickname, $password, $checkCode) {
+        if (empty($phone) || empty($password) || empty($checkCode) || empty($nickname)) {
+            return FALSE;
+        }
         $helper = new UserProfileModel();
         $result = $helper->getUserProfileByPhoneNumber($phone);
         if (!empty($result)) {
@@ -151,9 +154,14 @@ class UserAction extends Action {
         }
         $time = date("Y-m-d H:i:s");
         $password = md5($password);
+        if ($_SESSION['pcheck'] != $checkCode) {
+            return FALSE;
+        }
+
         $mail = $phone . "#huiguilin";
-        $nickname = $phone;
+        #$nickname = $phone;
         $cookie = md5($mail . $nickname . "huiguilin");
+        $activeCode = $cookie;
         $data = array(
                 'nickname' => $nickname,
                 'email' => $mail,
@@ -166,7 +174,7 @@ class UserAction extends Action {
                 'last_logindate' => $time,
                 'status' => 1,
                 'realname' => $nickname,
-                'phone_number' => 111111,
+                'phone_number' => $phone,
                 'level' => 0,
                 'isBusiness' => 0,
                 'login_times' => 1,
@@ -175,26 +183,31 @@ class UserAction extends Action {
         if (!empty($r)) {
             $data['user_id'] = $r;
             $_SESSION['user'] = $data;
+            return TRUE;
         }
-        redirect('/index.php', 1, '页面跳转中...');
+        return FALSE;
+        #redirect('/index.php', 1, '页面跳转中...');
     }
 
     public function sendCheckcode() {
-        $phoneNumber = $_POST['phone_number'];
-        $code = mt_rand(0, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
-        $data = $this->send($code);
+        $phoneNumber = $_POST['phoneNumber'];
+        $code = mt_rand(1, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
+        $data = $this->send($phoneNumber, $code);
         $this->ajaxReturn($data,'JSON');
         return TRUE;
     }
 
     private function send($phoneNumber, $code) {
-        $_SESSION[$phoneNumber] = $code;
+        if (empty($phoneNumber) || empty($code)) {
+            return FALSE;
+        }
+        session("pcheck","{$code}");
+        //TBC
         $result = sendCodeToMobile($phoneNumber, "您的激活码是【{$code}】，感谢您注册惠桂林");
         $data = array(
             'status' => 1,
             'info' => '发送成功',
         );
-        #$this->ajaxReturn($data,'JSON');
         return $data;
     }
 
