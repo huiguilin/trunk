@@ -126,10 +126,17 @@
 	<div id="top_logo_box">
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/logo.png" alt="惠桂林" id="logo" /></a>
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/slogan.png" alt="吃喝玩乐，惠享生活" id="slogan" /></a>
-		<ul id="login">
-			<li class="one"><a class="one" id="Userlogin">登录</a></li>
-			<li><a class="two" id="Userreg">快速注册</a></li>
-		</ul>
+		<!-- 判断登录Session,来显示不同的ul -->
+		<?php if($_SESSION['user_id']== ''): ?><ul id="No_login_box">
+				<li class="one"><a class="one" id="Userlogin">登录</a></li>
+				<li><a class="two" id="Userreg">快速注册</a></li>
+			</ul>
+			<?php else: ?>
+			<ul id="login_box">
+				<li><a>您好,effie</a></li>
+				<li class="no_right_border"><a href="">我的惠桂林</a></li>
+			</ul><?php endif; ?>
+
 		<div id="Userreg_box">
 			<div id="u_top">
 				<a id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
@@ -317,7 +324,7 @@
 			</div>
 		</div>
 	</div>
-<!-- Logo区域结束 -->
+<!-- Logo区域结束
 
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!--  导航区域 -->
@@ -331,10 +338,10 @@
 			<ul id="nav">
 				<li><a href="<?php echo U("Index/index");?>">首页</a></li>
 				<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-				<li><a href="<?php echo U("Card/card");?>">会员卡</a></li>
-				<li class="border_right "><a href="">商户</a></li>
+				<!-- <li><a href="<?php echo U("Card/card");?>">会员卡</a></li> -->
+				<!-- <li class="border_right "><a href="">商户</a></li> -->
 			</ul>
-			<form id="search_box">
+			<form id="search_box" method="get" action="<?php echo U("Home/Search/search");?>">
 				<input id="search_con" type="text" placeholder="桂林环球美食节" name="search_con"/>
 				<input id="search_btn" type="submit" value="" name="search_btn"/>
 			</form>
@@ -357,6 +364,26 @@
 			
 		
 
+<script type="text/javascript">
+	$(function(){
+		//优惠劵发表评论验证
+			$('#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.hidden_content_box input.post_comment').click(function(event) {
+				var comment = $(this).siblings('textarea').val();
+				if(comment ==""){
+					$(this).siblings('p.post_comment_hidden_error_tips').show().text('评论内容不能为空');
+					return false;
+				}else{
+					$(this).siblings('p.post_comment_hidden_error_tips').hide();
+					<?php if($_SESSION['user_id']== ''): ?>alert('1');
+					<?php else: ?>
+						alert('2');<?php endif; ?>
+				}
+				
+			});
+		//优惠劵发表评论验证结束
+	})
+
+</script>
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/mytocomment.css" />
 	<ul class="expire_filter_box">
 		<li><a href="<?php echo U('Home/Account/mytocomment');?>" class="hover">待评价</a></li>
@@ -364,86 +391,97 @@
 	</ul>
 	<ul class="mycomment_show_box clearfix">
 		<li>
-			<div class="display_content_box">
-				<img src="__PUBLIC__/images/pic/1.png" class="thumb">
-				<p class="coupon_title">江上人家(中山路37号店） 10元优惠券</p>
-				<p class="coupon_question">你为本优惠券打多少分？</p>
-				<p class="myrate">我的总体评价:</p>
-				<p class="rate_star">
-					<span ></span>
-					<span ></span>
-					<span ></span>
-					<span ></span>
-					<span ></span>
-				</p>
-				<p class="click_rating">请点击星星进行打分</p>
-			</div>
-			<div class="hidden_content_box">
-				<p class="comment_desc">说说本优惠券的“亮点”与“不足”吧，您的评价将是其他会员非常重要的参考！建议30字以上。赶快告诉其他用户吧</p>
-				<label class="choose_branch">选择分店:</label>
-				<select>
-					<option>宝山路三里湖门店</option>
-					<option>宝山路三里湖门店</option>
-					<option>宝山路三里湖门店</option>
-				</select>
-				<textarea cols="56" rows="8"></textarea>
-				<input type="submit" name="post_comment" id="post_comment" value="发表评论">
-			</div>
+			<form method="post" action="<?php echo U("Home/Account/handlePostCouponComment");?>">
+				<div class="display_content_box">
+					<img src="__PUBLIC__/images/pic/1.png" class="thumb">
+					<p class="coupon_title">江上人家(中山路37号店） 10元优惠券</p>
+					<p class="coupon_question">你为本优惠券打多少分？</p>
+					<p class="myrate">我的总体评价:</p>
+					<p class="rate_star">
+						<span ></span>
+						<span ></span>
+						<span ></span>
+						<span ></span>
+						<span ></span>
+					</p>
+					<p class="click_rating">请点击星星进行打分</p>
+					<input type="hidden" name="ratevalue" value="1"> 
+				</div>
+				<div class="hidden_content_box">
+					<p class="comment_desc">说说本优惠券的“亮点”与“不足”吧，您的评价将是其他会员非常重要的参考！建议30字以上。赶快告诉其他用户吧</p>
+					<label class="choose_branch">选择分店:</label>
+					<select name="choose_branch">
+						<option value="0">宝山路三里湖门店</option>
+						<option value="1">宝山路三里湖门店</option>
+						<option value="2">宝山路三里湖门店</option>
+					</select>
+					<textarea cols="56" rows="8" name="coupon_comment_content"></textarea>
+					<input type="submit" name="post_comment" value="发表评论" class="post_comment">
+					<p class="post_comment_hidden_error_tips">评论内容不能为空</p>
+				</div>
+			</form>
 		</li>
 		<li>
-			<div class="display_content_box">
-				<img src="__PUBLIC__/images/pic/1.png" class="thumb">
-				<p class="coupon_title">江上人家(中山路37号店） 10元优惠券</p>
-				<p class="coupon_question">你为本优惠券打多少分？</p>
-				<p class="myrate">我的总体评价:</p>
-				<p class="rate_star">
-					<span ></span>
-					<span ></span>
-					<span ></span>
-					<span ></span>
-					<span ></span>
-				</p>
-				<p class="click_rating">请点击星星进行打分</p>
-			</div>
-			<div class="hidden_content_box">
-				<p class="comment_desc">说说本优惠券的“亮点”与“不足”吧，您的评价将是其他会员非常重要的参考！建议30字以上。赶快告诉其他用户吧</p>
-				<label class="choose_branch">选择分店:</label>
-				<select>
-					<option>宝山路三里湖门店</option>
-					<option>宝山路三里湖门店</option>
-					<option>宝山路三里湖门店</option>
-				</select>
-				<textarea cols="56" rows="8"></textarea>
-				<input type="submit" name="post_comment" id="post_comment" value="发表评论">
-
-			</div>
+			<form method="post" action="<?php echo U("Home/Account/handlePostCouponComment");?>">
+				<div class="display_content_box">
+					<img src="__PUBLIC__/images/pic/1.png" class="thumb">
+					<p class="coupon_title">江上人家(中山路37号店） 10元优惠券</p>
+					<p class="coupon_question">你为本优惠券打多少分？</p>
+					<p class="myrate">我的总体评价:</p>
+					<p class="rate_star">
+						<span ></span>
+						<span ></span>
+						<span ></span>
+						<span ></span>
+						<span ></span>
+					</p>
+					<p class="click_rating">请点击星星进行打分</p>
+					<input type="hidden" name="ratevalue" value="1"> 
+				</div>
+				<div class="hidden_content_box">
+					<p class="comment_desc">说说本优惠券的“亮点”与“不足”吧，您的评价将是其他会员非常重要的参考！建议30字以上。赶快告诉其他用户吧</p>
+					<label class="choose_branch">选择分店:</label>
+					<select name="choose_branch">
+						<option value="0">宝山路三里湖门店</option>
+						<option value="1">宝山路三里湖门店</option>
+						<option value="2">宝山路三里湖门店</option>
+					</select>
+					<textarea cols="56" rows="8" name="coupon_comment_content"></textarea>
+					<input type="submit" name="post_comment" value="发表评论" class="post_comment">
+					<p class="post_comment_hidden_error_tips">评论内容不能为空</p>
+				</div>
+			</form>
 		</li>
 		<li>
-			<div class="display_content_box">
-				<img src="__PUBLIC__/images/pic/1.png" class="thumb">
-				<p class="coupon_title">江上人家(中山路37号店） 10元优惠券</p>
-				<p class="coupon_question">你为本优惠券打多少分？</p>
-				<p class="myrate">我的总体评价:</p>
-				<p class="rate_star">
-					<span ></span>
-					<span ></span>
-					<span ></span>
-					<span ></span>
-					<span ></span>
-				</p>
-				<p class="click_rating">请点击星星进行打分</p>
-			</div>
-			<div class="hidden_content_box">
-				<p class="comment_desc">说说本优惠券的“亮点”与“不足”吧，您的评价将是其他会员非常重要的参考！建议30字以上。赶快告诉其他用户吧</p>
-				<label class="choose_branch">选择分店:</label>
-				<select>
-					<option>宝山路三里湖门店</option>
-					<option>宝山路三里湖门店</option>
-					<option>宝山路三里湖门店</option>
-				</select>
-				<textarea cols="56" rows="8" name="mycomment_content"></textarea>
-				<input type="submit" name="post_comment" id="post_comment" value="发表评论">
-			</div>
+			<form method="post" action="<?php echo U("Home/Account/handlePostCouponComment");?>">
+				<div class="display_content_box">
+					<img src="__PUBLIC__/images/pic/1.png" class="thumb">
+					<p class="coupon_title">江上人家(中山路37号店） 10元优惠券</p>
+					<p class="coupon_question">你为本优惠券打多少分？</p>
+					<p class="myrate">我的总体评价:</p>
+					<p class="rate_star">
+						<span ></span>
+						<span ></span>
+						<span ></span>
+						<span ></span>
+						<span ></span>
+					</p>
+					<p class="click_rating">请点击星星进行打分</p>
+					<input type="hidden" name="ratevalue" value="1"> 
+				</div>
+				<div class="hidden_content_box">
+					<p class="comment_desc">说说本优惠券的“亮点”与“不足”吧，您的评价将是其他会员非常重要的参考！建议30字以上。赶快告诉其他用户吧</p>
+					<label class="choose_branch">选择分店:</label>
+					<select name="choose_branch">
+						<option value="0">宝山路三里湖门店</option>
+						<option value="1">宝山路三里湖门店</option>
+						<option value="2">宝山路三里湖门店</option>
+					</select>
+					<textarea cols="56" rows="8" name="coupon_comment_content"></textarea>
+					<input type="submit" name="post_comment" value="发表评论" class="post_comment">
+					<p class="post_comment_hidden_error_tips">评论内容不能为空</p>
+				</div>
+			</form>
 		</li>
 	</ul>
 	<ul class="page_box">

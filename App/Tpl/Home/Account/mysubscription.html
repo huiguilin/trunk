@@ -1,24 +1,24 @@
 <include file="Account:account_tmp_top" title="我的惠桂林-我的邮件订阅"/>
 <load href="__PUBLIC__/css/mysubscription.css" />
 	<p class="subscription_title">邮件订阅</p>
-	<form>
+	<form method="post" action="{:U("Home/Account/handleEmailSubscription")}">
 		<div class="frequency_box">
 			<p>邮件频率</p>
 			<ul>
 				<li>
-					<input type="radio" name="email_frequency" class="" checked="checked">
+					<input type="radio" name="email_frequency" class="" checked="checked" value="one_for_day">
 					<label for="email_frequency">每天1封</label>
 				</li>
 				<li>
-					<input type="radio" name="email_frequency">
+					<input type="radio" name="email_frequency" value="one_for_week">
 					<label for="email_frequency">每周1封</label>
 				</li>
 				<li>
-					<input type="radio" name="email_frequency">
+					<input type="radio" name="email_frequency" value="two_for_month">
 					<label for="email_frequency">每月2封</label>
 				</li>
 				<li>
-					<input type="radio" name="email_frequency">
+					<input type="radio" name="email_frequency" value="none_for_day">
 					<label for="email_frequency">我拒绝接受任何邮件</label>
 				</li>
 			</ul>

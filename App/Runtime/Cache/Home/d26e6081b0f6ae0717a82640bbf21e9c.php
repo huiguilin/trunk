@@ -126,10 +126,17 @@
 	<div id="top_logo_box">
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/logo.png" alt="惠桂林" id="logo" /></a>
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/slogan.png" alt="吃喝玩乐，惠享生活" id="slogan" /></a>
-		<ul id="login">
-			<li class="one"><a class="one" id="Userlogin">登录</a></li>
-			<li><a class="two" id="Userreg">快速注册</a></li>
-		</ul>
+		<!-- 判断登录Session,来显示不同的ul -->
+		<?php if($_SESSION['user_id']== ''): ?><ul id="No_login_box">
+				<li class="one"><a class="one" id="Userlogin">登录</a></li>
+				<li><a class="two" id="Userreg">快速注册</a></li>
+			</ul>
+			<?php else: ?>
+			<ul id="login_box">
+				<li><a>您好,effie</a></li>
+				<li class="no_right_border"><a href="">我的惠桂林</a></li>
+			</ul><?php endif; ?>
+
 		<div id="Userreg_box">
 			<div id="u_top">
 				<a id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
@@ -317,7 +324,7 @@
 			</div>
 		</div>
 	</div>
-<!-- Logo区域结束 -->
+<!-- Logo区域结束
 
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!--  导航区域 -->
@@ -331,10 +338,10 @@
 			<ul id="nav">
 				<li><a href="<?php echo U("Index/index");?>">首页</a></li>
 				<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-				<li><a href="<?php echo U("Card/card");?>">会员卡</a></li>
-				<li class="border_right "><a href="">商户</a></li>
+				<!-- <li><a href="<?php echo U("Card/card");?>">会员卡</a></li> -->
+				<!-- <li class="border_right "><a href="">商户</a></li> -->
 			</ul>
-			<form id="search_box">
+			<form id="search_box" method="get" action="<?php echo U("Home/Search/search");?>">
 				<input id="search_con" type="text" placeholder="桂林环球美食节" name="search_con"/>
 				<input id="search_btn" type="submit" value="" name="search_btn"/>
 			</form>
@@ -388,7 +395,7 @@
 			<img src="__PUBLIC__/images/login_closed.png" id="closed_modiy_cellphono_box_btn">
 		</div>
 		<div class="middle_content_box">
-			<form>
+			<form method="post" action="<?php echo U("Home/Account/handleChangeCellphone");?>">
 				<ul>
 					<li>
 						<p class="label">已绑定手机号</p>
@@ -419,7 +426,7 @@
 			<img src="__PUBLIC__/images/login_closed.png" id="closed_modiy_email_box_btn">
 		</div>
 		<div class="middle_content_box">
-			<form>
+			<form method="post" action="<?php echo U("Home/Account/handleChangeEmail");?>">
 				<ul>
 					<li>
 						<p class="label">邮箱地址</p>
@@ -444,7 +451,7 @@
 			<img src="__PUBLIC__/images/login_closed.png" id="closed_modiy_nickname_box_btn">
 		</div>
 		<div class="middle_content_box">
-			<form>
+			<form method="post" action="<?php echo U("Home/Account/handleChangeNickname");?>">
 				<ul>
 					<li>
 						<p class="label">当前昵称</p>
@@ -466,7 +473,7 @@
 			<img src="__PUBLIC__/images/login_closed.png" id="closed_modiy_password_box_btn">
 		</div>
 		<div class="middle_content_box">
-			<form>
+			<form method="post" action="<?php echo U("Home/Account/handleChangePassword");?>">
 				<ul>
 					<li>
 						<p class="label">当前密码</p>

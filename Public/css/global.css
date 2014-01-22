@@ -1590,22 +1590,23 @@ input{
 	border: none;
 
 }
-#top_logo_box #login{
+#top_logo_box #No_login_box{
 	position: absolute;
 	top: 25px;
 	right: 5px;
+	
 }
-#top_logo_box #login li{
+#top_logo_box #No_login_box li{
 	width: 56px;
 	height: 16px;
 	float: left;
 	border-left: 1px solid gray;
 }
-#top_logo_box #login li.one{
+#top_logo_box #No_login_box li.one{
 	background: url(../images/login.png) no-repeat 0 -2px;
 	border: none;
 }
-#top_logo_box #login li a{
+#top_logo_box #No_login_box li a{
 	display: block;
 	width: 56px;
 	height: 16px;
@@ -1613,14 +1614,38 @@ input{
 	line-height: 16px;
 	cursor: pointer;
 }
-#top_logo_box #login li a:hover{
+#top_logo_box #No_login_box li a:hover{
 	text-decoration: underline;
 }
-#top_logo_box #login li a.one{
+#top_logo_box #No_login_box li a.one{
 	padding-left: 22px;
 }
-#top_logo_box #login li a.two{
+#top_logo_box #No_login_box li a.two{
 	padding-left: 6px;
+}
+
+#top_logo_box #login_box{
+	position: absolute;
+	top: 25px;
+	right: 5px;
+	
+}
+#top_logo_box #login_box li{
+	width: 70px;
+	height: 16px;
+	float: left;
+	border-right: 1px solid #ED5565;
+	/*border:1px solid black;*/
+	padding-right: 10px;
+}
+#top_logo_box #login_box li.no_right_border{
+	background: url(../images/drop.png) no-repeat 85px 2px;
+	border-right: none;
+	width: 100px;
+	padding-left: 10px;
+}
+#top_logo_box #login_box li a{
+	color: #ED5565;
 }
 /*Logo区域结束*/
 /*导航区域*/

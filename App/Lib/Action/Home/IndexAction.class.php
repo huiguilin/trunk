@@ -29,7 +29,10 @@ class IndexAction extends Action {
         $this->assign("hot_partners", $partner);
         $this->assign("recommends", $recommend);
         $this->assign("evaluations", $evaluation);
+
+        $_SESSION['user_id'] = "";
         $this->display();
+        
     }
 
     private function getCoupon($coupon) {

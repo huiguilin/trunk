@@ -126,10 +126,17 @@
 	<div id="top_logo_box">
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/logo.png" alt="惠桂林" id="logo" /></a>
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/slogan.png" alt="吃喝玩乐，惠享生活" id="slogan" /></a>
-		<ul id="login">
-			<li class="one"><a class="one" id="Userlogin">登录</a></li>
-			<li><a class="two" id="Userreg">快速注册</a></li>
-		</ul>
+		<!-- 判断登录Session,来显示不同的ul -->
+		<?php if($_SESSION['user_id']== ''): ?><ul id="No_login_box">
+				<li class="one"><a class="one" id="Userlogin">登录</a></li>
+				<li><a class="two" id="Userreg">快速注册</a></li>
+			</ul>
+			<?php else: ?>
+			<ul id="login_box">
+				<li><a>您好,effie</a></li>
+				<li class="no_right_border"><a href="">我的惠桂林</a></li>
+			</ul><?php endif; ?>
+
 		<div id="Userreg_box">
 			<div id="u_top">
 				<a id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
@@ -317,7 +324,7 @@
 			</div>
 		</div>
 	</div>
-<!-- Logo区域结束 -->
+<!-- Logo区域结束
 
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!--  导航区域 -->
@@ -425,7 +432,7 @@
 				<img src="__PUBLIC__/images/login_closed.png" id="closed_send_cellphono_box_btn">
 			</div>
 			<div class="middle_content_box">
-				<form>
+				<form method="post" action="<?php echo U("Home/Account/handleSendToCellphone");?>">
 					<ul>
 						<li>
 							<p class="label">手机号</p>

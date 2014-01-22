@@ -7,13 +7,17 @@
 	background: white;
 }
 #right_function_box{
-	border:1px solid black;
-	height: 80px;
-	width: 150px;
 	position: fixed;
-	top: 360px;
-	right: 25px;
-
+	top: 370px;
+	right: 95px;
+	display: none;
+}
+#right_function_box a{
+	background:url(../images/backtop.png) no-repeat;
+	padding-top: 50px;
+	display: block;
+	height: 20px;
+	color: #666666;
 }
 #main{
 	width: 960px;

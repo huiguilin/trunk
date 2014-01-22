@@ -16,4 +16,33 @@ class AccountAction extends Action {
      public function mysetting(){
 		$this->display();
     }
+    public function handleEmailSubscription(){
+        $a = $_POST;
+        dump($a);
+    }
+     public function handleChangeCellphone(){
+        $a = $_POST;
+        dump($a);
+    }
+      public function handleChangeEmail(){
+        $a = $_POST;
+        dump($a);
+    }
+     public function handleChangeNickname(){
+        $a = $_POST;
+        dump($a);
+    }
+     public function handleChangePassword(){
+        $a = $_POST;
+        dump($a);
+    }
+    public function handleSendToCellphone(){
+        $a = $_POST;
+        dump($a);
+    }
+    public function handlePostCouponComment(){
+        $_SESSION['user_id'] = "2";
+        $a = $_POST;
+        dump($a);
+    }
 }

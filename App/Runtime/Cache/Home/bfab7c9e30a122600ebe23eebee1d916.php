@@ -126,10 +126,17 @@
 	<div id="top_logo_box">
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/logo.png" alt="惠桂林" id="logo" /></a>
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/slogan.png" alt="吃喝玩乐，惠享生活" id="slogan" /></a>
-		<ul id="login">
-			<li class="one"><a class="one" id="Userlogin">登录</a></li>
-			<li><a class="two" id="Userreg">快速注册</a></li>
-		</ul>
+		<!-- 判断登录Session,来显示不同的ul -->
+		<?php if($_SESSION['user_id']== ''): ?><ul id="No_login_box">
+				<li class="one"><a class="one" id="Userlogin">登录</a></li>
+				<li><a class="two" id="Userreg">快速注册</a></li>
+			</ul>
+			<?php else: ?>
+			<ul id="login_box">
+				<li><a>您好,effie</a></li>
+				<li class="no_right_border"><a href="">我的惠桂林</a></li>
+			</ul><?php endif; ?>
+
 		<div id="Userreg_box">
 			<div id="u_top">
 				<a id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
@@ -317,7 +324,7 @@
 			</div>
 		</div>
 	</div>
-<!-- Logo区域结束 -->
+<!-- Logo区域结束
 
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!--  导航区域 -->
@@ -359,24 +366,24 @@
 
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/mysubscription.css" />
 	<p class="subscription_title">邮件订阅</p>
-	<form>
+	<form method="post" action="<?php echo U("Home/Account/handleEmailSubscription");?>">
 		<div class="frequency_box">
 			<p>邮件频率</p>
 			<ul>
 				<li>
-					<input type="radio" name="email_frequency" class="" checked="checked">
+					<input type="radio" name="email_frequency" class="" checked="checked" value="one_for_day">
 					<label for="email_frequency">每天1封</label>
 				</li>
 				<li>
-					<input type="radio" name="email_frequency">
+					<input type="radio" name="email_frequency" value="one_for_week">
 					<label for="email_frequency">每周1封</label>
 				</li>
 				<li>
-					<input type="radio" name="email_frequency">
+					<input type="radio" name="email_frequency" value="two_for_month">
 					<label for="email_frequency">每月2封</label>
 				</li>
 				<li>
-					<input type="radio" name="email_frequency">
+					<input type="radio" name="email_frequency" value="none_for_day">
 					<label for="email_frequency">我拒绝接受任何邮件</label>
 				</li>
 			</ul>

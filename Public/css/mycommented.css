@@ -111,6 +111,15 @@
 	font-size: 13px;
 	width: 420px;
 }
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.hidden_content_box p.post_comment_hidden_error_tips{
+	position: absolute;
+	top: 240px;
+	left: 300px;
+	font-size: 13px;
+	color: #ED5565;
+	font-weight: normal;
+	display: none;
+}
 #main #left_content_box div.mycontent_box ul.mycomment_show_box li div.hidden_content_box label.choose_branch{
 	position: absolute;
 	top: 40px;
@@ -128,7 +137,7 @@
 	top: 70px;
 	left: 170px;
 }
-#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.hidden_content_box #post_comment{
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.hidden_content_box input.post_comment{
 	color: white;
 	width: 110px;
 	height: 35px;

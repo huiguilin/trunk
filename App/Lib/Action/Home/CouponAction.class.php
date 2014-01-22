@@ -14,5 +14,8 @@ class CouponAction extends Action {
         $this->assign("ads", $adInfo);
         $this->display();
     }
+    public function detail(){
+        $this->display();
+    }
 }
 

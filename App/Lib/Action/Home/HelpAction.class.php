@@ -7,6 +7,9 @@ class HelpAction extends Action {
     public function help(){
 		$this->display();
     }
+    public function error(){
+    	$this->display();
+    }
     public function faq01(){
 		$m_help = D("Help");
 		$map['type'] = 1;
