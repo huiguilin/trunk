@@ -15,15 +15,11 @@ class UserAction extends Action {
         $helper = new UserProfileModel();
         $data = $helper->getUserProfileByUserName($userName);
         if (empty($data)) {
-<<<<<<< HEAD
-            echo "TBC2";
-=======
             $data = array();
             $data['status'] = 2;
             $data['info'] = '用户名不存在!';
             $data['size'] = 9;
             $data['url'] = "";
->>>>>>> 9c45927fdf1938a3626c4a4f024d17f6751764a3
             return TRUE;
         }
         $md5 = md5($passwd);
@@ -52,27 +48,12 @@ class UserAction extends Action {
         $phone = !empty($_POST['phone']) ? $_POST['phone'] : $_POST['phone'];
         $nickname = !empty($_POST['nickname']) ? $_POST['nickname'] : $_POST['nickname'];
         $password = !empty($_POST['pwd']) ? $_POST['pwd'] : $_POST['pwd'];
-<<<<<<< HEAD
-        if (!empty($mail)) {
-            $this->mailRegister($mail, $nickname, $password);
-        }
-        else {
-            $this->phoneRegister($phone, $password);
-        }
-        if ($result == FALSE) {
-        }
-    }
-
-    public function mailRegister($mail, $nickname, $password) {
-        if (empty($mail) || empty($password) || empty($nickname)) {
-            return TRUE;
-=======
         $verify = mb_strtolower($_POST['vcode']);
         if (!empty($mail)) {
             $result = $this->mailRegister($mail, $nickname, $password, $verify);
         }
         else {
-            $result = $this->phoneRegister($phone, $password);
+            $result = $this->phoneRegister($phone, $nickname, $password, $verify);
         }
 
         if ($result == TRUE) {
@@ -102,7 +83,6 @@ class UserAction extends Action {
         if (session('verify') != md5($verify)) {
             $this->error('验证码错误！');
             return FALSE;
->>>>>>> 9c45927fdf1938a3626c4a4f024d17f6751764a3
         }
         $helper = new UserProfileModel();
         $result = $helper->getUserProfileByUserName($mail, $nickname);
@@ -110,12 +90,9 @@ class UserAction extends Action {
             return FALSE;
         }
         $activeCode = $this->sendEmail($mail);
-<<<<<<< HEAD
-=======
         if (empty($activeCode)) {
             return FALSE;
         }
->>>>>>> 9c45927fdf1938a3626c4a4f024d17f6751764a3
         $time = date("Y-m-d H:i:s");
         $password = md5($password);
         $cookie = md5($mail . $nickname . "huiguilin");
@@ -131,11 +108,7 @@ class UserAction extends Action {
                 'last_logindate' => $time,
                 'status' => 1,
                 'realname' => $nickname,
-<<<<<<< HEAD
-                'phone_number' => 111111,
-=======
                 'phone_number' => $cookie,
->>>>>>> 9c45927fdf1938a3626c4a4f024d17f6751764a3
                 'level' => 0,
                 'isBusiness' => 0,
                 'login_times' => 1,
@@ -144,16 +117,10 @@ class UserAction extends Action {
         if (!empty($r)) {
             $data['user_id'] = $r;
             $_SESSION['user'] = $data;
-<<<<<<< HEAD
-        }
-        redirect('/index.php', 1, '页面跳转中...');
-        return TRUE;
-=======
             return TRUE;
 
         }
         return FALSE;
->>>>>>> 9c45927fdf1938a3626c4a4f024d17f6751764a3
     }
 
     private function sendEmail($mail) {
@@ -165,25 +132,21 @@ class UserAction extends Action {
         $data['body'] = $content; 
         $mail = new Email();
         if ($mail->send($data)) {
-<<<<<<< HEAD
-            $this->success('发送成功,请登录邮件激活');
-=======
             #$this->success('发送成功,请登录邮件激活');
             return $activeCode;
->>>>>>> 9c45927fdf1938a3626c4a4f024d17f6751764a3
         } else {
             /* $this->error('邮件发送失败...');
              * */
             echo '邮件发送失败<br>';
-<<<<<<< HEAD
-=======
             return FALSE;
->>>>>>> 9c45927fdf1938a3626c4a4f024d17f6751764a3
         }
         return $activeCode;
     }
 
-    public function phoneRegister($phone, $password) {
+    private function phoneRegister($phone, $nickname, $password, $checkCode) {
+        if (empty($phone) || empty($password) || empty($checkCode) || empty($nickname)) {
+            return FALSE;
+        }
         $helper = new UserProfileModel();
         $result = $helper->getUserProfileByPhoneNumber($phone);
         if (!empty($result)) {
@@ -191,9 +154,14 @@ class UserAction extends Action {
         }
         $time = date("Y-m-d H:i:s");
         $password = md5($password);
+        if ($_SESSION['pcheck'] != $checkCode) {
+            return FALSE;
+        }
+
         $mail = $phone . "#huiguilin";
-        $nickname = $phone;
+        #$nickname = $phone;
         $cookie = md5($mail . $nickname . "huiguilin");
+        $activeCode = $cookie;
         $data = array(
                 'nickname' => $nickname,
                 'email' => $mail,
@@ -206,7 +174,7 @@ class UserAction extends Action {
                 'last_logindate' => $time,
                 'status' => 1,
                 'realname' => $nickname,
-                'phone_number' => 111111,
+                'phone_number' => $phone,
                 'level' => 0,
                 'isBusiness' => 0,
                 'login_times' => 1,
@@ -215,14 +183,32 @@ class UserAction extends Action {
         if (!empty($r)) {
             $data['user_id'] = $r;
             $_SESSION['user'] = $data;
+            return TRUE;
         }
-        redirect('/index.php', 1, '页面跳转中...');
+        return FALSE;
+        #redirect('/index.php', 1, '页面跳转中...');
     }
 
     public function sendCheckcode() {
-        $phoneNumber = $_POST['phone_number'];
-        $code = mt_rand(0, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
-        $this->send($code);
+        $phoneNumber = $_POST['phoneNumber'];
+        $code = mt_rand(1, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
+        $data = $this->send($phoneNumber, $code);
+        $this->ajaxReturn($data,'JSON');
+        return TRUE;
+    }
+
+    private function send($phoneNumber, $code) {
+        if (empty($phoneNumber) || empty($code)) {
+            return FALSE;
+        }
+        session("pcheck","{$code}");
+        //TBC
+        $result = sendCodeToMobile($phoneNumber, "您的激活码是【{$code}】，感谢您注册惠桂林");
+        $data = array(
+            'status' => 1,
+            'info' => '发送成功',
+        );
+        return $data;
     }
 
     public function active() {
@@ -246,5 +232,10 @@ class UserAction extends Action {
         $helper->updateUser($condition, $data);
         redirect('/index.php', 1, '页面跳转中...');
         return TRUE;
+    }
+
+    public function verifyImg(){
+		import('ORG.Util.Image');
+		Image::buildImageVerify(4,5,'png');
     }
 }
