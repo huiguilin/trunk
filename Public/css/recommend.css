@@ -1,0 +1,143 @@
+/*左边主要内容区域*/
+#main{
+	height: 880px;
+}
+#main #left_card{
+	position: relative;
+	width: 715px;
+	height: 850px;
+	border: 1px solid #E3E3E3;
+}
+#main #left_card p.one{
+	color: #EB5B4C;
+	font-size:20px;
+	font-weight: bold;
+	position: absolute;
+	top: 25px;
+	left: 40px;	
+	border-bottom: #E4E4E4 2px solid;
+	width: 630px;
+	height: 35px;
+}
+#main #left_card p.two{
+	position: absolute;
+	top: 75px;
+	left: 40px;
+	width: 610px;
+	color: #515151;
+	font-size: 14px;
+}
+#main #left_card p.three{
+	border:1px solid black;
+	position: absolute;
+	top: 120px;
+	left: 40px;
+	width: 610px;
+	height: 50px;
+	padding-left: 20px;
+	line-height: 50px;
+	color: #EB5B4C;
+	font-size: 14px;
+	border:1px solid #DA4453;
+	border-radius: 5px;
+	display: none
+}
+#main #left_card form.one{
+	position: absolute;
+	top: 90px;
+}
+#main #left_card form #recommend_btn_submit{
+	position: absolute;
+	top: 690px;
+	left: 220px;
+	display: block;
+	width: 122px;
+	height: 41px;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 41px;
+	text-align: center;
+	background: #ED5565;
+	border-radius:5px;
+	cursor: pointer;
+}
+#main #left_card form ul{
+	width: 630px;
+	height: 800px;
+	position: absolute;
+	top: 105px;
+	left: 40px;
+
+}
+#main #left_card form ul li{
+	width: 630px;
+	height: 60px;
+	position: relative;
+}
+#main #left_card form ul li.one{
+	height: 80px;
+	
+}
+#main #left_card form ul li.two{
+	height: 40px;
+	
+}
+#main #left_card form ul li.three{
+	height: 160px;
+	
+}
+#main #left_card form ul li p{
+	font-size: 12px;
+}
+#main #left_card form ul li p.title{
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+#main #left_card form ul li p.title2{
+	position: absolute;
+	top: 15px;
+	left: 30px;
+}
+#main #left_card form ul li p.othercommunication{
+	position: absolute;
+	top: 57px;
+	left: 180px;
+}
+#main #left_card form ul li input{
+	border: 1px solid #C9C9C9;
+	border-radius: 5px;
+	width: 371px;
+
+
+	height: 39px; height/*\**/: 19px \9;
+	padding-top: 0px; padding-top/*\**/:10px \9;
+	padding-bottom: 0px; padding-bottom/*\**/:10px \9;
+	line-height: 39px; line-height/*\**/: 19px \9;
+}
+#main #left_card form ul li input.one{
+	position: absolute;
+	top: 10px;
+	left: 180px;
+}
+#main #left_card form ul li textarea.one{
+	position: absolute;
+	top: 10px;
+	left: 180px;
+}
+#main #left_card form ul li select.one{
+	position: absolute;
+	top: 10px;
+	left: 180px;
+	width: 100px;
+	height: 25px;
+}
+#main #left_card form ul li select.two{
+	position: absolute;
+	top: 10px;
+	left: 180px;
+	width: 100px;
+	height: 25px;
+}
+/*左边主要内容区域结束*/

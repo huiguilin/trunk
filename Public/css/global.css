@@ -190,7 +190,9 @@ input{
 #cellphone_version_box #iphone_box ul li img{
 	position: absolute;
 	top: 45px;
-	left: 75px;
+	left: 85px;
+	width: 86px;
+	height: 86px;
 }
 #cellphone_version_box #iphone_box ul li p{
 	font-size: 13px;
@@ -934,8 +936,9 @@ input{
 	border-right: 1px solid white;
 	color: white;
 	text-align: center;
-
-
+}
+#Userreg_box #u_bottom #cellphone_box form ul li.red{
+	background: #ED5565;
 }
 #Userreg_box #u_bottom #cellphone_box form input.one{
 	position: absolute;

@@ -319,8 +319,25 @@
 }
 #main #coupon_box div.business_detail_info_box div.business_location div.map_box #map{
 	width: 350px;
-	height: 300px;
+	height: 270px;
 	border:1px solid #EAEAEA;
+	border-bottom: none;
+}
+#main #coupon_box div.business_detail_info_box div.business_location div.map_box div.view_map{
+	height: 30px;
+	width: 350px;
+	background: white;
+	border:1px solid #EAEAEA;
+	border-top: none;
+	cursor: pointer;
+}
+#main #coupon_box div.business_detail_info_box div.business_location div.map_box div.view_map a{
+	color: #666;
+	text-align: center;
+	display: block;
+	width: 350px;
+	height: 30px;
+	line-height: 30px;
 }
 #main #coupon_box div.business_detail_info_box div.business_location div.map_box a.summary_number{
 	display: block;
@@ -637,8 +654,10 @@
 }
 #main #coupon_box #webchat_box img{
 	margin-top: 20px;
-	margin-left: 88px;
-	margin-right: 88px;
+	margin-left: 84px;
+	margin-right: 84px;
+	height: 86px;
+	width: 86px;
 }
 #main #coupon_box #hot_tips_box{
 	background: white;
@@ -667,4 +686,48 @@
 	list-style-type:square;
 	width: 230px;
 	margin-top: 5px;
+}
+#hidden_detail_map{
+	background: white;
+	width: 800px;
+	height: 450px;
+	display: none;
+}
+#hidden_detail_map div.title_box{
+	height: 30px;
+	border-bottom: 1px solid #EAEAEA;
+	background: #F9F9F9;
+	position: relative;
+}
+#hidden_detail_map div.title_box p{
+	height: 30px;
+	position: absolute;
+	top: 9px;
+	left: 10px;
+}
+#hidden_detail_map div.title_box a{
+	position: absolute;
+	top: 5px;
+	right: 7px;
+	background: url(../images/close_icon1.png) no-repeat 0px 0px;
+	display: block;
+	width: 20px;
+	height: 20px;
+}
+#hidden_detail_map div.shop_box{
+	height: 38px;
+
+}
+#hidden_detail_map div.shop_box p{
+	font-size: 14px;
+	font-weight: bold;
+	height: 38px;
+	line-height: 38px;
+	display: inline-block;
+	margin-left: 10px;
+}
+#hidden_detail_map div.detail_map_box{
+	height: 380px;
+	width: 790px;
+	margin-left: 5px;
 }
