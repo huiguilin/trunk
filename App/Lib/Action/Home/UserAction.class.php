@@ -49,6 +49,7 @@ class UserAction extends Action {
         $nickname = !empty($_POST['nickname']) ? $_POST['nickname'] : $_POST['nickname'];
         $password = !empty($_POST['pwd']) ? $_POST['pwd'] : $_POST['pwd'];
         $verify = mb_strtolower($_POST['vcode']);
+        var_dump($_POST);exit;
         if (!empty($mail)) {
             $result = $this->mailRegister($mail, $nickname, $password, $verify);
         }

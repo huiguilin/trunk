@@ -11,10 +11,18 @@ class EvaluationModel extends Model {
         $data = $this->where("evaluation_id IN ({$ids})")->select();
         return $data;
     }
+
     public function getEvaluation($type = 0) {
         $data = $this->field("*")->where("evaluation_type = '{$type}'")->order("createtime DESC")->select();
         return $data;
     }
 
-
+    public function getEvaluationByPartnerId($ids = array()) {
+        if (empty($ids)) {
+            return array();
+        }
+        $ids = implode(',', $ids);
+        $data = $this->where("id IN ({$ids})")->select();
+        return $data;
+    }
 }

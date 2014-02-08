@@ -14,7 +14,7 @@ class IndexAction extends Action {
         $helper = new CmsIndexModel();
         $cmsData = $helper->readCmsIndex();
         $this->releaseData($cmsData);
-        $coupon = $this->getCoupon($this->coupon);
+        list($coupon, $eatCoupon, $lifeCoupon, $playCoupon) = $this->getCoupon($this->coupon);
         $card = $this->getCard($this->card);
         $news = $this->getNews($this->news);
         $ads = $this->getAds($this->ads);
@@ -22,6 +22,10 @@ class IndexAction extends Action {
         $recommend = $this->getPartner($this->recommend);
         $evaluation = $this->getEvaluation($this->evaluation);
         $this->assign("coupons", $coupon);
+        $this->assign("hot_coupons", $coupon);
+        $this->assign("eat_coupons", $eatCoupon);
+        $this->assign("life_coupons", $lifeCoupon);
+        $this->assign("play_coupons", $playCoupon);
         $this->assign("cards", $card);
         $this->assign("news", $news);
         $this->assign("ads", $ads);
@@ -42,8 +46,36 @@ class IndexAction extends Action {
         $ids = DataToArray($coupon, 'id');
         $helper = new CouponModel();
         $info = $helper->getCouponByCouponId($ids);
+        $info = $this->cutCouponWords($info);
+        $params = array(
+            'label_type' => 'eat',
+        );
+        $eatCoupon = $helper->getCoupon($params);
+        $eatCoupon = $this->cutCouponWords($eatCoupon);
+        $params = array(
+            'label_type' => 'life',
+        );
+        $lifeCoupon = $helper->getCoupon($params);
+        $lifeCoupon = $this->cutCouponWords($lifeCoupon);
+        $params = array(
+            'label_type' => 'play',
+        );
+        $playCoupon = $helper->getCoupon($params);
+        $playCoupon = $this->cutCouponWords($playCoupon);
+
         $result = $this->mergeData($coupon, $info, 'coupon_id');
-        return $result;
+        return array($result, $eatCoupon, $lifeCoupon, $playCoupon);
+    }
+
+    private function cutCouponWords($info) {
+        if (empty($info)) {
+            return array();
+        }
+        foreach ($info AS $key => $value) {
+            $info[$key]['description'] = mb_substr($info[$key]['description'], 0, 30, 'UTF-8');
+            $info[$key]['title'] = mb_substr($info[$key]['title'], 0, 20, 'UTF-8');
+        }
+        return $info;
     }
 
     private function getCard($card) {
@@ -124,11 +156,11 @@ class IndexAction extends Action {
         foreach ($cmsData AS $k => $v) {
             switch ($cmsData[$k]['module_type']) {
                 case '1':
-                    $this->coupon[] = $cmsData[$k];
-                    break;
-                
-                case '2':
                     $this->card[] = $cmsData[$k];
+                    break;
+
+                case '2':
+                    $this->coupon[] = $cmsData[$k];
                     break;
 
                 case '3':

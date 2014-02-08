@@ -11,7 +11,7 @@
 <script type="text/javascript" src="__PUBLIC__/js/coupon.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 
-<!--[if IE 6]>
+<!--[if IE 6]-->
 <!--背景图片透明方法-->
 <script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
 <!--插入图片透明方法-->
@@ -33,9 +33,9 @@
 <!-- 内容区域 -->
 	<div id="main">
 		<div id="ad_box">
-			<img src="__PUBLIC__/images/flash/c_1.png" alt="" />
-			<img src="__PUBLIC__/images/flash/c_2.png" alt="" />
-			<img src="__PUBLIC__/images/flash/c_3.png" alt="" />
+        <foreach name="ads" item="ad">
+			<img src="__PUBLIC__/{$ad.img_path}" alt="" />
+        </foreach>
 			<ul>
 				<li>1</li>
 				<li>2</li>
@@ -109,133 +109,17 @@
 		</div>
 		<div id="coupon_box">
 			<ul class="clearfix coupon_content">
+                <foreach name="coupons" item="coupon">
 				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
+					<img src="__PUBLIC__/{$coupon.header_path}">
+					<a href="" class="content_title">{$coupon.name}</a>
+					<p class="one">{$coupon.description}</p>
+					<p class="two">{$coupon.title}</p>
+					<p class="three">下载：{$coupon.download_times}次</p>
 					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
+					<p class="hidden_location">{$coupon.tag}</p>
 				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-
+                </foreach>
 			</ul>
 			<div id="recommend_box">
 
@@ -243,37 +127,13 @@
 			<div id="hot_coupon_box">
 				<p class="title">热门优惠劵</p>
 				<ul class="hot_coupon">
+                <foreach name="hot_coupons" item="coupon">
 					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
+						<a href="">{$coupon.name}</a>
+						<p>{$coupon.title}</p>
+						<img src="__PUBLIC__/{$coupon.header_path}">
 					</li>
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-
+                </foreach>
 				</ul>
 			</div>
 		</div>
