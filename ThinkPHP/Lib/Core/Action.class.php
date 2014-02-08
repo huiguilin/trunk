@@ -411,6 +411,10 @@ abstract class Action {
 
     private function _initialize() {
         $user = $_SESSION['user'];
+        if (empty($user)) {
+            $user['user_id'] = 0;
+            $user['nickname'] = "";
+        }
         $this->assign('user', $user);
         return TRUE;
     }
