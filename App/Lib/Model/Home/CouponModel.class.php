@@ -77,10 +77,7 @@ class CouponModel extends Model {
         if (isset($params['status'])) {
             $str .= " AND status = {$status}";
         }
-        if (isset($params['limit'])) {
-            $str .= " LIMIT {$params['limit']}";
-        }
-        $data = $this->where($str)->order($params['order_by'])->select();
+        $data = $this->where($str)->order($params['order_by'])->limit($params['limit'])->select();
         return $data;
     }
 

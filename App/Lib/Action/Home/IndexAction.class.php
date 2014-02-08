@@ -54,11 +54,13 @@ class IndexAction extends Action {
         $eatCoupon = $this->cutCouponWords($eatCoupon);
         $params = array(
             'label_type' => 'life',
+            'limit' => '0,4',
         );
         $lifeCoupon = $helper->getCoupon($params);
         $lifeCoupon = $this->cutCouponWords($lifeCoupon);
         $params = array(
             'label_type' => 'play',
+            'limit' => '0,4',
         );
         $playCoupon = $helper->getCoupon($params);
         $playCoupon = $this->cutCouponWords($playCoupon);
