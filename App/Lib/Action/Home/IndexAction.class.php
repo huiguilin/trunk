@@ -29,8 +29,8 @@ class IndexAction extends Action {
         $this->assign("cards", $card);
         $this->assign("news", $news);
         $this->assign("ads", $ads);
-        $this->assign("partners", $partner);
-        $this->assign("hot_partners", $partner);
+        $this->assign("partners", array_slice($partner, 0, 5));
+        $this->assign("hot_partners", array_slice($partner, 0, 6));
         $this->assign("recommends", $recommend);
         $this->assign("evaluations", $evaluation);
 
