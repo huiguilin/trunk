@@ -2,6 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
+<meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/detail.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
@@ -48,7 +50,7 @@
 				<div class="coupon_desc_box">
 					<p class="coupon_title"><span>{$coupon.title}</span></p>
 				</div>
-				<a href="" class="print_coupon_btn">打印此优惠券</a>
+				<a href="javascript:print();" class="print_coupon_btn">打印此优惠券</a>
 				<a href="" class="download_coupon_btn">下载到手机</a>
 				<img src="__PUBLIC__/{$coupon.picture_path}" class="coupon_pic">
 				<div class="coupon_detail_desc_box">
@@ -103,6 +105,26 @@
 					<p class="title">商家位置</p>
 					<div class="map_box">
 						<div class="map" id="map">
+						</div>
+						<div class="view_map">
+							<a id="view_full_map">查看完整地图</a>
+						</div>
+						<div id="hidden_detail_map">
+							<div class="title_box">
+								<p>查看全图</p>
+								<a></a>
+							</div>
+							<div class="shop_box">
+								<p>同一首歌KTV(6家分店)</p>
+								<select>
+									<option>同一首歌KTV(西直门分店)</option>
+									<option>同一首歌KTV(东直门分店)</option>
+									<option>同一首歌KTV(三元桥分店)</option>
+									<option>同一首歌KTV(望京分店)</option>
+									<option>同一首歌KTV(天安门分店)</option>
+								</select>
+							</div>
+							<div class="detail_map_box" id="detail_map_box"></div>
 						</div>
 						<ul>
 							<li class="white">
@@ -269,4 +291,5 @@
  
     initMap();//创建和初始化地图
 </script>
+
 </html>

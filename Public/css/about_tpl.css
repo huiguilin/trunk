@@ -221,7 +221,6 @@
 /*主要内容区域*/
 #main{
 	width: 960px;
-	height: 1450px;
 	margin: 0 auto;
 	margin-top: 8px;
 	position: relative;
@@ -231,7 +230,7 @@
 #main #main_right{
 	width: 234px;
 	position: absolute;
-	top:10px;
+	top:0px;
 	right:0px;
 }
 #main #main_right #app{
@@ -256,7 +255,9 @@
 #main #main_right #app img{
 	position: absolute;
 	top:45px;
-	left:80px;
+	left:75px;
+	height: 86px;
+	width: 86px;
 }
 #main #main_right #app a{
 	display: block;
@@ -280,130 +281,6 @@
 	font-weight: bold;
 	cursor: pointer;
 	color: #ED5564;
-}
-#main #main_right .hot_box{
-	height: 292px;
-	position: relative;
-	border-bottom:3px solid #E3E4E8;
-	margin-top: 10px;
-}
-#main #main_right .hot_box p.rqw{
-	color: #ED5565;
-	font-size:14px;
-	font-weight: bold;
-	background: #F7F8FA;
-	height: 30px;
-	line-height: 30px;
-	padding-left: 10px;
-
-}
-#main #main_right .hot_box ul{
-	position: absolute;
-	top:30px;
-	left:15px;
-}
-#main #main_right .hot_box ul li{
-	width: 216px;
-	height: 76px;
-	border-bottom:1px solid #E4E4E4;
-	padding-top: 9px;
-	position: relative;
-}
-#main #main_right .hot_box ul li.no_border_bottom{
-	border:none;
-}
-#main #main_right .hot_box ul li a.title{
-	color: #434A54;
-	font-size:13px;
-	font-weight: bold;
-	position: absolute;
-	top:13px;
-	left: 0px;
-}
-#main #main_right .hot_box ul li a:hover{
-	color: #ED5564;
-	text-decoration: underline;
-}
-#main #main_right .hot_box ul li a.title2{
-	position: absolute;
-	top:23px;
-	left: 5px;
-}
-#main #main_right .hot_box ul li a.title3{
-	position: absolute;
-	top:23px;
-	left: 115px;
-}
-#main #main_right .hot_box ul li img.ico{
-	position: absolute;
-	top: 42px;
-	left: 0px;
-}
-#main #main_right .hot_box ul li img.ico2{
-	position: absolute;
-	top: 21px;
-	right: 4px;
-}
-#main #main_right .hot_box ul li div{
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	background: #FFCC00;
-	height: 84px;
-	width: 30px;
-}
-#main #main_right .hot_box ul li div.blue{
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	background: #3598DB;
-}
-#main #main_right .hot_box ul li div.purple{
-	background: #9A59B5;
-}
-#main #main_right .hot_box ul li p{
-	color: #333;
-	font-size:13px;
-}
-#main #main_right .hot_box ul li p.yhj{
-	position: absolute;
-	top:42px;
-	left: 37px;
-}
-#main #main_right .hot_box ul li p.hyk{
-	position: absolute;
-	top:42px;
-	left: 130px;
-}
-#main #main_right .hot_box ul li p.one{
-	position: absolute;
-	top:58px;
-	left: 37px;
-}
-#main #main_right .hot_box ul li p.two{
-	position: absolute;
-	top:58px;
-	left: 130px;
-}
-#main #main_right .hot_box ul li p.vip{
-	position: absolute;
-	top:48px;
-	left: 100px;
-}
-#main #main_right .hot_box ul li p.content{
-	position: absolute;
-	top:31px;
-	left:0px;
-}
-#main #main_right .hot_box ul li p.six{
-	position: absolute;
-	top:45px;
-	left:5px;
-}
-#main #main_right .hot_box ul li p.seven{
-	position: absolute;
-	top:46px;
-	left:115px;
 }
 /*右边主要内容区域结束*/
 

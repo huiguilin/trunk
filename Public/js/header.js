@@ -450,7 +450,7 @@ $(function(){
 
 	});
 	
-
+	//手机号码验证
 	$('#Userreg_box #u_bottom #cellphone_box form input.one').blur(function(event) {
 		var cellphone_account = $(this).val();
 		var backgroundURL='url("http://localhost/Trunk/Public/images/ico_12.png")'
@@ -471,6 +471,9 @@ $(function(){
 			}
 		}	
 	});
+
+
+	//短信验证码验证
 	$('#Userreg_box #u_bottom #cellphone_box form input.six').blur(function(event) {
 		var cellphone_msgcode = $(this).val();
 		var backgroundURL='url("http://localhost/Trunk/Public/images/ico_12.png")'
@@ -480,9 +483,129 @@ $(function(){
 			$('#Userreg_box #u_bottom #cellphone_box form p.nine').text('请输入短信验证码').css('color', '#F14B2B')
 			.css('background-image', backgroundURL_error);
 		}else{
-			
+			$('#Userreg_box #u_bottom #cellphone_box form p.nine').text('OK').css('color', '#999')
+				.css('background-image', backgroundURL_success);
 		}	
 	});
+
+	//密码验证
+	$('#Userreg_box #u_bottom #cellphone_box form input.two').blur(function(event) {
+		var cellphone_pwd = $(this).val();
+		var backgroundURL='url("http://localhost/Trunk/Public/images/ico_12.png")'
+		var backgroundURL_error= backgroundURL.replace("ico_12.png","ico_13.png");
+		var backgroundURL_success= backgroundURL.replace("ico_12.png","ico_14.png");
+		if(cellphone_pwd ==""){
+			$('#Userreg_box #u_bottom #cellphone_box form p.ten').text('请输入密码').css('color', '#F14B2B')
+			.css('background-image', backgroundURL_error);
+		}else{
+			if(cellphone_pwd.length<6){
+				$('#Userreg_box #u_bottom #cellphone_box form p.ten').text('密码至少6位').css('color', '#F14B2B')
+				.css('background-image', backgroundURL_error);
+			}
+			else if(cellphone_pwd.length>32){
+				$('#Userreg_box #u_bottom #cellphone_box form p.ten').text('密码不能超过32位').css('color', '#F14B2B')
+				.css('background-image', backgroundURL_error);
+			}
+			else{
+				$('#Userreg_box #u_bottom #cellphone_box form p.ten').text('OK').css('color', '#999')
+				.css('background-image', backgroundURL_success);
+			}
+		}	
+	});
+	//密码复杂度判断
+	$('#Userreg_box #u_bottom #cellphone_box form input.two').keyup(function(event) {
+		var pwd =$(this).val();
+		var backgroundURL='url("http://localhost/Trunk/Public/images/ico_12.png")';
+		var backgroundURL_error= backgroundURL.replace("ico_12.png","ico_13.png");
+		var backgroundURL_success= backgroundURL.replace("ico_12.png","ico_14.png");
+		var reg_04 =/\d{1,}/;  
+		var reg_05 =/[a-zA-Z]{1,}/; 
+		var reg_06 =/[-`=\\\[\];',.~!@#$%^&*()_+|{}:"<>?]{1,}/;
+		if(pwd.length<6){
+			$('#cellphone_pwd_low').addClass('red');
+		}
+		else{
+			if(pwd.length>=6 && pwd.length<12){
+				if((reg_04.test(pwd) && reg_05.test(pwd)) || (reg_04.test(pwd) && reg_06.test(pwd)) || (reg_05.test(pwd) && reg_06.test(pwd))){
+					$('#cellphone_pwd_mid').addClass('red');
+					if(reg_04.test(pwd) && reg_05.test(pwd) && reg_06.test(pwd)){
+						$('#cellphone_pwd_high').addClass('red');
+					}
+				}	
+			}
+			else{
+				if(pwd.length>=12 && pwd.length<32){
+					$('#cellphone_pwd_mid').addClass('red');
+					if((reg_04.test(pwd) && reg_05.test(pwd)) || (reg_04.test(pwd) && reg_06.test(pwd)) || (reg_05.test(pwd) && reg_06.test(pwd))){
+						$('#cellphone_pwd_high').addClass('red');
+					}
+				}
+			}
+		}
+	});
+	//重复密码验证
+	$('#Userreg_box #u_bottom #cellphone_box form input.three').blur(function(event) {
+		var cellphone_pwd = $('#Userreg_box #u_bottom #cellphone_box form input.two').val();
+		var cellphone_vpwd = $(this).val();
+		var backgroundURL='url("http://localhost/Trunk/Public/images/ico_12.png")'
+		var backgroundURL_error= backgroundURL.replace("ico_12.png","ico_13.png");
+		var backgroundURL_success= backgroundURL.replace("ico_12.png","ico_14.png");
+		if(cellphone_pwd ==""){
+			$('#Userreg_box #u_bottom #cellphone_box form p.eleven').text('请输入确认密码').css('color', '#F14B2B')
+			.css('background-image', backgroundURL_error);
+		}else{
+			if(cellphone_vpwd != cellphone_pwd){
+				$('#Userreg_box #u_bottom #cellphone_box form p.eleven').text('两次输入的密码不一致').css('color', '#F14B2B')
+				.css('background-image', backgroundURL_error);
+			}
+			else{
+				$('#Userreg_box #u_bottom #cellphone_box form p.eleven').text('OK').css('color', '#999')
+				.css('background-image', backgroundURL_success);
+			}
+		}	
+	});
+
+	//昵称验证
+	$('#Userreg_box #u_bottom #cellphone_box form input.four').blur(function(event) {
+		var cellphone_nickname = $(this).val();
+		var backgroundURL='url("http://localhost/Trunk/Public/images/ico_12.png")'
+		var backgroundURL_error= backgroundURL.replace("ico_12.png","ico_13.png");
+		var backgroundURL_success= backgroundURL.replace("ico_12.png","ico_14.png");
+		if(cellphone_nickname ==""){
+			$('#Userreg_box #u_bottom #cellphone_box form p.twelve').text('请输入您的昵称').css('color', '#F14B2B')
+			.css('background-image', backgroundURL_error);
+		}else{
+			var reg_01 =/[-`=\\\[\];',.~!@#$%^&*()_+|{}:"<>?]{1,}/;
+			var reg_02 =/^[\u2E80-\u9FFF]+$/;
+			if(cellphone_nickname.length>24){
+				$('#Userreg_box #u_bottom #cellphone_box form p.twelve').text('昵称不能超过12个汉字或24个字符').css('color', '#F14B2B')
+				.css('background-image', backgroundURL_error);
+			}
+			else{
+				if(reg_01.test(cellphone_nickname)){
+					$('#Userreg_box #u_bottom #cellphone_box form p.twelve').text('昵称不能包含特殊字符').css('color', '#F14B2B')
+					.css('background-image', backgroundURL_error);
+				}
+				else{
+					if(reg_02.test(cellphone_nickname)){
+						if(cellphone_nickname.length>12){
+							$('#Userreg_box #u_bottom #cellphone_box form p.twelve').text('昵称不能超过12个汉字或24个字符').css('color', '#F14B2B')
+							.css('background-image', backgroundURL_error);
+						}
+						else{
+							$('#Userreg_box #u_bottom #cellphone_box form p.twelve').text('OK').css('color', '#999')
+							.css('background-image', backgroundURL_success);
+						}
+					}
+					else{
+						$('#Userreg_box #u_bottom #cellphone_box form p.twelve').text('OK').css('color', '#999')
+						.css('background-image', backgroundURL_success);
+					}
+				}
+			}
+		}	
+	});
+	
 
 	//密码复杂度判断结束
 	// $('#Userreg_box #u_bottom #email_box form input').focus(function(event) {
@@ -678,8 +801,30 @@ $(function(){
 	//邮箱注册注册button特效结束
 	//手机注册注册button特效
 	$('#Userreg_box #u_bottom #cellphone_box form #cellphone_reg_btn').click(function(event) {
-		$('#Userreg_box #u_bottom').css('display', 'none');
-		$('#Userreg_box #UserregSuccess_cellphone').css('display', 'block');
+		var cellphonereg_cellphone =$('#Userreg_box #u_bottom #cellphone_box form input.one').val();
+		var cellphonereg__pwd =$('#Userreg_box #u_bottom #cellphone_box form input.two').val();
+		var cellphonereg__pwd2 =$('#Userreg_box #u_bottom #cellphone_box form input.three').val();
+		var cellphonereg__nickname =$('#Userreg_box #u_bottom #cellphone_box form input.four').val();
+		var cellphonereg__vcode =$('#Userreg_box #u_bottom #cellphone_box form input.six').val();
+		var reg_cellphone= /^(1)[0-9]{10}$/;
+
+		if((cellphonereg_cellphone != "" && reg_cellphone.test(cellphonereg_cellphone)) && 
+			(cellphonereg__pwd != "" && cellphonereg__pwd.length>=6 && cellphonereg__pwd.length<32) && 
+			(cellphonereg__pwd2 != "" && cellphonereg__pwd==cellphonereg__pwd2) &&
+			(cellphonereg__nickname != "") &&
+			(cellphonereg__vcode != ""))
+		{
+			$.post("/index.php/user/register", { cellphone: cellphonereg_cellphone, 
+			pwd: cellphonereg__pwd, pwd2: cellphonereg__pwd2,nickname:cellphonereg__nickname,
+			 vcode:cellphonereg__vcode},function(data){
+			 	//做个判断，返回成功执行下面的代码，跳转到注册成功页面
+			 	if(data.status == 1){
+			 		$('#Userreg_box #u_bottom').css('display', 'none');
+					$('#Userreg_box #UserregSuccess_cellphone').css('display', 'block');
+			 	}
+			},"json");
+
+		}
 		return false;
 	});
 	
