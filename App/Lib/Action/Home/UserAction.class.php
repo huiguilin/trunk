@@ -117,6 +117,7 @@ class UserAction extends Action {
         if (!empty($r)) {
             $data['user_id'] = $r;
             $_SESSION['user'] = $data;
+            $this->assign('user', $_SESSION['user']);
             return TRUE;
 
         }
@@ -183,6 +184,7 @@ class UserAction extends Action {
         if (!empty($r)) {
             $data['user_id'] = $r;
             $_SESSION['user'] = $data;
+            $this->assign('user', $_SESSION['user']);
             return TRUE;
         }
         return FALSE;

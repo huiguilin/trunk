@@ -107,7 +107,7 @@ class CouponAction extends Action {
     }
 
     public function sendCoupon() {
-        $_POST['phone_number'] = 18600500862;
+        $_POST['phone_number'] = 18611244143;
         $_POST['coupon_id'] = 3;
         $result = array(
             'status' => 0,
