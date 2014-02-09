@@ -1,9 +1,9 @@
 <include file="Account:account_tmp_top" title="我的惠桂林-我的优惠劵"/>
 <load href="__PUBLIC__/css/mycoupon.css" />
 	<ul class="expire_filter_box">
-		<li><a href="" class="hover">全部</a></li>
-		<li><a href="">未到期</a></li>
-		<li><a href="">已到期</a></li>
+		<li><a href="/index.php/Account/mycoupon" class="hover">全部</a></li>
+		<li><a href="/index.php/Account/mycoupon?status=1">未到期</a></li>
+		<li><a href="/index.php/Account/mycoupon?status=0">已到期</a></li>
 	</ul>
 	<div class="myconpon_items">
 		<table>
@@ -14,51 +14,23 @@
 					<th class="three">状态</th>
 					<th class="four">操作</th>
 				</tr>
+                <foreach name="coupons" item="coupon">
 				<tr>
-					<td >江上人家：消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</td>
-					<td class="center">2012-12-13 19：21</td>
-					<td class="center green">未到期</td>
+					<td >{$coupon.name}</td>
+					<td class="center">{$coupon.createtime}</td>
+                    <if condition="($coupon.status eq 1) ">
+                    <td class="center green">未到期</td>
+                    <elseif condition="$coupon.status eq 0"/>
+                    <td class="center ">已使用</td>
+                    <else />
+                    <td class="center ">已到期</td>
+                    </if>
 					<td>
 						<a class="operation01">发送到手机</a><a href="{:U("Home/Account/mytocomment")}" class="operation02">我要评价</a><a href="{:U("Home/Account/mycommented")}" class="operation03">查看我的评价</a>
 
 					</td>
 				</tr>
-				<tr>
-					<td >江上人家：消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</td>
-					<td class="center">2012-12-13 19：21</td>
-					<td class="center">已到期</td>
-					<td>
-						<a class="operation01">发送到手机</a><a href="{:U("Home/Account/mytocomment")}" class="operation02">我要评价</a><a href="{:U("Home/Account/mycommented")}" class="operation03">查看我的评价</a>
-
-					</td>
-				</tr>
-				<tr>
-					<td >江上人家：消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</td>
-					<td class="center">2012-12-13 19：21</td>
-					<td class="center">已到期</td>
-					<td>
-						<a class="operation01">发送到手机</a><a href="{:U("Home/Account/mytocomment")}" class="operation02">我要评价</a><a href="{:U("Home/Account/mycommented")}" class="operation03">查看我的评价</a>
-
-					</td>
-				</tr>
-				<tr>
-					<td >江上人家：消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</td>
-					<td class="center">2012-12-13 19：21</td>
-					<td class="center">已到期</td>
-					<td>
-						<a class="operation01">发送到手机</a><a href="{:U("Home/Account/mytocomment")}" class="operation02">我要评价</a><a href="{:U("Home/Account/mycommented")}" class="operation03">查看我的评价</a>
-
-					</td>
-				</tr>
-				<tr>
-					<td >江上人家：消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</td>
-					<td class="center">2012-12-13 19：21</td>
-					<td class="center">已到期</td>
-					<td>
-						<a class="operation01">发送到手机</a><a href="{:U("Home/Account/mytocomment")}" class="operation02">我要评价</a><a href="{:U("Home/Account/mycommented")}" class="operation03">查看我的评价</a>
-
-					</td>
-				</tr>
+                </foreach>
 			</tbody>
 		</table>
 		<div id="send_cellphone_hidden_box">
@@ -88,12 +60,16 @@
 		</div>
 	</div>
 	<ul class="page_box">
-		<li class="one"><a href="" class="one">首页</a></li>
-		<li><a href=""><</a></li>
-		<li><a href="" class="red">1</a></li>
-		<li><a href="">2</a></li>
-		<li><a href="">3</a></li>
-		<li><a href="">></a></li>
-		<li class="one"><a href="" class="one">尾页</a></li>
+		<li class="one"><a href="{$page_info.first_url}" class="one">首页</a></li>
+		<li><a href="{$page_info.front_url}"><</a></li>
+<foreach name="links" item="link">
+        <if condition="$key eq $page_info.page">
+		<li><a href="{$link.url}" class="red">{$link.i}</a></li>
+        <else />
+		<li><a href="{$link.url}">{$link.i}</a></li>
+        </if>
+ </foreach>
+		<li><a href="{$page_info.next_url}">></a></li>
+		<li class="one"><a href="{$page_info.last_url}" class="one">尾页</a></li>
 	</ul>
 <include file="Account:account_tmp_bottom"/>

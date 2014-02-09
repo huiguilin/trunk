@@ -4,17 +4,27 @@
 	<ul class="myinfo_box">
 		<li>
 			<p class="header">手机号</p>
-			<p class="info_item">184****3921</p>
+            <if condition="$user_setting.phone_number_used eq 0">
+			<a href="" id="modify_cellphone">立即绑定</a>
+            <else />
+			<p class="info_item">{$user_setting.phone_number_used}</p>
 			<a href="" id="modify_cellphone">修改</a>
+            </if>
+
 		</li>
 		<li>
 			<p class="header">邮箱</p>
-			<p class="no_binding_email">尚未绑定邮箱</p>
+            <if condition="$user_setting.email eq 0">
+			<p class="no_binding_email"></p>
 			<a href="" id="modify_email">立即绑定</a>
+            <else />
+			<p class="info_item">{$user_setting.email}</p>
+			<a href="" id="modify_email">修改</a>
+            </if>
 		</li>
 		<li class="higher">
 			<p class="header">昵称</p>
-			<p class="info_item">鱼豆豆</p>
+			<p class="info_item">{$user_setting.nickname}</p>
 			<a href="" id="modify_nickname">修改</a>
 			<p class="nickname_tips">用于点评时显示的称呼</p>
 		</li>

@@ -77,7 +77,12 @@ class CouponModel extends Model {
         if (isset($params['status'])) {
             $str .= " AND status = {$status}";
         }
-        $data = $this->where($str)->order($params['order_by'])->limit($params['limit'])->select();
+        if (!isset($params['sum'])) {
+            $data = $this->where($str)->order($params['order_by'])->limit($params['limit'])->select();
+        }   
+        else {
+            $data = $this->where($str)->order($params['order_by'])->limit($params['limit'])->sum($params['sum']);
+        }  
         return $data;
     }
 
