@@ -31,5 +31,7 @@
 		</div>
 	</div>
 </body>
-
+<script type="text/javascript">
+	document.onload = window.print();
+</script>
 </html>
