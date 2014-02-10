@@ -20,5 +20,7 @@ return array(
     'SMTP_MAIL_TYPE' => 'HTML',  // 发送邮件类型:HTML,TXT(注意都是大写)
     'SMTP_TIME_OUT' => 30,  // 超时时间
     'SMTP_AUTH' => true , //邮箱验证(一般都要开启),
+
+    'URL_CASE_INSENSITIVE' =>true, //URL大小写
 );
 ?>

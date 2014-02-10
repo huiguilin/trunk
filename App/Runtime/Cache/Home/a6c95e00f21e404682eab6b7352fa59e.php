@@ -2,6 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
+<meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/coupon.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
@@ -11,7 +13,7 @@
 <script type="text/javascript" src="__PUBLIC__/js/coupon.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 
-<!--[if IE 6]>
+<!--[if IE 6]-->
 <!--背景图片透明方法-->
 <script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
 <!--插入图片透明方法-->
@@ -166,7 +168,7 @@
 						<p class="five">验证码</p>
 						<input type="text" name="reg_vcode" class="five"/>
 						<a href="" id="regemail_vcode_not_clear">看不清</a>
-						<img src="<?php echo U("Home/Login/verifyImg");?>" class="one">
+						<img src="<?php echo U("Home/User/verifyImg","","","");?>" class="one">
 						<input type="checkbox" name="license" class="six" checked="true">
 						<p class="six">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
@@ -184,22 +186,22 @@
 				<div id="cellphone_box" class="hide">
 					<form action="" method="post">
 						<p class="one">手机号码</p>
-						<input type="text" name="email" class="one"/>
-						<a href="" id="sendcode">点击发送验证码</a>
+						<input type="text" name="cellphone" class="one"/>
+						<a href="javascript:void(0)" id="sendcode" name="sendcode">点击发送验证码</a>
 						<p class="seven">验证码</p>
 						<input type="text" name="vcode" class="six"/>
 						<p class="two">密码</p>
 						<input type="password" name="pwd" class="two"/>
 						<ul>
-							<li>弱</li>
-							<li>中</li>
-							<li>强</li>
+							<li id="cellphone_pwd_low">弱</li>
+							<li id="cellphone_pwd_mid">中</li>
+							<li id="cellphone_pwd_high">强</li>
 						</ul>	
 						<p class="three">确认密码</p>
 						<input type="password" name="pwd2" class="three"/>
 						<p class="four">昵称</p>
 						<input type="text" name="nickname" class="four"/>
-						<input type="checkbox" name="license" class="five">
+						<input type="checkbox" name="license" class="five" checked="true">
 						<p class="five">
 							我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
 						</p>
@@ -273,7 +275,7 @@
 					<p class="three">验证码</p>
 					<input type="textbox" name="vcode" class="three"/>
 					<a href="" id="vcode_not_clear">看不清</a>
-					<img src="<?php echo U("Home/Login/verifyImg");?>" id="vcode_img">
+					<img src="<?php echo U("Home/User/verifyImg","","","");?>" id="vcode_img">
 					<a href="" id="forgetpwd">忘记密码?</a>
 					<input type="checkbox" name="rememberpwd" class="four">
 					<p class="four">记住密码</p>
@@ -353,9 +355,7 @@
 <!-- 内容区域 -->
 	<div id="main">
 		<div id="ad_box">
-			<img src="__PUBLIC__/images/flash/c_1.png" alt="" />
-			<img src="__PUBLIC__/images/flash/c_2.png" alt="" />
-			<img src="__PUBLIC__/images/flash/c_3.png" alt="" />
+        <?php if(is_array($ads)): foreach($ads as $key=>$ad): ?><img src="__PUBLIC__/<?php echo ($ad["img_path"]); ?>" alt="" /><?php endforeach; endif; ?>
 			<ul>
 				<li>1</li>
 				<li>2</li>
@@ -429,171 +429,28 @@
 		</div>
 		<div id="coupon_box">
 			<ul class="clearfix coupon_content">
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
+                <?php if(is_array($coupons)): foreach($coupons as $key=>$coupon): ?><li>
+					<img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>">
+					<a href="" class="content_title"><?php echo ($coupon["name"]); ?></a>
+					<p class="one"><?php echo ($coupon["description"]); ?></p>
+					<p class="two"><?php echo ($coupon["title"]); ?></p>
+					<p class="three">下载：<?php echo ($coupon["download_times"]); ?>次</p>
 					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-
+					<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
+				</li><?php endforeach; endif; ?>
 			</ul>
-			<div id="recommend_box">
-
+			<div id="webchat_box">
+				<p>扫一下，关注惠桂林微信</p>
+				<img src="__PUBLIC__/images/barcode.png">
 			</div>
 			<div id="hot_coupon_box">
 				<p class="title">热门优惠劵</p>
 				<ul class="hot_coupon">
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-
+                <?php if(is_array($hot_coupons)): foreach($hot_coupons as $key=>$coupon): ?><li>
+						<a href=""><?php echo ($coupon["name"]); ?></a>
+						<p><?php echo ($coupon["title"]); ?></p>
+						<img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>">
+					</li><?php endforeach; endif; ?>
 				</ul>
 			</div>
 		</div>

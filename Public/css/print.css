@@ -1,0 +1,89 @@
+#top_logo_box{
+	width: 800px;
+	margin: 0 auto;
+	height: 50px;
+	padding-top: 15px;
+}
+#main_box{
+	width: 800px;
+	margin: 0 auto;
+}
+#main_box div.title_box{
+	background: #ED5565;
+	height: 35px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	position: relative;
+}
+#main_box div.title_box span{
+	color: white;
+}
+#main_box div.title_box span.left{
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	top: 10px;
+	left: 5px;
+}
+#main_box div.title_box span.right{
+	font-size: 13px;
+	font-weight: normal;
+	position: absolute;
+	top: 10px;
+	right: 5px;
+}
+#main_box div.content_box{
+	border:1px dashed #E4E4E4;
+	border-top:none;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding-bottom: 40px;
+}
+#main_box div.content_box p{
+	margin:0px;
+}
+#main_box div.content_box p.one{
+	color: #ED5565;
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 20px;
+	padding-top: 20px;
+}
+#main_box div.content_box p.one span{
+	color: #666666;
+	font-size: 14px;
+	font-weight: bold;
+}
+#main_box div.content_box p.two{
+	color: #666;
+	padding-left: 20px;
+	margin-top: 20px;
+}
+#main_box div.content_box p.three{
+	color: #999;
+	font-size: 13px;
+	padding-left: 50px;
+}
+#main_box div.content_box p.four{
+	margin-top: 20px;
+}
+#main_box div.content_box p.seven{
+	color: #666;
+	font-size: 13px;
+	padding-left: 100px;
+	width: 600px;
+	margin-top: 20px;
+}
+#main_box div.content_box p.eight{
+	color: #666;
+	padding-left: 100px;
+	font-size: 13px;
+	width: 600px;
+	margin-top: 10px;
+}
+#main_box div.content_box img{
+	width: 600px;
+	height: 700px;
+	margin-left: 100px;
+	margin-top: 20px;
+}

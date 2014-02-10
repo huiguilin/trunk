@@ -140,13 +140,17 @@ $(function(){
 		var username =$('#Userlogin_box #u_middle_box form input.one').val();
 		var password =$('#Userlogin_box #u_middle_box form input.two').val();
 		var vcode =$('#Userlogin_box #u_middle_box form input.three').val();
-		$.post("/index.php/user/checkLogin", { username: username, password: password, vcode: vcode },function(data){
-            if (data.status == 1) {
-                $('#Userlogin_box').bPopup().close();
-            }
+		if(vcode != "" && username != "" && password != ""){
+			$.post("/index.php/user/checkLogin", { username: username, password: password, vcode: vcode },function(data){
+            	if (data.status == 1) {
+                	$('#Userlogin_box').bPopup().close();
+            	}
 			
-		},"json");
-		return false;
+			},"json");
+		}
+		else{
+			return false;
+		}
 		
 	});
 	//用户登录弹窗中所有验证结束
@@ -479,14 +483,8 @@ $(function(){
 			$('#Userreg_box #u_bottom #email_box form p.twelve').text('请输入验证码').css('color', '#F14B2B')
 			.css('background-image', backgroundURL_error);
 		}else{
-			if(email_vcode =="1234"){
-				$('#Userreg_box #u_bottom #email_box form p.twelve').text('OK').css('color', '#999')
-				.css('background-image', backgroundURL_success);
-			}
-			else{
-				$('#Userreg_box #u_bottom #email_box form p.twelve').text('验证码输入不正确').css('color', '#F14B2B')
-				.css('background-image', backgroundURL_error);
-			}
+			$('#Userreg_box #u_bottom #email_box form p.twelve').text('').css('color', '#999')
+			.css('background-image', backgroundURL_success);
 		}
 
 	});
@@ -824,7 +822,7 @@ $(function(){
 			(emailreg_nickname != "") &&
 			(emailreg_vcode != ""))
 		{
-			$.post("/index.php/user/register", { email: emailreg_email, 
+			$.post("/index.php/User/register", { email: emailreg_email, 
 			pwd: emailreg_pwd, pwd2: emailreg_pwd2,nickname:emailreg_nickname,
 			 vcode:emailreg_vcode},function(data){
 			 	//做个判断，返回成功执行下面的代码，跳转到注册成功页面
@@ -835,7 +833,9 @@ $(function(){
 			},"json");
 
 		}
-		return false;
+		else{
+			return false;
+		}
 
 		
 	});
@@ -864,9 +864,10 @@ $(function(){
 					$('#Userreg_box #UserregSuccess_cellphone').css('display', 'block');
 			 	}
 			},"json");
-
 		}
-		return false;
+		else{
+			return false;
+		}
 	});
 	
 	//手机注册注册button特效结束

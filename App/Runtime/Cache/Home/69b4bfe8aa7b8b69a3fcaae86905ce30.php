@@ -1,29 +1,28 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 a//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折,优惠搜索"> <!-- 向搜索引擎说明你的网页的关键词； --> 
+<meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
 <meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/search.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/about_tpl.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/search.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
-
+<script type="text/javascript" src="__PUBLIC__/js/footer.js"></script>
+<title>用户推荐</title>
 <!--[if IE 6]>
 <!--背景图片透明方法-->
 <script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
 <!--插入图片透明方法-->
 <script type="text/javascript">
    EvPNG.fix('div, ul, img, li, input');  //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
-  
 </script>
-<!-- <![endif]-->
-
-<title>惠桂林搜索页面</title>
+<![endif]-->
 </head>
 <body>
 <!-- 顶部订阅分享区域+Logo区域 -->
@@ -353,249 +352,70 @@
 <!-- 导航区域结束-->
 <!-- 导航区域结束-->
 <!-- 内容区域 -->
+	 	
+	
+	<!-- 主要内容区域 -->
 	<div id="main">
-		<div id="search_summary_box">
-			<p>找到“<span class="keyword">桂林</span>”相关的内容<span class="number">122</span>条</p>
-		</div>
-		<div id="classification_location_box">
-			<div id="content_box">
-				<div id="classification_box">
-					<p>分类</p>
-					<ul class="parent_classification">
-						<li><a href="">全部</a></li>
-						<li><a href="">美食</a></li>
-						<li><a href="">休闲娱乐</a></li>
-						<li><a href="">丽人</a></li>
-						<li><a href="">生活服务</a></li>
-						<li><a href="">酒店</a></li>
-						<li><a href="">旅游</a></li>
-					</ul>
-					<div>
-						<ul class="child_classification">
-							<li><a href="">全部</a></li>
-							<li><a href="">火锅</a></li>
-							<li><a href="">自助餐</a></li>
-							<li><a href="">甜点饮品</a></li>
-							<li><a href="">西餐</a></li>
-							<li><a href="">中式菜</a></li>
-							<li><a href="">小吃快餐</a></li>
-							<li><a href="">烧烤烤肉</a></li>
-							<li class="no_right_border"><a href="">日本料理</a></li>
-						</ul>
-					</div>
-				</div>
-				<div id="location_box">
-					<p>区域</p>
-					<ul class="parent_classification">
-						<li><a href="">全部</a></li>
-						<li><a href="">秀峰区</a></li>
-						<li><a href="">象山区</a></li>
-						<li><a href="">叠彩区</a></li>
-						<li><a href="">雁山区</a></li>
-						<li><a href="">七星区</a></li>
-					</ul>
-					<div>
-						<ul class="child_classification">
-							<li><a href="">全部</a></li>
-							<li><a href="">中心广场</a></li>
-							<li><a href="">甲天下广场</a></li>
-							<li><a href="">联达商业广场</a></li>
-							<li><a href="">红街商业广场</a></li>
-							<li><a href="">北极广场</a></li>
-							<li><a href="">汽车站</a></li>
-							<li class="no_right_border"><a href="">三里店广场</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="sort_price_box">
-			<div class="content_box">
-				<p class="one">排序</p>
-				<ul>
-					<li><a href="">默认</a></li>
-					<li><a href="">下载次数</a></li>
-					<li><a href="">价格</a></li>
-					<li><a href="">好评</a></li>
-					<li><a href="">发布时间</a></li>
-				</ul>
-			</div>
-		</div>
-		<div id="coupon_box">
-			<ul class="clearfix coupon_content">
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-				<li>
-					<img src="__PUBLIC__/images/pic/1.png">
-					<a href="" class="content_title">春记烧鹅9折优惠券</a>
-					<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-					<p class="two">凭券可享：全场8.8折优惠</p>
-					<p class="three">下载：10 次</p>
-					<a href="" class="download">立即下载</a>
-					<p class="hidden_location">秀峰区，象山区，宝山路</p>
-				</li>
-
-			</ul>
-			<div id="recommend_box">
-
-			</div>
-			<div id="hot_coupon_box">
-				<p class="title">热门优惠劵</p>
-				<ul class="hot_coupon">
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">刘姥姥奶酪</a>
-						<p>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-
-				</ul>
-			</div>
-		</div>
 		
-	</div>
-<!-- 内容区域结束 -->
-<!-- 最底部区域 -->
-	<div id="bottom_info">
+		<!-- 左边内容区域 -->
+		
+		<!-- 左边内容区域结束 -->
+		
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/recommend.css" />
+<!-- 关于我们页面的内容 -->
+<div id="left_card">
+	<p class="one">用户推荐商家</p>
+	<p class="two">用户的需求，即是我们的目标，请补充以下信息，尽快与我们取得联系！</p>
+	<p class="three">感谢您的支持，我们的客户专员会尽快与您联系！</p>
+	<form id="recommend_sumbit_form">
+		<ul>
+			<li>
+				<p class="title">您的称呼：</p>
+				<input type="text" name="nickname" class="one" id="recommend_username" placeholder="请填写您的称呼" />
+			</li>
+			<li>
+				<p class="title">您的电话：</p>
+				<input type="text" name="cellphone" class="one" id="recommend_cellphone" placeholder="请填写您的联系方式"/>
+			</li>
+			<li class="one">
+				<p class="title">其他联系方式：</p>
+				<input type="text" name="othercommunication" class="one"/>
+				<p class="othercommunication">请留下其他联系方式，如QQ, Email等。方便我们回复</p>
+			</li>
+			<li>
+				<p class="title">您推荐的商户：</p>
+				<input type="text" name="shopname" class="one" id="recommend_business" placeholder="请填写商户名称"/>
+			</li>
+			<li>
+				<p class="title">商户地址：</p>
+				<input type="text" name="company_address" class="one" placeholder="请填写商户地址" id="recommend_address"/>
+			</li>
+			<li>
+				<p class="title">商户特色商品：</p>
+				<input type="text" name="special_product" class="one" placeholder="请填写商户特色产品" id="recommend_product"/>
+			</li>
+			<li class="two">
+				<p class="title title2">商品类别：</p>
+				<select name="classification" class="two">
+					<option value="">美食</option>
+					<option value="">休闲娱乐</option>
+					<option value="">生活服务</option>
+					<option value="">酒店</option>
+					<option value="">旅游</option>
+					<option value="">丽人</option>
+				</select>
+			</li>
+			<li class="three">
+				<p class="title">备注：</p>
+				<textarea cols="50" rows="8" class="one" id="recommend_content"></textarea>
+			</li>
+		</ul>
+		<input id="recommend_btn_submit" type="bottom" value="提交">
+	</form>				
+</div>
+</div>
+<!-- 关于我们页面的内容结束 -->
+<div id="bottom_info">
 		<div id="bottom_box">
 			<div class="p_box">
 				<p>版权归惠桂林所有，未经书面授权禁止复制或建立镜像。 Email：<a href="mailto:service@huigl.com">service@huigl.com</a></p>
@@ -618,7 +438,3 @@
 			</ul>
 		</div>
 </div>
-<!-- 最底部区域结束 -->
-
-</body>
-</html>

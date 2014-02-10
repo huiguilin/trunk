@@ -2,6 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活"> <!-- 向搜索引擎说明你的网页的关键词； --> 
+<meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
@@ -10,7 +12,7 @@
 <script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
-<!--[if IE 6]>
+<!--[if IE 6] -->
 <!--背景图片透明方法-->
 <script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
 <!--插入图片透明方法-->
@@ -165,7 +167,7 @@
 						<p class="five">验证码</p>
 						<input type="text" name="reg_vcode" class="five"/>
 						<a href="" id="regemail_vcode_not_clear">看不清</a>
-						<img src="<?php echo U("Home/Login/verifyImg");?>" class="one">
+						<img src="<?php echo U("Home/User/verifyImg","","","");?>" class="one">
 						<input type="checkbox" name="license" class="six" checked="true">
 						<p class="six">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
@@ -183,22 +185,22 @@
 				<div id="cellphone_box" class="hide">
 					<form action="" method="post">
 						<p class="one">手机号码</p>
-						<input type="text" name="email" class="one"/>
-						<a href="" id="sendcode">点击发送验证码</a>
+						<input type="text" name="cellphone" class="one"/>
+						<a href="javascript:void(0)" id="sendcode" name="sendcode">点击发送验证码</a>
 						<p class="seven">验证码</p>
 						<input type="text" name="vcode" class="six"/>
 						<p class="two">密码</p>
 						<input type="password" name="pwd" class="two"/>
 						<ul>
-							<li>弱</li>
-							<li>中</li>
-							<li>强</li>
+							<li id="cellphone_pwd_low">弱</li>
+							<li id="cellphone_pwd_mid">中</li>
+							<li id="cellphone_pwd_high">强</li>
 						</ul>	
 						<p class="three">确认密码</p>
 						<input type="password" name="pwd2" class="three"/>
 						<p class="four">昵称</p>
 						<input type="text" name="nickname" class="four"/>
-						<input type="checkbox" name="license" class="five">
+						<input type="checkbox" name="license" class="five" checked="true">
 						<p class="five">
 							我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
 						</p>
@@ -272,7 +274,7 @@
 					<p class="three">验证码</p>
 					<input type="textbox" name="vcode" class="three"/>
 					<a href="" id="vcode_not_clear">看不清</a>
-					<img src="<?php echo U("Home/Login/verifyImg");?>" id="vcode_img">
+					<img src="<?php echo U("Home/User/verifyImg","","","");?>" id="vcode_img">
 					<a href="" id="forgetpwd">忘记密码?</a>
 					<input type="checkbox" name="rememberpwd" class="four">
 					<p class="four">记住密码</p>
@@ -411,7 +413,7 @@
 			<!-- 微信区域结束 -->
 			<!-- 我推荐你来谈区域 -->
 			<div class="recommend_box">
-				<p>您推荐，我来谈</p>
+				<a href="<?php echo U("Intention/recommend");?>">您推荐，我来谈</a>
 			</div>
 			<!-- 我推荐你来谈区域结束 -->
 		</div>
@@ -421,50 +423,19 @@
 			<div class="hot_brand_box">
 				<p>热门品牌</p>
 				<ul>
-					<li>
-						<a href="">春记烧鹅</a>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">春记烧鹅</a>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">春记烧鹅</a>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">春记烧鹅</a>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a href="">春记烧鹅</a>
-						<img src="__PUBLIC__/images/pic/1.png">
-					</li>
+                <?php if(is_array($hot_partners)): foreach($hot_partners as $key=>$hpartner): ?><li>
+						<a href=""><?php echo ($hpartner["name"]); ?></a>
+						<img src="__PUBLIC__/<?php echo ($hpartner["picture_path"]); ?>">
+					</li><?php endforeach; endif; ?>
 				</ul>
 
 			</div>
 			<div class="new_brand_box">
 				<p>新入驻品牌</p>
 				<ul>
-					<li>
-						<a href="">Brand</a>
-					</li>
-					<li>
-						<a href="">Brand</a>
-					</li>
-					<li>
-						<a href="">Brand</a>
-					</li>
-					<li>
-						<a href="">Brand</a>
-					</li>
-					<li>
-						<a href="">Brand</a>
-					</li>
-					<li>
-						<a href="">Brand</a>
-					</li>	
+                <?php if(is_array($partners)): foreach($partners as $key=>$partner): ?><li>
+						<a href=""><?php echo ($partner["name"]); ?></a>
+					</li><?php endforeach; endif; ?>
 				</ul>
 
 			</div>
@@ -482,118 +453,28 @@
 					<li><a href="" class="no_right_border">麻辣香锅</a></li>
 				</ul>
 				<ul class="content">
-					<li>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a href="" class="content_title">春记烧鹅9折优惠券</a>
-						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-						<p class="two">凭券可享：全场8.8折优惠</p>
-						<p class="three">下载：10 次</p>
+                <?php if(is_array($eat_coupons)): foreach($eat_coupons as $key=>$coupon): ?><li>
+						<img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>">
+						<a href="/coupon/<?php echo ($coupon["coupon_id"]); ?>" class="content_title"><?php echo ($coupon["name"]); ?></a>
+						<p class="one"><?php echo ($coupon["description"]); ?></p>
+						<p class="two"><?php echo ($coupon["title"]); ?></p>
+						<p class="three">下载：<?php echo ($coupon["download_times"]); ?>次</p>
 						<a href="" class="download">立即下载</a>
-						<p class="hidden_location">秀峰区，象山区，宝山路</p>
-					</li>
-					<li>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a href="" class="content_title">春记烧鹅9折优惠券</a>
-						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-						<p class="two">凭券可享：全场8.8折优惠</p>
-						<p class="three">下载：10 次</p>
-						<a href="" class="download">立即下载</a>
-						<p class="hidden_location">秀峰区，象山区，宝山路</p>
-					</li>
-					<li>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a href="" class="content_title">春记烧鹅9折优惠券</a>
-						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-						<p class="two">凭券可享：全场8.8折优惠</p>
-						<p class="three">下载：10 次</p>
-						<a href="" class="download">立即下载</a>
-						<p class="hidden_location">秀峰区，象山区，宝山路</p>
-					</li>
-					<li>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a href="" class="content_title">春记烧鹅9折优惠券</a>
-						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-						<p class="two">凭券可享：全场8.8折优惠</p>
-						<p class="three">下载：10 次</p>
-						<a href="" class="download">立即下载</a>
-						<p class="hidden_location">秀峰区，象山区，宝山路</p>
-					</li>
+						<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
+					</li><?php endforeach; endif; ?>
 				</ul>
 				<a href="" class="foot_type_more">查看更多</a>
 			</div>
 			<div class="footsort_box">
 				<p class="title title2" id="foot_hot_title">最热优惠劵排行</p><p class="title" id="foot_new_title">最新优惠劵排行</p>
 				<ul id="foot_hot_ul">
-					<li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href="">李记米粉1</a>
-						<p class="two">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a class="one hidden" href="">李记米粉1</a>
-						<p class="one hidden">8折优惠,全场通兑！</p>
-					</li>
-					<li>
-						<a class="one sort_id_02" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_03" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_04" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_05" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_06" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_07" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_08" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_09" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_10" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
+                <?php if(is_array($eat_coupons)): foreach($eat_coupons as $key=>$hcoupon): ?><li class="hover" id="footsort_box_fisrt_li">
+						<a class="two" href=""><?php echo ($hcoupon["name"]); ?></a>
+						<p class="two"><?php echo ($hcoupon["description"]); ?></p>
+						<img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>">
+						<a class="one hidden" href=""><?php echo ($hcoupon["name"]); ?></a>
+						<p class="one hidden"><?php echo ($hcoupon["title"]); ?></p>
+					</li><?php endforeach; endif; ?>
 				</ul>
 				<ul id="foot_new_ul" class="hidden" >
 					<li class="hover" id="footsort_box_fisrt_li">
@@ -603,68 +484,12 @@
 						<a class="one hidden" href="">李记米粉2</a>
 						<p class="one hidden">8折优惠,全场通兑！</p>
 					</li>
-					<li>
-						<a class="one sort_id_02" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_03" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_04" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_05" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_06" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_07" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_08" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_09" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_10" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
+					<li class="hover" id="footsort_box_fisrt_li">
+						<a class="two" href=""><?php echo ($hcoupon["name"]); ?></a>
+						<p class="two"><?php echo ($hcoupon["description"]); ?></p>
+						<img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>">
+						<a class="one hidden" href=""><?php echo ($hcoupon["name"]); ?></a>
+						<p class="one hidden"><?php echo ($hcoupon["title"]); ?></p>
 					</li>
 				</ul>
 			</div>
@@ -682,190 +507,37 @@
 					<li><a href="" class="no_right_border">网吧</a></li>
 				</ul>
 				<ul class="content">
-					<li>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a href="" class="content_title">春记烧鹅9折优惠券</a>
-						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-						<p class="two">凭券可享：全场8.8折优惠</p>
-						<p class="three">下载：10 次</p>
+                <?php if(is_array($play_coupons)): foreach($play_coupons as $key=>$coupon): ?><li>
+						<img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>">
+						<a href="/coupon/<?php echo ($coupon["coupon_id"]); ?>" class="content_title"><?php echo ($coupon["name"]); ?></a>
+						<p class="one"><?php echo ($coupon["description"]); ?></p>
+						<p class="two"><?php echo ($coupon["title"]); ?></p>
+						<p class="three">下载：<?php echo ($coupon["download_times"]); ?>次</p>
 						<a href="" class="download">立即下载</a>
-						<p class="hidden_location">秀峰区，象山区，宝山路</p>
-					</li>
-					<li>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a href="" class="content_title">春记烧鹅9折优惠券</a>
-						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-						<p class="two">凭券可享：全场8.8折优惠</p>
-						<p class="three">下载：10 次</p>
-						<a href="" class="download">立即下载</a>
-						<p class="hidden_location">秀峰区，象山区，宝山路</p>
-					</li>
-					<li>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a href="" class="content_title">春记烧鹅9折优惠券</a>
-						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-						<p class="two">凭券可享：全场8.8折优惠</p>
-						<p class="three">下载：10 次</p>
-						<a href="" class="download">立即下载</a>
-						<p class="hidden_location">秀峰区，象山区，宝山路</p>
-					</li>
-					<li>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a href="" class="content_title">春记烧鹅9折优惠券</a>
-						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-						<p class="two">凭券可享：全场8.8折优惠</p>
-						<p class="three">下载：10 次</p>
-						<a href="" class="download">立即下载</a>
-						<p class="hidden_location">秀峰区，象山区，宝山路</p>
-					</li>
+						<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
+					</li><?php endforeach; endif; ?>
 				</ul>
 				<a href="" class="foot_type_more">查看更多</a>
 			</div>
 			<div class="footsort_box">
 				<p class="title title2" id="ent_hot_title">最热优惠劵排行</p><p class="title" id="ent_new_title">最新优惠劵排行</p>
-				<ul id="ent_hot_ul">
-					<li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href="">李记米粉1</a>
-						<p class="two">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a class="one hidden" href="">李记米粉1</a>
-						<p class="one hidden">8折优惠,全场通兑！</p>
-					</li>
-					<li>
-						<a class="one sort_id_02" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_03" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_04" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_05" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_06" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_07" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_08" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_09" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_10" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
+				<ul id="ent_hot_ul" class="hidden" >
+                <?php if(is_array($play_coupons)): foreach($play_coupons as $key=>$hcoupon): ?><li class="hover" id="footsort_box_fisrt_li">
+						<a class="two" href=""><?php echo ($hcoupon["name"]); ?></a>
+						<p class="two"><?php echo ($hcoupon["description"]); ?></p>
+						<img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>">
+						<a class="one hidden" href=""><?php echo ($hcoupon["name"]); ?></a>
+						<p class="one hidden"><?php echo ($hcoupon["title"]); ?></p>
+					</li><?php endforeach; endif; ?>
 				</ul>
 				<ul id="ent_new_ul" class="hidden" >
-					<li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href="">李记米粉2</a>
-						<p class="two">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a class="one hidden" href="">李记米粉2</a>
-						<p class="one hidden">8折优惠,全场通兑！</p>
-					</li>
-					<li>
-						<a class="one sort_id_02" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_03" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_04" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_05" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_06" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_07" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_08" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_09" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_10" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
+                <?php if(is_array($play_coupons)): foreach($play_coupons as $key=>$ncoupon): ?><li class="hover" id="footsort_box_fisrt_li">
+						<a class="two" href=""><?php echo ($ncoupon["name"]); ?></a>
+						<p class="two"><?php echo ($ncoupon["description"]); ?></p>
+						<img src="__PUBLIC__/<?php echo ($ncoupon["picture_path"]); ?>">
+						<a class="one hidden" href=""><?php echo ($ncoupon["name"]); ?></a>
+						<p class="one hidden"><?php echo ($ncoupon["title"]); ?></p>
+					</li><?php endforeach; endif; ?>
 				</ul>
 			</div>
 		</div>
@@ -882,190 +554,37 @@
 					<li><a href="" class="no_right_border">鲜花婚庆</a></li>
 				</ul>
 				<ul class="content">
-					<li>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a href="" class="content_title">春记烧鹅9折优惠券</a>
-						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-						<p class="two">凭券可享：全场8.8折优惠</p>
-						<p class="three">下载：10 次</p>
+                <?php if(is_array($life_coupons)): foreach($life_coupons as $key=>$coupon): ?><li>
+						<img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>">
+						<a href="/coupon/<?php echo ($coupon["coupon_id"]); ?>" class="content_title"><?php echo ($coupon["name"]); ?></a>
+						<p class="one"><?php echo ($coupon["description"]); ?></p>
+						<p class="two"><?php echo ($coupon["title"]); ?></p>
+						<p class="three">下载：<?php echo ($coupon["download_times"]); ?>次</p>
 						<a href="" class="download">立即下载</a>
-						<p class="hidden_location">秀峰区，象山区，宝山路</p>
-					</li>
-					<li>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a href="" class="content_title">春记烧鹅9折优惠券</a>
-						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-						<p class="two">凭券可享：全场8.8折优惠</p>
-						<p class="three">下载：10 次</p>
-						<a href="" class="download">立即下载</a>
-						<p class="hidden_location">秀峰区，象山区，宝山路</p>
-					</li>
-					<li>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a href="" class="content_title">春记烧鹅9折优惠券</a>
-						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-						<p class="two">凭券可享：全场8.8折优惠</p>
-						<p class="three">下载：10 次</p>
-						<a href="" class="download">立即下载</a>
-						<p class="hidden_location">秀峰区，象山区，宝山路</p>
-					</li>
-					<li>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a href="" class="content_title">春记烧鹅9折优惠券</a>
-						<p class="one">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑</p>
-						<p class="two">凭券可享：全场8.8折优惠</p>
-						<p class="three">下载：10 次</p>
-						<a href="" class="download">立即下载</a>
-						<p class="hidden_location">秀峰区，象山区，宝山路</p>
-					</li>
+						<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
+					</li><?php endforeach; endif; ?>
 				</ul>
 				<a href="" class="foot_type_more">查看更多</a>
 			</div>
 			<div class="footsort_box">
 				<p class="title title2" id="life_hot_title">最热优惠劵排行</p><p class="title" id="life_new_title">最新优惠劵排行</p>
 				<ul id="life_hot_ul">
-					<li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href="">李记米粉1</a>
-						<p class="two">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a class="one hidden" href="">李记米粉1</a>
-						<p class="one hidden">8折优惠,全场通兑！</p>
-					</li>
-					<li>
-						<a class="one sort_id_02" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_03" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_04" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_05" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_06" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_07" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_08" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_09" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_10" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
+                <?php if(is_array($life_coupons)): foreach($life_coupons as $key=>$hcoupon): ?><li class="hover" id="footsort_box_fisrt_li">
+						<a class="two" href=""><?php echo ($hcoupon["name"]); ?></a>
+						<p class="two"><?php echo ($hcoupon["description"]); ?></p>
+						<img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>">
+						<a class="one hidden" href=""><?php echo ($hcoupon["name"]); ?></a>
+						<p class="one hidden"><?php echo ($hcoupon["title"]); ?></p>
+					</li><?php endforeach; endif; ?>
 				</ul>
 				<ul id="life_new_ul" class="hidden" >
-					<li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href="">李记米粉2</a>
-						<p class="two">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a class="one hidden" href="">李记米粉2</a>
-						<p class="one hidden">8折优惠,全场通兑！</p>
-					</li>
-					<li>
-						<a class="one sort_id_02" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_03" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_04" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_05" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_06" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_07" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_08" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_09" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
-					<li>
-						<a class="one sort_id_10" href="">刘姥姥奶酪</a>
-						<p class="one">8折优惠,全场通兑！</p>
-						<a class="two hidden" href="">刘姥姥奶酪</a>
-						<p class="two hidden">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img class="hidden" src="__PUBLIC__/images/pic/1.png">
-					</li>
+                <?php if(is_array($life_coupons)): foreach($life_coupons as $key=>$ncoupon): ?><li class="hover" id="footsort_box_fisrt_li">
+						<a class="two" href=""><?php echo ($ncoupon["name"]); ?></a>
+						<p class="two"><?php echo ($ncoupon["description"]); ?></p>
+						<img src="__PUBLIC__/<?php echo ($ncoupon["picture_path"]); ?>">
+						<a class="one hidden" href=""><?php echo ($ncoupon["name"]); ?></a>
+						<p class="one hidden"><?php echo ($ncoupon["title"]); ?></p>
+					</li><?php endforeach; endif; ?>
 				</ul>
 			</div>
 		</div>
