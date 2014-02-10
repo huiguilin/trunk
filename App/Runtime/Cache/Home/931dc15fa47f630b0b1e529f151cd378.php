@@ -14,7 +14,7 @@
 <script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/footer.js"></script>
-<title>商务合作</title>
+<title>查看所有 门店</title>
 <!--[if IE 6]>
 <!--背景图片透明方法-->
 <script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
@@ -361,66 +361,82 @@
 		
 		<!-- 左边内容区域结束 -->
 		
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/intention.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/viewallshop.css" />
 <!-- 关于我们页面的内容 -->
 <div id="left_card">
-	<p class="one">商务合作</p>
-	<p class="two">如果您有意与惠桂林合作，让自己的生意更上一层楼，请补充以下信息，尽快与我们取得联系！</p>
-	<p class="three">感谢您的支持，我们的销售代表会尽快与您联系！</p>
-	<form id="intention_sumbit_form">
-		<ul>
-			<li>
-				<p class="title">您的称呼：</p>
-				<input type="text" name="nickname" class="one" id="intention_username" placeholder="请填写您的称呼" />
-			</li>
-			<li>
-				<p class="title">您的电话：</p>
-				<input type="text" name="cellphone" class="one" id="intention_cellphone" placeholder="请填写您的联系方式"/>
-			</li>
-			<li class="one">
-				<p class="title">其他联系方式：</p>
-				<input type="text" name="othercommunication" class="one"/>
-				<p class="othercommunication">请留下其他联系方式，如QQ, Email等。方便我们回复</p>
-			</li>
-			<li class="two">
-				<p class="title title2">区域：</p>
-				<select name="area" class="one">
-					<option value="">桂林</option>
-					<option value="">南宁</option>
-					<option value="">柳州</option>
-					<option value="">梧州</option>
-				</select>
-			</li>
-			<li>
-				<p class="title">参与优惠商户名称：</p>
-				<input type="text" name="shopname" class="one" id="intention_business" placeholder="请填写您公司的名称"/>
-			</li>
-			<li>
-				<p class="title">公司地址：</p>
-				<input type="text" name="company_address" class="one" placeholder="请填写您公司的地址"/>
-			</li>
-			<li class="three">
-				<p class="title title2">类别：</p>
-				<select name="classification" class="two">
-					<option value="">美食</option>
-					<option value="">休闲</option>
-					<option value="">健康</option> 
-					<option value="">运动</option>
-					<option value="">网购</option>
-					<option value="">其他</option>
-				</select>
-			</li>
-			<li class="four">
-				<p class="title">优惠内容描述：</p>
-				<textarea cols="50" rows="8" class="one" id="intention_content"></textarea>
-			</li>
-		</ul>
-		<input id="intention_btn_submit" type="bottom" value="提交">
-	</form>				
-</div>
+	<p class="filter">
+		<span>区域</span>
+		<a href="" class="quanbu blue">全部(12)</a>
+		<a href="" class="xiufeng">秀峰区(2)</a>
+		<a href="" class="xiangshan">象山区(4)</a>
+		<a href="" class="diecai">叠彩区(6)</a>
+		<a href="" class="yanshan">雁山区(0)</a>
+		<a href="" class="qixing">七星区(0)</a>
+	</p>
+	<ul>
+		<li>
+			<p class="title">春记烧鹅（三里屯门店）</p>
+			<p class="address">地址： 消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+			<p class="telephone">电话： 0773-1111111; 0773-11122111 </p>
+			<a href="">查看地图 >></a>
+		</li>
+		<li>
+			<p class="title">春记烧鹅（三里屯门店）</p>
+			<p class="address">地址： 消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+			<p class="telephone">电话： 0773-1111111; 0773-11122111 </p>
+			<a href="">查看地图 >></a>
+		</li>
+		<li>
+			<p class="title">春记烧鹅（三里屯门店）</p>
+			<p class="address">地址： 消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+			<p class="telephone">电话： 0773-1111111; 0773-11122111 </p>
+			<a href="">查看地图 >></a>
+		</li>
+		<li>
+			<p class="title">春记烧鹅（三里屯门店）</p>
+			<p class="address">地址： 消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+			<p class="telephone">电话： 0773-1111111; 0773-11122111 </p>
+			<a href="">查看地图 >></a>
+		</li>
+		<li>
+			<p class="title">春记烧鹅（三里屯门店）</p>
+			<p class="address">地址： 消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+			<p class="telephone">电话： 0773-1111111; 0773-11122111 </p>
+			<a href="">查看地图 >></a>
+		</li>
+		<li>
+			<p class="title">春记烧鹅（三里屯门店）</p>
+			<p class="address">地址： 消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
+			<p class="telephone">电话： 0773-1111111; 0773-11122111 </p>
+			<a href="">查看地图 >></a>
+		</li>
+	</ul>
 </div>
 <!-- 关于我们页面的内容结束 -->
-<div id="bottom_info">
+<!-- 最底部区域 -->
+	
+		<!-- 右边内容区域 -->
+		<div id="main_right">
+			<div id="app">
+				<p class="current">正在浏览</p>
+				<div>
+					<img src="__PUBLIC__/images/pic/2.png">
+					<p class="title">漓江夜色Bar</p>
+					<p class="desciption">桂林最in的时尚前沿，潮流的聚集处，首次推出..</p>
+					<p class="tip">凭券可享：全场8.8折优惠</p>
+					<p class="download_box">
+						<span>下载：10 次</span>
+						<a href="">立即下载</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- 右边内容区域结束 -->
+	</div>
+	<!-- 主要内容区域结束 -->
+<!-- 内容区域结束 -->
+<!-- 最底部区域 -->
+	<div id="bottom_info">
 		<div id="bottom_box">
 			<div class="p_box">
 				<p>版权归惠桂林所有，未经书面授权禁止复制或建立镜像。 Email：<a href="mailto:service@huigl.com">service@huigl.com</a></p>
@@ -443,3 +459,8 @@
 			</ul>
 		</div>
 </div>
+<!-- 最底部区域结束 -->
+</body>
+</html>
+
+<!-- 最底部区域结束 -->

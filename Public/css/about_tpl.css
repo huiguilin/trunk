@@ -234,53 +234,64 @@
 	right:0px;
 }
 #main #main_right #app{
-	height: 218px;
-	background: #5DC9E6;
-	/*border-radius: 5px;*/*/
-	position: relative;
 
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	behavior: url(Layouts/js/border-radius.htc);
-	
 }
-#main #main_right #app p{
-	color: #333333;
-	font-weight:bold;
-	position: absolute;
-	top:20px;
-	left:41px;
-}
-#main #main_right #app img{
-	position: absolute;
-	top:45px;
-	left:75px;
-	height: 86px;
-	width: 86px;
-}
-#main #main_right #app a{
-	display: block;
-	width: 181px;
-	height: 36px;
-	position: absolute;
-	top:152px;
-	left:28px;
-	background: white;
-	text-align: center;
-	line-height: 36px;
-	color: #333;
-	
-	/*border-radius: 5px;*/
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	behavior: url(Layouts/js/border-radius.htc);
-}
-#main #main_right #app a:hover{
+#main #main_right #app p.current{
+	color: white;
 	font-weight: bold;
-	cursor: pointer;
-	color: #ED5564;
+	font-size: 13px;
+	background: #ED5565;
+	height: 32px;
+	line-height: 32px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding-left: 15px;
+}
+#main #main_right #app div{
+	border: 1px solid #E4E4E4;
+	border-top:none;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding-bottom: 20px;
+}
+#main #main_right #app div img{
+	width: 200px;
+	height: 150px;
+	margin-left: 17px;
+	margin-top: 10px;
+}
+#main #main_right #app p.title{
+	color: #ED5565;
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 15px;
+	margin-top: 10px;
+	width: 200px;
+}
+#main #main_right #app p.desciption{
+	color: #666666;
+	padding-left: 15px;
+	margin-top: 4px;
+	width: 200px;
+}
+#main #main_right #app p.tip{
+	color: #999;
+	padding-left: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 200px;
+}
+#main #main_right #app p.download_box{
+}
+#main #main_right #app p.download_box span{
+	color: #999;
+	padding-left: 15px;
+	margin-right: 45px;
+}
+#main #main_right #app p.download_box a{
+	background: url(../images/download.png) no-repeat 0px -3px;
+	color: #ED5565;
+	padding-left: 19px;
 }
 /*右边主要内容区域结束*/
 

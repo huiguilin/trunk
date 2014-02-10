@@ -1,0 +1,109 @@
+/*左边主要内容区域*/
+#main{
+	
+}
+#main #left_card{
+	position: relative;
+	width: 715px;
+}
+#main #left_card p.filter{
+	height: 60px;
+	line-height: 60px;
+	position: relative;
+}
+#main #left_card p.filter span{
+	color: #ED5565;
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 20px;
+}
+#main #left_card p.filter a{
+	color: #4467A3;
+	font-size: 13px;
+	display: block;
+	width: 66px;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	border-radius: 5px;
+}
+#main #left_card p.filter a.blue{
+	background: #4467A3;
+	color: white;
+}
+#main #left_card p.filter a:hover{
+	background: #4467A3;
+	color: white;
+}
+#main #left_card p.filter a.quanbu{
+	position: absolute;
+	top: 18px;
+	left:70px;
+}
+#main #left_card p.filter a.xiufeng{
+	position: absolute;
+	top: 18px;
+	left: 160px;
+}
+#main #left_card p.filter a.xiangshan{
+	position: absolute;
+	top: 18px;
+	left: 250px;
+}
+#main #left_card p.filter a.diecai{
+	position: absolute;
+	top: 18px;
+	left: 340px;
+}
+#main #left_card p.filter a.yanshan{
+	position: absolute;
+	top: 18px;
+	left: 430px;
+}
+#main #left_card p.filter a.qixing{
+	position: absolute;
+	top: 18px;
+	left: 520px;
+}
+#main #left_card ul{
+
+}
+#main #left_card ul li{
+	border-bottom:1px solid #E4E4E4;
+	height: 145px;
+}
+#main #left_card ul li:hover{
+	background: #E9ECF2;
+	border-radius: 5px;
+}
+#main #left_card ul li p{
+	margin: 0;
+	
+}
+#main #left_card ul li p.title{
+	color: #ED5565;
+	font-weight: bold;
+	font-size: 14px;
+	padding-top: 15px;
+	margin-left: 20px;
+}
+#main #left_card ul li p.address{
+	color: #666666;
+	font-size:13px;
+	margin-top: 15px;
+	margin-left: 20px;
+}
+#main #left_card ul li p.telephone{
+	color: #666666;
+	font-size:13px;
+	margin-top: 15px;
+	margin-left: 20px;
+}
+#main #left_card ul li a{
+	color: #4467A3;
+	font-size: 13px;
+	display: block;
+	margin-top: 15px;
+	margin-left: 20px;
+}
+/*左边主要内容区域结束*/
