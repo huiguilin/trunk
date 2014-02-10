@@ -20,8 +20,8 @@ class PartnerModel extends Model {
         if (isset($params['tag'])) {
             $str .= " AND tag LIKE '%{$params['tag']}%'";
         }
-        if (isset($params['location'])) {
-            $str .= " AND location = {$params['location']}";
+        if (isset($params['location_id'])) {
+            $str .= " AND location = {$params['location_id']}";
         }
         if (isset($params['order_by'])) {
             $str .= " ORDER BY {$params['order_by']}";

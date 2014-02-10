@@ -68,7 +68,48 @@ class AccountAction extends Action {
     }
 
     public function myfavorite(){
+        if (empty($_SESSION['user']['user_id'])) {
+            echo "dd";
+            return TRUE;
+        }
+        $status = isset($_GET['status']) ? (int) $_GET['status'] : 0;
+        $page = !empty($_GET['page']) ? (int) $_GET['page'] : 0;
+        $pageSize = 10;
+        $offset = $page * $pageSize;
 
+        $userCollectionHelper = new UserCollectionModel();
+        $params = array(
+            'user_id' => $_SESSION['user']['user_id'],
+            'limit' => "{$offset}, {$pageSize}",
+            'order_by' => "createtime DESC",
+        );
+        $collection = $userCollectionHelper->getUserCollection($params);
+        $couponIds = implode(',', DataToArray($collection, 'coupon_id'));
+        $couponHelper = new CouponModel();
+        $params = array(
+            'coupon_id' => $couponIds,
+        );
+        if ($status == 1) {
+            $params['start_time_lt'] = date('Y-m-d H:i:s');
+            $params['end_time_gt'] = date('Y-m-d H:i:s');
+        }
+        else if ($status == 2) {
+            $params['start_time_gt'] = date('Y-m-d H:i:s');
+            $params['end_time_lt'] = date('Y-m-d H:i:s');
+        }
+        $couponInfo = $couponHelper->getCoupon($params);
+        $info = array();
+        if (!empty($couponInfo)) {
+            $info = mergeData($collection, $couponInfo, 'coupon_id', 'coupon_id');
+            $time = time();
+            foreach ($info AS $key => $value) {
+                $info[$key]['end'] = 1;
+                if (strtotime($info[$key]['start_time']) <= $time && strtotime($info[$key]['end_time']) >= $time) {
+                    $info[$key]['end'] = 0;
+                }
+            }
+        }
+        $this->assign("coupons", $info);
         $this->account_tmp_bottom();
         $this->display();
     }

@@ -26,7 +26,7 @@ class CouponAction extends Action {
             'partner_id' => $partnerIds,
         );
         if (!empty($_GET['label_type'])) {
-            $params['label_type'] = (int)$_GET['label_type'];
+            $params['label_type'] = $_GET['label_type'];
         }
         if (!empty($_GET['sort'])) {
             $orderBy = $_GET['sort'];

@@ -2,58 +2,32 @@
 <load href="__PUBLIC__/css/myfavorite.css" />
 	<ul class="expire_filter_box">
 		<li><a href="" class="hover">全部</a></li>
-		<li><a href="">未到期</a></li>
-		<li><a href="">已到期</a></li>
+		<li><a href="/index.php/account/myfavorite?status=1">未到期</a></li>
+		<li><a href="/index.php/account/myfavorite?status=2">已到期</a></li>
 	</ul>
 	<div class="myconpon_items">
 		<table>
 			<tbody>
 				<tr>
 					<th class="one">项目名称</th>
-					<th class="two">收藏人气</th>
+					<!TODO--th class="two">收藏人气</th-->
 					<th class="three">状态</th>
 					<th class="four">操作</th>
 				</tr>
+                <foreach name="coupons" item="coupon">
 				<tr>
-					<td >江上人家：消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</td>
-					<td class="center">400</td>
+					<td >{$coupon.title}</td>
+					<!TODO--  td class="center">400</td-->
+                    <if condition="$coupon.end eq 0" >
 					<td class="center green">未到期</td>
+                    <else />
+                    <td class="center">已到期</td>
+                    </if>
 					<td>
 						<a class="operation01">发送到手机</a><a href="" class="operation02_del">删除</a>
 					</td>
 				</tr>
-				<tr>
-					<td >江上人家：消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</td>
-					<td class="center">400</td>
-					<td class="center">已到期</td>
-					<td>
-						<a class="operation01">发送到手机</a><a href="" class="operation02_del">删除</a>
-					</td>
-				</tr>
-				<tr>
-					<td >江上人家：消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</td>
-					<td class="center">400</td>
-					<td class="center">已到期</td>
-					<td>
-						<a class="operation01">发送到手机</a><a href="" class="operation02_del">删除</a>
-					</td>
-				</tr>
-				<tr>
-					<td >江上人家：消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</td>
-					<td class="center">400</td>
-					<td class="center">已到期</td>
-					<td>
-						<a class="operation01">发送到手机</a><a href="" class="operation02_del">删除</a>
-					</td>
-				</tr>
-				<tr>
-					<td >江上人家：消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</td>
-					<td class="center">400</td>
-					<td class="center">已到期</td>
-					<td>
-						<a class="operation01">发送到手机</a><a href="" class="operation02_del">删除</a>
-					</td>
-				</tr>
+                </foreach>
 			</tbody>
 		</table>
 		<div id="send_cellphone_hidden_box">
