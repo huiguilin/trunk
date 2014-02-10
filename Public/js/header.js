@@ -239,6 +239,14 @@ $(function(){
 				$('#validate_vcode').removeClass('special2').addClass('special');
 				$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li p.errorTips').css('display', 'block');
 				$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #validate_vcode').removeAttr('disabled');
+                $.post("/index.php/user/sendCheckCode", { phone_number :cellphone.val()
+                    },function(data){
+                    //做个判断，返回成功执行下面的代码，跳转到注册成功页面
+                    if(data.status == 1){
+                    alert('验证码已经发送');
+                    }
+                    },"json");
+
 			}
 		}
 	});
