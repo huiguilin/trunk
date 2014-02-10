@@ -49,7 +49,6 @@ function sendCodeToMobile($phoneNumber, $text, $timeout = 10) {
     curl_setopt($ch, CURLOPT_TIMEOUT, $timeout); 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); 
     $info = curl_exec($ch);
-    var_dump($url);
     #$info = xml_to_array($info);
     #$info = json_encode($info, TRUE);
     return $info;

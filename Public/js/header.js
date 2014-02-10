@@ -259,7 +259,40 @@ $(function(){
 		}
 
 	});
+	$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #validate_vcode').click(function(event) {
+		var vcode =$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #bingdingcellphone_vcode');
+		if(vcode.val() ==""){
+			$('#bingdingcellphone_vcode_hidden_tips').css('display', 'block');
+			$('#bingdingcellphone_vcode_hidden_tips').text('请输入验证码');
+		}else{
+			if(vcode.val() =="1234"){
+				$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul.one').css('display', 'none');
+				$('#Userreg_box #UserregSuccess_email #bindingcellphone_box #bingdingcellphone_success').css('display', 'block');
+			}
+			else{
+				$('#bingdingcellphone_vcode_hidden_tips').css('display', 'block');
+				$('#bingdingcellphone_vcode_hidden_tips').text('输入的验证码有误');
+			}
+		}
+
+	});
 	//用户注册成功页面特效结束
+    $('#sendcode').click(function(event){
+        var phone_number = $('#Userreg_box #u_bottom #cellphone_box form input.one').val();
+		var username =$('#Userlogin_box #u_middle_box form input.one').val();
+        if (empty(phone_number)) {
+            return;
+        }
+        $.post("/index.php/user/sendCheckCode", { phone_number : phone_number
+            },function(data){
+            //做个判断，返回成功执行下面的代码，跳转到注册成功页面
+            if(data.status == 1){
+                alert('验证码已经发送');
+            }
+            },"json");
+
+        });
+
 	//返回原来页面特效
 	$('#return_page').click(function(event) {
 		$('#Userreg_box').bPopup().close();

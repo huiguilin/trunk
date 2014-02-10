@@ -45,7 +45,7 @@ class UserAction extends Action {
 
     public function register() {
         $mail = !empty($_POST['email']) ? $_POST['email'] : $_POST['email'];
-        $phone = !empty($_POST['phone']) ? $_POST['phone'] : $_POST['phone'];
+        $phone = !empty($_POST['cellphone']) ? $_POST['cellphone'] : $_POST['cellphone'];
         $nickname = !empty($_POST['nickname']) ? $_POST['nickname'] : $_POST['nickname'];
         $password = !empty($_POST['pwd']) ? $_POST['pwd'] : $_POST['pwd'];
         $verify = mb_strtolower($_POST['vcode']);
@@ -192,7 +192,11 @@ class UserAction extends Action {
     }
 
     public function sendCheckcode() {
-        $phoneNumber = $_POST['phoneNumber'];
+        $phoneNumber = $_POST['phone_number'];
+        if (empty($phoneNumber)) {
+            $this->error('empty phonenumber');
+            return FALSE;
+        }
         $code = mt_rand(1, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
         $data = $this->send($phoneNumber, $code);
         $this->ajaxReturn($data,'JSON');
@@ -205,7 +209,8 @@ class UserAction extends Action {
         }
         session("pcheck","{$code}");
         //TBC
-        $result = sendCodeToMobile($phoneNumber, "您的激活码是【{$code}】，感谢您注册惠桂林");
+        #$result = sendCodeToMobile($phoneNumber, "您的激活码是【{$code}】，感谢您注册惠桂林");
+        $result = sendCodeToMobile($phoneNumber, "{$code}");
         $data = array(
             'status' => 1,
             'info' => '发送成功',
