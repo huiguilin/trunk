@@ -241,6 +241,40 @@ class UserAction extends Action {
         return TRUE;
     }
 
+    public function bindPhone() {
+       $phoneNumber = !empty($_POST['cellphone_number']) ? $_POST['cellphone_number'] : 0;
+       $email = !empty($_SESSION['user']['email']) ? $_SESSION['user']['email'] : "";
+       $checkCode = !empty($_POST['vcode']) ? $_POST['vcode'] : 0;
+       if (empty($phoneNumber) || empty($email)) {
+           return TRUE;
+       }
+       if ($_SESSION['pcheck'] != $checkCode) {
+           $this->error('验证码错误');
+           return TRUE;
+       }
+        $condition = "email = '{$mail}'";
+        $data = array(
+            'phone_number' => $phoneNumber,
+        );
+        $result = $helper->updateUser($condition, $data);
+        if (!empty($result)) {
+            $data = array();
+            $data['status'] = 1;
+            $data['info'] = '绑定成功!';
+            $data['size'] = 9;
+            $data['url'] = "";
+        }
+        else {
+            $data = array();
+            $data['status'] = 0;
+            $data['info'] = '用户名不存在!';
+            $data['size'] = 9;
+            $data['url'] = "";
+        }
+        $this->ajaxReturn($data,'JSON');
+        return TRUE;
+    }
+
     public function verifyImg(){
 		import('ORG.Util.Image');
 		Image::buildImageVerify(4,5,'png');
