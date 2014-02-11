@@ -17,7 +17,8 @@ class UserProfileModel extends Model {
             return FALSE;
         }
         $data = $this->where("nickname = '{$name}' 
-                                OR email = '{$name}'")->select();
+                                OR email = '{$name}'
+                                OR phone_number = {$name}")->select();
         $data = $data[0];
         return $data;
     }
