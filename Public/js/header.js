@@ -141,7 +141,7 @@ $(function(){
 		var password =$('#Userlogin_box #u_middle_box form input.two').val();
 		var vcode =$('#Userlogin_box #u_middle_box form input.three').val();
 		if(vcode != "" && username != "" && password != ""){
-			$.post("/index.php/user/checkLogin", { username: username, password: password, vcode: vcode },function(data){
+			$.post("/index.php/User/checkLogin", { username: username, password: password, vcode: vcode },function(data){
             	if (data.status == 1) {
                 	$('#Userlogin_box').bPopup().close();
             	}
@@ -243,7 +243,7 @@ $(function(){
 				$('#validate_vcode').removeClass('special2').addClass('special');
 				$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li p.errorTips').css('display', 'block');
 				$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #validate_vcode').removeAttr('disabled');
-                $.post("/index.php/user/sendCheckCode", { phone_number :cellphone.val()
+                $.post("/index.php/User/sendCheckCode", { phone_number :cellphone.val()
                     },function(data){
                     //做个判断，返回成功执行下面的代码，跳转到注册成功页面
                     if(data.status == 1){
@@ -295,7 +295,7 @@ $(function(){
         if (empty(phone_number)) {
             return;
         }
-        $.post("/index.php/user/sendCheckCode", { phone_number : phone_number
+        $.post("/index.php/User/sendCheckCode", { phone_number : phone_number
             },function(data){
             //做个判断，返回成功执行下面的代码，跳转到注册成功页面
             if(data.status == 1){
@@ -855,7 +855,7 @@ $(function(){
 			(cellphonereg__nickname != "") &&
 			(cellphonereg__vcode != ""))
 		{
-			$.post("/index.php/user/register", { cellphone: cellphonereg_cellphone, 
+			$.post("/index.php/User/register", { cellphone: cellphonereg_cellphone, 
 			pwd: cellphonereg__pwd, pwd2: cellphonereg__pwd2,nickname:cellphonereg__nickname,
 			 vcode:cellphonereg__vcode},function(data){
 			 	//做个判断，返回成功执行下面的代码，跳转到注册成功页面
