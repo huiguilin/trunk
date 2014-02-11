@@ -92,7 +92,7 @@ $(function(){
     }
 	// 查查完整地图弹窗结束
 
-    $('#download_coupon_btn').click(function(event){
+    $('#download_coupon_btn').add('#download_coupon_btn_two').click(function(event){
         var phone_number = 18600500862;
         var coupon_id = $("#download_coupon_id").text();
         $.post("/index.php/Coupon/sendCouponCode", { phone_number : phone_number, coupon_id : coupon_id
