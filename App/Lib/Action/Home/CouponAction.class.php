@@ -106,9 +106,7 @@ class CouponAction extends Action {
         $this->display();
     }
 
-    public function sendCoupon() {
-        $_POST['phone_number'] = 18611244143;
-        $_POST['coupon_id'] = 3;
+    public function sendCouponCode() {
         $result = array(
             'status' => 0,
             'info' => "",
@@ -120,28 +118,41 @@ class CouponAction extends Action {
         }
 
         $couponHelper = new CouponModel();
-        $ids = array((int)$_POST['coupon_id']);
+        $couponId = (int)$_POST['coupon_id'];
+        $ids = array($couponId);
         $couponInfo = $couponHelper->getCouponByCouponId($ids);
         if (empty($couponInfo)) {
            $result['info'] = "wrong counpon_id!";
            $this->ajaxReturn($result,'JSON');
            return TRUE;
         }
-        $phoneNumber = (int)$_POST['phone_number'];
+        $phoneNumber = (int)$_SESSION['user']['phone_number'];
         $code = 7891234;
         $partnerName = $couponInfo[0]['name'];
-        $result = $this->send($phoneNumber, $code, $partnerName);
+        $result = $this->send($phoneNumber, $code, $partnerName, $couponId);
         $this->ajaxReturn($result, "JSON");
         return TRUE;
     }
 
-    private function send($phoneNumber, $code, $partnerName) {
+    private function send($phoneNumber, $code, $partnerName, $couponId) {
         if (empty($phoneNumber) || empty($code)) {
             return FALSE;
         }
         session("pcheck","{$code}");
-        //TBC
-        $result = sendCodeToMobile($phoneNumber, "您的{$partnerName}优惠券码是【{$code}】，感谢您使用【惠桂林】");
+        //TODO
+        $text = "您的{$partnerName}优惠券码是【{$code}】，感谢您使用【惠桂林】";
+        $text = $code;
+        $result = sendCodeToMobile($phoneNumber, $text);
+        $addData = array(
+            'user_id' => $_SESSION['user']['user_id'],
+            'coupon_id' => $couponId,
+            'status' => 1,
+            'code' => $code,
+            'createtime' => date('Y-m-d H:i:s'),
+            'evaluated' => 0,
+        );
+        $helper = new UserCouponModel();
+        $helper->addUserCoupon($addData);
         $data = array(
             'status' => 1,
             'info' => '发送成功',

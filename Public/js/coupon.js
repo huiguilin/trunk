@@ -63,7 +63,15 @@ $(function(){
 
 	//分类+位置Hover特效结束
 
-	
+    $('#download_coupon_btn').click(function(event){
+        $.post("/index.php/Coupon/sendCouponCode", { phone_number : phone_number
+            },function(data){
+            //做个判断，返回成功执行下面的代码，跳转到注册成功页面
+            if(data.status == 1){
+                alert('验证码已经发送');
+            }
+            },"json");
+        });
 
 
 })

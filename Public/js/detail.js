@@ -91,4 +91,19 @@ $(function(){
 		map.addControl(ctrl_sca);
     }
 	// 查查完整地图弹窗结束
+
+    $('#download_coupon_btn').click(function(event){
+        var phone_number = 18600500862;
+        var coupon_id = $("#download_coupon_id").text();
+        $.post("/index.php/Coupon/sendCouponCode", { phone_number : phone_number, coupon_id : coupon_id
+            },function(data){
+            //做个判断，返回成功执行下面的代码，跳转到注册成功页面
+            if(data.status == 1){
+                alert('验证码已经发送');
+            }
+            
+            },"json");
+        });
+
+
 })

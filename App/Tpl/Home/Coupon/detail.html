@@ -51,7 +51,7 @@
 					<p class="coupon_title"><span>{$coupon.title}</span></p>
 				</div>
 				<a href="javascript:print();" class="print_coupon_btn">打印此优惠券</a>
-				<a href="" class="download_coupon_btn">下载到手机</a>
+				<a href="javascript:void(0);" class="download_coupon_btn" id="download_coupon_btn">下载到手机</a>
 				<img src="__PUBLIC__/{$coupon.picture_path}" class="coupon_pic">
 				<div class="coupon_detail_desc_box">
 					<p class="desc_title">详细介绍</p>
@@ -75,7 +75,8 @@
 					</div>
 				</div>
 				<a href="" class="print_coupon_btn print_coupon_btn2">打印此优惠券</a>
-				<a href="" class="download_coupon_btn">下载到手机</a>
+				<a href="javascript:void(0);" class="download_coupon_btn" id="download_coupon_btn">下载到手机</a>
+				<a id="download_coupon_id" style="visibility:hidden" value="{$coupon.coupon_id}">{$coupon.coupon_id}</a>
 			</div>
 			<div class="share">
 				<a href="" class="add_favorite">收藏到我的券包</a>

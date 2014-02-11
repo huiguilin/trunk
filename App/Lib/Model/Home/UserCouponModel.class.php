@@ -30,4 +30,13 @@ class UserCouponModel extends Model {
         return $data;
     }
 
+
+    public function addUserCoupon($data = array()) {
+        if (empty($data)) {
+            return false;
+        }
+        $result = $this->data($data)->add();
+        return $result;
+    }
+
 }
