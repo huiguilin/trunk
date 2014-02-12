@@ -282,6 +282,22 @@ $(function(){
 
         });
 
+    $('#validate_vcode').click(function(event){
+        var phone_number = $('#bingdingcellphone_No').val();
+		var vcode =$('#bingdingcellphone_vcode').val();
+        if (phone_number == "") {
+            return;
+        }
+        $.post("/index.php/User/bindPhone", { cellphone_number : phone_number, vcode:vcode
+            },function(data){
+            //做个判断，返回成功执行下面的代码，跳转到注册成功页面
+            if(data.status == 1){
+                alert('绑定成功');
+            }
+            },"json");
+
+        });
+
 	//返回原来页面特效
 	$('#return_page').click(function(event) {
 		$('#Userreg_box').bPopup().close();
