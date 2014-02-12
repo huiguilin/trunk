@@ -292,7 +292,7 @@ $(function(){
     $('#sendcode').click(function(event){
         var phone_number = $('#Userreg_box #u_bottom #cellphone_box form input.one').val();
 		var username =$('#Userlogin_box #u_middle_box form input.one').val();
-        if (empty(phone_number)) {
+        if (phone_number == "") {
             return;
         }
         $.post("/index.php/User/sendCheckCode", { phone_number : phone_number

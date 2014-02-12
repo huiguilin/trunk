@@ -126,7 +126,12 @@ class CouponAction extends Action {
            $this->ajaxReturn($result,'JSON');
            return TRUE;
         }
-        $phoneNumber = (int)$_SESSION['user']['phone_number'];
+        $phoneNumber = $_SESSION['user']['phone_number'];
+        if (empty($phonNumber) || !is_numeric($phoneNumber) || $_POST['phone_number'] != $phoneNumber) {
+            $result['info'] = "erro phone number!";
+            $this->ajaxReturn($result, 'JSON');
+            return TRUE;
+        }
         $code = 7891234;
         $partnerName = $couponInfo[0]['name'];
         $result = $this->send($phoneNumber, $code, $partnerName, $couponId);
@@ -142,7 +147,16 @@ class CouponAction extends Action {
         //TODO
         $text = "您的{$partnerName}优惠券码是【{$code}】，感谢您使用【惠桂林】";
         $text = $code;
+
+
         $result = sendCodeToMobile($phoneNumber, $text);
+        if ($result['result'] != 1) {
+            $data = array(
+                    'status' => 0,
+                    'info' => '发送失败',
+                    );
+            return $data; 
+        }
         $addData = array(
             'user_id' => $_SESSION['user']['user_id'],
             'coupon_id' => $couponId,

@@ -48,11 +48,43 @@ function sendCodeToMobile($phoneNumber, $text, $timeout = 10) {
     curl_setopt($ch, CURLOPT_URL, $url); 
     curl_setopt($ch, CURLOPT_TIMEOUT, $timeout); 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); 
-    $info = curl_exec($ch);
+    $info = curl_exec($ch); 
+
+    $dom=new DOMDocument();
+    $dom->loadXML($info);
+    $result = getArray($dom->documentElement);
+    return $result;
     #$info = xml_to_array($info);
     #$info = json_encode($info, TRUE);
     return $info;
 }
+
+
+function getArray($node){
+    $array=false;
+    if($node->hasAttributes()){
+        foreach ($node->attributes as $attr){
+            $array[$attr->nodeName]=$attr->nodeValue;
+        }
+    }
+    if($node->hasChildNodes()){
+        if($node->childNodes->length==1){
+            $array[$node->firstChild->nodeName]=getArray($node->firstChild);
+        } else {
+            foreach ($node->childNodes as $childNode){
+                if($childNode->nodeType!=XML_TEXT_NODE){
+                    $array[$childNode->nodeName][]=getArray($childNode);
+                }
+            }
+        }
+    } else {
+        return $node->nodeValue;
+    }
+    return $array;
+}
+
+
+
 
 
 function xml_to_array($xml) 
