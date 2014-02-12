@@ -198,6 +198,16 @@ class UserAction extends Action {
             return FALSE;
         }
         $code = mt_rand(1, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
+        $helper = new UserProfileModel();
+        $result = $helper->getUserProfileByPhoneNumber($phone);
+        if (!empty($result)) {
+            $data = array(
+                'status' => 0,
+                'info' => '该手机已经在惠桂林注册过了，换一个试试吧^^',
+            );
+            $this->ajaxReturn($data,'JSON');
+            return TRUE;
+        }
         $data = $this->send($phoneNumber, $code);
         $this->ajaxReturn($data,'JSON');
         return TRUE;
@@ -242,20 +252,21 @@ class UserAction extends Action {
     }
 
     public function bindPhone() {
-       $phoneNumber = !empty($_POST['cellphone_number']) ? $_POST['cellphone_number'] : 0;
-       $email = !empty($_SESSION['user']['email']) ? $_SESSION['user']['email'] : "";
-       $checkCode = !empty($_POST['vcode']) ? $_POST['vcode'] : 0;
-       if (empty($phoneNumber) || empty($email)) {
-           return TRUE;
-       }
-       if ($_SESSION['pcheck'] != $checkCode) {
-           $this->error('验证码错误');
-           return TRUE;
-       }
-        $condition = "email = '{$mail}'";
+        $phoneNumber = !empty($_POST['cellphone_number']) ? $_POST['cellphone_number'] : 0;
+        $email = !empty($_SESSION['user']['email']) ? $_SESSION['user']['email'] : "";
+        $checkCode = !empty($_POST['vcode']) ? $_POST['vcode'] : 0;
+        if (empty($phoneNumber) || empty($email)) {
+            return TRUE;
+        }
+        if ($_SESSION['pcheck'] != $checkCode) {
+            $this->error('验证码错误');
+            return TRUE;
+        }
+        $condition = "email = '{$email}'";
         $data = array(
-            'phone_number' => $phoneNumber,
-        );
+                'phone_number' => $phoneNumber,
+                );
+        $helper = new UserProfileModel();
         $result = $helper->updateUser($condition, $data);
         if (!empty($result)) {
             $data = array();
