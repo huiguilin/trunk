@@ -622,6 +622,7 @@ input{
 	height: 400px;
 	margin-top: 20px;
 	position: relative;
+	display: none;
 }
 #Userreg_box #u_bottom #email_box form p{
 	color: #333333;
@@ -822,7 +823,6 @@ input{
 	height: 400px;
 	margin-top: 20px;
 	position: relative;
-	display: none;
 }
 #Userreg_box #u_bottom #cellphone_box form p{
 	color: #333333;
@@ -916,6 +916,17 @@ input{
 	font-size: 13px;
 	background: url(../images/ico_12.png) no-repeat;
 	padding-left: 20px;
+}
+#Userreg_box #u_bottom #cellphone_box form p.thirteen{
+	position: absolute;
+	top: 425px;
+	left: 115px;
+	font-size: 13px;
+}
+#Userreg_box #u_bottom #cellphone_box form p.thirteen a{
+	color: #4467A3;
+	font-weight:bold;
+
 }
 #Userreg_box #u_bottom #cellphone_box form input{
 	border: 1px solid #C9C9C9;
