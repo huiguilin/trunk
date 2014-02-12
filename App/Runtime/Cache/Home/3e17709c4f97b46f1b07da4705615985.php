@@ -14,7 +14,7 @@
 <script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/footer.js"></script>
-<title>法律声明</title>
+<title>订阅相关使用帮助</title>
 <!--[if IE 6]>
 <!--背景图片透明方法-->
 <script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
@@ -361,29 +361,53 @@
 		
 		<!-- 左边内容区域结束 -->
 		
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/legalstatement.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/faq.css" />
 <!-- 关于我们页面的内容 -->
-<div id="left_card">
-	<p class="one">法律声明</p>
+<div id="faq01_box">
+	<p class="one">网站帮助</p>
+	<div id="left_nav_box">
+		<ul>
+			<li><a href="<?php echo U("Help/faq01");?>">优惠券</a></li>
+			<li style="display:none;"><a href="<?php echo U("Help/faq02");?>">会员卡/礼品</a></li>
+			<li style="display:none;"><a href="<?php echo U("Help/faq03");?>">商户/点评</a></li>
+			<li style="display:none;"><a href="<?php echo U("Help/faq04");?>">手机</a></li>
+			<li><a href="<?php echo U("Help/faq05");?>" class="red">订阅/关注</a></li>
+		</ul>
+		<div>
+			<p>问题搜索</p>
+			<form action="<?php echo U('Help/search');?>" method="get">
+				<input type="text" placeholder="请输入问题关键字" id="faq05_search_textbox" name="keyword"/>
+                <input type="hidden" name="type" value="5" />
+				<input name="faq05_btn_search" id="faq05_btn_search" type="submit" value="搜索"/>
+			</form>
+		</div>
+	</div>
+	<div id="right_content_box">
+		<div id="directory">
+			<p>订阅/关注相关的常见问题</p>
+			<ul>
+			<ul>
+            <?php if(is_array($data)): foreach($data as $num=>$vo): ?><li><a href="#q<?php echo ($vo["help_id"]); ?>">Q<?php echo ($num+1); ?>：<?php echo ($vo["question"]); ?></a></li><?php endforeach; endif; ?>
+			</ul>
+			</ul>
+		</div>
+		<div id="content">
+			<p class="title">我们的回答</p>
+			<ul>
+            <?php if(is_array($data)): foreach($data as $num=>$vo): ?><li>
+					<a class="answer_title" name="q<?php echo ($vo["help_id"]); ?>">Q<?php echo ($num+1); ?>：<?php echo ($vo["question"]); ?></a>
+					<p class="answer_content"><?php echo ($vo["answer"]); ?></p>
+				</li><?php endforeach; endif; ?>
+			</ul>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- 关于我们页面的内容结束 -->
+</div>
 
-	<p class="two">
-		惠桂林网（www.huigl.com）所提供的各项服务的所有权和运作权归桂林四和网络科技有限公司（以下简称“本公司”）。除特别说明或者法律另有特别规定者外，本公司是惠桂林网及其中所刊登全部资料、信息的知识产权的唯一所有人。
-		</br></br>
-		本网站所刊登的全部资料包括但不限于网站架构、程序设计、页面图文信息（包括并不限于商户描述、用户点评、照片图片、用户简评、回应、榜单等），本站首页、及各频道的专题内容，以及依据本网站独有的分析模型计算的商户星级、人均花费、口味、环境、服务分数、推荐菜/套系/产品等数据信息。
-		</br></br>
-		除法律特别规定或者政府明确要求者外，在未取得本站书面明确许可前，任何单位或者个人不得将本网站的任何知识产权对象进行任何目的的使用。
-		</br></br>
-		任何单位或个人不得以任何方式,以任何文字对本站资料作全部和局部复制、转载、引用和链接。
-		</br></br>
-		任何单位或者个人不得以任何方式引诱本网站注册用户或者第三方复制转载本网站内容，或者同意该单位或者个人复制转载本网站内容。任何注册用户将在本网站注册用户名和密码提供给任何第三方用于许可其复制本站内容的，将构成对注册协议的违反，并可能导致其账户被关闭或者处罚。
-		</br></br>
-		会员保证不将已发表于本站的信息资料，以任何形式发布或授权其它网站（及媒体）使用。同时，惠桂林网保留删除站内各类不符合规定点评而不通知会员的权利。
-		</br></br>
-		任何违反本站知识产权声明的行为，本站保留进一步追究法律责任的权利。
-	</p>	
-</div>
-</div>
-<div id="bottom_info">
+<!-- 最底部区域 -->
+	<div id="bottom_info">
 		<div id="bottom_box">
 			<div class="p_box">
 				<p>版权归惠桂林所有，未经书面授权禁止复制或建立镜像。 Email：<a href="mailto:service@huigl.com">service@huigl.com</a></p>
@@ -406,3 +430,4 @@
 			</ul>
 		</div>
 </div>
+<!-- 最底部区域结束 -->

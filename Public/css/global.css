@@ -190,7 +190,7 @@ input{
 #cellphone_version_box #iphone_box ul li img{
 	position: absolute;
 	top: 45px;
-	left: 85px;
+	left: 75px;
 	width: 86px;
 	height: 86px;
 }
@@ -257,6 +257,8 @@ input{
 	position: absolute;
 	top: 45px;
 	left: 75px;
+	width: 86px;
+	height: 86px;
 }
 #cellphone_version_box #android_box ul li p{
 	font-size: 13px;
@@ -321,6 +323,8 @@ input{
 	position: absolute;
 	top: 45px;
 	left: 75px;
+	width: 86px;
+	height: 86px;
 }
 #cellphone_version_box #wp_box ul li p{
 	font-size: 13px;
