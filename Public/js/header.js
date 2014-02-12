@@ -749,51 +749,68 @@ $(function(){
 	
 	//用户邮箱注册页面验证结束
 	$('#reg_now').click(function(event) {
-		var reg_zindex = $('#Userreg_box').css('z-index');
-		var login_zindex = $('#Userlogin_box').css('z-index');
-		var temp;
-		if(reg_zindex == "auto" || login_zindex =="auto"){
-			$('#Userreg_box').bPopup({
-           		modalClose: false,
-	        	opacity: 0.6,
-	        	position: [320, 15],//x, y  
-        	});
+		$('#Userlogin_box').bPopup().close();
+		$('#Userreg_box').bPopup({
+         
+        });
+        return false;
+		// var reg_zindex = $('#Userreg_box').css('z-index');
+		// var login_zindex = $('#Userlogin_box').css('z-index');
+		// var temp;
+		// if(reg_zindex == "auto" || login_zindex =="auto"){
+		// 	$('#Userreg_box').bPopup({
+  //          		modalClose: false,
+	 //        	opacity: 0.6,
+	 //        	position: [320, 15],//x, y  
+  //       	});
         	
-		}
-  		else{
-  			temp = reg_zindex;
-  			reg_zindex = login_zindex;
-  			login_zindex =temp;
-  			$('#Userlogin_box').css('z-index', login_zindex);
-  			$('#Userreg_box').css('z-index', reg_zindex);
-  			$('#Userreg_box').css('display', 'block');
-  			$('#Userlogin_box').css('display', 'none');
+		// }
+  // 		else{
+  // 			temp = reg_zindex;
+  // 			reg_zindex = login_zindex;
+  // 			login_zindex =temp;
+  // 			$('#Userlogin_box').css('z-index', login_zindex);
+  // 			$('#Userreg_box').css('z-index', reg_zindex);
+  // 			$('#Userreg_box').css('display', 'block');
+  // 			$('#Userlogin_box').css('display', 'none');
   			
-  		}
+  // 		}
+  // 		return false;
+	});
+
+	$('#login_now_cellphone').click(function(event) {
+		$('#Userreg_box').bPopup().close();
+		$('#Userlogin_box').bPopup({
+         
+        });
+		// var reg_zindex = $('#Userreg_box').css('z-index');
+		// var login_zindex = $('#Userlogin_box').css('z-index');
+		// var temp;
+		// if(reg_zindex == "auto" || login_zindex =="auto"){
+		// 	$('#Userlogin_box').bPopup({
+  //          		modalClose: false,
+	 //        	opacity: 0.6,
+	 //        	position: [320, 15],//x, y  
+  //       	});
+        	
+		// }
+		// else{
+		// 	temp = reg_zindex;
+  // 			reg_zindex = login_zindex;
+  // 			login_zindex =temp;
+  // 			$('#Userlogin_box').css('z-index', login_zindex);
+  // 			$('#Userreg_box').css('z-index', reg_zindex);
+  // 			$('#Userreg_box').css('display', 'none');
+  // 			$('#Userlogin_box').css('display', 'block');
+		// }
   		return false;
 	});
 
-	$('#login_now').click(function(event) {
-		var reg_zindex = $('#Userreg_box').css('z-index');
-		var login_zindex = $('#Userlogin_box').css('z-index');
-		var temp;
-		if(reg_zindex == "auto" || login_zindex =="auto"){
-			$('#Userlogin_box').bPopup({
-           		modalClose: false,
-	        	opacity: 0.6,
-	        	position: [320, 15],//x, y  
-        	});
-        	
-		}
-		else{
-			temp = reg_zindex;
-  			reg_zindex = login_zindex;
-  			login_zindex =temp;
-  			$('#Userlogin_box').css('z-index', login_zindex);
-  			$('#Userreg_box').css('z-index', reg_zindex);
-  			$('#Userreg_box').css('display', 'none');
-  			$('#Userlogin_box').css('display', 'block');
-		}
+	$('#login_now_email').click(function(event) {
+		$('#Userreg_box').bPopup().close();
+		$('#Userlogin_box').bPopup({
+         
+        });
   		return false;
 	});
 	//用户注册弹框效果结束
