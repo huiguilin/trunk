@@ -3,6 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
+<meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/about_tpl.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
@@ -165,12 +167,12 @@
 						<p class="five">验证码</p>
 						<input type="text" name="reg_vcode" class="five"/>
 						<a href="" id="regemail_vcode_not_clear">看不清</a>
-						<img src="<?php echo U("Home/Login/verifyImg");?>" class="one">
+						<img src="/index.php/User/verifyImg" class="one">
 						<input type="checkbox" name="license" class="six" checked="true">
 						<p class="six">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
 						</p>
-						<input type="submit" name="email_reg_btn" id="email_reg_btn" value="注册" />
+						<input type="" name="email_reg_btn" id="email_reg_btn" value="注册" />
 						<p class="seven">已经是惠桂林的用户？点击<a href="" id="login_now">登录.</a></p>
 						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 						<p class="nine" id="reg_hidebox02">密码由6-32位的字母、数字或符号组成</p>
@@ -183,26 +185,26 @@
 				<div id="cellphone_box" class="hide">
 					<form action="" method="post">
 						<p class="one">手机号码</p>
-						<input type="text" name="email" class="one"/>
-						<a href="" id="sendcode">点击发送验证码</a>
+						<input type="text" name="cellphone" class="one"/>
+						<a href="javascript:void(0)" id="sendcode" name="sendcode">点击发送验证码</a>
 						<p class="seven">验证码</p>
 						<input type="text" name="vcode" class="six"/>
 						<p class="two">密码</p>
 						<input type="password" name="pwd" class="two"/>
 						<ul>
-							<li>弱</li>
-							<li>中</li>
-							<li>强</li>
+							<li id="cellphone_pwd_low">弱</li>
+							<li id="cellphone_pwd_mid">中</li>
+							<li id="cellphone_pwd_high">强</li>
 						</ul>	
 						<p class="three">确认密码</p>
 						<input type="password" name="pwd2" class="three"/>
 						<p class="four">昵称</p>
 						<input type="text" name="nickname" class="four"/>
-						<input type="checkbox" name="license" class="five">
+						<input type="checkbox" name="license" class="five" checked="true">
 						<p class="five">
 							我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
 						</p>
-						<input type="submit" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
+						<input type="" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
 						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 						<p class="nine" id="reg_hidebox02">请输入手机收到的短信验证码</p>
 						<p class="ten" id="reg_hidebox03">密码由6-32位的字母、数字或符号组成</p>
@@ -272,13 +274,13 @@
 					<p class="three">验证码</p>
 					<input type="textbox" name="vcode" class="three"/>
 					<a href="" id="vcode_not_clear">看不清</a>
-					<img src="<?php echo U("Home/Login/verifyImg");?>" id="vcode_img">
+					<img src="/index.php/User/verifyImg" id="vcode_img">
 					<a href="" id="forgetpwd">忘记密码?</a>
 					<input type="checkbox" name="rememberpwd" class="four">
 					<p class="four">记住密码</p>
 					<input type="checkbox" name="autologin" class="five">
 					<p class="five">下次自动登录</p>
-					<input type="submit" name="btn_login" id="btn_login" value="登录" disabled="disabled"/>
+					<input type="" name="btn_login" id="btn_login" value="登录" disabled="disabled"/>
 					<p class="six">还没有账户？<a href="" id="reg_now">立即注册</a></p>
 					<p class="seven" id="login_hidebox01">请输入邮箱/手机号</p>
 					<p class="eight" id="login_hidebox02">请输入密码</p>
@@ -401,126 +403,8 @@
 				
 </div>
 <!-- 关于我们页面的内容结束 -->
+</div>
 
-		<!-- 右边内容区域 -->
-		<div id="main_right">
-			<div id="app">
-				<p>扫一下,关注惠桂林微信</p>
-				<img src="__PUBLIC__/images/barcode.png" alt="二维码">
-				<a>点击下载手机APP</a>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">人气王</p>
-				<ul>
-					<li>
-						<a href="" class="title">李记米粉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li>
-						<a href="" class="title">刘姥姥奶酪</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title">大时代烤肉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-				</ul>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">人气王</p>
-				<ul>
-					<li>
-						<a href="" class="title">李记米粉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li>
-						<a href="" class="title">刘姥姥奶酪</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title">大时代烤肉</a>
-						<img class="ico" src="__PUBLIC__/images/ico_08.png" alt="" />
-						<p class="yhj">优惠劵</p>
-						<p class="hyk">会员卡</p>
-						<p class="one">[8]</p>
-						<p class="two">[2]</p>
-						<p class="vip">VIP</p>
-					</li>
-				</ul>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">热门优惠劵</p>
-				<ul>
-					<li>
-						<a href="" class="title">李记米粉</a>
-						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
-					</li>
-					<li>
-						<a href="" class="title">刘姥姥奶酪</a>
-						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title">大时代烤肉</a>
-						<p class="content">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年！</p>
-					</li>
-				</ul>
-			</div>
-			<div class="hot_box">
-				<p class="rqw">热门会员卡</p>
-				<ul>
-					<li>
-						<a href="" class="title title2">李记米粉</a>
-						<p class="six">会员专享8.8折</p>
-						<div>
-							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-						</div>
-					</li>
-					<li>
-						<a href="" class="title title3">刘姥姥奶酪</a>
-						<p class="seven">会员专享8.8折</p>
-						<div class="blue">
-							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-						</div>
-					</li>
-					<li class="no_border_bottom">
-						<a href="" class="title title2">大时代烤肉</a>
-						<p class="six">会员专享8.8折</p>
-						<div class="purple">
-							<img class="ico2"src="__PUBLIC__/images/vip.png" alt="" />
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<!-- 右边内容区域结束 -->
-	</div>
-	<!-- 主要内容区域结束 -->
-<!-- 内容区域结束 -->
 <!-- 最底部区域 -->
 	<div id="bottom_info">
 		<div id="bottom_box">
@@ -546,5 +430,3 @@
 		</div>
 </div>
 <!-- 最底部区域结束 -->
-</body>
-</html>

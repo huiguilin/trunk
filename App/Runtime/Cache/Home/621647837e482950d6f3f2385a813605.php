@@ -3,6 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
+<meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/about_tpl.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
@@ -126,10 +128,17 @@
 	<div id="top_logo_box">
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/logo.png" alt="惠桂林" id="logo" /></a>
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/slogan.png" alt="吃喝玩乐，惠享生活" id="slogan" /></a>
-		<ul id="login">
-			<li class="one"><a class="one" id="Userlogin">登录</a></li>
-			<li><a class="two" id="Userreg">快速注册</a></li>
-		</ul>
+		<!-- 判断登录Session,来显示不同的ul -->
+		<?php if($_SESSION['user_id']== ''): ?><ul id="No_login_box">
+				<li class="one"><a class="one" id="Userlogin">登录</a></li>
+				<li><a class="two" id="Userreg">快速注册</a></li>
+			</ul>
+			<?php else: ?>
+			<ul id="login_box">
+				<li><a>您好,effie</a></li>
+				<li class="no_right_border"><a href="">我的惠桂林</a></li>
+			</ul><?php endif; ?>
+
 		<div id="Userreg_box">
 			<div id="u_top">
 				<a id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
@@ -158,12 +167,12 @@
 						<p class="five">验证码</p>
 						<input type="text" name="reg_vcode" class="five"/>
 						<a href="" id="regemail_vcode_not_clear">看不清</a>
-						<img src="<?php echo U("Home/Login/verifyImg");?>" class="one">
+						<img src="/index.php/User/verifyImg" class="one">
 						<input type="checkbox" name="license" class="six" checked="true">
 						<p class="six">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
 						</p>
-						<input type="submit" name="email_reg_btn" id="email_reg_btn" value="注册" />
+						<input type="" name="email_reg_btn" id="email_reg_btn" value="注册" />
 						<p class="seven">已经是惠桂林的用户？点击<a href="" id="login_now">登录.</a></p>
 						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 						<p class="nine" id="reg_hidebox02">密码由6-32位的字母、数字或符号组成</p>
@@ -176,26 +185,26 @@
 				<div id="cellphone_box" class="hide">
 					<form action="" method="post">
 						<p class="one">手机号码</p>
-						<input type="text" name="email" class="one"/>
-						<a href="" id="sendcode">点击发送验证码</a>
+						<input type="text" name="cellphone" class="one"/>
+						<a href="javascript:void(0)" id="sendcode" name="sendcode">点击发送验证码</a>
 						<p class="seven">验证码</p>
 						<input type="text" name="vcode" class="six"/>
 						<p class="two">密码</p>
 						<input type="password" name="pwd" class="two"/>
 						<ul>
-							<li>弱</li>
-							<li>中</li>
-							<li>强</li>
+							<li id="cellphone_pwd_low">弱</li>
+							<li id="cellphone_pwd_mid">中</li>
+							<li id="cellphone_pwd_high">强</li>
 						</ul>	
 						<p class="three">确认密码</p>
 						<input type="password" name="pwd2" class="three"/>
 						<p class="four">昵称</p>
 						<input type="text" name="nickname" class="four"/>
-						<input type="checkbox" name="license" class="five">
+						<input type="checkbox" name="license" class="five" checked="true">
 						<p class="five">
 							我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
 						</p>
-						<input type="submit" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
+						<input type="" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
 						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 						<p class="nine" id="reg_hidebox02">请输入手机收到的短信验证码</p>
 						<p class="ten" id="reg_hidebox03">密码由6-32位的字母、数字或符号组成</p>
@@ -265,13 +274,13 @@
 					<p class="three">验证码</p>
 					<input type="textbox" name="vcode" class="three"/>
 					<a href="" id="vcode_not_clear">看不清</a>
-					<img src="<?php echo U("Home/Login/verifyImg");?>" id="vcode_img">
+					<img src="/index.php/User/verifyImg" id="vcode_img">
 					<a href="" id="forgetpwd">忘记密码?</a>
 					<input type="checkbox" name="rememberpwd" class="four">
 					<p class="four">记住密码</p>
 					<input type="checkbox" name="autologin" class="five">
 					<p class="five">下次自动登录</p>
-					<input type="submit" name="btn_login" id="btn_login" value="登录" disabled="disabled"/>
+					<input type="" name="btn_login" id="btn_login" value="登录" disabled="disabled"/>
 					<p class="six">还没有账户？<a href="" id="reg_now">立即注册</a></p>
 					<p class="seven" id="login_hidebox01">请输入邮箱/手机号</p>
 					<p class="eight" id="login_hidebox02">请输入密码</p>
@@ -317,7 +326,7 @@
 			</div>
 		</div>
 	</div>
-<!-- Logo区域结束 -->
+<!-- Logo区域结束
 
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!--  导航区域 -->
@@ -331,10 +340,10 @@
 			<ul id="nav">
 				<li><a href="<?php echo U("Index/index");?>">首页</a></li>
 				<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-				<li><a href="<?php echo U("Card/card");?>">会员卡</a></li>
-				<li class="border_right "><a href="">商户</a></li>
+				<!-- <li><a href="<?php echo U("Card/card");?>">会员卡</a></li> -->
+				<!-- <li class="border_right "><a href="">商户</a></li> -->
 			</ul>
-			<form id="search_box">
+			<form id="search_box" method="get" action="<?php echo U("Home/Search/search");?>">
 				<input id="search_con" type="text" placeholder="桂林环球美食节" name="search_con"/>
 				<input id="search_btn" type="submit" value="" name="search_btn"/>
 			</form>

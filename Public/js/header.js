@@ -260,31 +260,8 @@ $(function(){
 			$('#bingdingcellphone_vcode_hidden_tips').css('display', 'block');
 			$('#bingdingcellphone_vcode_hidden_tips').text('请输入验证码');
 		}else{
-			if(vcode.val() =="1234"){
-				$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul.one').css('display', 'none');
-				$('#Userreg_box #UserregSuccess_email #bindingcellphone_box #bingdingcellphone_success').css('display', 'block');
-			}
-			else{
-				$('#bingdingcellphone_vcode_hidden_tips').css('display', 'block');
-				$('#bingdingcellphone_vcode_hidden_tips').text('输入的验证码有误');
-			}
-		}
-
-	});
-	$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #validate_vcode').click(function(event) {
-		var vcode =$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #bingdingcellphone_vcode');
-		if(vcode.val() ==""){
-			$('#bingdingcellphone_vcode_hidden_tips').css('display', 'block');
-			$('#bingdingcellphone_vcode_hidden_tips').text('请输入验证码');
-		}else{
-			if(vcode.val() =="1234"){
-				$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul.one').css('display', 'none');
-				$('#Userreg_box #UserregSuccess_email #bindingcellphone_box #bingdingcellphone_success').css('display', 'block');
-			}
-			else{
-				$('#bingdingcellphone_vcode_hidden_tips').css('display', 'block');
-				$('#bingdingcellphone_vcode_hidden_tips').text('输入的验证码有误');
-			}
+			$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul.one').css('display', 'none');
+			$('#Userreg_box #UserregSuccess_email #bindingcellphone_box #bingdingcellphone_success').css('display', 'block');
 		}
 
 	});
@@ -836,8 +813,6 @@ $(function(){
 		else{
 			return false;
 		}
-
-		
 	});
 	//邮箱注册注册button特效结束
 	//手机注册注册button特效
