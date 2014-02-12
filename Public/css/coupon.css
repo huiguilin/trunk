@@ -288,21 +288,21 @@
 #main #coupon_box ul.coupon_content li p.one{
 	position: absolute;
 	top: 40px;
-	right: 9px;
+	left: 182px;
 	width: 152px;
 	
 }
 #main #coupon_box ul.coupon_content li p.two{
 	position: absolute;
 	top: 100px;
-	right: 9px;
+	left: 182px;
 	width: 152px;
 	color: #999999;
 }
 #main #coupon_box ul.coupon_content li p.three{
 	position: absolute;
 	top: 122px;
-	right: 9px;
+	left: 182px;
 	width: 152px;
 	color: #999999;
 }
@@ -333,7 +333,7 @@
 	font-weight: bold;
 	position: absolute;
 	top: 13px;
-	right: 29px;
+	left: 182px;
 }
 #main #coupon_box ul.coupon_content li a.download{
 	color: #ED5565;
