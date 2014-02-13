@@ -73,10 +73,9 @@
 			<!-- 热门分类区域结束 -->
 			<!-- 广告区域 -->
 			<div id="ad_box">
-				<img src="__PUBLIC__/images/flash/1.png">
-				<img src="__PUBLIC__/images/flash/2.png">
-				<img src="__PUBLIC__/images/flash/3.png">
-				<img src="__PUBLIC__/images/flash/4.png">
+            <foreach name="ads" item="ad">
+				<img src="__PUBLIC__/{$ad.img_path}">
+            </foreach>
 				<ul>
 					<li>1</li>
 					<li>2</li>
@@ -106,7 +105,7 @@
                 <foreach name="hot_partners" item="hpartner">
 					<li>
 						<a href="">{$hpartner.name}</a>
-						<img src="__PUBLIC__/{$hpartner.picture_path}">
+						<img src="__PUBLIC__/{$hpartner.header_path}">
 					</li>
                 </foreach>
 				</ul>
