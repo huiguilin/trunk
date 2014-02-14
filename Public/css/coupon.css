@@ -411,7 +411,9 @@
 	position: absolute;
 	top: 27px;
 	left: 8px;
-	width: 170px;
+	width: 165px;
+	height: 45px;
+	overflow: hidden;
 }
 #main #coupon_box #hot_coupon_box ul.hot_coupon li img{
 	width: 62px;
