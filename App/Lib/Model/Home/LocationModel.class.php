@@ -14,7 +14,7 @@ class LocationModel extends Model {
         if (isset($params['belong'])) {
             $str .= " AND belong IN ({$params['belong']})";
         }
-        $data = $this->where($str)->select();
+        $data = $this->where($str)->limit($params['limit'])->select();
         return $data;
     }
 

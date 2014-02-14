@@ -14,7 +14,7 @@ class CategoryModel extends Model {
         if (isset($params['status'])) {
             $str .= " AND status IN ({$params['status']})";
         }
-        $data = $this->where($str)->select();
+        $data = $this->where($str)->limit($params['limit'])->select();
         return $data;
     }
 

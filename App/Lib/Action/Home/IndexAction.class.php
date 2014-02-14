@@ -45,13 +45,21 @@ class IndexAction extends Action {
 
     private function getCategory() {
         $helper = new CategoryModel();
-        $category = $helper->getCategoryInfo();
+        $params = array(
+            'limit' => '0,6',
+            'status' => 1,
+        );
+        $category = $helper->getCategoryInfo($params);
         return $category;
     }
 
     private function getLocation() {
        $helper = new LocationModel();
-       $locationInfo = $helper->getLocationInfo();
+        $params = array(
+            'limit' => '0,6',
+            'status' => 1,
+        );
+       $locationInfo = $helper->getLocationInfo($params);
        return $locationInfo;
     }
 
