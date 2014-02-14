@@ -50,6 +50,7 @@ class IndexAction extends Action {
         $info = $this->cutCouponWords($info);
         $params = array(
             'label_type' => 'eat',
+            'limit' => '0,4',
         );
         $eatCoupon = $helper->getCoupon($params);
         $eatCoupon = $this->cutCouponWords($eatCoupon);
@@ -75,7 +76,7 @@ class IndexAction extends Action {
             return array();
         }
         foreach ($info AS $key => $value) {
-            $info[$key]['description'] = mb_substr($info[$key]['description'], 0, 30, 'UTF-8');
+            $info[$key]['description'] = mb_substr($info[$key]['description'], 0, 50, 'UTF-8');
             $info[$key]['title'] = mb_substr($info[$key]['title'], 0, 20, 'UTF-8');
         }
         return $info;

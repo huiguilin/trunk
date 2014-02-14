@@ -505,12 +505,9 @@
 #main #foot_and_footsort_box div.footsort_box ul li a.one{
 	color: #ED5565;
 	font-weight: bold;
-	background: url(../images/sort_01.png) no-repeat 0 4px;
+	background: url(../images/sort_01.png) no-repeat 0 0px;
 	padding-left: 25px;
-	display: block;
-	position: absolute;
-	top: 0px;
-	left: 10px;
+	display: inline-block;
 	height: 30px;
 	line-height: 30px;
 }
@@ -550,16 +547,12 @@
 	
 	background: url(../images/sort_10.png) no-repeat 0 4px;
 }
-#main #foot_and_footsort_box div.footsort_box ul li p.one{
+#main #foot_and_footsort_box div.footsort_box ul li span.one{
 	color: #666666;
 	background: none;
-	width: 120px;
-	position: absolute;
-	top: 0px;
-	right: 0px;
+	display: inline-block;
 	height: 30px;
 	line-height: 30px;
-	padding-left: 10px;
 }
 #main #foot_and_footsort_box div.footsort_box ul li a.two{
 	color: #ED5565;

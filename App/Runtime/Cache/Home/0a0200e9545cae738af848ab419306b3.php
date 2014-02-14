@@ -3,6 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
+<meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/about_tpl.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
@@ -165,12 +167,12 @@
 						<p class="five">验证码</p>
 						<input type="text" name="reg_vcode" class="five"/>
 						<a href="" id="regemail_vcode_not_clear">看不清</a>
-						<img src="<?php echo U("Home/Login/verifyImg");?>" class="one">
+						<img src="/index.php/User/verifyImg" class="one">
 						<input type="checkbox" name="license" class="six" checked="true">
 						<p class="six">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
 						</p>
-						<input type="submit" name="email_reg_btn" id="email_reg_btn" value="注册" />
+						<input type="" name="email_reg_btn" id="email_reg_btn" value="注册" />
 						<p class="seven">已经是惠桂林的用户？点击<a href="" id="login_now">登录.</a></p>
 						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 						<p class="nine" id="reg_hidebox02">密码由6-32位的字母、数字或符号组成</p>
@@ -183,26 +185,26 @@
 				<div id="cellphone_box" class="hide">
 					<form action="" method="post">
 						<p class="one">手机号码</p>
-						<input type="text" name="email" class="one"/>
-						<a href="" id="sendcode">点击发送验证码</a>
+						<input type="text" name="cellphone" class="one"/>
+						<a href="javascript:void(0)" id="sendcode" name="sendcode">点击发送验证码</a>
 						<p class="seven">验证码</p>
 						<input type="text" name="vcode" class="six"/>
 						<p class="two">密码</p>
 						<input type="password" name="pwd" class="two"/>
 						<ul>
-							<li>弱</li>
-							<li>中</li>
-							<li>强</li>
+							<li id="cellphone_pwd_low">弱</li>
+							<li id="cellphone_pwd_mid">中</li>
+							<li id="cellphone_pwd_high">强</li>
 						</ul>	
 						<p class="three">确认密码</p>
 						<input type="password" name="pwd2" class="three"/>
 						<p class="four">昵称</p>
 						<input type="text" name="nickname" class="four"/>
-						<input type="checkbox" name="license" class="five">
+						<input type="checkbox" name="license" class="five" checked="true">
 						<p class="five">
 							我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
 						</p>
-						<input type="submit" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
+						<input type="" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
 						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 						<p class="nine" id="reg_hidebox02">请输入手机收到的短信验证码</p>
 						<p class="ten" id="reg_hidebox03">密码由6-32位的字母、数字或符号组成</p>
@@ -223,14 +225,14 @@
 						<li>
 							<p class="title">手机号码</p>
 							<input class="one" type="text" name="bingdingcellphone_No" id="bingdingcellphone_No">
-							<input class="two special" type="submit" value="获取验证码" id="get_vcode">
+							<input class="two special" type="" value="获取验证码" id="get_vcode">
 							<p class="validate" id="bingdingcellphone_No_hidden_tips"></p>
 							<p class="errorTips">如果长时间没收到验证码，请在60秒后重试</p>
 						</li>
 						<li>
 							<p class="title">验证码</p>
 							<input class="one" type="text" name="bingdingcellphone_vcode" id="bingdingcellphone_vcode">
-							<input class="two special2" type="submit" value="绑定手机号" id="validate_vcode" disabled="disabled">
+							<input class="two special2" type="" value="绑定手机号" id="validate_vcode" disabled="disabled">
 							<p class="validate" id="bingdingcellphone_vcode_hidden_tips"></p>
 						</li>
 					</ul>
@@ -272,13 +274,13 @@
 					<p class="three">验证码</p>
 					<input type="textbox" name="vcode" class="three"/>
 					<a href="" id="vcode_not_clear">看不清</a>
-					<img src="<?php echo U("Home/Login/verifyImg");?>" id="vcode_img">
+					<img src="/index.php/User/verifyImg" id="vcode_img">
 					<a href="" id="forgetpwd">忘记密码?</a>
 					<input type="checkbox" name="rememberpwd" class="four">
 					<p class="four">记住密码</p>
 					<input type="checkbox" name="autologin" class="five">
 					<p class="five">下次自动登录</p>
-					<input type="submit" name="btn_login" id="btn_login" value="登录" disabled="disabled"/>
+					<input type="" name="btn_login" id="btn_login" value="登录" disabled="disabled"/>
 					<p class="six">还没有账户？<a href="" id="reg_now">立即注册</a></p>
 					<p class="seven" id="login_hidebox01">请输入邮箱/手机号</p>
 					<p class="eight" id="login_hidebox02">请输入密码</p>

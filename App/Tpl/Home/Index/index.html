@@ -158,25 +158,20 @@
 						<p class="two">{$hcoupon.description}</p>
 						<img src="__PUBLIC__/{$hcoupon.picture_path}">
 						<a class="one hidden" href="">{$hcoupon.name}</a>
-						<p class="one hidden">{$hcoupon.title}</p>
+						<span class="one hidden">{$hcoupon.title}</span>
 					</li>
                 </foreach>
 				</ul>
 				<ul id="foot_new_ul" class="hidden" >
-					<li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href="">李记米粉2</a>
-						<p class="two">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</p>
-						<img src="__PUBLIC__/images/pic/1.png">
-						<a class="one hidden" href="">李记米粉2</a>
-						<p class="one hidden">8折优惠,全场通兑！</p>
-					</li>
+				<foreach name="eat_coupons" item="hcoupon">
 					<li class="hover" id="footsort_box_fisrt_li">
 						<a class="two" href="">{$hcoupon.name}</a>
 						<p class="two">{$hcoupon.description}</p>
 						<img src="__PUBLIC__/{$hcoupon.picture_path}">
 						<a class="one hidden" href="">{$hcoupon.name}</a>
-						<p class="one hidden">{$hcoupon.title}</p>
+						<span class="one hidden">{$hcoupon.title}</span>
 					</li>
+				 </foreach>
 				</ul>
 			</div>
 		</div>
@@ -216,7 +211,7 @@
 						<p class="two">{$hcoupon.description}</p>
 						<img src="__PUBLIC__/{$hcoupon.picture_path}">
 						<a class="one hidden" href="">{$hcoupon.name}</a>
-						<p class="one hidden">{$hcoupon.title}</p>
+						<span class="one hidden">{$hcoupon.title}</span>
 					</li>
                 </foreach>
 				</ul>
@@ -227,7 +222,7 @@
 						<p class="two">{$ncoupon.description}</p>
 						<img src="__PUBLIC__/{$ncoupon.picture_path}">
 						<a class="one hidden" href="">{$ncoupon.name}</a>
-						<p class="one hidden">{$ncoupon.title}</p>
+						<span class="one hidden">{$ncoupon.title}</span>
 					</li>
                 </foreach>
 				</ul>
@@ -269,7 +264,7 @@
 						<p class="two">{$hcoupon.description}</p>
 						<img src="__PUBLIC__/{$hcoupon.picture_path}">
 						<a class="one hidden" href="">{$hcoupon.name}</a>
-						<p class="one hidden">{$hcoupon.title}</p>
+						<span class="one hidden">{$hcoupon.title}</span>
 					</li>
                 </foreach>
 				</ul>
@@ -280,7 +275,7 @@
 						<p class="two">{$ncoupon.description}</p>
 						<img src="__PUBLIC__/{$ncoupon.picture_path}">
 						<a class="one hidden" href="">{$ncoupon.name}</a>
-						<p class="one hidden">{$ncoupon.title}</p>
+						<span class="one hidden">{$ncoupon.title}</span>
 					</li>
                 </foreach>
 				</ul>

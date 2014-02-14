@@ -460,8 +460,8 @@ input{
 #top_rss #top_rss_box #share_box ul li a.weibo{
 	background: url("../images/weibo.png") no-repeat 20px 5px;
 }
-#top_rss #top_rss_box #share_box ul li a.renren{
-	background: url("../images/renren.png") no-repeat 20px 9px;
+#top_rss #top_rss_box #share_box ul li a.QQweibo{
+	background: url("../images/QQweibo.png") no-repeat 20px 5px;
 }
 #top_rss #top_rss_box #share_box ul li a:hover{
 	border: 1px solid #C9C9C9;

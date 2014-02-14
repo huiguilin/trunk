@@ -1,0 +1,1295 @@
+[ 2014-02-14T09:47:55+08:00 ] 127.0.0.1 /trunk/index.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.086574s ]
+INFO: [ route_check ] --END-- [ RunTime:0.105375s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.079820s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.080177s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.949102s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.628652s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.056680s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (3,2,1,4) )  [ RunTime:0.051552s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 1 = 1) )  [ RunTime:0.022016s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 4 = 4) ) LIMIT 0,4   [ RunTime:0.001257s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 2 = 2) ) LIMIT 0,4   [ RunTime:0.001047s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.027086s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.011881s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.060486s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,2,3,4,5,6) )  [ RunTime:0.089790s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.095705s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (3,1,2) )  [ RunTime:0.168347s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.056091s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.025061s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.016427s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.114587s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.032247s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.003698s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000614s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.044779s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.083362s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.034511s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (14,14,1,1) )  [ RunTime:0.040655s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006182s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.000720s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.549721s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.549979s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.034223s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.018582s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.022848s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002986s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.079463s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.033811s ]
+INFO: [ view_end ] --END-- [ RunTime:0.034043s ]
+
+[ 2014-02-14T09:52:20+08:00 ] 127.0.0.1 /trunk/index.php/coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002401s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002673s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002133s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002375s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004654s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE (  1 = 1 )  [ RunTime:0.000920s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.005436s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) )  [ RunTime:0.001223s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 63 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) ) ORDER BY download_times DESC  [ RunTime:0.000890s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.004165s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.000420s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.095225s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.095470s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002040s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001522s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001299s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001692s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007197s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002280s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002504s ]
+
+[ 2014-02-14T09:52:25+08:00 ] 127.0.0.1 /trunk/index.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002252s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002501s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001776s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.005572s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001131s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004879s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (3,2,1,4) )  [ RunTime:0.000800s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 1 = 1) )  [ RunTime:0.000929s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 4 = 4) ) LIMIT 0,4   [ RunTime:0.000568s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 2 = 2) ) LIMIT 0,4   [ RunTime:0.000630s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004723s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.004151s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,2,3,4,5,6) )  [ RunTime:0.000535s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.003846s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (3,1,2) )  [ RunTime:0.000496s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.003926s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000751s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.007609s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.001210s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005363s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000654s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004342s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000568s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.004513s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000732s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.004543s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (14,14,1,1) )  [ RunTime:0.000610s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005202s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.000561s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.076971s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.077216s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002162s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001569s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001193s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001828s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007472s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001962s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002190s ]
+
+[ 2014-02-14T09:52:27+08:00 ] 127.0.0.1 /trunk/index.php/coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001870s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002116s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002602s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005556s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE (  1 = 1 )  [ RunTime:0.000810s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004164s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) )  [ RunTime:0.000807s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 63 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) ) ORDER BY download_times DESC  [ RunTime:0.000730s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.004620s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.000443s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.049485s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049732s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002139s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001664s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001250s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001709s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007353s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001970s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002187s ]
+
+[ 2014-02-14T09:56:06+08:00 ] 127.0.0.1 /trunk/index.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002371s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002620s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001840s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002068s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.003962s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001158s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004548s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (3,2,1,4) )  [ RunTime:0.001259s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 1 = 1) )  [ RunTime:0.001063s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 4 = 4) ) LIMIT 0,4   [ RunTime:0.000656s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 2 = 2) ) LIMIT 0,4   [ RunTime:0.000714s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.005572s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.004174s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,2,3,4,5,6) )  [ RunTime:0.000595s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.005480s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (3,1,2) )  [ RunTime:0.001231s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004598s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000644s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.005699s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000598s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004588s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000900s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004651s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000678s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.004260s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000617s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.019380s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (14,14,1,1) )  [ RunTime:0.000773s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004469s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.001160s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.081873s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.082298s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002173s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001783s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001370s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001773s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007764s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002768s ]
+INFO: [ view_end ] --END-- [ RunTime:0.003020s ]
+
+[ 2014-02-14T10:00:05+08:00 ] 127.0.0.1 /trunk/index.php/coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001744s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001984s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001881s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.007886s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE (  1 = 1 )  [ RunTime:0.001298s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.008103s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) )  [ RunTime:0.001191s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 63 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) ) ORDER BY download_times DESC  [ RunTime:0.001208s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.007205s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.000602s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.047881s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048115s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002404s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001877s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001457s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.003664s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010114s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002405s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002662s ]
+
+[ 2014-02-14T10:03:14+08:00 ] 127.0.0.1 /trunk/index.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001817s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002044s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002027s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.005123s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001138s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.005137s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (3,2,1,4) )  [ RunTime:0.000814s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 1 = 1) )  [ RunTime:0.000844s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 4 = 4) ) LIMIT 0,4   [ RunTime:0.000588s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 2 = 2) ) LIMIT 0,4   [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004593s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.003863s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,2,3,4,5,6) )  [ RunTime:0.000548s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.003925s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (3,1,2) )  [ RunTime:0.000641s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004689s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000544s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.005010s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.001517s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004849s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000588s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.003792s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000515s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.005214s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000560s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.004632s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (14,14,1,1) )  [ RunTime:0.000628s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004224s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.000593s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.078222s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.078455s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002222s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001597s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001275s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001842s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007532s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001921s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002149s ]
+
+[ 2014-02-14T10:03:33+08:00 ] 127.0.0.1 /trunk/index.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001792s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002020s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001760s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007308s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.004165s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001253s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004476s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (3,2,1,4) )  [ RunTime:0.002292s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 1 = 1) )  [ RunTime:0.000950s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 4 = 4) ) LIMIT 0,4   [ RunTime:0.000638s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 2 = 2) ) LIMIT 0,4   [ RunTime:0.001093s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004786s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.000799s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.004548s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,2,3,4,5,6) )  [ RunTime:0.000743s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.005279s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (3,1,2) )  [ RunTime:0.000610s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004845s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000761s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.010394s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000845s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004774s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.001296s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.003763s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000581s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.004616s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.001158s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.005271s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (14,14,1,1) )  [ RunTime:0.000770s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004976s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.000776s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.079490s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.079717s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002199s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001563s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001443s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002008s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007838s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001932s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002161s ]
+
+[ 2014-02-14T10:04:28+08:00 ] 127.0.0.1 /trunk/index.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001958s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002210s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001825s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.004804s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001255s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004727s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (3,2,1,4) )  [ RunTime:0.001210s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 1 = 1) ) LIMIT 0,4   [ RunTime:0.001529s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 4 = 4) ) LIMIT 0,4   [ RunTime:0.001420s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 2 = 2) ) LIMIT 0,4   [ RunTime:0.001132s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.017182s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.004852s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,2,3,4,5,6) )  [ RunTime:0.000880s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.014614s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (3,1,2) )  [ RunTime:0.000549s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004305s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000990s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.006109s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.001064s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006142s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000743s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.003613s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000768s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.005417s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000874s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.004828s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (14,14,1,1) )  [ RunTime:0.000603s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004798s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.000772s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.143504s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.143778s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001939s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001194s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000881s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001867s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006503s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002110s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002374s ]
+
+[ 2014-02-14T10:07:34+08:00 ] 127.0.0.1 /trunk/index.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001816s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002085s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001788s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.012722s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001140s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.005361s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (3,2,1,4) )  [ RunTime:0.000783s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 1 = 1) ) LIMIT 0,4   [ RunTime:0.000867s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 4 = 4) ) LIMIT 0,4   [ RunTime:0.000602s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 2 = 2) ) LIMIT 0,4   [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004151s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.000572s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.021576s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,2,3,4,5,6) )  [ RunTime:0.001642s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.005300s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (3,1,2) )  [ RunTime:0.000700s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004022s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000563s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004897s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000663s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004069s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004611s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000653s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.004270s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.005204s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (14,14,1,1) )  [ RunTime:0.000585s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005269s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.000711s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.068231s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.068505s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002157s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001635s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000978s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001467s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006895s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001466s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001709s ]
+
+[ 2014-02-14T10:11:57+08:00 ] 127.0.0.1 /trunk/index.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002479s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002777s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001964s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.024461s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001114s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004780s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (3,2,1,4) )  [ RunTime:0.000796s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 1 = 1) ) LIMIT 0,4   [ RunTime:0.001244s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 4 = 4) ) LIMIT 0,4   [ RunTime:0.001035s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 2 = 2) ) LIMIT 0,4   [ RunTime:0.000734s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004768s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.000539s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.004992s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,2,3,4,5,6) )  [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.004436s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (3,1,2) )  [ RunTime:0.000505s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004177s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000614s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.005672s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000845s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006628s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000705s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004420s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000706s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.004584s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.004541s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (14,14,1,1) )  [ RunTime:0.000803s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004701s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.000674s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.074015s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.074252s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002150s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001756s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001263s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002155s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007970s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001946s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002193s ]
+
+[ 2014-02-14T10:15:08+08:00 ] 127.0.0.1 /trunk/index.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002071s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002348s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001816s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002067s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.027147s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001395s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004805s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (3,2,1,4) )  [ RunTime:0.001310s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 1 = 1) ) LIMIT 0,4   [ RunTime:0.001665s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 4 = 4) ) LIMIT 0,4   [ RunTime:0.000732s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 2 = 2) ) LIMIT 0,4   [ RunTime:0.001042s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006309s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.001073s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.004948s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,2,3,4,5,6) )  [ RunTime:0.001183s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.005483s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (3,1,2) )  [ RunTime:0.000502s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005482s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.001032s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.005702s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.001027s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.009423s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000735s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.030835s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000733s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.011368s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000733s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.005506s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (14,14,1,1) )  [ RunTime:0.001413s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006251s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.001637s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.069523s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.069776s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002308s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001546s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001104s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001551s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007401s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002150s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002425s ]
+
+[ 2014-02-14T10:22:10+08:00 ] 127.0.0.1 /trunk/index.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002103s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002374s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002026s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.004715s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001158s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004656s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (3,2,1,4) )  [ RunTime:0.000834s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 1 = 1) ) LIMIT 0,4   [ RunTime:0.001012s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 4 = 4) ) LIMIT 0,4   [ RunTime:0.000676s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 2 = 2) ) LIMIT 0,4   [ RunTime:0.000862s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.005304s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.004948s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,2,3,4,5,6) )  [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.003816s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (3,1,2) )  [ RunTime:0.000471s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004831s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000638s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004601s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000676s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004749s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.001882s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.009520s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000637s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.006097s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.001617s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.004669s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (14,14,1,1) )  [ RunTime:0.000891s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006066s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.000835s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.120581s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.120898s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.003390s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.005510s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.003967s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002029s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015634s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.003692s ]
+INFO: [ view_end ] --END-- [ RunTime:0.003940s ]
+
+[ 2014-02-14T10:22:16+08:00 ] 127.0.0.1 /trunk/index.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002751s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003049s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002046s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.005048s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001065s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.005237s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (3,2,1,4) )  [ RunTime:0.000785s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 1 = 1) ) LIMIT 0,4   [ RunTime:0.000823s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 4 = 4) ) LIMIT 0,4   [ RunTime:0.001298s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 2 = 2) ) LIMIT 0,4   [ RunTime:0.000796s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004724s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.000621s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.004690s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,2,3,4,5,6) )  [ RunTime:0.000565s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.003939s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (3,1,2) )  [ RunTime:0.000507s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004936s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004907s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000652s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006048s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000572s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004498s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000781s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.004782s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000939s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.004900s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (14,14,1,1) )  [ RunTime:0.000638s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006205s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.000787s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.161807s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.162028s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002731s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001600s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001248s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001886s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008044s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002127s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002380s ]
+
+[ 2014-02-14T10:22:18+08:00 ] 127.0.0.1 /trunk/index.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002225s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002542s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002759s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.004843s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001445s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004676s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (3,2,1,4) )  [ RunTime:0.000773s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 1 = 1) ) LIMIT 0,4   [ RunTime:0.000834s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 4 = 4) ) LIMIT 0,4   [ RunTime:0.001260s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 2 = 2) ) LIMIT 0,4   [ RunTime:0.001117s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004522s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.000563s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.004190s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,2,3,4,5,6) )  [ RunTime:0.001013s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.006604s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (3,1,2) )  [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004957s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000618s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004343s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000573s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005646s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000909s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004231s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000580s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.004789s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.001302s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.005732s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (14,14,1,1) )  [ RunTime:0.001688s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005738s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.000579s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.069227s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.069447s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002153s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001649s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001385s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001972s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007754s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002152s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002372s ]
+
+[ 2014-02-14T10:22:52+08:00 ] 127.0.0.1 /trunk/index.php/coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002356s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002630s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.008020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008263s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005199s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE (  1 = 1 )  [ RunTime:0.000950s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004498s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) )  [ RunTime:0.001969s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 63 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) ) ORDER BY download_times DESC  [ RunTime:0.002895s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.006133s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.003692s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.042675s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042905s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002354s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001672s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001424s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001834s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007864s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001978s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002181s ]
+
+[ 2014-02-14T10:23:35+08:00 ] 127.0.0.1 /trunk/index.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001825s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002064s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001803s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.004614s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001345s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004994s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (3,2,1,4) )  [ RunTime:0.001145s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 1 = 1) ) LIMIT 0,4   [ RunTime:0.001254s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 4 = 4) ) LIMIT 0,4   [ RunTime:0.000699s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 2 = 2) ) LIMIT 0,4   [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.025005s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.000593s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.004186s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,2,3,4,5,6) )  [ RunTime:0.000867s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.004049s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (3,1,2) )  [ RunTime:0.000470s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004684s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000567s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004400s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000581s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004888s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.001096s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004225s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000508s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.004832s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000871s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.005050s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (14,14,1,1) )  [ RunTime:0.000956s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005181s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.001050s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.074434s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.074674s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002239s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002114s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001811s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001871s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008896s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001846s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002054s ]
+
+[ 2014-02-14T10:25:07+08:00 ] 127.0.0.1 /trunk/index.php/coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002340s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002607s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001782s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002015s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005313s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE (  1 = 1 )  [ RunTime:0.000838s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004627s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) )  [ RunTime:0.000763s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 63 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) ) ORDER BY download_times DESC  [ RunTime:0.001173s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.004904s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.000832s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.045072s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045336s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002419s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001679s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001515s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001889s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008134s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.010172s ]
+INFO: [ view_end ] --END-- [ RunTime:0.010394s ]
+
+[ 2014-02-14T10:29:56+08:00 ] 127.0.0.1 /trunk/index.php/coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002034s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002641s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001791s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004855s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE (  1 = 1 )  [ RunTime:0.001006s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004358s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) )  [ RunTime:0.000846s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 63 行.
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 ) LIMIT 0,4   [ RunTime:0.000660s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.004362s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.000419s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.043338s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043574s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002041s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001553s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001315s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001719s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007216s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001670s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001882s ]
+
+[ 2014-02-14T10:30:44+08:00 ] 127.0.0.1 /trunk/index.php/coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002109s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002364s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001698s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001941s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.007549s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE (  1 = 1 )  [ RunTime:0.001205s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.008281s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) )  [ RunTime:0.000913s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 63 行.
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 ) LIMIT 0,5   [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.004253s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.000475s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.042292s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042525s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002211s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001582s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001317s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002475s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008240s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001918s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002135s ]
+
+[ 2014-02-14T10:35:03+08:00 ] 127.0.0.1 /trunk/index.php/coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001789s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002023s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001844s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004828s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE (  1 = 1 )  [ RunTime:0.000884s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.003929s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) )  [ RunTime:0.000881s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 63 行.
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 ) LIMIT 0,5   [ RunTime:0.000954s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.004626s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.000546s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.045356s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045635s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002223s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001873s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001490s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001726s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007938s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001806s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002014s ]
+
+[ 2014-02-14T10:35:04+08:00 ] 127.0.0.1 /trunk/index.php/coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002476s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002754s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001937s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002256s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004995s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE (  1 = 1 )  [ RunTime:0.000815s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004667s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) )  [ RunTime:0.001055s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 63 行.
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 ) LIMIT 0,5   [ RunTime:0.001047s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.004800s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.000924s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.045076s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045326s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002315s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001664s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001266s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001731s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007547s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002107s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002322s ]
+
+[ 2014-02-14T10:43:54+08:00 ] 127.0.0.1 /trunk/index.php/coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001894s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002132s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001882s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.007610s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE (  1 = 1 )  [ RunTime:0.001334s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.007040s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) )  [ RunTime:0.002029s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 63 行.
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 ) LIMIT 0,5   [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.005029s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.000467s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.041797s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042035s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002125s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001501s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001162s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001794s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007391s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001647s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001863s ]
+
+[ 2014-02-14T10:44:09+08:00 ] 127.0.0.1 /trunk/index.php/coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002599s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002915s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002071s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002312s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004689s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE (  1 = 1 )  [ RunTime:0.001262s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.005612s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13) )  [ RunTime:0.001634s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 63 行.
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 ) LIMIT 0,5   [ RunTime:0.001065s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.004739s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.000618s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.047115s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047390s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002054s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001632s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001245s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001646s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007181s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001907s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002182s ]
+
+[ 2014-02-14T10:45:00+08:00 ] 127.0.0.1 /trunk/index.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001970s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002307s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001835s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002078s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.004624s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001153s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.004633s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (3,2,1,4) )  [ RunTime:0.000878s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 1 = 1) ) LIMIT 0,4   [ RunTime:0.000844s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 4 = 4) ) LIMIT 0,4   [ RunTime:0.000737s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 93 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND (label_type & 2 = 2) ) LIMIT 0,4   [ RunTime:0.000702s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.020003s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (1,2) )  [ RunTime:0.001651s ]
+SQL: SHOW COLUMNS FROM `t_monkey_news` [ RunTime:0.005106s ]
+SQL: SELECT * FROM `t_monkey_news` WHERE ( news_id IN (1,2,3,4,5,6) )  [ RunTime:0.000731s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.004166s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (3,1,2) )  [ RunTime:0.000749s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004660s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000541s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.004479s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (1,2,3,4,5,6,7,8,9) )  [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004498s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000763s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.005317s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (5,6,1,2,3,4) )  [ RunTime:0.000572s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.004499s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000835s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.004946s ]
+SQL: SELECT * FROM `t_monkey_user_profile` WHERE ( user_id IN (14,14,1,1) )  [ RunTime:0.000653s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.004495s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (2,1,2,1) )  [ RunTime:0.000659s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 428 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+NOTIC: [8] Undefined index: header_path C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 437 行.
+NOTIC: [8] Undefined index: name C:\wamp\www\trunk\App\Runtime\Cache\Home\5af3b772512f93bbed89b40e875139eb.php 第 438 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.074060s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.074813s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002628s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001954s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001388s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001952s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008603s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001753s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001965s ]
+

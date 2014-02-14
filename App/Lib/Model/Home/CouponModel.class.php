@@ -97,7 +97,7 @@ class CouponModel extends Model {
         }  
         return $data;
     }
-
+    
     public function getCouponByPartnerId($id = 0) {
         if (empty($id)) {
             return array();

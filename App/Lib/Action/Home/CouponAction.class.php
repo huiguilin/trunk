@@ -63,7 +63,12 @@ class CouponAction extends Action {
         if ($params['order_by'] != 'download_times DESC') {
             $params['order_by'] = 'download_times DESC';
         }
+        $params = array(
+            'limit' => '0,5',
+        );
         $hotCouponInfo = $couponHelper->getCoupon($params);
+        $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);
+        
         $adHelper = new AdModel();
         $adInfo = $adHelper->getAd();
         #$model = new PartnerInfoModel();
@@ -186,6 +191,15 @@ class CouponAction extends Action {
         }
         return $result;
     }
-
+    private function cutCouponWords($info) {
+        if (empty($info)) {
+            return array();
+        }
+        foreach ($info AS $key => $value) {
+            $info[$key]['description'] = mb_substr($info[$key]['description'], 0, 50, 'UTF-8');
+            $info[$key]['title'] = mb_substr($info[$key]['title'], 0, 20, 'UTF-8');
+        }
+        return $info;
+    }
 }
 

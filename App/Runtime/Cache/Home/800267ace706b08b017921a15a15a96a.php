@@ -138,7 +138,6 @@
 				<li><a>您好,effie</a></li>
 				<li class="no_right_border"><a href="">我的惠桂林</a></li>
 			</ul><?php endif; ?>
-
 		<div id="Userreg_box">
 			<div id="u_top">
 				<a id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
@@ -146,8 +145,9 @@
 			</div>
 			<div id="u_bottom">
 				<ul>
-					<li class="one"><a href="" class="one" id="email_reg">邮箱注册</a></li>
-					<li><a href="" id="cellphone_reg">手机注册</a></li>
+					
+					<li class="one"><a href="" id="cellphone_reg">手机注册</a></li>
+					<li><a href="" class="one" id="email_reg">邮箱注册</a></li>
 				</ul>
 				<div id="email_box">
 					<form action="" method="post">
@@ -172,8 +172,8 @@
 						<p class="six">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
 						</p>
-						<input type="" name="email_reg_btn" id="email_reg_btn" value="注册" />
-						<p class="seven">已经是惠桂林的用户？点击<a href="" id="login_now">登录.</a></p>
+						<input type="submit" name="email_reg_btn" id="email_reg_btn" value="注册" />
+						<p class="seven">已经是惠桂林的用户？点击<a href="" id="login_now_email">登录.</a></p>
 						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 						<p class="nine" id="reg_hidebox02">密码由6-32位的字母、数字或符号组成</p>
 						<p class="ten" id="reg_hidebox03">请再次输入密码</p>
@@ -204,7 +204,8 @@
 						<p class="five">
 							我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
 						</p>
-						<input type="" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
+						<input type="submit" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
+						<p class="thirteen">已经是惠桂林的用户？点击<a href="" id="login_now_cellphone">登录.</a></p>
 						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 						<p class="nine" id="reg_hidebox02">请输入手机收到的短信验证码</p>
 						<p class="ten" id="reg_hidebox03">密码由6-32位的字母、数字或符号组成</p>
@@ -257,7 +258,7 @@
 					<p class="one">注册成功并已登录惠桂林网！</p>
 					<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="" id="return_page2">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠桂林网首页</a></p>
 				</div>
-				<p class="count">如果没有选择，页面将在<span>10秒</span>后自动关闭此窗口。</p>
+				<p class="count">如果没有选择，页面将在<span>3秒</span>后自动关闭此窗口。</p>
 			</div>
 		</div>
 		<div id="Userlogin_box">
@@ -280,7 +281,7 @@
 					<p class="four">记住密码</p>
 					<input type="checkbox" name="autologin" class="five">
 					<p class="five">下次自动登录</p>
-					<input type="" name="btn_login" id="btn_login" value="登录" disabled="disabled"/>
+					<input type="submit" name="btn_login" id="btn_login" value="登录" disabled="disabled"/>
 					<p class="six">还没有账户？<a href="" id="reg_now">立即注册</a></p>
 					<p class="seven" id="login_hidebox01">请输入邮箱/手机号</p>
 					<p class="eight" id="login_hidebox02">请输入密码</p>
@@ -409,10 +410,10 @@
 	<div id="bottom_info">
 		<div id="bottom_box">
 			<div class="p_box">
-				<p>版权归惠桂林所有，未经书面授权禁止复制或建立镜像。 Email：<a href="mailto:service@huigl.com">service@huigl.com</a></p>
-				<p>惠桂林网客服电话：（0773）2853120 2852488 传真：（0773）2853265 </p>
-				<p>地址：桂林市中山中路39号南方大厦9-5号</p>
-				<p>经营许可证：桂B2-20040001</p>
+				<p>版权归惠桂林所有，未经书面授权禁止复制或建立镜像。 Email：<a href="mailto:huigl@outlook.com">service@huigl.com</a></p>
+				<p>惠桂林网客服电话：（0773）8993520</p>
+				<p>地址：桂林市高新区桂磨大道互联网产业基地503室</p>
+				<p>经营许可证：桂ICP备 14000606号</p>
 			</div>
 			<img src="__PUBLIC__/images/footer_ico01.png" alt="" class="one"/>
 			<img src="__PUBLIC__/images/footer_ico02.png" alt="" class="two" />
