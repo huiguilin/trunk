@@ -299,7 +299,6 @@
 	width: 82px;
 	height: 88px;
 	position: relative;
-	
 }
 #main #hot_and_new_brand_box div.new_brand_box ul li a.title{
 	color: #666;
@@ -307,9 +306,11 @@
 	text-align: center;
 }
 #main #hot_and_new_brand_box div.new_brand_box ul li img{
-	width: 82px;
-	height: 65px;
+	width: 68px;
+	height: 68px;
 	margin-top: 3px;
+	margin-left: 7px;
+
 }
 #main #foot_and_footsort_box{
 	height: 400px;
@@ -506,10 +507,18 @@
 	color: #ED5565;
 	font-weight: bold;
 	background: url(../images/sort_01.png) no-repeat 0 0px;
+	display: block;
+	position: absolute;
+	top: 10px;
+	left: 0px;
 	padding-left: 25px;
-	display: inline-block;
+	width: 120px;
+	height: 15px;
+	overflow: hidden;
+/*	display: inline-block;
 	height: 30px;
 	line-height: 30px;
+	border:1px solid black;*/
 }
 #main #foot_and_footsort_box div.footsort_box ul li a.sort_id_02{
 	
@@ -550,9 +559,13 @@
 #main #foot_and_footsort_box div.footsort_box ul li span.one{
 	color: #666666;
 	background: none;
-	display: inline-block;
-	height: 30px;
-	line-height: 30px;
+	position: absolute;
+	display: block;
+	height: 15px;
+	top: 10px;
+	right: 0px;
+	width: 90px;
+	overflow: hidden;
 }
 #main #foot_and_footsort_box div.footsort_box ul li a.two{
 	color: #ED5565;
@@ -569,6 +582,8 @@
 	top: 30px;
 	left: 16px;
 	color: #666666;
+	height: 45px;
+	overflow: hidden;
 }
 #main #foot_and_footsort_box div.footsort_box ul li a:hover{
 	text-decoration: underline;
@@ -581,6 +596,9 @@
 	right: 12px;
 }
 #main #foot_and_footsort_box div.footsort_box ul li a.hidden{
+	display: none;
+}
+#main #foot_and_footsort_box div.footsort_box ul li span.hidden{
 	display: none;
 }
 #main #foot_and_footsort_box div.footsort_box ul li p.hidden{

@@ -159,26 +159,46 @@
 			<div class="footsort_box">
 				<p class="title title2" id="foot_hot_title">最热优惠劵排行</p><p class="title" id="foot_new_title">最新优惠劵排行</p>
 				<ul id="foot_hot_ul">
-                <foreach name="eat_coupons" item="hcoupon">
-					<li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href="">{$hcoupon.name}</a>
-						<p class="two">{$hcoupon.description}</p>
-						<img src="__PUBLIC__/{$hcoupon.picture_path}">
-						<a class="one hidden" href="">{$hcoupon.name}</a>
-						<span class="one hidden">{$hcoupon.title}</span>
-					</li>
+                <foreach name="eat_coupons" item="hcoupon" key="k">
+                	<if condition="$k eq 0">
+						<li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" href="">{$hcoupon.name}</a>
+							<p class="two">{$hcoupon.description}</p>
+							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}">
+							<a class="one hidden" href="">{$hcoupon.name}</a>
+							<span class="one hidden">{$hcoupon.title}</span>
+						</li>
+						<else />
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" href="">{$hcoupon.name}</a>
+							<p class="two hidden">{$hcoupon.description}</p>
+							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden">
+							<a class="one" href="">{$hcoupon.name}</a>
+							<span class="one">{$hcoupon.title}</span>
+						</li>
+					</if>
                 </foreach>
 				</ul>
 				<ul id="foot_new_ul" class="hidden" >
-				<foreach name="eat_coupons" item="hcoupon">
-					<li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href="">{$hcoupon.name}</a>
-						<p class="two">{$hcoupon.description}</p>
-						<img src="__PUBLIC__/{$hcoupon.picture_path}">
-						<a class="one hidden" href="">{$hcoupon.name}</a>
-						<span class="one hidden">{$hcoupon.title}</span>
-					</li>
-				 </foreach>
+				<foreach name="eat_coupons" item="hcoupon" key="k">
+                	<if condition="$k eq 0">
+						<li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" href="">{$hcoupon.name}</a>
+							<p class="two">{$hcoupon.description}</p>
+							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}">
+							<a class="one hidden" href="">{$hcoupon.name}</a>
+							<span class="one hidden">{$hcoupon.title}</span>
+						</li>
+						<else />
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" href="">{$hcoupon.name}</a>
+							<p class="two hidden">{$hcoupon.description}</p>
+							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden">
+							<a class="one" href="">{$hcoupon.name}</a>
+							<span class="one">{$hcoupon.title}</span>
+						</li>
+					</if>
+                </foreach>
 				</ul>
 			</div>
 		</div>
@@ -196,6 +216,7 @@
 				</ul>
 				<ul class="content">
                 <foreach name="play_coupons" item="coupon">
+
 					<li>
 						<img src="__PUBLIC__/{$coupon.picture_path}">
 						<a href="/coupon/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
@@ -211,26 +232,46 @@
 			</div>
 			<div class="footsort_box">
 				<p class="title title2" id="ent_hot_title">最热优惠劵排行</p><p class="title" id="ent_new_title">最新优惠劵排行</p>
-				<ul id="ent_hot_ul" class="hidden" >
-                <foreach name="play_coupons" item="hcoupon">
-					<li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href="">{$hcoupon.name}</a>
-						<p class="two">{$hcoupon.description}</p>
-						<img src="__PUBLIC__/{$hcoupon.picture_path}">
-						<a class="one hidden" href="">{$hcoupon.name}</a>
-						<span class="one hidden">{$hcoupon.title}</span>
-					</li>
+				<ul id="ent_hot_ul">
+                <foreach name="play_coupons" item="hcoupon" key="k">
+                	<if condition="$k eq 0">
+						<li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" href="">{$hcoupon.name}</a>
+							<p class="two">{$hcoupon.description}</p>
+							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}">
+							<a class="one hidden" href="">{$hcoupon.name}</a>
+							<span class="one hidden">{$hcoupon.title}</span>
+						</li>
+						<else />
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" href="">{$hcoupon.name}</a>
+							<p class="two hidden">{$hcoupon.description}</p>
+							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden">
+							<a class="one" href="">{$hcoupon.name}</a>
+							<span class="one">{$hcoupon.title}</span>
+						</li>
+					</if>
                 </foreach>
 				</ul>
 				<ul id="ent_new_ul" class="hidden" >
-                <foreach name="play_coupons" item="ncoupon">
-					<li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href="">{$ncoupon.name}</a>
-						<p class="two">{$ncoupon.description}</p>
-						<img src="__PUBLIC__/{$ncoupon.picture_path}">
-						<a class="one hidden" href="">{$ncoupon.name}</a>
-						<span class="one hidden">{$ncoupon.title}</span>
-					</li>
+                <foreach name="play_coupons" item="hcoupon" key="k">
+                	<if condition="$k eq 0">
+						<li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" href="">{$hcoupon.name}</a>
+							<p class="two">{$hcoupon.description}</p>
+							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}">
+							<a class="one hidden" href="">{$hcoupon.name}</a>
+							<span class="one hidden">{$hcoupon.title}</span>
+						</li>
+						<else />
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" href="">{$hcoupon.name}</a>
+							<p class="two hidden">{$hcoupon.description}</p>
+							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden">
+							<a class="one" href="">{$hcoupon.name}</a>
+							<span class="one">{$hcoupon.title}</span>
+						</li>
+					</if>
                 </foreach>
 				</ul>
 			</div>
@@ -249,8 +290,9 @@
 				</ul>
 				<ul class="content">
                 <foreach name="life_coupons" item="coupon">
+
 					<li>
-						<img src="__PUBLIC__/{$coupon.picture_path}">
+						<img src="__PUBLIC__/{$coupon.picture_path}" >
 						<a href="/coupon/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
 						<p class="one">{$coupon.description}</p>
 						<p class="two">{$coupon.title}</p>
@@ -265,25 +307,45 @@
 			<div class="footsort_box">
 				<p class="title title2" id="life_hot_title">最热优惠劵排行</p><p class="title" id="life_new_title">最新优惠劵排行</p>
 				<ul id="life_hot_ul">
-                <foreach name="life_coupons" item="hcoupon">
-					<li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href="">{$hcoupon.name}</a>
-						<p class="two">{$hcoupon.description}</p>
-						<img src="__PUBLIC__/{$hcoupon.picture_path}">
-						<a class="one hidden" href="">{$hcoupon.name}</a>
-						<span class="one hidden">{$hcoupon.title}</span>
-					</li>
+                <foreach name="life_coupons" item="hcoupon" key="k">
+                	<if condition="$k eq 0">
+						<li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" href="">{$hcoupon.name}</a>
+							<p class="two">{$hcoupon.description}</p>
+							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}">
+							<a class="one hidden" href="">{$hcoupon.name}</a>
+							<span class="one hidden">{$hcoupon.title}</span>
+						</li>
+						<else />
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" href="">{$hcoupon.name}</a>
+							<p class="two hidden">{$hcoupon.description}</p>
+							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden">
+							<a class="one" href="">{$hcoupon.name}</a>
+							<span class="one">{$hcoupon.title}</span>
+						</li>
+					</if>
                 </foreach>
 				</ul>
 				<ul id="life_new_ul" class="hidden" >
-                <foreach name="life_coupons" item="ncoupon">
-					<li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href="">{$ncoupon.name}</a>
-						<p class="two">{$ncoupon.description}</p>
-						<img src="__PUBLIC__/{$ncoupon.picture_path}">
-						<a class="one hidden" href="">{$ncoupon.name}</a>
-						<span class="one hidden">{$ncoupon.title}</span>
-					</li>
+                <foreach name="life_coupons" item="hcoupon" key="k">
+                	<if condition="$k eq 0">
+						<li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" href="">{$hcoupon.name}</a>
+							<p class="two">{$hcoupon.description}</p>
+							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}">
+							<a class="one hidden" href="">{$hcoupon.name}</a>
+							<span class="one hidden">{$hcoupon.title}</span>
+						</li>
+						<else />
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" href="">{$hcoupon.name}</a>
+							<p class="two hidden">{$hcoupon.description}</p>
+							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden">
+							<a class="one" href="">{$hcoupon.name}</a>
+							<span class="one">{$hcoupon.title}</span>
+						</li>
+					</if>
                 </foreach>
 				</ul>
 			</div>

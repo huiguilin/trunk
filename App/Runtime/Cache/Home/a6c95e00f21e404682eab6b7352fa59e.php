@@ -449,7 +449,7 @@
 				<ul class="hot_coupon">
                 <?php if(is_array($hot_coupons)): foreach($hot_coupons as $key=>$coupon): ?><li>
 						<a href=""><?php echo ($coupon["name"]); ?></a>
-						<p><?php echo ($coupon["title"]); ?></p>
+						<p><?php echo ($coupon["description"]); ?></p>
 						<img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>">
 					</li><?php endforeach; endif; ?>
 				</ul>
