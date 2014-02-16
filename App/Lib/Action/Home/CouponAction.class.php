@@ -84,6 +84,7 @@ class CouponAction extends Action {
     }
 
     public function detail(){
+
         if (empty($_GET['_URL_'][2])) {
             return TRUE;
         }
@@ -108,6 +109,7 @@ class CouponAction extends Action {
         $this->assign("other_coupon", $otherCoupons);
         $this->assign("partner", $partnerInfo[0]);
         $this->assign("evaluation", $eInfo);
+
         $this->display();
     }
 
