@@ -50,24 +50,31 @@
 			<ul class="hot_navigation">
 				<li>
 					<span>热门分类</span>
-					<a href="" class="one">火锅</a>
-					<a href="">KTV</a>
-					<a href="">电影院</a>
-					<a href="">足疗按摩</a>
+                    <foreach name="categories" item="category">
+                    <if condition="$key eq 0">
+					<a href="/index.php/coupon/coupon?cat_id={$category.cat_id}" class="one">{$category.cat_name}</a>
+                    <else />
+					<a href="/index.php/coupon/coupon?cat_id={$category.cat_id}">{$category.cat_name}</a>
+                    </if>
+                    </foreach>
 				</li>
 				<li>
 					<span>全部区域</span>
-					<a href="" class="one">七星区</a>
-					<a href="">秀峰区</a>
-					<a href="">象山区</a>
-					<a href="">叠彩区</a>
-					<a href="">雁山区</a>
+					<a href="/index.php/Coupon/coupon?tag=七星区" class="one">七星区</a>
+					<a href="/index.php/Coupon/coupon?tag=秀峰区">秀峰区</a>
+					<a href="/index.php/Coupon/coupon?tag=象山区">象山区</a>
+					<a href="/index.php/Coupon/coupon?tag=叠彩区">叠彩区</a>
+					<a href="/index.php/Coupon/coupon?tag=雁山区">雁山区</a>
 				</li>
 				<li class="no_bottom_border">
 					<span>热门商圈</span>
-					<a href="" class="one">中心广场</a>
-					<a href="">红街广场</a>
-					<a href="">联达广场</a>
+                    <foreach name="locations" item="location">
+                    <if condition="$key eq 0">
+					<a href="/index.php/Coupon/coupon?location={$location.id}" class="one">{$location.name}</a>
+                    <else />
+					<a href="/index.php/Coupon/coupon?location={$location.id}">{$location.name}</a>
+                    </if>
+                    </foreach>
 				</li>
 			</ul>
 			<!-- 热门分类区域结束 -->

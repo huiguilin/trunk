@@ -11,7 +11,7 @@ class CouponAction extends Action {
         '6' => '丽人',
     );
     public function coupon(){
-        $locationId = !empty($_GET['location_id']) ? $_GET['location_id'] : 0;
+        $locationId = !empty($_GET['location']) ? $_GET['location'] : 0;
         $params = array();
         if (!empty($locationId)) {
             $params = array(
@@ -25,8 +25,17 @@ class CouponAction extends Action {
         $params = array(
             'partner_id' => $partnerIds,
         );
+        if (!empty($_GET['cat_id'])) {
+            $params['cat_id'] = $_GET['cat_id'];
+        }
         if (!empty($_GET['label_type'])) {
             $params['label_type'] = $_GET['label_type'];
+        }
+        if (!empty($_GET['tag'])) {
+            $params['tag'] = $_GET['tag'];
+        }
+        if (!empty($_GET['status'])) {
+            $params['status'] = $_GET['status'];
         }
         if (!empty($_GET['sort'])) {
             $orderBy = $_GET['sort'];
@@ -63,9 +72,7 @@ class CouponAction extends Action {
         if ($params['order_by'] != 'download_times DESC') {
             $params['order_by'] = 'download_times DESC';
         }
-        $params = array(
-            'limit' => '0,5',
-        );
+        $params['limit'] = '0,5';
         $hotCouponInfo = $couponHelper->getCoupon($params);
         $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);
         
@@ -77,11 +84,44 @@ class CouponAction extends Action {
             $couponInfo[$key]['description'] = mb_substr($couponInfo[$key]['description'], 0, 40, 'UTF-8');
             $couponInfo[$key]['title'] = mb_substr($couponInfo[$key]['title'], 0, 20, 'UTF-8');
         }
+
+        list($categories, $location, $labelType) = $this->getTopButtom();
+        $this->assign("categories", $categories);
+        $this->assign("locations", $location);
+        $this->assign("label_types", $labelType);
         $this->assign("coupons", $couponInfo);
         $this->assign("hot_coupons", $hotCouponInfo);
         $this->assign("ads", $adInfo);
         $this->display();
     }
+
+    private function getTopButtom() {
+        $categories = $this->getCategory();
+        $location = $this->getLocation();
+        $labelType = $this->labelType;
+        return array($categories, $location, $labelType);
+    }
+
+    private function getCategory() {
+        $helper = new CategoryModel();
+        $params = array(
+            'limit' => '0,7',
+            'status' => 1,
+        );
+        $category = $helper->getCategoryInfo($params);
+        return $category;
+    }
+
+    private function getLocation() {
+       $helper = new LocationModel();
+        $params = array(
+            'limit' => '0,7',
+            'status' => 1,
+        );
+       $locationInfo = $helper->getLocationInfo($params);
+       return $locationInfo;
+    }
+
 
     public function detail(){
 

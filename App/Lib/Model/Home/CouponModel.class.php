@@ -74,9 +74,6 @@ class CouponModel extends Model {
                     
             }
         }
-        if (isset($params['status'])) {
-            $str .= " AND status = {$status}";
-        }
         if (isset($params['start_time_lt'])) {
             $str .= " AND start_time <= '{$params['start_time_lt']}'";
         }
@@ -88,6 +85,12 @@ class CouponModel extends Model {
         }
         if (isset($params['end_time_gt'])) {
             $str .= " AND end_time >= '{$params['end_time_gt']}'";
+        }
+        if (isset($params['tag'])) {
+            $str .= " AND tag like '%{$params['tag']}%'";
+        }
+        if (isset($params['cat_id'])) {
+            $str .= " AND cat_id like '%{$params['cat_id']}%'";
         }
         if (!isset($params['sum'])) {
             $data = $this->where($str)->order($params['order_by'])->limit($params['limit'])->select();
