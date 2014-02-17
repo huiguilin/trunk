@@ -3,7 +3,7 @@
 class CouponAction extends Action {
 
     private $labelType = array(
-        '1' => '民以食为天',
+        '1' => '美食',
         '2' => '休闲娱乐',
         '3' => '生活服务',
         '4' => '酒店',

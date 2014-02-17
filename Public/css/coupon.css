@@ -87,6 +87,11 @@
 	text-align: center;
 	width: 60px;
 }
+#main #classification_location_box #content_box #classification_box ul.parent_classification li a.blue{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 5px;
+}
 #main #classification_location_box #content_box #classification_box ul.parent_classification li a.hover{
 	background-color: #4467A3;
 	color: white;
@@ -166,6 +171,11 @@
 	margin-top: 2px;
 	text-align: center;
 	width: 60px;
+}
+#main #classification_location_box #content_box #location_box ul.parent_classification li a.blue{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 5px;
 }
 #main #classification_location_box #content_box #location_box ul.parent_classification li a.hover{
 	background-color: #4467A3;
@@ -278,7 +288,7 @@
 	background:url(../images/coupon-hover.png) no-repeat 0px 0px;
 	
 }
-#main #coupon_box ul.coupon_content li img{
+#main #coupon_box ul.coupon_content li a.img_box img{
 	width: 162px;
 	height: 162px;
 	position: absolute;
@@ -396,7 +406,7 @@
 	margin-bottom: 5px;
 	position: relative;
 }
-#main #coupon_box #hot_coupon_box ul.hot_coupon li a{
+#main #coupon_box #hot_coupon_box ul.hot_coupon li a.title{
 	color: #ED5565;
 	font-weight: bold;
 	position: absolute;
@@ -415,7 +425,7 @@
 	height: 45px;
 	overflow: hidden;
 }
-#main #coupon_box #hot_coupon_box ul.hot_coupon li img{
+#main #coupon_box #hot_coupon_box ul.hot_coupon li a.img_box img{
 	width: 62px;
 	height: 62px;
 	position: absolute;

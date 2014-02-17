@@ -50,7 +50,7 @@
 				<div id="classification_box">
 					<p>分类</p>
 					<ul class="parent_classification">
-						<li><a href="">全部</a></li>
+						<li><a href="" class="blue">全部</a></li>
                     <foreach name="label_types" item="label_type">
 						<li><a href="/index.php/Coupon/coupon?label_type={$key}">{$label_type}</a></li>
                     </foreach>
@@ -68,7 +68,7 @@
 				<div id="location_box">
 					<p>区域</p>
 					<ul class="parent_classification">
-						<li><a href="">全部</a></li>
+						<li><a href="" class="blue">全部</a></li>
 						<li><a href="/index.php/Coupon/coupon?tag=秀峰区">秀峰区</a></li>
 						<li><a href="/index.php/Coupon/coupon?tag=象山区">象山区</a></li>
 						<li><a href="/index.php/Coupon/coupon?tag=叠彩区">叠彩区</a></li>
@@ -103,8 +103,8 @@
 			<ul class="clearfix coupon_content">
                 <foreach name="coupons" item="coupon">
 				<li>
-					<img src="__PUBLIC__/{$coupon.header_path}">
-					<a href="" class="content_title">{$coupon.name}</a>
+					<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}"></a>
+					<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
 					<p class="one">{$coupon.description}</p>
 					<p class="two">{$coupon.title}</p>
 					<p class="three">下载：{$coupon.download_times}次</p>
@@ -122,9 +122,9 @@
 				<ul class="hot_coupon">
                 <foreach name="hot_coupons" item="coupon">
 					<li>
-						<a href="">{$coupon.name}</a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="title">{$coupon.name}</a>
 						<p>{$coupon.description}</p>
-						<img src="__PUBLIC__/{$coupon.header_path}">
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}"></a>
 					</li>
                 </foreach>
 				</ul>
