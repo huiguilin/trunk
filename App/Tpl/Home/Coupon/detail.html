@@ -50,7 +50,7 @@
 				<div class="coupon_desc_box">
 					<p class="coupon_title">{$coupon.title}<span>{$coupon.title}</span></p>
 				</div>
-				<a href="javascript:print();" class="print_coupon_btn">打印此优惠券</a>
+				<a href="{:U("Coupon/print","","","")}/{$coupon.coupon_id}" class="print_coupon_btn">打印此优惠券</a>
 				<a href="javascript:void(0);" class="download_coupon_btn" id="download_coupon_btn">下载到手机</a>
 				<img src="__PUBLIC__/{$coupon.picture_path}" class="coupon_pic">
 				<div class="coupon_detail_desc_box">
@@ -244,27 +244,17 @@
     function initMap(){
         createMap();//创建地图
         setMapEvent();//设置地图事件
-        addMapControl();//向地图中添加缩放控件
-        // addMarker();//向地图中添加marker
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
     }
     
     //创建地图函数：
     function createMap(){
-        var map = new BMap.Map("map");
-        map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);// 创建地址解析器实例已天安门为中心
-        var myGeo = new BMap.Geocoder();// 将地址解析结果显示在地图上，并调整地图视野
-        myGeo.getPoint("桂林第十八中学", function(point){
-        if (point) {
-                map.centerAndZoom(point, 12);
-                map.addOverlay(new BMap.Marker(point));
-            }
-        }, "桂林市");
-         myGeo.getPoint("象山公园", function(point){
-        if (point) {
-                map.centerAndZoom(point, 12);
-                map.addOverlay(new BMap.Marker(point));
-            }
-        }, "桂林市");
+        var map = new BMap.Map("map");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(110.285681,25.259639);//定义一个中心点坐标
+        var point2 = new BMap.Point(110.28613,25.260595);//定义一个中心点坐标
+        map.centerAndZoom(point,14);//设定地图的中心点和坐标并将地图显示在地图容器中
+        map.centerAndZoom(point2,14);//设定地图的中心点和坐标并将地图显示在地图容器中
         window.map = map;//将map变量存储在全局
     }
     
@@ -282,14 +272,70 @@
 	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
 	map.addControl(ctrl_nav);
         //向地图中添加缩略图控件
-	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:0}); //0代表缩略图控件折起来，1代表展开
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:0});
 	map.addControl(ctrl_ove);
         //向地图中添加比例尺控件
 	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
 	map.addControl(ctrl_sca);
     }
     
- 
+    //标注点数组
+    var markerArr = [{title:"商家名称",content:"商家介绍",point:"110.285681|25.259639",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}},{title:"商家名称",content:"商家介绍",point:"110.285613|25.260595",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
     initMap();//创建和初始化地图
 </script>
 
