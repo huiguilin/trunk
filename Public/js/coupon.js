@@ -80,7 +80,7 @@ $(function(){
 		return false;
 	});
 	$('#main #classification_location_box #content_box #location_box div ul.child_classification li a').click(function(event) {
-		$('#main #classification_location_box #content_box #hidden_location_box div ul.child_classification li a').removeClass('current');
+		$('#main #classification_location_box #content_box #location_box div ul.child_classification li a').removeClass('current');
 		$(this).addClass('current');
 		return false;
 	});
