@@ -928,6 +928,15 @@ input{
 	font-weight:bold;
 
 }
+#Userreg_box #u_bottom #cellphone_box form p.tip_send_vcode{
+	position: absolute;
+	top: 65px;
+	left: 180px;
+	color: #999;
+	font-size: 13px;
+	padding-left: 20px;
+	display: none;
+}
 #Userreg_box #u_bottom #cellphone_box form input{
 	border: 1px solid #C9C9C9;
 	border-radius: 5px;

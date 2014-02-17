@@ -272,6 +272,22 @@ $(function(){
         if (phone_number == "") {
             return;
         }
+        var sta = 60;
+        $(this).text("重新获取");
+        $('#Userreg_box #u_bottom #cellphone_box form p.tip_send_vcode').show();
+       	var timer = setInterval(autoRun,1000);
+       	
+		function autoRun(){
+		 	if(sta == 0){
+		 		 $('#sendcode').text("重新获取");
+		 		 $('#Userreg_box #u_bottom #cellphone_box form p.tip_send_vcode').hide();
+		 		 clearInterval(timer);
+		 	}
+		 	else{
+		 		sta--;//sta自减
+		 		$('#sendcode').text("重新获取("+sta+")");
+		 	}
+		}
         $.post("/index.php/User/sendCheckCode", { phone_number : phone_number
             },function(data){
             //做个判断，返回成功执行下面的代码，跳转到注册成功页面
@@ -879,6 +895,7 @@ $(function(){
 	});
 	
 	//手机注册注册button特效结束
+
 	// ////////////////////////用户注册+用户登录+忘记密码特效全部代码区域结束////////////////////
 	////////////////////////手机版弹窗中的全部特效代码区域////////////////////////////////
 	//手机版弹窗效果
