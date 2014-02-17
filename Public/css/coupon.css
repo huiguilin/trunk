@@ -99,6 +99,9 @@
 	margin-top: 10px;
 	background: #ECEFF5;
 	margin-left: 70px;
+	border-radius: 5px;
+	margin-right: 10px;
+	border:1px solid #DBE1EC;
 }
 #main #classification_location_box #content_box #classification_box div ul.child_classification li{
 	float: left;
@@ -176,6 +179,7 @@
 	border-radius: 5px;
 	margin-top: 10px;
 	margin-left: 70px;
+	margin-right: 10px;
 }
 #main #classification_location_box #content_box #location_box div ul.child_classification li{
 	float: left;
@@ -407,10 +411,15 @@
 	height: 45px;
 	overflow: hidden;
 }
-#main #coupon_box #hot_coupon_box ul.hot_coupon li a.img_box img{
-	width: 62px;
-	height: 62px;
+#main #coupon_box #hot_coupon_box ul.hot_coupon li a.img_box{
 	position: absolute;
 	top: 10px;
 	right: 5px;
+	width: 62px;
+	height: 62px;
+	display: block;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon li a.img_box img{
+	width: 62px;
+	height: 62px;
 }
