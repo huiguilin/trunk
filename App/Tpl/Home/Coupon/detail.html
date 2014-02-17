@@ -58,19 +58,21 @@
 					<p class="desc_content"><span>{$coupon.description}</span></p>
 					<div>
 						<p>使用须知</p>
-						<p>有效期：<span>2013.6.22 至 2014.6.22</span></p>
-						<p>不可用日期：<span>2013年10月1日至10月3日、10月30日至10月31日、11月1日、12月24日至12月25日、2014年1月1日、2月14日、5月1日至5月3日、6月1日</span></p>
-						<p>使用时间：<span>11:30-14:00,17:30-21:30</span></p>
-						<p>预约提醒：<span>无需预约</span></p>
+						<p>有效期：<span>{$coupon.start_time}——{$coupon.end_time}</span></p>
+						<p>不可用日期：<span>{$coupon.exception_time}</span></p>
+						<p>使用时间：<span>{$coupon.use_time}</span></p>
+						<p>预约提醒：
+                        <span>
+                        <if condition="$coupon.need_booking eq 1">
+                        需要预约
+                        <else/>
+                        无需预约
+                        </if>
+                        </span>
+                        </p>
 						<p>使用规则：</p>
 						<ul>
-							<li>凭惠桂林券到店消费不可同时享受店内其他优惠</li>
-							<li>本单在惠桂林券使用时间内不限用餐时长</li>
-							<li>儿童无优惠</li>
-							<li>每张惠桂林券限1桌使用</li>
-							<li>仅限堂食，不提供餐前外带及餐后打包</li>
-							<li>仅限大厅就餐，不可使用包间</li>
-							<li class="bottom">部分菜品因时令原因有所不同，请以店内当日实际供应为准</li>
+                        {$coupon.use_role}
 						</ul>
 					</div>
 				</div>
