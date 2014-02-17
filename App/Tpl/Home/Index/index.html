@@ -144,8 +144,8 @@
 				<ul class="content">
                 <foreach name="eat_coupons" item="coupon">
 					<li>
-						<img src="__PUBLIC__/{$coupon.picture_path}">
-						<a href="/coupon/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
 						<p class="one">{$coupon.description}</p>
 						<p class="two">{$coupon.title}</p>
 						<p class="three">下载：{$coupon.download_times}次</p>
@@ -160,20 +160,21 @@
 				<p class="title title2" id="foot_hot_title">最热优惠劵排行</p><p class="title" id="foot_new_title">最新优惠劵排行</p>
 				<ul id="foot_hot_ul">
                 <foreach name="eat_coupons" item="hcoupon" key="k">
+
                 	<if condition="$k eq 0">
 						<li class="hover" id="footsort_box_fisrt_li">
-							<a class="two" href="">{$hcoupon.name}</a>
+							<a class="two" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two">{$hcoupon.description}</p>
-							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}">
-							<a class="one hidden" href="">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{h$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one hidden">{$hcoupon.title}</span>
 						</li>
 						<else />
 						<li id="footsort_box_fisrt_li">
-							<a class="two hidden" href="">{$hcoupon.name}</a>
+							<a class="two hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two hidden">{$hcoupon.description}</p>
-							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden">
-							<a class="one" href="">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one">{$hcoupon.title}</span>
 						</li>
 					</if>
@@ -183,18 +184,18 @@
 				<foreach name="eat_coupons" item="hcoupon" key="k">
                 	<if condition="$k eq 0">
 						<li class="hover" id="footsort_box_fisrt_li">
-							<a class="two" href="">{$hcoupon.name}</a>
+							<a class="two" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two">{$hcoupon.description}</p>
-							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}">
-							<a class="one hidden" href="">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one hidden">{$hcoupon.title}</span>
 						</li>
 						<else />
 						<li id="footsort_box_fisrt_li">
-							<a class="two hidden" href="">{$hcoupon.name}</a>
+							<a class="two hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two hidden">{$hcoupon.description}</p>
-							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden">
-							<a class="one" href="">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one">{$hcoupon.title}</span>
 						</li>
 					</if>
@@ -218,8 +219,8 @@
                 <foreach name="play_coupons" item="coupon">
 
 					<li>
-						<img src="__PUBLIC__/{$coupon.picture_path}">
-						<a href="/coupon/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
 						<p class="one">{$coupon.description}</p>
 						<p class="two">{$coupon.title}</p>
 						<p class="three">下载：{$coupon.download_times}次</p>
@@ -236,18 +237,18 @@
                 <foreach name="play_coupons" item="hcoupon" key="k">
                 	<if condition="$k eq 0">
 						<li class="hover" id="footsort_box_fisrt_li">
-							<a class="two" href="">{$hcoupon.name}</a>
+							<a class="two" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two">{$hcoupon.description}</p>
-							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}">
-							<a class="one hidden" href="">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one hidden">{$hcoupon.title}</span>
 						</li>
 						<else />
 						<li id="footsort_box_fisrt_li">
-							<a class="two hidden" href="">{$hcoupon.name}</a>
+							<a class="two hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two hidden">{$hcoupon.description}</p>
-							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden">
-							<a class="one" href="">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one">{$hcoupon.title}</span>
 						</li>
 					</if>
@@ -257,18 +258,18 @@
                 <foreach name="play_coupons" item="hcoupon" key="k">
                 	<if condition="$k eq 0">
 						<li class="hover" id="footsort_box_fisrt_li">
-							<a class="two" href="">{$hcoupon.name}</a>
+							<a class="two" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two">{$hcoupon.description}</p>
-							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}">
-							<a class="one hidden" href="">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one hidden">{$hcoupon.title}</span>
 						</li>
 						<else />
 						<li id="footsort_box_fisrt_li">
-							<a class="two hidden" href="">{$hcoupon.name}</a>
+							<a class="two hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two hidden">{$hcoupon.description}</p>
-							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden">
-							<a class="one" href="">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one">{$hcoupon.title}</span>
 						</li>
 					</if>
@@ -292,8 +293,8 @@
                 <foreach name="life_coupons" item="coupon">
 
 					<li>
-						<img src="__PUBLIC__/{$coupon.picture_path}" >
-						<a href="/coupon/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
 						<p class="one">{$coupon.description}</p>
 						<p class="two">{$coupon.title}</p>
 						<p class="three">下载：{$coupon.download_times}次</p>
@@ -310,18 +311,18 @@
                 <foreach name="life_coupons" item="hcoupon" key="k">
                 	<if condition="$k eq 0">
 						<li class="hover" id="footsort_box_fisrt_li">
-							<a class="two" href="">{$hcoupon.name}</a>
+							<a class="two" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two">{$hcoupon.description}</p>
-							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}">
-							<a class="one hidden" href="">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one hidden">{$hcoupon.title}</span>
 						</li>
 						<else />
 						<li id="footsort_box_fisrt_li">
-							<a class="two hidden" href="">{$hcoupon.name}</a>
+							<a class="two hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two hidden">{$hcoupon.description}</p>
-							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden">
-							<a class="one" href="">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one">{$hcoupon.title}</span>
 						</li>
 					</if>
@@ -331,18 +332,18 @@
                 <foreach name="life_coupons" item="hcoupon" key="k">
                 	<if condition="$k eq 0">
 						<li class="hover" id="footsort_box_fisrt_li">
-							<a class="two" href="">{$hcoupon.name}</a>
+							<a class="two" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two">{$hcoupon.description}</p>
-							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}">
-							<a class="one hidden" href="">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one hidden">{$hcoupon.title}</span>
 						</li>
 						<else />
 						<li id="footsort_box_fisrt_li">
-							<a class="two hidden" href="">{$hcoupon.name}</a>
+							<a class="two hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two hidden">{$hcoupon.description}</p>
-							<img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden">
-							<a class="one" href="">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one">{$hcoupon.title}</span>
 						</li>
 					</if>

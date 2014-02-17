@@ -107,7 +107,7 @@
 	background: white;
 }
 #main #main_content_top_box ul.hot_navigation li{
-	height: 36px;
+	
 	border-bottom: 1px solid #E4E4E4;
 	margin-left: 10px;
 	margin-right: 10px;	
@@ -355,7 +355,7 @@
 	background:url(../images/coupon-hover.png) no-repeat 0px 0px;
 	
 }
-#main #foot_and_footsort_box div.foot_box ul.content li img{
+#main #foot_and_footsort_box div.foot_box ul.content li a.img_box img{
 	width: 162px;
 	height: 162px;
 	position: absolute;
@@ -588,7 +588,7 @@
 #main #foot_and_footsort_box div.footsort_box ul li a:hover{
 	text-decoration: underline;
 }
-#main #foot_and_footsort_box div.footsort_box ul li img{
+#main #foot_and_footsort_box div.footsort_box ul li a.img_box img{
 	width: 60px;
 	height: 60px;
 	position: absolute;

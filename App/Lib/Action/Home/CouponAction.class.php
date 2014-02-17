@@ -3,7 +3,7 @@
 class CouponAction extends Action {
 
     private $labelType = array(
-        '1' => '民以食为天',
+        '1' => '美食',
         '2' => '休闲娱乐',
         '3' => '生活服务',
         '4' => '酒店',
@@ -124,6 +124,7 @@ class CouponAction extends Action {
 
 
     public function detail(){
+
         if (empty($_GET['_URL_'][2])) {
             return TRUE;
         }
@@ -148,6 +149,7 @@ class CouponAction extends Action {
         $this->assign("other_coupon", $otherCoupons);
         $this->assign("partner", $partnerInfo[0]);
         $this->assign("evaluation", $eInfo);
+
         $this->display();
     }
 

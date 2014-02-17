@@ -56,7 +56,7 @@ class IndexAction extends Action {
     private function getLocation() {
        $helper = new LocationModel();
         $params = array(
-            'limit' => '0,6',
+            'limit' => '0,5',
             'status' => 1,
         );
        $locationInfo = $helper->getLocationInfo($params);

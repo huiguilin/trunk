@@ -2,6 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
+<meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/detail.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
@@ -12,7 +14,7 @@
 <script type="text/javascript" src="__PUBLIC__/js/detail.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
 
-<!--[if IE 6]>
+<!--[if IE 6]-->
 <!--背景图片透明方法-->
 <script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
 <!--插入图片透明方法-->
@@ -48,9 +50,9 @@
 			</div>
 			<div id="share_box">
 				<ul>
-					<li><a href="http://www.baidu.com" class="weibo">惠桂林新浪微博</a></li>
-					<li><a href="http://www.baidu.com" class="qzone">惠桂林QQ空间</a></li>
-					<li><a href="http://www.baidu.com" class="renren">惠桂林人人主页</a></li>
+					<li><a href="http://weibo.com/huigl?topnav=1&wvr=5" class="weibo">惠桂林新浪微博</a></li>
+					<li><a href="http://user.qzone.qq.com/2042534770" class="qzone">惠桂林QQ空间</a></li>
+					<li><a href="http://t.qq.com/ihuigl?preview" class="QQweibo">惠桂林腾讯微博</a></li>
 				</ul>
 			</div>
 		</div>
@@ -138,7 +140,6 @@
 				<li><a>您好,effie</a></li>
 				<li class="no_right_border"><a href="">我的惠桂林</a></li>
 			</ul><?php endif; ?>
-
 		<div id="Userreg_box">
 			<div id="u_top">
 				<a id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
@@ -146,8 +147,9 @@
 			</div>
 			<div id="u_bottom">
 				<ul>
-					<li class="one"><a href="" class="one" id="email_reg">邮箱注册</a></li>
-					<li><a href="" id="cellphone_reg">手机注册</a></li>
+					
+					<li class="one"><a href="" id="cellphone_reg">手机注册</a></li>
+					<li><a href="" class="one" id="email_reg">邮箱注册</a></li>
 				</ul>
 				<div id="email_box">
 					<form action="" method="post">
@@ -167,13 +169,13 @@
 						<p class="five">验证码</p>
 						<input type="text" name="reg_vcode" class="five"/>
 						<a href="" id="regemail_vcode_not_clear">看不清</a>
-						<img src="<?php echo U("Home/Login/verifyImg");?>" class="one">
+						<img src="/index.php/User/verifyImg" class="one">
 						<input type="checkbox" name="license" class="six" checked="true">
 						<p class="six">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
 						</p>
 						<input type="submit" name="email_reg_btn" id="email_reg_btn" value="注册" />
-						<p class="seven">已经是惠桂林的用户？点击<a href="" id="login_now">登录.</a></p>
+						<p class="seven">已经是惠桂林的用户？点击<a href="" id="login_now_email">登录.</a></p>
 						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 						<p class="nine" id="reg_hidebox02">密码由6-32位的字母、数字或符号组成</p>
 						<p class="ten" id="reg_hidebox03">请再次输入密码</p>
@@ -185,26 +187,27 @@
 				<div id="cellphone_box" class="hide">
 					<form action="" method="post">
 						<p class="one">手机号码</p>
-						<input type="text" name="email" class="one"/>
-						<a href="" id="sendcode">点击发送验证码</a>
+						<input type="text" name="cellphone" class="one"/>
+						<a href="javascript:void(0)" id="sendcode" name="sendcode">点击发送验证码</a>
 						<p class="seven">验证码</p>
 						<input type="text" name="vcode" class="six"/>
 						<p class="two">密码</p>
 						<input type="password" name="pwd" class="two"/>
 						<ul>
-							<li>弱</li>
-							<li>中</li>
-							<li>强</li>
+							<li id="cellphone_pwd_low">弱</li>
+							<li id="cellphone_pwd_mid">中</li>
+							<li id="cellphone_pwd_high">强</li>
 						</ul>	
 						<p class="three">确认密码</p>
 						<input type="password" name="pwd2" class="three"/>
 						<p class="four">昵称</p>
 						<input type="text" name="nickname" class="four"/>
-						<input type="checkbox" name="license" class="five">
+						<input type="checkbox" name="license" class="five" checked="true">
 						<p class="five">
 							我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
 						</p>
 						<input type="submit" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
+						<p class="thirteen">已经是惠桂林的用户？点击<a href="" id="login_now_cellphone">登录.</a></p>
 						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 						<p class="nine" id="reg_hidebox02">请输入手机收到的短信验证码</p>
 						<p class="ten" id="reg_hidebox03">密码由6-32位的字母、数字或符号组成</p>
@@ -257,7 +260,7 @@
 					<p class="one">注册成功并已登录惠桂林网！</p>
 					<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="" id="return_page2">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠桂林网首页</a></p>
 				</div>
-				<p class="count">如果没有选择，页面将在<span>10秒</span>后自动关闭此窗口。</p>
+				<p class="count">如果没有选择，页面将在<span>3秒</span>后自动关闭此窗口。</p>
 			</div>
 		</div>
 		<div id="Userlogin_box">
@@ -274,7 +277,7 @@
 					<p class="three">验证码</p>
 					<input type="textbox" name="vcode" class="three"/>
 					<a href="" id="vcode_not_clear">看不清</a>
-					<img src="<?php echo U("Home/Login/verifyImg");?>" id="vcode_img">
+					<img src="/index.php/User/verifyImg" id="vcode_img">
 					<a href="" id="forgetpwd">忘记密码?</a>
 					<input type="checkbox" name="rememberpwd" class="four">
 					<p class="four">记住密码</p>
@@ -361,19 +364,19 @@
 		<div id="coupon_box">
 			<div class="coupon_detail_info_box">
 				<div class="effective_date_box">
-					<p class="effective_date">优惠券有效期： 2013年12月24日 - 2014年02月24日</p>
-					<p class="download_number">下载次数：<span>21231</span></p>
+					<p class="effective_date">优惠券有效期： <?php echo ($coupon["start_time"]); ?> - <?php echo ($coupon["end_time"]); ?></p>
+					<p class="download_number">下载次数：<span><?php echo ($coupon["download_times"]); ?></span></p>
 					<p class="view_number">查看次数：<span>431234</span></p>
 				</div>
 				<div class="coupon_desc_box">
-					<p class="coupon_title">小肥羊<span>凭此券即刻享受8折优惠,全市26店通用，全场通兑！</span></p>
+					<p class="coupon_title"><?php echo ($coupon["title"]); ?><span><?php echo ($coupon["title"]); ?></span></p>
 				</div>
-				<a href="" class="print_coupon_btn">打印此优惠券</a>
-				<a href="" class="download_coupon_btn">下载到手机</a>
-				<img src="__PUBLIC__/images/coupon_display.jpg" class="coupon_pic">
+				<a href="javascript:print();" class="print_coupon_btn">打印此优惠券</a>
+				<a href="javascript:void(0);" class="download_coupon_btn" id="download_coupon_btn">下载到手机</a>
+				<img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>" class="coupon_pic">
 				<div class="coupon_detail_desc_box">
 					<p class="desc_title">详细介绍</p>
-					<p class="desc_content">烤肉 ：<span>烤肉 ：果味梅肉、牛里脊卷、火鸡卷、烤鸡翅、台式香肠、蒜蓉牛肉、烤玉米、烤香蕉、三角肉、烤鸡心、鸡肉串、香辣牛肉、烤红薯、烤鱿鱼、烤牛舌、德式香肠、烤猪排、烤牛排、烤羊肉串。</span></p>
+					<p class="desc_content"><span><?php echo ($coupon["description"]); ?></span></p>
 					<div>
 						<p>使用须知</p>
 						<p>有效期：<span>2013.6.22 至 2014.6.22</span></p>
@@ -393,7 +396,8 @@
 					</div>
 				</div>
 				<a href="" class="print_coupon_btn print_coupon_btn2">打印此优惠券</a>
-				<a href="" class="download_coupon_btn">下载到手机</a>
+				<a href="javascript:void(0);" class="download_coupon_btn" id="download_coupon_btn_two">下载到手机</a>
+				<a id="download_coupon_id" style="visibility:hidden" value="<?php echo ($coupon["coupon_id"]); ?>"><?php echo ($coupon["coupon_id"]); ?></a>
 			</div>
 			<div class="share">
 				<a href="" class="add_favorite">收藏到我的券包</a>
@@ -409,22 +413,38 @@
 			</div>
 			<div class="other_coupons_box">
 				<p class="other_coupon_title">本商户其他优惠券</p>
-				<p class="other_coupon_content">[江上人家]<span>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</span></p>
-				<p class="other_coupon_content">[江上人家]<span>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</span></p>
-				<p class="other_coupon_content">[江上人家]<span>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</span></p>
-				<p class="other_coupon_content bottom">[江上人家]<span>消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！</span></p>
+                <?php if(is_array($other_coupon)): foreach($other_coupon as $key=>$ocoupon): ?><p class="other_coupon_content">[<?php echo ($partner["name"]); ?>]<span><?php echo ($ocoupon["title"]); ?></span></p><?php endforeach; endif; ?>
 			</div>
 			<div class="business_detail_info_box">
 				<ul class="business_nav clearfix">
-					<li class="no_bottom_border"><a href="" >商家位置</a></li>
-					<li><a href="">商家介绍</a></li>
+					<li class="no_bottom_border"><a href="" >商家介绍</a></li>
+					<li><a href="">商家位置</a></li>
 					<li><a href="">评价晒单(15)</a></li>
 				</ul>
 				<div class="business_location">
 					<p class="title">商家位置</p>
 					<div class="map_box">
 						<div class="map" id="map">
-							
+						</div>
+						<div class="view_map">
+							<a id="view_full_map">查看完整地图</a>
+						</div>
+						<div id="hidden_detail_map">
+							<div class="title_box">
+								<p>查看全图</p>
+								<a></a>
+							</div>
+							<div class="shop_box">
+								<p>同一首歌KTV(6家分店)</p>
+								<select>
+									<option>同一首歌KTV(西直门分店)</option>
+									<option>同一首歌KTV(东直门分店)</option>
+									<option>同一首歌KTV(三元桥分店)</option>
+									<option>同一首歌KTV(望京分店)</option>
+									<option>同一首歌KTV(天安门分店)</option>
+								</select>
+							</div>
+							<div class="detail_map_box" id="detail_map_box"></div>
 						</div>
 						<ul>
 							<li class="white">
@@ -465,8 +485,8 @@
 				</div>
 				<div class="business_intro">
 					<p class="title">商户介绍</p>
-					<p class="business_name">江上人家</p>
-					<p class="business_intro_detail">是一家以拉丁为主题的南美文化餐厅，让客人在享受美味佳肴的同时，更多地了解南美文化，感受拉丁舞的激情互动。多年来戈拿旺本着客户至上、诚信、真诚的服务理念，让每一位客人在吃出品味，吃出健康的同时体验到真正的快乐，很多客人都成为戈拿旺忠实的朋友。 正宗巴西烤肉的用餐风格，肉食动物的最爱。正宗巴西烤肉的用餐风格，享受各种美味的新鲜沙拉和香浓的奶油汤，红菜汤等来开启您的烤肉之旅，紧跟其后的是鲜美的巴西烤肉主餐，百余种自助餐搭配巴西 烤肉免费享用。这里就是“肉食动物的最爱”，烤肉“一轮一轮地上”。三角肉“超好吃”，牛肩峰“非常嫩”，火鸡卷“咸咸的，很有嚼头”。自助台上各种色拉 也“挺丰富”，很能解腻。环境“还不错”，“很宽敞”，即使不爱吃这些东西，“光待着也不难受”。服务“热情”、“主动”，表演“精彩”。适合“一票朋友 热闹疯狂”。</p>
+					<p class="business_name"><?php echo ($partner["name"]); ?></p>
+					<p class="business_intro_detail"><?php echo ($partner["decription"]); ?></p>
 				</div>
 				<div class="show_comment">
 					<div class="comment_performance">
@@ -497,21 +517,11 @@
 							</ul>
 						</div>
 						<ul class="comment_ul">
-							<li>
-								<p class="one">鱼豆豆**@<span class="red">江山人家</span><span>2013-10-21 19:01</span><span class="rate_stars"><span style="width: 80%;"></span></span></p>
-								<p class="two">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年。消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜...</p>
+                        <?php if(is_array($evaluation)): foreach($evaluation as $key=>$eva): ?><li>
+								<p class="one"><?php echo ($eva["nickname"]); ?><span class="red"><?php echo ($partner["name"]); ?></span><span><?php echo ($eva["createtime"]); ?></span><span class="rate_stars"><span style="width: 80%;"></span></span></p>
+								<p class="two"><?php echo ($eva["evaluation"]); ?></p>
 								<p class="three">小肥羊（ 三里店分店）</p>
-							</li>
-							<li>
-								<p class="one">鱼豆豆**@<span class="red">江山人家</span><span>2013-10-21 19:01</span><span class="rate_stars"><span style="width: 80%;"></span></span></p>
-								<p class="two">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年。消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜...</p>
-								<p class="three">小肥羊（ 三里店分店）</p>
-							</li>
-							<li class="no_border_bottom">
-								<p class="one">鱼豆豆**@<span class="red">江山人家</span><span>2013-10-21 19:01</span><span class="rate_stars"><span style="width: 80%;"></span></span></p>
-								<p class="two">消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜，食尚在青年。消费满128，凭此券即刻享受8折优惠,全市26店通用，全场通兑！精品融合菜...</p>
-								<p class="three">小肥羊（ 三里店分店）</p>
-							</li>
+							</li><?php endforeach; endif; ?>
 						</ul>
 						<ul class="page_box clearfix">
 							<li><a href="" class="one">首页</a></li>
@@ -544,10 +554,10 @@
 	<div id="bottom_info">
 		<div id="bottom_box">
 			<div class="p_box">
-				<p>版权归惠桂林所有，未经书面授权禁止复制或建立镜像。 Email：<a href="mailto:service@huigl.com">service@huigl.com</a></p>
-				<p>惠桂林网客服电话：（0773）2853120 2852488 传真：（0773）2853265 </p>
-				<p>地址：桂林市中山中路39号南方大厦9-5号</p>
-				<p>经营许可证：桂B2-20040001</p>
+				<p>版权归惠桂林所有，未经书面授权禁止复制或建立镜像。 Email：<a href="mailto:huigl@outlook.com">service@huigl.com</a></p>
+				<p>惠桂林网客服电话：（0773）8993520</p>
+				<p>地址：桂林市高新区桂磨大道互联网产业基地503室</p>
+				<p>经营许可证：桂ICP备 14000606号</p>
 			</div>
 			<img src="__PUBLIC__/images/footer_ico01.png" alt="" class="one"/>
 			<img src="__PUBLIC__/images/footer_ico02.png" alt="" class="two" />
@@ -621,4 +631,5 @@
  
     initMap();//创建和初始化地图
 </script>
+
 </html>

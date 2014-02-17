@@ -369,48 +369,32 @@
 				<div id="classification_box">
 					<p>分类</p>
 					<ul class="parent_classification">
-						<li><a href="">全部</a></li>
-						<li><a href="">美食</a></li>
-						<li><a href="">休闲娱乐</a></li>
-						<li><a href="">丽人</a></li>
-						<li><a href="">生活服务</a></li>
-						<li><a href="">酒店</a></li>
-						<li><a href="">旅游</a></li>
+						<li><a href="" class="blue">全部</a></li>
+                    <?php if(is_array($label_types)): foreach($label_types as $key=>$label_type): ?><li><a href="/index.php/Coupon/coupon?label_type=<?php echo ($key); ?>"><?php echo ($label_type); ?></a></li><?php endforeach; endif; ?>
 					</ul>
 					<div>
 						<ul class="child_classification">
 							<li><a href="">全部</a></li>
-							<li><a href="">火锅</a></li>
-							<li><a href="">自助餐</a></li>
-							<li><a href="">甜点饮品</a></li>
-							<li><a href="">西餐</a></li>
-							<li><a href="">中式菜</a></li>
-							<li><a href="">小吃快餐</a></li>
-							<li><a href="">烧烤烤肉</a></li>
-							<li class="no_right_border"><a href="">日本料理</a></li>
+                            <?php if(is_array($categories)): foreach($categories as $key=>$category): ?><li><a href="/index.php/Coupon/coupon?cat_id=<?php echo ($category["cat_id"]); ?>"><?php echo ($category["cat_name"]); ?></a></li><?php endforeach; endif; ?>
+							<!--li class="no_right_border"><a href="">日本料理</a></li-->
 						</ul>
 					</div>
 				</div>
 				<div id="location_box">
 					<p>区域</p>
 					<ul class="parent_classification">
-						<li><a href="">全部</a></li>
-						<li><a href="">秀峰区</a></li>
-						<li><a href="">象山区</a></li>
-						<li><a href="">叠彩区</a></li>
-						<li><a href="">雁山区</a></li>
-						<li><a href="">七星区</a></li>
+						<li><a href="" class="blue">全部</a></li>
+						<li><a href="/index.php/Coupon/coupon?tag=秀峰区">秀峰区</a></li>
+						<li><a href="/index.php/Coupon/coupon?tag=象山区">象山区</a></li>
+						<li><a href="/index.php/Coupon/coupon?tag=叠彩区">叠彩区</a></li>
+						<li><a href="/index.php/Coupon/coupon?tag=雁山区">雁山区</a></li>
+						<li><a href="/index.php/Coupon/coupon?tag=七星区">七星区</a></li>
 					</ul>
 					<div>
 						<ul class="child_classification">
 							<li><a href="">全部</a></li>
-							<li><a href="">中心广场</a></li>
-							<li><a href="">甲天下广场</a></li>
-							<li><a href="">联达商业广场</a></li>
-							<li><a href="">红街商业广场</a></li>
-							<li><a href="">北极广场</a></li>
-							<li><a href="">汽车站</a></li>
-							<li class="no_right_border"><a href="">三里店广场</a></li>
+                            <?php if(is_array($locations)): foreach($locations as $key=>$location): ?><li><a href="/index.php/Coupon/coupon?location=<?php echo ($location["id"]); ?>"><?php echo ($location["name"]); ?></a></li><?php endforeach; endif; ?>
+							<!--li class="no_right_border"><a href="">三里店广场</a></li-->
 						</ul>
 					</div>
 				</div>
@@ -431,8 +415,8 @@
 		<div id="coupon_box">
 			<ul class="clearfix coupon_content">
                 <?php if(is_array($coupons)): foreach($coupons as $key=>$coupon): ?><li>
-					<img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>">
-					<a href="" class="content_title"><?php echo ($coupon["name"]); ?></a>
+					<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>"></a>
+					<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="content_title"><?php echo ($coupon["name"]); ?></a>
 					<p class="one"><?php echo ($coupon["description"]); ?></p>
 					<p class="two"><?php echo ($coupon["title"]); ?></p>
 					<p class="three">下载：<?php echo ($coupon["download_times"]); ?>次</p>
@@ -448,9 +432,9 @@
 				<p class="title">热门优惠劵</p>
 				<ul class="hot_coupon">
                 <?php if(is_array($hot_coupons)): foreach($hot_coupons as $key=>$coupon): ?><li>
-						<a href=""><?php echo ($coupon["name"]); ?></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="title"><?php echo ($coupon["name"]); ?></a>
 						<p><?php echo ($coupon["description"]); ?></p>
-						<img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>">
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>"></a>
 					</li><?php endforeach; endif; ?>
 				</ul>
 			</div>

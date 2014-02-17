@@ -371,33 +371,29 @@
 			<ul class="hot_navigation">
 				<li>
 					<span>热门分类</span>
-					<a href="" class="one">火锅</a>
-					<a href="">KTV</a>
-					<a href="">电影院</a>
-					<a href="">足疗按摩</a>
+                    <?php if(is_array($categories)): foreach($categories as $key=>$category): if($key == 0): ?><a href="/index.php/coupon/coupon?cat_id=<?php echo ($category["cat_id"]); ?>" class="one"><?php echo ($category["cat_name"]); ?></a>
+                    <?php else: ?>
+					<a href="/index.php/coupon/coupon?cat_id=<?php echo ($category["cat_id"]); ?>"><?php echo ($category["cat_name"]); ?></a><?php endif; endforeach; endif; ?>
 				</li>
 				<li>
 					<span>全部区域</span>
-					<a href="" class="one">七星区</a>
-					<a href="">秀峰区</a>
-					<a href="">象山区</a>
-					<a href="">叠彩区</a>
-					<a href="">雁山区</a>
+					<a href="/index.php/Coupon/coupon?tag=七星区" class="one">七星区</a>
+					<a href="/index.php/Coupon/coupon?tag=秀峰区">秀峰区</a>
+					<a href="/index.php/Coupon/coupon?tag=象山区">象山区</a>
+					<a href="/index.php/Coupon/coupon?tag=叠彩区">叠彩区</a>
+					<a href="/index.php/Coupon/coupon?tag=雁山区">雁山区</a>
 				</li>
 				<li class="no_bottom_border">
 					<span>热门商圈</span>
-					<a href="" class="one">中心广场</a>
-					<a href="">红街广场</a>
-					<a href="">联达广场</a>
+                    <?php if(is_array($locations)): foreach($locations as $key=>$location): if($key == 0): ?><a href="/index.php/Coupon/coupon?location=<?php echo ($location["id"]); ?>" class="one"><?php echo ($location["name"]); ?></a>
+                    <?php else: ?>
+					<a href="/index.php/Coupon/coupon?location=<?php echo ($location["id"]); ?>"><?php echo ($location["name"]); ?></a><?php endif; endforeach; endif; ?>
 				</li>
 			</ul>
 			<!-- 热门分类区域结束 -->
 			<!-- 广告区域 -->
 			<div id="ad_box">
-				<img src="__PUBLIC__/images/flash/1.png">
-				<img src="__PUBLIC__/images/flash/2.png">
-				<img src="__PUBLIC__/images/flash/3.png">
-				<img src="__PUBLIC__/images/flash/4.png">
+            <?php if(is_array($ads)): foreach($ads as $key=>$ad): ?><img src="__PUBLIC__/<?php echo ($ad["img_path"]); ?>"><?php endforeach; endif; ?>
 				<ul>
 					<li>1</li>
 					<li>2</li>
@@ -426,7 +422,7 @@
 				<ul>
                 <?php if(is_array($hot_partners)): foreach($hot_partners as $key=>$hpartner): ?><li>
 						<a href=""><?php echo ($hpartner["name"]); ?></a>
-						<img src="__PUBLIC__/<?php echo ($hpartner["picture_path"]); ?>">
+						<img src="__PUBLIC__/<?php echo ($hpartner["header_path"]); ?>">
 					</li><?php endforeach; endif; ?>
 				</ul>
 			</div>
@@ -454,8 +450,8 @@
 				</ul>
 				<ul class="content">
                 <?php if(is_array($eat_coupons)): foreach($eat_coupons as $key=>$coupon): ?><li>
-						<img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>">
-						<a href="/coupon/<?php echo ($coupon["coupon_id"]); ?>" class="content_title"><?php echo ($coupon["name"]); ?></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>"></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="content_title"><?php echo ($coupon["name"]); ?></a>
 						<p class="one"><?php echo ($coupon["description"]); ?></p>
 						<p class="two"><?php echo ($coupon["title"]); ?></p>
 						<p class="three">下载：<?php echo ($coupon["download_times"]); ?>次</p>
@@ -468,22 +464,38 @@
 			<div class="footsort_box">
 				<p class="title title2" id="foot_hot_title">最热优惠劵排行</p><p class="title" id="foot_new_title">最新优惠劵排行</p>
 				<ul id="foot_hot_ul">
-                <?php if(is_array($eat_coupons)): foreach($eat_coupons as $key=>$hcoupon): ?><li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href=""><?php echo ($hcoupon["name"]); ?></a>
-						<p class="two"><?php echo ($hcoupon["description"]); ?></p>
-						<img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>">
-						<a class="one hidden" href=""><?php echo ($hcoupon["name"]); ?></a>
-						<span class="one hidden"><?php echo ($hcoupon["title"]); ?></span>
-					</li><?php endforeach; endif; ?>
+                <?php if(is_array($eat_coupons)): foreach($eat_coupons as $k=>$hcoupon): if($k == 0): ?><li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<p class="two"><?php echo ($hcoupon["description"]); ?></p>
+							<a href="<?php echo U("Coupon/detail","","","");?>/{h$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>" title="<?php echo ($hcoupon["description"]); ?>"></a>
+							<a class="one hidden" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<span class="one hidden"><?php echo ($hcoupon["title"]); ?></span>
+						</li>
+						<?php else: ?>
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<p class="two hidden"><?php echo ($hcoupon["description"]); ?></p>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>" title="<?php echo ($hcoupon["description"]); ?>" class="hidden"></a>
+							<a class="one" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<span class="one"><?php echo ($hcoupon["title"]); ?></span>
+						</li><?php endif; endforeach; endif; ?>
 				</ul>
 				<ul id="foot_new_ul" class="hidden" >
-				<?php if(is_array($eat_coupons)): foreach($eat_coupons as $key=>$hcoupon): ?><li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href=""><?php echo ($hcoupon["name"]); ?></a>
-						<p class="two"><?php echo ($hcoupon["description"]); ?></p>
-						<img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>">
-						<a class="one hidden" href=""><?php echo ($hcoupon["name"]); ?></a>
-						<span class="one hidden"><?php echo ($hcoupon["title"]); ?></span>
-					</li><?php endforeach; endif; ?>
+				<?php if(is_array($eat_coupons)): foreach($eat_coupons as $k=>$hcoupon): if($k == 0): ?><li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<p class="two"><?php echo ($hcoupon["description"]); ?></p>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>" title="<?php echo ($hcoupon["description"]); ?>"></a>
+							<a class="one hidden" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<span class="one hidden"><?php echo ($hcoupon["title"]); ?></span>
+						</li>
+						<?php else: ?>
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<p class="two hidden"><?php echo ($hcoupon["description"]); ?></p>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>" title="<?php echo ($hcoupon["description"]); ?>" class="hidden"></a>
+							<a class="one" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<span class="one"><?php echo ($hcoupon["title"]); ?></span>
+						</li><?php endif; endforeach; endif; ?>
 				</ul>
 			</div>
 		</div>
@@ -501,8 +513,8 @@
 				</ul>
 				<ul class="content">
                 <?php if(is_array($play_coupons)): foreach($play_coupons as $key=>$coupon): ?><li>
-						<img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>">
-						<a href="/coupon/<?php echo ($coupon["coupon_id"]); ?>" class="content_title"><?php echo ($coupon["name"]); ?></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>"></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="content_title"><?php echo ($coupon["name"]); ?></a>
 						<p class="one"><?php echo ($coupon["description"]); ?></p>
 						<p class="two"><?php echo ($coupon["title"]); ?></p>
 						<p class="three">下载：<?php echo ($coupon["download_times"]); ?>次</p>
@@ -514,23 +526,39 @@
 			</div>
 			<div class="footsort_box">
 				<p class="title title2" id="ent_hot_title">最热优惠劵排行</p><p class="title" id="ent_new_title">最新优惠劵排行</p>
-				<ul id="ent_hot_ul" class="hidden" >
-                <?php if(is_array($play_coupons)): foreach($play_coupons as $key=>$hcoupon): ?><li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href=""><?php echo ($hcoupon["name"]); ?></a>
-						<p class="two"><?php echo ($hcoupon["description"]); ?></p>
-						<img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>">
-						<a class="one hidden" href=""><?php echo ($hcoupon["name"]); ?></a>
-						<span class="one hidden"><?php echo ($hcoupon["title"]); ?></span>
-					</li><?php endforeach; endif; ?>
+				<ul id="ent_hot_ul">
+                <?php if(is_array($play_coupons)): foreach($play_coupons as $k=>$hcoupon): if($k == 0): ?><li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<p class="two"><?php echo ($hcoupon["description"]); ?></p>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>" title="<?php echo ($hcoupon["description"]); ?>"></a>
+							<a class="one hidden" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<span class="one hidden"><?php echo ($hcoupon["title"]); ?></span>
+						</li>
+						<?php else: ?>
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<p class="two hidden"><?php echo ($hcoupon["description"]); ?></p>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>" title="<?php echo ($hcoupon["description"]); ?>" class="hidden"></a>
+							<a class="one" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<span class="one"><?php echo ($hcoupon["title"]); ?></span>
+						</li><?php endif; endforeach; endif; ?>
 				</ul>
 				<ul id="ent_new_ul" class="hidden" >
-                <?php if(is_array($play_coupons)): foreach($play_coupons as $key=>$ncoupon): ?><li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href=""><?php echo ($ncoupon["name"]); ?></a>
-						<p class="two"><?php echo ($ncoupon["description"]); ?></p>
-						<img src="__PUBLIC__/<?php echo ($ncoupon["picture_path"]); ?>">
-						<a class="one hidden" href=""><?php echo ($ncoupon["name"]); ?></a>
-						<span class="one hidden"><?php echo ($ncoupon["title"]); ?></span>
-					</li><?php endforeach; endif; ?>
+                <?php if(is_array($play_coupons)): foreach($play_coupons as $k=>$hcoupon): if($k == 0): ?><li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<p class="two"><?php echo ($hcoupon["description"]); ?></p>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>" title="<?php echo ($hcoupon["description"]); ?>"></a>
+							<a class="one hidden" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<span class="one hidden"><?php echo ($hcoupon["title"]); ?></span>
+						</li>
+						<?php else: ?>
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<p class="two hidden"><?php echo ($hcoupon["description"]); ?></p>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>" title="<?php echo ($hcoupon["description"]); ?>" class="hidden"></a>
+							<a class="one" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<span class="one"><?php echo ($hcoupon["title"]); ?></span>
+						</li><?php endif; endforeach; endif; ?>
 				</ul>
 			</div>
 		</div>
@@ -548,8 +576,8 @@
 				</ul>
 				<ul class="content">
                 <?php if(is_array($life_coupons)): foreach($life_coupons as $key=>$coupon): ?><li>
-						<img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>">
-						<a href="/coupon/<?php echo ($coupon["coupon_id"]); ?>" class="content_title"><?php echo ($coupon["name"]); ?></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>"></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="content_title"><?php echo ($coupon["name"]); ?></a>
 						<p class="one"><?php echo ($coupon["description"]); ?></p>
 						<p class="two"><?php echo ($coupon["title"]); ?></p>
 						<p class="three">下载：<?php echo ($coupon["download_times"]); ?>次</p>
@@ -562,22 +590,38 @@
 			<div class="footsort_box">
 				<p class="title title2" id="life_hot_title">最热优惠劵排行</p><p class="title" id="life_new_title">最新优惠劵排行</p>
 				<ul id="life_hot_ul">
-                <?php if(is_array($life_coupons)): foreach($life_coupons as $key=>$hcoupon): ?><li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href=""><?php echo ($hcoupon["name"]); ?></a>
-						<p class="two"><?php echo ($hcoupon["description"]); ?></p>
-						<img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>">
-						<a class="one hidden" href=""><?php echo ($hcoupon["name"]); ?></a>
-						<span class="one hidden"><?php echo ($hcoupon["title"]); ?></span>
-					</li><?php endforeach; endif; ?>
+                <?php if(is_array($life_coupons)): foreach($life_coupons as $k=>$hcoupon): if($k == 0): ?><li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<p class="two"><?php echo ($hcoupon["description"]); ?></p>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>" title="<?php echo ($hcoupon["description"]); ?>"></a>
+							<a class="one hidden" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<span class="one hidden"><?php echo ($hcoupon["title"]); ?></span>
+						</li>
+						<?php else: ?>
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<p class="two hidden"><?php echo ($hcoupon["description"]); ?></p>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>" title="<?php echo ($hcoupon["description"]); ?>" class="hidden"></a>
+							<a class="one" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<span class="one"><?php echo ($hcoupon["title"]); ?></span>
+						</li><?php endif; endforeach; endif; ?>
 				</ul>
 				<ul id="life_new_ul" class="hidden" >
-                <?php if(is_array($life_coupons)): foreach($life_coupons as $key=>$ncoupon): ?><li class="hover" id="footsort_box_fisrt_li">
-						<a class="two" href=""><?php echo ($ncoupon["name"]); ?></a>
-						<p class="two"><?php echo ($ncoupon["description"]); ?></p>
-						<img src="__PUBLIC__/<?php echo ($ncoupon["picture_path"]); ?>">
-						<a class="one hidden" href=""><?php echo ($ncoupon["name"]); ?></a>
-						<span class="one hidden"><?php echo ($ncoupon["title"]); ?></span>
-					</li><?php endforeach; endif; ?>
+                <?php if(is_array($life_coupons)): foreach($life_coupons as $k=>$hcoupon): if($k == 0): ?><li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<p class="two"><?php echo ($hcoupon["description"]); ?></p>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>" title="<?php echo ($hcoupon["description"]); ?>"></a>
+							<a class="one hidden" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<span class="one hidden"><?php echo ($hcoupon["title"]); ?></span>
+						</li>
+						<?php else: ?>
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<p class="two hidden"><?php echo ($hcoupon["description"]); ?></p>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($hcoupon["picture_path"]); ?>" title="<?php echo ($hcoupon["description"]); ?>" class="hidden"></a>
+							<a class="one" href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hcoupon["coupon_id"]); ?>"><?php echo ($hcoupon["name"]); ?></a>
+							<span class="one"><?php echo ($hcoupon["title"]); ?></span>
+						</li><?php endif; endforeach; endif; ?>
 				</ul>
 			</div>
 		</div>
