@@ -41,38 +41,34 @@
 	color: white;
 }
 #main #classification_location_box{
-	height: 190px;
-	position: relative;
+
 }
 #main #classification_location_box #content_box{
 	width: 944px;
-	height: 182px;
-	position: absolute;
-	top: 8px;
-	left: 8px;
+	margin-left: 8px;
+	margin-top: 8px;
 	background-color: white;
 	border-radius: 5px;
 }
 #main #classification_location_box #content_box #classification_box{
-	
-	height: 87px;
-	position: relative;
+	padding-bottom: 10px;
 }
 #main #classification_location_box #content_box #classification_box p{
 	height: 30px;
 	line-height: 30px;
-	position: absolute;
-	top: 0px;
-	left: 10px;
 	color: #ED5565;
 	font-weight: bold;
 	font-size: 14px;
+	width: 54px;
+	padding-left: 10px;
+	display: inline-block;
+	vertical-align: top;/*解决firefoxinline-block的空隙bug*/
+
 }
 #main #classification_location_box #content_box #classification_box ul.parent_classification{
 	height: 30px;
-	position: absolute;
-	top: 0px;
-	left: 70px;
+	line-height: 30px;
+	display: inline-block;
 }
 #main #classification_location_box #content_box #classification_box ul.parent_classification li{
 	height: 30px;
@@ -85,32 +81,24 @@
 	line-height: 26px;
 	margin-top: 2px;
 	text-align: center;
-	width: 60px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 6px;
+	margin-right: 6px;
 }
-#main #classification_location_box #content_box #classification_box ul.parent_classification li a.blue{
+#main #classification_location_box #content_box #classification_box ul.parent_classification li a.current{
 	background-color: #4467A3;
 	color: white;
-	border-radius: 5px;
-}
-#main #classification_location_box #content_box #classification_box ul.parent_classification li a.hover{
-	background-color: #4467A3;
-	color: white;
-	border-radius: 5px;
+	border-radius: 3px;
 }
 #main #classification_location_box #content_box #classification_box div{
-	position: absolute;
-	top: 30px;
-	left: 70px;
-	height: 52px;
-	background: url(../images/bg_ico_01.png) no-repeat 0px 0px;
+	background: url(../images/bg_ico_01.png) no-repeat 80px 0px;
+	display: none;
 }
 #main #classification_location_box #content_box #classification_box div ul.child_classification{
-	border:1px solid #DBE1EC;
-	height: 40px;
 	margin-top: 10px;
 	background: #ECEFF5;
-	border-radius: 5px;
-
+	margin-left: 70px;
 }
 #main #classification_location_box #content_box #classification_box div ul.child_classification li{
 	float: left;
@@ -118,11 +106,9 @@
 	background: url(../images/bg_ico_02.png) no-repeat 0px -491px;
 	padding-right: 15px;
 	padding-left: 15px;
-
 }
 #main #classification_location_box #content_box #classification_box div ul.child_classification li.no_right_border{
 	border-right: none;
-
 }
 #main #classification_location_box #content_box #classification_box div ul.child_classification li a{
 	color: #4467A3;
@@ -131,33 +117,33 @@
 	line-height: 26px;
 	margin-top: 7px;
 	text-align: center;
+	padding-left: 5px;
+	padding-right: 5px;
 }
-#main #classification_location_box #content_box #classification_box div ul.child_classification li a.hover{
+#main #classification_location_box #content_box #classification_box div ul.child_classification li a.current{
 	background-color: #4467A3;
 	color: white;
-	border-radius: 5px;
+	border-radius: 3px;
 }
 #main #classification_location_box #content_box #location_box{
-	height: 92px;
-	position: relative;
+	padding-bottom: 10px;
 }
 #main #classification_location_box #content_box #location_box p{
 	height: 30px;
 	line-height: 30px;
-	position: absolute;
-	top: 0px;
-	left: 10px;
 	color: #ED5565;
 	font-weight: bold;
 	font-size: 14px;
+	width: 54px;
+	padding-left: 10px;
+	display: inline-block;
+	vertical-align: top;/*解决firefoxinline-block的空隙bug*/
 
 }
 #main #classification_location_box #content_box #location_box ul.parent_classification{
 	height: 30px;
-	position: absolute;
-	top: 0px;
-	left: 70px;
-
+	line-height: 30px;
+	display: inline-block;
 }
 #main #classification_location_box #content_box #location_box ul.parent_classification li{
 	height: 30px;
@@ -170,32 +156,26 @@
 	line-height: 26px;
 	margin-top: 2px;
 	text-align: center;
-	width: 60px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 6px;
+	margin-right: 6px;
 }
-#main #classification_location_box #content_box #location_box ul.parent_classification li a.blue{
-	background-color: #4467A3;
-	color: white;
-	border-radius: 5px;
-}
-#main #classification_location_box #content_box #location_box ul.parent_classification li a.hover{
+#main #classification_location_box #content_box #location_box ul.parent_classification li a.current{
 	background-color: #4467A3;
 	color: white;
 	border-radius: 5px;
 }
 #main #classification_location_box #content_box #location_box div{
-	position: absolute;
-	top: 30px;
-	left: 70px;
-	height: 52px;
-	background: url(../images/bg_ico_01.png) no-repeat 50px 0;
-
+	background: url(../images/bg_ico_01.png) no-repeat 80px 0px;
+	display: none;
 }
 #main #classification_location_box #content_box #location_box div ul.child_classification{
 	border:1px solid #DBE1EC;
-	height: 40px;
 	background: #ECEFF5;
 	border-radius: 5px;
 	margin-top: 10px;
+	margin-left: 70px;
 }
 #main #classification_location_box #content_box #location_box div ul.child_classification li{
 	float: left;
@@ -214,8 +194,10 @@
 	line-height: 26px;
 	margin-top: 7px;
 	text-align: center;
+	padding-left: 5px;
+	padding-right: 5px;
 }
-#main #classification_location_box #content_box #location_box div ul.child_classification li a.hover{
+#main #classification_location_box #content_box #location_box div ul.child_classification li a.current{
 	background-color: #4467A3;
 	color: white;
 	border-radius: 5px;

@@ -48,16 +48,15 @@
 		<div id="classification_location_box">
 			<div id="content_box">
 				<div id="classification_box">
-					<p>分类</p>
-					<ul class="parent_classification">
-						<li><a href="" class="blue">全部</a></li>
+					<p>分类</p><ul class="parent_classification">
+						<li><a href="" class="current">全部</a></li>
                     <foreach name="label_types" item="label_type">
 						<li><a href="/index.php/Coupon/coupon?label_type={$key}">{$label_type}</a></li>
                     </foreach>
 					</ul>
 					<div>
-						<ul class="child_classification">
-							<li><a href="">全部</a></li>
+						<ul class="child_classification clearfix">
+							<li><a href="" class="current">全部</a></li>
                             <foreach name="categories" item="category">
 							<li><a href="/index.php/Coupon/coupon?cat_id={$category.cat_id}">{$category.cat_name}</a></li>
                             </foreach>
@@ -66,9 +65,8 @@
 					</div>
 				</div>
 				<div id="location_box">
-					<p>区域</p>
-					<ul class="parent_classification">
-						<li><a href="" class="blue">全部</a></li>
+					<p>区域</p><ul class="parent_classification">
+						<li><a href="" class="current">全部</a></li>
 						<li><a href="/index.php/Coupon/coupon?tag=秀峰区">秀峰区</a></li>
 						<li><a href="/index.php/Coupon/coupon?tag=象山区">象山区</a></li>
 						<li><a href="/index.php/Coupon/coupon?tag=叠彩区">叠彩区</a></li>
@@ -76,8 +74,8 @@
 						<li><a href="/index.php/Coupon/coupon?tag=七星区">七星区</a></li>
 					</ul>
 					<div>
-						<ul class="child_classification">
-							<li><a href="">全部</a></li>
+						<ul class="child_classification clearfix">
+							<li><a href="" class="current">全部</a></li>
                             <foreach name="locations" item="location">
 							    <li><a href="/index.php/Coupon/coupon?location={$location.id}">{$location.name}</a></li>
                             </foreach>

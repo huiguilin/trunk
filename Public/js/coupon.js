@@ -60,8 +60,31 @@ $(function(){
 	}, function() {
 		$(this).find('a').removeClass('hover');
 	});
-
 	//分类+位置Hover特效结束
+	//分类+位置Click特效
+	$('#main #classification_location_box #content_box #classification_box ul.parent_classification li a').click(function(event) {
+		$('#main #classification_location_box #content_box #classification_box ul.parent_classification li a').removeClass('current');
+		$(this).addClass('current');
+		$('#main #classification_location_box #content_box #classification_box div').show();
+		return false;
+	});
+	$('#main #classification_location_box #content_box #location_box ul.parent_classification li a').click(function(event) {
+		$('#main #classification_location_box #content_box #location_box ul.parent_classification li a').removeClass('current');
+		$(this).addClass('current');
+		$('#main #classification_location_box #content_box #location_box div').show();
+		return false;
+	});
+	$('#main #classification_location_box #content_box #classification_box div ul.child_classification li a').click(function(event) {
+		$('#main #classification_location_box #content_box #classification_box div ul.child_classification li a').removeClass('current');
+		$(this).addClass('current');
+		return false;
+	});
+	$('#main #classification_location_box #content_box #location_box div ul.child_classification li a').click(function(event) {
+		$('#main #classification_location_box #content_box #location_box div ul.child_classification li a').removeClass('current');
+		$(this).addClass('current');
+		return false;
+	});
+	//分类+位置Click特效结束
 
 	
 
