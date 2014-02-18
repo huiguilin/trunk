@@ -76,7 +76,7 @@
 						</ul>
 					</div>
 				</div>
-				<a href="" class="print_coupon_btn print_coupon_btn2">打印此优惠券</a>
+				<a href="{:U("Coupon/print","","","")}/{$coupon.coupon_id}" class="print_coupon_btn print_coupon_btn2">打印此优惠券</a>
 				<a href="javascript:void(0);" class="download_coupon_btn" id="download_coupon_btn_two">下载到手机</a>
 				<a id="download_coupon_id" style="visibility:hidden" value="{$coupon.coupon_id}">{$coupon.coupon_id}</a>
 			</div>

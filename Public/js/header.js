@@ -238,17 +238,17 @@ $(function(){
 				$('#bingdingcellphone_No_hidden_tips').text('输入手机号格式不对');
 			}
 			else{
-				$('#bingdingcellphone_No_hidden_tips').css('display', 'none');
-				$(this).removeClass('special').addClass('special2').val('已发送');
-				$('#validate_vcode').removeClass('special2').addClass('special');
-				$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li p.errorTips').css('display', 'block');
-				$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #validate_vcode').removeAttr('disabled');
+				
                 $.post(ajaxPostURL+"User/sendCheckCode", { phone_number :cellphone.val()
                     },function(data){
                     //做个判断，返回成功执行下面的代码，跳转到注册成功页面
                    
                     if(data.status == 1){
-                    alert('验证码已经发送');
+                   		$('#bingdingcellphone_No_hidden_tips').css('display', 'none');
+						$("#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #get_vcode").removeClass('special').addClass('special2').val('已发送');
+						$('#validate_vcode').removeClass('special2').addClass('special');
+						$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li p.errorTips').css('display', 'block');
+						$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #validate_vcode').removeAttr('disabled');
                     }
                     },"json");
 
@@ -257,14 +257,26 @@ $(function(){
 	});
 	$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #validate_vcode').click(function(event) {
 		var vcode =$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #bingdingcellphone_vcode');
+		var cellphone =$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #bingdingcellphone_No');
 		if(vcode.val() ==""){
 			$('#bingdingcellphone_vcode_hidden_tips').css('display', 'block');
 			$('#bingdingcellphone_vcode_hidden_tips').text('请输入验证码');
 		}else{
-			$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul.one').css('display', 'none');
-			$('#Userreg_box #UserregSuccess_email #bindingcellphone_box #bingdingcellphone_success').css('display', 'block');
+			if(cellphone.val() ==""){
+				$('#bingdingcellphone_vcode_hidden_tips').css('display', 'block');
+				$('#bingdingcellphone_vcode_hidden_tips').text('请输入手机号');
+			}
+			else{
+				$.post(ajaxPostURL+"User/bindPhone",{vcode:vcode.val(),cellphone_number:cellphone.val()},function(data){
+					if(data.status ==1){
+						$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul.one').css('display', 'none');
+						$('#Userreg_box #UserregSuccess_email #bindingcellphone_box #bingdingcellphone_success').css('display', 'block');
+					}else{
+						$('#bingdingcellphone_vcode_hidden_tips').text('验证码错误');
+					}
+				},"json");
+			}
 		}
-
 	});
 	//用户注册成功页面特效结束
     $('#sendcode').click(function(event){
@@ -277,7 +289,7 @@ $(function(){
         $(this).text("重新获取");
         $('#Userreg_box #u_bottom #cellphone_box form p.tip_send_vcode').show();
        	var timer = setInterval(autoRun,1000);
-       	
+       
 		function autoRun(){
 		 	if(sta == 0){
 		 		 $('#sendcode').text("重新获取");
@@ -843,6 +855,9 @@ $(function(){
 	//邮箱注册注册button特效
 	$('#Userreg_box #u_bottom #email_box form #email_reg_btn').click(function(event) {
 
+		var backgroundURL='url("http://localhost/Trunk/Public/images/ico_12.png")'
+		var backgroundURL_error= backgroundURL.replace("ico_12.png","ico_13.png");
+
 		var emailreg_email =$('#Userreg_box #u_bottom #email_box form input.one').val();
 		var emailreg_pwd =$('#Userreg_box #u_bottom #email_box form input.two').val();
 		var emailreg_pwd2 =$('#Userreg_box #u_bottom #email_box form input.three').val();
@@ -863,6 +878,10 @@ $(function(){
 			 	if(data.status == 1){
 			 		$('#Userreg_box #u_bottom').css('display', 'none');
 					$('#Userreg_box #UserregSuccess_email').css('display', 'block');
+			 	}
+			 	else{
+			 		$('#Userreg_box #u_bottom #email_box form p.twelve').text('验证码错误').css('color', '#F14B2B')
+					.css('background-image', backgroundURL_error);
 			 	}
 			},"json");
 
