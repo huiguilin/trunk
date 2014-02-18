@@ -55,7 +55,6 @@ class UserAction extends Action {
         else {
             $result = $this->phoneRegister($phone, $nickname, $password, $verify);
         }
-
         if ($result == TRUE) {
             $data = array(
                     'status' => 1,
@@ -65,14 +64,14 @@ class UserAction extends Action {
                     );
         }
         else {
-            $result = array(
+            $data = array(
                     'status' => 0,
                     'info' => '注册失败！',
                     'size' => 9,
                     'url' => '',
                     );          
         }
-        $this->ajaxReturn($data,'JSON');
+        $this->ajaxReturn($data);
         return TRUE;
     }
 
@@ -119,7 +118,6 @@ class UserAction extends Action {
             $_SESSION['user'] = $data;
             $this->assign('user', $_SESSION['user']);
             return TRUE;
-
         }
         return FALSE;
     }
@@ -158,7 +156,6 @@ class UserAction extends Action {
         if ($_SESSION['pcheck'] != $checkCode) {
             return FALSE;
         }
-
         $mail = $phone . "#huiguilin";
         #$nickname = $phone;
         $cookie = md5($mail . $nickname . "huiguilin");
@@ -199,7 +196,7 @@ class UserAction extends Action {
         }
         $code = mt_rand(1, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
         $helper = new UserProfileModel();
-        $result = $helper->getUserProfileByPhoneNumber($phone);
+        $result = $helper->getUserProfileByPhoneNumber($phoneNumber);
         if (!empty($result)) {
             $data = array(
                 'status' => 0,
@@ -227,7 +224,6 @@ class UserAction extends Action {
         );
         return $data;
     }
-
     public function active() {
         $mail = $_GET['mail'];
         $activeCode = $_GET['ac'];

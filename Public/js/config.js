@@ -1,0 +1,1 @@
+var ajaxPostURL = "http://localhost/trunk/index.php/";

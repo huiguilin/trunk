@@ -243,9 +243,10 @@ $(function(){
 				$('#validate_vcode').removeClass('special2').addClass('special');
 				$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li p.errorTips').css('display', 'block');
 				$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #validate_vcode').removeAttr('disabled');
-                $.post("/index.php/User/sendCheckCode", { phone_number :cellphone.val()
+                $.post(ajaxPostURL+"User/sendCheckCode", { phone_number :cellphone.val()
                     },function(data){
                     //做个判断，返回成功执行下面的代码，跳转到注册成功页面
+                   
                     if(data.status == 1){
                     alert('验证码已经发送');
                     }
@@ -288,11 +289,18 @@ $(function(){
 		 		$('#sendcode').text("重新获取("+sta+")");
 		 	}
 		}
-        $.post("/index.php/User/sendCheckCode", { phone_number : phone_number
+        $.post(ajaxPostURL+"User/sendCheckCode", { phone_number : phone_number
             },function(data){
             //做个判断，返回成功执行下面的代码，跳转到注册成功页面
             if(data.status == 1){
-                alert('验证码已经发送');
+                 clearInterval(timer);
+                 $('#sendcode').text("重新获取");
+                 $('#Userreg_box #u_bottom #cellphone_box form p.tip_send_vcode').show().text('验证码已经发送');
+            }
+            else{
+            	 clearInterval(timer);
+                 $('#sendcode').text("重新获取");
+                 $('#Userreg_box #u_bottom #cellphone_box form p.tip_send_vcode').show().text(data.info).css('color', '#F14B2B');
             }
             },"json");
 
@@ -848,7 +856,7 @@ $(function(){
 			(emailreg_nickname != "") &&
 			(emailreg_vcode != ""))
 		{
-			$.post("/index.php/User/register", { email: emailreg_email, 
+			$.post(ajaxPostURL+"User/register", { email: emailreg_email, 
 			pwd: emailreg_pwd, pwd2: emailreg_pwd2,nickname:emailreg_nickname,
 			 vcode:emailreg_vcode},function(data){
 			 	//做个判断，返回成功执行下面的代码，跳转到注册成功页面
@@ -859,9 +867,7 @@ $(function(){
 			},"json");
 
 		}
-		else{
-			return false;
-		}
+		return false;
 	});
 	//邮箱注册注册button特效结束
 	//手机注册注册button特效
@@ -872,28 +878,38 @@ $(function(){
 		var cellphonereg__nickname =$('#Userreg_box #u_bottom #cellphone_box form input.four').val();
 		var cellphonereg__vcode =$('#Userreg_box #u_bottom #cellphone_box form input.six').val();
 		var reg_cellphone= /^(1)[0-9]{10}$/;
-
 		if((cellphonereg_cellphone != "" && reg_cellphone.test(cellphonereg_cellphone)) && 
 			(cellphonereg__pwd != "" && cellphonereg__pwd.length>=6 && cellphonereg__pwd.length<32) && 
 			(cellphonereg__pwd2 != "" && cellphonereg__pwd==cellphonereg__pwd2) &&
 			(cellphonereg__nickname != "") &&
 			(cellphonereg__vcode != ""))
 		{
-			$.post("/index.php/User/register", { cellphone: cellphonereg_cellphone, 
+			$.post(ajaxPostURL+"User/register", { cellphone: cellphonereg_cellphone, 
 			pwd: cellphonereg__pwd, pwd2: cellphonereg__pwd2,nickname:cellphonereg__nickname,
 			 vcode:cellphonereg__vcode},function(data){
 			 	//做个判断，返回成功执行下面的代码，跳转到注册成功页面
 			 	if(data.status == 1){
-			 		$('#Userreg_box #u_bottom').css('display', 'none');
-					$('#Userreg_box #UserregSuccess_cellphone').css('display', 'block');
+				 	$('#Userreg_box #u_bottom').css('display', 'none');
+				 	$('#Userreg_box #UserregSuccess_cellphone').css('display', 'block');
+				 	var sta =3;
+					setInterval(function(){
+						sta--;
+						if(sta == 0){
+							$('#cellphone_reg_success_count_down').text(sta+"秒");	
+							location.href = "http://localhost/trunk/index.php/index/index.html";
+						}
+						else{
+							$('#cellphone_reg_success_count_down').text(sta+"秒");	
+						}
+					},1000)
 			 	}
-			},"json");
+			 	if(data.status == 0){
+			 		$('#cellphone_reg_final_error_tip').show();
+			 	}
+			});
 		}
-		else{
-			return false;
-		}
+		return false
 	});
-	
 	//手机注册注册button特效结束
 
 	// ////////////////////////用户注册+用户登录+忘记密码特效全部代码区域结束////////////////////

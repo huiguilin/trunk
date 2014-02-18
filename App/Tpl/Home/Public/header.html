@@ -141,7 +141,7 @@
 						<p class="five">验证码</p>
 						<input type="text" name="reg_vcode" class="five"/>
 						<a href="" id="regemail_vcode_not_clear">看不清</a>
-						<img src="/index.php/User/verifyImg" class="one">
+						<img src="{:U("Home/User/verifyImg","","","")}" class="one">
 						<input type="checkbox" name="license" class="six" checked="true">
 						<p class="six">
 							我已阅读并同意<a href="{:U("Eula/eula")}"><<惠桂林用户条款>>.</a>
@@ -185,7 +185,8 @@
 						<p class="nine" id="reg_hidebox02">请输入手机收到的短信验证码</p>
 						<p class="ten" id="reg_hidebox03">密码由6-32位的字母、数字或符号组成</p>
 						<p class="eleven" id="reg_hidebox04">请再次输入密码</p>
-						<p class="twelve" id="reg_hidebox05">昵称由1-16位的汉字、英文字母或数字组成</p> 
+						<p class="twelve" id="reg_hidebox05">昵称由1-16位的汉字、英文字母或数字组成</p>
+						<p class="fourteen" id="cellphone_reg_final_error_tip">验证码错误</p>
 					</form>
 				</div>	
 			</div>
@@ -233,7 +234,7 @@
 					<p class="one">注册成功并已登录惠桂林网！</p>
 					<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="" id="return_page2">返回原来页面</a> 或去 <a href="{:U("Index/index")}">惠桂林网首页</a></p>
 				</div>
-				<p class="count">如果没有选择，页面将在<span>3秒</span>后自动关闭此窗口。</p>
+				<p class="count">如果没有选择，页面将在<span id="cellphone_reg_success_count_down">3秒</span>后自动关闭此窗口。</p>
 			</div>
 		</div>
 		<div id="Userlogin_box">

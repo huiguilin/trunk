@@ -928,6 +928,16 @@ input{
 	font-weight:bold;
 
 }
+#Userreg_box #u_bottom #cellphone_box form p.fourteen{
+	position: absolute;
+	top: 380px;
+	left: 390px;
+	color: #F14B2B;
+	font-size: 13px;
+	background: url(../images/ico_13.png) no-repeat;
+	padding-left: 20px;
+	display: none;
+}
 #Userreg_box #u_bottom #cellphone_box form p.tip_send_vcode{
 	position: absolute;
 	top: 65px;
