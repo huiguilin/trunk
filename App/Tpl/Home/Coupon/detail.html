@@ -58,19 +58,21 @@
 					<p class="desc_content"><span>{$coupon.description}</span></p>
 					<div>
 						<p>使用须知</p>
-						<p>有效期：<span>2013.6.22 至 2014.6.22</span></p>
-						<p>不可用日期：<span>2013年10月1日至10月3日、10月30日至10月31日、11月1日、12月24日至12月25日、2014年1月1日、2月14日、5月1日至5月3日、6月1日</span></p>
-						<p>使用时间：<span>11:30-14:00,17:30-21:30</span></p>
-						<p>预约提醒：<span>无需预约</span></p>
+						<p>有效期：<span>{$coupon.start_time}——{$coupon.end_time}</span></p>
+						<p>不可用日期：<span>{$coupon.exception_time}</span></p>
+						<p>使用时间：<span>{$coupon.use_time}</span></p>
+						<p>预约提醒：
+                        <span>
+                        <if condition="$coupon.need_booking eq 1">
+                        需要预约
+                        <else/>
+                        无需预约
+                        </if>
+                        </span>
+                        </p>
 						<p>使用规则：</p>
 						<ul>
-							<li>凭惠桂林券到店消费不可同时享受店内其他优惠</li>
-							<li>本单在惠桂林券使用时间内不限用餐时长</li>
-							<li>儿童无优惠</li>
-							<li>每张惠桂林券限1桌使用</li>
-							<li>仅限堂食，不提供餐前外带及餐后打包</li>
-							<li>仅限大厅就餐，不可使用包间</li>
-							<li class="bottom">部分菜品因时令原因有所不同，请以店内当日实际供应为准</li>
+                        {$coupon.use_rule}
 						</ul>
 					</div>
 				</div>
@@ -230,6 +232,7 @@
 				</ul>
 			</div>
 		</div>
+        <a id="partner_hidden" style="visibility:hidden" value="{$partnerInfo}">{$partnerInfo}</a>
 		
 	</div>
 <!-- 内容区域结束 -->
@@ -240,21 +243,21 @@
 </body>
 
 <script type="text/javascript">
+    var partner_info = $('#partner_hidden').text();
+    var partner = JSON.parse(partner_info);
     //创建和初始化地图函数：
-    function initMap(){
-        createMap();//创建地图
+    function initMap(partner){
+        createMap(partner);//创建地图
         setMapEvent();//设置地图事件
         addMapControl();//向地图添加控件
         addMarker();//向地图中添加marker
     }
     
     //创建地图函数：
-    function createMap(){
+    function createMap(partner){
         var map = new BMap.Map("map");//在百度地图容器中创建一个地图
-        var point = new BMap.Point(110.285681,25.259639);//定义一个中心点坐标
-        var point2 = new BMap.Point(110.28613,25.260595);//定义一个中心点坐标
+        var point = new BMap.Point(partner.GPS_X, partner.GPS_Y);//定义一个中心点坐标
         map.centerAndZoom(point,14);//设定地图的中心点和坐标并将地图显示在地图容器中
-        map.centerAndZoom(point2,14);//设定地图的中心点和坐标并将地图显示在地图容器中
         window.map = map;//将map变量存储在全局
     }
     
@@ -280,8 +283,8 @@
     }
     
     //标注点数组
-    var markerArr = [{title:"商家名称",content:"商家介绍",point:"110.285681|25.259639",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}},{title:"商家名称",content:"商家介绍",point:"110.285613|25.260595",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
-		 ];
+    var markerArr = [{title:partner.name,content:partner.title,point:partner.GPS_X+"|"+partner.GPS_Y,isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+    ];
     //创建marker
     function addMarker(){
         for(var i=0;i<markerArr.length;i++){
@@ -335,8 +338,7 @@
         var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
         return icon;
     }
-    
-    initMap();//创建和初始化地图
+    initMap(partner);//创建和初始化地图
 </script>
 
 </html>

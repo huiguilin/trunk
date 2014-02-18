@@ -148,6 +148,7 @@ class CouponAction extends Action {
         $this->assign("coupon", $couponInfo[0]);
         $this->assign("other_coupon", $otherCoupons);
         $this->assign("partner", $partnerInfo[0]);
+        $this->assign("partnerInfo", json_encode($partnerInfo[0]));
         $this->assign("evaluation", $eInfo);
 
         $this->display();
