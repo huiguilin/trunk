@@ -121,18 +121,6 @@ $(function(){
 				
 			}
 		}
-		//控制登录按钮禁用启用的
-		if(username!="" && password !="" && vcode !=""){
-			$('#Userlogin_box #u_middle_box form #btn_login').removeAttr('disabled')
-			$('#Userlogin_box #u_middle_box form #btn_login').css('background', '#ED5565');
-			$('#Userlogin_box #u_middle_box form #btn_login').css('cursor', 'pointer');
-		}
-		else{
-			$('#Userlogin_box #u_middle_box form #btn_login').attr('disabled', 'disabled');
-			$('#Userlogin_box #u_middle_box form #btn_login').css('background', '#F3F3F3');
-			$('#Userlogin_box #u_middle_box form #btn_login').css('cursor', 'auto');
-		}
-		//控制登录按钮禁用启用结束
 	});
 	
 	$('#Userlogin_box #u_middle_box form #btn_login').click(function(event) {
@@ -141,16 +129,32 @@ $(function(){
 		var password =$('#Userlogin_box #u_middle_box form input.two').val();
 		var vcode =$('#Userlogin_box #u_middle_box form input.three').val();
 		if(vcode != "" && username != "" && password != ""){
-			$.post("/index.php/User/checkLogin", { username: username, password: password, vcode: vcode },function(data){
-            	if (data.status == 1) {
-                	$('#Userlogin_box').bPopup().close();
+			$.post(ajaxPostURL+"User/checkLogin", { username: username, password: password, vcode: vcode },function(data){
+				
+            	if(data.status == 1){
+            		location.href = "http://localhost/trunk/index.php/index/index.html";
+            	}else if(data.status == 0){
+            		$('#login_hidebox04').show().text(data.info);
+            		return false;
             	}
-			
+            	else if(data.status == 3){
+            		$('#login_hidebox04').show().text(data.info);
+            		return false;
+            	}
+            	else if(data.status == 4){
+            		$('#login_hidebox04').show().text(data.info);
+            		return false;
+            	}
+            	else{
+            		$('#login_hidebox04').show().text(data.info);
+            		return false;
+            	}
 			},"json");
 		}
 		else{
-			return false;
+			$('#login_hidebox04').show().text("用户名,密码和者验证码不能为空");
 		}
+		return false;
 		
 	});
 	//用户登录弹窗中所有验证结束

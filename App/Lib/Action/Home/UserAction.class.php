@@ -5,12 +5,20 @@ class UserAction extends Action {
         $passwd = $_POST['password'];
         $verify = mb_strtolower($_POST['vcode']);
         if (empty($userName) || empty($passwd) || empty($verify)) {
-            echo "empty important thing";
-            return TRUE;
+            $data = array();
+            $data['status'] = 4;
+            $data['info'] = '用户名,密码和者验证码不能为空';
+            $data['size'] = 9;
+            $data['url'] = "";
+            $this->ajaxReturn($data,'JSON');
         }
         if (session('verify') != md5($verify)) {
-            $this->error('验证码错误！');
-            return TRUE;
+            $data = array();
+            $data['status'] = 3;
+            $data['info'] = '验证码错误！';
+            $data['size'] = 9;
+            $data['url'] = "";
+            $this->ajaxReturn($data,'JSON');
         }
         $helper = new UserProfileModel();
         $data = $helper->getUserProfileByUserName($userName);
@@ -20,7 +28,7 @@ class UserAction extends Action {
             $data['info'] = '用户名不存在!';
             $data['size'] = 9;
             $data['url'] = "";
-            return TRUE;
+            $this->ajaxReturn($data,'JSON');
         }
         $md5 = md5($passwd);
         if ($md5 == $data['password']) {

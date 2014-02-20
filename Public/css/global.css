@@ -1323,13 +1323,12 @@ input{
 	width: 256px;
 	height:46px;
 	border-radius: 5px;
-	background:#F3F3F3;
+	background:#ED5565;
 	color: white;
 	font-size: 14px;
 	font-weight: bold;
 	text-align: center;
 	line-height: 46px;
-
 }
 #Userlogin_box #u_middle_box form #forgetpwd{
 	position: absolute;
@@ -1428,7 +1427,7 @@ input{
 	top: 245px;
 	left: 370px;
 	padding-left: 20px;
-	display: none
+	display: none;
 	
 }
 #Userlogin_box #u_middle_box form input{
@@ -1674,6 +1673,8 @@ input{
 	border-right: 1px solid #ED5565;
 	/*border:1px solid black;*/
 	padding-right: 10px;
+	position: relative;
+
 }
 #top_logo_box #login_box li.no_right_border{
 	background: url(../images/drop.png) no-repeat 85px 2px;
@@ -1683,6 +1684,11 @@ input{
 }
 #top_logo_box #login_box li a{
 	color: #ED5565;
+}
+#top_logo_box #login_box li a.username{
+	position: absolute;
+	top: 0px;
+	right: 10px;
 }
 /*Logo区域结束*/
 /*导航区域*/
