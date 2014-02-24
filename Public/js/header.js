@@ -21,6 +21,26 @@ $(function(){
 		$('#subscription').css('border-right', '1px solid black');
 	});
 	//订阅Hover特效结束
+	//我的惠桂林Hover效果
+	$('#person_center_menu').hover(function() {
+		$('#top_logo_box #login_dropdownlist').show();
+		$('#person_center_menu').addClass('border');
+		$('#top_logo_box #login_box li a.username').css('border-right', 'none');
+	}, function() {
+		$('#top_logo_box #login_dropdownlist').hide();
+		$('#person_center_menu').removeClass('border');
+		$('#top_logo_box #login_box li a.username').css('border-right', '1px solid #ED5565');
+	});
+	$('#top_logo_box #login_dropdownlist').hover(function() {
+		$(this).show();
+		$('#person_center_menu').addClass('border');
+		$('#top_logo_box #login_box li a.username').css('border-right', 'none');
+	}, function() {
+		$(this).hide();
+		$('#person_center_menu').removeClass('border');
+		$('#top_logo_box #login_box li a.username').css('border-right', '1px solid #ED5565');
+	});
+	//我的惠桂林Hover效果结束
 	//点击订阅按钮提交验证
 	$('#top_rss #top_rss_box #subscription_box form #subscription_email_btn').click(function(event) {
 		var email= $('#top_rss #top_rss_box #subscription_box form #subscription_email_textbox');
@@ -157,6 +177,7 @@ $(function(){
 		return false;
 		
 	});
+
 	//用户登录弹窗中所有验证结束
 
 	//用户登录验证码看不清特效

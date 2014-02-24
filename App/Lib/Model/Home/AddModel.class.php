@@ -17,6 +17,5 @@ class AddModel extends Model {
         var_dump($data);exit;
         return $data;
     }
-
-
+    
 }

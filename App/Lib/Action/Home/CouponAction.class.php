@@ -124,7 +124,6 @@ class CouponAction extends Action {
 
 
     public function detail(){
-
         if (empty($_GET['_URL_'][2])) {
             return TRUE;
         }
@@ -160,11 +159,14 @@ class CouponAction extends Action {
             'info' => "",
         );
         if (empty($_POST['phone_number']) || empty($_POST['coupon_id'])) {
-            $result['info'] = "empty params!";
             $this->ajaxReturn($result,'JSON'); 
-            return TRUE;
+            
         }
-
+    
+        if ($_SESSION['verify'] != md5($_POST['vcode'])) {
+            $result['status'] = 2;
+            $this->ajaxReturn($result,'JSON'); 
+        }
         $couponHelper = new CouponModel();
         $couponId = (int)$_POST['coupon_id'];
         $ids = array($couponId);
@@ -174,13 +176,15 @@ class CouponAction extends Action {
            $this->ajaxReturn($result,'JSON');
            return TRUE;
         }
-        $phoneNumber = $_SESSION['user']['phone_number'];
-        if (empty($phonNumber) || !is_numeric($phoneNumber) || $_POST['phone_number'] != $phoneNumber) {
-            $result['info'] = "erro phone number!";
-            $this->ajaxReturn($result, 'JSON');
-            return TRUE;
-        }
-        $code = 7891234;
+        // $phoneNumber = $_SESSION['user']['phone_number'];
+        $phoneNumber = $_POST['phone_number'];
+        $_SESSION['user']['phone_number'] = $phoneNumber;
+        // if (empty($phonNumber) || !is_numeric($phoneNumber) || $_POST['phone_number'] != $phoneNumber) {
+        //     $result['info'] = "erro phone number!";
+        //     $this->ajaxReturn($result, 'JSON');
+        //     return TRUE;
+        // }
+        $code = mt_rand(1, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
         $partnerName = $couponInfo[0]['name'];
         $result = $this->send($phoneNumber, $code, $partnerName, $couponId);
         $this->ajaxReturn($result, "JSON");
@@ -193,10 +197,7 @@ class CouponAction extends Action {
         }
         session("pcheck","{$code}");
         //TODO
-        $text = "您的{$partnerName}优惠券码是【{$code}】，感谢您使用【惠桂林】";
-        $text = $code;
-
-
+        $text = "您的{$partnerName}优惠券码是【{$code}】，感谢您使用";
         $result = sendCodeToMobile($phoneNumber, $text);
         if ($result['result'] != 1) {
             $data = array(
@@ -244,5 +245,6 @@ class CouponAction extends Action {
         }
         return $info;
     }
+    
 }
 

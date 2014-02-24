@@ -1631,6 +1631,7 @@ input{
 	top: 25px;
 	right: 5px;
 	
+	
 }
 #top_logo_box #No_login_box li{
 	width: 56px;
@@ -1667,28 +1668,58 @@ input{
 	
 }
 #top_logo_box #login_box li{
-	width: 70px;
-	height: 16px;
+	height: 30px;
 	float: left;
-	border-right: 1px solid #ED5565;
-	/*border:1px solid black;*/
-	padding-right: 10px;
-	position: relative;
+}
+#top_logo_box #login_box li.border{
+	border:1px solid #ED5565;
+}
 
-}
-#top_logo_box #login_box li.no_right_border{
-	background: url(../images/drop.png) no-repeat 85px 2px;
-	border-right: none;
-	width: 100px;
-	padding-left: 10px;
-}
 #top_logo_box #login_box li a{
 	color: #ED5565;
+	display: block;
+	margin-top: 7px;
 }
 #top_logo_box #login_box li a.username{
+	border-right: 1px solid #ED5565;
+	height: 16px;
+	padding-right: 10px;
+}
+#top_logo_box #login_box li a.menu{
+	width: 88px;
+	height: 16px;
+	line-height: 16px;
+	background: url(../images/drop.png) no-repeat 82px 2px;
+	padding-left: 12px;
+	border:none;
+}
+#top_logo_box #login_dropdownlist{
+	background: white;
 	position: absolute;
-	top: 0px;
-	right: 10px;
+	top: 56px;
+	right:5px;
+	width: 100px;
+	border:1px solid #ED5565;
+	border-top: none;
+	display: none;
+	
+}
+#top_logo_box #login_dropdownlist li{
+	height: 30px;
+}
+
+#top_logo_box #login_dropdownlist li a{
+	font-size: 13px;
+	font-weight: normal;
+	color: #333;
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 12px;
+}
+#top_logo_box #login_dropdownlist li a:hover{
+	background: #ED5565;
+	color: white;
 }
 /*Logo区域结束*/
 /*导航区域*/

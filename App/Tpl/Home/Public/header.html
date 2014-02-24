@@ -101,15 +101,24 @@
 		<a href="{:U("Index/index")}"><img src="__PUBLIC__/images/logo.png" alt="惠桂林" id="logo" /></a>
 		<a href="{:U("Index/index")}"><img src="__PUBLIC__/images/slogan.png" alt="吃喝玩乐，惠享生活" id="slogan" /></a>
 		<!-- 判断登录Session,来显示不同的ul -->
-		<if condition="$Think.session.user eq ''">
+		<if condition="$Think.session.user.user_id eq ''">
 			<ul id="No_login_box">
 				<li class="one"><a class="one" id="Userlogin">登录</a></li>
 				<li><a class="two" id="Userreg">快速注册</a></li>
 			</ul>
 			<else />
+			
 			<ul id="login_box">
 				<li><a class="username">{$user.nickname}</a></li>
-				<li class="no_right_border"><a href="">我的惠桂林</a></li>
+				<li id="person_center_menu"><a href="" class="menu">我的惠桂林</a></li>
+			</ul>
+			<ul id="login_dropdownlist">
+				<li><a href="{:U("Home/Account/mycoupon")}">我的券包</a></li>
+				<li><a href="{:U("Home/Account/myfavorite")}">我的收藏</a></li>
+				<li><a href="{:U("Home/Account/mycommented")}">我的评论</a></li>
+				<li><a href="{:U("Home/Account/mysubscription")}">我的订阅</a></li>
+				<li><a href="{:U("Home/Account/mysetting")}">个人信息设置</a></li>
+				<li><a href="">登出</a></li>
 			</ul>
 		</if>
 		<div id="Userreg_box">

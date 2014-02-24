@@ -116,6 +116,7 @@
 	background: #ED5565;
 	border-radius: 5px;
 	margin-left: 8px;
+	cursor: pointer;
 }
 #main #coupon_box div.coupon_detail_info_box img.coupon_pic{
 	width: 484px;
@@ -730,4 +731,157 @@
 	height: 380px;
 	width: 790px;
 	margin-left: 5px;
+}
+
+
+
+#download_coupon_hidden_box{
+	height: 300px;
+	width: 500px;
+	display: none;
+	background: white;
+	margin-top: 50px;
+	border-radius: 5px;
+}
+#download_coupon_hidden_box div.top_content_box{
+	background: #ED5565;
+	height: 40px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom: 2px solid #DA4453;
+	position: relative;
+}
+#download_coupon_hidden_box div.top_content_box p{
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+	width: 180px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 20px;
+}
+#download_coupon_hidden_box div.top_content_box img{
+	border:none;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	cursor: pointer;
+}
+#download_coupon_hidden_box div.middle_content_box{
+	
+}
+#download_coupon_hidden_box div.middle_content_box ul{
+}
+#download_coupon_hidden_box div.middle_content_box ul li{
+	height: 60px;
+	position: relative;
+}
+#download_coupon_hidden_box div.middle_content_box ul li p.label{
+	color: #666;
+	font-size: 13px;
+	font-weight: normal;
+	position: absolute;
+	top: 25px;
+	left: 20px;
+}
+#download_coupon_hidden_box div.middle_content_box ul li p.hidden_error_tips{
+	position: absolute;
+	top: 28px;
+	left: 330px;
+	background: url('../images/ico_13.png') no-repeat;
+	padding-left: 20px;
+	color: #F14B2B;	
+}
+#download_coupon_hidden_box div.middle_content_box ul li input{
+	border:1px solid #C9C9C9;
+	height: 34px;
+	width: 200px;
+	border-radius: 5px;
+	background: #F2F2F2;
+	line-height: 34px;
+	position: absolute;
+	top: 17px;
+	left: 115px;
+}
+#download_coupon_hidden_box div.middle_content_box ul li input.shorter{
+	width: 100px;
+}
+#download_coupon_hidden_box div.middle_content_box ul li img{
+	position: absolute;
+	top: 25px;
+	left: 227px;
+}
+#download_coupon_hidden_box div.middle_content_box ul li #send_to_phone_vcode_not_clear{
+	position: absolute;
+	top: 28px;
+	left: 280px;
+	font-size: 13px;
+	color: #4467A3;
+}
+#download_coupon_hidden_box div.middle_content_box #download_coupon_submit_btn{
+	display: block;
+	height: 40px;
+	width: 100px;
+	background: #ED5565;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 5px;
+	color: white;
+	margin-top: 20px;
+	margin-left: 120px;
+	font-weight: bold;
+}
+#download_coupon_hidden_box div.middle_content_box_success{
+	position: relative;
+	display: none;
+}
+#download_coupon_hidden_box div.middle_content_box_success div{
+	background: #E7FFCE;
+	width: 440px;
+	height: 60px;
+	position: absolute;
+	top: 50px;
+	left: 30px;
+	border-radius: 5px;
+}
+#download_coupon_hidden_box div.middle_content_box_success div img{
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	top:14px;
+	left: 5px;
+}
+#download_coupon_hidden_box div.middle_content_box_success div p.sucess_tip{
+	font-size: 14px;
+	color: #333;
+	position: absolute;
+	top: 18px;
+	left: 44px;
+}
+#download_coupon_hidden_box div.middle_content_box_success div p.sucess_tip span{
+	font-size: 14px;
+	color: #333;
+	font-weight: bold;
+	padding-left: 5px;
+}
+#download_coupon_hidden_box div.middle_content_box_success p.hot_tip{
+	position: absolute;
+	top: 38px;
+	left: 44px;
+}
+#download_coupon_hidden_box div.middle_content_box_success a{
+	position: absolute;
+	top: 150px;
+	left: 210px;
+	display: block;
+	height: 40px;
+	width: 80px;
+	background: #ED5565;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
 }
