@@ -44,6 +44,7 @@ class UserAction extends Action {
     }
 
     public function register() {
+        $getRight = 'ok';
         $mail = !empty($_POST['email']) ? $_POST['email'] : $_POST['email'];
         $phone = !empty($_POST['cellphone']) ? $_POST['cellphone'] : $_POST['cellphone'];
         $nickname = !empty($_POST['nickname']) ? $_POST['nickname'] : $_POST['nickname'];
