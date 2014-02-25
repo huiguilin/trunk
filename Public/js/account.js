@@ -130,16 +130,54 @@ $(function(){
 		var rv01=CellphoneValidate(oldcellphone,'#old_phone_error_tip');
 		var rv02=CellphoneValidate(newcellphone,'#new_phone_error_tip');
 		var rv03=VcodeValidate(cellphonevcode,'#cellphone_vcode_error_tip');
-		var rv04 = CellPhoneDifferenceValidate(oldcellphone,newcellphone,'#new_phone_error_tip');
-		var rv = rv01+rv02+rv03+rv04;
-		if(rv == 4){
-			return true;
+		var rv = rv01+rv02+rv03;
+		if(rv ==3){
+			var rv04 = CellPhoneDifferenceValidate(oldcellphone,newcellphone,'#new_phone_error_tip');
+			if(rv04 ==1){
+				
+				$.post(ajaxPostURL+'Account/handleChangeCellphone', { oldcellphone:oldcellphone,newcellphone:newcellphone,vcode:cellphonevcode}, function(data) {
+					if(data.status == 0){
+						$('#old_phone_error_tip').show().text(data.info);
+					}else if(data.status == 1){
+						location.href = "http://localhost/trunk/index.php/home/account/mysetting.html";
+					}else if(data.status == 2){
+						$('#old_phone_error_tip').show().text(data.info);
+					}
+					else if(data.status == 3){
+						$('#new_phone_error_tip').show().text(data.info);
+					}
+					else if(data.status == 4){
+						$('#cellphone_vcode_error_tip').show().text(data.info);
+					}
+					else if(data.status == 5){
+						$('#new_phone_error_tip').show().text(data.info);
+					}
+					else if(data.status == 6){
+						$('#cellphone_vcode_error_tip').show().text(data.info);
+					}
+				},'json');
+			}
 		}
-		else{
-			return false;	
-		}
+		return false;
 	});
-	
+	//获取验证码
+	$('#get_change_cellphone_vcode').click(function(event) {
+		var newcellphone = $('#binding_new_phone').val();
+		
+		var rv01=CellphoneValidate(newcellphone,'#new_phone_error_tip');
+		if(rv01 ==1){
+			$.post(ajaxPostURL+'Account/handleSendVcodeToCellphone', { newcellphone:newcellphone}, function(data) {
+					if(data.status == 0){
+						$('#new_phone_error_tip').text(data.info);
+					}else if(data.status ==1){
+						$('#get_change_cellphone_vcode').text('已发送');
+						$('#binding_note').text(data.info);
+					}
+				},'json');
+		}
+		return false;
+	});
+	//获取验证码结束
 	// 个人设置中所有验证效果结束
 	function PWDValidate(pwd,error_tip){
 		if(pwd ==""){
@@ -182,14 +220,8 @@ $(function(){
 			$(error_tip).show().text('输入的验证码不能为空');
 			return 0;
 		}else{
-			if(vcode =="1234"){
-				$(error_tip).hide();
-				return 1;
-			}
-			else{
-				$(error_tip).show().text('验证码输入不正确');
-				return 0;
-			}
+			$(error_tip).hide();
+			return 1;
 		}
 		
 	}

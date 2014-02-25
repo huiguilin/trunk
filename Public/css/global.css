@@ -1316,7 +1316,7 @@ input{
 	height: 318px;
 	position: relative;
 }
-#Userlogin_box #u_middle_box form #btn_login{
+#Userlogin_box #u_middle_box  #btn_login{
 	position: absolute;
 	top: 230px;
 	left:100px;
@@ -1330,63 +1330,63 @@ input{
 	text-align: center;
 	line-height: 46px;
 }
-#Userlogin_box #u_middle_box form #forgetpwd{
+#Userlogin_box #u_middle_box  #forgetpwd{
 	position: absolute;
 	top: 97px;
 	left:370px;
 	color: #4467A3;
 	
 }
-#Userlogin_box #u_middle_box form #vcode_not_clear{
+#Userlogin_box #u_middle_box  #vcode_not_clear{
 	position: absolute;
 	top: 155px;
 	left:370px;
 	color: #4467A3;
 }
-#Userlogin_box #u_middle_box form #vcode_img{
+#Userlogin_box #u_middle_box  #vcode_img{
 	position: absolute;
 	top: 150px;
 	left:420px;
 	color: #4467A3;
 }
-#Userlogin_box #u_middle_box form p.one{
+#Userlogin_box #u_middle_box  p.one{
 	position: absolute;
 	top: 30px;
 	left: 40px;
 	font-size: 14px;
 }
-#Userlogin_box #u_middle_box form p.two{
+#Userlogin_box #u_middle_box  p.two{
 	position: absolute;
 	top: 90px;
 	left: 40px;
 	font-size: 14px;
 }
-#Userlogin_box #u_middle_box form p.three{
+#Userlogin_box #u_middle_box  p.three{
 	position: absolute;
 	top: 150px;
 	left: 40px;
 	font-size: 14px;
 }
-#Userlogin_box #u_middle_box form p.four{
+#Userlogin_box #u_middle_box  p.four{
 	position: absolute;
 	top: 202px;
 	left: 120px;
 }
-#Userlogin_box #u_middle_box form p.five{
+#Userlogin_box #u_middle_box  p.five{
 	position: absolute;
 	top: 202px;
 	left: 250px;
 }
-#Userlogin_box #u_middle_box form p.six{
+#Userlogin_box #u_middle_box  p.six{
 	position: absolute;
 	top: 290px;
 	left: 163px;
 }
-#Userlogin_box #u_middle_box form p.six a{
+#Userlogin_box #u_middle_box  p.six a{
 	color: #4467A3;
 	font-weight: bold;
 }
-#Userlogin_box #u_middle_box form p.seven{
+#Userlogin_box #u_middle_box  p.seven{
 	color: #F14B2B;
 	font-size: 12px;
 	background: url(../images/ico_13.png) no-repeat;
@@ -1397,7 +1397,7 @@ input{
 	display: none;
 	
 }
-#Userlogin_box #u_middle_box form p.eight{
+#Userlogin_box #u_middle_box  p.eight{
 	color: #F14B2B;
 	font-size: 12px;
 	background: url(../images/ico_13.png) no-repeat;
@@ -1408,7 +1408,7 @@ input{
 	display: none;
 	
 }
-#Userlogin_box #u_middle_box form p.nine{
+#Userlogin_box #u_middle_box  p.nine{
 	color: #F14B2B;
 	font-size: 12px;
 	background: url(../images/ico_13.png) no-repeat;
@@ -1419,7 +1419,7 @@ input{
 	display: none;
 	
 }
-#Userlogin_box #u_middle_box form p.ten{
+#Userlogin_box #u_middle_box  p.ten{
 	color: #F14B2B;
 	font-size: 12px;
 	background: url(../images/ico_13.png) no-repeat;
@@ -1430,30 +1430,30 @@ input{
 	display: none;
 	
 }
-#Userlogin_box #u_middle_box form input{
+#Userlogin_box #u_middle_box  input{
 	border: 1px solid #C9C9C9;
 	border-radius: 5px;
 	width: 256px;
 	height: 41px;
 	line-height: 41px;
 }
-#Userlogin_box #u_middle_box form input.one{
+#Userlogin_box #u_middle_box  input.one{
 	position: absolute;
 	top: 20px;
 	left: 100px;
 
 }
-#Userlogin_box #u_middle_box form input.two{
+#Userlogin_box #u_middle_box  input.two{
 	position: absolute;
 	top: 80px;
 	left: 100px;
 }
-#Userlogin_box #u_middle_box form input.three{
+#Userlogin_box #u_middle_box  input.three{
 	position: absolute;
 	top: 140px;
 	left: 100px;
 }
-#Userlogin_box #u_middle_box form input.four{
+#Userlogin_box #u_middle_box  input.four{
 	position: absolute;
 	top: 200px;
 	left: 100px;
@@ -1461,7 +1461,7 @@ input{
 	height: 20px; height/*\**/:16px \9; /*IE6,IE7,IE8识别*/
 	border:none;
 }
-#Userlogin_box #u_middle_box form input.five	{
+#Userlogin_box #u_middle_box  input.five	{
 	position: absolute;
 	top: 200px;
 	left: 230px;
@@ -1663,7 +1663,7 @@ input{
 
 #top_logo_box #login_box{
 	position: absolute;
-	top: 25px;
+	top: 20px;
 	right: 5px;
 	
 }
@@ -1696,7 +1696,7 @@ input{
 #top_logo_box #login_dropdownlist{
 	background: white;
 	position: absolute;
-	top: 56px;
+	top: 51px;
 	right:5px;
 	width: 100px;
 	border:1px solid #ED5565;

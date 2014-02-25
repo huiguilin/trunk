@@ -112,12 +112,12 @@ $(function(){
 	});
 	//用户登录弹框关闭特效结束
 	//用户登录弹窗中所有验证
-	$('#Userlogin_box #u_middle_box form input').blur(function(event) {
+	$('#Userlogin_box #u_middle_box input').blur(function(event) {
 		var input= $(this);
 		var name= $(this).attr('name');
-		var username =$('#Userlogin_box #u_middle_box form input.one').val();
-		var password =$('#Userlogin_box #u_middle_box form input.two').val();
-		var vcode =$('#Userlogin_box #u_middle_box form input.three').val();
+		var username =$('#Userlogin_box #u_middle_box input.one').val();
+		var password =$('#Userlogin_box #u_middle_box input.two').val();
+		var vcode =$('#Userlogin_box #u_middle_box input.three').val();
 		if(input.val()==""){
 			if(name =="username"){
 				$('#login_hidebox01').css('display', 'block');
@@ -143,16 +143,17 @@ $(function(){
 		}
 	});
 	
-	$('#Userlogin_box #u_middle_box form #btn_login').click(function(event) {
+	$('#btn_login').click(function(event) {
 		var verifyURL = $("#login_hidebox05").val();
-		var username =$('#Userlogin_box #u_middle_box form input.one').val();
-		var password =$('#Userlogin_box #u_middle_box form input.two').val();
-		var vcode =$('#Userlogin_box #u_middle_box form input.three').val();
+		var username =$('#Userlogin_box #u_middle_box input.one').val();
+		var password =$('#Userlogin_box #u_middle_box input.two').val();
+		var vcode =$('#Userlogin_box #u_middle_box input.three').val();
+		var next= $('#Userlogin').attr('next');
 		if(vcode != "" && username != "" && password != ""){
 			$.post(ajaxPostURL+"User/checkLogin", { username: username, password: password, vcode: vcode },function(data){
 				
             	if(data.status == 1){
-            		location.href = "http://localhost/trunk/index.php/index/index.html";
+            		location.href = loginSucessURL+next;
             	}else if(data.status == 0){
             		$('#login_hidebox04').show().text(data.info);
             		return false;
@@ -181,10 +182,10 @@ $(function(){
 	//用户登录弹窗中所有验证结束
 
 	//用户登录验证码看不清特效
-	$('#Userlogin_box #u_middle_box form #vcode_not_clear').click(function(event) {
-		var imgsrc=$('#Userlogin_box #u_middle_box form #vcode_img').attr("src");
+	$('#Userlogin_box #u_middle_box  #vcode_not_clear').click(function(event) {
+		var imgsrc=$('#Userlogin_box #u_middle_box  #vcode_img').attr("src");
 		imgsrc = imgsrc+ "/" + Math.random();
-		$('#Userlogin_box #u_middle_box form #vcode_img').attr("src",imgsrc);
+		$('#Userlogin_box #u_middle_box  #vcode_img').attr("src",imgsrc);
 		return false;
 	});
 	//用户登录验证码看不清特效结束

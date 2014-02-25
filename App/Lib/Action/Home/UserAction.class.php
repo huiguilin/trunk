@@ -295,4 +295,11 @@ class UserAction extends Action {
 		import('ORG.Util.Image');
 		Image::buildImageVerify(4,5,'png');
     }
+    public function logout(){
+        $data = session('user');
+        if (!empty($data)) {
+           session('user',null);
+           $this->redirect('Home/Index/index');
+        }
+    }
 }

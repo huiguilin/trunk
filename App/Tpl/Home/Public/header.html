@@ -103,13 +103,13 @@
 		<!-- 判断登录Session,来显示不同的ul -->
 		<if condition="$Think.session.user.user_id eq ''">
 			<ul id="No_login_box">
-				<li class="one"><a class="one" id="Userlogin">登录</a></li>
+				<li class="one"><a class="one" id="Userlogin" next="{$Think.__SELF__}">登录</a></li>
 				<li><a class="two" id="Userreg">快速注册</a></li>
 			</ul>
 			<else />
 			
 			<ul id="login_box">
-				<li><a class="username">{$user.nickname}</a></li>
+				<li><a class="username">您好,{$user.nickname}</a></li>
 				<li id="person_center_menu"><a href="" class="menu">我的惠桂林</a></li>
 			</ul>
 			<ul id="login_dropdownlist">
@@ -118,7 +118,7 @@
 				<li><a href="{:U("Home/Account/mycommented")}">我的评论</a></li>
 				<li><a href="{:U("Home/Account/mysubscription")}">我的订阅</a></li>
 				<li><a href="{:U("Home/Account/mysetting")}">个人信息设置</a></li>
-				<li><a href="">登出</a></li>
+				<li><a href="{:U("Home/User/logout")}">登出</a></li>
 			</ul>
 		</if>
 		<div id="Userreg_box">
@@ -252,7 +252,7 @@
 				<p>用户登录</p>
 			</div>
 			<div id="u_middle_box">
-				<form>
+				
 					<p class="one">账号</p>
 					<input type="text" name="username" class="one" />
 					<p class="two">密码</p>
@@ -273,7 +273,7 @@
 					<p class="nine" id="login_hidebox03">请输入验证码</p>
 					<p class="ten" id="login_hidebox04">用户名或密码有误，请重新输入</p>
 					<input type="hidden" id="login_hidebox05" value="{:U("Home/Login/verify")}" />
-				</form>
+				
 			</div>
 			<div id="u_bottom_box">
 				<p>使用其他账户直接登陆</p>
