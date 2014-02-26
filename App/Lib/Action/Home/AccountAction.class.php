@@ -1,7 +1,12 @@
 <?php
 // 本类由系统自动生成，仅供测试用途
 class AccountAction extends Action {
-
+    private $labelType = array(
+        '0' => '每天1封',
+        '1' => '每周1封',
+        '2' => '每月2封',
+        '3' => '拒绝接受',
+    );
     public function mycoupon(){
         if (empty($_SESSION['user']['user_id'])) {
             echo "eeee";
@@ -170,9 +175,48 @@ class AccountAction extends Action {
         $this->account_tmp_bottom();
         $this->display();
     }
+    public function mysubscription(){
+        $this->display();
+    }
     public function handleEmailSubscription(){
-        $a = $_POST;
-        dump($a);
+        $email = $_POST['email'];
+        $type = $_POST['frequency'];
+        $data = array(
+            'status' => 0,
+            'info' => '',
+        );
+        if(empty($email)){
+            $data['status'] = 2;
+            $data['info'] = "订阅的邮箱不能为空!";
+            $this->ajaxReturn($data,'json');
+        }
+        //首页订阅频率默认值为0
+        if(empty($type)){
+            $type = 0;
+        }
+        $helper = new UserSubscriptionModel();
+        $queryResult = $helper->getUserSubscriptionByEmailAddress($email);
+        if(!empty($queryResult)){
+            $data['status'] = 3;
+            $data['info'] = "该邮箱地址已被订阅!";
+            $this->ajaxReturn($data,'json');
+        }
+        // $type = intval($type);
+        $addData = array(
+                's_email' => $email,
+                's_type' => $type,
+                );
+        $result = $helper->addSubscriptionEmailAddress($addData);
+        if(empty($result)){
+            $data['status'] = 0;
+            $data['info'] = "惠桂林订阅失败!";
+            $this->ajaxReturn($data,'json');
+        }else{
+            $data['status'] = 1;
+            $data['info'] = "惠桂林订阅成功!";
+            $_SESSION['user_subscription'] = $email;
+            $this->ajaxReturn($data,'json');
+        }
     }
     public function handleChangeCellphone(){
         $oldcellphone = $_POST['oldcellphone'];
@@ -432,5 +476,18 @@ class AccountAction extends Action {
         echo "修改成功!";
         return TRUE;
 
+    }
+    private function sendEmail($mailaddress) {
+        $content = "你好!这是来自惠桂林的账号激活邮件";
+        import('ORG.Email'); 
+        $data['mailto'] = $mailaddress; 
+        $data['subject'] = '惠桂林订阅邮件'; 
+        $data['body'] = $content; 
+        $mail = new Email();
+        if ($mail->send($data)) {
+            return true;
+        } else {
+            return FALSE;
+        }
     }
 }

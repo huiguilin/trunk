@@ -42,20 +42,33 @@ $(function(){
 	});
 	//我的惠桂林Hover效果结束
 	//点击订阅按钮提交验证
-	$('#top_rss #top_rss_box #subscription_box form #subscription_email_btn').click(function(event) {
-		var email= $('#top_rss #top_rss_box #subscription_box form #subscription_email_textbox');
+	$('#subscription_email_btn').click(function(event) {
+		var email= $('#top_rss #top_rss_box #subscription_box  #subscription_email_textbox').val();
+		var frequency= "";
 		var reg= /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
-		if(email.val() ==""){
+		if(email ==""){
 			alert('请输入邮箱地址！');
 		}
 		else{
-			if(!reg.test(email.val())){
+			if(!reg.test(email)){
 				alert('邮箱地址格式不正确，请重新输入！');
 			}
 			else{
-				alert('邮箱' +email.val()+'订阅已成功，我们将定期给您推送最实惠的内容与信息。');
+				$.post(ajaxPostURL+'Account/handleEmailSubscription',{ email:email }, function(data) {
+				if(data.status == 0){
+						alert(data.info);
+					}else if(data.status == 1){
+						alert(data.info);
+					}else if(data.status == 2){
+						alert(data.info);
+					}else if(data.status == 3){
+						alert(data.info);
+					}
+
+				},'json');
 			}
 		}
+		return false;
 	});
 	//点击订阅按钮提交验证结束
 	//关注Hover特效

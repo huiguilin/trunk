@@ -51,13 +51,15 @@
 	font-weight: normal;
 	position: absolute;
 	top: 27px;
-	left: 520px;
+	left: 500px;
 	display: none;
+	background: url(../images/ico_13.png) no-repeat;
+	padding-left: 20px;
 }
 #main #left_content_box div.mycontent_box form div.binding_box a{
 	position: absolute;
 	top: 27px;
-	left: 470px;
+	left: 465px;
 	color: #4467A3;
 }
 #main #left_content_box div.mycontent_box form div.binding_box input.emailaddress{

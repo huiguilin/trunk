@@ -83,10 +83,6 @@ function getArray($node){
     return $array;
 }
 
-
-
-
-
 function xml_to_array($xml) 
 { 
     $array = (array)(simplexml_load_string($xml)); 

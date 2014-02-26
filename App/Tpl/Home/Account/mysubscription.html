@@ -6,29 +6,29 @@
 			<p>邮件频率</p>
 			<ul>
 				<li>
-					<input type="radio" name="email_frequency" class="" checked="checked" value="one_for_day">
+					<input type="radio" name="email_frequency" checked="checked" value="0">
 					<label for="email_frequency">每天1封</label>
 				</li>
 				<li>
-					<input type="radio" name="email_frequency" value="one_for_week">
+					<input type="radio" name="email_frequency" value="1">
 					<label for="email_frequency">每周1封</label>
 				</li>
 				<li>
-					<input type="radio" name="email_frequency" value="two_for_month">
+					<input type="radio" name="email_frequency" value="2">
 					<label for="email_frequency">每月2封</label>
 				</li>
 				<li>
-					<input type="radio" name="email_frequency" value="none_for_day">
+					<input type="radio" name="email_frequency" value="3">
 					<label for="email_frequency">我拒绝接受任何邮件</label>
 				</li>
 			</ul>
 		</div>
 		<div class="binding_box">
 			<p class="title01">您接收的邮箱为</p>
-			<input type="text" name="emailaddress" value="dushuren@outlook.com" class="emailaddress" disabled="disabled">
+			<input type="text" id="subscription_email_address" name="subscription_email_address" value="{$Think.session.user_subscription}" class="emailaddress" disabled="disabled">
 			<a href="">修改</a>
-			<p class="hidden_error_tips"></p>
+			<p class="hidden_error_tips" id="subscription_email_address_hidden_error_tips"></p>
 		</div>
-		<input type="submit" name="submit_btn" value="保存修改" class="submit_btn">
+		<input type="submit" name="email_subscription_submit_btn" value="保存修改" class="submit_btn" id="email_subscription_submit_btn">
 	</form>
 <include file="Account:account_tmp_bottom"/>

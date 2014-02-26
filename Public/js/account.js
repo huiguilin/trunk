@@ -16,23 +16,27 @@ $(function(){
 	});
 	//邮件订阅修改按钮特效结束
 	//邮箱订阅保存提交验证
-	$('#main #left_content_box div.mycontent_box form input.submit_btn').click(function(event) {
-		var value=$('#main #left_content_box div.mycontent_box form div.binding_box input.emailaddress').val();
-		var reg = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
-		if(value ==""){
-			$('#main #left_content_box div.mycontent_box form div.binding_box p.hidden_error_tips').show()
-			.text('邮箱地址不能为空!');
-			return false;
-		}else{
-			if(!reg.test(value)){
-				$('#main #left_content_box div.mycontent_box form div.binding_box p.hidden_error_tips').show()
-				.text('邮箱地址格式不正确!');
-				return false;
-			}
-			else{
-				$('#main #left_content_box div.mycontent_box form div.binding_box input.emailaddress').removeAttr('disabled');
-			}
+	$('#email_subscription_submit_btn').click(function(event) {
+		var email=$('#subscription_email_address').val();
+		var frequency=$('input:radio[name="email_frequency"]:checked').val(); 
+		var rv01=EmailValidate(email,'#subscription_email_address_hidden_error_tips');
+		if(rv01 ==1){
+			$.post(ajaxPostURL+'Account/handleEmailSubscription', { email:email,frequency:frequency }, function(data) {
+			
+				if(data.status == 0){
+						$('#subscription_email_address_hidden_error_tips').show().text(data.info);
+					}else if(data.status == 1){
+						location.href = "http://localhost/trunk/index.php/home/account/mysubscription.html";
+					}else if(data.status == 2){
+						$('#subscription_email_address_hidden_error_tips').show().text(data.info);
+					}else if(data.status == 3){
+						$('#subscription_email_address_hidden_error_tips').show().text(data.info);
+					}
+
+			},'json');
 		}
+		return false;
+		
 	});
 	//邮箱订阅保存提交验证结束
 	// 个人设置中所有弹窗效果
