@@ -80,11 +80,23 @@ $(function(){
 	// 个人设置中所有验证效果
 		//nickname验证
 	$('#binding_nickname_submit_btn').click(function(event) {
-		var value =$(this).parent().find('input').val();
-		if(value ==""){
+		var newnickname =$(this).parent().find('input').val();
+		var oldnickname =$('#old_nickname').text();
+		if(newnickname ==""){
 			$('#modify_nickname_hidden_box div.middle_content_box ul li p.hidden_error_tips').show();
-			return false;
 		}
+		else{
+			$.post(ajaxPostURL+'Account/handleChangeNickname', { oldnickname:oldnickname,newnickname:newnickname}, function(data) {
+				if(data.status == 2){
+					$('#modify_nickname_hidden_box div.middle_content_box ul li p.hidden_error_tips').show().text(data.info);
+				}else if(data.status ==1){
+					location.href = "http://localhost/trunk/index.php/home/account/mysetting.html";
+				}else{
+					$('#modify_nickname_hidden_box div.middle_content_box ul li p.hidden_error_tips').show().text(data.info);
+				}
+			},'json');
+		}
+		return false;
 	});
 		//密码验证
 	$('#binding_password_submit_btn').click(function(event) {
@@ -95,9 +107,38 @@ $(function(){
 		var rv01=PWDValidate(oldpwd,'#old_pwd_tip');
 		var rv02=PWDValidate(newpwd,'#new_pwd_tip');
 		var rv03=PWDValidate(newpwd2,'#new_pwd2_tip');
-		var rv04=EmailDifferenceValidate(oldpwd,newpwd,'#new_pwd_tip');
-		var rv05=EmailDoubleCheckValidate(newpwd,newpwd2,'#new_pwd2_tip');
-		var rv = rv01+rv02+rv03+rv04+rv05;
+		var rv = rv01+rv02+rv03;
+		if(rv == 3){
+			var rv04=PasswordDifferenceValidate(oldpwd,newpwd,'#new_pwd_tip');
+			var rv05=PasswordDoubleCheckValidate(newpwd,newpwd2,'#new_pwd2_tip');
+			var frv = rv04+rv05;
+			if(frv ==2){
+				$.post(ajaxPostURL+'Account/handleChangePassword', { oldpwd:oldpwd,newpwd:newpwd,newpwd2:newpwd2}, function(data) {
+
+					if(data.status == 0){
+						$('#old_pwd_tip').show().text(data.info);
+					}else if(data.status == 1){
+						location.href = "http://localhost/trunk/index.php/home/account/mysetting.html";
+					}else if(data.status == 2){
+						$('#old_pwd_tip').show().text(data.info);
+					}
+					else if(data.status == 3){
+						$('#new_pwd_tip').show().text(data.info);
+					}
+					else if(data.status == 4){
+						$('#new_pwd2_tip').show().text(data.info);
+					}
+					else if(data.status == 5){
+						$('#new_pwd_tip').show().text(data.info);
+					}
+					else if(data.status == 6){
+						$('#new_pwd2_tip').show().text(data.info);
+					}
+				},'json');
+			}
+		}
+		
+		
 		if(rv == 5){
 			return true;
 		}
@@ -109,16 +150,31 @@ $(function(){
 	$('#binding_email_submit_btn').click(function(event) {
 		var email = $('#binding_email').val();
 		var vcode = $('#email_vcode').val();
-		
+		var username = $('#lable_username').val();
 		var rv01=EmailValidate(email,'#email_error_tip');
 		var rv02=VcodeValidate(vcode,'#vcode_error_tip');
 		var rv = rv01+rv02;
 		if(rv == 2){
-			return true;
+			$.post(ajaxPostURL+'Account/handleChangeEmail', { email:email,vcode:vcode,username:username}, function(data) {
+					if(data.status == 0){
+						$('#username_error_tip').show().text(data.info);
+					}else if(data.status == 1){
+						location.href = "http://localhost/trunk/index.php/home/account/mysetting.html";
+					}else if(data.status == 2){
+						$('#email_error_tip').show().text(data.info);
+					}
+					else if(data.status == 3){
+						$('#vcode_error_tip').show().text(data.info);
+					}
+					else if(data.status == 4){
+						$('#vcode_error_tip').show().text(data.info);
+					}
+					else if(data.status == 5){
+						$('#email_error_tip').show().text(data.info);
+					}
+				},'json');
 		}
-		else{
-			return false;	
-		}
+		return false;
 		
 	});
 		//手机验证
@@ -251,8 +307,8 @@ $(function(){
 			return 1;
 		}
 	}
-	function EmailDifferenceValidate(email01,email02,error_tip){
-		if(email01 == email02){
+	function PasswordDifferenceValidate(pwd01,pwd02,error_tip){
+		if(pwd01 == pwd02){
 			$(error_tip).show().text('新密码与旧密码一致');
 			return 0;
 		}
@@ -260,8 +316,8 @@ $(function(){
 			return 1;
 		}
 	}
-	function EmailDoubleCheckValidate(email01,email02,error_tip){
-		if(email01 != email02){
+	function PasswordDoubleCheckValidate(pwd01,pwd02,error_tip){
+		if(pwd01 != pwd02){
 			$(error_tip).show().text('两次输入的新密码不一致');
 			return 0;
 		}

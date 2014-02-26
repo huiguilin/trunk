@@ -331,8 +331,8 @@
 }
 #modify_nickname_hidden_box div.middle_content_box ul li p.hidden_error_tips{
 	position: absolute;
-	top: 25px;
-	right: 20px;
+	top: 27px;
+	left: 330px;
 	background: url('../images/ico_13.png') no-repeat;
 	padding-left: 20px;
 	color: #F14B2B;

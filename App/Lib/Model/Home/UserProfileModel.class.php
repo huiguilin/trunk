@@ -32,6 +32,14 @@ class UserProfileModel extends Model {
         return $data;
     }
 
+    public function getUserProfileByPassword($password = "") {
+        if (empty($password)) {
+            return FALSE;
+        }
+        $data = $this->where("password = '{$password}'")->select();
+        $data = $data[0];
+        return $data;
+    }
 
     public function addUser($data = array()) {
         if (empty($data)) {

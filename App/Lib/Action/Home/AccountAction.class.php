@@ -157,15 +157,14 @@ class AccountAction extends Action {
     }
     public function mysetting(){
         $user = $_SESSION['user'];
-        $user['phone_number'] = "1111";
         if (!is_numeric($user['phone_number'])) {
             $user['phone_number_used'] = 0;
         }
         else {
-            $user['phone_number_used'] = substr_replace($user['phone_number'], "****", 3, 7);
+            $user['phone_number_used'] = substr_replace($user['phone_number'], "****", 3, 4);
         }
-        if (stristr($user['email'], '#huiguilin')) {
-            $user['email'] = 0;
+        if (empty($user['email'])) {
+            $user['email'] = "";
         }
         $this->assign('user_setting', $user);
         $this->account_tmp_bottom();
@@ -234,16 +233,154 @@ class AccountAction extends Action {
         $this->ajaxReturn($data,'JSON');
     }
     public function handleChangeEmail(){
-        $a = $_POST;
-        dump($a);
+        $data = array(
+            'status' => 0,
+            'info' => '',
+        );
+        $email = $_POST['email'];
+        $vcode = $_POST['vcode'];
+        $username = $_POST['username'];
+
+        if(empty($email)){
+            $data['status'] = 2;
+            $data['info'] = "输入的邮箱地址不能为空!";
+            $this->ajaxReturn($data,'json');
+        }
+        if(empty($vcode)){
+            $data['status'] = 3;
+            $data['info'] = "输入的验证码不能为空!";
+            $this->ajaxReturn($data,'json');
+        }
+        if (session('verify') != md5($vcode)) {
+            $data['status'] = 4;
+            $data['info'] = "验证码错误!";
+            $this->ajaxReturn($data,'json');
+        }
+        $helper = new UserProfileModel();
+        $result = $helper->getUserProfileByUserName($username);
+        if (empty($result)) {
+            $data['status'] = 0;
+            $data['info'] = "当前邮箱地址并未注册";
+            $this->ajaxReturn($data,'JSON');
+        }
+        if($email == $result['email']){
+            $data['status'] = 5;
+            $data['info'] = "新老邮箱地址一致";
+            $this->ajaxReturn($data,'JSON');
+        }
+        $time = date("Y-m-d H:i:s");
+        $updateData = array(
+                'ctime' => $time, 
+                'last_logindate' => $time,
+                'email' => $email,
+                );
+        $condition = "nickname = '{$username}'";
+        $r = $helper->updateUser($condition,$updateData);
+        if (!empty($r)) {
+            $updateresult = $helper->getUserProfileByUserName($username);
+            $_SESSION['user'] = $updateresult;
+            $this->assign('user', $_SESSION['user']);
+            $data['status'] = 1;
+            $data['info'] = "邮箱地址修改成功";
+        }
+        $this->ajaxReturn($data,'JSON');
     }
     public function handleChangeNickname(){
-        $a = $_POST;
-        dump($a);
+        $data = array(
+            'status' => 0,
+            'info' => '',
+        );
+        $oldnickname = $_POST['oldnickname'];
+        $newnickname = $_POST['newnickname'];
+        if(empty($newnickname)){
+            $data['status'] = 2;
+            $data['info'] = "输入的新昵称不能为空!";
+            $this->ajaxReturn($data,'json');
+        }
+        $helper = new UserProfileModel();
+        $result = $helper->getUserProfileByUserName($oldnickname);
+        if (empty($result)) {
+            $data['status'] = 0;
+            $data['info'] = "当前昵称并未注册";
+            $this->ajaxReturn($data,'JSON');
+        }
+        $time = date("Y-m-d H:i:s");
+        $updateData = array(
+                'ctime' => $time, 
+                'last_logindate' => $time,
+                'nickname' => $newnickname,
+                );
+        $condition = "nickname = '{$oldnickname}'";
+        $r = $helper->updateUser($condition,$updateData);
+        if (!empty($r)) {
+            $updateresult = $helper->getUserProfileByUserName($newnickname);
+            $_SESSION['user'] = $updateresult;
+            $this->assign('user', $_SESSION['user']);
+            $data['status'] = 1;
+            $data['info'] = "昵称修改成功";
+        }
+        $this->ajaxReturn($data,'JSON');
     }
     public function handleChangePassword(){
-        $a = $_POST;
-        dump($a);
+        $data = array(
+            'status' => 0,
+            'info' => '',
+        );
+        $oldpwd = $_POST['oldpwd'];
+        $newpwd = $_POST['newpwd'];
+        $newpwd2 = $_POST['newpwd2'];
+        $m_newpwd = md5($newpwd);
+        $m_oldpwd = md5($oldpwd);
+        if(empty($oldpwd)){
+            $data['status'] = 2;
+            $data['info'] = "输入的旧密码不能为空!";
+            $this->ajaxReturn($data,'json');
+        }
+         if(empty($newpwd)){
+            $data['status'] = 3;
+            $data['info'] = "输入的新密码不能为空!";
+            $this->ajaxReturn($data,'json');
+        }
+         if(empty($newpwd2)){
+            $data['status'] = 4;
+            $data['info'] = "输入的确认密码不能为空!";
+            $this->ajaxReturn($data,'json');
+        }
+        if($newpwd2 != $newpwd){
+            $data['status'] = 5;
+            $data['info'] = "两次输入的新密码不一致!";
+            $this->ajaxReturn($data,'json');
+        }
+        if($oldpwd == $newpwd){
+            $data['status'] = 6;
+            $data['info'] = "新密码与旧密码一致!";
+            $this->ajaxReturn($data,'json');
+        }
+        
+        $helper = new UserProfileModel();
+        $result = $helper->getUserProfileByPassword($m_oldpwd);
+
+        if (empty($result)) {
+            $data['status'] = 0;
+            $data['info'] = "输入的旧密码错误!";
+            $this->ajaxReturn($data,'JSON');
+        }
+        $time = date("Y-m-d H:i:s");
+        $updateData = array(
+                'ctime' => $time, 
+                'last_logindate' => $time,
+                'password' => $m_newpwd,
+                );
+        $condition = "password = '{$m_oldpwd}'";
+        $r = $helper->updateUser($condition,$updateData);
+        if (!empty($r)) {
+            $updateresult = $helper->getUserProfileByPassword($m_newpwd);
+            $_SESSION['user'] = $updateresult;
+            $this->assign('user', $_SESSION['user']);
+            $data['status'] = 1;
+            $data['info'] = "密码修改成功";
+        }
+        $this->ajaxReturn($data,'JSON');
     }
     public function handleSendVcodeToCellphone(){
         $data = array(
