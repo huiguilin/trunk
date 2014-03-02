@@ -92,6 +92,7 @@ class CouponAction extends Action {
         $this->assign("coupons", $couponInfo);
         $this->assign("hot_coupons", $hotCouponInfo);
         $this->assign("ads", $adInfo);
+        $this->assign("get", $_GET);
         $this->display();
     }
 
@@ -133,6 +134,13 @@ class CouponAction extends Action {
         if (empty($couponInfo)) {
             return TRUE;
         }
+        $catIds = $couponInfo[0]['cat_id'];
+        $catHelper = new CategoryModel();
+        $params = array(
+            'cat_id' => $catIds,
+            'status' => 1,
+        );
+        $catInfo = $catHelper->getCategoryInfo($params);
         $id = (int)$_GET['_URL_'][2];
         $otherCoupons = $couponHelper->getCouponByPartnerId($id);
         $partnerIds = array($couponInfo[0]['partner_id']);
@@ -149,6 +157,8 @@ class CouponAction extends Action {
         $this->assign("partner", $partnerInfo[0]);
         $this->assign("partnerInfo", json_encode($partnerInfo[0]));
         $this->assign("evaluation", $eInfo);
+        $this->assign("cat_info", $catInfo[0]);
+        $this->assign("label_info", $this->labelType[$couponInfo[0]['label_type']]);
 
         $this->display();
     }

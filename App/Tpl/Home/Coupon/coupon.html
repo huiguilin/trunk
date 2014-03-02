@@ -59,7 +59,11 @@
 						<ul class="child_classification clearfix">
 							<li><a href="" class="current">全部</a></li>
                             <foreach name="categories" item="category">
+                            <if condition="$get.cat_id eq $category.cat_id">
+							<li><a href="/index.php/Coupon/coupon?cat_id={$category.cat_id}" class="current">{$category.cat_name}</a></li>
+                            <else />
 							<li><a href="/index.php/Coupon/coupon?cat_id={$category.cat_id}">{$category.cat_name}</a></li>
+                            </if>
                             </foreach>
 							<!--li class="no_right_border"><a href="">日本料理</a></li-->
 						</ul>
@@ -68,7 +72,9 @@
 				<div id="location_box">
 					<p>区域</p><ul class="parent_classification">
 						<li><a href="" class="current">全部</a></li>
+                        <if condition="$tag eq '秀峰区'">
 						<li><a href="/index.php/Coupon/coupon?tag=秀峰区">秀峰区</a></li>
+                        </if>
 						<li><a href="/index.php/Coupon/coupon?tag=象山区">象山区</a></li>
 						<li><a href="/index.php/Coupon/coupon?tag=叠彩区">叠彩区</a></li>
 						<li><a href="/index.php/Coupon/coupon?tag=雁山区">雁山区</a></li>

@@ -38,7 +38,7 @@
 	<div id="main">
 		<div id="sub_nav_box">
 			<div class="content_box">
-				<a href="">桂林优惠</a><span>></span><a href="">美食</a><span>></span><a href="">火锅</a><span>></span><a href="" class="gray">海底捞</a>
+				<a href="/">桂林优惠</a><span>></span><a href="/index.php/Coupon/coupon?label_type={$coupon.label_type}">{$label_info}</a><span>></span><a href="/index.php/Coupon/coupon?cat_id={$cat_info.cat_id}">{$cat_info.cat_name}</a><span>></span><a href="" class="gray">{$coupon.name}</a>
 			</div>
 		</div>
 		<div id="coupon_box">
@@ -136,7 +136,7 @@
 				<ul class="business_nav clearfix">
 					<li class="no_bottom_border"><a href="" >商家介绍</a></li>
 					<li><a href="">商家位置</a></li>
-					<li><a href="">评价晒单(15)</a></li>
+					<li><a href="">评价晒单</a></li>
 				</ul>
 				<div class="business_location">
 					<p class="title">商家位置</p>
@@ -167,36 +167,12 @@
 							<li class="white">
 								<p class="address_title">多乐之日(北京南站店)</p>
 								<div>
-									<p class="subway">地铁：距离北京南站约66米</p>
-									<p class="telephone">电话：010-51331101</p>
-									<p class="address">地址：丰台区北京南站商业高架底商D102号</p>
+									<p class="subway"></p>
+									<p class="telephone">电话：{$partner.telephone}</p>
+									<p class="address">地址：{$partner.location_desc}</p>
 								</div>
 							</li>
-							<li>
-								<p class="address_title">多乐之日(北京南站店)</p>
-								<div class="hidden">
-									<p class="subway">地铁：距离北京南站约66米</p>
-									<p class="telephone">电话：010-51331101</p>
-									<p class="address">地址：丰台区北京南站商业高架底商D102号</p>
-								</div>
-							</li>
-							<li>
-								<p class="address_title">多乐之日(北京南站店)</p>
-								<div class="hidden">
-									<p class="subway">地铁：距离北京南站约66米</p>
-									<p class="telephone">电话：010-51331101</p>
-									<p class="address">地址：丰台区北京南站商业高架底商D102号</p>
-								</div>
-							</li>
-							<li>
-								<p class="address_title">多乐之日(北京南站店)</p>
-								<div class="hidden">
-									<p class="subway">地铁：距离北京南站约66米</p>
-									<p class="telephone">电话：010-51331101</p>
-									<p class="address">地址：丰台区北京南站商业高架底商D102号</p>
-								</div>
-							</li>
-							<a href="" class="summary_number">查看全部分店(共22家)</a>
+							<a href="" class="summary_number">查看全部分店(共1家)</a>
 						</ul>
 					</div>
 				</div>
