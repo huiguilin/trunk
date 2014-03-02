@@ -143,8 +143,10 @@
 					<li><a href="" class="no_right_border">麻辣香锅</a></li>
 				</ul>
 				<ul class="content">
-                <foreach name="eat_coupons" item="coupon">
-					<li>
+                <foreach name="eat_coupons" item="coupon" key="k">
+                	<if condition="$k gt 3">
+					<else />
+						<li>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
 						<p class="one">{$coupon.description}</p>
@@ -153,6 +155,7 @@
 						<a href="" class="download">立即下载</a>
 						<p class="hidden_location">{$coupon.tag}</p>
 					</li>
+					</if>
                 </foreach>
 				</ul>
 				<a href="" class="foot_type_more">查看更多</a>
@@ -217,9 +220,10 @@
 					<li><a href="" class="no_right_border">网吧</a></li>
 				</ul>
 				<ul class="content">
-                <foreach name="play_coupons" item="coupon">
-
-					<li>
+                <foreach name="play_coupons" item="coupon" key="k">
+                	<if condition="$k gt 3 ">
+					<else />
+						<li>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
 						<p class="one">{$coupon.description}</p>
@@ -228,6 +232,7 @@
 						<a href="" class="download">立即下载</a>
 						<p class="hidden_location">{$coupon.tag}</p>
 					</li>
+					</if>
                 </foreach>
 				</ul>
 				<a href="" class="foot_type_more">查看更多</a>
@@ -291,9 +296,10 @@
 					<li><a href="" class="no_right_border">鲜花婚庆</a></li>
 				</ul>
 				<ul class="content">
-                <foreach name="life_coupons" item="coupon">
-
-					<li>
+                <foreach name="life_coupons" item="coupon" key="k">
+					<if condition="$k gt 3 ">
+					<else />
+						<li>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
 						<p class="one">{$coupon.description}</p>
@@ -302,6 +308,7 @@
 						<a href="" class="download">立即下载</a>
 						<p class="hidden_location">{$coupon.tag}</p>
 					</li>
+					</if>
                 </foreach>
 				</ul>
 				<a href="" class="foot_type_more">查看更多</a>
