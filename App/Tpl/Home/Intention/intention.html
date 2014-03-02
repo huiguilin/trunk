@@ -5,9 +5,10 @@
 <div id="left_card">
 	<p class="one">商务合作</p>
 	<p class="two">如果您有意与惠桂林合作，让自己的生意更上一层楼，请补充以下信息，尽快与我们取得联系！</p>
-	<p class="three">感谢您的支持，我们的销售代表会尽快与您联系！</p>
+	<p class="three">提交成功，感谢您的支持，我们的销售代表会尽快与您联系！</p>
 	<form id="intention_sumbit_form">
-		<ul>
+    	<input type="hidden" name="type" value="1"  id="hidden_type_value"/>
+    	<ul>
 			<li>
 				<p class="title">您的称呼：</p>
 				<input type="text" name="nickname" class="one" id="intention_username" placeholder="请填写您的称呼" />
@@ -23,11 +24,10 @@
 			</li>
 			<li class="two">
 				<p class="title title2">区域：</p>
-				<select name="area" class="one">
-					<option value="">桂林</option>
-					<option value="">南宁</option>
-					<option value="">柳州</option>
-					<option value="">梧州</option>
+				<select name="area" class="one" id="intention_area">
+                <foreach name="area_array" key="area_id" item="item">
+					<option value="{$area_id}">{$item}</option>
+                </foreach>
 				</select>
 			</li>
 			<li>
@@ -36,25 +36,22 @@
 			</li>
 			<li>
 				<p class="title">公司地址：</p>
-				<input type="text" name="company_address" class="one" placeholder="请填写您公司的地址"/>
+				<input type="text" name="companyaddress" class="one" placeholder="请填写您公司的地址" id="intention_address"/>
 			</li>
 			<li class="three">
 				<p class="title title2">类别：</p>
-				<select name="classification" class="two">
-					<option value="">美食</option>
-					<option value="">休闲</option>
-					<option value="">健康</option> 
-					<option value="">运动</option>
-					<option value="">网购</option>
-					<option value="">其他</option>
+				<select name="classification" class="two" id="intention_classification">
+                <foreach name="classification_array" key="classification_id" item="item">
+					<option value="{$classification_id}">{$item}</option>
+                </foreach>
 				</select>
 			</li>
 			<li class="four">
 				<p class="title">优惠内容描述：</p>
-				<textarea cols="50" rows="8" class="one" id="intention_content"></textarea>
+				<textarea cols="50" rows="8" class="one" id="intention_content" name="intention_content"></textarea>
 			</li>
 		</ul>
-		<input id="intention_btn_submit" type="bottom" value="提交">
+		<input id="intention_btn_submit" type="submit" value="提交">
 	</form>				
 </div>
 </div>

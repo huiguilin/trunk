@@ -3,5 +3,6 @@
 class AboutAction extends Action {
     public function about(){
 	$this->display();
+
     }
 }

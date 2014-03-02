@@ -1,6 +1,6 @@
 <?php
 class EvaluationModel extends Model {
-
+    
     protected $trueTableName = 't_monkey_partner_evaluation';
 
     public function getEvaluationByEvaluationId($ids = array()) {

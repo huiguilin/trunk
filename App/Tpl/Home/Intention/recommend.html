@@ -5,8 +5,9 @@
 <div id="left_card">
 	<p class="one">用户推荐商家</p>
 	<p class="two">用户的需求，即是我们的目标，请补充以下信息，尽快与我们取得联系！</p>
-	<p class="three">感谢您的支持，我们的客户专员会尽快与您联系！</p>
+	<p class="three">提交成功，感谢您的支持，我们的客户专员会尽快与您联系！</p>
 	<form id="recommend_sumbit_form">
+    	<input type="hidden" name="type" value="2" id="hidden_type_value"/>
 		<ul>
 			<li>
 				<p class="title">您的称呼：</p>
@@ -27,29 +28,26 @@
 			</li>
 			<li>
 				<p class="title">商户地址：</p>
-				<input type="text" name="company_address" class="one" placeholder="请填写商户地址" id="recommend_address"/>
+				<input type="text" name="companyaddress" class="one" placeholder="请填写商户地址" id="recommend_address"/>
 			</li>
 			<li>
 				<p class="title">商户特色商品：</p>
-				<input type="text" name="special_product" class="one" placeholder="请填写商户特色产品" id="recommend_product"/>
+				<input type="text" name="specialproduct" class="one" placeholder="请填写商户特色产品" id="recommend_product"/>
 			</li>
 			<li class="two">
 				<p class="title title2">商品类别：</p>
-				<select name="classification" class="two">
-					<option value="">美食</option>
-					<option value="">休闲娱乐</option>
-					<option value="">生活服务</option>
-					<option value="">酒店</option>
-					<option value="">旅游</option>
-					<option value="">丽人</option>
+				<select name="classification" class="two" id="recommend_classification">
+                <foreach name="classification_array" key="classification_id" item="item" id="recommend_classification">
+					<option value="{$classification_id}">{$item}</option>
+                </foreach>
 				</select>
 			</li>
 			<li class="three">
 				<p class="title">备注：</p>
-				<textarea cols="50" rows="8" class="one" id="recommend_content"></textarea>
+				<textarea cols="50" rows="8" class="one" id="recommend_content" name="recommend_content" ></textarea>
 			</li>
 		</ul>
-		<input id="recommend_btn_submit" type="bottom" value="提交">
+		<input id="recommend_btn_submit" type="submit" value="提交">
 	</form>				
 </div>
 </div>
