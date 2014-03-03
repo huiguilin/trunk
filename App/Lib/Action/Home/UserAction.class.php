@@ -52,6 +52,7 @@ class UserAction extends Action {
     }
 
     public function register() {
+
         $getRight = 'ok';
         $mail = !empty($_POST['email']) ? $_POST['email'] : $_POST['email'];
         $phone = !empty($_POST['cellphone']) ? $_POST['cellphone'] : $_POST['cellphone'];
@@ -81,26 +82,40 @@ class UserAction extends Action {
                     );          
         }
         $this->ajaxReturn($data);
-        return TRUE;
+        
     }
 
     public function mailRegister($mail, $nickname, $password, $verify) {
         if (empty($mail) || empty($password) || empty($nickname)) {
-            return FALSE;
+            $data = array(
+                    'status' => 0,
+                    'info' => '',
+                );
+            $data['info'] = "邮箱昵称和密码不能为空！";
+            $this->ajaxReturn($data);
         }
         if (session('verify') != md5($verify)) {
-            $this->error('验证码错误！');
-            return FALSE;
+                $data = array(
+                    'status' => 0,
+                    'info' => '',
+                );
+                $data['info'] = "验证码错误";
+                $this->ajaxReturn($data);
         }
         $helper = new UserProfileModel();
         $result = $helper->getUserProfileByUserName($mail, $nickname);
         if (!empty($result)) {
-            return FALSE;
+            $data = array(
+                    'status' => 2,
+                    'info' => '',
+                );
+                $data['info'] = "用户名已存在";
+                $this->ajaxReturn($data);
         }
-        $activeCode = $this->sendEmail($mail);
-        if (empty($activeCode)) {
-            return FALSE;
-        }
+        // $activeCode = $this->sendEmail($mail);
+        // if (empty($activeCode)) {
+        //     return FALSE;
+        // }
         $time = date("Y-m-d H:i:s");
         $password = md5($password);
         $cookie = md5($mail . $nickname . "huiguilin");
@@ -109,7 +124,7 @@ class UserAction extends Action {
                 'email' => $mail,
                 'ctime' => $time, 
                 'password' => $password,
-                'active_code' => $activeCode,
+                // 'active_code' => $activeCode,
                 'cookie' => $cookie,
                 'is_actived' => 0,
                 'invite_code' => $cookie,
@@ -294,6 +309,8 @@ class UserAction extends Action {
     public function verifyImg(){
 		import('ORG.Util.Image');
 		Image::buildImageVerify(4,5,'png');
+       
+
     }
     public function logout(){
         $data = session('user');
