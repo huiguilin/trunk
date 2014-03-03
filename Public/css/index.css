@@ -361,6 +361,8 @@
 	position: absolute;
 	top: 10px;
 	left: 13px;
+	border:0px;   /*解决IE图片黑框问题*/
+
 }
 #main #foot_and_footsort_box div.foot_box ul.content li p.one{
 	position: absolute;
@@ -594,6 +596,7 @@
 	position: absolute;
 	top: 13px;
 	right: 12px;
+	border:0px;   /*解决IE图片黑框问题*/
 }
 #main #foot_and_footsort_box div.footsort_box ul li a.hidden{
 	display: none;
