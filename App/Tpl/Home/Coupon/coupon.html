@@ -105,9 +105,18 @@
 			</div>
 		</div>
 		<div id="coupon_box">
+		
 			<ul class="clearfix coupon_content">
-                <foreach name="coupons" item="coupon">
-				<li>
+				<?php 
+					$coupon_count = count($coupons);
+				?>
+				<if condition="$coupon_count lt 8">
+						<input type="hidden" value="680" id="hidden_type_value" name="type" />
+					<else /> 
+					
+				</if>
+                <foreach name="coupons" item="coupon" key="k">
+                 <li>
 					<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}"></a>
 					<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
 					<p class="one">{$coupon.description}</p>
@@ -117,6 +126,7 @@
 					<p class="hidden_location">{$coupon.tag}</p>
 				</li>
                 </foreach>
+
 			</ul>
 			<div id="webchat_box">
 				<p>扫一下，关注惠桂林微信</p>

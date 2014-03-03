@@ -85,6 +85,9 @@ $(function(){
 		return false;
 	});
 	//分类+位置Click特效结束
+	var hidden_type_value = $('#hidden_type_value').val();
+	$('#coupon_box').css('height', hidden_type_value);
+
 
 	
 
