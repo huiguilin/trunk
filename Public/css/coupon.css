@@ -280,6 +280,7 @@
 	position: absolute;
 	top: 10px;
 	left: 13px;
+	border:0px;
 }
 #main #coupon_box ul.coupon_content li p.one{
 	position: absolute;
@@ -422,4 +423,5 @@
 #main #coupon_box #hot_coupon_box ul.hot_coupon li a.img_box img{
 	width: 62px;
 	height: 62px;
+	border:0px;
 }
