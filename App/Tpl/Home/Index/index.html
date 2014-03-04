@@ -129,11 +129,13 @@
 			<div class="foot_box">
 				<p class="title">民以食为天</p>
 				<ul class="title_content">
-					<li><a href="">火锅</a></li>
-					<li><a href="">西餐</a></li>
-					<li><a href="">湘菜</a></li>
-					<li><a href="">粤菜</a></li>
-					<li><a href="" class="no_right_border">麻辣香锅</a></li>
+                    <foreach name="eat_cat" item="e_cat" key="k">
+                    <if condition="$k lt 5">
+					<li><a href="/index.php/Coupon/coupon?cat_id={$e_cat.cat_id}">{$e_cat.cat_name}</a></li>
+                    <else />
+					<li><a href="/index.php/Coupon/coupon?cat_id={$e_cat.cat_id}" class="no_right_border">{$e_cat.cat_name}</a></li>
+                    </if>
+                    </foreach>
 				</ul>
 				<ul class="content">
                 <foreach name="eat_coupons" item="coupon" key="k">
@@ -145,7 +147,7 @@
 						<p class="one">{$coupon.description}</p>
 						<p class="two">{$coupon.title}</p>
 						<p class="three">下载：{$coupon.download_times}次</p>
-						<a href="" class="download">立即下载</a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="download">立即下载</a>
 						<p class="hidden_location">{$coupon.tag}</p>
 					</li>
 					</if>
@@ -206,11 +208,13 @@
 			<div class="foot_box">
 				<p class="title">休闲娱乐</p>
 				<ul class="title_content">
-					<li><a href="">KTV</a></li>
-					<li><a href="">咖啡厅</a></li>
-					<li><a href="">酒吧</a></li>
-					<li><a href="">台球</a></li>
-					<li><a href="" class="no_right_border">网吧</a></li>
+                    <foreach name="play_cat" item="p_cat" key="k">
+                    <if condition="$k lt 5">
+					<li><a href="/index.php/Coupon/coupon?cat_id={$p_cat.cat_id}">{$p_cat.cat_name}</a></li>
+                    <else />
+					<li><a href="/index.php/Coupon/coupon?cat_id={$p_cat.cat_id}" class="no_right_border">{$p_cat.cat_name}</a></li>
+                    </if>
+                    </foreach>
 				</ul>
 				<ul class="content">
                 <foreach name="play_coupons" item="coupon" key="k">
@@ -282,11 +286,13 @@
 			<div class="foot_box">
 				<p class="title">生活服务</p>
 				<ul class="title_content">
-					<li><a href="">摄影</a></li>
-					<li><a href="">汽车服务</a></li>
-					<li><a href="">配镜</a></li>
-					<li><a href="">体检保健</a></li>
-					<li><a href="" class="no_right_border">鲜花婚庆</a></li>
+                    <foreach name="life_cat" item="l_cat" key="k">
+                    <if condition="$k lt 5">
+					<li><a href="/index.php/Coupon/coupon?cat_id={$l_cat.cat_id}">{$l_cat.cat_name}</a></li>
+                    <else />
+					<li><a href="/index.php/Coupon/coupon?cat_id={$l_cat.cat_id}" class="no_right_border">{$l_cat.cat_name}</a></li>
+                    </if>
+                    </foreach>
 				</ul>
 				<ul class="content">
                 <foreach name="life_coupons" item="coupon" key="k">
