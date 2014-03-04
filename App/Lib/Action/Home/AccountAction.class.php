@@ -503,6 +503,34 @@ class AccountAction extends Action {
         }
     }
 
+    public function handleUpdateCouponComment() {
+        $userId = $_SESSION['user']['user_id'];
+        if (empty($userId)) {
+            echo "wrong!";return TRUE;
+        }
+        $id = $_POST['post_id'];
+        $rate = $_POST['ratevalue'];
+        $comment = $_POST['coupon_comment_content'];
+        $couponId = $_POST['post_coupon_id'];
+        $eId = $_POST['post_e_id'];
+        $params = array(
+            'user_id' => $userId,
+            'coupon_id' => $couponId,
+            'e_id' => $eId,
+            'data' => array(
+                'evaluation' => $comment,
+                'rate' => $rate,
+                'createtime' => date("Y-m-d H:i:s"),
+            ),
+            );
+        $helper = new CouponEvaluationModel();
+        $r = $helper->updateInfo($params);
+        if (!empty($r)) {
+            $this->redirect('Account/mycommented');
+            return TRUE;
+        }
+    }
+
     public function sendCode() {
         if (empty($_POST['binding_old_phone']) || empty($_POST['binding_new_phone'])) {
             $this->error('参数错误');
