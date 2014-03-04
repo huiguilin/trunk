@@ -67,7 +67,7 @@ class CouponModel extends Model {
             $str .= " AND tag like '%{$params['tag']}%'";
         }
         if (isset($params['cat_id'])) {
-            $str .= " AND cat_id like '%{$params['cat_id']}%'";
+            $str .= " AND cat_id  = {$params['cat_id']}";
         }
         if (!isset($params['sum'])) {
             $data = $this->where($str)->order($params['order_by'])->limit($params['limit'])->select();
