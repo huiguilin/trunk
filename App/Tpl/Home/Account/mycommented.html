@@ -5,11 +5,12 @@
 		<li><a href="{:U('Home/Account/mycommented')}" class="hover">已评价</a></li>
 	</ul>
 	<ul class="mycomment_show_box clearfix">
+        <foreach name="evaluations" item="eva">
 		<li>
 			<form method="post" action="{:U("Home/Account/handlePostCouponComment")}">
 				<div class="display_content_box">
-					<img src="__PUBLIC__/images/pic/1.png" class="thumb">
-					<p class="coupon_title">江上人家(中山路37号店） 10元优惠券</p>
+					<img src="__PUBLIC__/{$eva.header_path}" class="thumb">
+					<p class="coupon_title">{$eva.title}</p>
 					<p class="coupon_question">你为本优惠券打多少分？</p>
 					<p class="myrate">我的总体评价:</p>
 					<p class="rate_star">
@@ -19,8 +20,8 @@
 						<span ></span>
 						<span ></span>
 					</p>
-					<p class="finish_comment_content">不错，分量不是很多，味道不错</p>
-					<p class="modify_comment">修改评论</p>
+					<p class="finish_comment_content">{$eva.evaluation}</p>
+					<!--p class="modify_comment">修改评论</p-->
 					<input type="hidden" name="ratevalue" value="1"> 
 				</div>
 				<div class="hidden_content_box">
@@ -37,79 +38,19 @@
 				</div>
 			</form>
 		</li>
-		<li>
-			<form method="post" action="{:U("Home/Account/handlePostCouponComment")}">
-				<div class="display_content_box">
-					<img src="__PUBLIC__/images/pic/1.png" class="thumb">
-					<p class="coupon_title">江上人家(中山路37号店） 10元优惠券</p>
-					<p class="coupon_question">你为本优惠券打多少分？</p>
-					<p class="myrate">我的总体评价:</p>
-					<p class="rate_star">
-						<span ></span>
-						<span ></span>
-						<span ></span>
-						<span ></span>
-						<span ></span>
-					</p>
-					<p class="finish_comment_content">不错，分量不是很多，味道不错</p>
-					<p class="modify_comment">修改评论</p>
-					<input type="hidden" name="ratevalue" value="1"> 
-				</div>
-				<div class="hidden_content_box">
-					<p class="comment_desc">说说本优惠券的“亮点”与“不足”吧，您的评价将是其他会员非常重要的参考！建议30字以上。赶快告诉其他用户吧</p>
-					<label class="choose_branch">选择分店:</label>
-					<select name="choose_branch">
-						<option value="0">宝山路三里湖门店</option>
-						<option value="1">宝山路三里湖门店</option>
-						<option value="2">宝山路三里湖门店</option>
-					</select>
-					<textarea cols="56" rows="8" name="mycomment_content"></textarea>
-				<input type="submit" name="post_comment" value="发表评论" class="post_comment">
-					<p class="post_comment_hidden_error_tips">评论内容不能为空</p>
-				</div>
-			</form>
-		</li>
-		<li>
-			<form method="post" action="{:U("Home/Account/handlePostCouponComment")}">
-				<div class="display_content_box">
-					<img src="__PUBLIC__/images/pic/1.png" class="thumb">
-					<p class="coupon_title">江上人家(中山路37号店） 10元优惠券</p>
-					<p class="coupon_question">你为本优惠券打多少分？</p>
-					<p class="myrate">我的总体评价:</p>
-					<p class="rate_star">
-						<span ></span>
-						<span ></span>
-						<span ></span>
-						<span ></span>
-						<span ></span>
-					</p>
-					<p class="finish_comment_content">不错，分量不是很多，味道不错</p>
-					<p class="modify_comment">修改评论</p>
-					<input type="hidden" name="ratevalue" value="1"> 
-				</div>
-				<div class="hidden_content_box">
-					<p class="comment_desc">说说本优惠券的“亮点”与“不足”吧，您的评价将是其他会员非常重要的参考！建议30字以上。赶快告诉其他用户吧</p>
-					<label class="choose_branch">选择分店:</label>
-					<select name="choose_branch">
-						<option value="0">宝山路三里湖门店</option>
-						<option value="1">宝山路三里湖门店</option>
-						<option value="2">宝山路三里湖门店</option>
-					</select>
-					<textarea cols="56" rows="8" name="mycomment_content"></textarea>
-				<input type="submit" name="post_comment" value="发表评论" class="post_comment">
-					<p class="post_comment_hidden_error_tips">评论内容不能为空</p>
-				</div>
-			</form>
-		</li>
+        </foreach>
 	</ul>
 	<ul class="page_box">
-		<li class="one"><a href="" class="one">首页</a></li>
-		<li><a href=""><</a></li>
-		<li><a href="" class="red">1</a></li>
-		<li><a href="">2</a></li>
-		<li><a href="">3</a></li>
-		<li><a href="">></a></li>
-		<li class="one"><a href="" class="one">尾页</a></li>
+		<li class="one"><a href="{$page_info.first_url}" class="one">首页</a></li>
+		<li><a href="{$page_info.front_url}"><</a></li>
+<foreach name="links" item="link">
+        <if condition="$key eq $page_info.page">
+		<li><a href="{$link.url}" class="red">{$link.i}</a></li>
+        <else />
+		<li><a href="{$link.url}">{$link.i}</a></li>
+        </if>
+ </foreach>
+		<li><a href="{$page_info.next_url}">></a></li>
+		<li class="one"><a href="{$page_info.last_url}" class="one">尾页</a></li>
 	</ul>
-	
 <include file="Account:account_tmp_bottom"/>

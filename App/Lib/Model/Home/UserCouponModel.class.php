@@ -39,4 +39,19 @@ class UserCouponModel extends Model {
         return $result;
     }
 
+    public function updateUserCouponInfo($params) {
+        if (empty($params)) {
+            return false;
+        }
+        if (!empty($params['id'])) {
+            $str .= "id = {$params['id']}";
+        }
+        if (!empty($params['user_id'])) {
+            $str .= "AND user_id = {$params['user_id']}";
+        }
+        $data = $params['data'];
+        $r = $this->where($str)->save($data);
+        return $r;
+    }
+
 }

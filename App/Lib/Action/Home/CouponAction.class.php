@@ -176,13 +176,19 @@ class CouponAction extends Action {
         );
         if (empty($_POST['phone_number']) || empty($_POST['coupon_id'])) {
             $this->ajaxReturn($result,'JSON'); 
-            
+            return TRUE;
+        }
+        if (empty($_SESSION['user']['user_id'])) {
+            $result['info'] = '未登录!';
+            $this->ajaxReturn($result,'JSON');
+            return TRUE;
         }
     
         if ($_SESSION['verify'] != md5($_POST['vcode'])) {
             $result['status'] = 2;
             $result['info'] = "验证码错误!";
             $this->ajaxReturn($result,'JSON'); 
+            return TRUE;
         }
         $couponHelper = new CouponModel();
         $couponId = (int)$_POST['coupon_id'];
@@ -252,7 +258,7 @@ class CouponAction extends Action {
             'evaluated' => 0,
         );
         $helper = new UserCouponModel();
-        $helper->addUserCoupon($addData);
+        $r = $helper->addUserCoupon($addData);
         $data = array(
             'status' => 1,
             'info' => '发送成功',
@@ -281,6 +287,31 @@ class CouponAction extends Action {
             $info[$key]['title'] = mb_substr($info[$key]['title'], 0, 20, 'UTF-8');
         }
         return $info;
+    }
+
+    public function addFavorite() {
+        $info = array(
+            'status' => 0,
+            'info' => "",
+        );
+        if (empty($_SESSION['user']['user_id']) || empty($_POST['coupon_id'])) {
+            $this->ajaxReturn($info, 'JSON');
+            return TRUE;
+        }
+
+        $addData = array(
+                'user_id' => $_SESSION['user']['user_id'],
+                'coupon_id' => $_POST['coupon_id'],
+                'createtime' => date('Y-m-d H:i:s'),
+                );
+        $helper = new UserCollectionModel();
+        $r = $helper->addUserCollection($addData);   
+        if (!empty($r)) {
+            $info['status'] = 1;
+            $this->ajaxReturn($info, 'JSON');
+            return TRUE;
+        }
+        
     }
     
 }
