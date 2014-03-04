@@ -1,5 +1,5 @@
 $(function(){
-
+	var coupon_id;
 	$('#main #coupon_box div.business_detail_info_box div.business_location div.map_box ul li').click(function(event) {
 		$('#main #coupon_box div.business_detail_info_box div.business_location div.map_box ul li div').hide();
 		$('#main #coupon_box div.business_detail_info_box div.business_location div.map_box ul li').removeClass();
@@ -59,11 +59,46 @@ $(function(){
 
     //点击下载到手机弹窗
     $('#download_coupon_btn').add('#download_coupon_btn_two').click(function(event) {
+    	coupon_id = $(this).attr('couponid');
     	$('#download_coupon_hidden_box').bPopup({
            
         });
 
     });
     //点击下载到手机弹窗结束
+
+    //点击下载手机优惠劵弹窗中发送按钮
+     $('#download_coupon_submit_btn').click(function(event) {
+     	var phone = $('#send_to_phone').val();
+     	var vcode = $('#cellphone_vcode').val();
+     	var reg_cellphone= /^(1)[0-9]{10}$/;
+     	if(phone == ""){
+     		$('#hidden_error_tips_phone').show().text('手机号码不能为空');
+     	}else{
+     		 if(!reg_cellphone.test(phone)){
+     		 	$('#hidden_error_tips_phone').show().text('手机号码格式不正确');
+     		 }else{
+     		 	if(vcode ==""){
+     		 		$('#hidden_error_tips_phone').hide();
+     		 		$('#hidden_error_tips_vcode').show().text('验证码不能为空');
+     		 	}else{
+
+     		 		$.post(ajaxPostURL+"Coupon/sendCouponCode", { phone_number: phone, 
+						vcode: vcode,coupon_id:coupon_id},function(data){
+
+					 	if(data.status == 2){
+					 		$('#hidden_error_tips_vcode').show().text('验证码错误');
+					 	}else if(data.status == 0){
+					 		$('#hidden_error_tips_phone').show().text('手机号码不能为空');
+					 	}else if(data.status ==1){
+					 		$('#download_coupon_hidden_box div.middle_content_box_success div p.sucess_tip span').text(phone);
+					 		$("#download_coupon_hidden_box div.middle_content_box").hide().siblings('#download_coupon_hidden_box div.middle_content_box_success').show();
+					 	}
+					},"json");
+     		 	}
+     		 }
+     	}
+     	return false;
+     });
 
 })

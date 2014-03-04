@@ -12,8 +12,10 @@
 <script type="text/javascript" src="__PUBLIC__/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/footer.js"></script>
+
 <title>联系我们</title>
 <!--[if IE 6]>
 <!--背景图片透明方法-->
@@ -36,21 +38,19 @@
 			</ul>
 			<ul class="right_ul">
 				<li id="subscription_li">
-					<a href="#" id="subscription">订阅</a>
+					<a href="" id="subscription">订阅</a>
 				</li>
 				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
-				<form>
 					<input type="text" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
 					<input type="submit" value="订阅" name="subscription_email_btn" id="subscription_email_btn">
-				</form>
 			</div>
 			<div id="share_box">
 				<ul>
-					<li><a href="http://www.baidu.com" class="weibo">惠桂林新浪微博</a></li>
-					<li><a href="http://www.baidu.com" class="qzone">惠桂林QQ空间</a></li>
-					<li><a href="http://www.baidu.com" class="renren">惠桂林人人主页</a></li>
+					<li><a href="http://weibo.com/huigl?topnav=1&wvr=5" class="weibo">惠桂林新浪微博</a></li>
+					<li><a href="http://user.qzone.qq.com/2042534770" class="qzone">惠桂林QQ空间</a></li>
+					<li><a href="http://t.qq.com/ihuigl?preview" class="QQweibo">惠桂林腾讯微博</a></li>
 				</ul>
 			</div>
 		</div>
@@ -129,16 +129,24 @@
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/logo.png" alt="惠桂林" id="logo" /></a>
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/slogan.png" alt="吃喝玩乐，惠享生活" id="slogan" /></a>
 		<!-- 判断登录Session,来显示不同的ul -->
-		<?php if($_SESSION['user_id']== ''): ?><ul id="No_login_box">
-				<li class="one"><a class="one" id="Userlogin">登录</a></li>
+		<?php if($_SESSION['user']['user_id']== ''): ?><ul id="No_login_box">
+				<li class="one"><a class="one" id="Userlogin" next="<?php echo (__SELF__); ?>">登录</a></li>
 				<li><a class="two" id="Userreg">快速注册</a></li>
 			</ul>
 			<?php else: ?>
+			
 			<ul id="login_box">
-				<li><a>您好,effie</a></li>
-				<li class="no_right_border"><a href="">我的惠桂林</a></li>
+				<li><a class="username">您好,<?php echo ($user["nickname"]); ?></a></li>
+				<li id="person_center_menu"><a href="" class="menu">我的惠桂林</a></li>
+			</ul>
+			<ul id="login_dropdownlist">
+				<li><a href="<?php echo U("Home/Account/mycoupon");?>">我的券包</a></li>
+				<li><a href="<?php echo U("Home/Account/myfavorite");?>">我的收藏</a></li>
+				<li><a href="<?php echo U("Home/Account/mycommented");?>">我的评论</a></li>
+				<li><a href="<?php echo U("Home/Account/mysubscription");?>">我的订阅</a></li>
+				<li><a href="<?php echo U("Home/Account/mysetting");?>">个人信息设置</a></li>
+				<li><a href="<?php echo U("Home/User/logout");?>">登出</a></li>
 			</ul><?php endif; ?>
-
 		<div id="Userreg_box">
 			<div id="u_top">
 				<a id="a_closed2"><img src="__PUBLIC__/images/login_closed.png"></a>
@@ -146,8 +154,9 @@
 			</div>
 			<div id="u_bottom">
 				<ul>
-					<li class="one"><a href="" class="one" id="email_reg">邮箱注册</a></li>
-					<li><a href="" id="cellphone_reg">手机注册</a></li>
+					
+					<li class="one"><a href="" id="cellphone_reg">手机注册</a></li>
+					<li><a href="" class="one" id="email_reg">邮箱注册</a></li>
 				</ul>
 				<div id="email_box">
 					<form action="" method="post">
@@ -167,13 +176,13 @@
 						<p class="five">验证码</p>
 						<input type="text" name="reg_vcode" class="five"/>
 						<a href="" id="regemail_vcode_not_clear">看不清</a>
-						<img src="/index.php/User/verifyImg" class="one">
+						<img src="<?php echo U("Home/User/verifyImg","","","");?>" class="one">
 						<input type="checkbox" name="license" class="six" checked="true">
 						<p class="six">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
 						</p>
-						<input type="" name="email_reg_btn" id="email_reg_btn" value="注册" />
-						<p class="seven">已经是惠桂林的用户？点击<a href="" id="login_now">登录.</a></p>
+						<input type="submit" name="email_reg_btn" id="email_reg_btn" value="注册" />
+						<p class="seven">已经是惠桂林的用户？点击<a href="" id="login_now_email">登录.</a></p>
 						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 						<p class="nine" id="reg_hidebox02">密码由6-32位的字母、数字或符号组成</p>
 						<p class="ten" id="reg_hidebox03">请再次输入密码</p>
@@ -186,7 +195,8 @@
 					<form action="" method="post">
 						<p class="one">手机号码</p>
 						<input type="text" name="cellphone" class="one"/>
-						<a href="javascript:void(0)" id="sendcode" name="sendcode">点击发送验证码</a>
+						<a href="javascript:void(0)" id="sendcode" name="sendcode">免费获取验证码</a>
+						<p class="tip_send_vcode">已发送，1分钟后可重新获取</p>
 						<p class="seven">验证码</p>
 						<input type="text" name="vcode" class="six"/>
 						<p class="two">密码</p>
@@ -204,12 +214,14 @@
 						<p class="five">
 							我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
 						</p>
-						<input type="" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
+						<input type="submit" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
+						<p class="thirteen">已经是惠桂林的用户？点击<a href="" id="login_now_cellphone">登录.</a></p>
 						<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 						<p class="nine" id="reg_hidebox02">请输入手机收到的短信验证码</p>
 						<p class="ten" id="reg_hidebox03">密码由6-32位的字母、数字或符号组成</p>
 						<p class="eleven" id="reg_hidebox04">请再次输入密码</p>
-						<p class="twelve" id="reg_hidebox05">昵称由1-16位的汉字、英文字母或数字组成</p> 
+						<p class="twelve" id="reg_hidebox05">昵称由1-16位的汉字、英文字母或数字组成</p>
+						<p class="fourteen" id="cellphone_reg_final_error_tip">验证码错误</p>
 					</form>
 				</div>	
 			</div>
@@ -225,14 +237,14 @@
 						<li>
 							<p class="title">手机号码</p>
 							<input class="one" type="text" name="bingdingcellphone_No" id="bingdingcellphone_No">
-							<input class="two special" type="" value="获取验证码" id="get_vcode">
+							<input class="two special" type="submit" value="获取验证码" id="get_vcode">
 							<p class="validate" id="bingdingcellphone_No_hidden_tips"></p>
 							<p class="errorTips">如果长时间没收到验证码，请在60秒后重试</p>
 						</li>
 						<li>
 							<p class="title">验证码</p>
 							<input class="one" type="text" name="bingdingcellphone_vcode" id="bingdingcellphone_vcode">
-							<input class="two special2" type="" value="绑定手机号" id="validate_vcode" disabled="disabled">
+							<input class="two special2" type="submit" value="绑定手机号" id="validate_vcode" disabled="disabled">
 							<p class="validate" id="bingdingcellphone_vcode_hidden_tips"></p>
 						</li>
 					</ul>
@@ -257,7 +269,7 @@
 					<p class="one">注册成功并已登录惠桂林网！</p>
 					<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="" id="return_page2">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠桂林网首页</a></p>
 				</div>
-				<p class="count">如果没有选择，页面将在<span>10秒</span>后自动关闭此窗口。</p>
+				<p class="count">如果没有选择，页面将在<span id="cellphone_reg_success_count_down">3秒</span>后自动关闭此窗口。</p>
 			</div>
 		</div>
 		<div id="Userlogin_box">
@@ -266,7 +278,7 @@
 				<p>用户登录</p>
 			</div>
 			<div id="u_middle_box">
-				<form>
+				
 					<p class="one">账号</p>
 					<input type="text" name="username" class="one" />
 					<p class="two">密码</p>
@@ -274,20 +286,20 @@
 					<p class="three">验证码</p>
 					<input type="textbox" name="vcode" class="three"/>
 					<a href="" id="vcode_not_clear">看不清</a>
-					<img src="/index.php/User/verifyImg" id="vcode_img">
+					<img src="<?php echo U("Home/User/verifyImg","","","");?>" id="vcode_img">
 					<a href="" id="forgetpwd">忘记密码?</a>
 					<input type="checkbox" name="rememberpwd" class="four">
 					<p class="four">记住密码</p>
 					<input type="checkbox" name="autologin" class="five">
 					<p class="five">下次自动登录</p>
-					<input type="" name="btn_login" id="btn_login" value="登录" disabled="disabled"/>
+					<input type="submit" name="btn_login" id="btn_login" value="登录"/>
 					<p class="six">还没有账户？<a href="" id="reg_now">立即注册</a></p>
 					<p class="seven" id="login_hidebox01">请输入邮箱/手机号</p>
 					<p class="eight" id="login_hidebox02">请输入密码</p>
 					<p class="nine" id="login_hidebox03">请输入验证码</p>
 					<p class="ten" id="login_hidebox04">用户名或密码有误，请重新输入</p>
 					<input type="hidden" id="login_hidebox05" value="<?php echo U("Home/Login/verify");?>" />
-				</form>
+				
 			</div>
 			<div id="u_bottom_box">
 				<p>使用其他账户直接登陆</p>
@@ -365,7 +377,14 @@
 <!-- 关于我们页面的内容 -->
 <div id="left_card">
 	<p class="one">联系我们</p>
-	<p class="two">此处填写联系我们的信息</p>
+	<p class="two">
+	        <span style="color:000000;font-size:13px;">公司地址：桂林市国家高新区桂磨大道互联网产业基地503室</span><br><br>
+	        <span style="color:000000;font-size:13px;">公司电话：0773-8993520</span><br><br>
+	        <span style="font-size:13px;color:000000;">公司邮箱：
+	        <a href="mailto:huigl@outlook.com">huigl@outlook.com</a>
+	        </span>
+	        
+	</p>
 	
 </div>
 <!-- 关于我们页面的内容结束 -->
@@ -375,10 +394,10 @@
 	<div id="bottom_info">
 		<div id="bottom_box">
 			<div class="p_box">
-				<p>版权归惠桂林所有，未经书面授权禁止复制或建立镜像。 Email：<a href="mailto:service@huigl.com">service@huigl.com</a></p>
-				<p>惠桂林网客服电话：（0773）2853120 2852488 传真：（0773）2853265 </p>
-				<p>地址：桂林市中山中路39号南方大厦9-5号</p>
-				<p>经营许可证：桂B2-20040001</p>
+				<p>版权归惠桂林所有，未经书面授权禁止复制或建立镜像。 Email：<a href="mailto:huigl@outlook.com">service@huigl.com</a></p>
+				<p>惠桂林网客服电话：（0773）8993520</p>
+				<p>地址：桂林市高新区桂磨大道互联网产业基地503室</p>
+				<p>经营许可证：桂ICP备 14000606号</p>
 			</div>
 			<img src="__PUBLIC__/images/footer_ico01.png" alt="" class="one"/>
 			<img src="__PUBLIC__/images/footer_ico02.png" alt="" class="two" />

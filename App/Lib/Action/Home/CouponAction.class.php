@@ -186,6 +186,8 @@ class CouponAction extends Action {
         }
         $couponHelper = new CouponModel();
         $couponId = (int)$_POST['coupon_id'];
+
+
         $ids = array($couponId);
         $couponInfo = $couponHelper->getCouponByCouponId($ids);
         if (empty($couponInfo)) {
@@ -201,10 +203,27 @@ class CouponAction extends Action {
         //     $this->ajaxReturn($result, 'JSON');
         //     return TRUE;
         // }
+
         $code = mt_rand(1, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
         $couponName = $couponInfo[0]['name'];
         $couponDesc = $couponInfo[0]['description'];
         $result = $this->send($phoneNumber, $code, $couponName, $couponId,$couponDesc);
+
+        //下载成功后数据库中download_times加1
+        $helper = new CouponModel();
+        $counponDownloadTimes = $couponInfo[0]['download_times'] + 1;
+        $time = date("Y-m-d H:i:s");
+        $updateData = array(
+                'ctime' => $time, 
+                'download_times' => $counponDownloadTimes,
+                );
+        $condition = "coupon_id = '{$couponId}'";
+        $r = $helper->updateCoupon($condition,$updateData);
+        if (!empty($r)) {
+            $updateresult = $helper->getCouponByCouponId($ids);
+            $this->assign("coupons", $couponInfo);
+        }
+
         $this->ajaxReturn($result, "JSON");
         return TRUE;
     }

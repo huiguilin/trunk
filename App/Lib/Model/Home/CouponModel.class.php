@@ -85,5 +85,11 @@ class CouponModel extends Model {
         $data = $this->where("partner_id IN ({$id})")->select();
         return $data;
     }
-    
+    public function updateCoupon($condition,$data = array()) {
+        if (empty($data) ||empty($condition)) {
+            return FALSE;
+        }
+        $result = $this->where("{$condition}")->save($data);
+        return $result;
+    }
 }
