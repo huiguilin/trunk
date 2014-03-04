@@ -4,27 +4,27 @@ class CouponModel extends Model {
 
     protected $trueTableName = 't_monkey_coupon_info';
     private $labelType = array(
-        'eat' => array(
+        '1' => array(
             '民以食为天',
             1,
             ),
-        'play' => array(
+        '2' => array(
             '休闲娱乐',
             2,
             ),
-        'life' => array(
+        '3' => array(
             '生活服务',
             4,
             ),
-        'hotel' => array(
+        '4' => array(
             '酒店',
             8,
             ),
-        'tour' => array(
+        '5' => array(
             '旅游',
             16,
             ),
-        'people' => array(
+        '6' => array(
             '丽人',
             32,
             ),
@@ -49,30 +49,7 @@ class CouponModel extends Model {
             $str .= " AND partner_id IN ({$params['partner_id']})";
         }
         if (isset($params['label_type'])) {
-            switch ($params['label_type']) {
-                case 'eat': 
-                    $str .= " AND (label_type & {$this->labelType['eat'][1]} = {$this->labelType['eat'][1]})";
-                    break;
-                case 'life': 
-                    $str .= " AND (label_type & {$this->labelType['life'][1]} = {$this->labelType['life'][1]})";
-                    break;
-                case 'play': 
-                    $str .= " AND (label_type & {$this->labelType['play'][1]} = {$this->labelType['play'][1]})";
-                    break;
-                case 'tour': 
-                    $str .= " AND (label_type & {$this->labelType['tour'][1]} = {$this->labelType['tour'][1]})";
-                    break;
-                case 'hotel': 
-                    $str .= " AND (label_type & {$this->labelType['hotel'][1]} = {$this->labelType['hotel'][1]})";
-                    break;
-                case 'people': 
-                    $str .= " AND (label_type & {$this->labelType['people'][1]} = {$this->labelType['people'][1]})";
-                    break;
-                default : 
-                    $str .= " AND (label_type & {$this->labelType['eat'][1]} = {$this->labelType['eat'][1]})";
-                    break;
-                    
-            }
+            $str .= " AND (label_type & {$this->labelType[$params['label_type']][1]} = {$this->labelType[$params['label_type']][1]})";
         }
         if (isset($params['start_time_lt'])) {
             $str .= " AND start_time <= '{$params['start_time_lt']}'";
