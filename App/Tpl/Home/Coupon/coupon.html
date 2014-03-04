@@ -46,16 +46,28 @@
 			<div id="content_box">
 				<div id="classification_box">
 					<p>分类</p><ul class="parent_classification">
+                        <if condition="$get_info.label_type neq ''">
+						<li><a href="">全部</a></li>
+                        <else />
 						<li><a href="" class="current">全部</a></li>
+                        </if>
                     <foreach name="label_types" item="label_type">
+                        <if condition="$get_info.label_type eq $key">
+						<li><a href="/index.php/Coupon/coupon?label_type={$key}" class="current">{$label_type}</a></li>
+                        <else />
 						<li><a href="/index.php/Coupon/coupon?label_type={$key}">{$label_type}</a></li>
+                        </if>
                     </foreach>
 					</ul>
 					<div>
 						<ul class="child_classification clearfix">
-							<li><a href="" class="current">全部</a></li>
+                            <if condition="$get_info.cat_id neq ''">
+                            <li><a href="">全部</a></li>
+                            <else />
+                            <li><a href="" class="current">全部</a></li>
+                            </if>
                             <foreach name="categories" item="category">
-                            <if condition="$get.cat_id eq $category.cat_id">
+                            <if condition="$get_info.cat_id eq $category.cat_id">
 							<li><a href="/index.php/Coupon/coupon?cat_id={$category.cat_id}" class="current">{$category.cat_name}</a></li>
                             <else />
 							<li><a href="/index.php/Coupon/coupon?cat_id={$category.cat_id}">{$category.cat_name}</a></li>
@@ -67,8 +79,12 @@
 				</div>
 				<div id="location_box">
 					<p>区域</p><ul class="parent_classification">
+                        <if condition="$get_info.tag neq ''">
+						<li><a href="">全部</a></li>
+                        <else />
 						<li><a href="" class="current">全部</a></li>
-                        <if condition="$tag eq '秀峰区'">
+                        </if>
+                        <if condition="$get_info.tag eq '秀峰区'">
 						<li><a href="/index.php/Coupon/coupon?tag=秀峰区">秀峰区</a></li>
                         </if>
 						<li><a href="/index.php/Coupon/coupon?tag=象山区">象山区</a></li>

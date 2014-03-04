@@ -72,19 +72,19 @@ class IndexAction extends Action {
         $info = $helper->getCouponByCouponId($ids);
         $info = $this->cutCouponWords($info);
         $params = array(
-            'label_type' => 'eat',
+            'label_type' => 1,
             'limit' => '0,10',
         );
         $eatCoupon = $helper->getCoupon($params);
         $eatCoupon = $this->cutCouponWords($eatCoupon);
         $params = array(
-            'label_type' => 'life',
+            'label_type' => 3,
             'limit' => '0,10',
         );
         $lifeCoupon = $helper->getCoupon($params);
         $lifeCoupon = $this->cutCouponWords($lifeCoupon);
         $params = array(
-            'label_type' => 'play',
+            'label_type' => 2,
             'limit' => '0,10',
         );
         $playCoupon = $helper->getCoupon($params);

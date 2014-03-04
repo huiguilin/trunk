@@ -148,7 +148,7 @@ class UserAction extends Action {
 
     private function sendEmail($mail) {
         $activeCode = md5($mail . ":huiguilin");
-        $content = "你好!这是来自惠桂林的账号激活邮件,请点击 http://test.huiguilin.com/Index.php/user/active?ac={$activeCode}&user={$mail}";
+        $content = "你好!这是来自惠桂林的账号激活邮件,请点击 http://www.huigl.com/Index.php/user/active?ac={$activeCode}&user={$mail}";
         import('ORG.Email'); 
         $data['mailto'] = $mail; 
         $data['subject'] = '账号激活邮件'; 

@@ -92,7 +92,7 @@ class CouponAction extends Action {
         $this->assign("coupons", $couponInfo);
         $this->assign("hot_coupons", $hotCouponInfo);
         $this->assign("ads", $adInfo);
-        $this->assign("get", $_GET);
+        $this->assign("get_info", $_GET);
         $this->display();
     }
 
@@ -161,6 +161,12 @@ class CouponAction extends Action {
         $this->assign("label_info", $this->labelType[$couponInfo[0]['label_type']]);
 
         $this->display();
+    }
+
+    private function getEvaluation($eInfo) {
+        if (empty($eInfo)) {
+            return array();
+        }
     }
 
     public function sendCouponCode() {
