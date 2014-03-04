@@ -913,13 +913,17 @@ $(function(){
 			$.post(ajaxPostURL+"User/register", { email: emailreg_email, 
 			pwd: emailreg_pwd, pwd2: emailreg_pwd2,nickname:emailreg_nickname,
 			 vcode:emailreg_vcode},function(data){
-			 	//做个判断，返回成功执行下面的代码，跳转到注册成功页面
+
+			 	// 做个判断，返回成功执行下面的代码，跳转到注册成功页面
 			 	if(data.status == 1){
 			 		$('#Userreg_box #u_bottom').css('display', 'none');
 					$('#Userreg_box #UserregSuccess_email').css('display', 'block');
 			 	}
-			 	else{
-			 		$('#Userreg_box #u_bottom #email_box form p.twelve').text('验证码错误').css('color', '#F14B2B')
+			 	else if(data.status ==0){
+			 		$('#Userreg_box #u_bottom #email_box form p.twelve').text(data.info).css('color', '#F14B2B')
+					.css('background-image', backgroundURL_error);
+			 	}else if(data.status ==2){
+			 		$('#Userreg_box #u_bottom #email_box form p.twelve').text(data.info).css('color', '#F14B2B')
 					.css('background-image', backgroundURL_error);
 			 	}
 			},"json");
