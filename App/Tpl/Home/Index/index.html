@@ -6,6 +6,7 @@
 <meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/M_sendCouponToCellphone.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
@@ -13,8 +14,7 @@
 <script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
-
-
+<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
 <title>惠桂林首页</title>
 </head>
 <body>
@@ -31,12 +31,12 @@
 		<div id="main_content_top_box">
 			<!-- 全部分类区域 -->
 			<ul class="category_title">
-				<li><a href="/index.php/Coupon/coupon?label_type=1" class="one">美食</a></li>
-				<li><a href="/index.php/Coupon/coupon?label_type=2" class="two">休闲娱乐</a></li>
-				<li><a href="/index.php/Coupon/coupon?label_type=3" class="three">生活服务</a></li>
-				<li><a href="/index.php/Coupon/coupon?label_type=4" class="four">酒店</a></li>
-				<li><a href="/index.php/Coupon/coupon?label_type=5" class="five">旅游</a></li>
-				<li><a href="/index.php/Coupon/coupon?label_type=6" class="six">丽人</a></li>
+				<li><a href="/index.php/Coupon/coupon?label_type=1" class="one" target=_blank>美食</a></li>
+				<li><a href="/index.php/Coupon/coupon?label_type=2" class="two" target=_blank>休闲娱乐</a></li>
+				<li><a href="/index.php/Coupon/coupon?label_type=3" class="three" target=_blank>生活服务</a></li>
+				<li><a href="/index.php/Coupon/coupon?label_type=4" class="four" target=_blank>酒店</a></li>
+				<li><a href="/index.php/Coupon/coupon?label_type=5" class="five" target=_blank>旅游</a></li>
+				<li><a href="/index.php/Coupon/coupon?label_type=6" class="six" target=_blank>丽人</a></li>
 			</ul>
 			<!-- 全部分类区域结束 -->
 			<!-- 热门分类区域 -->
@@ -53,7 +53,7 @@
 				</li>
 				<li>
 					<span>全部区域</span>
-					<a href="/index.php/Coupon/coupon?tag=七星区" class="one">七星区</a>
+					<a href="/index.php/Coupon/coupon?tag=七星区" class="one" >七星区</a>
 					<a href="/index.php/Coupon/coupon?tag=秀峰区">秀峰区</a>
 					<a href="/index.php/Coupon/coupon?tag=象山区">象山区</a>
 					<a href="/index.php/Coupon/coupon?tag=叠彩区">叠彩区</a>
@@ -73,10 +73,14 @@
 			<!-- 热门分类区域结束 -->
 			<!-- 广告区域 -->
 			<div id="ad_box">
-            <foreach name="ads" item="ad">
+           <!--  <foreach name="ads" item="ad"> -->
             	
-				<img src="__PUBLIC__/{$ad.img_path}">
-            </foreach>
+				<!-- <img src="__PUBLIC__/{$ad.img_path}"> -->
+				<img src="__PUBLIC__/images/flash/1.png">
+				<img src="__PUBLIC__/images/flash/2.png">
+				<img src="__PUBLIC__/images/flash/3.png">
+				<img src="__PUBLIC__/images/flash/4.png">
+           <!--  </foreach> -->
 				<ul>
 					<li>1</li>
 					<li>2</li>
@@ -87,8 +91,8 @@
 			<!-- 广告区域结束 -->
 			<!-- 微信区域 -->
 			<div class="QRcode_box">
-				<p>扫描我,关注惠桂林官方微信</p>
-				<img src="__PUBLIC__/images/barcode.png">
+				<p>扫描我,关注惠桂林官方微博</p>
+				<img src="__PUBLIC__/images/weibo_barcode.png">
 			</div>
 			<!-- 微信区域结束 -->
 			<!-- 我推荐你来谈区域 -->
@@ -140,8 +144,8 @@
                 	<if condition="$k gt 3">
 					<else />
 						<li>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box" target=_blank><img src="__PUBLIC__/{$coupon.picture_path}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title">{$coupon.name}</a>
 						<p class="one">{$coupon.description}</p>
 						<p class="two">{$coupon.title}</p>
 						<p class="three">下载：{$coupon.download_times}次</p>
@@ -151,7 +155,7 @@
 					</if>
                 </foreach>
 				</ul>
-				<a href="" class="foot_type_more">查看更多</a>
+				<a href="" class="foot_type_more" target=_blank>查看更多</a>
 			</div>
 			<div class="footsort_box">
 				<p class="title title2" id="foot_hot_title">最热优惠劵排行</p><p class="title" id="foot_new_title">最新优惠劵排行</p>
@@ -160,18 +164,18 @@
 
                 	<if condition="$k eq 0">
 						<li class="hover" id="footsort_box_fisrt_li">
-							<a class="two" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a class="two" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two">{$hcoupon.description}</p>
-							<a href="{:U("Coupon/detail","","","")}/{h$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
-							<a class="one hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box" target=_blank><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one hidden">{$hcoupon.title}</span>
 						</li>
 						<else />
 						<li id="footsort_box_fisrt_li">
-							<a class="two hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a class="two hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two hidden">{$hcoupon.description}</p>
-							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
-							<a class="one" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one sort_id_{$k+1}" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one">{$hcoupon.title}</span>
 						</li>
 					</if>
@@ -181,18 +185,18 @@
 				<foreach name="eat_coupons" item="hcoupon" key="k">
                 	<if condition="$k eq 0">
 						<li class="hover" id="footsort_box_fisrt_li">
-							<a class="two" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a class="two" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two">{$hcoupon.description}</p>
-							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
-							<a class="one hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one hidden">{$hcoupon.title}</span>
 						</li>
 						<else />
 						<li id="footsort_box_fisrt_li">
-							<a class="two hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a class="two hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two hidden">{$hcoupon.description}</p>
-							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
-							<a class="one" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a target=_blank class="one sort_id_{$k+1}" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one">{$hcoupon.title}</span>
 						</li>
 					</if>
@@ -217,8 +221,8 @@
                 	<if condition="$k gt 3 ">
 					<else />
 						<li>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title">{$coupon.name}</a>
 						<p class="one">{$coupon.description}</p>
 						<p class="two">{$coupon.title}</p>
 						<p class="three">下载：{$coupon.download_times}次</p>
@@ -236,18 +240,18 @@
                 <foreach name="play_coupons" item="hcoupon" key="k">
                 	<if condition="$k eq 0">
 						<li class="hover" id="footsort_box_fisrt_li">
-							<a class="two" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a class="two" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two">{$hcoupon.description}</p>
-							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
-							<a class="one hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one hidden">{$hcoupon.title}</span>
 						</li>
 						<else />
 						<li id="footsort_box_fisrt_li">
-							<a class="two hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a class="two hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two hidden">{$hcoupon.description}</p>
-							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
-							<a class="one" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one sort_id_{$k+1}" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one">{$hcoupon.title}</span>
 						</li>
 					</if>
@@ -257,18 +261,18 @@
                 <foreach name="play_coupons" item="hcoupon" key="k">
                 	<if condition="$k eq 0">
 						<li class="hover" id="footsort_box_fisrt_li">
-							<a class="two" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a class="two" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two">{$hcoupon.description}</p>
-							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
-							<a class="one hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one hidden">{$hcoupon.title}</span>
 						</li>
 						<else />
 						<li id="footsort_box_fisrt_li">
-							<a class="two hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a class="two hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two hidden">{$hcoupon.description}</p>
-							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
-							<a class="one" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one sort_id_{$k+1}" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one">{$hcoupon.title}</span>
 						</li>
 					</if>
@@ -293,8 +297,8 @@
 					<if condition="$k gt 3 ">
 					<else />
 						<li>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title">{$coupon.name}</a>
 						<p class="one">{$coupon.description}</p>
 						<p class="two">{$coupon.title}</p>
 						<p class="three">下载：{$coupon.download_times}次</p>
@@ -312,18 +316,18 @@
                 <foreach name="life_coupons" item="hcoupon" key="k">
                 	<if condition="$k eq 0">
 						<li class="hover" id="footsort_box_fisrt_li">
-							<a class="two" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a class="two" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two">{$hcoupon.description}</p>
-							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
-							<a class="one hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one hidden">{$hcoupon.title}</span>
 						</li>
 						<else />
 						<li id="footsort_box_fisrt_li">
-							<a class="two hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a class="two hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two hidden">{$hcoupon.description}</p>
-							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
-							<a class="one" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one sort_id_{$k+1}" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one">{$hcoupon.title}</span>
 						</li>
 					</if>
@@ -333,18 +337,18 @@
                 <foreach name="life_coupons" item="hcoupon" key="k">
                 	<if condition="$k eq 0">
 						<li class="hover" id="footsort_box_fisrt_li">
-							<a class="two" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a class="two" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two">{$hcoupon.description}</p>
-							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
-							<a class="one hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one hidden">{$hcoupon.title}</span>
 						</li>
 						<else />
 						<li id="footsort_box_fisrt_li">
-							<a class="two hidden" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a class="two hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<p class="two hidden">{$hcoupon.description}</p>
-							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
-							<a class="one" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one sort_id_{$k+1}" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
 							<span class="one">{$hcoupon.title}</span>
 						</li>
 					</if>
@@ -360,6 +364,7 @@
 		
 	</div> -->
 <!-- 右侧回到顶部区域结束 -->
+	<include file="./App/Tpl/Home/Public/M_sendCouponToCellphone.html" />
 <!-- 最底部区域 -->
 	<include file="./App/Tpl/Home/Public/footer.html" />
 <!-- 最底部区域结束 -->

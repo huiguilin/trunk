@@ -1,0 +1,31 @@
+<div id="download_coupon_hidden_box">	
+	<div class="top_content_box">
+		<p couponid="{$coupon.coupon_id}" id="coupon_id_value">短信优惠券下载</p>
+		<img src="__PUBLIC__/images/login_closed.png" id="closed_download_coupon_hidden_box">
+	</div>
+	<div class="middle_content_box">
+		<ul>
+			<li>
+				<p class="label">请输入手机号码</p>
+				<input type="text" name="send_to_phone" id="send_to_phone" />
+				<p class="hidden_error_tips" id="hidden_error_tips_phone"></p>
+			</li>
+			<li>
+				<p class="label">验证码</p>
+				<input type="text" name="cellphone_vcode" id="cellphone_vcode" class="shorter" />
+				<a href="" id="send_to_phone_vcode_not_clear">看不清</a>
+				<img src="{:U("Home/User/verifyImg","","","")}">
+				<p class="hidden_error_tips" id="hidden_error_tips_vcode"></p>
+			</li>
+		</ul>
+		<input type="submit" value="发送" name="download_coupon_submit_btn" id="download_coupon_submit_btn">
+	</div>
+	<div class="middle_content_box_success">
+		<div>
+			<img src="__PUBLIC__/images/regsucess.png" alt="" />
+			<p class="sucess_tip">短信已经成功发送至<span></span></p>
+			<p class="hot_tip">系统繁忙时会有3-5分钟的发送延迟，请不要在短时间内重复下载</p>
+		</div>
+		<a href="" id="close_middle_content_box_success">关闭</a>
+	</div>
+</div>

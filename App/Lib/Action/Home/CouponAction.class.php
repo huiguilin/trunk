@@ -175,6 +175,7 @@ class CouponAction extends Action {
     
         if ($_SESSION['verify'] != md5($_POST['vcode'])) {
             $result['status'] = 2;
+            $result['info'] = "验证码错误!";
             $this->ajaxReturn($result,'JSON'); 
         }
         $couponHelper = new CouponModel();
@@ -195,19 +196,20 @@ class CouponAction extends Action {
         //     return TRUE;
         // }
         $code = mt_rand(1, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
-        $partnerName = $couponInfo[0]['name'];
-        $result = $this->send($phoneNumber, $code, $partnerName, $couponId);
+        $couponName = $couponInfo[0]['name'];
+        $couponDesc = $couponInfo[0]['description'];
+        $result = $this->send($phoneNumber, $code, $couponName, $couponId,$couponDesc);
         $this->ajaxReturn($result, "JSON");
         return TRUE;
     }
 
-    private function send($phoneNumber, $code, $partnerName, $couponId) {
+    private function send($phoneNumber, $code, $couponName, $couponId,$couponDesc) {
         if (empty($phoneNumber) || empty($code)) {
             return FALSE;
         }
         session("pcheck","{$code}");
         //TODO
-        $text = "您的{$partnerName}优惠券码是【{$code}】，感谢您使用";
+        $text = "您的{$couponName}优惠券码是【{$code}】，{$couponDesc}，感谢您使用";
         $result = sendCodeToMobile($phoneNumber, $text);
         if ($result['result'] != 1) {
             $data = array(

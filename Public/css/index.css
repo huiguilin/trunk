@@ -1,3 +1,4 @@
+
 #top_nav #top_nav_box #left_collection{
 	position: absolute;
 	top:8px;
@@ -423,7 +424,6 @@
 	right: 24px;
 	background: url(../images/download.png) no-repeat 0px -2px;
 	padding-left: 19px;
-	
 }
 #main #foot_and_footsort_box div.foot_box ul.title_content{
 	height: 30px;
@@ -525,41 +525,41 @@
 	line-height: 30px;
 	border:1px solid black;*/
 }
-#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_02{
+#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_2{
 	
-	background: url(../images/sort_02.png) no-repeat 0 4px;
+	background: url(../images/sort_02.png) no-repeat 0 0px;
 }
-#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_03{
+#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_3{
 	
-	background: url(../images/sort_03.png) no-repeat 0 4px;
+	background: url(../images/sort_03.png) no-repeat 0 0px;
 }
-#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_04{
+#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_4{
 	
-	background: url(../images/sort_04.png) no-repeat 0 4px;
+	background: url(../images/sort_04.png) no-repeat 0 0px;
 }
-#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_05{
+#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_5{
 	
-	background: url(../images/sort_05.png) no-repeat 0 4px;
+	background: url(../images/sort_05.png) no-repeat 0 0px;
 }
-#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_06{
+#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_6{
 	
-	background: url(../images/sort_06.png) no-repeat 0 4px;
+	background: url(../images/sort_06.png) no-repeat 0 0px;
 }
-#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_07{
+#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_7{
 	
-	background: url(../images/sort_07.png) no-repeat 0 4px;
+	background: url(../images/sort_07.png) no-repeat 0 0px;
 }
-#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_08{
+#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_8{
 	
-	background: url(../images/sort_08.png) no-repeat 0 4px;
+	background: url(../images/sort_08.png) no-repeat 0 0px;
 }
-#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_09{
+#main #foot_and_footsort_box div.footsort_box ul li a.sort_id_9{
 	
-	background: url(../images/sort_09.png) no-repeat 0 4px;
+	background: url(../images/sort_09.png) no-repeat 0 0px;
 }
 #main #foot_and_footsort_box div.footsort_box ul li a.sort_id_10{
 	
-	background: url(../images/sort_10.png) no-repeat 0 4px;
+	background: url(../images/sort_10.png) no-repeat 0 0px;
 }
 #main #foot_and_footsort_box div.footsort_box ul li span.one{
 	color: #666666;
