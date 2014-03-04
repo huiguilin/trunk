@@ -6,6 +6,7 @@
 <meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/coupon.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/M_sendCouponToCellphone.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
@@ -13,16 +14,8 @@
 <script type="text/javascript" src="__PUBLIC__/js/coupon.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
 
-<!--[if IE 6]-->
-<!--背景图片透明方法-->
-<script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
-<!--插入图片透明方法-->
-<script type="text/javascript">
-   EvPNG.fix('div, ul, img, li, input');  //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
-  
-</script>
-<!-- <![endif]-->
 
 <title>惠桂林首页</title>
 </head>
@@ -36,9 +29,12 @@
 <!-- 内容区域 -->
 	<div id="main">
 		<div id="ad_box">
-        <foreach name="ads" item="ad">
+<!--         <foreach name="ads" item="ad">
 			<img src="__PUBLIC__/{$ad.img_path}" alt="" />
-        </foreach>
+        </foreach> -->
+        <img src="http://www.huigl.com/Public/images/flash/c_1.png" alt="" />
+        <img src="http://www.huigl.com/Public/images/flash/c_2.png" alt="" />
+        <img src="http://www.huigl.com/Public/images/flash/c_3.png" alt="" />
 			<ul>
 				<li>1</li>
 				<li>2</li>
@@ -138,15 +134,15 @@
 					<p class="one">{$coupon.description}</p>
 					<p class="two">{$coupon.title}</p>
 					<p class="three">下载：{$coupon.download_times}次</p>
-					<a href="" class="download">立即下载</a>
+					<a href="" class="download" couponid="{$coupon.coupon_id}">立即下载</a>
 					<p class="hidden_location">{$coupon.tag}</p>
 				</li>
                 </foreach>
 
 			</ul>
 			<div id="webchat_box">
-				<p>扫一下，关注惠桂林微信</p>
-				<img src="__PUBLIC__/images/barcode.png">
+				<p>扫一下，关注惠桂林微博</p>
+				<img src="__PUBLIC__/images/weibo_barcode.png">
 			</div>
 			<div id="hot_coupon_box">
 				<p class="title">热门优惠劵</p>
@@ -164,6 +160,7 @@
 		
 	</div>
 <!-- 内容区域结束 -->
+	<include file="./App/Tpl/Home/Public/M_sendCouponToCellphone.html" />
 <!-- 最底部区域 -->
 	<include file="./App/Tpl/Home/Public/footer.html" />
 <!-- 最底部区域结束 -->

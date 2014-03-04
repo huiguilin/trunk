@@ -6,22 +6,16 @@
 <meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/coupon.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/M_sendCouponToCellphone.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/coupon.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
 
-<!--[if IE 6]-->
-<!--背景图片透明方法-->
-<script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
-<!--插入图片透明方法-->
-<script type="text/javascript">
-   EvPNG.fix('div, ul, img, li, input');  //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
-  
-</script>
-<!-- <![endif]-->
 
 <title>惠桂林首页</title>
 </head>
@@ -37,15 +31,13 @@
 			</ul>
 			<ul class="right_ul">
 				<li id="subscription_li">
-					<a href="#" id="subscription">订阅</a>
+					<a href="" id="subscription">订阅</a>
 				</li>
 				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
-				<form>
 					<input type="text" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
 					<input type="submit" value="订阅" name="subscription_email_btn" id="subscription_email_btn">
-				</form>
 			</div>
 			<div id="share_box">
 				<ul>
@@ -130,14 +122,23 @@
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/logo.png" alt="惠桂林" id="logo" /></a>
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/slogan.png" alt="吃喝玩乐，惠享生活" id="slogan" /></a>
 		<!-- 判断登录Session,来显示不同的ul -->
-		<?php if($_SESSION['user_id']== ''): ?><ul id="No_login_box">
-				<li class="one"><a class="one" id="Userlogin">登录</a></li>
+		<?php if($_SESSION['user']['user_id']== ''): ?><ul id="No_login_box">
+				<li class="one"><a class="one" id="Userlogin" next="<?php echo (__SELF__); ?>">登录</a></li>
 				<li><a class="two" id="Userreg">快速注册</a></li>
 			</ul>
 			<?php else: ?>
+			
 			<ul id="login_box">
-				<li><a>您好,effie</a></li>
-				<li class="no_right_border"><a href="">我的惠桂林</a></li>
+				<li><a class="username">您好,<?php echo ($user["nickname"]); ?></a></li>
+				<li id="person_center_menu"><a href="" class="menu">我的惠桂林</a></li>
+			</ul>
+			<ul id="login_dropdownlist">
+				<li><a href="<?php echo U("Home/Account/mycoupon");?>">我的券包</a></li>
+				<li><a href="<?php echo U("Home/Account/myfavorite");?>">我的收藏</a></li>
+				<li><a href="<?php echo U("Home/Account/mycommented");?>">我的评论</a></li>
+				<li><a href="<?php echo U("Home/Account/mysubscription");?>">我的订阅</a></li>
+				<li><a href="<?php echo U("Home/Account/mysetting");?>">个人信息设置</a></li>
+				<li><a href="<?php echo U("Home/User/logout");?>">登出</a></li>
 			</ul><?php endif; ?>
 		<div id="Userreg_box">
 			<div id="u_top">
@@ -168,7 +169,7 @@
 						<p class="five">验证码</p>
 						<input type="text" name="reg_vcode" class="five"/>
 						<a href="" id="regemail_vcode_not_clear">看不清</a>
-						<img src="/index.php/User/verifyImg" class="one">
+						<img src="<?php echo U("Home/User/verifyImg","","","");?>" class="one">
 						<input type="checkbox" name="license" class="six" checked="true">
 						<p class="six">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
@@ -187,7 +188,8 @@
 					<form action="" method="post">
 						<p class="one">手机号码</p>
 						<input type="text" name="cellphone" class="one"/>
-						<a href="javascript:void(0)" id="sendcode" name="sendcode">点击发送验证码</a>
+						<a href="javascript:void(0)" id="sendcode" name="sendcode">免费获取验证码</a>
+						<p class="tip_send_vcode">已发送，1分钟后可重新获取</p>
 						<p class="seven">验证码</p>
 						<input type="text" name="vcode" class="six"/>
 						<p class="two">密码</p>
@@ -211,7 +213,8 @@
 						<p class="nine" id="reg_hidebox02">请输入手机收到的短信验证码</p>
 						<p class="ten" id="reg_hidebox03">密码由6-32位的字母、数字或符号组成</p>
 						<p class="eleven" id="reg_hidebox04">请再次输入密码</p>
-						<p class="twelve" id="reg_hidebox05">昵称由1-16位的汉字、英文字母或数字组成</p> 
+						<p class="twelve" id="reg_hidebox05">昵称由1-16位的汉字、英文字母或数字组成</p>
+						<p class="fourteen" id="cellphone_reg_final_error_tip">验证码错误</p>
 					</form>
 				</div>	
 			</div>
@@ -259,7 +262,7 @@
 					<p class="one">注册成功并已登录惠桂林网！</p>
 					<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="" id="return_page2">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠桂林网首页</a></p>
 				</div>
-				<p class="count">如果没有选择，页面将在<span>3秒</span>后自动关闭此窗口。</p>
+				<p class="count">如果没有选择，页面将在<span id="cellphone_reg_success_count_down">3秒</span>后自动关闭此窗口。</p>
 			</div>
 		</div>
 		<div id="Userlogin_box">
@@ -268,7 +271,7 @@
 				<p>用户登录</p>
 			</div>
 			<div id="u_middle_box">
-				<form>
+				
 					<p class="one">账号</p>
 					<input type="text" name="username" class="one" />
 					<p class="two">密码</p>
@@ -276,20 +279,20 @@
 					<p class="three">验证码</p>
 					<input type="textbox" name="vcode" class="three"/>
 					<a href="" id="vcode_not_clear">看不清</a>
-					<img src="/index.php/User/verifyImg" id="vcode_img">
+					<img src="<?php echo U("Home/User/verifyImg","","","");?>" id="vcode_img">
 					<a href="" id="forgetpwd">忘记密码?</a>
 					<input type="checkbox" name="rememberpwd" class="four">
 					<p class="four">记住密码</p>
 					<input type="checkbox" name="autologin" class="five">
 					<p class="five">下次自动登录</p>
-					<input type="submit" name="btn_login" id="btn_login" value="登录" disabled="disabled"/>
+					<input type="submit" name="btn_login" id="btn_login" value="登录"/>
 					<p class="six">还没有账户？<a href="" id="reg_now">立即注册</a></p>
 					<p class="seven" id="login_hidebox01">请输入邮箱/手机号</p>
 					<p class="eight" id="login_hidebox02">请输入密码</p>
 					<p class="nine" id="login_hidebox03">请输入验证码</p>
 					<p class="ten" id="login_hidebox04">用户名或密码有误，请重新输入</p>
 					<input type="hidden" id="login_hidebox05" value="<?php echo U("Home/Login/verify");?>" />
-				</form>
+				
 			</div>
 			<div id="u_bottom_box">
 				<p>使用其他账户直接登陆</p>
@@ -356,7 +359,10 @@
 <!-- 内容区域 -->
 	<div id="main">
 		<div id="ad_box">
-        <?php if(is_array($ads)): foreach($ads as $key=>$ad): ?><img src="__PUBLIC__/<?php echo ($ad["img_path"]); ?>" alt="" /><?php endforeach; endif; ?>
+<!--         <?php if(is_array($ads)): foreach($ads as $key=>$ad): ?><img src="__PUBLIC__/<?php echo ($ad["img_path"]); ?>" alt="" /><?php endforeach; endif; ?> -->
+        <img src="http://www.huigl.com/Public/images/flash/c_1.png" alt="" />
+        <img src="http://www.huigl.com/Public/images/flash/c_2.png" alt="" />
+        <img src="http://www.huigl.com/Public/images/flash/c_3.png" alt="" />
 			<ul>
 				<li>1</li>
 				<li>2</li>
@@ -367,32 +373,40 @@
 		<div id="classification_location_box">
 			<div id="content_box">
 				<div id="classification_box">
-					<p>分类</p>
-					<ul class="parent_classification">
-						<li><a href="" class="blue">全部</a></li>
-                    <?php if(is_array($label_types)): foreach($label_types as $key=>$label_type): ?><li><a href="/index.php/Coupon/coupon?label_type=<?php echo ($key); ?>"><?php echo ($label_type); ?></a></li><?php endforeach; endif; ?>
+					<p>分类</p><ul class="parent_classification">
+                        <?php if($get_info["label_type"] != ''): ?><li><a href="">全部</a></li>
+                        <?php else: ?>
+						<li><a href="" class="current">全部</a></li><?php endif; ?>
+                    <?php if(is_array($label_types)): foreach($label_types as $key=>$label_type): if($get_info["label_type"] == $key): ?><li><a href="/index.php/Coupon/coupon?label_type=<?php echo ($key); ?>" class="current"><?php echo ($label_type); ?></a></li>
+                        <?php else: ?>
+						<li><a href="/index.php/Coupon/coupon?label_type=<?php echo ($key); ?>"><?php echo ($label_type); ?></a></li><?php endif; endforeach; endif; ?>
 					</ul>
 					<div>
-						<ul class="child_classification">
-							<li><a href="">全部</a></li>
-                            <?php if(is_array($categories)): foreach($categories as $key=>$category): ?><li><a href="/index.php/Coupon/coupon?cat_id=<?php echo ($category["cat_id"]); ?>"><?php echo ($category["cat_name"]); ?></a></li><?php endforeach; endif; ?>
+						<ul class="child_classification clearfix">
+                            <?php if($get_info["cat_id"] != ''): ?><li><a href="">全部</a></li>
+                            <?php else: ?>
+                            <li><a href="" class="current">全部</a></li><?php endif; ?>
+                            <?php if(is_array($categories)): foreach($categories as $key=>$category): if($get_info["cat_id"] == $category.cat_id): ?><li><a href="/index.php/Coupon/coupon?cat_id=<?php echo ($category["cat_id"]); ?>" class="current"><?php echo ($category["cat_name"]); ?></a></li>
+                            <?php else: ?>
+							<li><a href="/index.php/Coupon/coupon?cat_id=<?php echo ($category["cat_id"]); ?>"><?php echo ($category["cat_name"]); ?></a></li><?php endif; endforeach; endif; ?>
 							<!--li class="no_right_border"><a href="">日本料理</a></li-->
 						</ul>
 					</div>
 				</div>
 				<div id="location_box">
-					<p>区域</p>
-					<ul class="parent_classification">
-						<li><a href="" class="blue">全部</a></li>
-						<li><a href="/index.php/Coupon/coupon?tag=秀峰区">秀峰区</a></li>
+					<p>区域</p><ul class="parent_classification">
+                        <?php if($get_info["tag"] != ''): ?><li><a href="">全部</a></li>
+                        <?php else: ?>
+						<li><a href="" class="current">全部</a></li><?php endif; ?>
+                        <?php if($get_info["tag"] == '秀峰区'): ?><li><a href="/index.php/Coupon/coupon?tag=秀峰区">秀峰区</a></li><?php endif; ?>
 						<li><a href="/index.php/Coupon/coupon?tag=象山区">象山区</a></li>
 						<li><a href="/index.php/Coupon/coupon?tag=叠彩区">叠彩区</a></li>
 						<li><a href="/index.php/Coupon/coupon?tag=雁山区">雁山区</a></li>
 						<li><a href="/index.php/Coupon/coupon?tag=七星区">七星区</a></li>
 					</ul>
 					<div>
-						<ul class="child_classification">
-							<li><a href="">全部</a></li>
+						<ul class="child_classification clearfix">
+							<li><a href="" class="current">全部</a></li>
                             <?php if(is_array($locations)): foreach($locations as $key=>$location): ?><li><a href="/index.php/Coupon/coupon?location=<?php echo ($location["id"]); ?>"><?php echo ($location["name"]); ?></a></li><?php endforeach; endif; ?>
 							<!--li class="no_right_border"><a href="">三里店广场</a></li-->
 						</ul>
@@ -413,20 +427,25 @@
 			</div>
 		</div>
 		<div id="coupon_box">
+		
 			<ul class="clearfix coupon_content">
-                <?php if(is_array($coupons)): foreach($coupons as $key=>$coupon): ?><li>
+				<?php  $coupon_count = count($coupons); ?>
+				<?php if($coupon_count < 8): ?><input type="hidden" value="680" id="hidden_type_value" name="type" />
+					<?php else: endif; ?>
+                <?php if(is_array($coupons)): foreach($coupons as $k=>$coupon): ?><li>
 					<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>"></a>
 					<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="content_title"><?php echo ($coupon["name"]); ?></a>
 					<p class="one"><?php echo ($coupon["description"]); ?></p>
 					<p class="two"><?php echo ($coupon["title"]); ?></p>
 					<p class="three">下载：<?php echo ($coupon["download_times"]); ?>次</p>
-					<a href="" class="download">立即下载</a>
+					<a href="" class="download" couponid="<?php echo ($coupon["coupon_id"]); ?>">立即下载</a>
 					<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
 				</li><?php endforeach; endif; ?>
+
 			</ul>
 			<div id="webchat_box">
-				<p>扫一下，关注惠桂林微信</p>
-				<img src="__PUBLIC__/images/barcode.png">
+				<p>扫一下，关注惠桂林微博</p>
+				<img src="__PUBLIC__/images/weibo_barcode.png">
 			</div>
 			<div id="hot_coupon_box">
 				<p class="title">热门优惠劵</p>
@@ -442,6 +461,37 @@
 		
 	</div>
 <!-- 内容区域结束 -->
+	<div id="download_coupon_hidden_box">	
+	<div class="top_content_box">
+		<p id="coupon_id_value">短信优惠券下载</p>
+		<img src="__PUBLIC__/images/login_closed.png" id="closed_download_coupon_hidden_box">
+	</div>
+	<div class="middle_content_box">
+		<ul>
+			<li>
+				<p class="label">请输入手机号码</p>
+				<input type="text" name="send_to_phone" id="send_to_phone" />
+				<p class="hidden_error_tips" id="hidden_error_tips_phone"></p>
+			</li>
+			<li>
+				<p class="label">验证码</p>
+				<input type="text" name="cellphone_vcode" id="cellphone_vcode" class="shorter" />
+				<a href="" id="send_to_phone_vcode_not_clear">看不清</a>
+				<img src="<?php echo U("Home/User/verifyImg","","","");?>">
+				<p class="hidden_error_tips" id="hidden_error_tips_vcode"></p>
+			</li>
+		</ul>
+		<input type="submit" value="发送" name="download_coupon_submit_btn" id="download_coupon_submit_btn">
+	</div>
+	<div class="middle_content_box_success">
+		<div>
+			<img src="__PUBLIC__/images/regsucess.png" alt="" />
+			<p class="sucess_tip">短信已经成功发送至<span></span></p>
+			<p class="hot_tip">系统繁忙时会有3-5分钟的发送延迟，请不要在短时间内重复下载</p>
+		</div>
+		<a href="" id="close_middle_content_box_success">关闭</a>
+	</div>
+</div>
 <!-- 最底部区域 -->
 	<div id="bottom_info">
 		<div id="bottom_box">
@@ -451,11 +501,11 @@
 				<p>地址：桂林市高新区桂磨大道互联网产业基地503室</p>
 				<p>经营许可证：桂ICP备 14000606号</p>
 			</div>
-			<img src="__PUBLIC__/images/footer_ico01.png" alt="" class="one"/>
+			<!-- <img src="__PUBLIC__/images/footer_ico01.png" alt="" class="one"/>
 			<img src="__PUBLIC__/images/footer_ico02.png" alt="" class="two" />
 			<img src="__PUBLIC__/images/footer_ico03.png" alt="" class="three" />
 			<img src="__PUBLIC__/images/footer_ico04.png" alt="" class="four" />
-			<img src="__PUBLIC__/images/footer_ico05.png" alt="" class="five" />
+			<img src="__PUBLIC__/images/footer_ico05.png" alt="" class="five" /> -->
 			<ul>
 				<li class="one"><a href="<?php echo U("About/about");?>">关于我们</a></li>
 				<li><a href="<?php echo U("Sitemap/sitemap");?>">网站地图</a></li>

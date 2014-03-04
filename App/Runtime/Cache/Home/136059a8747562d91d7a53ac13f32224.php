@@ -6,23 +6,17 @@
 <meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/detail.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/M_sendCouponToCellphone.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/detail.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
 
-<!--[if IE 6]-->
-<!--背景图片透明方法-->
-<script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
-<!--插入图片透明方法-->
-<script type="text/javascript">
-   EvPNG.fix('div, ul, img, li, input');  //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
-  
-</script>
-<!-- <![endif]-->
 
 <title>惠桂林优惠劵</title>
 </head>
@@ -38,15 +32,13 @@
 			</ul>
 			<ul class="right_ul">
 				<li id="subscription_li">
-					<a href="#" id="subscription">订阅</a>
+					<a href="" id="subscription">订阅</a>
 				</li>
 				<li id="share_li"><a id="share" href="" class="one">关注</a></li>
 			</ul>
 			<div id="subscription_box">
-				<form>
 					<input type="text" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
 					<input type="submit" value="订阅" name="subscription_email_btn" id="subscription_email_btn">
-				</form>
 			</div>
 			<div id="share_box">
 				<ul>
@@ -131,14 +123,23 @@
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/logo.png" alt="惠桂林" id="logo" /></a>
 		<a href="<?php echo U("Index/index");?>"><img src="__PUBLIC__/images/slogan.png" alt="吃喝玩乐，惠享生活" id="slogan" /></a>
 		<!-- 判断登录Session,来显示不同的ul -->
-		<?php if($_SESSION['user_id']== ''): ?><ul id="No_login_box">
-				<li class="one"><a class="one" id="Userlogin">登录</a></li>
+		<?php if($_SESSION['user']['user_id']== ''): ?><ul id="No_login_box">
+				<li class="one"><a class="one" id="Userlogin" next="<?php echo (__SELF__); ?>">登录</a></li>
 				<li><a class="two" id="Userreg">快速注册</a></li>
 			</ul>
 			<?php else: ?>
+			
 			<ul id="login_box">
-				<li><a>您好,effie</a></li>
-				<li class="no_right_border"><a href="">我的惠桂林</a></li>
+				<li><a class="username">您好,<?php echo ($user["nickname"]); ?></a></li>
+				<li id="person_center_menu"><a href="" class="menu">我的惠桂林</a></li>
+			</ul>
+			<ul id="login_dropdownlist">
+				<li><a href="<?php echo U("Home/Account/mycoupon");?>">我的券包</a></li>
+				<li><a href="<?php echo U("Home/Account/myfavorite");?>">我的收藏</a></li>
+				<li><a href="<?php echo U("Home/Account/mycommented");?>">我的评论</a></li>
+				<li><a href="<?php echo U("Home/Account/mysubscription");?>">我的订阅</a></li>
+				<li><a href="<?php echo U("Home/Account/mysetting");?>">个人信息设置</a></li>
+				<li><a href="<?php echo U("Home/User/logout");?>">登出</a></li>
 			</ul><?php endif; ?>
 		<div id="Userreg_box">
 			<div id="u_top">
@@ -169,7 +170,7 @@
 						<p class="five">验证码</p>
 						<input type="text" name="reg_vcode" class="five"/>
 						<a href="" id="regemail_vcode_not_clear">看不清</a>
-						<img src="/index.php/User/verifyImg" class="one">
+						<img src="<?php echo U("Home/User/verifyImg","","","");?>" class="one">
 						<input type="checkbox" name="license" class="six" checked="true">
 						<p class="six">
 							我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
@@ -188,7 +189,8 @@
 					<form action="" method="post">
 						<p class="one">手机号码</p>
 						<input type="text" name="cellphone" class="one"/>
-						<a href="javascript:void(0)" id="sendcode" name="sendcode">点击发送验证码</a>
+						<a href="javascript:void(0)" id="sendcode" name="sendcode">免费获取验证码</a>
+						<p class="tip_send_vcode">已发送，1分钟后可重新获取</p>
 						<p class="seven">验证码</p>
 						<input type="text" name="vcode" class="six"/>
 						<p class="two">密码</p>
@@ -212,7 +214,8 @@
 						<p class="nine" id="reg_hidebox02">请输入手机收到的短信验证码</p>
 						<p class="ten" id="reg_hidebox03">密码由6-32位的字母、数字或符号组成</p>
 						<p class="eleven" id="reg_hidebox04">请再次输入密码</p>
-						<p class="twelve" id="reg_hidebox05">昵称由1-16位的汉字、英文字母或数字组成</p> 
+						<p class="twelve" id="reg_hidebox05">昵称由1-16位的汉字、英文字母或数字组成</p>
+						<p class="fourteen" id="cellphone_reg_final_error_tip">验证码错误</p>
 					</form>
 				</div>	
 			</div>
@@ -260,7 +263,7 @@
 					<p class="one">注册成功并已登录惠桂林网！</p>
 					<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="" id="return_page2">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠桂林网首页</a></p>
 				</div>
-				<p class="count">如果没有选择，页面将在<span>3秒</span>后自动关闭此窗口。</p>
+				<p class="count">如果没有选择，页面将在<span id="cellphone_reg_success_count_down">3秒</span>后自动关闭此窗口。</p>
 			</div>
 		</div>
 		<div id="Userlogin_box">
@@ -269,7 +272,7 @@
 				<p>用户登录</p>
 			</div>
 			<div id="u_middle_box">
-				<form>
+				
 					<p class="one">账号</p>
 					<input type="text" name="username" class="one" />
 					<p class="two">密码</p>
@@ -277,20 +280,20 @@
 					<p class="three">验证码</p>
 					<input type="textbox" name="vcode" class="three"/>
 					<a href="" id="vcode_not_clear">看不清</a>
-					<img src="/index.php/User/verifyImg" id="vcode_img">
+					<img src="<?php echo U("Home/User/verifyImg","","","");?>" id="vcode_img">
 					<a href="" id="forgetpwd">忘记密码?</a>
 					<input type="checkbox" name="rememberpwd" class="four">
 					<p class="four">记住密码</p>
 					<input type="checkbox" name="autologin" class="five">
 					<p class="five">下次自动登录</p>
-					<input type="submit" name="btn_login" id="btn_login" value="登录" disabled="disabled"/>
+					<input type="submit" name="btn_login" id="btn_login" value="登录"/>
 					<p class="six">还没有账户？<a href="" id="reg_now">立即注册</a></p>
 					<p class="seven" id="login_hidebox01">请输入邮箱/手机号</p>
 					<p class="eight" id="login_hidebox02">请输入密码</p>
 					<p class="nine" id="login_hidebox03">请输入验证码</p>
 					<p class="ten" id="login_hidebox04">用户名或密码有误，请重新输入</p>
 					<input type="hidden" id="login_hidebox05" value="<?php echo U("Home/Login/verify");?>" />
-				</form>
+				
 			</div>
 			<div id="u_bottom_box">
 				<p>使用其他账户直接登陆</p>
@@ -358,7 +361,7 @@
 	<div id="main">
 		<div id="sub_nav_box">
 			<div class="content_box">
-				<a href="">桂林优惠</a><span>></span><a href="">美食</a><span>></span><a href="">火锅</a><span>></span><a href="" class="gray">海底捞</a>
+				<a href="/">桂林优惠</a><span>></span><a href="/index.php/Coupon/coupon?label_type=<?php echo ($coupon["label_type"]); ?>"><?php echo ($label_info); ?></a><span>></span><a href="/index.php/Coupon/coupon?cat_id=<?php echo ($cat_info["cat_id"]); ?>"><?php echo ($cat_info["cat_name"]); ?></a><span>></span><a href="" class="gray"><?php echo ($coupon["name"]); ?></a>
 			</div>
 		</div>
 		<div id="coupon_box">
@@ -369,35 +372,35 @@
 					<p class="view_number">查看次数：<span>431234</span></p>
 				</div>
 				<div class="coupon_desc_box">
-					<p class="coupon_title"><?php echo ($coupon["title"]); ?><span><?php echo ($coupon["title"]); ?></span></p>
+					<p class="coupon_title"><?php echo ($coupon["title"]); ?><!-- <span><?php echo ($coupon["title"]); ?></span> --></p>
 				</div>
-				<a href="javascript:print();" class="print_coupon_btn">打印此优惠券</a>
-				<a href="javascript:void(0);" class="download_coupon_btn" id="download_coupon_btn">下载到手机</a>
+				<a href="<?php echo U("Coupon/print","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="print_coupon_btn">打印此优惠券</a>
+				<a class="download_coupon_btn" id="download_coupon_btn" couponid="<?php echo ($coupon["coupon_id"]); ?>">下载到手机</a>
 				<img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>" class="coupon_pic">
 				<div class="coupon_detail_desc_box">
 					<p class="desc_title">详细介绍</p>
 					<p class="desc_content"><span><?php echo ($coupon["description"]); ?></span></p>
 					<div>
 						<p>使用须知</p>
-						<p>有效期：<span>2013.6.22 至 2014.6.22</span></p>
-						<p>不可用日期：<span>2013年10月1日至10月3日、10月30日至10月31日、11月1日、12月24日至12月25日、2014年1月1日、2月14日、5月1日至5月3日、6月1日</span></p>
-						<p>使用时间：<span>11:30-14:00,17:30-21:30</span></p>
-						<p>预约提醒：<span>无需预约</span></p>
+						<p>有效期：<span><?php echo ($coupon["start_time"]); ?>——<?php echo ($coupon["end_time"]); ?></span></p>
+						<p>不可用日期：<span><?php echo ($coupon["exception_time"]); ?></span></p>
+						<p>使用时间：<span><?php echo ($coupon["use_time"]); ?></span></p>
+						<p>预约提醒：
+                        <span>
+                        <?php if($coupon["need_booking"] == 1): ?>需要预约
+                        <?php else: ?>
+                        无需预约<?php endif; ?>
+                        </span>
+                        </p>
 						<p>使用规则：</p>
 						<ul>
-							<li>凭惠桂林券到店消费不可同时享受店内其他优惠</li>
-							<li>本单在惠桂林券使用时间内不限用餐时长</li>
-							<li>儿童无优惠</li>
-							<li>每张惠桂林券限1桌使用</li>
-							<li>仅限堂食，不提供餐前外带及餐后打包</li>
-							<li>仅限大厅就餐，不可使用包间</li>
-							<li class="bottom">部分菜品因时令原因有所不同，请以店内当日实际供应为准</li>
+                        <?php echo ($coupon["use_rule"]); ?>
 						</ul>
 					</div>
 				</div>
-				<a href="" class="print_coupon_btn print_coupon_btn2">打印此优惠券</a>
-				<a href="javascript:void(0);" class="download_coupon_btn" id="download_coupon_btn_two">下载到手机</a>
-				<a id="download_coupon_id" style="visibility:hidden" value="<?php echo ($coupon["coupon_id"]); ?>"><?php echo ($coupon["coupon_id"]); ?></a>
+				<a href="<?php echo U("Coupon/print","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="print_coupon_btn print_coupon_btn2">打印此优惠券</a>
+				<a href="javascript:void(0);" class="download_coupon_btn" id="download_coupon_btn_two" couponid="<?php echo ($coupon["coupon_id"]); ?>">下载到手机</a>
+				<a id="download_coupon_id" style="visibility:hidden" couponid="<?php echo ($coupon["coupon_id"]); ?>"><?php echo ($coupon["coupon_id"]); ?></a>
 			</div>
 			<div class="share">
 				<a href="" class="add_favorite">收藏到我的券包</a>
@@ -419,7 +422,7 @@
 				<ul class="business_nav clearfix">
 					<li class="no_bottom_border"><a href="" >商家介绍</a></li>
 					<li><a href="">商家位置</a></li>
-					<li><a href="">评价晒单(15)</a></li>
+					<li><a href="">评价晒单</a></li>
 				</ul>
 				<div class="business_location">
 					<p class="title">商家位置</p>
@@ -448,38 +451,14 @@
 						</div>
 						<ul>
 							<li class="white">
-								<p class="address_title">多乐之日(北京南站店)</p>
+								<p class="address_title"><?php echo ($partner["name"]); ?></p>
 								<div>
-									<p class="subway">地铁：距离北京南站约66米</p>
-									<p class="telephone">电话：010-51331101</p>
-									<p class="address">地址：丰台区北京南站商业高架底商D102号</p>
+									<p class="subway"></p>
+									<p class="telephone">电话：<?php echo ($partner["telephone"]); ?></p>
+									<p class="address">地址：<?php echo ($partner["location_desc"]); ?></p>
 								</div>
 							</li>
-							<li>
-								<p class="address_title">多乐之日(北京南站店)</p>
-								<div class="hidden">
-									<p class="subway">地铁：距离北京南站约66米</p>
-									<p class="telephone">电话：010-51331101</p>
-									<p class="address">地址：丰台区北京南站商业高架底商D102号</p>
-								</div>
-							</li>
-							<li>
-								<p class="address_title">多乐之日(北京南站店)</p>
-								<div class="hidden">
-									<p class="subway">地铁：距离北京南站约66米</p>
-									<p class="telephone">电话：010-51331101</p>
-									<p class="address">地址：丰台区北京南站商业高架底商D102号</p>
-								</div>
-							</li>
-							<li>
-								<p class="address_title">多乐之日(北京南站店)</p>
-								<div class="hidden">
-									<p class="subway">地铁：距离北京南站约66米</p>
-									<p class="telephone">电话：010-51331101</p>
-									<p class="address">地址：丰台区北京南站商业高架底商D102号</p>
-								</div>
-							</li>
-							<a href="" class="summary_number">查看全部分店(共22家)</a>
+							<a href="" class="summary_number">查看全部分店(共1家)</a>
 						</ul>
 					</div>
 				</div>
@@ -536,8 +515,8 @@
 				</div>
 			</div>
 			<div id="webchat_box">
-				<p>扫一下，关注惠桂林微信</p>
-				<img src="__PUBLIC__/images/barcode.png">
+				<p>扫一下，关注惠桂林微博</p>
+				<img src="__PUBLIC__/images/weibo_barcode.png">
 			</div>
 			<div id="hot_tips_box">
 				<p class="title">温馨提示</p>
@@ -547,9 +526,41 @@
 				</ul>
 			</div>
 		</div>
+        <a id="partner_hidden" style="visibility:hidden" value="<?php echo ($partnerInfo); ?>"><?php echo ($partnerInfo); ?></a>
 		
 	</div>
 <!-- 内容区域结束 -->
+	<div id="download_coupon_hidden_box">	
+	<div class="top_content_box">
+		<p id="coupon_id_value">短信优惠券下载</p>
+		<img src="__PUBLIC__/images/login_closed.png" id="closed_download_coupon_hidden_box">
+	</div>
+	<div class="middle_content_box">
+		<ul>
+			<li>
+				<p class="label">请输入手机号码</p>
+				<input type="text" name="send_to_phone" id="send_to_phone" />
+				<p class="hidden_error_tips" id="hidden_error_tips_phone"></p>
+			</li>
+			<li>
+				<p class="label">验证码</p>
+				<input type="text" name="cellphone_vcode" id="cellphone_vcode" class="shorter" />
+				<a href="" id="send_to_phone_vcode_not_clear">看不清</a>
+				<img src="<?php echo U("Home/User/verifyImg","","","");?>">
+				<p class="hidden_error_tips" id="hidden_error_tips_vcode"></p>
+			</li>
+		</ul>
+		<input type="submit" value="发送" name="download_coupon_submit_btn" id="download_coupon_submit_btn">
+	</div>
+	<div class="middle_content_box_success">
+		<div>
+			<img src="__PUBLIC__/images/regsucess.png" alt="" />
+			<p class="sucess_tip">短信已经成功发送至<span></span></p>
+			<p class="hot_tip">系统繁忙时会有3-5分钟的发送延迟，请不要在短时间内重复下载</p>
+		</div>
+		<a href="" id="close_middle_content_box_success">关闭</a>
+	</div>
+</div>
 <!-- 最底部区域 -->
 	<div id="bottom_info">
 		<div id="bottom_box">
@@ -559,11 +570,11 @@
 				<p>地址：桂林市高新区桂磨大道互联网产业基地503室</p>
 				<p>经营许可证：桂ICP备 14000606号</p>
 			</div>
-			<img src="__PUBLIC__/images/footer_ico01.png" alt="" class="one"/>
+			<!-- <img src="__PUBLIC__/images/footer_ico01.png" alt="" class="one"/>
 			<img src="__PUBLIC__/images/footer_ico02.png" alt="" class="two" />
 			<img src="__PUBLIC__/images/footer_ico03.png" alt="" class="three" />
 			<img src="__PUBLIC__/images/footer_ico04.png" alt="" class="four" />
-			<img src="__PUBLIC__/images/footer_ico05.png" alt="" class="five" />
+			<img src="__PUBLIC__/images/footer_ico05.png" alt="" class="five" /> -->
 			<ul>
 				<li class="one"><a href="<?php echo U("About/about");?>">关于我们</a></li>
 				<li><a href="<?php echo U("Sitemap/sitemap");?>">网站地图</a></li>
@@ -579,31 +590,21 @@
 </body>
 
 <script type="text/javascript">
+    var partner_info = $('#partner_hidden').text();
+    var partner = JSON.parse(partner_info);
     //创建和初始化地图函数：
-    function initMap(){
-        createMap();//创建地图
+    function initMap(partner){
+        createMap(partner);//创建地图
         setMapEvent();//设置地图事件
-        addMapControl();//向地图中添加缩放控件
-        // addMarker();//向地图中添加marker
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
     }
     
     //创建地图函数：
-    function createMap(){
-        var map = new BMap.Map("map");
-        map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);// 创建地址解析器实例已天安门为中心
-        var myGeo = new BMap.Geocoder();// 将地址解析结果显示在地图上，并调整地图视野
-        myGeo.getPoint("桂林第十八中学", function(point){
-        if (point) {
-                map.centerAndZoom(point, 12);
-                map.addOverlay(new BMap.Marker(point));
-            }
-        }, "桂林市");
-         myGeo.getPoint("象山公园", function(point){
-        if (point) {
-                map.centerAndZoom(point, 12);
-                map.addOverlay(new BMap.Marker(point));
-            }
-        }, "桂林市");
+    function createMap(partner){
+        var map = new BMap.Map("map");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(partner.GPS_X, partner.GPS_Y);//定义一个中心点坐标
+        map.centerAndZoom(point,14);//设定地图的中心点和坐标并将地图显示在地图容器中
         window.map = map;//将map变量存储在全局
     }
     
@@ -621,15 +622,70 @@
 	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
 	map.addControl(ctrl_nav);
         //向地图中添加缩略图控件
-	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:0}); //0代表缩略图控件折起来，1代表展开
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:0});
 	map.addControl(ctrl_ove);
         //向地图中添加比例尺控件
 	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
 	map.addControl(ctrl_sca);
     }
     
- 
-    initMap();//创建和初始化地图
+    //标注点数组
+    var markerArr = [{title:partner.name,content:partner.title,point:partner.GPS_X+"|"+partner.GPS_Y,isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+    ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    initMap(partner);//创建和初始化地图
 </script>
 
 </html>

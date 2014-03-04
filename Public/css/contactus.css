@@ -28,5 +28,16 @@
 	color: #616161;
 
 }
+#main #left_card a{
+	font-size: 13px;
+}
+#main #left_card a:link,#main #left_card a:visited{
+	color:#ED5565;
+	text-decoration: none;
+}
+#main #left_card a:hover{
+	color:black;
+	text-decoration: underline;
+}
 
 /*左边主要内容区域结束*/

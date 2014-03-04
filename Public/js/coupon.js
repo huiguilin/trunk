@@ -1,4 +1,6 @@
 $(function(){
+
+	var coupon_id;
 	//优惠劵页面广告图片轮换版特效
 	var timer = setInterval(autoRun,5000);
 	var sta = 0;//记录当前展示到哪张图片了
@@ -33,34 +35,13 @@ $(function(){
 	}, function() {
 		$(this).find('p.hidden_location').hide();
 	});
-	//优惠劵位置信息隐藏特效结束
-	// //分类+位置Hover特效
-	// $('#main #classification_location_box #content_box #classification_box ul.parent_classification li').hover(function() {
-	// 	var index=$(this).index();
-	// 	var width=$(this).width();
-	// 	if(index !="0"){
-	// 		var bg_position_width = width*index+20;
-	// 		var bg_position_width = bg_position_width + 'px 0px';
-	// 		$('#main #classification_location_box #content_box #classification_box div').css('background-position', bg_position_width);
-	// 	}
-	// 	$(this).find('a').addClass('hover');
-	// }, function() {
-	// 	$(this).find('a').removeClass('hover');
-	// });
-
-	// $('#main #classification_location_box #content_box #location_box ul.parent_classification li').hover(function() {
-	// 	var index=$(this).index();
-	// 	var width=$(this).width();
-	// 	if(index !="0"){
-	// 		var bg_position_width = width*index+20;
-	// 		var bg_position_width = bg_position_width + 'px 0px';
-	// 		$('#main #classification_location_box #content_box #location_box div').css('background-position', bg_position_width);
-	// 	}
-	// 	$(this).find('a').addClass('hover');
-	// }, function() {
-	// 	$(this).find('a').removeClass('hover');
-	// });
-	// //分类+位置Hover特效结束
+		 //下载优惠券弹窗
+	$('#main #coupon_box ul.coupon_content li a.download').click(function(event) {
+	 	$('#download_coupon_hidden_box').bPopup({});
+	 	coupon_id = $(this).attr('couponid');
+	 	return false;
+	 });
+	 
 	//分类+位置Click特效
 	$('#main #classification_location_box #content_box #classification_box ul.parent_classification li a').click(function(event) {
 		$('#main #classification_location_box #content_box #classification_box ul.parent_classification li a').removeClass('current');
@@ -77,17 +58,52 @@ $(function(){
 	$('#main #classification_location_box #content_box #classification_box div ul.child_classification li a').click(function(event) {
 		$('#main #classification_location_box #content_box #classification_box div ul.child_classification li a').removeClass('current');
 		$(this).addClass('current');
-		return false;
+		
 	});
 	$('#main #classification_location_box #content_box #location_box div ul.child_classification li a').click(function(event) {
 		$('#main #classification_location_box #content_box #location_box div ul.child_classification li a').removeClass('current');
 		$(this).addClass('current');
-		return false;
+		
 	});
 	//分类+位置Click特效结束
 	var hidden_type_value = $('#hidden_type_value').val();
 	$('#coupon_box').css('height', hidden_type_value);
 
+	//点击下载手机优惠劵弹窗中发送按钮
+     $('#download_coupon_submit_btn').click(function(event) {
+     	var phone = $('#send_to_phone').val();
+     	var vcode = $('#cellphone_vcode').val();
+     	var reg_cellphone= /^(1)[0-9]{10}$/;
+     	if(phone == ""){
+     		$('#hidden_error_tips_phone').show().text('手机号码不能为空');
+     	}else{
+     		 if(!reg_cellphone.test(phone)){
+     		 	$('#hidden_error_tips_phone').show().text('手机号码格式不正确');
+     		 }else{
+     		 	if(vcode ==""){
+     		 		$('#hidden_error_tips_phone').hide();
+     		 		$('#hidden_error_tips_vcode').show().text('验证码不能为空');
+     		 	}else{
+
+     		 		$.post(ajaxPostURL+"Coupon/sendCouponCode", { phone_number: phone, 
+						vcode: vcode,coupon_id:coupon_id},function(data){
+
+					 	if(data.status == 2){
+					 		$('#hidden_error_tips_vcode').show().text('验证码错误');
+					 	}else if(data.status == 0){
+					 		$('#hidden_error_tips_phone').show().text('手机号码不能为空');
+					 	}else if(data.status ==1){
+					 		$('#download_coupon_hidden_box div.middle_content_box_success div p.sucess_tip span').text(phone);
+					 		$("#download_coupon_hidden_box div.middle_content_box").hide().siblings('#download_coupon_hidden_box div.middle_content_box_success').show();
+					 	}
+					},"json");
+     		 	}
+     		 }
+     	}
+     	return false;
+     });
+
+     //点击下载手机优惠劵弹窗中发送按钮结束
 
 	
 
