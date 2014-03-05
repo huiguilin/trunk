@@ -101,7 +101,6 @@ $(function(){
      	return false;
      });
 
-\
     $('#add_favorite_btn').click(function(event){
         var coupon_id = $("#download_coupon_id").text();
         $.post("/index.php/Coupon/addFavorite", { coupon_id : coupon_id

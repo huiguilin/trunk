@@ -31,13 +31,14 @@
 		<div id="main_content_top_box">
 			<!-- 全部分类区域 -->
 			<ul class="category_title">
-				<li><a href="/index.php/Coupon/coupon?label_type=1" class="one" target=_blank>美食</a></li>
-				<li><a href="/index.php/Coupon/coupon?label_type=2" class="two" target=_blank>休闲娱乐</a></li>
-				<li><a href="/index.php/Coupon/coupon?label_type=3" class="three" target=_blank>生活服务</a></li>
-				<li><a href="/index.php/Coupon/coupon?label_type=4" class="four" target=_blank>酒店</a></li>
-				<li><a href="/index.php/Coupon/coupon?label_type=5" class="five" target=_blank>旅游</a></li>
-				<li><a href="/index.php/Coupon/coupon?label_type=6" class="six" target=_blank>丽人</a></li>
+				<li><a href="{:U('Coupon/coupon?label_type=1','','','')}" class="one" target=_blank>美食</a></li>
+				<li><a href="{:U('Coupon/coupon?label_type=2','','','')}" class="two" target=_blank>休闲娱乐</a></li>
+				<li><a href="{:U('Coupon/coupon?label_type=3','','','')}" class="three" target=_blank>生活服务</a></li>
+				<li><a href="{:U('Coupon/coupon?label_type=4','','','')}" class="four" target=_blank>酒店</a></li>
+				<li><a href="{:U('Coupon/coupon?label_type=5','','','')}" class="five" target=_blank>旅游</a></li>
+				<li><a href="{:U('Coupon/coupon?label_type=6','','','')}" class="six" target=_blank>丽人</a></li>
 			</ul>
+			
 			<!-- 全部分类区域结束 -->
 			<!-- 热门分类区域 -->
 			<ul class="hot_navigation">
@@ -45,27 +46,27 @@
 					<span>热门分类</span>
                     <foreach name="categories" item="category">
                     <if condition="$key eq 0">
-					<a href="/index.php/coupon/coupon?cat_id={$category.cat_id}" class="one">{$category.cat_name}</a>
+					<a href="{:U('Coupon/coupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}" class="one">{$category.cat_name}</a>
                     <else />
-					<a href="/index.php/coupon/coupon?cat_id={$category.cat_id}">{$category.cat_name}</a>
+					<a href="{:U('Coupon/coupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}">{$category.cat_name}</a>
                     </if>
                     </foreach>
 				</li>
 				<li>
 					<span>全部区域</span>
-					<a href="/index.php/Coupon/coupon?tag=七星区" class="one" >七星区</a>
-					<a href="/index.php/Coupon/coupon?tag=秀峰区">秀峰区</a>
-					<a href="/index.php/Coupon/coupon?tag=象山区">象山区</a>
-					<a href="/index.php/Coupon/coupon?tag=叠彩区">叠彩区</a>
-					<a href="/index.php/Coupon/coupon?tag=雁山区">雁山区</a>
+					<a href="{:U('Coupon/coupon',array('tag'=>'七星区'),'','')}" class="one" >七星区</a>
+					<a href="{:U('Coupon/coupon',array('tag'=>'秀峰区'),'','')}">秀峰区</a>
+					<a href="{:U('Coupon/coupon',array('tag'=>'象山区'),'','')}">象山区</a>
+					<a href="{:U('Coupon/coupon',array('tag'=>'叠彩区'),'','')}">叠彩区</a>
+					<a href="{:U('Coupon/coupon',array('tag'=>'雁山区'),'','')}">雁山区</a>
 				</li>
 				<li class="no_bottom_border">
 					<span>热门商圈</span>
                     <foreach name="locations" item="location">
                     <if condition="$key eq 0">
-					<a href="/index.php/Coupon/coupon?location={$location.id}" class="one">{$location.name}</a>
+					<a href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}" class="one">{$location.name}</a>
                     <else />
-					<a href="/index.php/Coupon/coupon?location={$location.id}">{$location.name}</a>
+					<a href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a>
                     </if>
                     </foreach>
 				</li>
@@ -135,9 +136,10 @@
 				<ul class="title_content">
                     <foreach name="eat_cat" item="e_cat" key="k">
                     <if condition="$k lt 5">
-					<li><a href="/index.php/Coupon/coupon?cat_id={$e_cat.cat_id}">{$e_cat.cat_name}</a></li>
+					<li><a href="{:U('Coupon/coupon',array('label_type'=>1,'cat_id'=>$e_cat['cat_id']),'','')}">{$e_cat.cat_name}</a></li>
+
                     <else />
-					<li><a href="/index.php/Coupon/coupon?cat_id={$e_cat.cat_id}" class="no_right_border">{$e_cat.cat_name}</a></li>
+					<li><a href="{:U('Coupon/coupon',array('label_type'=>1,'cat_id'=>$e_cat['cat_id']),'','')}" class="no_right_border">{$e_cat.cat_name}</a></li>
                     </if>
                     </foreach>
 				</ul>
@@ -151,17 +153,14 @@
 						<p class="one">{$coupon.description}</p>
 						<p class="two">{$coupon.title}</p>
 						<p class="three">下载：{$coupon.download_times}次</p>
-
-						<!-- <a href="" class="download" couponid="{$coupon.coupon_id}">立即下载</a> -->
-
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="download">立即下载</a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download">立即下载</a>
 
 						<p class="hidden_location">{$coupon.tag}</p>
 					</li>
 					</if>
                 </foreach>
 				</ul>
-				<a href="" class="foot_type_more" target=_blank>查看更多</a>
+				<a href="{:U('Coupon/coupon',array('label_type'=>1),'','')}" class="foot_type_more" target=_blank>查看更多</a>
 			</div>
 			<div class="footsort_box">
 				<p class="title title2" id="foot_hot_title">最热优惠劵排行</p><p class="title" id="foot_new_title">最新优惠劵排行</p>
@@ -218,9 +217,9 @@
 				<ul class="title_content">
                     <foreach name="play_cat" item="p_cat" key="k">
                     <if condition="$k lt 5">
-					<li><a href="/index.php/Coupon/coupon?cat_id={$p_cat.cat_id}">{$p_cat.cat_name}</a></li>
+					<li><a href="{:U('Coupon/coupon',array('label_type'=>2,'cat_id'=>$p_cat['cat_id']),'','')}">{$p_cat.cat_name}</a></li>
                     <else />
-					<li><a href="/index.php/Coupon/coupon?cat_id={$p_cat.cat_id}" class="no_right_border">{$p_cat.cat_name}</a></li>
+					<li><a href="{:U('Coupon/coupon',array('label_type'=>2,'cat_id'=>$p_cat['cat_id']),'','')}" class="no_right_border">{$p_cat.cat_name}</a></li>
                     </if>
                     </foreach>
 				</ul>
@@ -234,13 +233,13 @@
 						<p class="one">{$coupon.description}</p>
 						<p class="two">{$coupon.title}</p>
 						<p class="three">下载：{$coupon.download_times}次</p>
-						<a href="" class="download" couponid="{$coupon.coupon_id}">立即下载</a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download">立即下载</a>
 						<p class="hidden_location">{$coupon.tag}</p>
 					</li>
 					</if>
                 </foreach>
 				</ul>
-				<a href="" class="foot_type_more">查看更多</a>
+				<a href="{:U('Coupon/coupon',array('label_type'=>2),'','')}" class="foot_type_more">查看更多</a>
 			</div>
 			<div class="footsort_box">
 				<p class="title title2" id="ent_hot_title">最热优惠劵排行</p><p class="title" id="ent_new_title">最新优惠劵排行</p>
@@ -296,9 +295,9 @@
 				<ul class="title_content">
                     <foreach name="life_cat" item="l_cat" key="k">
                     <if condition="$k lt 5">
-					<li><a href="/index.php/Coupon/coupon?cat_id={$l_cat.cat_id}">{$l_cat.cat_name}</a></li>
+					<li><a href="{:U('Coupon/coupon',array('label_type'=>3,'cat_id'=>$l_cat['cat_id']),'','')}">{$l_cat.cat_name}</a></li>
                     <else />
-					<li><a href="/index.php/Coupon/coupon?cat_id={$l_cat.cat_id}" class="no_right_border">{$l_cat.cat_name}</a></li>
+					<li><a href="{:U('Coupon/coupon',array('label_type'=>3,'cat_id'=>$l_cat['cat_id']),'','')}">{$l_cat.cat_name}</a></li>
                     </if>
                     </foreach>
 				</ul>
@@ -312,13 +311,13 @@
 						<p class="one">{$coupon.description}</p>
 						<p class="two">{$coupon.title}</p>
 						<p class="three">下载：{$coupon.download_times}次</p>
-						<a href="" class="download" couponid="{$coupon.coupon_id}">立即下载</a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download">立即下载</a>
 						<p class="hidden_location">{$coupon.tag}</p>
 					</li>
 					</if>
                 </foreach>
 				</ul>
-				<a href="" class="foot_type_more">查看更多</a>
+				<a href="{:U('Coupon/coupon',array('label_type'=>3),'','')}" class="foot_type_more">查看更多</a>
 			</div>
 			<div class="footsort_box">
 				<p class="title title2" id="life_hot_title">最热优惠劵排行</p><p class="title" id="life_new_title">最新优惠劵排行</p>

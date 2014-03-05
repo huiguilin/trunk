@@ -12,6 +12,7 @@ class CouponAction extends Action {
     );
     public function coupon(){
         $locationId = !empty($_GET['location']) ? $_GET['location'] : 0;
+
         $params = array();
         if (!empty($locationId)) {
             $params = array(
@@ -66,9 +67,10 @@ class CouponAction extends Action {
                     break;
             }
         }
-
+        
         $couponHelper = new CouponModel();
         $couponInfo = $couponHelper->getCoupon($params);
+        
         if ($params['order_by'] != 'download_times DESC') {
             $params['order_by'] = 'download_times DESC';
         }
@@ -106,7 +108,7 @@ class CouponAction extends Action {
     private function getCategory() {
         $helper = new CategoryModel();
         $params = array(
-            'limit' => '0,7',
+            'limit' => '',
             'status' => 1,
         );
         $category = $helper->getCategoryInfo($params);
@@ -176,14 +178,15 @@ class CouponAction extends Action {
         );
 
         if (empty($_POST['phone_number']) || empty($_POST['coupon_id'])) {
+            $result['info'] = '手机号码不能为空!';
             $this->ajaxReturn($result,'JSON'); 
             return TRUE;
         }
-        if (empty($_SESSION['user']['user_id'])) {
-            $result['info'] = '未登录!';
-            $this->ajaxReturn($result,'JSON');
-            return TRUE;
-        }
+        // if (empty($_SESSION['user']['user_id'])) {
+        //     $result['info'] = '未登录!';
+        //     $this->ajaxReturn($result,'JSON');
+        //     return TRUE;
+        // }
     
         if ($_SESSION['verify'] != md5($_POST['vcode'])) {
             $result['status'] = 2;
@@ -229,12 +232,12 @@ class CouponAction extends Action {
         if (!empty($r)) {
             $updateresult = $helper->getCouponByCouponId($ids);
             $this->assign("coupons", $couponInfo);
-
+        }
         $this->ajaxReturn($result, "JSON");
         return TRUE;
     }
 
-    private function send($phoneNumber, $code, $couponName, $couponId,$couponDesc) {
+    private function send($phoneNumber, $code, $couponName, $couponId,$couponDesc){
         if (empty($phoneNumber) || empty($code)) {
             return FALSE;
         }
@@ -349,5 +352,6 @@ class CouponAction extends Action {
         $this->assign('couponUseRule',$couponUseRule);
         $this->display();
     }
+
 }
 

@@ -152,8 +152,6 @@ $(function(){
      	var phone = $('#send_to_phone').val();
      	var vcode = $('#cellphone_vcode').val();
      	var reg_cellphone= /^(1)[0-9]{10}$/;
-
-
      	if(phone == ""){
      		$('#hidden_error_tips_phone').show().text('手机号码不能为空');
      	}else{
@@ -168,12 +166,10 @@ $(function(){
      		 		$.post(ajaxPostURL+"Coupon/sendCouponCode", { phone_number: phone, 
 						vcode: vcode,coupon_id:coupon_id},function(data){
 					 	if(data.status == 2){
-					 		$('#hidden_error_tips_vcode').show().text('验证码错误');
+					 		$('#hidden_error_tips_vcode').show().text(data.info);
 					 	}else if(data.status == 0){
-					 		$('#hidden_error_tips_phone').show().text('手机号码不能为空');
+					 		$('#hidden_error_tips_phone').show().text(data.info);
 					 	}else if(data.status ==1){
-
-
 					 		$("#download_coupon_hidden_box div.middle_content_box").hide().siblings('#download_coupon_hidden_box div.middle_content_box_success').show();
 					 	}
 					},"json");
