@@ -38,7 +38,10 @@ class CouponModel extends Model {
         $data = $this->where("coupon_id IN ({$cIds})")->select();
         return $data;
     }
-
+    public function getCouponsByCouponId($couponId) {
+            $data = $this->find($couponId);
+            return $data;
+    }
     public function getCoupon($params = array()) {
         $str = "1 = 1";
         
@@ -85,5 +88,11 @@ class CouponModel extends Model {
         $data = $this->where("partner_id IN ({$id})")->select();
         return $data;
     }
-    
+    public function updateCoupon($condition,$data = array()) {
+        if (empty($data) ||empty($condition)) {
+            return FALSE;
+        }
+        $result = $this->where("{$condition}")->save($data);
+        return $result;
+    }
 }

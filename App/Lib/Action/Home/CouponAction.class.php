@@ -174,6 +174,7 @@ class CouponAction extends Action {
             'status' => 0,
             'info' => "",
         );
+
         if (empty($_POST['phone_number']) || empty($_POST['coupon_id'])) {
             $this->ajaxReturn($result,'JSON'); 
             
@@ -186,6 +187,8 @@ class CouponAction extends Action {
         }
         $couponHelper = new CouponModel();
         $couponId = (int)$_POST['coupon_id'];
+
+
         $ids = array($couponId);
         $couponInfo = $couponHelper->getCouponByCouponId($ids);
         if (empty($couponInfo)) {
@@ -201,10 +204,29 @@ class CouponAction extends Action {
         //     $this->ajaxReturn($result, 'JSON');
         //     return TRUE;
         // }
+
         $code = mt_rand(1, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
         $couponName = $couponInfo[0]['name'];
         $couponDesc = $couponInfo[0]['description'];
         $result = $this->send($phoneNumber, $code, $couponName, $couponId,$couponDesc);
+
+        //下载成功后数据库中download_times加1
+        $helper = new CouponModel();
+        $counponDownloadTimes = $couponInfo[0]['download_times'] + 1;
+        $time = date("Y-m-d H:i:s");
+        $updateData = array(
+                'ctime' => $time, 
+                'download_times' => $counponDownloadTimes,
+                );
+        $condition = "coupon_id = '{$couponId}'";
+        $r = $helper->updateCoupon($condition,$updateData);
+        if (!empty($r)) {
+            $updateresult = $helper->getCouponByCouponId($ids);
+            $this->assign("coupons", $couponInfo);
+            $result['status'] = 1;
+            
+        }
+
         $this->ajaxReturn($result, "JSON");
         return TRUE;
     }
@@ -264,5 +286,40 @@ class CouponAction extends Action {
         return $info;
     }
     
+    public function printCoupon(){
+        if (empty($_GET['_URL_'][2])) {
+            return TRUE;
+        }
+        $couponHelper = new CouponModel();
+        $couponId = intval($_GET['_URL_'][2]);
+        //$res_couponInfo = $couponHelper->getCouponByCouponId($arr_couponId);
+        $res_couponInfo = $couponHelper->getCouponsByCouponId($couponId);
+        if(empty($res_couponInfo)){
+            echo "Empty data";
+            exit;
+        }
+        $partner_id = intval($res_couponInfo['partner_id']);
+        $arr_partnerId = array($partner_id);
+        $partnerHelper = new PartnerModel();
+        $res_partnerInfo = $partnerHelper->getPartnerByPartnerId($arr_partnerId);
+        if(empty($res_partnerInfo)){
+            echo "Empty data";
+            exit;
+        }
+        $partner_name = $res_partnerInfo[0]['name'];
+        $partner_name = trim($partner_name);
+        $partner_description = $res_partnerInfo[0]['description'];
+        $partner_description = trim($partner_description,"");
+        array_push($res_couponInfo,$partner_name,$partner_description);
+        $couponUseRule = $res_couponInfo['use_rule'];
+        $couponUseRule = rtrim($couponUseRule,"。");
+        $couponUseRule = str_replace("；", "<br>", str_replace(" ", "&nbsp", $couponUseRule));
+        if($res_couponInfo['description'] == "" || $res_couponInfo['use_rule'] == ""){
+            $this->assign('errno',1);
+        }
+        $this->assign('couponInfo',$res_couponInfo);
+        $this->assign('couponUseRule',$couponUseRule);
+        $this->display();
+    }
 }
 

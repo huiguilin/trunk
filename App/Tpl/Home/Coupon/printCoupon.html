@@ -15,19 +15,24 @@
 	</div>
 	<div id="main_box">
 		<div class="title_box">
-			<span class="left">[DQ冰淇淋优惠券]DQ新年四合一优惠券</span>
-			<span class="right">优惠券有效期 [2014年1月15日-2014年2月14日]</span>
+			<span class="left">{$couponInfo['name']}</span>
+			<span class="right">{$couponInfo['use_time']}</span>
 		</div>
 		<div class="content_box">
 			<p class="one">短信优惠券：下载以下短信使用同样有效 <span>(短信下载完全免费，我们会严格保密您的手机号码)</span></p>
-			<p class="two">北京优惠券#210111:凭此短信[DQ冰淇淋]购买新品华夫控优惠2元，购中杯暴风雪免费送一份填料，购买秀身/鲜果露第二杯半价，购任意口味爆米花优惠3元，以上点餐前出示，1-15至2-14有效。详询商家</p>
-			<p class="three four">*请将此优惠打印或下载到手机上使用；</p>
-			<p class="three"> *除特殊注明外，本优惠不能与其他优惠同时享受；</p>
-			<p class="three"> *本优惠由商家提供，如有疑问请与商家联系；</p>
-			<p class="three"> *本优惠请务必从惠桂林网或其授权网站下载使用，否则无效。 </p>
-			<img src="__PUBLIC__/images/print_coupon.jpg" />
-			<p class="seven">DQ冰淇淋介绍:</p>
-			<p class="eight">1940年,在美国伊利诺伊州诞生了Dairy Queen®，DQ软冰淇淋是新鲜和健康的典范。目前，DQ品牌隶属于“股神”沃伦•巴菲特控股的伯克夏尔•哈撒韦集团旗下的IDQ公司，在全球近30个国家和地区拥有超过6000家分店，为全球消费者提供缤纷美味休闲食品。DQ明星产品“倒杯不洒”的“暴风雪”(Blizzard®)诞生于1985年，仅诞生当年就在全球售出175,000,000杯。</p>
+			<p class="two">{$couponInfo['name']}:凭此短信<a style="text-decoration:none;color:#ED5565" href="#">{$couponInfo[0]}</a>{$couponInfo['description']}
+			</p>
+			<p style="color:#ED5565;" class="three four">*请将此优惠打印或下载到手机上使用；</p>
+			<if condition = "$errno eq 1" >
+				<p style="font-weight:bold;color:#ED5565" class="three"> *抱歉，暂无描述信息；</p>
+				<else />
+			<p class="three"> *{$couponInfo['exception_time']}；</p>
+			<p class="three"> *{$couponUseRule}；</p>
+			</if>
+			<p style="color:#ED5565;" class="three"> *本优惠请务必从惠桂林网或其授权网站下载使用，否则无效。 </p>
+			<img src="__PUBLIC__/{$couponInfo['picture_path']}" />
+			<p style="font-weight:bold;color:#ED5565;" class="seven">{$couponInfo[0]}:</p>
+			<p class="eight">{$couponInfo[1]}</p>
 		</div>
 	</div>
 </body>
