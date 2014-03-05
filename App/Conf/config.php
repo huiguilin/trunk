@@ -22,5 +22,6 @@ return array(
     'SMTP_AUTH' => true , //邮箱验证(一般都要开启),
 
     'URL_CASE_INSENSITIVE' =>true, //URL大小写
+        
 );
 ?>

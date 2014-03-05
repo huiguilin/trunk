@@ -153,6 +153,7 @@ $(function(){
      	var vcode = $('#cellphone_vcode').val();
      	var reg_cellphone= /^(1)[0-9]{10}$/;
 
+
      	if(phone == ""){
      		$('#hidden_error_tips_phone').show().text('手机号码不能为空');
      	}else{
@@ -171,7 +172,8 @@ $(function(){
 					 	}else if(data.status == 0){
 					 		$('#hidden_error_tips_phone').show().text('手机号码不能为空');
 					 	}else if(data.status ==1){
-					 		
+
+
 					 		$("#download_coupon_hidden_box div.middle_content_box").hide().siblings('#download_coupon_hidden_box div.middle_content_box_success').show();
 					 	}
 					},"json");

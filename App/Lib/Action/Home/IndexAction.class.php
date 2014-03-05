@@ -25,9 +25,12 @@ class IndexAction extends Action {
         $category = $this->getCategory();
         $this->assign("coupons", $coupon);
         $this->assign("hot_coupons", $coupon);
-        $this->assign("eat_coupons", $eatCoupon);
-        $this->assign("life_coupons", $lifeCoupon);
-        $this->assign("play_coupons", $playCoupon);
+        $this->assign("eat_coupons", $eatCoupon[0]);
+        $this->assign("eat_cat", $eatCoupon[1]);
+        $this->assign("life_coupons", $lifeCoupon[0]);
+        $this->assign("life_cat", $lifeCoupon[1]);
+        $this->assign("play_coupons", $playCoupon[0]);
+        $this->assign("play_cat", $playCoupon[1]);
         $this->assign("cards", $card);
         $this->assign("news", $news);
         $this->assign("ads", $ads);
@@ -69,6 +72,7 @@ class IndexAction extends Action {
         }
         $ids = DataToArray($coupon, 'id');
         $helper = new CouponModel();
+        $cHelper = new CategoryModel();
         $info = $helper->getCouponByCouponId($ids);
         $info = $this->cutCouponWords($info);
         $params = array(
@@ -77,18 +81,27 @@ class IndexAction extends Action {
         );
         $eatCoupon = $helper->getCoupon($params);
         $eatCoupon = $this->cutCouponWords($eatCoupon);
+        $params['limit'] = '0,5';
+        $eatCategory = $cHelper->getCategoryInfo($params);
+        $eatCoupon = array($eatCoupon, $eatCategory);
         $params = array(
             'label_type' => 3,
             'limit' => '0,10',
         );
         $lifeCoupon = $helper->getCoupon($params);
         $lifeCoupon = $this->cutCouponWords($lifeCoupon);
+        $params['limit'] = '0,5';
+        $lifeCategory = $cHelper->getCategoryInfo($params);
+        $lifeCoupon = array($lifeCoupon, $lifeCategory);
         $params = array(
             'label_type' => 2,
             'limit' => '0,10',
         );
         $playCoupon = $helper->getCoupon($params);
         $playCoupon = $this->cutCouponWords($playCoupon);
+        $params['limit'] = '0,5';
+        $playCategory = $cHelper->getCategoryInfo($params);
+        $playCoupon = array($playCoupon, $playCategory);
 
         $result = $this->mergeData($coupon, $info, 'coupon_id');
         return array($result, $eatCoupon, $lifeCoupon, $playCoupon);

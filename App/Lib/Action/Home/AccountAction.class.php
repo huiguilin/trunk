@@ -74,7 +74,7 @@ class AccountAction extends Action {
 
     public function myfavorite(){
         if (empty($_SESSION['user']['user_id'])) {
-            echo "dd";
+            $this->redirect('/');
             return TRUE;
         }
         $status = isset($_GET['status']) ? (int) $_GET['status'] : 0;
@@ -120,7 +120,7 @@ class AccountAction extends Action {
     }
     public function mytocomment(){
         if (empty($_SESSION['user']['user_id'])) {
-            echo "eeee";
+            $this->redirect('/');
             return TRUE;
         }
         $pageSize = 10;
@@ -145,7 +145,7 @@ class AccountAction extends Action {
             'user_id' => $userId,
         );
         $evaluationInfo = $eHelper->getEvaluations($params);
-        $couponIds = implode(',', DataToArray($evaluationInfo, 'coupon_id'));
+        $couponIds = implode(',', DataToArray($userCouponInfo, 'coupon_id'));
         $cHelper = new CouponModel();
         $params = array(
                 'coupon_id' => $couponIds,
@@ -157,6 +157,32 @@ class AccountAction extends Action {
 		$this->display();
     }
     public function mycommented(){
+        if (empty($_SESSION['user']['user_id'])) {
+            $this->redirect('/');
+            return TRUE;
+        }
+        $pageSize = 10;
+        $nowPage = !empty($_GET['page']) ? $_GET['page'] : 0;
+        $status = isset($_GET['status']) ? (int) $_GET['status'] : "0,1,2";
+        $evaluated = isset($_GET['evaluated']) ? (int) $_GET['evaluated'] : 0;
+        $offset = $pageSize * $page;
+        $userId = $_SESSION['user']['user_id'];
+        $helper = new CouponEvaluationModel();
+        $params = array(
+            'user_id' => $userId,
+            'limit' => "$offset, $pageSize",
+            'order_by' => 'createtime DESC',
+        );
+        $info = $helper->getInfo($params);
+        $couponIds = implode(',', DataToArray($info, 'coupon_id'));
+        $cHelper = new CouponModel();
+        $params = array(
+                'coupon_id' => $couponIds,
+                );       
+        $couponInfo = $cHelper->getCoupon($params);
+        $eInfo = mergeData($info, $couponInfo, 'coupon_id', 'coupon_id');
+        $this->assign('evaluations', $eInfo);
+
         $this->account_tmp_bottom();
         $this->display();
     }
@@ -447,9 +473,62 @@ class AccountAction extends Action {
         }
     }
     public function handlePostCouponComment(){
-        $_SESSION['user_id'] = "2";
-        $a = $_POST;
-        dump($a);
+        $userId = $_SESSION['user']['user_id'];
+        if (empty($userId)) {
+            echo "wrong!";return TRUE;
+        }
+        $id = $_POST['post_id'];
+        $rate = $_POST['ratevalue'];
+        $comment = $_POST['coupon_comment_content'];
+        $couponId = $_POST['post_coupon_id'];
+        $params = array(
+            'user_id' => $userId,
+            'coupon_id' => $couponId,
+            'evaluation' => $comment,
+            'rate' => $rate,
+            );
+        $helper = new CouponEvaluationModel();
+        $r = $helper->addCouponEvaluation($params);
+        if (!empty($r)) {
+            $helper = new UserCouponModel();
+            $params = array(
+                'id' => $id,
+                'data' => array(
+                    'evaluated' => 1
+                ),
+            );
+            $r = $helper->updateUserCouponInfo($params);
+            $this->redirect('Account/mytocomment');
+            return TRUE;
+        }
+    }
+
+    public function handleUpdateCouponComment() {
+        $userId = $_SESSION['user']['user_id'];
+        if (empty($userId)) {
+            echo "wrong!";return TRUE;
+        }
+        $id = $_POST['post_id'];
+        $rate = $_POST['ratevalue'];
+        $comment = $_POST['coupon_comment_content'];
+        $couponId = $_POST['post_coupon_id'];
+        $eId = $_POST['post_e_id'];
+        $params = array(
+            'user_id' => $userId,
+            'coupon_id' => $couponId,
+            'e_id' => $eId,
+            'data' => array(
+                'evaluation' => $comment,
+                'rate' => $rate,
+                'createtime' => date("Y-m-d H:i:s"),
+            ),
+            );
+        $helper = new CouponEvaluationModel();
+        $r = $helper->updateInfo($params);
+        if (!empty($r)) {
+            $this->redirect('Account/mycommented');
+            return TRUE;
+        }
     }
 
     public function sendCode() {

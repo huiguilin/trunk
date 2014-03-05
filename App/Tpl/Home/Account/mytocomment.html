@@ -9,11 +9,6 @@
 					return false;
 				}else{
 					$(this).siblings('p.post_comment_hidden_error_tips').hide();
-					<if condition="$Think.session.user_id eq ''">
-						alert('1');
-					<else />
-						alert('2');
-					</if>
 				}
 				
 			});
@@ -55,6 +50,8 @@
 					</select -->
                     
 					<textarea cols="56" rows="8" name="coupon_comment_content"></textarea>
+                    <input name="post_coupon_id" value="{$eva.coupon_id}" style="display:none">
+                    <input name="post_id" value="{$eva.id}" style="display:none">
 					<input type="submit" name="post_comment" value="发表评论" class="post_comment">
 					<p class="post_comment_hidden_error_tips">评论内容不能为空</p>
 				</div>

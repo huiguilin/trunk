@@ -11,9 +11,10 @@ class CategoryModel extends Model {
         if (isset($params['cat_name'])) {
             $str .= " AND cat_name IN ({$params['cat_name']})";
         }
-        if (isset($params['status'])) {
-            $str .= " AND status IN ({$params['status']})";
+        if (isset($params['label_type'])) {
+            $str .= " AND label_type IN ({$params['label_type']})";
         }
+        $str .= " AND status = 1";
         $data = $this->where($str)->limit($params['limit'])->select();
         return $data;
     }

@@ -44,7 +44,10 @@
 				<div class="coupon_desc_box">
 					<p class="coupon_title">{$coupon.title}<!-- <span>{$coupon.title}</span> --></p>
 				</div>
+
 				<a href="{:U("Coupon/printCoupon","","","")}/{$coupon.coupon_id}" class="print_coupon_btn">打印此优惠券</a>
+
+
 				<a class="download_coupon_btn" id="download_coupon_btn" couponid="{$coupon.coupon_id}">下载到手机</a>
 				<img src="__PUBLIC__/{$coupon.picture_path}" class="coupon_pic">
 				<div class="coupon_detail_desc_box">
@@ -71,11 +74,12 @@
 					</div>
 				</div>
 				<a href="{:U("Coupon/printCoupon","","","")}/{$coupon.coupon_id}" class="print_coupon_btn print_coupon_btn2">打印此优惠券</a>
+
 				<a href="javascript:void(0);" class="download_coupon_btn" id="download_coupon_btn_two" couponid="{$coupon.coupon_id}">下载到手机</a>
 				<a id="download_coupon_id" style="visibility:hidden" couponid="{$coupon.coupon_id}">{$coupon.coupon_id}</a>
 			</div>
 			<div class="share">
-				<a href="" class="add_favorite">收藏到我的券包</a>
+				<a href="javascript:void(0)" class="add_favorite" id="add_favorite_btn">收藏到我的券包</a>
 				<p>分享到</p>
 				<ul>
 					<li><a href="" class="one"></a></li>

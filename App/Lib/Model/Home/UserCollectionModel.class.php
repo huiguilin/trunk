@@ -15,4 +15,11 @@ class UserCollectionModel extends Model {
         return $data;
     }
 
+    public function addUserCollection($data = array()) {
+        if (empty($data)) {
+            return false;
+        }
+        $result = $this->data($data)->add();
+        return $result;
+    }
 }
