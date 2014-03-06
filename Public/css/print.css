@@ -38,6 +38,8 @@
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
 	padding-bottom: 40px;
+	line-height: 25px;
+	font-size:15px;
 }
 #main_box div.content_box p{
 	margin:0px;

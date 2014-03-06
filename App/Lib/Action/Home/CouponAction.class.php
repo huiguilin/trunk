@@ -12,6 +12,7 @@ class CouponAction extends Action {
     );
     public function coupon(){
         $locationId = !empty($_GET['location']) ? $_GET['location'] : 0;
+
         $params = array();
         if (!empty($locationId)) {
             $params = array(
@@ -66,9 +67,10 @@ class CouponAction extends Action {
                     break;
             }
         }
-
+        
         $couponHelper = new CouponModel();
         $couponInfo = $couponHelper->getCoupon($params);
+        
         if ($params['order_by'] != 'download_times DESC') {
             $params['order_by'] = 'download_times DESC';
         }
@@ -106,7 +108,7 @@ class CouponAction extends Action {
     private function getCategory() {
         $helper = new CategoryModel();
         $params = array(
-            'limit' => '0,7',
+            'limit' => '',
             'status' => 1,
         );
         $category = $helper->getCategoryInfo($params);
@@ -174,15 +176,17 @@ class CouponAction extends Action {
             'status' => 0,
             'info' => "",
         );
+
         if (empty($_POST['phone_number']) || empty($_POST['coupon_id'])) {
+            $result['info'] = '手机号码不能为空!';
             $this->ajaxReturn($result,'JSON'); 
             return TRUE;
         }
-        if (empty($_SESSION['user']['user_id'])) {
-            $result['info'] = '未登录!';
-            $this->ajaxReturn($result,'JSON');
-            return TRUE;
-        }
+        // if (empty($_SESSION['user']['user_id'])) {
+        //     $result['info'] = '未登录!';
+        //     $this->ajaxReturn($result,'JSON');
+        //     return TRUE;
+        // }
     
         if ($_SESSION['verify'] != md5($_POST['vcode'])) {
             $result['status'] = 2;
@@ -229,12 +233,11 @@ class CouponAction extends Action {
             $updateresult = $helper->getCouponByCouponId($ids);
             $this->assign("coupons", $couponInfo);
         }
-
         $this->ajaxReturn($result, "JSON");
         return TRUE;
     }
 
-    private function send($phoneNumber, $code, $couponName, $couponId,$couponDesc) {
+    private function send($phoneNumber, $code, $couponName, $couponId,$couponDesc){
         if (empty($phoneNumber) || empty($code)) {
             return FALSE;
         }
@@ -314,5 +317,43 @@ class CouponAction extends Action {
         
     }
     
+    public function printCoupon(){
+
+      
+        if (empty($_GET['_URL_'][2])) {
+            return TRUE;
+        }
+        $couponHelper = new CouponModel();
+        $couponId = intval($_GET['_URL_'][2]);
+        //$res_couponInfo = $couponHelper->getCouponByCouponId($arr_couponId);
+        $res_couponInfo = $couponHelper->getCouponsByCouponId($couponId);
+        if(empty($res_couponInfo)){
+            echo "Empty data";
+            exit;
+        }
+        $partner_id = intval($res_couponInfo['partner_id']);
+        $arr_partnerId = array($partner_id);
+        $partnerHelper = new PartnerModel();
+        $res_partnerInfo = $partnerHelper->getPartnerByPartnerId($arr_partnerId);
+        if(empty($res_partnerInfo)){
+            echo "Empty data";
+            exit;
+        }
+        $partner_name = $res_partnerInfo[0]['name'];
+        $partner_name = trim($partner_name);
+        $partner_description = $res_partnerInfo[0]['description'];
+        $partner_description = trim($partner_description,"");
+        array_push($res_couponInfo,$partner_name,$partner_description);
+        $couponUseRule = $res_couponInfo['use_rule'];
+        $couponUseRule = rtrim($couponUseRule,"。");
+        $couponUseRule = str_replace("；", "<br>", str_replace(" ", "&nbsp", $couponUseRule));
+        if($res_couponInfo['description'] == "" || $res_couponInfo['use_rule'] == ""){
+            $this->assign('errno',1);
+        }
+        $this->assign('couponInfo',$res_couponInfo);
+        $this->assign('couponUseRule',$couponUseRule);
+        $this->display();
+    }
+
 }
 

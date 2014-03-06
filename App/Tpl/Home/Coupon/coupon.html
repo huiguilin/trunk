@@ -32,9 +32,9 @@
 <!--         <foreach name="ads" item="ad">
 			<img src="__PUBLIC__/{$ad.img_path}" alt="" />
         </foreach> -->
-        <img src="http://www.huigl.com/Public/images/flash/c_1.png" alt="" />
-        <img src="http://www.huigl.com/Public/images/flash/c_2.png" alt="" />
-        <img src="http://www.huigl.com/Public/images/flash/c_3.png" alt="" />
+        <img src="__PUBLIC__/images/flash/c_1.png">
+        <img src="__PUBLIC__/images/flash/c_2.png">
+        <img src="__PUBLIC__/images/flash/c_3.png">
 			<ul>
 				<li>1</li>
 				<li>2</li>
@@ -53,29 +53,45 @@
                         </if>
                     <foreach name="label_types" item="label_type">
                         <if condition="$get_info.label_type eq $key">
-						<li><a href="/index.php/Coupon/coupon?label_type={$key}" class="current">{$label_type}</a></li>
+						<li><a href="{:U('Coupon/coupon',array('label_type'=>$key),'','')}" class="current">{$label_type}</a></li>
                         <else />
-						<li><a href="/index.php/Coupon/coupon?label_type={$key}">{$label_type}</a></li>
+						<li><a href="{:U('Coupon/coupon',array('label_type'=>$key),'','')}">{$label_type}</a></li>
                         </if>
                     </foreach>
 					</ul>
-					<div>
-						<ul class="child_classification clearfix">
-                            <if condition="$get_info.cat_id neq ''">
-                            <li><a href="">全部</a></li>
-                            <else />
-                            <li><a href="" class="current">全部</a></li>
-                            </if>
-                            <foreach name="categories" item="category">
-                            <if condition="$get_info.cat_id eq $category.cat_id">
-							<li><a href="/index.php/Coupon/coupon?cat_id={$category.cat_id}" class="current">{$category.cat_name}</a></li>
-                            <else />
-							<li><a href="/index.php/Coupon/coupon?cat_id={$category.cat_id}">{$category.cat_name}</a></li>
-                            </if>
-                            </foreach>
-							<!--li class="no_right_border"><a href="">日本料理</a></li-->
-						</ul>
-					</div>
+					<if condition="($_GET.label_type neq '') or ($_GET.cat_id neq '')">
+						<div>
+							<ul class="child_classification clearfix">
+	                            <if condition="$get_info.cat_id neq ''">
+	                            <li><a href="">全部</a></li>
+	                            <else />
+	                            <li><a href="" class="current">全部</a></li>
+	                            </if>
+								
+	                            <foreach name="categories" item="category">
+	                            <if condition="$get_info['label_type'] eq $category['label_type']">
+									<if condition="$get_info['cat_id'] eq $category['cat_id']">
+									
+								 	<li><a href="{:U('Coupon/coupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}" class="current">{$category.cat_name}</a></li>
+	                            	<else />
+
+									<li><a href="{:U('Coupon/coupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}">{$category.cat_name}</a></li>
+	                            </if>
+	                            <else />
+
+	                            </if>
+		               			
+	                            
+	                            </foreach>
+
+								<!--li class="no_right_border"><a href="">日本料理</a></li-->
+							</ul>
+						</div>
+						<else />
+
+					</if>
+					
+					
 				</div>
 				<div id="location_box">
 					<p>区域</p><ul class="parent_classification">
@@ -84,23 +100,71 @@
                         <else />
 						<li><a href="" class="current">全部</a></li>
                         </if>
-                        <if condition="$get_info.tag eq '秀峰区'">
-						<li><a href="/index.php/Coupon/coupon?tag=秀峰区">秀峰区</a></li>
+                        <if condition="$get_info.tag neq '秀峰区'">
+						<li><a href="{:U('Coupon/coupon',array('tag'=>'秀峰区'),'','')}">秀峰区</a></li>
+                        <else />
+						<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'秀峰区'),'','')}">秀峰区</a></li>
                         </if>
-						<li><a href="/index.php/Coupon/coupon?tag=象山区">象山区</a></li>
-						<li><a href="/index.php/Coupon/coupon?tag=叠彩区">叠彩区</a></li>
-						<li><a href="/index.php/Coupon/coupon?tag=雁山区">雁山区</a></li>
-						<li><a href="/index.php/Coupon/coupon?tag=七星区">七星区</a></li>
+						<if condition="$get_info.tag neq '象山区'">
+						<li><a href="{:U('Coupon/coupon',array('tag'=>'象山区'),'','')}">象山区</a></li>
+                        <else />
+						<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'象山区'),'','')}">象山区</a></li>
+                        </if>
+                        <if condition="$get_info.tag neq '叠彩区'">
+						<li><a href="{:U('Coupon/coupon',array('tag'=>'叠彩区'),'','')}">叠彩区</a></li>
+                        <else />
+						<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'叠彩区'),'','')}">叠彩区</a></li>
+                        </if>
+                        <if condition="$get_info.tag neq '七星区'">
+						<li><a href="{:U('Coupon/coupon',array('tag'=>'七星区'),'','')}">七星区</a></li>
+                        <else />
+						<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'七星区'),'','')}">七星区</a></li>
+                        </if>
+                        <if condition="$get_info.tag neq '雁山区'">
+						<li><a href="{:U('Coupon/coupon',array('tag'=>'雁山区'),'','')}">雁山区</a></li>
+                        <else />
+						<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'雁山区'),'','')}">雁山区</a></li>
+                        </if>
 					</ul>
-					<div>
-						<ul class="child_classification clearfix">
-							<li><a href="" class="current">全部</a></li>
-                            <foreach name="locations" item="location">
-							    <li><a href="/index.php/Coupon/coupon?location={$location.id}">{$location.name}</a></li>
-                            </foreach>
-							<!--li class="no_right_border"><a href="">三里店广场</a></li-->
-						</ul>
-					</div>
+					<if condition="$_GET['tag'] neq ''">
+						<div>
+							<ul class="child_classification clearfix">
+								<if condition="$get_info['location'] eq ''">
+									<li><a href="" class="current">全部</a></li>
+								<else />
+									<li><a href="">全部</a></li>
+								</if>
+								
+	                            <foreach name="locations" item="location">
+									<if condition="$get_info['tag'] eq $location['belong']">
+										<if condition="$get_info['location'] neq ''">
+											<if condition="$get_info['location'] eq $location['id'] ">
+												<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a></li>
+											<else />
+												<li><a href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a></li>
+											</if>
+										<else />
+											<li><a href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a></li>
+										</if>
+
+										
+
+									<else />
+									
+									</if>
+	                            	<!-- <if condition="$get_info['tag'] eq $location['belong']">
+										<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a></li>
+	                            	 <else /> -->
+										<!-- <li><a href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a></li> -->
+	                            	<!-- </if> -->
+								    
+	                            </foreach>
+								<!--li class="no_right_border"><a href="">三里店广场</a></li-->
+							</ul>
+						</div>
+					<else />
+					</if>
+					
 				</div>
 			</div>
 		</div>

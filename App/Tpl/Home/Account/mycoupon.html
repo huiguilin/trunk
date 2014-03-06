@@ -16,7 +16,7 @@
 				</tr>
                 <foreach name="coupons" item="coupon">
 				<tr>
-					<td >{$coupon.name}</td>
+					<td ><a href="{:U('Coupon/detail',"","","")}/{$coupon.coupon_id}" class="couponname">{$coupon.name}</a></td>
 					<td class="center">{$coupon.createtime}</td>
                     <if condition="($coupon.status eq 1) ">
                     <td class="center green">未到期</td>

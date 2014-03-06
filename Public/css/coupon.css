@@ -93,7 +93,8 @@
 }
 #main #classification_location_box #content_box #classification_box div{
 	background: url(../images/bg_ico_01.png) no-repeat 80px 0px;
-	display: none;
+	/*display: none;*/
+
 }
 #main #classification_location_box #content_box #classification_box div ul.child_classification{
 	margin-top: 10px;
@@ -171,7 +172,7 @@
 }
 #main #classification_location_box #content_box #location_box div{
 	background: url(../images/bg_ico_01.png) no-repeat 80px 0px;
-	display: none;
+	/*display: none;*/
 }
 #main #classification_location_box #content_box #location_box div ul.child_classification{
 	border:1px solid #DBE1EC;
@@ -337,6 +338,9 @@
 	position: absolute;
 	top: 13px;
 	left: 182px;
+	height: 15px;
+	overflow: hidden;
+	
 }
 #main #coupon_box ul.coupon_content li a.download{
 	color: #ED5565;

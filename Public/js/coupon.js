@@ -43,27 +43,15 @@ $(function(){
 	 });
 	 
 	//分类+位置Click特效
-	$('#main #classification_location_box #content_box #classification_box ul.parent_classification li a').click(function(event) {
-		$('#main #classification_location_box #content_box #classification_box ul.parent_classification li a').removeClass('current');
-		$(this).addClass('current');
-		$('#main #classification_location_box #content_box #classification_box div').show();
-		return false;
-	});
-	$('#main #classification_location_box #content_box #location_box ul.parent_classification li a').click(function(event) {
-		$('#main #classification_location_box #content_box #location_box ul.parent_classification li a').removeClass('current');
-		$(this).addClass('current');
-		$('#main #classification_location_box #content_box #location_box div').show();
-		return false;
-	});
+	
 	$('#main #classification_location_box #content_box #classification_box div ul.child_classification li a').click(function(event) {
-		$('#main #classification_location_box #content_box #classification_box div ul.child_classification li a').removeClass('current');
-		$(this).addClass('current');
+		// $('#main #classification_location_box #content_box #classification_box div ul.child_classification li a').removeClass('current');
+		// $(this).addClass('current');
 		
 	});
 	$('#main #classification_location_box #content_box #location_box div ul.child_classification li a').click(function(event) {
-		$('#main #classification_location_box #content_box #location_box div ul.child_classification li a').removeClass('current');
-		$(this).addClass('current');
-		
+		// $('#main #classification_location_box #content_box #location_box div ul.child_classification li a').removeClass('current');
+		// $(this).addClass('current');
 	});
 	//分类+位置Click特效结束
 	var hidden_type_value = $('#hidden_type_value').val();
