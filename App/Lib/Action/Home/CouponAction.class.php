@@ -216,7 +216,7 @@ class CouponAction extends Action {
 
         $code = mt_rand(1, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
         $couponName = $couponInfo[0]['name'];
-        $couponDesc = $couponInfo[0]['description'];
+        $couponDesc = !empty($couponInfo[0]['message']) ? $couponInfo[0]['message'] : $couponInfo[0]['description'];
         $result = $this->send($phoneNumber, $code, $couponName, $couponId,$couponDesc);
 
         //下载成功后数据库中download_times加1
