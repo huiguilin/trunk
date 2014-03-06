@@ -338,6 +338,9 @@
 	position: absolute;
 	top: 13px;
 	left: 182px;
+	height: 15px;
+	overflow: hidden;
+	
 }
 #main #coupon_box ul.coupon_content li a.download{
 	color: #ED5565;

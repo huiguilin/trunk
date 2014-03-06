@@ -318,6 +318,8 @@ class CouponAction extends Action {
     }
     
     public function printCoupon(){
+
+      
         if (empty($_GET['_URL_'][2])) {
             return TRUE;
         }
