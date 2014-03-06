@@ -9,7 +9,7 @@ class CategoryModel extends Model {
             $str .= " AND cat_id IN ({$params['cat_id']})";
         }
         if (isset($params['cat_name'])) {
-            $str .= " AND cat_name IN ({$params['cat_name']})";
+            $str .= " AND cat_name  = '{$params['cat_name']}'";
         }
         if (isset($params['label_type'])) {
             $str .= " AND label_type IN ({$params['label_type']})";
