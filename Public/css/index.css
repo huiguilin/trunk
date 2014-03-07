@@ -462,7 +462,7 @@
 	width: 254px;
 	border-radius: 5px;
 }
-#main #foot_and_footsort_box div.footsort_box p.title{
+#main #foot_and_footsort_box div.footsort_box span.title{
 	color: #666666;
 	font-size: 13px;
 	background-color: #E4E4E4;
@@ -472,7 +472,7 @@
 	padding-left: 10px;
 	display: inline-block;
 }
-#main #foot_and_footsort_box div.footsort_box p.title2{
+#main #foot_and_footsort_box div.footsort_box span.title2{
 	background: white;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;

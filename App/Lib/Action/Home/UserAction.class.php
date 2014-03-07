@@ -146,13 +146,43 @@ class UserAction extends Action {
         return FALSE;
     }
 
-    private function sendEmail($mail) {
-        $activeCode = md5($mail . ":huiguilin");
-        $content = "你好!这是来自惠桂林的账号激活邮件,请点击 http://www.huigl.com/Index.php/user/active?ac={$activeCode}&user={$mail}";
-        import('ORG.Email'); 
-        $data['mailto'] = $mail; 
-        $data['subject'] = '账号激活邮件'; 
-        $data['body'] = $content; 
+    // private function sendEmail($mail) {
+    //     $activeCode = md5($mail . ":huiguilin");
+    //     $content = "你好!这是来自惠桂林的账号激活邮件,请点击 http://www.huigl.com/Index.php/user/active?ac={$activeCode}&user={$mail}";
+    //     import('ORG.Email'); 
+    //     $data['mailto'] = $mail; 
+    //     $data['subject'] = '账号激活邮件'; 
+    //     $data['body'] = $content; 
+    //     $mail = new Email();
+    //     if ($mail->send($data)) {
+    //         #$this->success('发送成功,请登录邮件激活');
+    //         return $activeCode;
+    //     } else {
+    //         /* $this->error('邮件发送失败...');
+    //          * */
+    //         echo '邮件发送失败<br>';
+    //         return FALSE;
+    //     }
+    //     return $activeCode;
+    // }
+
+    private function sendEmail($mail,$level) {
+        if ($level == 'modifyCode') {
+            $activeCode = mt_rand(1, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
+            $content = "尊敬的惠桂林用户，您好！您修改密码的验证码是：<span style='color:red'>$activeCode</span>，验证码有效期为5分钟，请您尽快修改密码，谢谢!";
+            import('ORG.Email');
+            $data['mailto'] = $mail;
+            $data['subject'] = '惠桂林改密验证码';
+            $data['body'] = $content;
+        }
+        if ($level == 'activeCode') {
+            $activeCode = md5($mail . ":huiguilin");
+            $content = "你好!这是来自惠桂林的账号激活邮件,请点击 http://test.huiguilin.com/Index.php/user/active?ac={$activeCode}&user={$mail}";
+            import('ORG.Email'); 
+            $data['mailto'] = $mail; 
+            $data['subject'] = '账号激活邮件';
+            $data['body'] = $content;
+        }
         $mail = new Email();
         if ($mail->send($data)) {
             #$this->success('发送成功,请登录邮件激活');
@@ -165,6 +195,7 @@ class UserAction extends Action {
         }
         return $activeCode;
     }
+
 
     private function phoneRegister($phone, $nickname, $password, $checkCode) {
         if (empty($phone) || empty($password) || empty($checkCode) || empty($nickname)) {
@@ -239,6 +270,8 @@ class UserAction extends Action {
             return FALSE;
         }
         session("pcheck","{$code}");
+        session("activeCode","{$code}");
+        session("userphone","{$phoneNumber}");
         //TBC
         #$result = sendCodeToMobile($phoneNumber, "您的激活码是【{$code}】，感谢您注册惠桂林");
         $result = sendCodeToMobile($phoneNumber, "{$code}");
@@ -318,5 +351,122 @@ class UserAction extends Action {
            session('user',null);
            $this->redirect('Home/Index/index');
         }
+    }
+
+    public function forgetPwd(){
+        //设置session有效期为5分钟
+        session_set_cookie_params(5*60);
+        session_cache_limiter('private');
+        session_cache_expire(5);
+        if(!IS_POST){ $this->error("非法提交！");}
+        $useremail = $_POST['user_email'];  
+        $usercellphone = $_POST['user_cellphone'];
+        if (!empty($usercellphone)) {
+            $this->sendCheck_code($usercellphone);
+        }
+        $userHelper = new UserProfileModel();
+        $check_mail = $userHelper->getUserProfileByUserName($useremail);
+        //判断用户邮箱是否注册
+        if (empty($useremail) || empty($check_mail)) {
+            $data = array(
+                'status' => 5,
+                'info' => '邮箱地址为空或邮箱不存在!',
+                );
+            $this->ajaxReturn($data,'JSON');
+        }
+        if (!empty($useremail)) {
+            $activeCode = $this->sendEmail($useremail,'modifyCode');
+            if (empty($activeCode)) {
+                return FALSE;
+            }else{
+                $_SESSION['activeCode'] = $activeCode;
+                $_SESSION['useremail'] = $useremail;
+                $data = array(
+                    'status' => 13,
+                    'info' => '邮件已发送,请及时查收',
+                    );
+                $this->ajaxReturn($data,'json');
+            }
+        }
+    }
+    
+    public function modifyPwd(){
+        if (empty($_POST['password']) || empty($_POST['password1'])) {
+            $data = array(
+                'status' => 6,
+                'info' =>'新密码不能为空',
+                );
+            $this->ajaxReturn($data,'json');
+        }
+        if ($_POST['password'] != $_POST['password1']) {
+            $data = array(
+                'status' => 7,
+                'info' => '两次密码输入不一致',
+                );
+            $this->ajaxReturn($data,'json');
+        }
+        if (empty($_POST['checkCode'])) {
+            $data = array(
+                'status' => 8,
+                'info' => '验证码不能为空',
+                );
+            $this->ajaxReturn($data,'json');
+        }
+        $password = md5($_POST['password']);
+        $checkCode = $_POST['checkCode'];
+        if ($checkCode!=$_SESSION['activeCode']) {
+            $data = array(
+                'status' =>9,
+                'info' =>'验证码不正确',
+                );
+             $this->ajaxReturn($data,'json');
+        }
+        $userProfileHelper = new UserProfileModel();
+        // $condition = $_SESSION['useremail'];
+        if (!empty($_SESSION['useremail'])) {
+            $email = $_SESSION['useremail'];   
+            $condition = "email = '{$email}'";
+        }
+        if (!empty($_SESSION['userphone'])) {
+                    $userphone = $_SESSION['userphone'];
+                    $condition = "phone_number = '{$userphone}'";
+                }        
+        $data = array(
+            'password' =>$password,
+            );
+        $res_modifyPwd = $userProfileHelper->updateUser($condition,$data);
+        if($res_modifyPwd == 0 || !$res_modifyPwd){
+            $data = array(
+                'status' => 11,
+                'info' =>'密码修改失败',
+                );
+             $this->ajaxReturn($data,'json'); 
+         }else{
+            $data = array(
+                'status' => 10,
+                'info' =>'密码修改成功',
+                );
+             $this->ajaxReturn($data,'json');
+         }
+    }
+    public function sendCheck_code($phoneNumber) {
+        if (empty($phoneNumber)) {
+            $this->error('empty phonenumber');
+            return FALSE;
+        }
+        $code = mt_rand(1, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
+        $helper = new UserProfileModel();
+        $result = $helper->getUserProfileByPhoneNumber($phoneNumber);
+        if (empty($result)) {
+            $data = array(
+                'status' => 12,
+                'info' => '该手机没有在惠桂林注册^^',
+            );
+            $this->ajaxReturn($data,'JSON');
+            return TRUE;
+        }
+        $data = $this->send($phoneNumber, $code);
+        $this->ajaxReturn($data,'JSON');
+        return TRUE;
     }
 }

@@ -110,7 +110,7 @@
 				<ul>
                 <foreach name="hot_partners" item="hpartner">
 					<li>
-						<a href="">{$hpartner.name}</a>
+						<a href="{:U('coupon/coupon')}">{$hpartner.name}</a>
 						<img src="__PUBLIC__/{$hpartner.header_path}">
 					</li>
                 </foreach>
@@ -149,10 +149,10 @@
 					<else />
 						<li>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box" target=_blank><img src="__PUBLIC__/{$coupon.picture_path}"></a>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title">{$coupon.name}</a>
-						<p class="one">{$coupon.description}</p>
-						<p class="two">{$coupon.title}</p>
-						<p class="three">下载：{$coupon.download_times}次</p>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title" title="{$coupon.name}">{$coupon.name}</a>
+						<p class="one" title="{$coupon.description}">{$coupon.description}</p>
+						<p class="two" title="{$coupon.title}">{$coupon.title}</p>
+						<p class="three" >下载：{$coupon.download_times}次</p>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download">立即下载</a>
 
 						<p class="hidden_location">{$coupon.tag}</p>
@@ -163,7 +163,8 @@
 				<a href="{:U('Coupon/coupon',array('label_type'=>1),'','')}" class="foot_type_more" target=_blank>查看更多</a>
 			</div>
 			<div class="footsort_box">
-				<p class="title title2" id="foot_hot_title">最热优惠劵排行</p><p class="title" id="foot_new_title">最新优惠劵排行</p>
+				<!-- <p class="title title2" id="foot_hot_title">最热优惠劵排行</p><p class="title" id="foot_new_title">最新优惠劵排行</p> -->
+				<span class="title title2" id="foot_hot_title">最热优惠劵排行</span><span class="title" id="foot_new_title">最新优惠劵排行</span>
 				<ul id="foot_hot_ul">
                 <foreach name="eat_coupons" item="hcoupon" key="k">
 
@@ -229,9 +230,9 @@
 					<else />
 						<li>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title">{$coupon.name}</a>
-						<p class="one">{$coupon.description}</p>
-						<p class="two">{$coupon.title}</p>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title" title="{$coupon.name}">{$coupon.name}</a>
+						<p class="one" title="{$coupon.description}">{$coupon.description}</p>
+						<p class="two" title="{$coupon.title}">{$coupon.title}</p>
 						<p class="three">下载：{$coupon.download_times}次</p>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download">立即下载</a>
 						<p class="hidden_location">{$coupon.tag}</p>
@@ -242,7 +243,8 @@
 				<a href="{:U('Coupon/coupon',array('label_type'=>2),'','')}" class="foot_type_more">查看更多</a>
 			</div>
 			<div class="footsort_box">
-				<p class="title title2" id="ent_hot_title">最热优惠劵排行</p><p class="title" id="ent_new_title">最新优惠劵排行</p>
+				<!-- <p class="title title2" id="ent_hot_title">最热优惠劵排行</p><p class="title" id="ent_new_title">最新优惠劵排行</p> -->
+				<span class="title title2" id="ent_hot_title">最热优惠劵排行</span><span class="title" id="ent_new_title">最新优惠劵排行</span>
 				<ul id="ent_hot_ul">
                 <foreach name="play_coupons" item="hcoupon" key="k">
                 	<if condition="$k eq 0">
@@ -307,9 +309,9 @@
 					<else />
 						<li>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title">{$coupon.name}</a>
-						<p class="one">{$coupon.description}</p>
-						<p class="two">{$coupon.title}</p>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title" title="{$coupon.name}">{$coupon.name}</a>
+						<p class="one" title="{$coupon.description}">{$coupon.description}</p>
+						<p class="two" title="{$coupon.title}">{$coupon.title}</p>
 						<p class="three">下载：{$coupon.download_times}次</p>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download">立即下载</a>
 						<p class="hidden_location">{$coupon.tag}</p>
@@ -320,7 +322,8 @@
 				<a href="{:U('Coupon/coupon',array('label_type'=>3),'','')}" class="foot_type_more">查看更多</a>
 			</div>
 			<div class="footsort_box">
-				<p class="title title2" id="life_hot_title">最热优惠劵排行</p><p class="title" id="life_new_title">最新优惠劵排行</p>
+		<!-- 		<p class="title title2" id="life_hot_title">最热优惠劵排行</p><p class="title" id="life_new_title">最新优惠劵排行</p> -->
+				<span class="title title2" id="life_hot_title">最热优惠劵排行</span><span class="title" id="life_new_title">最新优惠劵排行</span>
 				<ul id="life_hot_ul">
                 <foreach name="life_coupons" item="hcoupon" key="k">
                 	<if condition="$k eq 0">

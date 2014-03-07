@@ -1,9 +1,22 @@
 <include file="Account:account_tmp_top" title="我的惠桂林-我的优惠劵"/>
 <load href="__PUBLIC__/css/mycoupon.css" />
 	<ul class="expire_filter_box">
-		<li><a href="/index.php/Account/mycoupon" class="hover">全部</a></li>
-		<li><a href="/index.php/Account/mycoupon?status=1">未到期</a></li>
-		<li><a href="/index.php/Account/mycoupon?status=0">已到期</a></li>
+		<if condition="$_GET['status'] eq ''">
+			<li><a href="{:U('Account/mycoupon')}" class="hover">全部</a></li>
+		<else />
+			<li><a href="{:U('Account/mycoupon')}">全部</a></li>
+		</if>
+		<if condition="$_GET['status'] eq '1'">
+			<li><a href="{:U('Account/mycoupon',array('status' => 1),'','')}" class="hover">未到期</a></li>
+		<else />
+			<li><a href="{:U('Account/mycoupon',array('status' => 1),'','')}">未到期</a></li>
+		</if>
+		<if condition="$_GET['status'] eq '2'">
+			<li><a  href="{:U('Account/mycoupon',array('status' => 2),'','')}" class="hover">已到期</a></li>
+		<else />
+			<li><a  href="{:U('Account/mycoupon',array('status' => 2),'','')}">已到期</a></li>
+		</if>
+		
 	</ul>
 	<div class="myconpon_items">
 		<table>

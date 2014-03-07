@@ -1520,6 +1520,8 @@ input{
 	background-position: 0px -1300px;
 }
 
+
+
 #UserForgetpwd_box{
 	display: none;
 	background: white;
@@ -1609,6 +1611,172 @@ input{
 	top: 133px;
 	left: 120px;
 }
+
+
+#Userlogin_box #modify_pwd_box{
+	display: none;
+	width: 627px;
+	height: 318px;
+	position: relative;
+}
+#Userlogin_box #modify_pwd_box  #btn_modify{
+	position: absolute;
+	top: 230px;
+	left:100px;
+	width: 256px;
+	height:46px;
+	border-radius: 5px;
+	background:#ED5565;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 46px;
+}
+#Userlogin_box #modify_pwd_box #forgetpwd{
+	position: absolute;
+	top: 97px;
+	left:370px;
+	color: #4467A3;
+	
+}
+#Userlogin_box #modify_pwd_box  #vcode_not_clear{
+	position: absolute;
+	top: 155px;
+	left:370px;
+	color: #4467A3;
+}
+#Userlogin_box #modify_pwd_box  #vcode_img{
+	position: absolute;
+	top: 150px;
+	left:420px;
+	color: #4467A3;
+}
+#Userlogin_box #modify_pwd_box  p.one{
+	position: absolute;
+	top: 30px;
+	left: 40px;
+	font-size: 14px;
+}
+#Userlogin_box #modify_pwd_box  p.two{
+	position: absolute;
+	top: 90px;
+	left: 40px;
+	font-size: 14px;
+}
+#Userlogin_box #modify_pwd_box  p.three{
+	position: absolute;
+	top: 150px;
+	left: 40px;
+	font-size: 14px;
+}
+#Userlogin_box #modify_pwd_box  p.four{
+	position: absolute;
+	top: 202px;
+	left: 120px;
+}
+#Userlogin_box #modify_pwd_box  p.five{
+	position: absolute;
+	top: 202px;
+	left: 250px;
+}
+#Userlogin_box #modify_pwd_box  p.six{
+	position: absolute;
+	top: 290px;
+	left: 163px;
+}
+#Userlogin_box #modify_pwd_box  p.six a{
+	color: #4467A3;
+	font-weight: bold;
+}
+#Userlogin_box #modify_pwd_box  p.seven{
+	color: #F14B2B;
+	font-size: 12px;
+	background: url(../images/ico_13.png) no-repeat;
+	position: absolute;
+	top: 35px;
+	left: 370px;
+	padding-left: 20px;
+	display: none;
+	
+}
+#Userlogin_box #modify_pwd_box  p.eight{
+	color: #F14B2B;
+	font-size: 12px;
+	background: url(../images/ico_13.png) no-repeat;
+	position: absolute;
+	top: 97px;
+	left: 450px;
+	padding-left: 20px;
+	display: none;
+	
+}
+#Userlogin_box #modify_pwd_box  p.nine{
+	color: #F14B2B;
+	font-size: 12px;
+	background: url(../images/ico_13.png) no-repeat;
+	position: absolute;
+	top: 155px;
+	right:45px;
+	padding-left: 20px;
+	display: none;
+	
+}
+#Userlogin_box #modify_pwd_box  p.ten{
+	color: #F14B2B;
+	font-size: 12px;
+	background: url(../images/ico_13.png) no-repeat;
+	position: absolute;
+	top: 245px;
+	left: 370px;
+	padding-left: 20px;
+	display: none;
+	
+}
+#Userlogin_box #modify_pwd_box  input{
+	border: 1px solid #C9C9C9;
+	border-radius: 5px;
+	width: 256px;
+	height: 41px;
+	line-height: 41px;
+}
+#Userlogin_box #modify_pwd_box  input.one{
+	position: absolute;
+	top: 20px;
+	left: 100px;
+
+}
+#Userlogin_box #modify_pwd_box  input.two{
+	position: absolute;
+	top: 80px;
+	left: 100px;
+}
+#Userlogin_box #modify_pwd_box  input.three{
+	position: absolute;
+	top: 140px;
+	left: 100px;
+}
+#Userlogin_box #modify_pwd_box  input.four{
+	position: absolute;
+	top: 200px;
+	left: 100px;
+	width: 20px; width/*\**/:16px \9;	/*IE6,IE7,IE8识别*/
+	height: 20px; height/*\**/:16px \9; /*IE6,IE7,IE8识别*/
+	border:none;
+}
+#Userlogin_box #modify_pwd_box  input.five	{
+	position: absolute;
+	top: 200px;
+	left: 230px;
+	width: 20px; width/*\**/:15px \9;	/*IE6,IE7,IE8识别*/
+	height: 20px; height/*\**/:15px \9; /*IE6,IE7,IE8识别*/
+	border:none;
+}
+
+
+
+
+
 #top_logo_box a{
 }
 #top_logo_box a #logo{
@@ -1820,10 +1988,12 @@ input{
 	outline: none;
 }
 #top_nav #top_nav_box #search_box #search_con{
+	
 	width: 198px;
 	position: absolute;
-	top: 3px;
-	left: 7px;
+	margin-top: 3px;
+	margin-left: 7px;
+	border: 0px solid white;
 
 	height: 25px; height/*\**/: 5px \9;
 	
@@ -1929,4 +2099,5 @@ input{
 #bottom_info #bottom_box .p_box a:hover{
 	text-decoration: underline;
 }
+
 /*最底部区域结束*/

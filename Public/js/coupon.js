@@ -75,7 +75,6 @@ $(function(){
 
      		 		$.post(ajaxPostURL+"Coupon/sendCouponCode", { phone_number: phone, 
 						vcode: vcode,coupon_id:coupon_id},function(data){
-
 					 	if(data.status == 2){
 					 		$('#hidden_error_tips_vcode').show().text('验证码错误');
 					 	}else if(data.status == 0){

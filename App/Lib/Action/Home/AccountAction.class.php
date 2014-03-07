@@ -9,12 +9,13 @@ class AccountAction extends Action {
     );
     public function mycoupon(){
         if (empty($_SESSION['user']['user_id'])) {
-            echo "eeee";
+            $this->error('此页面需要登录才能访问，请先登录！');
             return TRUE;
         }
         $pageSize = 10;
         $nowPage = !empty($_GET['page']) ? $_GET['page'] : 0;
         $status = isset($_GET['status']) ? (int) $_GET['status'] : "0,1,2";
+       
         $offset = $pageSize * $page;
         $userId = $_SESSION['user']['user_id'];
         $userCouponHelper = new UserCouponModel();
@@ -521,7 +522,6 @@ class AccountAction extends Action {
                 'evaluation' => $comment,
                 'rate' => $rate,
                 'createtime' => date("Y-m-d H:i:s"),
-            ),
             );
         $helper = new CouponEvaluationModel();
         $r = $helper->updateInfo($params);
