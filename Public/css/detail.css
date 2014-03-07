@@ -263,7 +263,7 @@
 #main #coupon_box div.other_coupons_box p.bottom{
 	padding-bottom: 30px;
 }
-#main #coupon_box div.other_coupons_box p.other_coupon_content span{
+#main #coupon_box div.other_coupons_box p.other_coupon_content a{
 	color: #666;
 }
 #main #coupon_box div.business_detail_info_box{
@@ -411,9 +411,15 @@
 	margin-right: 18px;
 	margin-top: 10px;
 }
+#main #coupon_box div.business_detail_info_box div.business_intro img{
+	width: 644px;
+	margin-left: 19px;
+	margin-top: 20px;
+}
 #main #coupon_box div.business_detail_info_box div.show_comment{
 	margin-top: 20px;
 	display: none;
+
 }
 #main #coupon_box div.business_detail_info_box div.show_comment div.comment_performance{
 	margin-left: 18px;

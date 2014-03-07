@@ -42,7 +42,7 @@
 					<p class="view_number">查看次数：<span>431234</span></p>
 				</div>
 				<div class="coupon_desc_box">
-					<p class="coupon_title">{$coupon.title}<!-- <span>{$coupon.title}</span> --></p>
+					<p class="coupon_title">{$coupon.name}<!-- <span>{$coupon.title}</span> --></p>
 				</div>
 
 				<a href="{:U("Coupon/printCoupon","","","")}/{$coupon.coupon_id}" class="print_coupon_btn">打印此优惠券</a>
@@ -52,7 +52,7 @@
 				<img src="__PUBLIC__/{$coupon.picture_path}" class="coupon_pic">
 				<div class="coupon_detail_desc_box">
 					<p class="desc_title">详细介绍</p>
-					<p class="desc_content"><span>{$coupon.description}</span></p>
+					<p class="desc_content"><span>{$coupon.message}</span></p>
 					<div>
 						<p>使用须知</p>
 						<p>有效期：<span>{$coupon.start_time}——{$coupon.end_time}</span></p>
@@ -93,7 +93,7 @@
 			<div class="other_coupons_box">
 				<p class="other_coupon_title">本商户其他优惠券</p>
                 <foreach name="other_coupon" item="ocoupon">
-				<p class="other_coupon_content">[{$partner.name}]<span>{$ocoupon.title}</span></p>
+				<p class="other_coupon_content">[{$partner.name}]<a href="{:U("Coupon/detail","","","")}/{$ocoupon.coupon_id}">{$ocoupon.name}</a></p>
                 </foreach>
 			</div>
 			<div class="business_detail_info_box">
@@ -141,9 +141,14 @@
 					</div>
 				</div>
 				<div class="business_intro">
-					<p class="title">商户介绍</p>
+					<p class="title">商家介绍</p>
 					<p class="business_name">{$partner.name}</p>
-					<p class="business_intro_detail">{$partner.decription}</p>
+					<p class="business_intro_detail">{$partner.description}</p>
+					 <foreach name="partnerPictures" item="partnerPicture">
+							<img src="__PUBLIC__/{$partnerPicture.picture_path}" alt="" />
+                     </foreach>
+					
+
 				</div>
 				<div class="show_comment">
 					<div class="comment_performance">

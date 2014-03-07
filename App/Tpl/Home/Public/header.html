@@ -107,7 +107,7 @@
 			<else />
 			
 			<ul id="login_box">
-				<li><a class="username" href="{:U("Home/Account/mysetting")}">您好,{$user.nickname}</a></li>
+				<li><a class="username" href="{:U("Home/Account/mysetting")}">您好,{$_SESSION['user']['nickname']}</a></li>
 				<li id="person_center_menu"><a href="{:U("Home/Account/mycoupon")}" class="menu">我的惠桂林</a></li>
 			</ul>
 			<ul id="login_dropdownlist">

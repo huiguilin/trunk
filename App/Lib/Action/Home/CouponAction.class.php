@@ -133,6 +133,7 @@ class CouponAction extends Action {
         $couponHelper = new CouponModel();
         $ids = array((int)$_GET['_URL_'][2]);
         $couponInfo = $couponHelper->getCouponByCouponId($ids);
+
         if (empty($couponInfo)) {
             return TRUE;
         }
@@ -144,8 +145,19 @@ class CouponAction extends Action {
         );
         $catInfo = $catHelper->getCategoryInfo($params);
         $id = (int)$_GET['_URL_'][2];
-        $otherCoupons = $couponHelper->getCouponByPartnerId($id);
+        
         $partnerIds = array($couponInfo[0]['partner_id']);
+
+        $partnerPictureHelper = new PartnerPictureModel(); 
+        $partnerPictureInfo = $partnerPictureHelper->getPartnerPictureByPartnerId($partnerIds);
+        $allCoupons = $couponHelper->getCouponByPartnerId($couponInfo[0]['partner_id']);
+        $otherCouponsIds = array();
+        foreach ($allCoupons as $k => $v) {
+            if($v['coupon_id'] != $_GET['_URL_'][2]){
+               array_push($otherCouponsIds, $v['coupon_id']);
+            }
+        }
+        $otherCoupons = $couponHelper->getCouponByCouponId($otherCouponsIds);
         $partnerHelper = new PartnerModel();
         $partnerInfo = $partnerHelper->getPartnerByPartnerId($partnerIds);
         $helper = new EvaluationModel();
@@ -161,7 +173,7 @@ class CouponAction extends Action {
         $this->assign("evaluation", $eInfo);
         $this->assign("cat_info", $catInfo[0]);
         $this->assign("label_info", $this->labelType[$couponInfo[0]['label_type']]);
-
+        $this->assign("partnerPictures",$partnerPictureInfo);
         $this->display();
     }
 
@@ -216,8 +228,9 @@ class CouponAction extends Action {
 
         $code = mt_rand(1, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
         $couponName = $couponInfo[0]['name'];
-        $couponDesc = $couponInfo[0]['description'];
+        $couponDesc = $couponInfo[0]['message'];
         $result = $this->send($phoneNumber, $code, $couponName, $couponId,$couponDesc);
+
 
         //下载成功后数据库中download_times加1
         $helper = new CouponModel();
@@ -251,24 +264,29 @@ class CouponAction extends Action {
                     'info' => '发送失败',
                     );
             return $data; 
-        }
-        $addData = array(
-            'user_id' => $_SESSION['user']['user_id'],
-            'coupon_id' => $couponId,
-            'status' => 1,
-            'code' => $code,
-            'createtime' => date('Y-m-d H:i:s'),
-            'evaluated' => 0,
-        );
-        $helper = new UserCouponModel();
-        $r = $helper->addUserCoupon($addData);
-        $data = array(
-            'status' => 1,
-            'info' => '发送成功',
-        );
-        return $data;
-    }
+        }else{
 
+            $data = array(
+                    'status' => 1,
+                    'info' => '发送成功',
+                ); 
+            if(!empty($_SESSION['user']['user_id'])){     //判断匿名发送，添加我的优惠券
+                $addData = array(
+                'user_id' => $_SESSION['user']['user_id'],
+                'coupon_id' => $couponId,
+                'status' => 1,
+                'code' => $code,
+                'createtime' => date('Y-m-d H:i:s'),
+                'evaluated' => 0,
+                );
+                $helper = new UserCouponModel();
+                $r = $helper->addUserCoupon($addData);
+                
+            }
+            return $data;
+        }
+        
+    }
     private function mergeData($cmsInfo, $info, $key, $cmsKey = 'id') {
         $info = ArrayKeys($info, $key);
         $result = array();

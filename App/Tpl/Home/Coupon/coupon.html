@@ -194,9 +194,9 @@
                 <foreach name="coupons" item="coupon" key="k">
                  <li>
 					<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}"></a>
-					<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
-					<p class="one">{$coupon.description}</p>
-					<p class="two">{$coupon.title}</p>
+					<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title" title="{$coupon.name}">{$coupon.name}</a>
+					<p class="one" title="{$coupon.description}">{$coupon.description}</p>
+					<p class="two" title="{$coupon.title}">{$coupon.title}</p>
 					<p class="three">下载：{$coupon.download_times}次</p>
 					<a href="" class="download" couponid="{$coupon.coupon_id}">立即下载</a>
 					<p class="hidden_location">{$coupon.tag}</p>

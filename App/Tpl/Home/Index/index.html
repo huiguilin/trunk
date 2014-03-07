@@ -110,7 +110,7 @@
 				<ul>
                 <foreach name="hot_partners" item="hpartner">
 					<li>
-						<a href="">{$hpartner.name}</a>
+						<a href="{:U('coupon/coupon')}">{$hpartner.name}</a>
 						<img src="__PUBLIC__/{$hpartner.header_path}">
 					</li>
                 </foreach>
@@ -149,10 +149,10 @@
 					<else />
 						<li>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box" target=_blank><img src="__PUBLIC__/{$coupon.picture_path}"></a>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title">{$coupon.name}</a>
-						<p class="one">{$coupon.description}</p>
-						<p class="two">{$coupon.title}</p>
-						<p class="three">下载：{$coupon.download_times}次</p>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title" title="{$coupon.name}">{$coupon.name}</a>
+						<p class="one" title="{$coupon.description}">{$coupon.description}</p>
+						<p class="two" title="{$coupon.title}">{$coupon.title}</p>
+						<p class="three" >下载：{$coupon.download_times}次</p>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download">立即下载</a>
 
 						<p class="hidden_location">{$coupon.tag}</p>
@@ -229,9 +229,9 @@
 					<else />
 						<li>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title">{$coupon.name}</a>
-						<p class="one">{$coupon.description}</p>
-						<p class="two">{$coupon.title}</p>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title" title="{$coupon.name}">{$coupon.name}</a>
+						<p class="one" title="{$coupon.description}">{$coupon.description}</p>
+						<p class="two" title="{$coupon.title}">{$coupon.title}</p>
 						<p class="three">下载：{$coupon.download_times}次</p>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download">立即下载</a>
 						<p class="hidden_location">{$coupon.tag}</p>
@@ -307,9 +307,9 @@
 					<else />
 						<li>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title">{$coupon.name}</a>
-						<p class="one">{$coupon.description}</p>
-						<p class="two">{$coupon.title}</p>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title" title="{$coupon.name}">{$coupon.name}</a>
+						<p class="one" title="{$coupon.description}">{$coupon.description}</p>
+						<p class="two" title="{$coupon.title}">{$coupon.title}</p>
 						<p class="three">下载：{$coupon.download_times}次</p>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download">立即下载</a>
 						<p class="hidden_location">{$coupon.tag}</p>
