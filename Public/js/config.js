@@ -6,8 +6,6 @@
 // 	// alert(111);
 // });
 
-var ajaxPostURL = "http://localhost/trunk/index.php/";
-var loginSucessURL = "http://localhost";
 // $(function(){
 // 	var Current_URL = window.location.href;
 // 	Current_URL=Current_URL.substr(7,1);//截取从首个字符开始的15个字符 
@@ -23,3 +21,5 @@ var loginSucessURL = "http://localhost";
 
 
 
+var ajaxPostURL = "http://test.huiguilin.com/index.php/";
+var loginSucessURL = "http://test.huiguilin.com";
