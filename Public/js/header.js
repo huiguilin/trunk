@@ -106,6 +106,7 @@ $(function(){
 	// 用户注册弹框效果结束
 	//用户登录弹窗效果
 	$('#Userlogin').click(function(event) {
+		$('#m_bottom_box').css('display', 'none');  //隐藏修改密码界面
 		$('#Userlogin_box').bPopup({
            	modalClose: false,
 	        opacity: 0.6,
@@ -209,6 +210,7 @@ $(function(){
 		$('#u_bottom_box').css('display', 'none');
 		$('#Userlogin_box #u_top_box p').text("忘记密码");
 		$('#UserForgetpwd_box').css('display', 'block');
+		$('#modify_pwd_box').css('display', 'none');
 		return false;
 	});
 	//忘记密码弹窗切换结束
@@ -218,9 +220,109 @@ $(function(){
 		$('#u_bottom_box').css('display', 'block');
 		$('#Userlogin_box #u_top_box p').text("用户登录");
 		$('#UserForgetpwd_box').css('display', 'none');
+		$('#modify_pwd_box').css('display', 'none');
 		return false;
 	});
 	//忘记密码操作后返回登录界面结束
+	//忘记密码页面的验证
+	// $('#cellphone_send_btn').click(function(event) {
+	// 	var cellphone=$('#cellphone_no').val();
+	// 	if(cellphone ==""){
+	// 		$('#forgetpwd_hidebox01').css('display', 'block');
+	// 		$('#forgetpwd_hidebox01').text('请输入注册时填写的手机号码');
+	// 	}
+	// 	else{
+	// 		var reg= /^(1)[0-9]{10}$/;
+	// 		if(!reg.test(cellphone)){
+	// 			$('#forgetpwd_hidebox01').css('display', 'block');
+	// 			$('#forgetpwd_hidebox01').text('输入的手机号格式不正确，请重新输入');
+	// 		}else{
+	// 			alert('跳转到输入手机验证码页面');
+	// 		}
+	// 	}
+	// 	return false;
+	// });
+	// $('#email_send_btn').click(function(event) {
+	// 	var email=$('#email_no').val();
+	// 	if(email ==""){
+	// 		$('#forgetpwd_hidebox02').css('display', 'block');
+	// 		$('#forgetpwd_hidebox02').text('请输入注册时填写的邮箱地址');
+	// 	}
+	// 	else{
+	// 		var reg= /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+	// 		if(!reg.test(email)){
+	// 			$('#forgetpwd_hidebox02').css('display', 'block');
+	// 			$('#forgetpwd_hidebox02').text('输入的邮箱格式不正确，请重新输入');
+	// 		}else{
+	// 			alert('跳转到邮箱地址页面');
+	// 		}
+	// 	}
+	// 	return false;
+	// });
+	
+	//验证用户修改密码信息以及执行修改
+    $('#btn_modify').click(function(event) {
+    	var password = $('#one').val();
+    	var password1 = $('#two').val();
+    	var inputCode = $('#three').val();
+    	if (password == "") {
+    		$('#hidden01').css('display','block');
+    		$('#hidden01').text('密码为空');
+    		return false;
+    	}if (password1 == "") {
+    		$('#hidden02').css('display','block');
+    		$('#hidden02').text('确认密码为空');
+    		return false;
+    	}if (password != password1) {
+    		$('#hidden02').css('display','block');
+    		$('#hidden02').text('两次密码输入不一致');
+    		return false;
+    	}if (inputCode == "") {
+    		$('#hidden03').css('display','block');
+    		$('#hidden03').text('验证码为空');
+    		return false;
+    	}if ($('#one').val().length < 6 || $('#two').val().length < 6) {
+    		$('#hidden01').css('display','block');
+    		$('#hidden01').text('密码至少6位');
+    		return false;
+    	}
+    		$.post(ajaxPostURL+"User/modifyPwd", {password: password,password1: password1,checkCode: inputCode}, function(data) {
+    			// alert(ajaxPostURL+"User/modifyPwd");
+    			//alert(data.status);
+    			//alert(data.info);
+    			if (data.status == 6) {
+    				$('#hidden01').css('display','block');
+    				$('#hidden01').text(data.info);
+    			}if (data.status == 7) {
+    				$('#hidden01').css('display','block');
+    				$('#hidden01').text(data.info);
+    			}if (data.status == 8) {
+    				$('#hidden03').css('display','block');
+    				$('#hidden03').text(data.info);
+    			}
+    			if (data.status == 9) {
+    				$('#hidden03').css('display','block');
+    				$('#hidden03').text(data.info);
+    			}if (data.status == 10) {
+    				$('#hidden01').css('display','block');
+    				alert(data.info+",返回登录窗口");
+    				//修改密码弹窗效果结束,返回登录窗口
+    				$('#u_middle_box').css('display', 'block');
+			    	$('#u_bottom_box').css('display', 'block');
+			    	$('#UserForgetpwd_box').css('display', 'none');
+			    	$('#Userlogin_box #u_top_box p').text("用户登录");
+			    	$('#modify_pwd_box').css('display', 'none');
+    			}if (data.status == 11) {
+    				$('#hidden01').css('display','block');
+    				alert(data.info);
+    			}if (data.status == 12) {
+    				$('#hidden01').css('display','block');
+    				$('#hidden01').text(data.info);
+    			}
+    		});
+    	return false;
+    });
+
 	//忘记密码页面的验证
 	$('#cellphone_send_btn').click(function(event) {
 		var cellphone=$('#cellphone_no').val();
@@ -234,28 +336,103 @@ $(function(){
 				$('#forgetpwd_hidebox01').css('display', 'block');
 				$('#forgetpwd_hidebox01').text('输入的手机号格式不正确，请重新输入');
 			}else{
-				alert('跳转到输入手机验证码页面');
+
+				$.post(ajaxPostURL+"User/forgetPwd", {user_cellphone: cellphone}, function(data) {
+					/*optional stuff to do after success */
+					//alert(data.info);
+					//alert(cellphone);
+					//判断手机号是否注册，没注册则不跳转到修改密码页面
+					if (data.status == 12) {
+						$('#forgetpwd_hidebox01').css('display', 'block');
+						$('#forgetpwd_hidebox01').text(data.info);
+						return false;
+					}else{
+						if (data.status == 1) {
+							alert(data.info);
+						}
+						$('#u_middle_box').css('display', 'none');
+						$('#u_bottom_box').css('display', 'none');
+						$('#m_bottom_box').css('display','none');
+						$('#UserForgetpwd_box').css('display', 'none');
+						$('#Userlogin_box #u_top_box p').text("修改密码");
+						$('#modify_pwd_box').css('display', 'block');						
+					}
+					
+				});
+				//alert("回调函数之外");
+
+					//忘记密码弹窗效果关闭
+				    //用户修改密码弹窗切换
+					// $('#u_middle_box').css('display', 'none');
+					// $('#u_bottom_box').css('display', 'none');
+					// $('#m_bottom_box').css('display','none');
+					// $('#UserForgetpwd_box').css('display', 'none');
+					// $('#Userlogin_box #u_top_box p').text("修改密码");
+					// $('#modify_pwd_box').css('display', 'block');
+				//alert('跳转到输入手机验证码页面');
 			}
 		}
 		return false;
 	});
 	$('#email_send_btn').click(function(event) {
+
 		var email=$('#email_no').val();
-		if(email ==""){
+		
+		if(email == ""){
 			$('#forgetpwd_hidebox02').css('display', 'block');
 			$('#forgetpwd_hidebox02').text('请输入注册时填写的邮箱地址');
+	
+			return false;
 		}
 		else{
 			var reg= /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
 			if(!reg.test(email)){
 				$('#forgetpwd_hidebox02').css('display', 'block');
 				$('#forgetpwd_hidebox02').text('输入的邮箱格式不正确，请重新输入');
+				return false;
 			}else{
-				alert('跳转到邮箱地址页面');
+
+				//alert(ajaxPostURL+"User/forgetPwd");
+				$.post(ajaxPostURL+"User/forgetPwd", {user_email: email}, function(data) {
+					/*optional stuff to do after success */
+					//alert(data.email);
+					// alert(data);
+					//判断邮箱是否注册，没注册则不跳转到修改密码页面
+					if (data.status == 5) {
+						$('#forgetpwd_hidebox02').css('display', 'block');
+						$('#forgetpwd_hidebox02').text(data.info);
+						return false;
+					}else{
+						if (data.status == 13) {
+							alert(data.info);
+						}
+						$('#u_middle_box').css('display', 'none');
+						$('#u_bottom_box').css('display', 'none');
+						$('#m_bottom_box').css('display','none');
+						$('#UserForgetpwd_box').css('display', 'none');
+						$('#Userlogin_box #u_top_box p').text("修改密码");
+						$('#modify_pwd_box').css('display', 'block');
+					}
+					
+				});
+				//alert("回调函数之外");
+
+					// //忘记密码弹窗效果关闭
+				    //用户修改密码弹窗切换
+					// $('#u_middle_box').css('display', 'none');
+					// $('#u_bottom_box').css('display', 'none');
+					// $('#m_bottom_box').css('display','none');
+					// $('#UserForgetpwd_box').css('display', 'none');
+					// $('#Userlogin_box #u_top_box p').text("修改密码");
+					// $('#modify_pwd_box').css('display', 'block');
 			}
 		}
 		return false;
 	});
+
+
+
+
 	//用户注册验证码看不清特效
 	$('#Userreg_box #u_bottom #email_box form #regemail_vcode_not_clear').click(function(event) {
 		var imgsrc=$('#Userreg_box #u_bottom #email_box form img.one').attr("src");
