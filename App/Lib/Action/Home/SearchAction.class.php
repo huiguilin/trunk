@@ -119,7 +119,7 @@ class SearchAction extends Action {
         }
         //first search
         $params = array(
-            'cat_name' => $searchKey,
+            'cat_name_like' => $searchKey,
         );
         $catHelper = new CategoryModel();
         $couponHelper = new CouponModel();
@@ -145,6 +145,22 @@ class SearchAction extends Action {
         foreach ($sCouponInfo AS $key => $value) {
             $couponId = $sCouponInfo[$key]['coupon_id'];
             $couponInfo[$couponId] = $sCouponInfo[$key];
+        }
+
+        foreach ($this->labelType AS $key => $value) {
+            if ($value == $searchKey) {
+                $labelType = $key;
+            }
+        }
+        if (!empty($labelType)) {
+            $params = array(
+                    'label_type' => $labelType,
+                    );
+            $tCouponInfo = $couponHelper->getCoupon($params);
+            foreach ($tCouponInfo AS $key => $value) {
+                $couponId = $tCouponInfo[$key]['coupon_id'];
+                $couponInfo[$couponId] = $tCouponInfo[$key];
+            }
         }
         $couponInfo = array_values($couponInfo);
         return $couponInfo;
