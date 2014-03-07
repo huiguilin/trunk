@@ -96,6 +96,7 @@ class SearchAction extends Action {
         $this->assign("hot_coupons", $hotCouponInfo);
         $this->assign("ads", $adInfo);
         $this->assign("get_info", $_GET);
+        $this->assign("total_number", count($couponInfo));
         $this->display();
     }
 
