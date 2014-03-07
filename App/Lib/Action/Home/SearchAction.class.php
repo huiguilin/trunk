@@ -69,7 +69,9 @@ class SearchAction extends Action {
         }
 
         $couponHelper = new CouponModel();
-        #$couponInfo = $couponHelper->getCoupon($params);
+        if (empty($couponInfo)) {
+            $couponInfo = $couponHelper->getCoupon($params);
+        }
         if ($params['order_by'] != 'download_times DESC') {
             $params['order_by'] = 'download_times DESC';
         }
