@@ -70,7 +70,8 @@ class CouponModel extends Model {
             $str .= " AND tag like '%{$params['tag']}%'";
         }
         if (isset($params['name_like'])) {
-            $str .= " AND name like '%{$params['name']}%'";
+            $str .= " OR name like '%{$params['name_like']}%'";
+            $str = "tag like '%{$params['tag']}%' OR name like '%{$params['name_like']}%'";
         }
         if (isset($params['cat_id'])) {
             $str .= " AND cat_id  IN ({$params['cat_id']})";
