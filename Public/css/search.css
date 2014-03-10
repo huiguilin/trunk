@@ -30,38 +30,34 @@
 	margin-right: 5px;
 }
 #main #classification_location_box{
-	height: 190px;
-	position: relative;
+
 }
 #main #classification_location_box #content_box{
 	width: 944px;
-	height: 182px;
-	position: absolute;
-	top: 8px;
-	left: 8px;
+	margin-left: 8px;
+	margin-top: 8px;
 	background-color: white;
 	border-radius: 5px;
 }
 #main #classification_location_box #content_box #classification_box{
-	
-	height: 87px;
-	position: relative;
+	padding-bottom: 10px;
 }
 #main #classification_location_box #content_box #classification_box p{
 	height: 30px;
 	line-height: 30px;
-	position: absolute;
-	top: 0px;
-	left: 10px;
 	color: #ED5565;
 	font-weight: bold;
 	font-size: 14px;
+	width: 54px;
+	padding-left: 10px;
+	display: inline-block;
+	vertical-align: top;/*解决firefoxinline-block的空隙bug*/
+
 }
 #main #classification_location_box #content_box #classification_box ul.parent_classification{
 	height: 30px;
-	position: absolute;
-	top: 0px;
-	left: 70px;
+	line-height: 30px;
+	display: inline-block;
 }
 #main #classification_location_box #content_box #classification_box ul.parent_classification li{
 	height: 30px;
@@ -74,27 +70,28 @@
 	line-height: 26px;
 	margin-top: 2px;
 	text-align: center;
-	width: 60px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 6px;
+	margin-right: 6px;
 }
-#main #classification_location_box #content_box #classification_box ul.parent_classification li a.hover{
+#main #classification_location_box #content_box #classification_box ul.parent_classification li a.current{
 	background-color: #4467A3;
 	color: white;
-	border-radius: 5px;
+	border-radius: 3px;
 }
 #main #classification_location_box #content_box #classification_box div{
-	position: absolute;
-	top: 30px;
-	left: 70px;
-	height: 52px;
-	background: url(../images/bg_ico_01.png) no-repeat 0px 0px;
+	background: url(../images/bg_ico_01.png) no-repeat 80px 0px;
+	/*display: none;*/
+
 }
 #main #classification_location_box #content_box #classification_box div ul.child_classification{
-	border:1px solid #DBE1EC;
-	height: 40px;
 	margin-top: 10px;
 	background: #ECEFF5;
+	margin-left: 70px;
 	border-radius: 5px;
-
+	margin-right: 10px;
+	border:1px solid #DBE1EC;
 }
 #main #classification_location_box #content_box #classification_box div ul.child_classification li{
 	float: left;
@@ -102,11 +99,9 @@
 	background: url(../images/bg_ico_02.png) no-repeat 0px -491px;
 	padding-right: 15px;
 	padding-left: 15px;
-
 }
 #main #classification_location_box #content_box #classification_box div ul.child_classification li.no_right_border{
 	border-right: none;
-
 }
 #main #classification_location_box #content_box #classification_box div ul.child_classification li a{
 	color: #4467A3;
@@ -115,33 +110,33 @@
 	line-height: 26px;
 	margin-top: 7px;
 	text-align: center;
+	padding-left: 5px;
+	padding-right: 5px;
 }
-#main #classification_location_box #content_box #classification_box div ul.child_classification li a.hover{
+#main #classification_location_box #content_box #classification_box div ul.child_classification li a.current{
 	background-color: #4467A3;
 	color: white;
-	border-radius: 5px;
+	border-radius: 3px;
 }
 #main #classification_location_box #content_box #location_box{
-	height: 92px;
-	position: relative;
+	padding-bottom: 10px;
 }
 #main #classification_location_box #content_box #location_box p{
 	height: 30px;
 	line-height: 30px;
-	position: absolute;
-	top: 0px;
-	left: 10px;
 	color: #ED5565;
 	font-weight: bold;
 	font-size: 14px;
+	width: 54px;
+	padding-left: 10px;
+	display: inline-block;
+	vertical-align: top;/*解决firefoxinline-block的空隙bug*/
 
 }
 #main #classification_location_box #content_box #location_box ul.parent_classification{
 	height: 30px;
-	position: absolute;
-	top: 0px;
-	left: 70px;
-
+	line-height: 30px;
+	display: inline-block;
 }
 #main #classification_location_box #content_box #location_box ul.parent_classification li{
 	height: 30px;
@@ -154,27 +149,27 @@
 	line-height: 26px;
 	margin-top: 2px;
 	text-align: center;
-	width: 60px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 6px;
+	margin-right: 6px;
 }
-#main #classification_location_box #content_box #location_box ul.parent_classification li a.hover{
+#main #classification_location_box #content_box #location_box ul.parent_classification li a.current{
 	background-color: #4467A3;
 	color: white;
 	border-radius: 5px;
 }
 #main #classification_location_box #content_box #location_box div{
-	position: absolute;
-	top: 30px;
-	left: 70px;
-	height: 52px;
-	background: url(../images/bg_ico_01.png) no-repeat 50px 0;
-
+	background: url(../images/bg_ico_01.png) no-repeat 80px 0px;
+	/*display: none;*/
 }
 #main #classification_location_box #content_box #location_box div ul.child_classification{
 	border:1px solid #DBE1EC;
-	height: 40px;
 	background: #ECEFF5;
 	border-radius: 5px;
 	margin-top: 10px;
+	margin-left: 70px;
+	margin-right: 10px;
 }
 #main #classification_location_box #content_box #location_box div ul.child_classification li{
 	float: left;
@@ -193,8 +188,10 @@
 	line-height: 26px;
 	margin-top: 7px;
 	text-align: center;
+	padding-left: 5px;
+	padding-right: 5px;
 }
-#main #classification_location_box #content_box #location_box div ul.child_classification li a.hover{
+#main #classification_location_box #content_box #location_box div ul.child_classification li a.current{
 	background-color: #4467A3;
 	color: white;
 	border-radius: 5px;
@@ -277,21 +274,27 @@
 #main #coupon_box ul.coupon_content li p.one{
 	position: absolute;
 	top: 40px;
-	right: 9px;
+	left: 182px;
 	width: 152px;
+	height: 45px;
+	overflow: hidden;
 	
+
 }
 #main #coupon_box ul.coupon_content li p.two{
 	position: absolute;
-	top: 100px;
-	right: 9px;
+	top: 98px;
+	left: 182px;
 	width: 152px;
 	color: #999999;
+	height: 15px;
+	overflow: hidden;
+
 }
 #main #coupon_box ul.coupon_content li p.three{
 	position: absolute;
 	top: 122px;
-	right: 9px;
+	left: 182px;
 	width: 152px;
 	color: #999999;
 }
@@ -322,7 +325,10 @@
 	font-weight: bold;
 	position: absolute;
 	top: 13px;
-	right: 29px;
+	left: 182px;
+	height: 15px;
+	overflow: hidden;
+	
 }
 #main #coupon_box ul.coupon_content li a.download{
 	color: #ED5565;
@@ -340,6 +346,21 @@
 	position: absolute;
 	top: 0px;
 	right: 8px;
+}
+#main #coupon_box #recommend_box img{
+	margin-top: 20px;
+	margin-left: 84px;
+	margin-right: 84px;
+	height: 86px;
+	width: 86px;
+}
+#main #coupon_box #recommend_box p{
+	font-weight: bold;
+	margin-top: 20px;
+	margin-left: 42px;
+	margin-right: 42px;
+	width: 170px;
+	text-align: center;
 }
 #main #coupon_box #hot_coupon_box{
 	background: white;
@@ -367,7 +388,7 @@
 	margin-bottom: 5px;
 	position: relative;
 }
-#main #coupon_box #hot_coupon_box ul.hot_coupon li a{
+#main #coupon_box #hot_coupon_box ul.hot_coupon li a.title{
 	color: #ED5565;
 	font-weight: bold;
 	position: absolute;
@@ -382,12 +403,20 @@
 	position: absolute;
 	top: 27px;
 	left: 8px;
-	width: 170px;
+	width: 165px;
+	height: 45px;
+	overflow: hidden;
 }
-#main #coupon_box #hot_coupon_box ul.hot_coupon li img{
-	width: 62px;
-	height: 62px;
+#main #coupon_box #hot_coupon_box ul.hot_coupon li a.img_box{
 	position: absolute;
 	top: 10px;
 	right: 5px;
+	width: 62px;
+	height: 62px;
+	display: block;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon li a.img_box img{
+	width: 62px;
+	height: 62px;
+	border:0px;
 }

@@ -12,6 +12,7 @@ class SearchAction extends Action {
     public function search(){
         $searchKey = !empty($_GET['search_con']) ? $_GET['search_con'] : "";
         $couponInfo = $this->hackSearchWords($searchKey);
+
         $locationId = !empty($_GET['location']) ? $_GET['location'] : 0;
         $params = array();
         if (!empty($locationId)) {
@@ -109,9 +110,6 @@ class SearchAction extends Action {
         }
         return $info;
     }
-    private function test() {
-    }
-
     private function hackSearchWords($searchKey) {
         if (empty($searchKey)) {
             return array();
@@ -159,7 +157,7 @@ class SearchAction extends Action {
     private function getCategory() {
         $helper = new CategoryModel();
         $params = array(
-            'limit' => '0,7',
+            'limit' => '',
             'status' => 1,
         );
         $category = $helper->getCategoryInfo($params);

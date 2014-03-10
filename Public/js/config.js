@@ -20,6 +20,5 @@
 // })
 
 
-
-var ajaxPostURL = "http://test.huiguilin.com/index.php/";
-var loginSucessURL = "http://test.huiguilin.com";
+	var ajaxPostURL = "http://localhost/trunk/index.php/";
+	var loginSucessURL = "http://localhost";
