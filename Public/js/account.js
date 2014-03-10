@@ -188,32 +188,36 @@ $(function(){
 		var newcellphone = $('#binding_new_phone').val();
 		var cellphonevcode = $('#cellphone_vcode').val();
 		if (oldcellphone == 0) {
-                      
-						$.post(ajaxPostURL+'Account/handleChangeCellphone', {nickname: nickname,newcellphone:newcellphone,vcode:cellphonevcode}, function(data) {
-						if(data.status == 0){
-							$('#old_phone_error_tip').show().text(data.info);
-						}else if(data.status == 1){
-							alert(data.info);
-							location.href = "http://localhost/trunk/index.php/home/account/mysetting.html";
-						}else if(data.status == 2){
-							$('#old_phone_error_tip').show().text(data.info);
-						}
-						else if(data.status == 3){
-							$('#new_phone_error_tip').show().text(data.info);
-						}
-						else if(data.status == 4){
-							$('#cellphone_vcode_error_tip').show().text(data.info);
-						}
-						else if(data.status == 5){
-							$('#new_phone_error_tip').show().text(data.info);
-						}
-						else if(data.status == 6){
-							$('#cellphone_vcode_error_tip').show().text(data.info);
-						}
-						else if(data.status == 7){
-							$('#new_phone_error_tip').show().text(data.info);
-						}
-					},'json');
+            var rv02=CellphoneValidate(newcellphone,'#new_phone_error_tip');
+			var rv03=VcodeValidate(cellphonevcode,'#cellphone_vcode_error_tip');
+			var rv = rv02+rv03;
+			if (rv = 2) {
+					$.post(ajaxPostURL+'Account/handleChangeCellphone', {nickname: nickname,newcellphone:newcellphone,vcode:cellphonevcode}, function(data) {
+					if(data.status == 0){
+						$('#old_phone_error_tip').show().text(data.info);
+					}else if(data.status == 1){
+						alert(data.info);
+						location.href = "http://localhost/trunk/index.php/home/account/mysetting.html";
+					}else if(data.status == 2){
+						$('#old_phone_error_tip').show().text(data.info);
+					}
+					else if(data.status == 3){
+						$('#new_phone_error_tip').show().text(data.info);
+					}
+					else if(data.status == 4){
+						$('#cellphone_vcode_error_tip').show().text(data.info);
+					}
+					else if(data.status == 5){
+						$('#new_phone_error_tip').show().text(data.info);
+					}
+					else if(data.status == 6){
+						$('#cellphone_vcode_error_tip').show().text(data.info);
+					}
+					else if(data.status == 7){
+						$('#new_phone_error_tip').show().text(data.info);
+					}
+				},'json');
+			}
         }else{
         	var oldcellphone = $('#binding_old_phone').val();
 			var rv01=CellphoneValidate(oldcellphone,'#old_phone_error_tip');

@@ -54,4 +54,12 @@ class UserCouponModel extends Model {
         return $r;
     }
 
+    public function updateUserCoupon($condition,$data = array()) {
+        if (empty($data) ||empty($condition)) {
+            return FALSE;
+        }
+        $result = $this->where($condition)->save($data);
+        return $result;
+    }
+
 }
