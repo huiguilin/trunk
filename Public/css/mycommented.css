@@ -75,6 +75,7 @@
 	position: absolute;
 	top:82px;
 	left: 260px;
+	display: none;
 	
 }
 #main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box p.rate_star span{
@@ -83,6 +84,24 @@
 	height: 21px;
 	width: 21px;
 }
+
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box span.rate_stars{
+	background: url(../images/rate_stars.png) repeat-x 0px -21px;
+	display: block;
+	height: 21px;
+	width: 105px;
+	overflow: hidden;
+	position: absolute;
+	top:82px;
+	left: 260px;
+}
+#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box span.rate_stars span{
+	background: url(../images/rate_stars.png) repeat-x 0px 0px;
+	display: block;
+	height: 21px;
+	overflow: hidden;
+}
+
 #main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box p.finish_comment_content{
 	color: #000;
 	position: absolute;

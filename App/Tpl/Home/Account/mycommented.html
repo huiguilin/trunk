@@ -20,6 +20,13 @@
 						<span ></span>
 						<span ></span>
 					</p>
+					<?php 
+						$rate_vaule = $eva['rate'];
+						$rate_vaule = $rate_vaule*20;
+					?>
+					<span class="rate_stars">
+						<span style="width: {$rate_vaule}%"></span>
+					</span>
 					<p class="finish_comment_content">{$eva.evaluation}</p>
 					<p class="modify_comment">修改评论</p>
 					<input type="hidden" name="ratevalue" value="1"> 

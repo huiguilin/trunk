@@ -371,7 +371,8 @@ $(function(){
 	});
 
 	$('#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box p.modify_comment').click(function(event) {
-		
+		$('#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box p.rate_star').show();
+		$('#main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box span.rate_stars').hide();
 		$(this).hide().parent().siblings('div.hidden_content_box').show();
 		$(this).siblings('p.finish_comment_content').hide();
 		var comment_content = $(this).siblings('p.finish_comment_content').text();
@@ -433,7 +434,7 @@ $(function(){
 		}else{
 			$(this).siblings('p.post_comment_hidden_error_tips').hide();
 		}
-		$
+		
 	});
 	//优惠劵发表评论验证结束
 })
