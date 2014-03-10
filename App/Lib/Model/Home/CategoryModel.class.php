@@ -11,6 +11,9 @@ class CategoryModel extends Model {
         if (isset($params['cat_name'])) {
             $str .= " AND cat_name  = '{$params['cat_name']}'";
         }
+        if (isset($params['cat_name_like'])) {
+            $str .= " AND cat_name  like '%{$params['cat_name_like']}%'";
+        }
         if (isset($params['label_type'])) {
             $str .= " AND label_type IN ({$params['label_type']})";
         }
