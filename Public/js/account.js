@@ -183,42 +183,112 @@ $(function(){
 	});
 		//手机验证
 	$('#binding_cellphone_submit_btn').click(function(event) {
-		var oldcellphone = $('#binding_old_phone').val();
+		var oldcellphone = $('#check_oldphone').val();
+		var nickname = $('#nickname').val();
 		var newcellphone = $('#binding_new_phone').val();
 		var cellphonevcode = $('#cellphone_vcode').val();
-		
-		var rv01=CellphoneValidate(oldcellphone,'#old_phone_error_tip');
-		var rv02=CellphoneValidate(newcellphone,'#new_phone_error_tip');
-		var rv03=VcodeValidate(cellphonevcode,'#cellphone_vcode_error_tip');
-		var rv = rv01+rv02+rv03;
-		if(rv ==3){
-			var rv04 = CellPhoneDifferenceValidate(oldcellphone,newcellphone,'#new_phone_error_tip');
-			if(rv04 ==1){
-				
-				$.post(ajaxPostURL+'Account/handleChangeCellphone', { oldcellphone:oldcellphone,newcellphone:newcellphone,vcode:cellphonevcode}, function(data) {
-					if(data.status == 0){
-						$('#old_phone_error_tip').show().text(data.info);
-					}else if(data.status == 1){
-						location.href = "http://localhost/trunk/index.php/home/account/mysetting.html";
-					}else if(data.status == 2){
-						$('#old_phone_error_tip').show().text(data.info);
-					}
-					else if(data.status == 3){
-						$('#new_phone_error_tip').show().text(data.info);
-					}
-					else if(data.status == 4){
-						$('#cellphone_vcode_error_tip').show().text(data.info);
-					}
-					else if(data.status == 5){
-						$('#new_phone_error_tip').show().text(data.info);
-					}
-					else if(data.status == 6){
-						$('#cellphone_vcode_error_tip').show().text(data.info);
-					}
-				},'json');
+		if (oldcellphone == 0) {
+                      
+						$.post(ajaxPostURL+'Account/handleChangeCellphone', {nickname: nickname,newcellphone:newcellphone,vcode:cellphonevcode}, function(data) {
+						if(data.status == 0){
+							$('#old_phone_error_tip').show().text(data.info);
+						}else if(data.status == 1){
+							alert(data.info);
+							location.href = "http://localhost/trunk/index.php/home/account/mysetting.html";
+						}else if(data.status == 2){
+							$('#old_phone_error_tip').show().text(data.info);
+						}
+						else if(data.status == 3){
+							$('#new_phone_error_tip').show().text(data.info);
+						}
+						else if(data.status == 4){
+							$('#cellphone_vcode_error_tip').show().text(data.info);
+						}
+						else if(data.status == 5){
+							$('#new_phone_error_tip').show().text(data.info);
+						}
+						else if(data.status == 6){
+							$('#cellphone_vcode_error_tip').show().text(data.info);
+						}
+						else if(data.status == 7){
+							$('#new_phone_error_tip').show().text(data.info);
+						}
+					},'json');
+        }else{
+        	var oldcellphone = $('#binding_old_phone').val();
+			var rv01=CellphoneValidate(oldcellphone,'#old_phone_error_tip');
+			var rv02=CellphoneValidate(newcellphone,'#new_phone_error_tip');
+			var rv03=VcodeValidate(cellphonevcode,'#cellphone_vcode_error_tip');
+			var rv = rv01+rv02+rv03;
+			if(rv ==3){
+				var rv04 = CellPhoneDifferenceValidate(oldcellphone,newcellphone,'#new_phone_error_tip');
+				if(rv04 ==1){
+
+						$.post(ajaxPostURL+'Account/handleChangeCellphone', { oldcellphone:oldcellphone,newcellphone:newcellphone,vcode:cellphonevcode}, function(data) {
+						if(data.status == 0){
+							$('#old_phone_error_tip').show().text(data.info);
+						}else if(data.status == 1){
+							location.href = "http://localhost/trunk/index.php/home/account/mysetting.html";
+						}else if(data.status == 2){
+							$('#old_phone_error_tip').show().text(data.info);
+						}
+						else if(data.status == 3){
+							$('#new_phone_error_tip').show().text(data.info);
+						}
+						else if(data.status == 4){
+							$('#cellphone_vcode_error_tip').show().text(data.info);
+						}
+						else if(data.status == 5){
+							$('#new_phone_error_tip').show().text(data.info);
+						}
+						else if(data.status == 6){
+							$('#cellphone_vcode_error_tip').show().text(data.info);
+						}
+						else if(data.status == 7){
+							$('#new_phone_error_tip').show().text(data.info);
+						}
+					},'json');
+
+			    }
 			}
 		}
 		return false;
+		// var oldcellphone = $('#binding_old_phone').val();
+		// var newcellphone = $('#binding_new_phone').val();
+		// var cellphonevcode = $('#cellphone_vcode').val();
+		
+		// var rv01=CellphoneValidate(oldcellphone,'#old_phone_error_tip');
+		// var rv02=CellphoneValidate(newcellphone,'#new_phone_error_tip');
+		// var rv03=VcodeValidate(cellphonevcode,'#cellphone_vcode_error_tip');
+		// var rv = rv01+rv02+rv03;
+		// if(rv ==3){
+		// 	var rv04 = CellPhoneDifferenceValidate(oldcellphone,newcellphone,'#new_phone_error_tip');
+		// 	if(rv04 ==1){
+				
+		// 		$.post(ajaxPostURL+'Account/handleChangeCellphone', { oldcellphone:oldcellphone,newcellphone:newcellphone,vcode:cellphonevcode}, function(data) {
+		// 			if(data.status == 0){
+		// 				$('#old_phone_error_tip').show().text(data.info);
+		// 			}else if(data.status == 1){
+		// 				location.href = "http://localhost/trunk/index.php/home/account/mysetting.html";
+		// 			}else if(data.status == 2){
+		// 				$('#old_phone_error_tip').show().text(data.info);
+		// 			}
+		// 			else if(data.status == 3){
+		// 				$('#new_phone_error_tip').show().text(data.info);
+		// 			}
+		// 			else if(data.status == 4){
+		// 				$('#cellphone_vcode_error_tip').show().text(data.info);
+		// 			}
+		// 			else if(data.status == 5){
+		// 				$('#new_phone_error_tip').show().text(data.info);
+		// 			}
+		// 			else if(data.status == 6){
+		// 				$('#cellphone_vcode_error_tip').show().text(data.info);
+		// 			}
+		// 		},'json');
+		// 	}
+		// }
+		// return false;
 	});
 	//获取验证码
 	$('#get_change_cellphone_vcode').click(function(event) {

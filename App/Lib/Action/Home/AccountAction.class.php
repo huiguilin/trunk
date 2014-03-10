@@ -258,19 +258,15 @@ class AccountAction extends Action {
         }
     }
     public function handleChangeCellphone(){
-        $oldcellphone = $_POST['oldcellphone'];
+        $oldcellphone = @$_POST['oldcellphone'];
         $newcellphone = $_POST['newcellphone'];
+        $nickname = $_POST['nickname'];
         $vcode = $_POST['vcode'];
         $data = array(
             'status' => 0,
             'info' => '',
         );
-         if(empty($oldcellphone)){
-            $data['status'] = 2;
-            $data['info'] = "输入的旧手机不能为空!";
-            $this->ajaxReturn($data,'json');
-         }
-         if(empty($newcellphone)){
+        if(empty($newcellphone)){
             $data['status'] = 3;
             $data['info'] = "输入的新手机不能为空!";
             $this->ajaxReturn($data,'json');
@@ -280,32 +276,50 @@ class AccountAction extends Action {
             $data['info'] = "验证码不能为空!";
             $this->ajaxReturn($data,'json');
          }
-         if($oldcellphone == $newcellphone){
-            $data['status'] = 5;
-            $data['info'] = "新手机号与旧手机号一致";
-            $this->ajaxReturn($data,'json');
-         }
          if($_SESSION['changeCellphoneCheck'] != $vcode){
             $data['status'] = 6;
             $data['info'] = "验证码错误";
             $this->ajaxReturn($data,'json');
          }
-        $helper = new UserProfileModel();
-        $result = $helper->getUserProfileByPhoneNumber($oldcellphone);
-        if (empty($result)) {
-            $data['status'] = 0;
-            $data['info'] = "此手机号并未注册";
-            $this->ajaxReturn($data,'JSON');
-        }
 
+        $helper = new UserProfileModel();
+        $result = $helper->getUserProfileByPhoneNumber($newcellphone);
+        if(!empty($result)){
+            $data['status'] = 7;
+            $data['info'] = "输入的新手机已经存在！";
+            $this->ajaxReturn($data,'json');
+        }
         $time = date("Y-m-d H:i:s");
         $updateData = array(
                 'ctime' => $time, 
                 'last_logindate' => $time,
                 'phone_number' => $newcellphone,
-                );
-        $condition = "phone_number = '{$oldcellphone}'";
-        $r = $helper->updateUser($condition,$updateData);
+            );
+
+        if (!empty($nickname)) {
+            $condition = "nickname = '{$nickname}'";
+            $r = $helper->updateUser($condition,$updateData);
+        }else{
+            if(empty($oldcellphone)){
+                $data['status'] = 2;
+                $data['info'] = "输入的旧手机不能为空!";
+                $this->ajaxReturn($data,'json');
+             }
+            if($oldcellphone == $newcellphone){
+                $data['status'] = 5;
+                $data['info'] = "新手机号与旧手机号一致";
+                $this->ajaxReturn($data,'json');
+             }
+            $result = $helper->getUserProfileByPhoneNumber($oldcellphone);
+            if (empty($result)) {
+                $data['status'] = 0;
+                $data['info'] = "此手机号并未注册";
+                $this->ajaxReturn($data,'JSON');
+            }
+            $condition = "phone_number = '{$oldcellphone}'";
+            $r = $helper->updateUser($condition,$updateData);
+        }
+                
         if (!empty($r)) {
             $updateresult = $helper->getUserProfileByPhoneNumber($newcellphone);
             $_SESSION['user'] = $updateresult;
@@ -314,6 +328,62 @@ class AccountAction extends Action {
             $data['info'] = "手机号码修改成功";
         }
         $this->ajaxReturn($data,'JSON');
+        // $oldcellphone = $_POST['oldcellphone'];
+        // $newcellphone = $_POST['newcellphone'];
+        // $vcode = $_POST['vcode'];
+        // $data = array(
+        //     'status' => 0,
+        //     'info' => '',
+        // );
+        //  if(empty($oldcellphone)){
+        //     $data['status'] = 2;
+        //     $data['info'] = "输入的旧手机不能为空!";
+        //     $this->ajaxReturn($data,'json');
+        //  }
+        //  if(empty($newcellphone)){
+        //     $data['status'] = 3;
+        //     $data['info'] = "输入的新手机不能为空!";
+        //     $this->ajaxReturn($data,'json');
+        //  }
+        //  if(empty($vcode)){
+        //     $data['status'] = 4;
+        //     $data['info'] = "验证码不能为空!";
+        //     $this->ajaxReturn($data,'json');
+        //  }
+        //  if($oldcellphone == $newcellphone){
+        //     $data['status'] = 5;
+        //     $data['info'] = "新手机号与旧手机号一致";
+        //     $this->ajaxReturn($data,'json');
+        //  }
+        //  if($_SESSION['changeCellphoneCheck'] != $vcode){
+        //     $data['status'] = 6;
+        //     $data['info'] = "验证码错误";
+        //     $this->ajaxReturn($data,'json');
+        //  }
+        // $helper = new UserProfileModel();
+        // $result = $helper->getUserProfileByPhoneNumber($oldcellphone);
+        // if (empty($result)) {
+        //     $data['status'] = 0;
+        //     $data['info'] = "此手机号并未注册";
+        //     $this->ajaxReturn($data,'JSON');
+        // }
+
+        // $time = date("Y-m-d H:i:s");
+        // $updateData = array(
+        //         'ctime' => $time, 
+        //         'last_logindate' => $time,
+        //         'phone_number' => $newcellphone,
+        //         );
+        // $condition = "phone_number = '{$oldcellphone}'";
+        // $r = $helper->updateUser($condition,$updateData);
+        // if (!empty($r)) {
+        //     $updateresult = $helper->getUserProfileByPhoneNumber($newcellphone);
+        //     $_SESSION['user'] = $updateresult;
+        //     $this->assign('user', $_SESSION['user']);
+        //     $data['status'] = 1;
+        //     $data['info'] = "手机号码修改成功";
+        // }
+        // $this->ajaxReturn($data,'JSON');
     }
     public function handleChangeEmail(){
         $data = array(
