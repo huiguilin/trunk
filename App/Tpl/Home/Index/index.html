@@ -110,7 +110,7 @@
 				<ul>
                 <foreach name="hot_partners" item="hpartner">
 					<li>
-						<a href="{:U('coupon/coupon')}">{$hpartner.name}</a>
+						<a href="{:U('coupon/coupon')}" target=_blank>{$hpartner.name}</a>
 						<img src="__PUBLIC__/{$hpartner.header_path}">
 					</li>
                 </foreach>
@@ -122,7 +122,7 @@
                <foreach name="partners" item="partner"> 
 					<li>
 						<img src="__PUBLIC__/{$partner.header_path}">
-						<a href="" class="title">{$partner.name}</a>
+						<a href="{:U('coupon/coupon')}" class="title" target=_blank>{$partner.name}</a>
                     </li>
                 </foreach> 
 				</ul>

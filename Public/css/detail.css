@@ -207,15 +207,17 @@
 }
 #main #coupon_box div.share ul{
 	position: absolute;
-	top: 13px;
-	right: 20px;
-	background: #E4E4E4;
-
+	top: 10px;
+	left: 540px;
+	/*background: #E4E4E4;*/
+	width: 130px;
+	
 }
 #main #coupon_box div.share ul li{
 	float: left;
+	height: 20px;
 }
-#main #coupon_box div.share ul li a{
+/*#main #coupon_box div.share ul li a{
 	display: block;
 	width: 15px;
 	height: 15px;
@@ -238,7 +240,7 @@
 }
 #main #coupon_box div.share ul li a.six{
 	background: url(../images/sp-share-new.png) no-repeat -80px 0px;
-}
+}*/
 #main #coupon_box div.other_coupons_box{
 	margin-top: 20px;
 	margin-left: 8px;

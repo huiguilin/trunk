@@ -22,4 +22,12 @@ class UserCollectionModel extends Model {
         $result = $this->data($data)->add();
         return $result;
     }
+
+     public function deleteUserCollection($data = array()){
+        if (empty($data)) {
+            return false;
+        }
+        $result = $this->where($data)->delete();
+        return $result;
+    }
 }

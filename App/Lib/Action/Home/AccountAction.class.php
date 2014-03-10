@@ -115,6 +115,18 @@ class AccountAction extends Action {
                 }
             }
         }
+
+        if (!empty($_GET['couponid'])) {
+            $couponid = $_GET['couponid'];
+            $coupon_id = array(
+                'coupon_id' => $couponid,
+                );
+            $userCollectionHelper = new UserCollectionModel();
+            $result = $userCollectionHelper->deleteUserCollection($coupon_id);
+            if ($result>0) {
+                echo "<script> alert('删除成功！'); window.location='http://www.huigl.com/index.php/account/myfavorite';</script>";
+            }
+        }
         $this->assign("coupons", $info);
         $this->account_tmp_bottom();
         $this->display();
@@ -522,7 +534,9 @@ class AccountAction extends Action {
                 'evaluation' => $comment,
                 'rate' => $rate,
                 'createtime' => date("Y-m-d H:i:s"),
+                ),
             );
+
         $helper = new CouponEvaluationModel();
         $r = $helper->updateInfo($params);
         if (!empty($r)) {
