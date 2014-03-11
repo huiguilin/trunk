@@ -605,16 +605,13 @@
 	height: 21px;
 	overflow: hidden;
 }
-#main #coupon_box div.business_detail_info_box div.show_comment div.all_comment ul.comment_ul li p.one span.red{
+#main #coupon_box div.business_detail_info_box div.show_comment div.all_comment ul.comment_ul li p.one a.red{
 	color: #EB5B4C;
 	padding-right: 20px;
 }
 #main #coupon_box div.business_detail_info_box div.show_comment div.all_comment ul.comment_ul li p.two{
-	
-}
-#main #coupon_box div.business_detail_info_box div.show_comment div.all_comment ul.comment_ul li p.three{
-	color: #999999;
-	margin-bottom: 10px;
+	padding-bottom: 10px;
+
 }
 #main #coupon_box div.business_detail_info_box div.show_comment div.all_comment ul.page_box{
 	margin-left: 377px;

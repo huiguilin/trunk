@@ -9,7 +9,9 @@ class IndexAction extends Action {
     private $news = array();
     private $recommend = array();
     private $ads = array();
-
+    public function _empty($name){
+        $this->error("非法提交！");
+    }
     public function index(){
         $helper = new CmsIndexModel();
         $cmsData = $helper->readCmsIndex();

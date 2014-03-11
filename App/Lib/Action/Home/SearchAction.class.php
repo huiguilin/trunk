@@ -9,6 +9,9 @@ class SearchAction extends Action {
         '5' => '旅游',
         '6' => '丽人',
     );
+    public function _empty($name){
+        $this->error("非法提交！");
+    }
     public function search(){
         $searchKey = !empty($_GET['search_con']) ? $_GET['search_con'] : "";
         $couponInfo = $this->hackSearchWords($searchKey);

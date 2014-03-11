@@ -160,18 +160,23 @@
 						<p class="title">晒单点评</p>
 						<ul>
 							<li>
-								<p class="three">4.6<span>分</span></p>
+								
+								<p class="three">{$rateInfo[1]}<span>分</span></p>
 								<span class="rate_stars">
-									<span style="width: 30%;"></span>
+									<span style="width: {$rateInfo[0]}"></span>
 								</span>
 							</li>
 							<li>
-								<p class="one">已有<span>143</span>人对本优惠券做出评价</p>
-								<p class="two"><span>97.12%</span>的会员满意本优惠券</p>
+								<p class="one">已有<span>{$evaluation | count}</span>人对本优惠券做出评价</p>
+								<p class="two"><span>{$rateInfo[0]}</span>的会员满意本优惠券</p>
 							</li>
 							<li class="no_border_right">
 								<p>我在惠桂林下载过此优惠券</p>
-								<a href="">我要评论</a>
+								<if condition="$Think.session.user.user_id eq ''">
+								<else />
+								<a href="{:U('Home/Account/mytocomment')}">我要评论</a>
+								</if>
+
 							</li>
 						</ul>
 					</div>
@@ -185,11 +190,14 @@
 						</div>
 						<ul class="comment_ul">
                         <foreach name="evaluation" item="eva">
-                      	
+                      		<?php 
+								$rate_vaule = $eva['rate'];
+								$rate_vaule = $rate_vaule*20;
+							?>
 							<li>
-								<p class="one">{$eva.nickname}<span class="red">{$partner.name}</span><span>{$eva.createtime}</span><span class="rate_stars"><span style="width: 80%;"></span></span></p>
+								<p class="one">{$eva.nickname}<a class="red">@{$partner.name}</a><span>{$eva.createtime}</span><span class="rate_stars"><span style="width: {$rate_vaule}%;"></span></span></p>
 								<p class="two">{$eva.evaluation}</p>
-								<p class="three">小肥羊（ 三里店分店）</p>
+								
 							</li>
                         </foreach>
 						</ul>

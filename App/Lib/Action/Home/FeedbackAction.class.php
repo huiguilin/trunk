@@ -4,8 +4,8 @@ class FeedbackAction extends Action {
     public function feedback(){
 		$this->display();
     }
-    public function handle(){
-    	// dump($_POST,1,'<pre>',0);
+    public function _empty($name){
+        $this->error("非法提交！");
     }
     
 }

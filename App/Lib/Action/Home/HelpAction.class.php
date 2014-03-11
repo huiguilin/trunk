@@ -3,7 +3,9 @@
 class HelpAction extends Action {
 	private $help_search_pagesize = 10;	//搜索每页显示条数
 	private $help_search_max_keyword = 10;	//搜索每次最大允许搜索的关键词数量
-	
+	public function _empty($name){
+        $this->error("非法提交！");
+    }
     public function help(){
 		$this->display();
     }
@@ -36,7 +38,7 @@ class HelpAction extends Action {
     	$this->display();
     }
     public function search(){
-
+    	
 		$keyword = strip_tags(trim($_GET["keyword"]));
 		$type = intval($_GET["type"]); //转化成int
 		

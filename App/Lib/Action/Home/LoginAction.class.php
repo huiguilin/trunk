@@ -5,11 +5,7 @@ class LoginAction extends Action {
 		import('ORG.Util.Image');
 		Image::buildImageVerify(4,5,'png');
     }
-    public function verify(){
-    	// dump($_POST,1,'<pre>',0);
-    	// $data =array(
-    	// 	'status' => '1',
-    	// 	)
-    	// $this=>ajaxReturn($data,"json");
+    public function _empty($name){
+        $this->error("非法提交！");
     }
 }

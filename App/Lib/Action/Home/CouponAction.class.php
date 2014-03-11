@@ -10,6 +10,9 @@ class CouponAction extends Action {
         '5' => '旅游',
         '6' => '丽人',
     );
+    public function _empty($name){
+        $this->error("非法提交！");
+    }
     public function coupon(){
         $locationId = !empty($_GET['location']) ? $_GET['location'] : 0;
 
@@ -161,8 +164,17 @@ class CouponAction extends Action {
         $partnerHelper = new PartnerModel();
         $partnerInfo = $partnerHelper->getPartnerByPartnerId($partnerIds);
 
-        $helper = new EvaluationModel();
-        $eInfo = $helper->getEvaluationByPartnerId(array($couponInfo[0]['coupon_id']));
+        $helper = new CouponEvaluationModel();
+        $eInfo = $helper->getInfo(array('coupon_id' => $couponInfo[0]['coupon_id']));
+        $totalRate = 0;
+        foreach ($eInfo as $k => $v) {
+            $totalRate = $totalRate + intval($v['rate']);
+        }
+        $avgRate = round($totalRate/count($eInfo),1); 
+        $satisfaction = round($totalRate/(count($eInfo)*5),4)*"100".'%';
+        $rateInfo  = array();
+        array_push($rateInfo, $satisfaction,$avgRate);
+
         $userId = DataToArray($eInfo, 'user_id');
         $userHelper = new UserProfileModel();
         $userInfo = $userHelper->getUserProfileByUserId($userId);
@@ -175,6 +187,7 @@ class CouponAction extends Action {
         $this->assign("cat_info", $catInfo[0]);
         $this->assign("label_info", $this->labelType[$couponInfo[0]['label_type']]);
         $this->assign("partnerPictures",$partnerPictureInfo);
+        $this->assign('rateInfo',$rateInfo);
         $this->display();
     }
 

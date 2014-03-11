@@ -3,7 +3,9 @@
 class IntentionAction extends Action {
 	private $area_array = array(1=>'桂林',2=>'南宁',3=>'柳州',4=>'梧州',);
 	private $classification_array = array(1=>'美食',2=>'休闲娱乐',3=>'生活服务',4=>'酒店',5=>'旅游',6=>'丽人',);
-	
+	public function _empty($name){
+        $this->error("非法提交！");
+    }
     public function intention(){
 		$this->assign("area_array",$this->area_array);
 		$this->assign("classification_array",$this->classification_array);

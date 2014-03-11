@@ -7,6 +7,9 @@ class AccountAction extends Action {
         '2' => '每月2封',
         '3' => '拒绝接受',
     );
+    public function _empty($name){
+        $this->error("非法提交！");
+    }
     public function mycoupon(){
         if (empty($_SESSION['user']['user_id'])) {
             $this->error('此页面需要登录才能访问，请先登录！');
@@ -74,8 +77,9 @@ class AccountAction extends Action {
     }
 
     public function myfavorite(){
+        
         if (empty($_SESSION['user']['user_id'])) {
-            $this->redirect('/');
+            $this->error('此页面需要登录才能访问，请先登录！');
             return TRUE;
         }
         $status = isset($_GET['status']) ? (int) $_GET['status'] : 0;
@@ -133,7 +137,7 @@ class AccountAction extends Action {
     }
     public function mytocomment(){
         if (empty($_SESSION['user']['user_id'])) {
-            $this->redirect('/');
+            $this->error('此页面需要登录才能访问，请先登录！');
             return TRUE;
         }
         $pageSize = 10;
@@ -171,7 +175,7 @@ class AccountAction extends Action {
     }
     public function mycommented(){
         if (empty($_SESSION['user']['user_id'])) {
-            $this->redirect('/');
+            $this->error('此页面需要登录才能访问，请先登录！');
             return TRUE;
         }
         $pageSize = 10;
@@ -200,6 +204,10 @@ class AccountAction extends Action {
         $this->display();
     }
     public function mysetting(){
+        if (empty($_SESSION['user']['user_id'])) {
+            $this->error('此页面需要登录才能访问，请先登录！');
+            return TRUE;
+        }
         $user = $_SESSION['user'];
         if (!is_numeric($user['phone_number'])) {
             $user['phone_number_used'] = 0;
@@ -215,9 +223,16 @@ class AccountAction extends Action {
         $this->display();
     }
     public function mysubscription(){
+        if (empty($_SESSION['user']['user_id'])) {
+            $this->error('此页面需要登录才能访问，请先登录！');
+            return TRUE;
+        }
         $this->display();
     }
     public function handleEmailSubscription(){
+
+        if(!IS_POST){ $this->error("非法提交！");}
+        
         $email = $_POST['email'];
         $type = $_POST['frequency'];
         $data = array(
@@ -258,6 +273,8 @@ class AccountAction extends Action {
         }
     }
     public function handleChangeCellphone(){
+        if(!IS_POST){ $this->error("非法提交！");}
+
         $oldcellphone = @$_POST['oldcellphone'];
         $newcellphone = $_POST['newcellphone'];
         $nickname = $_POST['nickname'];
@@ -386,6 +403,7 @@ class AccountAction extends Action {
         // $this->ajaxReturn($data,'JSON');
     }
     public function handleChangeEmail(){
+        if(!IS_POST){ $this->error("非法提交！");}
         $data = array(
             'status' => 0,
             'info' => '',
@@ -439,6 +457,7 @@ class AccountAction extends Action {
         $this->ajaxReturn($data,'JSON');
     }
     public function handleChangeNickname(){
+        if(!IS_POST){ $this->error("非法提交！");}
         $data = array(
             'status' => 0,
             'info' => '',
@@ -475,6 +494,7 @@ class AccountAction extends Action {
         $this->ajaxReturn($data,'JSON');
     }
     public function handleChangePassword(){
+        if(!IS_POST){ $this->error("非法提交！");}
         $data = array(
             'status' => 0,
             'info' => '',
@@ -536,6 +556,7 @@ class AccountAction extends Action {
         $this->ajaxReturn($data,'JSON');
     }
     public function handleSendVcodeToCellphone(){
+        if(!IS_POST){ $this->error("非法提交！");}
         $data = array(
             'status' => 0,
             'info' => '',
@@ -556,6 +577,7 @@ class AccountAction extends Action {
         }
     }
     public function handlePostCouponComment(){
+        if(!IS_POST){ $this->error("非法提交！");}
         $userId = $_SESSION['user']['user_id'];
         if (empty($userId)) {
             echo "wrong!";return TRUE;
@@ -587,6 +609,7 @@ class AccountAction extends Action {
     }
 
     public function handleUpdateCouponComment() {
+        if(!IS_POST){ $this->error("非法提交！");}
         $userId = $_SESSION['user']['user_id'];
         if (empty($userId)) {
             echo "wrong!";return TRUE;

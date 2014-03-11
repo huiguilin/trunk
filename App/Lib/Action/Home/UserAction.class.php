@@ -1,5 +1,8 @@
 <?php
 class UserAction extends Action {
+    public function _empty($name){
+        $this->error("非法提交！");
+    }
     public function checkLogin(){
         $userName = $_POST['username'];
         $passwd = $_POST['password'];
