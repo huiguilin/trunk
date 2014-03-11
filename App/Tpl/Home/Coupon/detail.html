@@ -50,7 +50,7 @@
 
 
 				<a class="download_coupon_btn" id="download_coupon_btn" couponid="{$coupon.coupon_id}">下载到手机</a>
-				<img src="__PUBLIC__/{$coupon.picture_path}" class="coupon_pic">
+				<img src="__PUBLIC__/{$coupon.picture_path}" class="coupon_pic" alt="{$coupon.name}">
 				<div class="coupon_detail_desc_box">
 					<p class="desc_title">详细介绍</p>
 					<p class="desc_content"><span>{$coupon.message}</span></p>
@@ -81,6 +81,7 @@
 			</div>
 			<div class="share">
 				<a href="javascript:void(0)" class="add_favorite" id="add_favorite_btn">收藏到我的券包</a>
+				<input type="hidden" id="checklogin" value="{$Think.session.user.nickname}" />
 				<p>分享到</p>
 				<ul>
 					<!-- <li><a href="" class="one"></a></li> -->
@@ -149,7 +150,7 @@
 					<p class="business_name">{$partner.name}</p>
 					<p class="business_intro_detail">{$partner.description}</p>
 					 <foreach name="partnerPictures" item="partnerPicture">
-							<img src="__PUBLIC__/{$partnerPicture.picture_path}" alt="" />
+							<img src="__PUBLIC__/{$partnerPicture.picture_path}" alt="商家介绍" />
                      </foreach>
 					
 
@@ -184,6 +185,7 @@
 						</div>
 						<ul class="comment_ul">
                         <foreach name="evaluation" item="eva">
+                      	
 							<li>
 								<p class="one">{$eva.nickname}<span class="red">{$partner.name}</span><span>{$eva.createtime}</span><span class="rate_stars"><span style="width: 80%;"></span></span></p>
 								<p class="two">{$eva.evaluation}</p>
@@ -205,7 +207,7 @@
 			</div>
 			<div id="webchat_box">
 				<p>扫一下，关注惠桂林微博</p>
-				<img src="__PUBLIC__/images/weibo_barcode.png">
+				<img src="__PUBLIC__/images/weibo_barcode.png" alt="微博icon">
 			</div>
 			<div id="hot_tips_box">
 				<p class="title">温馨提示</p>

@@ -160,6 +160,7 @@ class CouponAction extends Action {
         $otherCoupons = $couponHelper->getCouponByCouponId($otherCouponsIds);
         $partnerHelper = new PartnerModel();
         $partnerInfo = $partnerHelper->getPartnerByPartnerId($partnerIds);
+
         $helper = new EvaluationModel();
         $eInfo = $helper->getEvaluationByPartnerId(array($couponInfo[0]['coupon_id']));
         $userId = DataToArray($eInfo, 'user_id');

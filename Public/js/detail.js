@@ -103,6 +103,11 @@ $(function(){
 
     $('#add_favorite_btn').click(function(event){
         var coupon_id = $("#download_coupon_id").text();
+        var checklogin = $('#checklogin').val();
+    	if (checklogin == "") {
+    		alert('请先登录，谢谢！');
+    		return false;
+    	}
         $.post(ajaxPostURL+"Coupon/addFavorite", { coupon_id : coupon_id
             },function(data){
             if(data.status == 1){

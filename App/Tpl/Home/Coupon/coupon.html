@@ -32,9 +32,9 @@
 <!--         <foreach name="ads" item="ad">
 			<img src="__PUBLIC__/{$ad.img_path}" alt="" />
         </foreach> -->
-        <img src="__PUBLIC__/images/flash/c_1.png">
-        <img src="__PUBLIC__/images/flash/c_2.png">
-        <img src="__PUBLIC__/images/flash/c_3.png">
+        <img src="__PUBLIC__/images/flash/c_1.png" alt="广告图片01">
+        <img src="__PUBLIC__/images/flash/c_2.png" alt="广告图片02">
+        <img src="__PUBLIC__/images/flash/c_3.png" alt="广告图片03">
 			<ul>
 				<li>1</li>
 				<li>2</li>
@@ -209,7 +209,7 @@
 				</if>
                 <foreach name="coupons" item="coupon" key="k">
                  <li>
-					<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}"></a>
+					<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}" alt="{$coupon.name}"></a>
 					<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title" title="{$coupon.name}">{$coupon.name}</a>
 					<p class="one" title="{$coupon.description}">{$coupon.description}</p>
 					<p class="two" title="{$coupon.title}">{$coupon.title}</p>
@@ -222,7 +222,7 @@
 			</ul>
 			<div id="webchat_box">
 				<p>扫一下，关注惠桂林微博</p>
-				<img src="__PUBLIC__/images/weibo_barcode.png">
+				<img src="__PUBLIC__/images/weibo_barcode.png" alt="微博icon">
 			</div>
 			<div id="hot_coupon_box">
 				<p class="title">热门优惠劵</p>
@@ -231,7 +231,7 @@
 					<li>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="title">{$coupon.name}</a>
 						<p>{$coupon.description}</p>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}" alt="{$coupon.name}"></a>
 					</li>
                 </foreach>
 				</ul>
