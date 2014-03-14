@@ -166,15 +166,22 @@ class CouponAction extends Action {
 
         $helper = new CouponEvaluationModel();
         $eInfo = $helper->getInfo(array('coupon_id' => $couponInfo[0]['coupon_id']));
-        $totalRate = 0;
-        foreach ($eInfo as $k => $v) {
-            $totalRate = $totalRate + intval($v['rate']);
+        if(!empty($eInfo)){
+            $totalRate = 0;
+            foreach ($eInfo as $k => $v) {
+                $totalRate = $totalRate + intval($v['rate']);
+            }
+            $avgRate = round($totalRate/count($eInfo),1); 
+            $satisfaction = round($totalRate/(count($eInfo)*5),4)*"100".'%';
+            $rateInfo  = array();
+            array_push($rateInfo, $satisfaction,$avgRate);
+        }else{
+            $rateInfo  = array();
+            $avgRate = 0;
+            $satisfaction =0;
+            array_push($rateInfo, $satisfaction,$avgRate);
         }
-        $avgRate = round($totalRate/count($eInfo),1); 
-        $satisfaction = round($totalRate/(count($eInfo)*5),4)*"100".'%';
-        $rateInfo  = array();
-        array_push($rateInfo, $satisfaction,$avgRate);
-
+    
         $userId = DataToArray($eInfo, 'user_id');
         $userHelper = new UserProfileModel();
         $userInfo = $userHelper->getUserProfileByUserId($userId);

@@ -43,4 +43,25 @@ class CouponEvaluationModel extends Model {
         $r = $this->where($str)->save($data);
         return $r;
     }
+    public function getRateByPartnerId($partner_id) {
+        if (empty($partner_id)) {
+            return false;
+        }
+        $condition = array(
+            'partner_id' => $partner_id
+            );
+
+        $rateSumData = $this->where($condition)->sum('rate');
+        $rateCountData = $this->where($condition)->count();
+        $rateResult = 0;
+        if($rateCountData != 0){
+            $rateResult = $rateSumData/$rateCountData/5*100;
+        }
+        $data = array(
+            'rateValue' => $rateResult,
+            'partner_id' =>$partner_id,
+            'rateCount' => $rateCountData,
+            );
+        return $data;
+    }
 }

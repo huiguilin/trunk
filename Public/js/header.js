@@ -1135,7 +1135,7 @@ $(function(){
 						sta--;
 						if(sta == 0){
 							$('#cellphone_reg_success_count_down').text(sta+"秒");	
-							location.href = "http://localhost/trunk/index.php/index/index.html";
+							location.href = "http://www.huigl.com/index.php/index/index.html";
 						}
 						else{
 							$('#cellphone_reg_success_count_down').text(sta+"秒");	

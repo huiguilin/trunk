@@ -92,3 +92,19 @@ function xml_to_array($xml)
     return $array; 
 } 
 
+function sendEmail($mail,$content,$subject) {
+        
+    import('ORG.Email');
+    $data['mailto'] = $mail;
+    $data['subject'] = $subject;
+    $data['body'] = $content;
+    $mail = new Email();
+    if ($mail->send($data)) {
+        return 1;
+    } else {
+        echo 'false<br>';
+        return 0;
+    }
+    return 1;
+}
+

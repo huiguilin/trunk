@@ -2029,35 +2029,15 @@ input{
 	color: white;
 	font-size: 14px;
 }
-#bottom_info #bottom_box img{
-	width: 115px;
-	height: 38px;
-	cursor: pointer;
-}
-#bottom_info #bottom_box img.one{
+#bottom_info #bottom_box a.safe_auth_01{
 	position: absolute;
-	top: 20px;
-	right: 10px;
+	top: 28px;
+	left: 600px;
 }
-#bottom_info #bottom_box img.two{
+#bottom_info #bottom_box a.safe_auth_02{
 	position: absolute;
-	top: 20px;
-	right: 140px;
-}
-#bottom_info #bottom_box img.three{
-	position: absolute;
-	top: 20px;
-	right: 270px;
-}
-#bottom_info #bottom_box img.four{
-	position: absolute;
-	top: 65px;
-	right: 270px;
-}
-#bottom_info #bottom_box img.five{
-	position: absolute;
-	top: 65px;
-	right: 140px;
+	top: 28px;
+	left: 730px;
 }
 #bottom_info #bottom_box ul{
 	position: absolute;

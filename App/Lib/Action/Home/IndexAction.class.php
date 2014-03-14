@@ -13,10 +13,17 @@ class IndexAction extends Action {
         $this->error("非法提交！");
     }
     public function index(){
+        // if(!$cmsData = S('cmsData')){   //缓存
+        //     echo('1111');
+        //     $helper = new CmsIndexModel();
+        //     $cmsData = $helper->readCmsIndex();
+        //     S('cmsData',$cmsData,20);
+        // }
         $helper = new CmsIndexModel();
         $cmsData = $helper->readCmsIndex();
         $this->releaseData($cmsData);
-        list($coupon, $eatCoupon, $lifeCoupon, $playCoupon) = $this->getCoupon($this->coupon);
+
+        list($coupon, $eatCoupon, $lifeCoupon, $playCoupon) = $this->getCoupon($this->$coupon);
         $card = $this->getCard($this->card);
         $news = $this->getNews($this->news);
         $ads = $this->getAds($this->ads);
@@ -42,8 +49,6 @@ class IndexAction extends Action {
         $this->assign("evaluations", $evaluation);
         $this->assign("locations", $location);
         $this->assign("categories", $category);
-
-
         $this->display();
         
     }

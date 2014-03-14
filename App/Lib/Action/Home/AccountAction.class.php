@@ -259,6 +259,7 @@ class AccountAction extends Action {
         $addData = array(
                 's_email' => $email,
                 's_type' => $type,
+                's_time' => date("Y-m-d H:i:s"),
                 );
         $result = $helper->addSubscriptionEmailAddress($addData);
         if(empty($result)){
@@ -619,6 +620,11 @@ class AccountAction extends Action {
         $comment = $_POST['coupon_comment_content'];
         $couponId = $_POST['post_coupon_id'];
         $eId = $_POST['post_e_id'];
+
+        $couponHelper = new CouponModel();
+        $couponInfo = $couponHelper->getCouponsByCouponId($couponId);
+        $partnerId = $couponInfo['partner_id'];
+
         $params = array(
             'user_id' => $userId,
             'coupon_id' => $couponId,
@@ -627,6 +633,7 @@ class AccountAction extends Action {
                 'evaluation' => $comment,
                 'rate' => $rate,
                 'createtime' => date("Y-m-d H:i:s"),
+                'partner_id' => $partnerId,
                 ),
             );
 

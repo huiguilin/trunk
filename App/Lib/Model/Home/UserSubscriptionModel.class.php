@@ -20,4 +20,19 @@ class UserSubscriptionModel extends Model {
         return $data;
     }
 
+    public function getUserAllEmail() {
+
+        $data = $this->where('s_type<3')->select();
+        return $data;
+    }
+    public function updateSendTime($data = array(),$condition = array()){
+        $map['s_email'] = array('in',$condition);
+        $res = $this->where($map)->save($data);
+        if (!res) {
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
 }

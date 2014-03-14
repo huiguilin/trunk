@@ -17,6 +17,9 @@ class PartnerModel extends Model {
         if (isset($params['partner_id'])) {
             $str .= " AND partner_id IN ({$params['partner_id']})";
         }
+        if (isset($params['label_type'])) {
+            $str .= " AND label_type = {$params['label_type']}";
+        }
         if (isset($params['tag'])) {
             $str .= " AND tag LIKE '%{$params['tag']}%'";
         }
@@ -26,9 +29,13 @@ class PartnerModel extends Model {
         if (isset($params['order_by'])) {
             $str .= " ORDER BY {$params['order_by']}";
         }
+        if (isset($params['cat_id'])) {
+            $str .= " AND cat_id  IN ({$params['cat_id']})";
+        }
         $data = $this->where($str)->select();
+
         return $data;
     }
-
+    
 
 }

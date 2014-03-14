@@ -2,7 +2,22 @@
 // 本类由系统自动生成，仅供测试用途
 class DemoAction extends Action {
     public function demo(){
-    	
+
+        echo "今天:",date('Y-m-d H:i:s'),"<br>";
+        echo "明天:",date('Y-m-d H:i:s',strtotime('-7 day'));
+
+        $Ytime =date('Y-m-d H:i:s',strtotime('-1 day'));
+
+        $time = "2014-03-12 21:00:00";
+        if(strtotime($Ytime) > strtotime($time)){
+            echo "1";
+        }else{
+            echo "2";
+        }
+
+       
+    	$this->display();
+        exit();
     	$date = date('Y-m-d H:i:s');
     	$couponHelper = new CouponModel();
     	$params = array(
