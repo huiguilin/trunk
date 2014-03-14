@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 a//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活"> <!-- 向搜索引擎说明你的网页的关键词； --> <a href="http://webscan.360.cn/index/checkwebsite/url/www.huigl.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/21c14316ebe1d2a94b49db24e82e6263"/></a>
+<meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/M_sendCouponToCellphone.css">
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
+<title>惠桂林首页</title>
+</head>
+<body>
+<!-- 顶部订阅分享区域+Logo区域 -->
+	<include file="./App/Tpl/Home/Public/header.html" />
+<!-- 顶部订阅分享区域+Logo区域结束 -->
+<!--  导航区域 -->
+	<include file="./App/Tpl/Home/Public/nav_index.html" />
+<!-- 导航区域结束-->
+<!-- 内容区域 -->
+	<div id="right_function_box"><a href="">回到顶部</a></div>
+	<div id="main">
+		<!-- 主要内容顶部区域 -->
+		<div id="main_content_top_box">
+			<!-- 全部分类区域 -->
+			<ul class="category_title">
+				<li><a href="{:U('Coupon/coupon?label_type=1','','','')}" class="one" target=_blank>美食</a></li>
+				<li><a href="{:U('Coupon/coupon?label_type=2','','','')}" class="two" target=_blank>休闲娱乐</a></li>
+				<li><a href="{:U('Coupon/coupon?label_type=3','','','')}" class="three" target=_blank>生活服务</a></li>
+				<li><a href="{:U('Coupon/coupon?label_type=4','','','')}" class="four" target=_blank>酒店</a></li>
+				<li><a href="{:U('Coupon/coupon?label_type=5','','','')}" class="five" target=_blank>旅游</a></li>
+				<li><a href="{:U('Coupon/coupon?label_type=6','','','')}" class="six" target=_blank>丽人</a></li>
+			</ul>
+			
+			<!-- 全部分类区域结束 -->
+			<!-- 热门分类区域 -->
+			<ul class="hot_navigation">
+				<li>
+					<span>热门分类</span>
+                    <foreach name="categories" item="category">
+                    <if condition="$key eq 0">
+					<a href="{:U('Coupon/coupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}" class="one">{$category.cat_name}</a>
+                    <else />
+					<a href="{:U('Coupon/coupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}">{$category.cat_name}</a>
+                    </if>
+                    </foreach>
+				</li>
+				<li>
+					<span>全部区域</span>
+					<a href="{:U('Coupon/coupon',array('tag'=>'七星区'),'','')}" class="one" >七星区</a>
+					<a href="{:U('Coupon/coupon',array('tag'=>'秀峰区'),'','')}">秀峰区</a>
+					<a href="{:U('Coupon/coupon',array('tag'=>'象山区'),'','')}">象山区</a>
+					<a href="{:U('Coupon/coupon',array('tag'=>'叠彩区'),'','')}">叠彩区</a>
+					<a href="{:U('Coupon/coupon',array('tag'=>'雁山区'),'','')}">雁山区</a>
+				</li>
+				<li class="no_bottom_border">
+					<span>热门商圈</span>
+                    <foreach name="locations" item="location">
+                    <if condition="$key eq 0">
+					<a href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}" class="one">{$location.name}</a>
+                    <else />
+					<a href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a>
+                    </if>
+                    </foreach>
+				</li>
+			</ul>
+			<!-- 热门分类区域结束 -->
+			<!-- 广告区域 -->
+			<div id="ad_box">
+           <!--  <foreach name="ads" item="ad"> -->
+            	
+				<!-- <img src="__PUBLIC__/{$ad.img_path}"> -->
+				<img src="__PUBLIC__/images/flash/1.png">
+				<img src="__PUBLIC__/images/flash/2.png">
+				<img src="__PUBLIC__/images/flash/3.png">
+				<img src="__PUBLIC__/images/flash/4.png">
+           <!--  </foreach> -->
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+				</ul>
+			</div>
+			<!-- 广告区域结束 -->
+			<!-- 微信区域 -->
+			<div class="QRcode_box">
+				<p>扫描我,关注惠桂林官方微博</p>
+				<img src="__PUBLIC__/images/weibo_barcode.png">
+			</div>
+			<!-- 微信区域结束 -->
+			<!-- 我推荐你来谈区域 -->
+			<div class="recommend_box">
+				<a href="{:U("Intention/recommend")}">您推荐，我来谈</a>
+			</div>
+			<!-- 我推荐你来谈区域结束 -->
+		</div>
+		<!-- 主要内容顶部区域结束 -->
+		<!-- 热门品牌+新入驻品牌区域 -->
+		<div id="hot_and_new_brand_box">
+			<div class="hot_brand_box">
+				<p>热门品牌</p>
+				<ul>
+                <foreach name="hot_partners" item="hpartner">
+					<li>
+						<a href="{:U('coupon/coupon')}" target=_blank>{$hpartner.name}</a>
+						<img src="__PUBLIC__/{$hpartner.header_path}">
+					</li>
+                </foreach>
+				</ul>
+			</div>
+			<div class="new_brand_box">
+				<p>新入驻品牌</p>
+				<ul>
+               <foreach name="partners" item="partner"> 
+					<li>
+						<img src="__PUBLIC__/{$partner.header_path}">
+						<a href="{:U('coupon/coupon')}" class="title" target=_blank>{$partner.name}</a>
+                    </li>
+                </foreach> 
+				</ul>
+			</div>
+		</div>
+		<!-- 热门品牌+新入驻品牌区域结束 -->
+		<!-- 民以食为天+排行榜区域 -->
+		<div id="foot_and_footsort_box">
+			<div class="foot_box">
+				<p class="title">民以食为天</p>
+				<ul class="title_content">
+                    <foreach name="eat_cat" item="e_cat" key="k">
+                    <if condition="$k lt 5">
+					<li><a href="{:U('Coupon/coupon',array('label_type'=>1,'cat_id'=>$e_cat['cat_id']),'','')}">{$e_cat.cat_name}</a></li>
+
+                    <else />
+					<li><a href="{:U('Coupon/coupon',array('label_type'=>1,'cat_id'=>$e_cat['cat_id']),'','')}" class="no_right_border">{$e_cat.cat_name}</a></li>
+                    </if>
+                    </foreach>
+				</ul>
+				<ul class="content">
+                <foreach name="eat_coupons" item="coupon" key="k">
+                	<if condition="$k gt 3">
+					<else />
+						<li>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box" target=_blank><img src="__PUBLIC__/{$coupon.picture_path}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title" title="{$coupon.name}">{$coupon.name}</a>
+						<p class="one" title="{$coupon.description}">{$coupon.description}</p>
+						<p class="two" title="{$coupon.title}">{$coupon.title}</p>
+						<p class="three" >下载：{$coupon.download_times}次</p>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download">立即下载</a>
+
+						<p class="hidden_location">{$coupon.tag}</p>
+					</li>
+					</if>
+                </foreach>
+				</ul>
+				<a href="{:U('Coupon/coupon',array('label_type'=>1),'','')}" class="foot_type_more" target=_blank>查看更多</a>
+			</div>
+			<div class="footsort_box">
+				<!-- <p class="title title2" id="foot_hot_title">最热优惠劵排行</p><p class="title" id="foot_new_title">最新优惠劵排行</p> -->
+				<span class="title title2" id="foot_hot_title">最热优惠劵排行</span><span class="title" id="foot_new_title">最新优惠劵排行</span>
+				<ul id="foot_hot_ul">
+                <foreach name="eat_coupons" item="hcoupon" key="k">
+
+                	<if condition="$k eq 0">
+						<li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<p class="two">{$hcoupon.description}</p>
+							<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box" target=_blank><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<span class="one hidden">{$hcoupon.title}</span>
+						</li>
+						<else />
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<p class="two hidden">{$hcoupon.description}</p>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one sort_id_{$k+1}" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<span class="one">{$hcoupon.title}</span>
+						</li>
+					</if>
+                </foreach>
+				</ul>
+				<ul id="foot_new_ul" class="hidden" >
+				<foreach name="eat_coupons" item="hcoupon" key="k">
+                	<if condition="$k eq 0">
+						<li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<p class="two">{$hcoupon.description}</p>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<span class="one hidden">{$hcoupon.title}</span>
+						</li>
+						<else />
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<p class="two hidden">{$hcoupon.description}</p>
+							<a target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a target=_blank class="one sort_id_{$k+1}" href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<span class="one">{$hcoupon.title}</span>
+						</li>
+					</if>
+                </foreach>
+				</ul>
+			</div>
+		</div>
+		<!-- 民以食为天+排行榜区域结束 -->
+		<!-- 休闲娱乐+排行榜区域 -->
+		<div id="foot_and_footsort_box">
+			<div class="foot_box">
+				<p class="title">休闲娱乐</p>
+				<ul class="title_content">
+                    <foreach name="play_cat" item="p_cat" key="k">
+                    <if condition="$k lt 5">
+					<li><a href="{:U('Coupon/coupon',array('label_type'=>2,'cat_id'=>$p_cat['cat_id']),'','')}">{$p_cat.cat_name}</a></li>
+                    <else />
+					<li><a href="{:U('Coupon/coupon',array('label_type'=>2,'cat_id'=>$p_cat['cat_id']),'','')}" class="no_right_border">{$p_cat.cat_name}</a></li>
+                    </if>
+                    </foreach>
+				</ul>
+				<ul class="content">
+                <foreach name="play_coupons" item="coupon" key="k">
+                	<if condition="$k gt 3 ">
+					<else />
+						<li>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title" title="{$coupon.name}">{$coupon.name}</a>
+						<p class="one" title="{$coupon.description}">{$coupon.description}</p>
+						<p class="two" title="{$coupon.title}">{$coupon.title}</p>
+						<p class="three">下载：{$coupon.download_times}次</p>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download">立即下载</a>
+						<p class="hidden_location">{$coupon.tag}</p>
+					</li>
+					</if>
+                </foreach>
+				</ul>
+				<a href="{:U('Coupon/coupon',array('label_type'=>2),'','')}" class="foot_type_more">查看更多</a>
+			</div>
+			<div class="footsort_box">
+				<!-- <p class="title title2" id="ent_hot_title">最热优惠劵排行</p><p class="title" id="ent_new_title">最新优惠劵排行</p> -->
+				<span class="title title2" id="ent_hot_title">最热优惠劵排行</span><span class="title" id="ent_new_title">最新优惠劵排行</span>
+				<ul id="ent_hot_ul">
+                <foreach name="play_coupons" item="hcoupon" key="k">
+                	<if condition="$k eq 0">
+						<li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<p class="two">{$hcoupon.description}</p>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<span class="one hidden">{$hcoupon.title}</span>
+						</li>
+						<else />
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<p class="two hidden">{$hcoupon.description}</p>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one sort_id_{$k+1}" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<span class="one">{$hcoupon.title}</span>
+						</li>
+					</if>
+                </foreach>
+				</ul>
+				<ul id="ent_new_ul" class="hidden" >
+                <foreach name="play_coupons" item="hcoupon" key="k">
+                	<if condition="$k eq 0">
+						<li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<p class="two">{$hcoupon.description}</p>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<span class="one hidden">{$hcoupon.title}</span>
+						</li>
+						<else />
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<p class="two hidden">{$hcoupon.description}</p>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one sort_id_{$k+1}" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<span class="one">{$hcoupon.title}</span>
+						</li>
+					</if>
+                </foreach>
+				</ul>
+			</div>
+		</div>
+		<!-- 休闲娱乐+排行榜区域结束 -->
+		<!-- 生活服务+排行榜区域 -->
+		<div id="foot_and_footsort_box">
+			<div class="foot_box">
+				<p class="title">生活服务</p>
+				<ul class="title_content">
+                    <foreach name="life_cat" item="l_cat" key="k">
+                    <if condition="$k lt 5">
+					<li><a href="{:U('Coupon/coupon',array('label_type'=>3,'cat_id'=>$l_cat['cat_id']),'','')}">{$l_cat.cat_name}</a></li>
+                    <else />
+					<li><a href="{:U('Coupon/coupon',array('label_type'=>3,'cat_id'=>$l_cat['cat_id']),'','')}">{$l_cat.cat_name}</a></li>
+                    </if>
+                    </foreach>
+				</ul>
+				<ul class="content">
+                <foreach name="life_coupons" item="coupon" key="k">
+					<if condition="$k gt 3 ">
+					<else />
+						<li>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title" title="{$coupon.name}">{$coupon.name}</a>
+						<p class="one" title="{$coupon.description}">{$coupon.description}</p>
+						<p class="two" title="{$coupon.title}">{$coupon.title}</p>
+						<p class="three">下载：{$coupon.download_times}次</p>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download">立即下载</a>
+						<p class="hidden_location">{$coupon.tag}</p>
+					</li>
+					</if>
+                </foreach>
+				</ul>
+				<a href="{:U('Coupon/coupon',array('label_type'=>3),'','')}" class="foot_type_more">查看更多</a>
+			</div>
+			<div class="footsort_box">
+		<!-- 		<p class="title title2" id="life_hot_title">最热优惠劵排行</p><p class="title" id="life_new_title">最新优惠劵排行</p> -->
+				<span class="title title2" id="life_hot_title">最热优惠劵排行</span><span class="title" id="life_new_title">最新优惠劵排行</span>
+				<ul id="life_hot_ul">
+                <foreach name="life_coupons" item="hcoupon" key="k">
+                	<if condition="$k eq 0">
+						<li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<p class="two">{$hcoupon.description}</p>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<span class="one hidden">{$hcoupon.title}</span>
+						</li>
+						<else />
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<p class="two hidden">{$hcoupon.description}</p>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one sort_id_{$k+1}" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<span class="one">{$hcoupon.title}</span>
+						</li>
+					</if>
+                </foreach>
+				</ul>
+				<ul id="life_new_ul" class="hidden" >
+                <foreach name="life_coupons" item="hcoupon" key="k">
+                	<if condition="$k eq 0">
+						<li class="hover" id="footsort_box_fisrt_li">
+							<a class="two" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<p class="two">{$hcoupon.description}</p>
+							<a target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}"></a>
+							<a class="one hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<span class="one hidden">{$hcoupon.title}</span>
+						</li>
+						<else />
+						<li id="footsort_box_fisrt_li">
+							<a class="two hidden" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<p class="two hidden">{$hcoupon.description}</p>
+							<a href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$hcoupon.picture_path}" title="{$hcoupon.description}" class="hidden"></a>
+							<a class="one sort_id_{$k+1}" target=_blank href="{:U("Coupon/detail","","","")}/{$hcoupon.coupon_id}">{$hcoupon.name}</a>
+							<span class="one">{$hcoupon.title}</span>
+						</li>
+					</if>
+                </foreach>
+				</ul>
+			</div>
+		</div>
+		<!-- 生活服务+排行榜区域结束 -->
+	</div>
+<!-- 内容区域结束 -->
+<!-- 右侧回到顶部区域 -->
+	<!-- <div id="right_function_box">
+		
+	</div> -->
+<!-- 右侧回到顶部区域结束 -->
+	<include file="./App/Tpl/Home/Public/M_sendCouponToCellphone.html" />
+<!-- 最底部区域 -->
+	<include file="./App/Tpl/Home/Public/footer.html" />
+<!-- 最底部区域结束 -->
+
+</body>
+</html>
