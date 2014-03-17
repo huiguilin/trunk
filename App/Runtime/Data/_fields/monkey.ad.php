@@ -1,1 +1,0 @@
-<?php	return array ( 0 => 'id', 1 => 'img_path', 2 => 'link', 3 => 'business_type', '_autoinc' => true, '_pk' => 'id', '_type' => array ( 'id' => 'int(11) unsigned', 'img_path' => 'varchar(200)', 'link' => 'varchar(200)', 'business_type' => 'int(4)', ), );?>

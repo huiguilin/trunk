@@ -1,1 +1,0 @@
-<?php	return array ( 0 => 'cat_id', 1 => 'cat_name', 2 => 'label_type', 3 => 'status', '_autoinc' => true, '_pk' => 'cat_id', '_type' => array ( 'cat_id' => 'int(11) unsigned', 'cat_name' => 'varchar(20)', 'label_type' => 'tinyint(4)', 'status' => 'tinyint(2)', ), );?>
