@@ -10,6 +10,8 @@
 #main #right_content_box div.function_nav_box ul.function_nav li{
 	float: left;
 	margin-right: 3px;
+	position: relative;
+	height: 50px;
 }
 #main #right_content_box div.function_nav_box ul.function_nav li a{
 	color: #999999;
@@ -23,10 +25,26 @@
 	width: 128px;
 	background: #F2F2F2;
 }
+#main #right_content_box div.function_nav_box ul.function_nav li a.single{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#main #right_content_box div.function_nav_box ul.function_nav li a.multi{
+	position: absolute;
+	top: 0px;
+	left: 132px;
+}
+#main #right_content_box div.function_nav_box ul.function_nav li a.view{
+	position: absolute;
+	top: 0px;
+	left: 264px;
+}
 #main #right_content_box div.function_nav_box ul.function_nav li a.current{
 	color: #ED5565;
 	font-weight: bold;
 	background: white;
+	height: 50px;
 }
 #main #right_content_box div.function_content_box{
 	border:1px solid #E4E4E4;
