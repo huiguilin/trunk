@@ -1,0 +1,38 @@
+<div id="left_content_box">
+			<div class="top_box">
+				<p class="title">我的推广</p>
+			</div>
+			<div class="menu_box">
+				<ul>
+					<li>
+						
+						<a href="" class="bold">优惠券验证管理</a>
+						<if condition="$templateName eq 'singlevalidate'">
+							<a href="{:U('Admin/ValidateManagement/singlevalidate')}" class="normal currnet">单券验证</a>
+							<a href="{:U('Admin/ValidateManagement/multivalidate')}" class="normal">批量验证</a>
+							<a href="{:U('Admin/ValidateManagement/viewvalidate')}" class="normal">已验证优惠券</a>
+						<elseif condition="$templateName eq multivalidate"/>
+							<a href="{:U('Admin/ValidateManagement/singlevalidate')}" class="normal">单券验证</a>
+							<a href="{:U('Admin/ValidateManagement/multivalidate')}" class="normal currnet">批量验证</a>
+							<a href="{:U('Admin/ValidateManagement/viewvalidate')}" class="normal">已验证优惠券</a>
+						<else/>
+							<a href="{:U('Admin/ValidateManagement/singlevalidate')}" class="normal">单券验证</a>
+							<a href="{:U('Admin/ValidateManagement/multivalidate')}" class="normal">批量验证</a>
+							<a href="{:U('Admin/ValidateManagement/viewvalidate')}" class="normal currnet">已验证优惠券</a>
+						</if>
+
+					</li>
+					<!-- <li>
+						<a href="" class="bold">商家页面管理</a>
+						<a href="" class="normal">上传商家照片</a>
+						<a href="" class="normal">制作商家菜单</a>
+						<a href="" class="normal">回复用户评论</a>
+					</li>
+					<li>
+						<a href="" class="bold">财务管理</a>
+						<a href="" class="normal">结算中心</a>
+						<a href="" class="normal">财务数据</a>
+					</li> -->
+				</ul>
+			</div>
+		</div>
