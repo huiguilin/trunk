@@ -1,0 +1,104 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-size: 13px;
+	font-family: "Arial,宋体";
+}
+a{
+	text-decoration: none;
+	color: #333333;
+}
+ul li{
+	list-style: none;
+}
+input{
+	border: none;
+}
+.clearfix:after {content:"."; display:block; height:0; visibility:hidden; clear:both; }
+.clearfix { *zoom:1; }
+#top_content_box{
+	height: 75px;
+	background: #ED5565;
+	border-bottom:2px solid #DA4453;
+	width: 100%;
+}
+#top_content_box #top_middle_box{
+	margin: 0 auto;
+	height: 75px;
+	width: 960px;
+	position: relative;
+}
+#top_content_box #top_middle_box a.logoimg_box{
+	display: block;
+	position: absolute;
+	top: 20px;
+	left: 0px;
+	width: 93px;
+	height: 34px;
+}
+#top_content_box #top_middle_box a.logoimg_box img{
+	width: 93px;
+	height: 34px;
+}
+#top_content_box #top_middle_box p{
+	font-size: 30px;
+	color: white;
+	font-family: 微软雅黑;
+	height: 34px;
+	line-height: 34px;
+	position: absolute;
+	top: 20px;
+	left: 110px;
+	border-left:1px solid white;
+	padding-left: 15px;
+}
+#main{
+	margin: 0 auto;
+	width: 960px;
+	margin-top: 20px;
+}
+#main #left_content_box{
+	width: 218px;
+	border:1px solid #E4E4E4;
+	float: left;
+	margin-right: 5px;
+}
+#main #left_content_box div.top_box p{
+	color: #ED5565;
+	font-size: 20px;
+	font-weight: bold;
+	height: 48px;
+	line-height: 48px;
+	border-bottom:2px solid #D7D7D7;
+	width: 180px;
+	margin-left: 19px;
+	padding-left: 3px;
+}
+#main #left_content_box div.menu_box ul{
+	width: 180px;
+	margin-left: 19px;
+	padding-left: 3px;
+	padding-bottom: 30px;
+}
+#main #left_content_box div.menu_box ul li{
+	margin-top: 10px;
+}
+#main #left_content_box div.menu_box ul li a{
+	display: block;
+	height: 28px;
+	line-height: 28px;
+	color: #666666;
+	font-size: 14px;
+}
+#main #left_content_box div.menu_box ul li a.normal{
+	padding-left: 40px;
+}
+#main #left_content_box div.menu_box ul li a.bold{
+	font-weight: bold;
+	background: url(../images/ico_01.png) no-repeat 0px 4px;
+	padding-left: 25px;
+}
+#main #left_content_box div.menu_box ul li a.currnet{
+	color: #ED5565;
+	font-weight: bold;
+}

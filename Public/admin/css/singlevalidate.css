@@ -1,0 +1,129 @@
+#main #right_content_box{
+	width: 733px;
+	/*border:1px solid #E4E4E4;*/
+	height: 400px;
+	float: right;
+}
+#main #right_content_box div.function_nav_box ul.function_nav{
+	
+}
+#main #right_content_box div.function_nav_box ul.function_nav li{
+	float: left;
+	margin-right: 3px;
+}
+#main #right_content_box div.function_nav_box ul.function_nav li a{
+	color: #999999;
+	font-size: 14px;
+	display: block;
+	border:1px solid #E4E4E4;
+	border-bottom: none;
+	height: 49px;
+	line-height: 49px;
+	text-align: center;
+	width: 128px;
+	background: #F2F2F2;
+}
+#main #right_content_box div.function_nav_box ul.function_nav li a.current{
+	color: #ED5565;
+	font-weight: bold;
+	background: white;
+}
+#main #right_content_box div.function_content_box{
+	border:1px solid #E4E4E4;
+	padding-bottom: 50px;
+}
+#main #right_content_box div.function_content_box div.coupon_code_box{
+	height: 150px;
+	position: relative;
+	width: 663px;
+	margin-left: 35px;
+	border-bottom:1px dashed #D7D7D7;
+}
+#main #right_content_box div.function_content_box div.coupon_code_box p{
+	color: #666666;
+	font-size: 24px;
+	font-weight: bold;
+	position: absolute;
+	top: 30px;
+	left: 0px;
+}
+#main #right_content_box div.function_content_box div.coupon_code_box p.error_tips{
+	color: #F14B2B;
+	font-size: 13px;
+	background: url(../images/ico_13.png) no-repeat;
+	position: absolute;
+	top: 120px;
+	left: 0px;
+	padding-left: 22px;
+	display: none;
+}
+#main #right_content_box div.function_content_box div.coupon_code_box input{
+	height: 35px;
+	width: 350px;
+	border:1px solid #BCBCBC;
+	position: absolute;
+	top: 75px;
+	left: 0px;
+}
+#main #right_content_box div.function_content_box div.coupon_code_box a{
+	color: white;
+	font-size: 15px;
+	background: #ED5565;
+	width: 140px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	display: block;
+	position: absolute;
+	top: 75px;
+	left: 370px;
+}
+#main #right_content_box div.function_content_box div.coupon_detail_box{
+	display: none;
+}
+#main #right_content_box div.function_content_box div.coupon_detail_box p{
+	color: #666666;
+	font-size: 14px;
+	margin-top: 20px;
+	margin-left: 35px;
+}
+#main #right_content_box div.function_content_box div.coupon_detail_box p.c_title{
+	color: #AEAEAE;
+	font-size: 13px;
+}
+#main #right_content_box div.function_content_box div.coupon_detail_box p span{
+	color: #666666;
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 30px;
+}
+#main #right_content_box div.function_content_box div.coupon_detail_box p span.c_date{
+	padding-left: 18px;
+}
+#main #right_content_box div.function_content_box div.coupon_detail_box p span.c_code{
+	color: #666;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: Arial;
+}
+#main #right_content_box div.function_content_box div.coupon_detail_box #confirm_btn{
+	width: 200px;
+	height: 35px;
+	color: white;
+	line-height: 40px;
+	text-align: center;
+	background: #ED5565;
+	font-size: 14px;
+	margin-left: 35px;
+	margin-top: 30px;
+}
+#main #right_content_box div.function_content_box div.coupon_detail_box #coupon_validate_cancel_btn{
+	width: 85px;
+	height: 35px;
+	color: white;
+	line-height: 35px;
+	text-align: center;
+	background: #666666;
+	font-size: 14px;
+	display: inline-block;
+}
