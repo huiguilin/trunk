@@ -2,5 +2,12 @@
 		<div id="top_middle_box">
 			<a href="http://www.huigl.com" class="logoimg_box"><img src="__PUBLIC__/images/logo2.png" alt="" /></a>
 			<p>商家中心</p>
+			<if condition="$Think.session.user.user_id eq ''">
+				<a href="" class="one">登录</a>
+				<a href="" class="two">惠桂林首页</a>
+			<else />
+				<a href="" class="one">您好，商家ID</a>
+				<a href="" class="two">我商家后台</a>
+			</if>
 		</div>
 	</div>

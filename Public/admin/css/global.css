@@ -40,6 +40,24 @@ input{
 	width: 93px;
 	height: 34px;
 }
+#top_content_box #top_middle_box a.one{
+	color: white;
+	font-size: 14px;
+	position: absolute;
+	top: 45px;
+	right: 90px;
+}
+#top_content_box #top_middle_box a.two{
+	color: white;
+	font-size: 14px;
+	display: block;
+	width: 80px;
+	border-left:1px solid white;
+	padding-left: 5px;
+	position: absolute;
+	top: 45px;
+	right: 0px;
+}
 #top_content_box #top_middle_box p{
 	font-size: 30px;
 	color: white;
