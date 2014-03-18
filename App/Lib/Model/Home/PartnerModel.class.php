@@ -17,6 +17,9 @@ class PartnerModel extends Model {
         if (isset($params['partner_id'])) {
             $str .= " AND partner_id IN ({$params['partner_id']})";
         }
+        if (isset($params['user_id'])) {
+            $str .= " AND user_id IN ({$params['user_id']})";
+        }
         if (isset($params['label_type'])) {
             $str .= " AND label_type = {$params['label_type']}";
         }
