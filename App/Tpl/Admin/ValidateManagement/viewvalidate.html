@@ -36,8 +36,9 @@
 									<p>
 										<select name="" id="">
 											<option value="">全部优惠券</option>
-											<option value="">[中心广场]崇尚米粉--买米粉送油条</option>
-											<option value="">[中心广场]崇尚米粉--买米粉送油条</option>
+                                            <foreach name="coupon_info" item="coupon">
+											<option value="{$coupon.coupon_id}">{$coupon.name}</option>
+                                            </foreach>
 										</select>
 									</p>
 								</th>
@@ -45,20 +46,15 @@
 								<th class="five">手机号</th>
 								<th class="six">优惠券密码</th>
 							</tr>
+                            <foreach name="coupon_info" item="coupon">
 							<tr>
-								<td><span>1</span></td>
-								<td><a href="">[中心广场]崇尚米粉--买米粉送油条</a></td>
-								<td><a href="">2014-03-11 12:00:14</a></td>
-								<td><span>18611244143</span></td>
-								<td><span class="bold">123 456 789</span></td>
+								<td><span>{$coupon.coupon_id}</span></td>
+								<td><a href="/index.php/Coupon/detail/{$coupon.coupon_id}">{$coupon.name}</a></td>
+								<td><a href="">{$coupon.update_time}</a></td>
+								<td><span>{$coupon.telephone}</span></td>
+								<td><span class="bold">{$coupon.code}</span></td>
 							</tr>
-							<tr>
-								<td><span>2</span></td>
-								<td><a href="">[中心广场]崇尚米粉--买米粉送油条</a></td>
-								<td><a href="">2014-03-11 12:00:14</a></td>
-								<td><span>18611244143</span></td>
-								<td><span class="bold">123 456 789</span></td>
-							</tr>
+                            </foreach>
 						</table>
 						<ul class="page_box clearfix">
 							<li class="one"><a href="" class="one">首页</a></li>

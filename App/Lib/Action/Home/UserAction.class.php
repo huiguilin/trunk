@@ -40,7 +40,12 @@ class UserAction extends Action {
             $data['status'] = 1;
             $data['info'] = '登陆成功！';
             $data['size'] = 9;
-            $data['url'] = "";
+            if (!empty($data['isBusiness'])) {
+                $data['url'] = "/index.php/Admin/ValidateManagement/singlevalidate";
+            }
+            else {
+                $data['url'] = "";
+            }
         }
         else {
             $data = array();
