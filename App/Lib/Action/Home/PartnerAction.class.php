@@ -110,6 +110,40 @@ class PartnerAction extends Action {
         $this->assign("get_info", $_GET);
         $this->display();
     }
+    public function detail(){
+        $partnerId = $_GET['_URL_'][2];
+        $partnerId = array(
+            'partner_id' => $partnerId,
+        );
+        $partnerHelper = new PartnerModel();
+        $data = $partnerHelper->getPartnerByPartnerId($partnerId);
+        if (empty($data)) {
+            return false;
+        }
+
+        $location_desc = trim(mb_substr($data[0]['location_desc'], 0,17,'utf-8'))."...";
+        $description = trim(mb_substr($data[0]['description'], 0,123,'utf-8'))."...";
+        $partnerPictureId = array(
+            'partner_id' => $data[0]['partner_id'],
+        );
+        $partnerPictureHelper = new PartnerPictureModel();
+        $partnerPictureInfo = $partnerPictureHelper->getPartnerPictureByPartnerId($partnerPictureId);
+        foreach ($partnerPictureInfo as $k => $v) {
+            $json_partnerPicInfo[] = $v['picture_path'];
+        }
+
+        $couponHelper = new CouponModel();
+        $partnerCouponInfo = $couponHelper->getCouponByPartnerId($data[0]['partner_id']);
+       
+        $this->assign('location_desc',$location_desc);
+        $this->assign('description',$description);
+        $this->assign('partnerInfo',$data);
+        $this->assign("partner", json_encode($data[0]));
+        $this->assign('partnerPictureInfo',$partnerPictureInfo);
+        $this->assign("partnerPicture", json_encode($json_partnerPicInfo));
+        $this->assign('partnerCouponInfo',$partnerCouponInfo);
+        $this->display();
+    }
     private function cutCouponWords($info) {
         if (empty($info)) {
             return array();
