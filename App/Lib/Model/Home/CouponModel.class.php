@@ -82,6 +82,18 @@ class CouponModel extends Model {
         else {
             $data = $this->where($str)->order($params['order_by'])->limit($params['limit'])->sum($params['sum']);
         }  
+        if (isset($params['hash_key']) && !empty($params['hash_key']) && !empty($data)) {
+            $result = array();
+            foreach ($data AS $key => $value) {
+                if (isset($data[$key][$params['hash_key']])) {
+                    $hashKey = $data[$key][$params['hash_key']];
+                    $result[$hashKey] = $data[$key];
+                }
+            }
+            if (!empty($result)) {
+                $data = $result;
+            }
+        }
         return $data;
     }
     

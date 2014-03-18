@@ -8,11 +8,17 @@ class UserCouponModel extends Model {
             return array();
         }
         $str = "1 = 1";
+        if (isset($params['id'])) {
+            $str .= " AND id IN ({$params['id']})";
+        }
         if (isset($params['user_id'])) {
             $str .= " AND user_id IN ({$params['user_id']})";
         }
         if (isset($params['coupon_id'])) {
             $str .= " AND coupon_id IN ({$params['coupon_id']})";
+        }
+        if (isset($params['partner_id'])) {
+            $str .= " AND partner_id IN ({$params['partner_id']})";
         }
         if (isset($params['status'])) {
             $str .= " AND status IN ({$params['status']})";
@@ -20,6 +26,7 @@ class UserCouponModel extends Model {
         if (isset($params['evaluated'])) {
             $str .= " AND evaluated IN ({$params['evaluated']})";
         }
+
 
         if (!isset($params['count'])) {
             $data = $this->where($str)->order($params['order_by'])->limit($params['limit'])->select();

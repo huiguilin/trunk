@@ -26,6 +26,7 @@ return array(
     // 'SHOW_PAGE_TRACE' => true,
 
     'URL_404_REDIRECT' => '/',
+    'VAR_FILTERS'=>'stripslashes,strip_tags',
 
 );
 

@@ -40,26 +40,19 @@
 								<th class="one">序号</th>
 								<th class="two">操作</th>
 								<th class="three">优惠券信息</th>
-								<th class="four">门店</th>
+								<!--th class="four">门店</th-->
 								<th class="five">有效期</th>
 								<th class="six">优惠券密码</th>
 							</tr>
+                            <foreach name="coupon_info" item="coupon">
 							<tr>
-								<td><span>1</span></td>
+								<td><span>{$coupon.coupon_id}</span></td>
 								<td><a href="">删除</a></td>
-								<td><a href="">[中心广场]崇尚米粉--买米粉送油条</a></td>
-								<td><a href="">桂林总店</a></td>
-								<td><span>2014年1月20日至2014年5月20日</span></td>
-								<td><span class="bold">123 456 789</span></td>
+								<td><a href="/index.php/Coupon/detail/{$coupon.coupon_id}">{$coupon.name}</a></td>
+								<td><span>{$coupon.start_time}至{$coupon.end_time}</span></td>
+								<td><span class="bold">{$coupon.code}</span></td>
 							</tr>
-							<tr>
-								<td><span>2</span></td>
-								<td><a href="">删除</a></td>
-								<td><a href="">[中心广场]崇尚米粉--买米粉送油条</a></td>
-								<td><a href="">桂林总店</a></td>
-								<td><span>2014年1月20日至2014年5月20日</span></td>
-								<td><span class="bold">123 456 789</span></td>
-							</tr>
+                            </foreach>
 						</table>
 						<input type="submit" name="confirm_btn" id="confirm_btn" value="确定消费" />
 						<a href="" id="cancel_btn">取消</a>
