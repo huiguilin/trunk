@@ -24,8 +24,8 @@ class UserAction extends Action {
             $this->ajaxReturn($data,'JSON');
         }
         $helper = new UserProfileModel();
-        $data = $helper->getUserProfileByUserName($userName);
-        if (empty($data)) {
+        $userInfo = $helper->getUserProfileByUserName($userName);
+        if (empty($userInfo)) {
             $data = array();
             $data['status'] = 2;
             $data['info'] = '用户名不存在!';
@@ -34,13 +34,20 @@ class UserAction extends Action {
             $this->ajaxReturn($data,'JSON');
         }
         $md5 = md5($passwd);
-        if ($md5 == $data['password']) {
-            $_SESSION['user'] = $data;
+        if ($md5 == $userInfo['password']) {
+            $_SESSION['user'] = $userInfo;
             $data = array();
             $data['status'] = 1;
             $data['info'] = '登陆成功！';
             $data['size'] = 9;
-            if (!empty($data['isBusiness'])) {
+            if (!empty($userInfo['isBusiness'])) {
+                $partnerHelper = new PartnerModel();
+                $params = array(
+                    'user_id' => $userInfo['user_id'],
+                );
+                $partnerInfo = $partnerHelper->getPartner($params);
+                $partnerInfo = $partnerInfo[0];
+                $_SESSION['user'] = array_merge($userInfo, $partnerInfo);
                 $data['url'] = "/index.php/Admin/ValidateManagement/singlevalidate";
             }
             else {
@@ -56,7 +63,6 @@ class UserAction extends Action {
         }
         $this->ajaxReturn($data,'JSON');
         return TRUE;
-        $this->display();
     }
 
     public function register() {

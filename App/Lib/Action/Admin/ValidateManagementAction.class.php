@@ -41,17 +41,12 @@ class ValidateManagementAction extends Action {
             'partner_id' => $user['partner_id'],
             'limit' => "{$offset},{$pageSize}",
             //TBC
-            'status' => 1,
+            'status' => 0,
         );
         $userCouponHelper = D('Home/UserCoupon');
         $coupon = $userCouponHelper->getUserCoupon($params);
 
-        foreach ($coupon AS $key => $value) {
-            $couponId = $coupon[$key]['coupon_id'];
-            if (!empty($couponInfo[$couponId])) {
-                $coupon[$key] = array_merge($coupon[$key], $couponInfo[$couponId]);
-            }
-        }
+        $coupon = mergeData($coupon, $couponInfo, 'coupon_id', 'coupon_id');
         $templateName = $_GET["_URL_"][2];
         $this->assign('templateName',$templateName);
         $this->assign('coupon_info',$coupon);
@@ -86,12 +81,7 @@ class ValidateManagementAction extends Action {
         );
         $couponHelper = D('Home/Coupon');
         $couponInfo = $couponHelper->getCoupon($params);
-        foreach ($coupon AS $key => $value) {
-            $couponId = $coupon[$key]['coupon_id'];
-            if (!empty($couponInfo[$couponId])) {
-                $coupon[$key] = array_merge($coupon[$key], $couponInfo[$couponId]);
-            }
-        }
+        $coupon = mergeData($coupon, $couponInfo, 'coupon_id', 'coupon_id');
         $data = array(
             'status' => 1,
             'info' => $coupon,
@@ -103,8 +93,9 @@ class ValidateManagementAction extends Action {
         $ids = !empty($_GET['ids']) ? $_GET['ids'] : 0;
         $user = $_SESSION['user'];
         $user['partner_id'] = 11;
-        $data = array(
+        $changeData = array(
             'status' => 0,
+            'updatetime' => date('Y-m-d H:i:s'),
         );
         if (empty($ids) || empty($user['partner_id'])) {
             $data['info'] = "empty params!";
@@ -122,7 +113,7 @@ class ValidateManagementAction extends Action {
         $ids = implode(',', DataToArray($coupon, 'id'));
         $condition = "partner_id = {$user['partner_id']} AND id IN ({$ids})";
 
-        $result = $userCouponHelper->updateUserCoupon($condition, $data);
+        $result = $userCouponHelper->updateUserCoupon($condition, $changeData);
         $data['status'] = $result;
         $this->ajaxReturn($data);
         return TRUE;
