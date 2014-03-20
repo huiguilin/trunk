@@ -124,7 +124,7 @@
 	font-weight: bold;
 	font-family: Arial;
 }
-#main #right_content_box div.function_content_box div.coupon_detail_box #confirm_btn{
+#main #right_content_box div.function_content_box div.coupon_detail_box #coupon_validate_confirm_btn{
 	width: 200px;
 	height: 35px;
 	color: white;

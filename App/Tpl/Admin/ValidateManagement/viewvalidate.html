@@ -34,10 +34,11 @@
 								<th class="one">序号</th>
 								<th class="three">
 									<p>
+
 										<select name="" id="">
 											<option value="">全部优惠券</option>
-                                            <foreach name="coupon_info" item="coupon">
-											<option value="{$coupon.coupon_id}">{$coupon.name}</option>
+                                            <foreach name="couponTypes" item="couponType">
+                                          		<option value="{$couponType.coupon_id}">{$couponType.name}</option>
                                             </foreach>
 										</select>
 									</p>
@@ -48,9 +49,9 @@
 							</tr>
                             <foreach name="coupon_info" item="coupon">
 							<tr>
-								<td><span>{$coupon.coupon_id}</span></td>
+								<td><span>{$key+1}</span></td>
 								<td><a href="/index.php/Coupon/detail/{$coupon.coupon_id}">{$coupon.name}</a></td>
-								<td><a href="">{$coupon.update_time}</a></td>
+								<td><a href="">{$coupon.updatetime}</a></td>
 								<td><span>{$coupon.telephone}</span></td>
 								<td><span class="bold">{$coupon.code}</span></td>
 							</tr>

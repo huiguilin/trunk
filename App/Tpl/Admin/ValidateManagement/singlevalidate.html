@@ -37,12 +37,12 @@
 					</div>
 					<div class="coupon_detail_box" id="single_validate_coupon_detail_box">
 						<p class="c_title">优惠券信息</p>
-						<p>优惠券名称<span>[中心广场]崇尚米粉--买米粉送油条</span></p>
-						<p>优惠券标题<span>全场8.5折</span></p>
-						<p>优惠券有效期<span class="c_date">2014年1月20日—2014年5月20日</span></p>
-						<p>优惠券密码<span class="c_code">123 456 789</span></p>
-						<input type="submit" name="coupon_validate_confirm_btn" id="confirm_btn" value="确定消费" />
-						<a href="{:U('Admin/ValidateManagement/singlevalidate','','','')}" id="coupon_validate_cancel_btn">取消</a>
+						<p>优惠券名称<span id="coupon_name"></span></p>
+						<p>优惠券标题<span id="coupon_title"></span></p>
+						<p>优惠券有效期<span class="c_date" id="coupon_date"></span></p>
+						<p>优惠券密码<span class="c_code" id="coupon_code"></span></p>
+						<input type="submit" name="coupon_validate_confirm_btn" id="coupon_validate_confirm_btn" value="确定消费"/>
+						<a href="" id="coupon_validate_cancel_btn">取消</a>
 					</div>
 				</form>
 			</div>

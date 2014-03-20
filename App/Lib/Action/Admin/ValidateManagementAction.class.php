@@ -19,7 +19,6 @@ class ValidateManagementAction extends Action {
     public function viewvalidate(){
         $user = $_SESSION['user'];
         //TBC
-        $user['partner_id'] = 11;
         if (empty($user['partner_id'])) {
             $this->redirect('/index.php/Admin/Account/login');
         }
@@ -45,11 +44,16 @@ class ValidateManagementAction extends Action {
         );
         $userCouponHelper = D('Home/UserCoupon');
         $coupon = $userCouponHelper->getUserCoupon($params);
-
         $coupon = mergeData($coupon, $couponInfo, 'coupon_id', 'coupon_id');
+       
+        $params = array(
+            'partner_id' => $user['partner_id'],
+        );
+        $couponType = $couponHelper->getCoupon($params);
         $templateName = $_GET["_URL_"][2];
         $this->assign('templateName',$templateName);
         $this->assign('coupon_info',$coupon);
+        $this->assign('couponTypes',$couponType);
 		$this->display();
     }
     //用优惠券码获得优惠券对应的信息
@@ -61,10 +65,9 @@ class ValidateManagementAction extends Action {
             'info' => '',
         );
         if (empty($code) || empty($user['partner_id'])) {
-             $data['status'] = 0;
+            $data['status'] = 0;
             $data['info'] = "请输入优惠券验证码！";
             $this->ajaxReturn($data);
-            return TRUE;
         }
         $params = array(
             'partner_id' => $user['partner_id'],
@@ -73,6 +76,12 @@ class ValidateManagementAction extends Action {
         );
         $userCouponHelper = D('Home/UserCoupon');
         $coupon = $userCouponHelper->getUserCoupon($params);
+
+        if(empty($coupon)){
+            $data['status'] = 2;
+            $data['info'] = "优惠券验证码输入错误！";
+            $this->ajaxReturn($data);
+        }
         $couponIds = implode(DataToArray($coupon, 'coupon_id'));
         $params = array(
            "coupon_id" => $couponIds, 
@@ -83,38 +92,49 @@ class ValidateManagementAction extends Action {
         $coupon = mergeData($coupon, $couponInfo, 'coupon_id', 'coupon_id');
         $data = array(
             'status' => 1,
-            'info' => $coupon,
+            'name' => $coupon[0]['name'],
+            'title'=> $coupon[0]['title'],
+            'code' => $coupon[0]['code'],
+            'stime' => $coupon[0]['start_time'],
+            'etime' => $coupon[0]['end_time'],
         );
         $this->ajaxReturn($data);
     }
     //消码
     public function validateCouponCode(){
-        $ids = !empty($_GET['ids']) ? $_GET['ids'] : 0;
+        $codes = !empty($_GET['codes']) ? $_GET['codes'] : 0;
         $user = $_SESSION['user'];
-        $user['partner_id'] = 11;
         $changeData = array(
             'status' => 0,
             'updatetime' => date('Y-m-d H:i:s'),
         );
-        if (empty($ids) || empty($user['partner_id'])) {
+        $data = array(
+            'status' => 0,
+            'info' => '',
+            );
+        if (empty($codes) || empty($user['partner_id'])) {
+            $data['status'] = 2;
             $data['info'] = "empty params!";
             $this->ajaxReturn($data);
-            return TRUE;
         }
-        $ids = implode(',', explode(',', $ids));
+        $codes = implode(',',explode(',', $codes));
         $params = array(
-            'id' => $ids,
+            'code' => $codes,
             'partner_id' => $user['partner_id'],
             'status' => 1,
         );
         $userCouponHelper = D('Home/UserCoupon');
         $coupon = $userCouponHelper->getUserCoupon($params);
-        $ids = implode(',', DataToArray($coupon, 'id'));
-        $condition = "partner_id = {$user['partner_id']} AND id IN ({$ids})";
-
+        if(empty($coupon)){
+            $data['status'] = 3;
+            $data['info'] = "优惠券验证码输入错误！";
+            $this->ajaxReturn($data);
+        }
+        $codes = implode(',', DataToArray($coupon, 'code'));
+        $condition = "partner_id = {$user['partner_id']} AND code IN ({$codes})";
         $result = $userCouponHelper->updateUserCoupon($condition, $changeData);
-        $data['status'] = $result;
+        $data['status'] = 1;
+        $data['info'] = "验证已成功！";
         $this->ajaxReturn($data);
-        return TRUE;
     }
 }
