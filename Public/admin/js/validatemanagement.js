@@ -6,7 +6,8 @@ $(function(){
 			$('#main #right_content_box div.function_content_box div.coupon_code_box p.error_tips').show().text('请输入优惠券验证码！')
 			return false;
 		}else{
-			$.post('http://localhost/trunk/index.php/admin/validate_management/getCouponInfo', {code: code}, function(data) {
+			$.get(ajaxPostURL+"Admin/ValidateManagement/getCouponInfo", {code: code}, function(data) {
+				
 				if(data.status == 2){
 					$('#main #right_content_box div.function_content_box div.coupon_code_box p.error_tips').show().text(data.info);  //验证码不存在错误信息
 				}else if(data.status == 1){
@@ -16,8 +17,9 @@ $(function(){
 					$('#main #right_content_box div.function_content_box div.coupon_code_box p.error_tips').show().text(data.info);  //验证失败错误信息
 				}
 			});
+			return false;
 		}
-		return false;
+		
 	});
 	//单券验证结束
 	//批量验证

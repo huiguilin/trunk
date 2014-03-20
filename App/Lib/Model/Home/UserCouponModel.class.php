@@ -20,6 +20,9 @@ class UserCouponModel extends Model {
         if (isset($params['partner_id'])) {
             $str .= " AND partner_id IN ({$params['partner_id']})";
         }
+        if (isset($params['code'])) {
+            $str .= " AND code IN ({$params['code']})";
+        }
         if (isset($params['status'])) {
             $str .= " AND status IN ({$params['status']})";
         }

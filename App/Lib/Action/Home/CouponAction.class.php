@@ -251,8 +251,8 @@ class CouponAction extends Action {
         $couponName = $couponInfo[0]['name'];
 
         $couponDesc = !empty($couponInfo[0]['message']) ? $couponInfo[0]['message'] : $couponInfo[0]['description'];
-
-        $result = $this->send($phoneNumber, $code, $couponName, $couponId,$couponDesc);
+        $partnerId = $couponInfo[0]['partner_id'];
+        $result = $this->send($phoneNumber, $code, $couponName, $couponId,$couponDesc,$partnerId);
 
 
         //下载成功后数据库中download_times加1
@@ -273,7 +273,7 @@ class CouponAction extends Action {
         return TRUE;
     }
 
-    private function send($phoneNumber, $code, $couponName, $couponId,$couponDesc){
+    private function send($phoneNumber, $code, $couponName, $couponId,$couponDesc,$partnerId){
         if (empty($phoneNumber) || empty($code)) {
             return FALSE;
         }
@@ -293,19 +293,22 @@ class CouponAction extends Action {
                     'status' => 1,
                     'info' => '发送成功',
                 ); 
-            if(!empty($_SESSION['user']['user_id'])){     //判断匿名发送，添加我的优惠券
-                $addData = array(
-                'user_id' => $_SESSION['user']['user_id'],
+             $addData = array(
+                'user_id' => "",
                 'coupon_id' => $couponId,
                 'status' => 1,
                 'code' => $code,
                 'createtime' => date('Y-m-d H:i:s'),
                 'evaluated' => 0,
+                'telephone' => $phoneNumber,
+                'partner_id' =>$partnerId,
                 );
-                $helper = new UserCouponModel();
-                $r = $helper->addUserCoupon($addData);
-                
+
+            if(!empty($_SESSION['user']['user_id'])){     //判断匿名发送，添加我的优惠券
+                $addData['user_id'] = $_SESSION['user']['user_id'];
             }
+            $helper = new UserCouponModel();
+            $r = $helper->addUserCoupon($addData);
             return $data;
         }
         

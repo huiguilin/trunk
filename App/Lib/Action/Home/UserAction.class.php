@@ -7,21 +7,24 @@ class UserAction extends Action {
         $userName = $_POST['username'];
         $passwd = $_POST['password'];
         $verify = mb_strtolower($_POST['vcode']);
-        if (empty($userName) || empty($passwd) || empty($verify)) {
+        $vcodemark = $_POST['vcodemark'];
+        if (empty($userName) || empty($passwd)) {
             $data = array();
             $data['status'] = 4;
-            $data['info'] = '用户名,密码和者验证码不能为空';
+            $data['info'] = '用户名和密码不能为空';
             $data['size'] = 9;
             $data['url'] = "";
             $this->ajaxReturn($data,'JSON');
         }
-        if (session('verify') != md5($verify)) {
-            $data = array();
-            $data['status'] = 3;
-            $data['info'] = '验证码错误！';
-            $data['size'] = 9;
-            $data['url'] = "";
-            $this->ajaxReturn($data,'JSON');
+        if(empty($vcodemark)){
+            if (session('verify') != md5($verify) || empty($verify)) {
+                $data = array();
+                $data['status'] = 3;
+                $data['info'] = '验证码错误！';
+                $data['size'] = 9;
+                $data['url'] = "";
+                $this->ajaxReturn($data,'JSON');
+            }
         }
         $helper = new UserProfileModel();
         $userInfo = $helper->getUserProfileByUserName($userName);
@@ -52,6 +55,7 @@ class UserAction extends Action {
             }
             else {
                 $data['url'] = "";
+                
             }
         }
         else {

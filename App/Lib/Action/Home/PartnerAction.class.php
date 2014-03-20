@@ -135,6 +135,24 @@ class PartnerAction extends Action {
         $couponHelper = new CouponModel();
         $partnerCouponInfo = $couponHelper->getCouponByPartnerId($data[0]['partner_id']);
        
+        //获取商家分类标签
+        $partnerTagshelper = new PartnerTagsModel();
+        $partnerTagsInfo = $partnerTagshelper->getPartnerTagsInfoById($data[0]['partner_id']);
+
+        //获取优惠券评分
+        $Evaluationhelper = new CouponEvaluationModel();
+        $partnerRateResult= array();
+        $eInfo = $Evaluationhelper->getRateByPartnerId($data[0]['partner_id']);
+        array_push($partnerRateResult, $eInfo);
+
+
+        //获取热门优惠券
+        $param =array();
+        $param['limit'] = '0,5';
+        $hotCouponInfo = $couponHelper->getCoupon($param);
+        $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);
+
+
         $this->assign('location_desc',$location_desc);
         $this->assign('description',$description);
         $this->assign('partnerInfo',$data);
@@ -142,6 +160,9 @@ class PartnerAction extends Action {
         $this->assign('partnerPictureInfo',$partnerPictureInfo);
         $this->assign("partnerPicture", json_encode($json_partnerPicInfo));
         $this->assign('partnerCouponInfo',$partnerCouponInfo);
+        $this->assign("partner_tags", $partnerTagsInfo);
+        $this->assign("partner_rate", $partnerRateResult);
+        $this->assign("hot_coupons", $hotCouponInfo);
         $this->display();
     }
     private function cutCouponWords($info) {

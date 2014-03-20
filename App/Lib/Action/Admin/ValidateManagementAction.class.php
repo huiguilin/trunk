@@ -56,13 +56,13 @@ class ValidateManagementAction extends Action {
     public function getCouponInfo(){
         $code = $_REQUEST['code'];
         $user = $_SESSION['user'];
-        $user['partner_id'] = 11;
         $data = array(
             'status' => 0,
             'info' => '',
         );
         if (empty($code) || empty($user['partner_id'])) {
-            $data['info'] = "empty params!";
+             $data['status'] = 0;
+            $data['info'] = "请输入优惠券验证码！";
             $this->ajaxReturn($data);
             return TRUE;
         }
@@ -71,7 +71,6 @@ class ValidateManagementAction extends Action {
             'code' => $code,
             'status' => 1,
         );
-
         $userCouponHelper = D('Home/UserCoupon');
         $coupon = $userCouponHelper->getUserCoupon($params);
         $couponIds = implode(DataToArray($coupon, 'coupon_id'));
