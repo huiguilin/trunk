@@ -54,6 +54,7 @@ class ValidateManagementAction extends Action {
         $this->assign('templateName',$templateName);
         $this->assign('coupon_info',$coupon);
         $this->assign('couponTypes',$couponType);
+        $this->assign('couponids',$couponId);
 		$this->display();
     }
     //用优惠券码获得优惠券对应的信息

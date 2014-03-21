@@ -720,20 +720,9 @@
 	width: 20px;
 	height: 20px;
 }
-#hidden_detail_map div.shop_box{
-	height: 38px;
-
-}
-#hidden_detail_map div.shop_box p{
-	font-size: 14px;
-	font-weight: bold;
-	height: 38px;
-	line-height: 38px;
-	display: inline-block;
-	margin-left: 10px;
-}
 #hidden_detail_map div.detail_map_box{
-	height: 380px;
+	height: 400px;
 	width: 790px;
 	margin-left: 5px;
+	margin-top: 10px;
 }

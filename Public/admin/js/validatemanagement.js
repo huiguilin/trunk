@@ -121,6 +121,11 @@ $(function(){
 		}
 		
 	});
-
+	var couponids = $('#couponids').val();
+	if (couponids == "") {
+		$('#select_coupon').val(0);
+	}else{
+		$('#select_coupon').val(couponids);
+	}
 	//已验证优惠券结束
 })

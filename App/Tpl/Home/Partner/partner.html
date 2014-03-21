@@ -181,7 +181,7 @@
 			<div id="partner_content_box">
 				<div class="partner_info_box">
 					<p class="title_box">
-						<a href="{:U("Partner/detail","","","")}/{$partner.partner_id}" class="title">{$partner.name}</a><!-- <a href="" class="viewAllBranch">查看其他分店</a> -->
+						<a href="{:U("Partner/detail","","","")}/pid/{$partner.partner_id}" class="title">{$partner.name}</a><!-- <a href="" class="viewAllBranch">查看其他分店</a> -->
 						<foreach name="partner_rates" item="partner_rate" key="k">
 						<if condition="$partner['partner_id'] eq $partner_rate['partner_id']">
 							<span class="partner_rate">

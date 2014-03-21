@@ -111,7 +111,7 @@ class PartnerAction extends Action {
         $this->display();
     }
     public function detail(){
-        $partnerId = $_GET['_URL_'][2];
+        $partnerId = $_GET['_URL_'][3];
         $partnerId = array(
             'partner_id' => $partnerId,
         );
@@ -152,6 +152,23 @@ class PartnerAction extends Action {
         $hotCouponInfo = $couponHelper->getCoupon($param);
         $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);
 
+        //获取商家所有优惠券的评论
+        $param['partner_id'] = $data[0]['partner_id'];
+        $page = !empty($_GET['_URL_'][5]) ? $_GET['_URL_'][5] : 0;
+        $pageSize = 2;
+        $offset = $page * $pageSize;
+        $firstset = ($page-1)* $pageSize;
+
+        if($page == 0 || $page ==1){
+            $param['limit'] = "0,{$pageSize}";
+        }else{
+            $param['limit'] = "{$firstset},{$offset}";
+        }
+        $pEvaluationHelper = new PartnerEvaluationModel();
+        $count = $pEvaluationHelper->getCountByPartnerId($data[0]['partner_id']);
+        $pageNum = ceil($count/$pageSize);
+
+        $partnerCommentResult = $pEvaluationHelper->getPartnerEvaluationInfoById($param);
 
         $this->assign('location_desc',$location_desc);
         $this->assign('description',$description);
@@ -163,6 +180,9 @@ class PartnerAction extends Action {
         $this->assign("partner_tags", $partnerTagsInfo);
         $this->assign("partner_rate", $partnerRateResult);
         $this->assign("hot_coupons", $hotCouponInfo);
+        $this->assign("partnerComments", $partnerCommentResult);
+        $this->assign("pageNums", $pageNum);
+        $this->assign("get_info", $page);
         $this->display();
     }
     private function cutCouponWords($info) {
