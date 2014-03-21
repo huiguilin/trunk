@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 a//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>商家信息</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/partnerdetail.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/M_sendCouponToCellphone.css">
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/partner.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/baidumap.js"></script>
+</head>
+<body>
+<!-- 顶部订阅分享区域+Logo区域 -->
+       <include file="./App/Tpl/Home/Public/header.html" />
+       <include file="./App/Tpl/Home/Public/nav_partner.html" />
+<!-- 顶部订阅分享区域+Logo区域结束 -->
+<!--  导航区域 -->
+<div style="width:100%">
+	<div id="partnermain" >
+		<!-- 主要内容顶部区域 -->
+			<div id="partnersitenav">
+				<a href="" class="no_margin_left">{$partner_tags[0]['pcat_name']}</a><span>></span><a href="">{$partner_tags[0]['cat_name']}</a><span>></span><a href="">{$partner_tags[0]['belong']}</a><span>></span><a href="">{$partner_tags[0]['locationname']}</a><span>></span><a href="" class="gray">{$partnerInfo[0]['name']}</a>
+			</div>
+			<!-- 主要内容顶部区域结束 -->
+			<!-- 主要内容左边区域开始 -->
+				<div id="partnerleft">
+				<!-- 主要内容左边区域优商家信息部分开始 -->
+				    <div id="partnerleft_top_box">
+						<div id="partnerleft_top">
+							<a href="#" class="partnertitle">{$partnerInfo[0]['name']}</a><a href="#" class="otherstore" style="display:none">查看其他分店信息</a>
+							<span class="rate_stars">
+								<span style="width: {$partner_rate[0]['rateValue']}%;"></span>
+							</span>
+							<p><a href="#">{$partner_rate[0]['rateCount']}</a>&nbsp条评论信息</p>
+						</div>
+						<div id="partnerleft_down_left">
+							<p><span>地址：</span>{$location_desc}</p>
+							<p><span>电话：</span>{$partnerInfo[0]['telephone']}</p>
+							<p><span>营业时间：</span>10：00-22：30（ 周末、节假日不休）</p>
+							<p class="tag_box">
+								<span>标签：</span>
+								<a>{$partner_tags[0]['pcat_name']}</a>
+								<a>{$partner_tags[0]['cat_name']}</a>
+								<a>{$partner_tags[0]['belong']}</a>
+								<a>{$partner_tags[0]['locationname']}</a>
+							</p>
+							<p><span>餐厅描述：</span>
+								<p class="description" id="partner_desc_sort">
+								{$description}
+								<?php if (strlen($description) > 330) {
+									echo "<a href='#' id='desc_out'>展开</a>";
+								} ?>
+								</p>
+								<p class="description" id="partner_desc_long" style="display:none;">
+									{$partnerInfo[0]['description']}<a href='#' id="desc_up">收起</a>
+								</p>
+							</p>
+						</div>
+						<div id="partnerleft_down_right">
+							<a href="#"><img src="__PUBLIC__/{$partnerInfo[0]['header_path']}" alt="gg" /></a>
+							<p id="viewallpic_btn"><a href="" class="moreimg">查看全部<span>{$partnerPictureInfo|count}</span>张照片</a></p>
+						</div>
+					</div>
+					<!-- 主要内容左边区域优商家信息部分结束 -->
+					<!-- 主要内容左边区域优惠券信息部分开始 -->
+					<div id="partnerleft_middle_box">
+						<ul class="coupon_type_nav">
+							<li class="red"><a href="" class="red">正在优惠</a></li>
+							<li><a href="" class="normal">过期优惠</a></li>
+						</ul>
+						<div id="all_coupon_info">
+                           <ul class="coupon_content clearfix">
+                           		<foreach name="partnerCouponInfo" item="partnercoupon" key="k">
+								<?php
+									$i = $k%2;	
+								?>
+                           		<if condition="$i eq '0'">
+									<li class="no_margin_left">
+										<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$partnercoupon.header_path}" alt="{$partnercoupon.name}"></a>
+										<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="content_title" title="{$partnercoupon.name}">{$partnercoupon.name}</a>
+										<p class="one" title="{$partnercoupon.description}">{$partnercoupon.description}</p>
+										<p class="two" title="{$partnercoupon.title}">{$partnercoupon.title}</p>
+										<p class="three">下载：{$partnercoupon.download_times}次</p>
+										<a href="" class="download" couponid="{$partnercoupon.coupon_id}">立即下载</a>
+										<p class="hidden_location">{$coupon.tag}</p>
+									</li>
+                           		<else/>
+									<li class="no_margin_right">
+										<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$partnercoupon.header_path}" alt="{$partnercoupon.name}"></a>
+										<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="content_title" title="{$partnercoupon.name}">{$partnercoupon.name}</a>
+										<p class="one" title="{$partnercoupon.description}">{$partnercoupon.description}</p>
+										<p class="two" title="{$partnercoupon.title}">{$partnercoupon.title}</p>
+										<p class="three">下载：{$partnercoupon.download_times}次</p>
+										<a href="" class="download" couponid="{$partnercoupon.coupon_id}">立即下载</a>
+										<p class="hidden_location">{$coupon.tag}</p>
+									</li>
+                           		</if>
+                           		
+								</foreach>
+                           </ul>
+                        </div>  
+					</div>
+					<!-- 主要内容左边区域优惠券信息部分结束 -->
+					<!-- 主要内容左边区域商家菜单部分开始 -->
+					<div id="partnermenu">
+						<p class="partner_menu_title">商家菜单</p>
+						<div id="catlink">
+							<ul class="clearfix">
+								<li><a href="#">新品推荐</a></li>
+								<li class="no_border_top"><a href="#">人气菜品</a></li>
+								<li class="no_border_top"><a href="#">精品凉菜</a></li>
+								<li class="no_border_top"><a href="#">海鲜</a></li>
+								<li class="no_border_top"><a href="#">经典热菜</a></li>
+								<li class="no_border_top"><a href="#">餐后甜点</a></li>
+								<li class="no_border_top"><a href="#">酒水饮料</a></li>
+							</ul>
+						</div>
+						<div id="menuinfo">
+							<ul class="menuinfo_detail clearfix">
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+							</ul>
+						</div>
+						 <div style="clear:both"></div>
+					</div>
+					<!-- 主要内容左边区域商家菜单部分结束 -->
+					<!-- 主要内容左边区域评论部分开始 -->
+					<div id="alleva_box">
+					    <div id="alleva_top_box">
+							<p class="alleva_top_title">全部评价</p>
+							<div id="select_p">
+								<ul class="clearfix">
+									<li><a href="#">默认</a></li>
+									<li><a href="#" class="no_border_right">时间</a></li>
+									<li><a href="#" class="no_border_right">评分</a></li>
+								</ul>		
+							</div>
+						</div>
+						<div class="evacontent_box">
+							<foreach name="partnerComments" item="partnerComment" key="k">
+							<div class="evacontent">
+								<div class="evacontent_top">
+									<a class="username" href="#">{$partnerComment.nickname}**{$partnerComment.createtime}</a>
+									<span class="eva_rate_stars">
+										<?php 
+											$rate = $partnerComment['rate']*20;
+										?>
+										<span style="width: {$rate}%;"></span>
+									</span>
+								</div>
+								<p class="comment_desc">{$partnerComment.evaluation}</p>
+								<p class="storename">{$partnerComment.couponname}({$partnerComment.coupontitle})</p>
+							</div>
+							</foreach>
+						</div>
+						<ul class="page_box clearfix">
+							<li class="one"><a href="{:U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>1),'','')}" class="one">首页</a></li>
+							<li><a href=""><</a></li>
+							
+							<for start="1" end="$pageNums+1" step="1" name="i" >
+								<if condition="$i eq $get_info">
+									<li><a href="{:U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','')}" class="red">{$i}</a></li>
+								<else />
+									<li><a href="{:U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','')}">{$i}</a></li>
+								</if>
+								
+							</for>
+
+							<li><a href="">></a></li>
+							<li class="one"><a href="{:U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$pageNums),'','')}" class="one">尾页</a></li>
+						</ul>
+					</div>
+					<!-- 主要内容左边区域评论部分结束 -->
+				</div>
+				<!--左边部分内容结束-->
+				<!-- 主要内容右边区域开始 -->
+				<div id="partnerright">
+					<div id="storemap">
+						<div id="view_map"></div>
+						<a href="" class="viewfullmap" id="viewfullmap">查看完整地图</a>
+						<p class="partnerlocation"><?php echo trim($location_desc,'.'); ?></p>
+					</div>
+
+					<div id="hidden_detail_map">
+						<div class="title_box">
+							<p>查看全图</p>
+							<a href="" class="close" id="close_box"></a>
+						</div>
+						<div class="detail_map_box" id="detail_map_box"></div>
+				 	</div>
+
+					<div class="nearcoupon">
+					    <p class="title">热门优惠券推荐</p>
+					    <foreach name="hot_coupons" item="hot_coupon" key="k">
+					    <div id="nearcoupon_detail_contents">
+							<p class="c_title">{$hot_coupon.name}}</p>
+							<p class="c_desc">{$hot_coupon.title}</p>
+							<a href="#"><img src="__PUBLIC__/{$hot_coupon.header_path}" align="优惠券" /></a>
+						</div>
+						</foreach>	
+				    </div>
+				    
+				 </div>
+			</div>
+			<div id="view_partner_pics_hidden_box">
+			
+			   <a href="" class="closed" id="closed_btn">关闭</a>
+			   <foreach name="partnerPictureInfo" item="partnerPicture" key="k">
+			   <img class="content" src="__PUBLIC__/{$partnerPicture.picture_path}" alt="" />
+			   </foreach>
+			   <div class="bottom_box">
+			   		<a href="http://www.huigl.com" class="index_link">惠桂林</a>
+			   		<img src="__PUBLIC__/images/news_n.jpg" alt="" class="p_bg"/>
+			   		<a href="" class="prev" id="prev_btn" num="">PREV</a>
+			   		<img src="__PUBLIC__/images/news_p.jpg" alt="" class="n_bg"/>
+			   		<a href="" class="next" id="next_btn" num="">NEXT</a>
+			   </div>
+			</div>
+				<a id="partner_hidden" style="display:none" value="{$partner}">{$partner}</a>
+				<a id="partner_pic_hidden" style="display:none" value="{$partnerPicture}">{$partnerPicture}</a>
+				<include file="./App/Tpl/Home/Public/M_sendCouponToCellphone.html" />
+				<!-- 最底部区域 -->
+				<include file="./App/Tpl/Home/Public/footer.html" />
+				<!-- 最底部区域结束 -->
+          
+		<script type="text/javascript">
+			
+		   	  var partner_info = $('#partner_hidden').text();
+			  var partner = JSON.parse(partner_info);
+			  var mapBoxDetailId = "detail_map_box";
+			  var mapBoxFullId = "view_map"; 
+			    
+		</script>
+	</body>
+</html>
