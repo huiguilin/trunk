@@ -26,7 +26,7 @@
 		<div id="top_rss_box">
 			<img src="__PUBLIC__/images/cellphone.png" alt="客户端下载">
 			<ul class="left_ul">
-				<li class="one"><a id="cellphone_version">手机版</a></li>
+				<li class="one"><a href="<?php echo U('Admin/Account/login');?>" id="cellphone_version">商家后台</a></li>
 				<li class="two"><a href="<?php echo U("Help/help");?>">使用帮助</a></li>
 			</ul>
 			<ul class="right_ul">
@@ -407,7 +407,7 @@
 							</p>
 						</div>
 						<div id="partnerleft_down_right">
-							<a href="#"><img src="__PUBLIC__/<?php echo ($partnerInfo[0]['header_path']); ?>" alt="gg" /></a>
+							<a href=""><img src="__PUBLIC__/<?php echo ($partnerInfo[0]['header_path']); ?>" alt="gg" id="viewallpic_img"/></a>
 							<p id="viewallpic_btn"><a href="" class="moreimg">查看全部<span><?php echo (count($partnerPictureInfo)); ?></span>张照片</a></p>
 						</div>
 					</div>
@@ -526,7 +526,7 @@
 							<li class="one"><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>1),'','');?>" class="one">首页</a></li>
 							<li><a href=""><</a></li>
 							
-							<?php $__FOR_START_28132__=1;$__FOR_END_28132__=$pageNums+1;for($i=$__FOR_START_28132__;$i < $__FOR_END_28132__;$i+=1){ if($i == $get_info): ?><li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>" class="red"><?php echo ($i); ?></a></li>
+							<?php $__FOR_START_29356__=1;$__FOR_END_29356__=$pageNums+1;for($i=$__FOR_START_29356__;$i < $__FOR_END_29356__;$i+=1){ if($i == $get_info): ?><li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>" class="red"><?php echo ($i); ?></a></li>
 								<?php else: ?>
 									<li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>"><?php echo ($i); ?></a></li><?php endif; } ?>
 
@@ -569,7 +569,7 @@
 			   <a href="" class="closed" id="closed_btn">关闭</a>
 			   <?php if(is_array($partnerPictureInfo)): foreach($partnerPictureInfo as $k=>$partnerPicture): ?><img class="content" src="__PUBLIC__/<?php echo ($partnerPicture["picture_path"]); ?>" alt="" /><?php endforeach; endif; ?>
 			   <div class="bottom_box">
-			   		<a href="http://www.huigl.com" class="index_link">惠桂林</a>
+			   		<!-- <a href="http://www.huigl.com" class="index_link">惠桂林</a> -->
 			   		<img src="__PUBLIC__/images/news_n.jpg" alt="" class="p_bg"/>
 			   		<a href="" class="prev" id="prev_btn" num="">PREV</a>
 			   		<img src="__PUBLIC__/images/news_p.jpg" alt="" class="n_bg"/>

@@ -1154,15 +1154,15 @@ $(function(){
 	// ////////////////////////用户注册+用户登录+忘记密码特效全部代码区域结束////////////////////
 	////////////////////////手机版弹窗中的全部特效代码区域////////////////////////////////
 	//手机版弹窗效果
-	$('#cellphone_version').click(function(event) {
-		$('#cellphone_version_box').bPopup({
-           	modalClose: false,
-	        opacity: 0.6,
-	        position: [250, 20],//x, y
-        });
-		// $('#cellphone_version_box').show();
-		return false;
-	});
+	// $('#cellphone_version').click(function(event) {
+	// 	$('#cellphone_version_box').bPopup({
+ //           	modalClose: false,
+	//         opacity: 0.6,
+	//         position: [250, 20],//x, y
+ //        });
+	// 	// $('#cellphone_version_box').show();
+	// 	return false;
+	// });
 	//手机版弹窗效果结束
 
 	//手机APP弹窗区域中下载区域切换效果

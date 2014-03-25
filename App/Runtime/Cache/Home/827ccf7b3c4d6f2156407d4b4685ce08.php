@@ -15,7 +15,6 @@
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/partner.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
 </head>
 <body>
 <!-- 顶部订阅分享区域+Logo区域 -->
@@ -24,7 +23,7 @@
 		<div id="top_rss_box">
 			<img src="__PUBLIC__/images/cellphone.png" alt="客户端下载">
 			<ul class="left_ul">
-				<li class="one"><a id="cellphone_version">手机版</a></li>
+				<li class="one"><a href="<?php echo U('Admin/Account/login');?>" id="cellphone_version">商家后台</a></li>
 				<li class="two"><a href="<?php echo U("Help/help");?>">使用帮助</a></li>
 			</ul>
 			<ul class="right_ul">
@@ -482,7 +481,7 @@
 						</else><?php endif; endforeach; endif; ?>
 					</p>
 					<p class="detail_box">
-						<a href="" class="partner_address">地址： <?php echo ($partner['location_desc']); ?></a><a href="" class="partner_phone">电话： <?php echo ($partner['telephone']); ?></a><a class="partner_comment">
+						<a class="partner_address">地址： <?php echo ($partner['location_desc']); ?></a><a class="partner_phone">电话： <?php echo ($partner['telephone']); ?></a><a class="partner_comment">
 						<?php if(is_array($partner_rates)): foreach($partner_rates as $k=>$partner_rate): if($partner['partner_id'] == $partner_rate['partner_id']): ?><span><?php echo ($partner_rate['rateCount']); ?></span>
 						</else><?php endif; endforeach; endif; ?>
 						条消费评价</a>
@@ -499,8 +498,8 @@
 					<ul>
 						<li>
 							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon['header_path']); ?>" alt="<?php echo ($coupon['name']); ?>" /></a>
-							<p class="coupon_desc"><?php echo ($coupon['description']); ?></p>
-							<p class="coupon_keyword"><?php echo ($coupon['title']); ?></p>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="coupon_desc"><?php echo ($coupon['description']); ?></a>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="coupon_keyword"><?php echo ($coupon['title']); ?></a>
 							<p class="download_times">已下载<?php echo ($coupon['download_times']); ?>次</p>
 							<a href="" class="download_btn" couponid="<?php echo ($coupon['coupon_id']); ?>">立即下载</a>
 						</li>

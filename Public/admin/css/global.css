@@ -39,19 +39,20 @@ input{
 #top_content_box #top_middle_box a.logoimg_box img{
 	width: 93px;
 	height: 34px;
+	border:none;
 }
 #top_content_box #top_middle_box a.one{
 	color: white;
 	font-size: 14px;
 	position: absolute;
 	top: 45px;
-	right: 90px;
+	right: 80px;
 }
 #top_content_box #top_middle_box a.two{
 	color: white;
 	font-size: 14px;
 	display: block;
-	width: 80px;
+	width: 70px;
 	border-left:1px solid white;
 	padding-left: 5px;
 	position: absolute;

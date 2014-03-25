@@ -6,17 +6,27 @@ class ValidateManagementAction extends Action {
     }
 
     public function singlevalidate(){
+        if(empty($_SESSION['user'])){
+            $this->redirect('/Admin/Account/login');
+        }
         $templateName = $_GET["_URL_"][2]; 
         $this->assign('templateName',$templateName);
 		$this->display();
     }
     public function multivalidate(){
+        if(empty($_SESSION['user'])){
+            $this->redirect('/Admin/Account/login');
+        }
         $templateName = $_GET["_URL_"][2]; 
         $this->assign('templateName',$templateName);
 		$this->display();
     }
     //查看已经验证过的优惠券
     public function viewvalidate(){
+        if(empty($_SESSION['user'])){
+            $this->redirect('/Admin/Account/login');
+        }
+        
         $user = $_SESSION['user'];
         //TBC
         if (empty($user['partner_id'])) {

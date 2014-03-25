@@ -68,6 +68,39 @@ $(function(){
      	return false;
      });
 
+    $('#main #classification_location_box #content_box #classification_box ul.parent_classification li a').hover(function() {
+
+      var css = $(this).attr('class');
+      if(css != "current"){
+        $(this).addClass('current');
+      }
+      // $('#main #classification_location_box #content_box #classification_box ul.parent_classification li a').removeClass('current');
+      
+    }, function() {
+      $(this).removeClass('current');
+    });
+
+    $('#main #classification_location_box #content_box #classification_box div ul.child_classification li a').hover(function() {
+       $('#main #classification_location_box #content_box #classification_box div ul.child_classification li a').removeClass('current');
+      $(this).addClass('current');
+    }, function() {
+      
+    });
+
+    $('#main #classification_location_box #content_box #location_box ul.parent_classification li a').hover(function() {
+      $('#main #classification_location_box #content_box #location_box ul.parent_classification li a').removeClass('current');
+      $(this).addClass('current');
+    }, function() {
+      
+    });
+
+    $('#main #classification_location_box #content_box #location_box div ul.child_classification li a').hover(function() {
+       $('#main #classification_location_box #content_box #location_box div ul.child_classification li a').removeClass('current');
+      $(this).addClass('current');
+    }, function() {
+      
+    });
+
      //点击下载手机优惠劵弹窗中发送按钮结束
 
      //detail页面的js
@@ -80,23 +113,17 @@ $(function(){
 		$('#partner_desc_long').css('display', 'none');
 		$('#partner_desc_sort').css('display', 'block');
 	});
-	$('#viewallpic_btn').click(function(event){
-		var pictureNum = $('#viewallpic_btn').find('span').text();
-		if (pictureNum == 0 || pictureNum == 1) {
-			alert("无更多照片");
-			return false;
-		}
-	    $('#viewallpic_hidden_box').bPopup({});
-	});
-	$('#close_viewallpic_hidden_box').click(function(event){
-	     $('#viewallpic_hidden_box').bPopup({}).close();
-		 return true;
-	});
 
+	
 
     $('#viewallpic_btn').click(function(event) {
     	$('#view_partner_pics_hidden_box').bPopup({});
     	return false;
+    });
+
+     $('#viewallpic_img').click(function(event) {
+        $('#view_partner_pics_hidden_box').bPopup({});
+        return false;
     });
 
     $('#prev_btn').click(function(event) {

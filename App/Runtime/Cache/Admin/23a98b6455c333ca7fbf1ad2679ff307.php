@@ -17,11 +17,11 @@
 		<div id="top_middle_box">
 			<a href="http://www.huigl.com" class="logoimg_box"><img src="__PUBLIC__/images/logo2.png" alt="" /></a>
 			<p>商家中心</p>
-			<?php if($_SESSION['user']['user_id']== ''): ?><a href="" class="one">登录</a>
-				<a href="" class="two">惠桂林首页</a>
+			<?php if(($_SESSION['user']['user_id']!= '') and ($templateName != 'login')): ?><a href="" class="one">您好，<?php echo ($_SESSION['user']['name']); ?></a>
+				<a href="<?php echo U('Home/User/logout','','','');?>/type/0" class="two">退出</a>
 			<?php else: ?>
-				<a href="" class="one">您好，<?php echo ($_SESSION['user']['name']); ?></a>
-				<a href="" class="two">我商家后台</a><?php endif; ?>
+				<a href="" class="one">登录</a>
+				<a href="http://www.huigl.com" class="two">惠桂林首页</a><?php endif; ?>
 		</div>
 	</div>
 	<!-- 顶部区域结束 -->

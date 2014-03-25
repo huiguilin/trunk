@@ -29,7 +29,7 @@
 		<div id="top_rss_box">
 			<img src="__PUBLIC__/images/cellphone.png" alt="客户端下载">
 			<ul class="left_ul">
-				<li class="one"><a id="cellphone_version">手机版</a></li>
+				<li class="one"><a href="<?php echo U('Admin/Account/login');?>" id="cellphone_version">商家后台</a></li>
 				<li class="two"><a href="<?php echo U("Help/help");?>">使用帮助</a></li>
 			</ul>
 			<ul class="right_ul">

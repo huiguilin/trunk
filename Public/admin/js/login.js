@@ -13,6 +13,8 @@ $(function(){
 			$('#main div.content_box div.left_box p.error_tips_01').hide();
 			$('#main div.content_box div.left_box p.error_tips_02').hide();
 			$.post(ajaxPostURL+"User/checkLogin",{ username:username,password:password,vcodemark:vcodemark }, function(data) {
+
+					
 					if(data.status == 4){
 						$('#main div.content_box div.left_box p.error_tips_02').show().text(data.info);
 					}else if(data.status == 2){
@@ -23,7 +25,7 @@ $(function(){
 						if(data.url == ""){
 							$('#main div.content_box div.left_box p.error_tips_01').show().text("此用户不是商家用户！");
 						}else{
-							location.href = "http://localhost/trunk"+data.url;
+							location.href = loginSucessURL+data.url;
 						}
 						
 					}else if(data.status ==5){

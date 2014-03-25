@@ -82,6 +82,9 @@
 	position: absolute;
 	top: 75px;
 	left: 0px;
+
+	line-height: 35px\9; /*IE6、IE7、IE8背景紅色*/  
+	max-height: 35px\9;
 }
 #main #right_content_box div.function_content_box div.coupon_code_box a{
 	color: white;
@@ -143,5 +146,7 @@
 	text-align: center;
 	background: #666666;
 	font-size: 14px;
-	display: inline-block;
+	display: block;
+	margin-top: -35px;
+	margin-left: 240px;
 }

@@ -13,6 +13,7 @@
 	position: absolute;
 	top: 8px;
 	left: 8px;
+	border:none;
 }
 #main #ad_box ul{
 	position: absolute;
@@ -257,6 +258,7 @@
 
 #main #partner_box{
 	position: relative;
+
 }
 #main #partner_box #webchat_box{
 	background: white;
@@ -280,6 +282,7 @@
 	margin-right: 84px;
 	height: 86px;
 	width: 86px;
+	border:none;
 }
 
 
@@ -341,12 +344,15 @@
 	width: 62px;
 	height: 62px;
 	border:0px;
+	border:none;
 }
 #main #partner_content_box{
-	margin-top: 8px;
+	margin-top: 10px;
 	margin-left: 8px;
 	width: 684px;
 	border:1px solid #E4E4E4;
+	background: #F9F7F8;
+
 }
 #main #partner_content_box div.partner_info_box{
 	height: 130px;
@@ -416,6 +422,7 @@
 }
 #main #partner_content_box div.partner_info_box p.tag_box{
 	margin-top: 25px;
+
 }
 #main #partner_content_box div.partner_info_box p.tag_box a{
 	color: #4467A3;
@@ -429,9 +436,10 @@
 	margin-left: 5px;
 	border:1px solid #D7D7D7;
 	border-radius: 5px;
+	background: white;
 }
 #main #partner_content_box div.partner_coupon_info_box{
-	
+	background: white;
 }
 #main #partner_content_box div.partner_coupon_info_box ul{
 	
@@ -439,6 +447,7 @@
 #main #partner_content_box div.partner_coupon_info_box ul li{
 	height: 100px;
 	position: relative;
+	border-bottom: 1px solid #D7D7D7;
 }
 #main #partner_content_box div.partner_coupon_info_box ul li a.img_box{
 	display: block;
@@ -449,23 +458,26 @@
 #main #partner_content_box div.partner_coupon_info_box ul li a.img_box img{
 	height: 80px;
 	width: 80px;
+	border:none;
 }
-#main #partner_content_box div.partner_coupon_info_box ul li p.coupon_desc{
+#main #partner_content_box div.partner_coupon_info_box ul li a.coupon_desc{
 	color: #666666;
 	font-size: 13px;
 	position: absolute;
 	top: 20px;
 	left: 100px;
 	width:300px;
+	display: block;
 }
-#main #partner_content_box div.partner_coupon_info_box ul li p.coupon_keyword{
+#main #partner_content_box div.partner_coupon_info_box ul li a.coupon_keyword{
 	color: #ED5565;
 	font-size: 13px;
 	font-family: Arial;
 	position: absolute;
 	width: 70px;
 	top: 15px;
-	left: 450px
+	left: 450px;
+	display: block;
 }
 #main #partner_content_box div.partner_coupon_info_box ul li p.download_times{
 	color: #666666;

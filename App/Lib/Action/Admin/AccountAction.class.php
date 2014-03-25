@@ -6,6 +6,8 @@ class AccountAction extends Action {
     }
 
     public function login(){
+    	$templateName = $_GET["_URL_"][2]; 
+        $this->assign('templateName',$templateName);
 		$this->display();
     }
 }

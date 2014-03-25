@@ -24,7 +24,7 @@
 		<div id="top_rss_box">
 			<img src="__PUBLIC__/images/cellphone.png" alt="客户端下载">
 			<ul class="left_ul">
-				<li class="one"><a id="cellphone_version">手机版</a></li>
+				<li class="one"><a href="<?php echo U('Admin/Account/login');?>" id="cellphone_version">商家后台</a></li>
 				<li class="two"><a href="<?php echo U("Help/help");?>">使用帮助</a></li>
 			</ul>
 			<ul class="right_ul">
@@ -443,8 +443,10 @@
 				<p>热门品牌</p>
 				<ul>
                 <?php if(is_array($hot_partners)): foreach($hot_partners as $key=>$hpartner): ?><li>
-						<a href="<?php echo U('coupon/coupon');?>"><?php echo ($hpartner["name"]); ?></a>
-						<img src="__PUBLIC__/<?php echo ($hpartner["header_path"]); ?>" alt="<?php echo ($hpartner["name"]); ?>">
+						<a class="title" href="<?php echo U('partner/detail','','','');?>/pid/<?php echo ($hpartner["partner_id"]); ?>" target=_blank ><?php echo ($hpartner["name"]); ?></a>
+						<a href="<?php echo U('partner/detail','','','');?>/pid/<?php echo ($hpartner["partner_id"]); ?>" class="img_box" target=_blank>
+							<img src="__PUBLIC__/<?php echo ($hpartner["header_path"]); ?>" alt="<?php echo ($hpartner["name"]); ?>">
+						</a>
 					</li><?php endforeach; endif; ?>
 				</ul>
 			</div>
@@ -452,8 +454,10 @@
 				<p>新入驻品牌</p>
 				<ul>
                <?php if(is_array($partners)): foreach($partners as $key=>$partner): ?><li>
-						<img src="__PUBLIC__/<?php echo ($partner["header_path"]); ?>" alt="<?php echo ($partner["name"]); ?>">
-						<a href="" class="title"><?php echo ($partner["name"]); ?></a>
+						<a target=_blank href="<?php echo U('partner/detail','','','');?>/pid/<?php echo ($partner["partner_id"]); ?>" class="img_box">
+							<img src="__PUBLIC__/<?php echo ($partner["header_path"]); ?>" alt="<?php echo ($partner["name"]); ?>">
+						</a>
+						<a class="title" target=_blank href="<?php echo U('partner/detail','','','');?>/pid/<?php echo ($partner["partner_id"]); ?>"><?php echo ($partner["name"]); ?></a>
                     </li><?php endforeach; endif; ?> 
 				</ul>
 			</div>

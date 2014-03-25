@@ -110,8 +110,10 @@
 				<ul>
                 <foreach name="hot_partners" item="hpartner">
 					<li>
-						<a href="{:U('coupon/coupon')}">{$hpartner.name}</a>
-						<img src="__PUBLIC__/{$hpartner.header_path}" alt="{$hpartner.name}">
+						<a class="title" href="{:U('partner/detail','','','')}/pid/{$hpartner.partner_id}" target=_blank >{$hpartner.name}</a>
+						<a href="{:U('partner/detail','','','')}/pid/{$hpartner.partner_id}" class="img_box" target=_blank>
+							<img src="__PUBLIC__/{$hpartner.header_path}" alt="{$hpartner.name}">
+						</a>
 					</li>
                 </foreach>
 				</ul>
@@ -121,8 +123,10 @@
 				<ul>
                <foreach name="partners" item="partner"> 
 					<li>
-						<img src="__PUBLIC__/{$partner.header_path}" alt="{$partner.name}">
-						<a href="" class="title">{$partner.name}</a>
+						<a target=_blank href="{:U('partner/detail','','','')}/pid/{$partner.partner_id}" class="img_box">
+							<img src="__PUBLIC__/{$partner.header_path}" alt="{$partner.name}">
+						</a>
+						<a class="title" target=_blank href="{:U('partner/detail','','','')}/pid/{$partner.partner_id}">{$partner.name}</a>
                     </li>
                 </foreach> 
 				</ul>

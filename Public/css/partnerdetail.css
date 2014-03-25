@@ -125,7 +125,7 @@
 #partnermain #partnerleft_down_right img{
 	width:250px;
 	height:195px;
-	border:0px;
+	border:none;
 }
 #partnermain #partnerleft_down_right p{
 	display: block;
@@ -200,6 +200,7 @@
 	position: absolute;
 	top: 4px;
 	left: 4px;
+	border:none;
 }
 #partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li p.one{
 	position: absolute;
@@ -330,6 +331,7 @@
 #partnermain #partnermenu #menuinfo ul.menuinfo_detail li a.img_box img{
 	height: 120px;
 	width: 161px;
+	border:none;
 }
 #partnermain #partnermenu #menuinfo ul.menuinfo_detail li a.title{
 	color: #666;
@@ -556,6 +558,7 @@
 #partnermain #partnerright div.nearcoupon #nearcoupon_detail_contents a img{
 	width: 90px;
 	height: 90px;
+	border:none;
 }
 
 #view_partner_pics_hidden_box{
@@ -587,7 +590,7 @@
 	height: 25px;
 	width: 520px;
 }
-#view_partner_pics_hidden_box div.bottom_box a.index_link{
+/*#view_partner_pics_hidden_box div.bottom_box a.index_link{
 	display: block;
 	background: url(../images/title.gif) no-repeat 0px 2px;
 	color: black;
@@ -595,7 +598,7 @@
 	position: absolute;
 	top: 5px;
 	left: 5px;	
-}
+}*/
 #view_partner_pics_hidden_box div.bottom_box a.prev{
 	display: block;
 	position: absolute;

@@ -2,6 +2,7 @@
 // 本类由系统自动生成，仅供测试用途
 class DemoAction extends Action {
     public function demo(){
+     
         $this->display();
         exit();
         echo "今天:",date('Y-m-d H:i:s'),"<br>";

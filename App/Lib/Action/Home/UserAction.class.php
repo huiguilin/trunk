@@ -367,7 +367,13 @@ class UserAction extends Action {
         $data = session('user');
         if (!empty($data)) {
            session('user',null);
-           $this->redirect('Home/Index/index');
+           if(!empty($_GET['_URL_'][3])){
+                $this->redirect('Admin/Account/login');
+           }
+           else{
+                $this->redirect('Home/Index/index');
+           }
+           
         }
     }
 

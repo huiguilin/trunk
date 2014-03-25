@@ -113,12 +113,10 @@
 	border: 1px solid #C9C9C9;
 	border-radius: 5px;
 	width: 371px;
-
-
-	height: 39px; height/*\**/: 19px \9;
-	padding-top: 0px; padding-top/*\**/:10px \9;
-	padding-bottom: 0px; padding-bottom/*\**/:10px \9;
-	line-height: 39px; line-height/*\**/: 19px \9;
+	height: 40px;
+	
+	line-height: 40px\9; /*IE6、IE7、IE8背景紅色*/  
+	max-height: 40px\9;
 }
 #main #left_card form ul li input.one{
 	position: absolute;

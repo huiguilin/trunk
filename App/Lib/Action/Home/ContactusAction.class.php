@@ -4,7 +4,7 @@ class ContactusAction extends Action {
 	public function _empty($name){
         $this->error("非法提交！");
     }
-    public function contackus(){
-	$this->display();
+    public function contactus(){
+		$this->display();
     }
 }

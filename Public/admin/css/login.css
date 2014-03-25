@@ -78,12 +78,18 @@
 	height: 40px;
 	border:1px solid #BCBCBC;
 	margin-left: 40px;
+	
+	line-height: 40px\9; /*IE6、IE7、IE8背景紅色*/  
+	max-height: 40px\9;
 }
 #main div.content_box div.left_box input.password{
 	width: 300px;
 	height: 40px;
 	border:1px solid #BCBCBC;
 	margin-left: 40px;
+	
+	line-height: 40px\9; /*IE6、IE7、IE8背景紅色*/  
+	max-height: 40px\9;
 }
 #main div.content_box div.left_box input.rememberPWD{
 	margin-right: 5px;
