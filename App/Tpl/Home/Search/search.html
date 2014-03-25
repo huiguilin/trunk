@@ -36,9 +36,9 @@
 <!-- 内容区域 -->
 	<div id="main">
 		<div id="search_summary_box">
-			<p>找到“<span class="keyword">桂林</span>”相关的内容<span class="number">122</span>条</p>
+			<p>找到“<span class="keyword">{$get_info['search_con']}</span>”相关的内容<span class="number">{$total_number}</span>条</p>
 		</div>
-		<div id="classification_location_box">
+		<div id="classification_location_box" style="display:none">
 			<div id="content_box">
 				<div id="classification_box">
 					<p>分类</p>
@@ -149,7 +149,8 @@
                 </foreach>
 			</ul>
 			<div id="recommend_box">
-
+				<p>扫一下，关注惠桂林微博</p>
+				<img src="__PUBLIC__/images/weibo_barcode.png" alt="微博icon">
 			</div>
 			<div id="hot_coupon_box">
 				<p class="title">热门优惠劵</p>

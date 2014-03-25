@@ -49,10 +49,10 @@
 							<p><span>营业时间：</span>10：00-22：30（ 周末、节假日不休）</p>
 							<p class="tag_box">
 								<span>标签：</span>
-								<a>{$partner_tags[0]['pcat_name']}</a>
-								<a>{$partner_tags[0]['cat_name']}</a>
-								<a>{$partner_tags[0]['belong']}</a>
-								<a>{$partner_tags[0]['locationname']}</a>
+								<a target=_blank href="{:U('Partner/partner','','','')}/label_type/{$partner_tags[0]['label_type']}">{$partner_tags[0]['pcat_name']}</a>
+								<a target=_blank href="{:U('Partner/partner','','','')}/label_type/{$partner_tags[0]['label_type']}/cat_id/{$partner_tags[0]['cat_id']}">{$partner_tags[0]['cat_name']}</a>
+								<a target=_blank href="{:U('Partner/partner','','','')}/tag/{$partner_tags[0]['belong']}">{$partner_tags[0]['belong']}</a>
+								<a target=_blank href="{:U('Partner/partner','','','')}/tag/{$partner_tags[0]['belong']}/location/{$partner_tags[0]['location_id']}">{$partner_tags[0]['locationname']}</a>
 							</p>
 							<p><span>餐厅描述：</span>
 								<p class="description" id="partner_desc_sort">

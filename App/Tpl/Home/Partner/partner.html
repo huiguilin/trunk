@@ -203,10 +203,10 @@
 					<p class="tag_box">
 						<foreach name="partner_tags" item="partner_tag">
 						<if condition="$partner['partner_id'] eq $partner_tag['partner_id']">
-							<a >{$partner_tag['pcat_name']}</a>
-							<a >{$partner_tag['cat_name']}</a>
-							<a >{$partner_tag['belong']}</a>
-							<a >{$partner_tag['locationname']}</a>
+							<a href="{:U('Partner/partner','','','')}/label_type/{$partner_tag.label_type}">{$partner_tag['pcat_name']}</a>
+							<a href="{:U('Partner/partner','','','')}/label_type/{$partner_tag.label_type}/cat_id/{$partner_tag.cat_id}">{$partner_tag['cat_name']}</a>
+							<a href="{:U('Partner/partner','','','')}/tag/{$partner_tag.belong}">{$partner_tag['belong']}</a>
+							<a href="{:U('Partner/partner','','','')}/tag/{$partner_tag.belong}/location/{$partner_tag.location_id}">{$partner_tag['locationname']}</a>
 						<else />
 						</if>
 						</foreach>

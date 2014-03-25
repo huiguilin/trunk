@@ -26,30 +26,34 @@
 	float: left;
 	margin-top:7px;
 	width:685px;
-}#partnermain #partnerleft_top_box{
-	height:365px;
-	border:1px solid #D7D7D7;
 }
-#partnermain #partnerleft #partnerleft_top{
+#partnermain #partnerleft #partnerleft_top_box{
+	/*height:365px;*/
+	border:1px solid #D7D7D7;
+	overflow: hidden;
+	zoom:1;
+	padding-bottom: 55px;
+}
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_top{
 	height:70px;
 	background: #F9F7F8;
 	border-bottom:2px solid #D7D7D7;
 }
-#partnermain #partnerleft #partnerleft_top .partnertitle{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_top .partnertitle{
     position:relative;
 	font-size: 25px;
 	color: #ED5565;
 	top:22px;
 	margin-left:17px;
 }
-#partnermain #partnerleft #partnerleft_top .otherstore{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_top .otherstore{
 	position: relative;
 	font-size: 12px;
 	color: #4467A3;
 	margin-left:15px;
 	top:22px;
 }
-#partnermain .rate_stars{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_top .rate_stars{
 	background: url(../images/rate_stars.png) repeat-x 0px -21px;
 	display: block;
 	height: 21px;
@@ -58,35 +62,35 @@
 	margin-top: -19px;
 	margin-left: 562px;
 }
-#partnermain .rate_stars span{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_top .rate_stars span{
 	background: url(../images/rate_stars.png) repeat-x 0px 0px;
 	display: block;
 	height: 21px;
 	overflow: hidden;
 }
-#partnermain #partnerleft #partnerleft_top p{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_top p{
 	/*position: relative;*/
 	margin-left:565px;
 	margin-top:15px;
 }
-#partnermain #partnerleft #partnerleft_top p a{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_top p a{
 	color:#4467A3;
 }
-#partnermain #partnerleft #partnerleft_down_left{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left{
 	float: left;
 	line-height: 25px;
 	margin-top: 10px;
 	margin-left: 19px;
 	width:375px;
 }
-#partnermain #partnerleft_down_left p{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left p{
 	color:#666666;
 }
-#partnermain #partnerleft_down_left p.tag_box{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box{
 	height: 40px;
 	line-height: 40px;
 }
-#partnermain #partnerleft_down_left p.tag_box a{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box a{
 	color: #4467A3;
 	font-size: 13px;
 	text-align: center;
@@ -99,45 +103,44 @@
 	border:1px solid #D7D7D7;
 	border-radius: 5px;
 }
-#partnermain #partnerleft_down_left .labletype{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left .labletype{
 	color:#4467A3;
 	width:55;
 	margin-left:5px;
 	border:1px solid #D7D7D7;
 }
-#partnermain #partnerleft_down_left a{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left a{
 	color:#4467A3;
 }
-#partnermain #partnerleft_down_left .description{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left .description{
 	color:#666666;
 	position: relative;
 	margin-left:65px;
 	margin-top:-22px;
 	line-height: 20px;
 }
-#partnermain #partnerleft_down_right{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_right{
 	float: right;
 	margin-top:15px;
 	margin-right:10px;
 	width:250px;
-	height:195px;
 }
-#partnermain #partnerleft_down_right img{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_right img{
 	width:250px;
 	height:195px;
 	border:none;
 }
-#partnermain #partnerleft_down_right p{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_right p{
 	display: block;
 	height: 30px;
 	border:1px solid #D7D7D7;
 }
-#partnermain #partnerleft_down_right p span{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_right p span{
 	color: #4467A3;
 	padding-left: 5px;
 	padding-right: 5px;
 }
-#partnermain #partnerleft_down_right .moreimg{
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_right .moreimg{
 	display: block;
 	margin-top: 9px;
 	margin-left:65px;
@@ -187,6 +190,10 @@
 	position: relative;
 	margin-bottom: 7px;
 	border:1px solid #E4E4E4;
+}
+#partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li:hover{
+	background: #DEE6F1;
+	border:1px dashed #ED5565;
 }
 #partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li.no_margin_left{
 	margin-right: 4px;

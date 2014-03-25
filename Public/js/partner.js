@@ -68,39 +68,7 @@ $(function(){
      	return false;
      });
 
-    $('#main #classification_location_box #content_box #classification_box ul.parent_classification li a').hover(function() {
-
-      var css = $(this).attr('class');
-      if(css != "current"){
-        $(this).addClass('current');
-      }
-      // $('#main #classification_location_box #content_box #classification_box ul.parent_classification li a').removeClass('current');
-      
-    }, function() {
-      $(this).removeClass('current');
-    });
-
-    $('#main #classification_location_box #content_box #classification_box div ul.child_classification li a').hover(function() {
-       $('#main #classification_location_box #content_box #classification_box div ul.child_classification li a').removeClass('current');
-      $(this).addClass('current');
-    }, function() {
-      
-    });
-
-    $('#main #classification_location_box #content_box #location_box ul.parent_classification li a').hover(function() {
-      $('#main #classification_location_box #content_box #location_box ul.parent_classification li a').removeClass('current');
-      $(this).addClass('current');
-    }, function() {
-      
-    });
-
-    $('#main #classification_location_box #content_box #location_box div ul.child_classification li a').hover(function() {
-       $('#main #classification_location_box #content_box #location_box div ul.child_classification li a').removeClass('current');
-      $(this).addClass('current');
-    }, function() {
-      
-    });
-
+    
      //点击下载手机优惠劵弹窗中发送按钮结束
 
      //detail页面的js

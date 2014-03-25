@@ -391,10 +391,10 @@
 							<p><span>营业时间：</span>10：00-22：30（ 周末、节假日不休）</p>
 							<p class="tag_box">
 								<span>标签：</span>
-								<a><?php echo ($partner_tags[0]['pcat_name']); ?></a>
-								<a><?php echo ($partner_tags[0]['cat_name']); ?></a>
-								<a><?php echo ($partner_tags[0]['belong']); ?></a>
-								<a><?php echo ($partner_tags[0]['locationname']); ?></a>
+								<a target=_blank href="<?php echo U('Partner/partner','','','');?>/label_type/<?php echo ($partner_tags[0]['label_type']); ?>"><?php echo ($partner_tags[0]['pcat_name']); ?></a>
+								<a target=_blank href="<?php echo U('Partner/partner','','','');?>/label_type/<?php echo ($partner_tags[0]['label_type']); ?>/cat_id/<?php echo ($partner_tags[0]['cat_id']); ?>"><?php echo ($partner_tags[0]['cat_name']); ?></a>
+								<a target=_blank href="<?php echo U('Partner/partner','','','');?>/tag/<?php echo ($partner_tags[0]['belong']); ?>"><?php echo ($partner_tags[0]['belong']); ?></a>
+								<a target=_blank href="<?php echo U('Partner/partner','','','');?>/tag/<?php echo ($partner_tags[0]['belong']); ?>/location/<?php echo ($partner_tags[0]['location_id']); ?>"><?php echo ($partner_tags[0]['locationname']); ?></a>
 							</p>
 							<p><span>餐厅描述：</span>
 								<p class="description" id="partner_desc_sort">
@@ -526,7 +526,7 @@
 							<li class="one"><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>1),'','');?>" class="one">首页</a></li>
 							<li><a href=""><</a></li>
 							
-							<?php $__FOR_START_29356__=1;$__FOR_END_29356__=$pageNums+1;for($i=$__FOR_START_29356__;$i < $__FOR_END_29356__;$i+=1){ if($i == $get_info): ?><li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>" class="red"><?php echo ($i); ?></a></li>
+							<?php $__FOR_START_15392__=1;$__FOR_END_15392__=$pageNums+1;for($i=$__FOR_START_15392__;$i < $__FOR_END_15392__;$i+=1){ if($i == $get_info): ?><li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>" class="red"><?php echo ($i); ?></a></li>
 								<?php else: ?>
 									<li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>"><?php echo ($i); ?></a></li><?php endif; } ?>
 

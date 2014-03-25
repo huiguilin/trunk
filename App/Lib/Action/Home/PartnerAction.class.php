@@ -98,7 +98,7 @@ class PartnerAction extends Action {
         //获取商家标签
         $partnerTagsInfo = $partnerTagshelper->getPartnerTagsInfo();
 
-
+        
         $this->assign("categories", $categories);
         $this->assign("locations", $location);
         $this->assign("label_types", $labelType);
@@ -122,7 +122,10 @@ class PartnerAction extends Action {
         }
 
         $location_desc = trim(mb_substr($data[0]['location_desc'], 0,17,'utf-8'))."...";
-        $description = trim(mb_substr($data[0]['description'], 0,123,'utf-8'))."...";
+        $description = trim(mb_substr($data[0]['description'], 0,123,'utf-8'));
+        if(strlen($description)>330){
+            $description = $description."...";
+        }
         $partnerPictureId = array(
             'partner_id' => $data[0]['partner_id'],
         );

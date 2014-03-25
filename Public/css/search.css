@@ -347,13 +347,7 @@
 	top: 0px;
 	right: 8px;
 }
-#main #coupon_box #recommend_box img{
-	margin-top: 20px;
-	margin-left: 84px;
-	margin-right: 84px;
-	height: 86px;
-	width: 86px;
-}
+
 #main #coupon_box #recommend_box p{
 	font-weight: bold;
 	margin-top: 20px;
@@ -362,6 +356,14 @@
 	width: 170px;
 	text-align: center;
 }
+#main #coupon_box #recommend_box img{
+	margin-top: 20px;
+	margin-left: 84px;
+	margin-right: 84px;
+	height: 86px;
+	width: 86px;
+}
+
 #main #coupon_box #hot_coupon_box{
 	background: white;
 	width: 254px;

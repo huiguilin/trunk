@@ -386,18 +386,18 @@
 			<div id="content_box">
 				<div id="classification_box">
 					<p>分类</p><ul class="parent_classification">
-                        <?php if($get_info["label_type"] != ''): ?><li><a href="">全部</a></li>
+                        <?php if($get_info["label_type"] != ''): ?><li><a href="<?php echo U('Coupon/coupon');?>">全部</a></li>
                         <?php else: ?>
-						<li><a href="" class="current">全部</a></li><?php endif; ?>
+						<li><a href="<?php echo U('Coupon/coupon');?>" class="current">全部</a></li><?php endif; ?>
                     <?php if(is_array($label_types)): foreach($label_types as $key=>$label_type): if($get_info["label_type"] == $key): ?><li><a href="<?php echo U('Coupon/coupon',array('label_type'=>$key),'','');?>" class="current"><?php echo ($label_type); ?></a></li>
                         <?php else: ?>
 						<li><a href="<?php echo U('Coupon/coupon',array('label_type'=>$key),'','');?>"><?php echo ($label_type); ?></a></li><?php endif; endforeach; endif; ?>
 					</ul>
 					<?php if(($_GET["label_type"] != '') or ($_GET["cat_id"] != '')): ?><div>
 							<ul class="child_classification clearfix">
-	                            <?php if($get_info["cat_id"] != ''): ?><li><a href="">全部</a></li>
+	                            <?php if($get_info["cat_id"] != ''): ?><li><a href="<?php echo U('Coupon/coupon',array('label_type'=>$get_info['label_type']),'','');?>">全部</a></li>
 	                            <?php else: ?>
-	                            <li><a href="" class="current">全部</a></li><?php endif; ?>
+	                            <li><a href="<?php echo U('Coupon/coupon',array('label_type'=>$get_info['label_type']),'','');?>" class="current">全部</a></li><?php endif; ?>
 								
 	                            <?php if(is_array($categories)): foreach($categories as $key=>$category): if($get_info['label_type'] == $category['label_type']): if($get_info['cat_id'] == $category['cat_id']): ?><li><a href="<?php echo U('Coupon/coupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','');?>" class="current"><?php echo ($category["cat_name"]); ?></a></li>
 	                            	<?php else: ?>
@@ -414,9 +414,9 @@
 				</div>
 				<div id="location_box">
 					<p>区域</p><ul class="parent_classification">
-                        <?php if($get_info["tag"] != ''): ?><li><a href="">全部</a></li>
+                        <?php if($get_info["tag"] != ''): ?><li><a href="<?php echo U('Coupon/coupon');?>">全部</a></li>
                         <?php else: ?>
-						<li><a href="" class="current">全部</a></li><?php endif; ?>
+						<li><a href="<?php echo U('Coupon/coupon');?>" class="current">全部</a></li><?php endif; ?>
                         <?php if($get_info["tag"] != '秀峰区'): ?><li><a href="<?php echo U('Coupon/coupon',array('tag'=>'秀峰区'),'','');?>">秀峰区</a></li>
                         <?php else: ?>
 						<li><a class="current" href="<?php echo U('Coupon/coupon',array('tag'=>'秀峰区'),'','');?>">秀峰区</a></li><?php endif; ?>
@@ -435,9 +435,9 @@
 					</ul>
 					<?php if($_GET['tag'] != ''): ?><div>
 							<ul class="child_classification clearfix">
-								<?php if($get_info['location'] == ''): ?><li><a href="" class="current">全部</a></li>
+								<?php if($get_info['location'] == ''): ?><li><a href="<?php echo U('Coupon/coupon',array('tag'=>$get_info['tag']),'','');?>" class="current">全部</a></li>
 								<?php else: ?>
-									<li><a href="">全部</a></li><?php endif; ?>
+									<li><a href="<?php echo U('Coupon/coupon',array('tag'=>$get_info['tag']),'','');?>">全部</a></li><?php endif; ?>
 								
 	                            <?php if(is_array($locations)): foreach($locations as $key=>$location): if($get_info['tag'] == $location['belong']): if($get_info['location'] != ''): if($get_info['location'] == $location['id'] ): ?><li><a class="current" href="<?php echo U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','');?>"><?php echo ($location["name"]); ?></a></li>
 											<?php else: ?>

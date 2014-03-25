@@ -91,6 +91,11 @@
 	color: white;
 	border-radius: 3px;
 }
+#main #classification_location_box #content_box #classification_box ul.parent_classification li a:hover{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 3px;
+}
 #main #classification_location_box #content_box #classification_box div{
 	background: url(../images/bg_ico_01.png) no-repeat 80px 0px;
 	/*display: none;*/
@@ -125,6 +130,11 @@
 	padding-right: 5px;
 }
 #main #classification_location_box #content_box #classification_box div ul.child_classification li a.current{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 3px;
+}
+#main #classification_location_box #content_box #classification_box div ul.child_classification li a:hover{
 	background-color: #4467A3;
 	color: white;
 	border-radius: 3px;
@@ -170,6 +180,12 @@
 	color: white;
 	border-radius: 5px;
 }
+#main #classification_location_box #content_box #location_box ul.parent_classification li a:hover{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 5px;
+}
+
 #main #classification_location_box #content_box #location_box div{
 	background: url(../images/bg_ico_01.png) no-repeat 80px 0px;
 	/*display: none;*/
@@ -203,6 +219,11 @@
 	padding-right: 5px;
 }
 #main #classification_location_box #content_box #location_box div ul.child_classification li a.current{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 5px;
+}
+#main #classification_location_box #content_box #location_box div ul.child_classification li a:hover{
 	background-color: #4467A3;
 	color: white;
 	border-radius: 5px;

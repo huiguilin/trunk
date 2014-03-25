@@ -487,10 +487,10 @@
 						条消费评价</a>
 					</p>
 					<p class="tag_box">
-						<?php if(is_array($partner_tags)): foreach($partner_tags as $key=>$partner_tag): if($partner['partner_id'] == $partner_tag['partner_id']): ?><a ><?php echo ($partner_tag['pcat_name']); ?></a>
-							<a ><?php echo ($partner_tag['cat_name']); ?></a>
-							<a ><?php echo ($partner_tag['belong']); ?></a>
-							<a ><?php echo ($partner_tag['locationname']); ?></a>
+						<?php if(is_array($partner_tags)): foreach($partner_tags as $key=>$partner_tag): if($partner['partner_id'] == $partner_tag['partner_id']): ?><a href="<?php echo U('Partner/partner','','','');?>/label_type/<?php echo ($partner_tag["label_type"]); ?>"><?php echo ($partner_tag['pcat_name']); ?></a>
+							<a href="<?php echo U('Partner/partner','','','');?>/label_type/<?php echo ($partner_tag["label_type"]); ?>/cat_id/<?php echo ($partner_tag["cat_id"]); ?>"><?php echo ($partner_tag['cat_name']); ?></a>
+							<a href="<?php echo U('Partner/partner','','','');?>/tag/<?php echo ($partner_tag["belong"]); ?>"><?php echo ($partner_tag['belong']); ?></a>
+							<a href="<?php echo U('Partner/partner','','','');?>/tag/<?php echo ($partner_tag["belong"]); ?>/location/<?php echo ($partner_tag["location_id"]); ?>"><?php echo ($partner_tag['locationname']); ?></a>
 						<?php else: endif; endforeach; endif; ?>
 					</p>	
 				</div>

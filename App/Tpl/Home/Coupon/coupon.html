@@ -47,9 +47,9 @@
 				<div id="classification_box">
 					<p>分类</p><ul class="parent_classification">
                         <if condition="$get_info.label_type neq ''">
-						<li><a href="">全部</a></li>
+						<li><a href="{:U('Coupon/coupon')}">全部</a></li>
                         <else />
-						<li><a href="" class="current">全部</a></li>
+						<li><a href="{:U('Coupon/coupon')}" class="current">全部</a></li>
                         </if>
                     <foreach name="label_types" item="label_type">
                         <if condition="$get_info.label_type eq $key">
@@ -63,9 +63,9 @@
 						<div>
 							<ul class="child_classification clearfix">
 	                            <if condition="$get_info.cat_id neq ''">
-	                            <li><a href="">全部</a></li>
+	                            <li><a href="{:U('Coupon/coupon',array('label_type'=>$get_info['label_type']),'','')}">全部</a></li>
 	                            <else />
-	                            <li><a href="" class="current">全部</a></li>
+	                            <li><a href="{:U('Coupon/coupon',array('label_type'=>$get_info['label_type']),'','')}" class="current">全部</a></li>
 	                            </if>
 								
 	                            <foreach name="categories" item="category">
@@ -96,9 +96,9 @@
 				<div id="location_box">
 					<p>区域</p><ul class="parent_classification">
                         <if condition="$get_info.tag neq ''">
-						<li><a href="">全部</a></li>
+						<li><a href="{:U('Coupon/coupon')}">全部</a></li>
                         <else />
-						<li><a href="" class="current">全部</a></li>
+						<li><a href="{:U('Coupon/coupon')}" class="current">全部</a></li>
                         </if>
                         <if condition="$get_info.tag neq '秀峰区'">
 						<li><a href="{:U('Coupon/coupon',array('tag'=>'秀峰区'),'','')}">秀峰区</a></li>
@@ -130,9 +130,9 @@
 						<div>
 							<ul class="child_classification clearfix">
 								<if condition="$get_info['location'] eq ''">
-									<li><a href="" class="current">全部</a></li>
+									<li><a href="{:U('Coupon/coupon',array('tag'=>$get_info['tag']),'','')}" class="current">全部</a></li>
 								<else />
-									<li><a href="">全部</a></li>
+									<li><a href="{:U('Coupon/coupon',array('tag'=>$get_info['tag']),'','')}">全部</a></li>
 								</if>
 								
 	                            <foreach name="locations" item="location">
