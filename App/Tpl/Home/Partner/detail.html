@@ -75,8 +75,13 @@
 					<!-- 主要内容左边区域优惠券信息部分开始 -->
 					<div id="partnerleft_middle_box">
 						<ul class="coupon_type_nav">
+                        <if condition='$get.off_time eq 1'>
+							<li class=""><a href="" class="">正在优惠</a></li>
+							<li><a href="/index.php/partner/detail/pid/16?off_time=1" class="red">过期优惠</a></li>
+                        <else />
 							<li class="red"><a href="" class="red">正在优惠</a></li>
-							<li><a href="" class="normal">过期优惠</a></li>
+							<li><a href="/index.php/partner/detail/pid/16?off_time=1" class="normal">过期优惠</a></li>
+                        </if>
 						</ul>
 						<div id="all_coupon_info">
                            <ul class="coupon_content clearfix">

@@ -112,6 +112,7 @@ class PartnerAction extends Action {
     }
     public function detail(){
         $partnerId = $_GET['_URL_'][3];
+        $offTime = $_GET['off_time'];
         $partnerId = array(
             'partner_id' => $partnerId,
         );
@@ -136,7 +137,22 @@ class PartnerAction extends Action {
         }
 
         $couponHelper = new CouponModel();
-        $partnerCouponInfo = $couponHelper->getCouponByPartnerId($data[0]['partner_id']);
+        $time = date('Y-m-d H:i:s');
+        if (!empty($offTime) && is_numeric($offTime)) {
+            $str = "end_time < '{$time}'";
+            $params = array(
+                    'partner_id' => $data[0]['partner_id'],
+                    'str' =>  $str,
+                    );
+        }
+        else {
+            $str = "end_time >= '{$time}' AND start_time <= '{$time}'";
+            $params = array(
+                    'partner_id' => $data[0]['partner_id'],
+                    'str' =>  $str,
+                    );       
+        }
+        $partnerCouponInfo = $couponHelper->getCoupon($params);
        
         //获取商家分类标签
         $partnerTagshelper = new PartnerTagsModel();
@@ -186,6 +202,7 @@ class PartnerAction extends Action {
         $this->assign("partnerComments", $partnerCommentResult);
         $this->assign("pageNums", $pageNum);
         $this->assign("get_info", $page);
+        $this->assign("get", $_GET);
         $this->display();
     }
     private function cutCouponWords($info) {
