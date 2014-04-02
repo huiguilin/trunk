@@ -130,6 +130,101 @@ class CouponAction extends Action {
     }
 
 
+
+    public function specialCoupon(){
+        $locationId = !empty($_GET['location']) ? $_GET['location'] : 0;
+
+        $params = array();
+        if (!empty($locationId)) {
+            $params = array(
+                'location_id' => $locationId,
+            );
+        }
+        $partnerHelper = new PartnerModel();
+        $partnerInfo = $partnerHelper->getPartner($params);
+        $partnerIds = DataToArray($partnerInfo, 'partner_id');
+        $partnerIds = implode(',', $partnerIds);
+        $params = array(
+            'partner_id' => $partnerIds,
+        );
+        if (!empty($_GET['cat_id'])) {
+            $params['cat_id'] = $_GET['cat_id'];
+        }
+        if (!empty($_GET['label_type'])) {
+            $params['label_type'] = $_GET['label_type'];
+        }
+        if (!empty($_GET['tag'])) {
+            $params['tag'] = $_GET['tag'];
+        }
+        if (!empty($_GET['status'])) {
+            $params['status'] = $_GET['status'];
+        }
+        if (!empty($_GET['sort'])) {
+            $orderBy = $_GET['sort'];
+            switch($orderBy) {
+                case 'times_a':
+                    $params['order_by'] = "download_times ASC";
+                    break;
+                case 'times_d':
+                    $params['order_by'] = "download_times DESC";
+                    break;
+                case 'price_a':
+                    $params['order_by'] = "price ASC";
+                    break;
+                case 'price_d':
+                    $params['order_by'] = "price DESC";
+                    break;
+                case 'likes_num_a':
+                    $params['order_by'] = "likes_num ASC";
+                    break;
+                case 'likes_num_d':
+                    $params['order_by'] = "likes_num DESC";
+                    break;
+                case 'time_a':
+                    $params['order_by'] = "ctime ASC";
+                    break;
+                case 'time_d':
+                    $params['order_by'] = "ctime DESC";
+                    break;
+            }
+        }
+        
+        $couponHelper = new CouponModel();
+        $couponInfo = $couponHelper->getCoupon($params);
+        
+        if ($params['order_by'] != 'download_times DESC') {
+            $params['order_by'] = 'download_times DESC';
+        }
+        $params['limit'] = '0,5';
+        $hotCouponInfo = $couponHelper->getCoupon($params);
+        $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);
+        
+        $adHelper = new AdModel();
+        $adInfo = $adHelper->getAd();
+        #$model = new PartnerInfoModel();
+        #$result = $model->getPartnerInfoById($partnerIds);
+        foreach ($couponInfo AS $key => $value) {
+            $couponInfo[$key]['description'] = mb_substr($couponInfo[$key]['description'], 0, 40, 'UTF-8');
+            $couponInfo[$key]['title'] = mb_substr($couponInfo[$key]['title'], 0, 20, 'UTF-8');
+        }
+
+        list($categories, $location, $labelType) = $this->getTopButtom();
+        $this->assign("categories", $categories);
+        $this->assign("locations", $location);
+        $this->assign("label_types", $labelType);
+        $this->assign("coupons", $couponInfo);
+        $this->assign("hot_coupons", $hotCouponInfo);
+        $this->assign("ads", $adInfo);
+        $this->assign("get_info", $_GET);
+         $templateName = $_GET["_URL_"][1]; 
+        $this->assign('templateName',$templateName);
+        $this->display();
+    }
+
+
+
+
+    
     public function detail(){
         if (empty($_GET['_URL_'][2])) {
             return TRUE;

@@ -55,22 +55,22 @@
 				<ul>
 					<if condition="$templateName eq 'index'">
 						<li class="border"><a href="{:U("Index/index")}">首页</a></li>
-						<li><a href="{:U("Coupon/coupon")}">限时优惠</a></li>
+						<li><a href="{:U("Coupon/specialcoupon")}">限时优惠</a></li>
 						<li><a href="{:U("Coupon/coupon")}">优惠券</a></li>
 						<li><a href="{:U("Partner/partner")}">商户</a></li>
 					<elseif condition="$templateName eq 'coupon'" />
 						<li><a href="{:U("Index/index")}">首页</a></li>
-						<li><a href="{:U("Coupon/coupon")}">限时优惠</a></li>
+						<li><a href="{:U("Coupon/specialcoupon")}">限时优惠</a></li>
 						<li class="border"><a href="{:U("Coupon/coupon")}">优惠券</a></li>
 						<li><a href="{:U("Partner/partner")}">商户</a></li>
 					<elseif condition="$templateName eq 'partner'" />
 						<li><a href="{:U("Index/index")}">首页</a></li>
-						<li><a href="{:U("Coupon/coupon")}">限时优惠</a></li>
+						<li><a href="{:U("Coupon/specialcoupon")}">限时优惠</a></li>
 						<li><a href="{:U("Coupon/coupon")}">优惠券</a></li>
 						<li class="border"><a href="{:U("Partner/partner")}">商户</a></li>
 					<else />
 						<li class="border"><a href="{:U("Index/index")}">首页</a></li>
-						<li><a href="{:U("Coupon/coupon")}">限时优惠</a></li>
+						<li><a href="{:U("Coupon/specialcoupon")}">限时优惠</a></li>
 						<li><a href="{:U("Coupon/coupon")}">优惠券</a></li>
 						<li><a href="{:U("Partner/partner")}">商户</a></li>
 					</if>
