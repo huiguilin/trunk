@@ -4,8 +4,6 @@ $(function(){
     	$('#download_coupon_hidden_box').bPopup().close();
     });
 
-	
-
     //点击下载手机优惠劵弹窗中验证码看不清特效
 	$('#send_to_phone_vcode_not_clear').click(function(event) {
 		var imgsrc=$('#download_coupon_hidden_box div.middle_content_box ul li img').attr("src");

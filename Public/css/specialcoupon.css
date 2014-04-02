@@ -302,7 +302,6 @@
 #main #coupon_box ul.coupon_content{
 	margin-top: 8px;
 	width: 698px;
-
 }
 #main #coupon_box ul.coupon_content li{
 	float: left;
@@ -386,8 +385,6 @@
 	top: 200px;
 	left: 30px;
 }
-
-
 #main #coupon_box #webchat_box{
 	background-color: white;
 	filter:alpha(opacity=80);  
