@@ -239,6 +239,7 @@ class CouponAction extends Action {
             $this->ajaxReturn($result,'JSON'); 
             return TRUE;
         }
+
         $couponHelper = new CouponModel();
         $couponId = (int)$_POST['coupon_id'];
 
@@ -250,6 +251,20 @@ class CouponAction extends Action {
            $this->ajaxReturn($result,'JSON');
            return TRUE;
         }
+        $userCouponHelper = new UserCouponModel();
+        $params = array(
+            'phone_number' => $phoneNumber,
+            'coupon_id' => $couponId,
+            'start_time' => date("Y-m-d H:i:s", strtotime("today")),
+            'end_time' => date("Y-m-d H:i:s", strtotime("+1 day")),
+        );
+        $coupons = $userCouponHelper->getUserCoupon($params);
+        if (!empty($coupons)) {
+            $result['status'] = 3;
+            $result['info'] = "今天已经申请过了，请明天再来哟!";
+            $this->ajaxReturn($result,'JSON'); 
+            return TRUE;           
+        }
         // $phoneNumber = $_SESSION['user']['phone_number'];
         $phoneNumber = $_POST['phone_number'];
         $_SESSION['user']['phone_number'] = $phoneNumber;
@@ -259,13 +274,13 @@ class CouponAction extends Action {
         //     return TRUE;
         // }
 
-        $code = mt_rand(1, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
+        $code = md5(mt_rand(1000,9999) . mb_substr($phoneNumber, -4, 4) . time());
+        $code = mb_substr($code, 0, 8);
         $couponName = $couponInfo[0]['name'];
 
         $couponDesc = !empty($couponInfo[0]['message']) ? $couponInfo[0]['message'] : $couponInfo[0]['description'];
         $partnerId = $couponInfo[0]['partner_id'];
         $result = $this->send($phoneNumber, $code, $couponName, $couponId,$couponDesc,$partnerId);
-
 
         //下载成功后数据库中download_times加1
         $helper = new CouponModel();
@@ -289,6 +304,29 @@ class CouponAction extends Action {
         if (empty($phoneNumber) || empty($code)) {
             return FALSE;
         }
+        $addData = array(
+                'user_id' => "",
+                'coupon_id' => $couponId,
+                'status' => 1,
+                'code' => $code,
+                'createtime' => date('Y-m-d H:i:s'),
+                'evaluated' => 0,
+                'telephone' => $phoneNumber,
+                'partner_id' =>$partnerId,
+                );
+
+        if(!empty($_SESSION['user']['user_id'])){     //判断匿名发送，添加我的优惠券
+            $addData['user_id'] = $_SESSION['user']['user_id'];
+        }
+        $helper = new UserCouponModel();
+        $r = $helper->addUserCoupon($addData);
+        if (empty($r)) {
+            $data = array(
+                    'status' => 0,
+                    'info' => '发送失败',
+                    );
+            return $data; 
+        }
         session("pcheck","{$code}");
         //TODO
         $text = "您的{$couponName}优惠券码是【{$code}】，{$couponDesc}，感谢您使用";
@@ -305,22 +343,7 @@ class CouponAction extends Action {
                     'status' => 1,
                     'info' => '发送成功',
                 ); 
-             $addData = array(
-                'user_id' => "",
-                'coupon_id' => $couponId,
-                'status' => 1,
-                'code' => $code,
-                'createtime' => date('Y-m-d H:i:s'),
-                'evaluated' => 0,
-                'telephone' => $phoneNumber,
-                'partner_id' =>$partnerId,
-                );
 
-            if(!empty($_SESSION['user']['user_id'])){     //判断匿名发送，添加我的优惠券
-                $addData['user_id'] = $_SESSION['user']['user_id'];
-            }
-            $helper = new UserCouponModel();
-            $r = $helper->addUserCoupon($addData);
             return $data;
         }
         

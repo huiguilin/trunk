@@ -21,7 +21,12 @@ class UserCouponModel extends Model {
             $str .= " AND partner_id IN ({$params['partner_id']})";
         }
         if (isset($params['code'])) {
-            $str .= " AND code IN ({$params['code']})";
+            $codes = explode(',', $params['code']);
+            foreach ($codes AS &$code) {
+                $code = "'{$code}'";
+            }
+            $codeStr = implode(',', $codes);
+            $str .= " AND code IN ($codeStr)";
         }
         if (isset($params['status'])) {
             $str .= " AND status IN ({$params['status']})";
@@ -29,7 +34,12 @@ class UserCouponModel extends Model {
         if (isset($params['evaluated'])) {
             $str .= " AND evaluated IN ({$params['evaluated']})";
         }
-
+        if (isset($params['start_time'])) {
+            $str .= " AND createtime >= '{$params['start_time']}'";
+        }
+        if (isset($params['end_time'])) {
+            $str .= " AND createtime <= '{$params['end_time']}'";
+        }
 
         if (!isset($params['count'])) {
             $data = $this->where($str)->order($params['order_by'])->limit($params['limit'])->select();
