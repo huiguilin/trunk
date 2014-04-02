@@ -1,0 +1,479 @@
+
+#main{
+	width: 960px;
+	margin: 0 auto;
+
+}
+#main #ad_box{
+	height: 85px;
+	position: relative;
+	margin-top: 8px;
+}
+#main #ad_box img{
+	width: 960px;
+	height: 85px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#main #ad_box ul{
+	position: absolute;
+	top: 68px;
+	right: 10px;
+}
+#main #ad_box li{
+	float: left;
+	width: 23px;
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	margin-right: 1px;
+	height: 14px;
+	line-height: 14px;
+	background: #CCCCCC;
+}
+#main #ad_box li.hover{
+	background: #ED5565;
+}
+#main #ad_box a{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 15px;
+	color: white;
+}
+#main #classification_location_box{
+	width: 960px;
+	background-color: white;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8; 
+}
+#main #classification_location_box #content_box{
+	width: 960px;
+	background-color: white;
+	margin-top: 8px;
+}
+#main #classification_location_box #content_box #classification_box{
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+#main #classification_location_box #content_box #classification_box p{
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	color: #ED5565;
+	font-weight: bold;
+	font-size: 14px;
+	width: 51px;
+	padding-left: 10px;
+	display: inline-block;
+	vertical-align: top;/*解决firefoxinline-block的空隙bug*/
+
+}
+#main #classification_location_box #content_box #classification_box ul.parent_classification{
+	position: relative;
+	left: 0px;
+	height: 30px;
+	margin: 0px;
+	padding: 0px;
+	line-height: 30px;
+	display: block;
+}
+#main #classification_location_box #content_box #classification_box ul.parent_classification li{
+	height: 30px;
+	float: left;
+}
+#main #classification_location_box #content_box #classification_box ul.parent_classification li a{
+	color: #4467A3;
+	height: 26px;
+	padding:7px 5px 7px 5px;
+	line-height: 26px;
+	margin-top: 2px;
+	text-align: center;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 6px;
+	margin-right: 6px;
+}
+#main #classification_location_box #content_box #classification_box ul.parent_classification li a.current{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 3px;
+}
+#main #classification_location_box #content_box #classification_box ul.parent_classification li a:hover{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 3px;
+}
+#main #classification_location_box #content_box #classification_box div{
+	background: url(../images/bg_ico_01.png) no-repeat 80px 0px;
+	/*display: none;*/
+
+}
+#main #classification_location_box #content_box #classification_box div ul.child_classification{
+	margin-top: 10px;
+	background: #ECEFF5;
+	margin-left: 70px;
+	border-radius: 5px;
+	margin-right: 10px;
+	border:1px solid #DBE1EC;
+}
+#main #classification_location_box #content_box #classification_box div ul.child_classification li{
+	float: left;
+	height: 33px;
+	background: url(../images/bg_ico_02.png) no-repeat 0px -491px;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top: 7px;
+}
+#main #classification_location_box #content_box #classification_box div ul.child_classification li.no_right_border{
+	border-right: none;
+}
+#main #classification_location_box #content_box #classification_box div ul.child_classification li a{
+	color: #4467A3;
+	padding:7px 5px 7px 5px;
+	height: 26px;
+	line-height: 26px;
+	margin-top: 7px;
+	text-align: center;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+#main #classification_location_box #content_box #classification_box div ul.child_classification li a.current{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 3px;
+}
+#main #classification_location_box #content_box #classification_box div ul.child_classification li a:hover{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 3px;
+}
+#main #classification_location_box #content_box #location_box{
+	padding-bottom: 10px;
+}
+#main #classification_location_box #content_box #location_box p{
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	color: #ED5565;
+	font-weight: bold;
+	font-size: 14px;
+	width: 51px;
+	padding-left: 10px;
+	display: inline-block;
+	vertical-align: top;/*解决firefoxinline-block的空隙bug*/
+
+}
+#main #classification_location_box #content_box #location_box ul.parent_classification{
+	position: relative;
+	left: 0px;
+	height: 30px;
+	margin: 0px;
+	padding: 0px;
+	line-height: 30px;
+	display: block;
+}
+#main #classification_location_box #content_box #location_box ul.parent_classification li{
+	height: 30px;
+	float: left;
+}
+#main #classification_location_box #content_box #location_box ul.parent_classification li a{
+	color: #4467A3;
+	height: 26px;
+	padding:7px 5px 7px 5px;
+	line-height: 26px;
+	margin-top: 2px;
+	text-align: center;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 6px;
+	margin-right: 6px;
+}
+#main #classification_location_box #content_box #location_box ul.parent_classification li a.current{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 5px;
+}
+#main #classification_location_box #content_box #location_box ul.parent_classification li a:hover{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 5px;
+}
+
+#main #classification_location_box #content_box #location_box div{
+	background: url(../images/bg_ico_01.png) no-repeat 80px 0px;
+	/*display: none;*/
+}
+#main #classification_location_box #content_box #location_box div ul.child_classification{
+	margin-top: 10px;
+	background: #ECEFF5;
+	margin-left: 70px;
+	border-radius: 5px;
+	margin-right: 10px;
+	border:1px solid #DBE1EC;
+}
+#main #classification_location_box #content_box #location_box div ul.child_classification li{
+	float: left;
+	height: 33px;
+	background: url(../images/bg_ico_02.png) no-repeat 0px -491px;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top: 7px;
+}
+#main #classification_location_box #content_box #location_box div ul.child_classification li.no_right_border{
+	border-right: none;
+}
+#main #classification_location_box #content_box #location_box div ul.child_classification li a{
+	color: #4467A3;
+	padding:7px 5px 7px 5px;
+	height: 26px;
+	line-height: 26px;
+	margin-top: 7px;
+	text-align: center;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+#main #classification_location_box #content_box #location_box div ul.child_classification li a.current{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 5px;
+}
+#main #classification_location_box #content_box #location_box div ul.child_classification li a:hover{
+	background-color: #4467A3;
+	color: white;
+	border-radius: 5px;
+}
+#main #sort_price_box{
+	margin-top: 8px;
+	height: 37px;
+	position: relative;
+	background-color: white;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8; 
+}
+#main #sort_price_box div.content_box{
+	height: 37px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 960px;
+	background: #E4E4E4;
+}
+#main #sort_price_box div.content_box p.one{
+	position: absolute;
+	top: 11px;
+	left: 10px;
+	color: #ED5565;
+	font-size: 14px;
+	font-weight: bold;
+}
+#main #sort_price_box div.content_box ul{
+	position: absolute;
+	top: 6px;
+	left: 77px;
+
+}
+#main #sort_price_box div.content_box ul li{
+	float: left;
+	width: 68px;
+	height: 25px;
+	background:white;
+	margin-right: 1px;
+}
+#main #sort_price_box div.content_box ul li a{
+	display: block;
+	line-height: 24px;
+	height: 24px;
+	color: #797979;
+	text-align: center;
+	border:1px solid white;
+}
+#main #sort_price_box div.content_box ul li a:hover{
+	border:1px solid #4467A3;
+	color: black;
+}
+#main #coupon_box{
+	position: relative;
+}
+#main #coupon_box ul.coupon_content{
+	margin-top: 8px;
+	width: 698px;
+
+}
+#main #coupon_box ul.coupon_content li{
+	float: left;
+	width: 698px;
+	height: 315px;
+	background: white;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8; 
+	position: relative;
+	margin-bottom: 8px;
+}
+#main #coupon_box ul.coupon_content li a.content_title{
+	font-family: 微软雅黑;
+	font-size: 20px;
+	font-weight: bold;
+	color: #434343;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+#main #coupon_box ul.coupon_content li a.img_box{
+	display: block;
+	position: absolute;
+	top: 70px;
+	right: 30px;
+}
+#main #coupon_box ul.coupon_content li a.img_box img{
+	width: 306px;
+	height: 216px;
+	border:none;
+}
+#main #coupon_box ul.coupon_content li a.download_btn{
+	display: block;
+	width: 317px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	font-size: 16px;
+	font-family: 微软雅黑;
+	color: white;
+	background: #ED5565;
+	position: absolute;
+	top: 240px;
+	left: 30px;
+}
+#main #coupon_box ul.coupon_content li p.keyword{
+	font-family: 微软雅黑;
+	font-size: 18px;
+	color: #434343;
+	position: absolute;
+	top: 70px;
+	left: 30px;
+}
+#main #coupon_box ul.coupon_content li p.oldprice{
+	font-size: 14px;
+	color: #434343;
+	position: absolute;
+	top: 140px;
+	left: 30px;
+
+}
+#main #coupon_box ul.coupon_content li p.oldprice span{
+	color: #ED5565;
+	font-size: 30px;
+	font-family: Arial;
+}
+#main #coupon_box ul.coupon_content li p.newprice{
+	color: #A1A1A1;
+	font-size: 14px;
+	position: absolute;
+	top: 157px;
+	left: 160px;
+	text-decoration:line-through;
+}
+#main #coupon_box ul.coupon_content li p.times{
+	color: #6B6B6B;
+	font-size: 14px;
+	position: absolute;
+	top: 200px;
+	left: 30px;
+}
+
+
+#main #coupon_box #webchat_box{
+	background-color: white;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8; 
+	height: 181px;
+	width: 254px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+#main #coupon_box #webchat_box p{
+	font-weight: bold;
+	margin-top: 20px;
+	margin-left: 42px;
+	margin-right: 42px;
+	width: 170px;
+	text-align: center;
+}
+#main #coupon_box #webchat_box img{
+	margin-top: 20px;
+	margin-left: 84px;
+	margin-right: 84px;
+	height: 86px;
+	width: 86px;
+}
+
+#main #coupon_box #hot_coupon_box{
+	background-color: white;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8; 
+	width: 254px;
+	position: absolute;
+	top: 189px;
+	right: 0px;
+}
+#main #coupon_box #hot_coupon_box p.title{
+	background: #E4E4E4;
+	height: 35px;
+	color: #666;
+	line-height: 35px;
+	padding-left: 8px;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon{
+	margin-top: 5px;
+	margin-left: 5px;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon li{
+	background: #ECEFF5;
+	height: 80px;
+	width: 244px;
+	margin-bottom: 5px;
+	position: relative;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon li a.title{
+	color: #ED5565;
+	font-weight: bold;
+	position: absolute;
+	top: 5px;
+	left: 8px;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon li a:hover{
+	text-decoration: underline;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon li p{
+	color: #666;
+	position: absolute;
+	top: 27px;
+	left: 8px;
+	width: 165px;
+	height: 45px;
+	overflow: hidden;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon li a.img_box{
+	position: absolute;
+	top: 10px;
+	right: 5px;
+	width: 62px;
+	height: 62px;
+	display: block;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon li a.img_box img{
+	width: 62px;
+	height: 62px;
+	border:0px;
+}

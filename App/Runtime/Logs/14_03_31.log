@@ -1,0 +1,950 @@
+[ 2014-03-31T17:37:01+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002143s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002396s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002039s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.009230s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.000969s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.007794s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000594s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.006168s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.000702s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000809s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000631s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.007182s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.007905s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.006492s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.059785s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060031s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002369s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002042s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.002080s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002776s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010201s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.003013s ]
+INFO: [ view_end ] --END-- [ RunTime:0.003327s ]
+
+[ 2014-03-31T17:37:01+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001996s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002228s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001994s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006286s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.000810s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.005964s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000472s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.006061s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.000534s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000638s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000728s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.008711s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.001114s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.006226s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000516s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.006309s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.067491s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067711s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002299s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001843s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001673s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002179s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008658s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002300s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002594s ]
+
+[ 2014-03-31T17:37:01+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.009397s ]
+INFO: [ route_check ] --END-- [ RunTime:0.009626s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002159s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002451s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006420s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.000841s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.006391s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000735s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.006856s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.000519s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000597s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000459s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006133s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.006018s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000562s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.006556s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.063914s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.064145s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002425s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001816s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001557s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008493s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002070s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002273s ]
+
+[ 2014-03-31T17:37:01+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001944s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002172s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001787s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002012s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006927s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.000798s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.007859s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000732s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.006938s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.000707s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000751s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000479s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005829s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.006189s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000553s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.006468s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.059470s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059746s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002299s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002145s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001529s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002257s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008862s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002273s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002539s ]
+
+[ 2014-03-31T17:37:02+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.005823s ]
+INFO: [ route_check ] --END-- [ RunTime:0.006057s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001930s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002167s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006177s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.000840s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.006083s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000484s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.006396s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.000569s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000639s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000502s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005787s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000549s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.005896s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000587s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.006411s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.079271s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.079523s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002762s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002346s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.002001s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002276s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010056s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002442s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002680s ]
+
+[ 2014-03-31T17:37:03+08:00 ] 127.0.0.1 /Trunk/index.php/home/user/verifyImg
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001989s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002223s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001725s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001932s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+
+[ 2014-03-31T17:37:48+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001876s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002105s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001937s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006517s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.000901s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.006030s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000501s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.005818s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.001240s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000902s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000630s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006083s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000536s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.005462s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000549s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.006844s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.060595s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060825s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002391s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001826s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001538s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002023s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008329s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002075s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002295s ]
+
+[ 2014-03-31T17:37:49+08:00 ] 127.0.0.1 /Trunk/index.php/home/user/verifyImg
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.005046s ]
+INFO: [ route_check ] --END-- [ RunTime:0.005301s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002624s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+
+[ 2014-03-31T17:38:15+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001958s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002191s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002111s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006653s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.001142s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.005935s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000496s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.006430s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.002437s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.001116s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000742s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.009004s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000966s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.006216s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000695s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.008900s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.068117s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.068384s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002432s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.004132s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.003593s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002425s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013287s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002584s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002819s ]
+
+[ 2014-03-31T17:38:16+08:00 ] 127.0.0.1 /Trunk/index.php/home/user/verifyImg
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.003201s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003460s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002901s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007542s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+
+[ 2014-03-31T17:38:18+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002014s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002263s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001927s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006518s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.000855s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.006438s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000476s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.006234s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.000542s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000724s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000506s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005987s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000523s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.005550s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000510s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.006098s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.057667s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.057876s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002387s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002006s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.002121s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.004290s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.011434s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002394s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002621s ]
+
+[ 2014-03-31T17:38:18+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001999s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002227s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001937s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006244s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.000822s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.006287s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000441s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.006489s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.000657s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000742s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000536s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006148s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.005540s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000513s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.005892s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.064283s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.064529s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.004002s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002160s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001492s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002023s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010339s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002046s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002271s ]
+
+[ 2014-03-31T17:38:18+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001867s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002093s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001870s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002096s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.007167s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.001152s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.007040s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000963s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.019148s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.003561s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000793s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000526s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.008353s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.006501s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000683s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.006567s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.100483s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.100690s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002226s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001801s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.002046s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002020s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008729s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001977s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002175s ]
+
+[ 2014-03-31T17:38:18+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002781s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003029s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001936s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002152s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.007034s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.000840s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.005520s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.005449s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.000788s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000963s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000849s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.007596s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000708s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.007454s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000839s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.007427s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.059025s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059252s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002291s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002068s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001574s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001990s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008536s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002322s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002550s ]
+
+[ 2014-03-31T17:38:20+08:00 ] 127.0.0.1 /Trunk/index.php/home/user/verifyImg
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.011815s ]
+INFO: [ route_check ] --END-- [ RunTime:0.012068s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002018s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002394s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+
+[ 2014-03-31T17:39:29+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002218s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002455s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001895s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002123s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.007040s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.000963s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.005674s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000462s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.006493s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.000649s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.002190s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000715s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.007558s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000721s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.006221s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000539s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.005992s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.060563s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060803s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002304s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001712s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.002127s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002082s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008920s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002125s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002359s ]
+
+[ 2014-03-31T17:39:30+08:00 ] 127.0.0.1 /Trunk/index.php/home/user/verifyImg
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.004685s ]
+INFO: [ route_check ] --END-- [ RunTime:0.004969s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003887s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+
+[ 2014-03-31T17:39:38+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002253s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002512s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002138s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006419s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.000962s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.006266s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000447s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.005380s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.000541s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000609s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000491s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.007418s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000871s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.008155s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000586s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.006268s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.058813s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059019s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002082s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001702s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001686s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002039s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008067s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002022s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002225s ]
+
+[ 2014-03-31T17:39:39+08:00 ] 127.0.0.1 /Trunk/index.php/home/user/verifyImg
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002335s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002575s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002644s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+
+[ 2014-03-31T17:40:10+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002127s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002364s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001806s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002056s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006258s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.000873s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.006294s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000466s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.006068s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.000530s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000815s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000525s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.005861s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000565s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.005998s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.006644s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.059045s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059294s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002176s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001821s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001595s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008323s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002023s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002238s ]
+
+[ 2014-03-31T17:40:10+08:00 ] 127.0.0.1 /Trunk/index.php/home/user/verifyImg
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002282s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002578s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002526s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+
+[ 2014-03-31T17:40:12+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/coupon.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001873s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002098s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002120s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.007249s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE (  1 = 1 )  [ RunTime:0.003774s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006581s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 80 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 80 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13,14,15,16,17,18,19) )  [ RunTime:0.001434s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 77 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND partner_id IN (11,12,13,14,15,16,17,18,19) ) ORDER BY download_times DESC LIMIT 0,5   [ RunTime:0.002595s ]
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.007833s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE (  1 = 1 )  [ RunTime:0.000578s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.008165s ]
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND status = 1 )  [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `t_monkey_location` [ RunTime:0.006548s ]
+SQL: SELECT * FROM `t_monkey_location` WHERE ( 1 = 1 ) LIMIT 0,7   [ RunTime:0.000610s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 134 行.
+NOTIC: [8] Undefined index: label_type C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 398 行.
+NOTIC: [8] Undefined index: label_type C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 401 行.
+NOTIC: [8] Undefined index: label_type C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 401 行.
+NOTIC: [8] Undefined index: label_type C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 401 行.
+NOTIC: [8] Undefined index: label_type C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 401 行.
+NOTIC: [8] Undefined index: label_type C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 401 行.
+NOTIC: [8] Undefined index: label_type C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 401 行.
+NOTIC: [8] Undefined index: label_type C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 405 行.
+NOTIC: [8] Undefined index: cat_id C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 405 行.
+NOTIC: [8] Undefined index: tag C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 426 行.
+NOTIC: [8] Undefined index: tag C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 429 行.
+NOTIC: [8] Undefined index: tag C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 432 行.
+NOTIC: [8] Undefined index: tag C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 435 行.
+NOTIC: [8] Undefined index: tag C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 438 行.
+NOTIC: [8] Undefined index: tag C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 441 行.
+NOTIC: [8] Undefined index: tag C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 445 行.
+NOTIC: [8] Undefined index: sort C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 477 行.
+NOTIC: [8] Undefined index: sort C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 480 行.
+NOTIC: [8] Undefined index: sort C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 483 行.
+NOTIC: [8] Undefined index: sort C:\wamp\www\trunk\App\Runtime\Cache\Home\a6c95e00f21e404682eab6b7352fa59e.php 第 486 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.101399s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.101636s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002308s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001745s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.002151s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002354s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009254s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002085s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002287s ]
+
+[ 2014-03-31T17:40:12+08:00 ] 127.0.0.1 /Trunk/index.php/home/user/verifyImg
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002037s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002273s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001903s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002155s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+
+[ 2014-03-31T17:40:14+08:00 ] 127.0.0.1 /Trunk/index.php/home/user/verifyImg
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002975s ]
+INFO: [ route_check ] --END-- [ RunTime:0.005427s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002608s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+
+[ 2014-03-31T17:40:15+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001826s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002041s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001867s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.007241s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.000906s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.008284s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000628s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.007052s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.009124s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.001790s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.004844s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.010133s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000943s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.006686s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000772s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.009232s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.076582s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.076816s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002182s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002276s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.003230s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002418s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010820s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002171s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002558s ]
+
+[ 2014-03-31T17:40:16+08:00 ] 127.0.0.1 /Trunk/index.php/home/user/verifyImg
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002026s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002267s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002116s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002367s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+
+[ 2014-03-31T17:40:43+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001884s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002111s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002055s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002284s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006098s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.001047s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.007364s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000586s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.007850s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.000753s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000913s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000710s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006039s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000795s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.005452s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.006215s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.063591s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063805s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002545s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002079s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001930s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.003084s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010265s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.003956s ]
+INFO: [ view_end ] --END-- [ RunTime:0.004191s ]
+
+[ 2014-03-31T17:40:43+08:00 ] 127.0.0.1 /Trunk/index.php/home/user/verifyImg
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002711s ]
+INFO: [ route_check ] --END-- [ RunTime:0.004462s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002288s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+
+[ 2014-03-31T17:41:45+08:00 ] 127.0.0.1 /Trunk/index.php/coupon/detail/13
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002685s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003025s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001937s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002153s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.006770s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (13) )  [ RunTime:0.000816s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.005910s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CategoryModel.class.php 第 21 行.
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND cat_id IN (1) AND status = 1 )  [ RunTime:0.000446s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.005880s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (13) )  [ RunTime:0.000555s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000644s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( coupon_id IN (12) )  [ RunTime:0.000541s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006538s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (13) )  [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_evaluation` [ RunTime:0.005947s ]
+NOTIC: [8] Undefined index: order_by C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponEvaluationModel.class.php 第 25 行.
+SQL: SELECT * FROM `t_monkey_coupon_evaluation` WHERE ( 1 = 1 AND coupon_id = 13 )  [ RunTime:0.002096s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.005895s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\CouponAction.class.php 第 330 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 137 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 435 行.
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\App\Runtime\Cache\Home\136059a8747562d91d7a53ac13f32224.php 第 521 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.059534s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059759s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002419s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001860s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001799s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002159s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008811s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001973s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002213s ]
+
+[ 2014-03-31T17:41:46+08:00 ] 127.0.0.1 /Trunk/index.php/home/user/verifyImg
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.024275s ]
+INFO: [ route_check ] --END-- [ RunTime:0.024541s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002190s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002416s ]
+NOTIC: [8] Undefined index: user C:\wamp\www\trunk\ThinkPHP\Lib\Core\Action.class.php 第 413 行.
+

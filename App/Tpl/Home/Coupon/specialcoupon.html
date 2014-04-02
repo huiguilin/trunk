@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 a//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
+<meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/specialcoupon.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/M_sendCouponToCellphone.css">
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/specialcoupon.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
+
+
+<title>惠桂林首页</title>
+</head>
+<body>
+<!-- 顶部订阅分享区域+Logo区域 -->
+	<include file="./App/Tpl/Home/Public/header.html" />
+<!-- 顶部订阅分享区域+Logo区域结束 -->
+<!-- 内容区域 -->
+	<div id="main">
+		<div id="ad_box">
+	        <img src="__PUBLIC__/images/flash/c_1.png" alt="广告图片01">
+	        <img src="__PUBLIC__/images/flash/c_2.png" alt="广告图片02">
+	        <img src="__PUBLIC__/images/flash/c_3.png" alt="广告图片03">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+			<a href="">x</a>
+		</div>
+		<div id="classification_location_box">
+			<div id="content_box">
+				<div id="classification_box">
+					<p>分类</p><ul class="parent_classification">
+                        <if condition="$get_info.label_type neq ''">
+						<li><a href="{:U('Coupon/coupon')}">全部</a></li>
+                        <else />
+						<li><a href="{:U('Coupon/coupon')}" class="current">全部</a></li>
+                        </if>
+                    <foreach name="label_types" item="label_type">
+                        <if condition="$get_info.label_type eq $key">
+						<li><a href="{:U('Coupon/coupon',array('label_type'=>$key),'','')}" class="current">{$label_type}</a></li>
+                        <else />
+						<li><a href="{:U('Coupon/coupon',array('label_type'=>$key),'','')}">{$label_type}</a></li>
+                        </if>
+                    </foreach>
+					</ul>
+					<if condition="($_GET.label_type neq '') or ($_GET.cat_id neq '')">
+						<div>
+							<ul class="child_classification clearfix">
+	                            <if condition="$get_info.cat_id neq ''">
+	                            <li><a href="{:U('Coupon/coupon',array('label_type'=>$get_info['label_type']),'','')}">全部</a></li>
+	                            <else />
+	                            <li><a href="{:U('Coupon/coupon',array('label_type'=>$get_info['label_type']),'','')}" class="current">全部</a></li>
+	                            </if>
+								
+	                            <foreach name="categories" item="category">
+	                            <if condition="$get_info['label_type'] eq $category['label_type']">
+									<if condition="$get_info['cat_id'] eq $category['cat_id']">
+									
+								 	<li><a href="{:U('Coupon/coupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}" class="current">{$category.cat_name}</a></li>
+	                            	<else />
+
+									<li><a href="{:U('Coupon/coupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}">{$category.cat_name}</a></li>
+	                            </if>
+	                            <else />
+	                            </if>
+	                            </foreach>
+							</ul>
+						</div>
+						<else />
+					</if>
+				</div>
+				<div id="location_box">
+					<p>学校</p><ul class="parent_classification">
+                        <if condition="$get_info.tag neq ''">
+						<li><a href="{:U('Coupon/coupon')}">全部</a></li>
+                        <else />
+						<li><a href="{:U('Coupon/coupon')}" class="current">全部</a></li>
+                        </if>
+                        <if condition="$get_info.tag neq '桂林电子科技大学'">
+						<li><a href="{:U('Coupon/coupon',array('tag'=>'桂林电子科技大学'),'','')}">桂林电子科技大学</a></li>
+                        <else />
+						<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'桂林电子科技大学'),'','')}">桂林电子科技大学</a></li>
+                        </if>
+						<if condition="$get_info.tag neq '广西师范大学'">
+						<li><a href="{:U('Coupon/coupon',array('tag'=>'广西师范大学'),'','')}">广西师范大学</a></li>
+                        <else />
+						<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'广西师范大学'),'','')}">广西师范大学</a></li>
+                        </if>
+                        <if condition="$get_info.tag neq '桂林理工大学'">
+						<li><a href="{:U('Coupon/coupon',array('tag'=>'桂林理工大学'),'','')}">桂林理工大学</a></li>
+                        <else />
+						<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'桂林理工大学'),'','')}">桂林理工大学</a></li>
+                        </if>
+                        <if condition="$get_info.tag neq '桂林医学院'">
+						<li><a href="{:U('Coupon/coupon',array('tag'=>'桂林医学院'),'','')}">桂林医学院</a></li>
+                        <else />
+						<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'桂林医学院'),'','')}">桂林医学院</a></li>
+                        </if>
+                        <if condition="$get_info.tag neq '桂林航空学院'">
+						<li><a href="{:U('Coupon/coupon',array('tag'=>'桂林航空学院'),'','')}">桂林航空学院</a></li>
+                        <else />
+						<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'桂林航空学院'),'','')}">桂林航空学院</a></li>
+                        </if>
+
+                         <if condition="$get_info.tag neq '桂林旅专'">
+						<li><a href="{:U('Coupon/coupon',array('tag'=>'桂林旅专'),'','')}">桂林旅专</a></li>
+                        <else />
+						<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'桂林旅专'),'','')}">桂林旅专</a></li>
+                        </if>
+
+                         <if condition="$get_info.tag neq '广艺桂林分校'">
+						<li><a href="{:U('Coupon/coupon',array('tag'=>'广艺桂林分校'),'','')}">广艺桂林分校</a></li>
+                        <else />
+						<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'广艺桂林分校'),'','')}">广艺桂林分校</a></li>
+                        </if>
+					</ul>
+					<if condition="$_GET['tag'] neq ''">
+						<div>
+							<ul class="child_classification clearfix">
+								<if condition="$get_info['location'] eq ''">
+									<li><a href="{:U('Coupon/coupon',array('tag'=>$get_info['tag']),'','')}" class="current">全部</a></li>
+								<else />
+									<li><a href="{:U('Coupon/coupon',array('tag'=>$get_info['tag']),'','')}">全部</a></li>
+								</if>
+								
+	                            <foreach name="locations" item="location">
+									<if condition="$get_info['tag'] eq $location['belong']">
+										<if condition="$get_info['location'] neq ''">
+											<if condition="$get_info['location'] eq $location['id'] ">
+												<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a></li>
+											<else />
+												<li><a href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a></li>
+											</if>
+										<else />
+											<li><a href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a></li>
+										</if>
+									<else />
+									</if>
+	                            </foreach>
+							</ul>
+						</div>
+					<else />
+					</if>
+					
+				</div>
+			</div>
+		</div>
+		<div id="sort_price_box">
+			<div class="content_box">
+				<p class="one">排序</p>
+				<ul>
+					<li><a href="">默认</a></li>
+                    <if condition="$get_info.sort neq 'times_a'">
+					<li><a href="?sort=times_a">下载次数</a></li>
+                    <else />
+					<li><a href="?sort=times_d">下载次数</a></li>
+                    </if>
+                    <if condition="$get_info.sort neq 'price_a'">
+					<li><a href="?sort=price_a">价格</a></li>
+                    <else />
+					<li><a href="?sort=price_d">价格</a></li>
+                    </if>
+                    <if condition="$get_info.sort neq 'likes_num_a'">
+					<li><a href="?sort=likes_num_a">好评</a></li>
+                    <else/>
+					<li><a href="?sort=likes_num_d">好评</a></li>
+                    </if>
+                    <if condition="$get_info.sort neq 'time_a'">
+					<li><a href="?sort=time_a">发布时间</a></li>
+                    <else />
+					<li><a href="?sort=time_d">发布时间</a></li>
+                    </if>
+				</ul>
+			</div>
+		</div>
+		<div id="coupon_box">
+		
+			<ul class="clearfix coupon_content">
+				<?php 
+					$coupon_count = count($coupons);
+				?>
+				<if condition="$coupon_count lt 8">
+						<input type="hidden" value="680" id="hidden_type_value" name="type" />
+					<else /> 
+					
+				</if>
+                <foreach name="coupons" item="coupon" key="k">
+            		<li>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title" title="{$coupon.name}">{$coupon.name}</a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}" alt="{$coupon.name}"></a>
+						<p class="keyword" title="{$coupon.title}">{$coupon.title}</p>
+						<p class="oldprice">疯狂价<span>￥3</span>元</p>
+						<p class="newprice">原价￥5元</p>
+						<p class="times">已抢购：{$coupon.download_times}次</p>
+						<a href="" class="download_btn">点击抢购，还剩6份</a>
+					</li>
+                </foreach>
+
+			</ul>
+			<div id="webchat_box">
+				<p>扫一下，关注惠桂林微博</p>
+				<img src="__PUBLIC__/images/weibo_barcode.png" alt="微博icon">
+			</div>
+			<div id="hot_coupon_box">
+				<p class="title">热门优惠劵</p>
+				<ul class="hot_coupon">
+                <foreach name="hot_coupons" item="coupon">
+					<li>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="title">{$coupon.name}</a>
+						<p>{$coupon.description}</p>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}" alt="{$coupon.name}"></a>
+					</li>
+                </foreach>
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+<!-- 内容区域结束
+	<include file="./App/Tpl/Home/Public/M_sendCouponToCellphone.html" />
+<!-- 最底部区域 -->
+	<include file="./App/Tpl/Home/Public/footer.html" />
+<!-- 最底部区域结束 -->
+
+</body>
+</html>
