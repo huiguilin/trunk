@@ -1,9 +1,34 @@
 #top_logo_box{
 	width: 800px;
 	margin: 0 auto;
-	height: 50px;
 	padding-top: 15px;
+	position: relative;
+	height: 70px;
 }
+#top_logo_box a.logoimg_box {
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#top_logo_box a.sloganimg_box{
+	display: block;
+	position: absolute;
+	top: 40px;
+	left: 185px;
+}
+#top_logo_box a.logoimg_box img{
+	width: 180px;
+	height: 70px;
+	border:none;
+}
+#top_logo_box a.sloganimg_box img{
+	width: 160px;
+	height: 26px;
+	border:none;
+}
+
+
 #main_box{
 	width: 800px;
 	margin: 0 auto;
@@ -11,8 +36,6 @@
 #main_box div.title_box{
 	background: #ED5565;
 	height: 35px;
-	border-top-right-radius: 5px;
-	border-top-left-radius: 5px;
 	position: relative;
 }
 #main_box div.title_box span{
@@ -35,8 +58,6 @@
 #main_box div.content_box{
 	border:1px dashed #E4E4E4;
 	border-top:none;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
 	padding-bottom: 40px;
 	line-height: 25px;
 	font-size:15px;

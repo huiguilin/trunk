@@ -8,6 +8,12 @@
 	width: 955px;
 	height: 100%;
 	border: 2px solid #F7F8FA;
+	background: white;
+	filter:alpha(opacity=75);  
+    -moz-opacity:0.75;  
+    -khtml-opacity: 0.75;  
+    opacity: 0.75; 
+
 }
 #main #faq01_box p.one{
 	color: #EB5B4C;
@@ -240,6 +246,7 @@
 	position: absolute;
 	top: 70px;
 	left: 260px;
+
 }
 #main #faq01_box #right_content_box #directory{
 	width: 640px;

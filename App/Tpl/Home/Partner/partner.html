@@ -20,9 +20,6 @@
 <!-- 顶部订阅分享区域+Logo区域 -->
 	<include file="./App/Tpl/Home/Public/header.html" />
 <!-- 顶部订阅分享区域+Logo区域结束 -->
-<!--  导航区域 -->
-	<include file="./App/Tpl/Home/Public/nav_partner.html" />
-<!-- 导航区域结束-->
 <!-- 内容区域 -->
 	<div id="main">
 		<div id="ad_box">
@@ -80,36 +77,49 @@
 					</if>
 				</div>
 				<div id="location_box">
-					<p>区域</p><ul class="parent_classification">
+					<p>学校</p><ul class="parent_classification">
                         <if condition="$get_info.tag neq ''">
 						<li><a href="{:U('Partner/partner')}">全部</a></li>
                         <else />
 						<li><a href="{:U('Partner/partner')}" class="current">全部</a></li>
                         </if>
-                        <if condition="$get_info.tag neq '秀峰区'">
-						<li><a href="{:U('Partner/partner',array('tag'=>'秀峰区'),'','')}">秀峰区</a></li>
+                        <if condition="$get_info.tag neq '桂林电子科技大学'">
+						<li><a href="{:U('Partner/partner',array('tag'=>'桂林电子科技大学'),'','')}">桂林电子科技大学</a></li>
                         <else />
-						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'秀峰区'),'','')}">秀峰区</a></li>
+						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'桂林电子科技大学'),'','')}">桂林电子科技大学</a></li>
                         </if>
-						<if condition="$get_info.tag neq '象山区'">
-						<li><a href="{:U('Partner/partner',array('tag'=>'象山区'),'','')}">象山区</a></li>
+						<if condition="$get_info.tag neq '广西师范大学'">
+						<li><a href="{:U('Partner/partner',array('tag'=>'广西师范大学'),'','')}">广西师范大学</a></li>
                         <else />
-						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'象山区'),'','')}">象山区</a></li>
+						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'广西师范大学'),'','')}">广西师范大学</a></li>
                         </if>
-                        <if condition="$get_info.tag neq '叠彩区'">
-						<li><a href="{:U('Partner/partner',array('tag'=>'叠彩区'),'','')}">叠彩区</a></li>
+                        <if condition="$get_info.tag neq '桂林理工大学'">
+						<li><a href="{:U('Partner/partner',array('tag'=>'桂林理工大学'),'','')}">桂林理工大学</a></li>
                         <else />
-						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'叠彩区'),'','')}">叠彩区</a></li>
+						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'桂林理工大学'),'','')}">桂林理工大学</a></li>
                         </if>
-                        <if condition="$get_info.tag neq '七星区'">
-						<li><a href="{:U('Partner/partner',array('tag'=>'七星区'),'','')}">七星区</a></li>
+                        <if condition="$get_info.tag neq '桂林医学院'">
+						<li><a href="{:U('Partner/partner',array('tag'=>'桂林医学院'),'','')}">桂林医学院</a></li>
                         <else />
-						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'七星区'),'','')}">七星区</a></li>
+						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'桂林医学院'),'','')}">桂林医学院</a></li>
                         </if>
-                        <if condition="$get_info.tag neq '雁山区'">
-						<li><a href="{:U('Partner/partner',array('tag'=>'雁山区'),'','')}">雁山区</a></li>
+
+                        <if condition="$get_info.tag neq '桂林航空学院'">
+						<li><a href="{:U('Partner/partner',array('tag'=>'桂林航空学院'),'','')}">桂林航空学院</a></li>
                         <else />
-						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'雁山区'),'','')}">雁山区</a></li>
+						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'桂林航空学院'),'','')}">桂林航空学院</a></li>
+                        </if>
+
+                        <if condition="$get_info.tag neq '桂林旅专'">
+						<li><a href="{:U('Partner/partner',array('tag'=>'桂林旅专'),'','')}">桂林旅专</a></li>
+                        <else />
+						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'桂林旅专'),'','')}">桂林旅专</a></li>
+                        </if>
+
+                         <if condition="$get_info.tag neq '广艺桂林分校'">
+						<li><a href="{:U('Partner/partner',array('tag'=>'广艺桂林分校'),'','')}">广艺桂林分校</a></li>
+                        <else />
+						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'广艺桂林分校'),'','')}">广艺桂林分校</a></li>
                         </if>
 					</ul>
 					<if condition="$_GET['tag'] neq ''">

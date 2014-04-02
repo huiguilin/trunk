@@ -21,4 +21,4 @@
 
 
 	var ajaxPostURL = "http://localhost/trunk/index.php/";
-	var loginSucessURL = "http://localhost";
+	var loginSucessURL = "http://localhost/trunk";

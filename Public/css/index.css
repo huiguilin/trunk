@@ -23,135 +23,25 @@
 #main{
 	width: 960px;
 	margin: 0 auto;
-	background-color: #F2F2F2;
+	/*background-color: #F2F2F2;*/
+
 }
 #main #main_content_top_box{
-	height: 260px;
+	height: 421px;
 	position: relative;
 
 }
-#main #main_content_top_box ul.category_title{
-	border:1px solid #DA4453;
-	width: 151px;
-	height: 258px;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-	position: absolute;
-	top: 0px;
-	left: 6px;
-	background: white;
-}
-#main #main_content_top_box ul.category_title li{
-	width: 150px;
-	height: 40px;
-}
-#main #main_content_top_box ul.category_title li a{
-	color: #666666;
-	font-size: 14px;
-	font-weight: bold;
-	display: block;
-	width: 142px;
-	height: 40px;
-	line-height: 40px;
-	text-align: center;
-	padding-left: 9px;
-}
-#main #main_content_top_box ul.category_title li a:hover{
-	color: white;
-}
-#main #main_content_top_box ul.category_title li a.one{
-	background: url(../images/classification/food.png) no-repeat 14px 10px;
-}
-#main #main_content_top_box ul.category_title li a.one:hover{
-	background: url(../images/classification/food-hover.png) no-repeat 14px 10px #ED5565;
-}
-#main #main_content_top_box ul.category_title li a.two{
-	background: url(../images/classification/entertainment.png) no-repeat 14px 10px;
-}
-#main #main_content_top_box ul.category_title li a.two:hover{
-	background: url(../images/classification/entertainment-hover.png) no-repeat 14px 10px #ED5565;
-}
-#main #main_content_top_box ul.category_title li a.three{
-	background: url(../images/classification/lifestyle.png) no-repeat 14px 10px;
-}
-#main #main_content_top_box ul.category_title li a.three:hover{
-	background: url(../images/classification/lifestyle-hover.png) no-repeat 14px 10px #ED5565;
-}
-#main #main_content_top_box ul.category_title li a.four{
-	background: url(../images/classification/hotel.png) no-repeat 14px 10px;
-}
-#main #main_content_top_box ul.category_title li a.four:hover{
-	background: url(../images/classification/hotel-hover.png) no-repeat 14px 10px #ED5565;
-}
-#main #main_content_top_box ul.category_title li a.five{
-	background: url(../images/classification/tour.png) no-repeat 14px 10px;
-}
-#main #main_content_top_box ul.category_title li a.five:hover{
-	background: url(../images/classification/tour-hover.png) no-repeat 14px 10px #ED5565;
-}
-#main #main_content_top_box ul.category_title li a.six{
-	background: url(../images/classification/beauty.png) no-repeat 14px 10px;
-}
-#main #main_content_top_box ul.category_title li a.six:hover{
-	background: url(../images/classification/beauty-hover.png) no-repeat 14px 10px #ED5565;
-}
-
-#main #main_content_top_box ul.hot_navigation{
-	position: absolute;
-	top: 10px;
-	left: 165px;
-	border:1px solid #E4E4E4;
-	width: 530px;
-	height: 110px;
-	border-radius: 5px;
-	border-bottom: 3px solid #E4E4E4;
-	background: white;
-}
-#main #main_content_top_box ul.hot_navigation li{
-	
-	border-bottom: 1px solid #E4E4E4;
-	margin-left: 10px;
-	margin-right: 10px;	
-}
-#main #main_content_top_box ul.hot_navigation li.no_bottom_border{
-	border-bottom: none;
-}
-
-#main #main_content_top_box ul.hot_navigation li span{
-	color: #666666;
-	font-weight: bold;
-	display: inline-block;
-	height: 35px;
-	line-height: 35px;
-}
-#main #main_content_top_box ul.hot_navigation li a{
-	color: #666666;
-	margin-right: 15px;
-	display: inline-block;
-	height: 25px;
-	line-height: 25px;
-
-}
-#main #main_content_top_box ul.hot_navigation li a:hover{
-	background: #4467A3;
-	border-radius: 5px;
-	color: white;
-}
-#main #main_content_top_box ul.hot_navigation li a.one{
-	margin-left: 30px;
-}
 #main #main_content_top_box #ad_box{
 	position: absolute;
-	top: 135px;
-	left: 165px;
-	border-bottom: 1px solid #E4E4E4;
+	top: 10px;
+	left: 0px;
 	border-radius: 5px;
-	width: 532px;
-	height: 123px;
+	width: 960px;
+	height: 223px;
 }
 #main #main_content_top_box #ad_box img{
-	width: 532px;
-	height: 123px;
+	width: 960px;
+	height: 223px;
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -159,8 +49,8 @@
 }
 #main #main_content_top_box #ad_box ul{
 	position: absolute;
-	top: 106px;
-	right: 6px;
+	top: 200px;
+	right: 20px;
 }
 #main #main_content_top_box #ad_box ul li{
 	float: left;
@@ -175,16 +65,69 @@
 #main #main_content_top_box #ad_box ul li.hover{
 	background: #ED5565;
 }
-#main #main_content_top_box div.QRcode_box{
-	border-radius: 5px;
-	border:1px solid #E4E4E4;
-	width: 253px;
-	height: 140px;
-	border-bottom: 3px solid #E4E4E4;
+
+#main #main_content_top_box ul.hot_navigation{
 	position: absolute;
-	top: 10px;
-	right: 4px;
-	background: white;
+	top: 243px;
+	left: 0px;
+	border:1px solid #E4E4E4;
+	width: 693px;
+	height: 176px;
+	background:white;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8; 
+}
+#main #main_content_top_box ul.hot_navigation li{
+	
+	border-bottom: 1px solid #E4E4E4;
+	margin-left: 10px;
+	margin-right: 10px;	
+	height:58px;
+	line-height: 58px;
+}
+#main #main_content_top_box ul.hot_navigation li.no_bottom_border{
+	border-bottom: none;
+	
+}
+
+#main #main_content_top_box ul.hot_navigation li span{
+	color: #ED5565;
+	display: inline-block;
+	height: 35px;
+	line-height: 35px;
+	font-size: 14px;
+	padding-left: 7px;
+}
+#main #main_content_top_box ul.hot_navigation li a{
+	color: #4467A3;
+	margin-right: 15px;
+	display: inline-block;
+	height:25px;
+	line-height: 25px;
+
+}
+#main #main_content_top_box ul.hot_navigation li a:hover{
+	background: #4467A3;
+	border-radius: 5px;
+	color: white;
+}
+#main #main_content_top_box ul.hot_navigation li a.one{
+	margin-left: 30px;
+}
+#main #main_content_top_box div.QRcode_box{
+	border:1px solid #E4E4E4;
+	width: 254px;
+	height: 176px;
+	position: absolute;
+	top: 243px;
+	right: 0px;
+	background:white;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8; 
 }
 #main #main_content_top_box div.QRcode_box p{
 	position: absolute;
@@ -201,24 +144,6 @@
 	height: 86px;
 	border:none;
 }
-#main #main_content_top_box div.recommend_box{
-	border-radius: 5px;
-	border:1px solid #E4E4E4;
-	width: 253px;
-	height: 94px;
-	border-bottom: 3px solid #E4E4E4;
-	background: white;
-	position: absolute;
-	top: 162px;
-	right: 4px;
-}
-#main #main_content_top_box div.recommend_box a{
-	position: absolute;
-	top: 35px;
-	left: 70px;
-	color: #666666;
-	font-weight: bold;
-}
 #main #hot_and_new_brand_box{
 	position: relative;
 	height: 215px;
@@ -228,9 +153,10 @@
 	border:1px solid #E4E4E4;
 	position: absolute;
 	top: 0px;
-	left: 6px;
-	width: 688px;
-	border-radius: 5px;
+	left: 0px;
+	width: 692px;
+	height: 212px;
+	overflow: hidden;
 }
 #main #hot_and_new_brand_box div.hot_brand_box p{
 	color: #ED5565;
@@ -240,12 +166,18 @@
 	height: 32px;
 	line-height: 32px;
 	padding-left: 10px;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8; 
+    opacity: 0.8; 
 }
 #main #hot_and_new_brand_box div.hot_brand_box ul{
 	background:white;
 	height: 180px;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8; 
+    opacity: 0.8; 
 }
 #main #hot_and_new_brand_box div.hot_brand_box li{
 	float: left;
@@ -280,11 +212,10 @@
 #main #hot_and_new_brand_box div.new_brand_box{
 	position: absolute;
 	top: 0px;
-	right: 4px;
+	right: 0px;
 	border:1px solid #E4E4E4;
-	width: 253px;
-	border-radius: 5px;
-	
+	width: 254px;
+	height: 212px;
 }
 #main #hot_and_new_brand_box div.new_brand_box p{
 	color: #666666;
@@ -297,9 +228,11 @@
 #main #hot_and_new_brand_box div.new_brand_box ul{
 	background:white;
 	height: 180px;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
 	overflow: hidden;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8; 
+    opacity: 0.8; 
 }
 #main #hot_and_new_brand_box div.new_brand_box ul li{
 	float: left;
@@ -333,9 +266,8 @@
 	border:1px solid #E4E4E4;
 	position: absolute;
 	top: 0px;
-	left: 6px;
-	width: 688px;
-	border-radius: 5px;
+	left: 0px;
+	width: 692px;
 }
 #main #foot_and_footsort_box div.foot_box a:hover{
 	text-decoration: underline;
@@ -351,8 +283,10 @@
 }
 #main #foot_and_footsort_box div.foot_box ul.content{
 	background:white;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8;  
 	height:365px;
 
 }
@@ -361,6 +295,7 @@
 	width: 341px;
 	height: 181px;
 	position: relative;
+	margin-left: 5px;
 }
 #main #foot_and_footsort_box div.foot_box ul.content li:hover{
 	/*background: #ECEFF5;*/
@@ -469,9 +404,8 @@
 	border:1px solid #E4E4E4;
 	position: absolute;
 	top: 0px;
-	right: 4px;
+	right: 0px;
 	width: 254px;
-	border-radius: 5px;
 }
 #main #foot_and_footsort_box div.footsort_box span.title{
 	color: #666666;
@@ -485,19 +419,17 @@
 }
 #main #foot_and_footsort_box div.footsort_box span.title2{
 	background: white;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-
+	
 }
 #main #foot_and_footsort_box div.footsort_box ul{
 	background:white;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8;  
 	height: 364px;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-	position: absolute;
-	top: 32px;
-	left: 0px;
-
+	width: 254px;
+	
 }
 #main #foot_and_footsort_box div.footsort_box ul.hidden{
 	display: none;

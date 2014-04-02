@@ -1,32 +1,77 @@
 $(function(){
 	var coupon_id;
+    var all_li;
+
+    $(window).scroll( function() {
+
+        var n1 = parseInt($(window).scrollTop());
+        var n2 = parseInt($(window).height());
+        var n3 = parseInt($(document).height());
+        var middle_val = n3/2;
+        var business_nav_y = parseInt($('#business_nav').position().top)+190;
+        var business_location_y = parseInt($('#business_location').position().top)+135;
+        var business_intro_y = parseInt($('#business_intro').position().top)+85;
+        var comment_performance_y = parseInt($('#comment_performance').position().top)+115;     
+
+        if (n1 >= business_nav_y) {
+
+            $('#jquery_business_nav').css('display','block');
+            $('#jquery_business_nav').css('z-index', '1999');
+        }
+        if (n1 <= business_nav_y) {
+
+            $('#jquery_business_nav').css('display','none');
+        }
+        
+        switchBusinessNav(n1,business_location_y,business_intro_y,comment_performance_y);
+        all_li.first().find('a').attr('href', '#back_business_location');
+        all_li.first().next('li').find('a').attr('href', '#back_business_intro');
+        all_li.last().find('a').attr('href', '#back_comment_performance');
+
+        // back_top_bottom(n1,middle_val);
+    });
+
+    // function back_top_bottom(n1,middle_val){
+    //     if (n1 >= middle_val) {
+    //         $('#main #top_bottom a').text('到顶部');
+    //         $('#main #top_bottom a').attr('href', '#top');
+    //     }
+    //     if (n1 <= middle_val) {
+    //         $('#main #top_bottom a').text('到底部');
+    //         $('#main #top_bottom a').attr('href', '#bottom');
+    //     }
+    // }
+     function switchBusinessNav(n1,business_location_y,business_intro_y,comment_performance_y){
+        all_li = $('#main #coupon_box div.business_detail_info_box ul.jquery_business_nav').find('li');
+        if (n1 >= business_location_y && n1 <= business_intro_y) {
+            all_li.first().addClass('no_bottom_border').siblings('li').removeClass('no_bottom_border');
+        }
+        if (n1 >= business_intro_y && n1 <= comment_performance_y) {
+            all_li.first().next('li').addClass('no_bottom_border').siblings('li').removeClass('no_bottom_border');
+        }
+        if (n1 >= comment_performance_y) {
+            all_li.last().addClass('no_bottom_border').siblings('li').removeClass('no_bottom_border');
+        }
+    }
+
 	$('#main #coupon_box div.business_detail_info_box div.business_location div.map_box ul li').click(function(event) {
 		$('#main #coupon_box div.business_detail_info_box div.business_location div.map_box ul li div').hide();
 		$('#main #coupon_box div.business_detail_info_box div.business_location div.map_box ul li').removeClass();
 		$(this).removeClass().addClass('white').find('div').show();
 	});
+
 	$('#main #coupon_box div.business_detail_info_box ul.business_nav li').click(function(event) {
 		var index = $(this).index();
-		
-		if(index ==0){
-			$(this).addClass('no_bottom_border').siblings('li').removeClass('no_bottom_border');
-			$('#main #coupon_box div.business_detail_info_box div.business_location').show();
-			$('#main #coupon_box div.business_detail_info_box div.business_intro').hide();
-			$('#main #coupon_box div.business_detail_info_box div.show_comment').hide();
-		}
-		else if(index ==1){
-			$(this).addClass('no_bottom_border').siblings('li').removeClass('no_bottom_border');
-			$('#main #coupon_box div.business_detail_info_box div.business_location').hide();
-			$('#main #coupon_box div.business_detail_info_box div.business_intro').show();
-			$('#main #coupon_box div.business_detail_info_box div.show_comment').hide();
-		}
-		else if(index ==2){
-			$(this).addClass('no_bottom_border').siblings('li').removeClass('no_bottom_border');
-			$('#main #coupon_box div.business_detail_info_box div.business_location').hide();
-			$('#main #coupon_box div.business_detail_info_box div.business_intro').hide();
-			$('#main #coupon_box div.business_detail_info_box div.show_comment').show();
-		}
-		return false;
+
+        if(index == 1){
+            $(this).addClass('no_bottom_border').siblings('li').removeClass('no_bottom_border');
+        }
+        if(index == 2){
+            $(this).addClass('no_bottom_border').siblings('li').removeClass('no_bottom_border');
+        }
+        if(index == 3){
+            $(this).addClass('no_bottom_border').siblings('li').removeClass('no_bottom_border');
+        }
 	});
 
 	// 查看完整地图弹窗

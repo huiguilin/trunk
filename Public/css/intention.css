@@ -7,6 +7,11 @@
 	width: 715px;
 	height: 850px;
 	border: 1px solid #E3E3E3;
+	background: white;
+	filter:alpha(opacity=75);  
+    -moz-opacity:0.75;  
+    -khtml-opacity: 0.75;  
+    opacity: 0.75; 
 }
 #main #left_card p.one{
 	color: #EB5B4C;

@@ -26,8 +26,10 @@ class UserAction extends Action {
                 $this->ajaxReturn($data,'JSON');
             }
         }
+
         $helper = new UserProfileModel();
         $userInfo = $helper->getUserProfileByUserName($userName);
+
         if (empty($userInfo)) {
             $data = array();
             $data['status'] = 2;
@@ -43,7 +45,9 @@ class UserAction extends Action {
             $data['status'] = 1;
             $data['info'] = '登陆成功！';
             $data['size'] = 9;
+            
             if (!empty($userInfo['isBusiness'])) {
+
                 $partnerHelper = new PartnerModel();
                 $params = array(
                     'user_id' => $userInfo['user_id'],
@@ -54,6 +58,7 @@ class UserAction extends Action {
                 $data['url'] = "/index.php/Admin/ValidateManagement/singlevalidate";
             }
             else {
+
                 $data['url'] = "";
                 
             }
@@ -65,6 +70,8 @@ class UserAction extends Action {
             $data['size'] = 9;
             $data['url'] = "";
         }
+
+        
         $this->ajaxReturn($data,'JSON');
         return TRUE;
     }

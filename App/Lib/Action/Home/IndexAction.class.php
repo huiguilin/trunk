@@ -49,6 +49,8 @@ class IndexAction extends Action {
         $this->assign("evaluations", $evaluation);
         $this->assign("locations", $location);
         $this->assign("categories", $category);
+        $templateName = $_GET["_URL_"][1]; 
+        $this->assign('templateName',$templateName);
         $this->display();
         
     }

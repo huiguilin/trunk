@@ -1,44 +1,50 @@
 $(function(){
 	
 	//订阅Hover特效
-	$('#subscription_li').hover(function() {
+	$('#subscription').hover(function() {
 		$('#subscription_box').show();
-		$(this).addClass('hover');
-		$('#subscription').css('border-right', 'none');
+		$(this).addClass('current').find('a').css('color', 'black').addClass('hover_bg_icon');
+		$('#help_link').css('border-right', 'none');
 	}, function() {
 		$('#subscription_box').hide();
-		$(this).removeClass('hover');
-		$('#subscription').css('border-right', '1px solid black');
+		$(this).removeClass('current').find('a').css('color', 'white').removeClass('hover_bg_icon');
+		$('#help_link').css('border-right', '1px solid white');
 	});
 
 	$('#subscription_box').hover(function() {
 		$('#subscription_box').show();
-		$('#subscription_li').addClass('hover');
-		$('#subscription').css('border-right', 'none');
 	}, function() {
 		$('#subscription_box').hide();
-		$('#subscription_li').removeClass('hover');
-		$('#subscription').css('border-right', '1px solid black');
 	});
 	//订阅Hover特效结束
+	//关注Hover特效
+	$('#share').hover(function() {
+		$('#share_box').show();
+		$(this).addClass('current').find('a').css('color', 'black').addClass('hover_bg_icon');
+		$('#subscription_link').css('border-right', 'none');
+	}, function() {
+		$('#share_box').hide();
+		$(this).removeClass('current').find('a').css('color', 'white').removeClass('hover_bg_icon');
+		$('#subscription_link').css('border-right', '1px solid white');
+	});
+	$('#share_box').hover(function() {
+		$('#share_box').show();
+	}, function() {
+		$('#share_box').hide();
+	});
+	//关注Hover特效结束
 	//我的惠桂林Hover效果
 	$('#person_center_menu').hover(function() {
-		$('#top_logo_box #login_dropdownlist').show();
-		$('#person_center_menu').addClass('border');
-		$('#top_logo_box #login_box li a.username').css('border-right', 'none');
+		$('#login_dropdownlist_box').show();
+		$('#myhuigl').css('color', '#ED5565');
 	}, function() {
-		$('#top_logo_box #login_dropdownlist').hide();
-		$('#person_center_menu').removeClass('border');
-		$('#top_logo_box #login_box li a.username').css('border-right', '1px solid #ED5565');
+		$('#login_dropdownlist_box').hide();
+		$('#myhuigl').css('color', 'white');
 	});
 	$('#top_logo_box #login_dropdownlist').hover(function() {
 		$(this).show();
-		$('#person_center_menu').addClass('border');
-		$('#top_logo_box #login_box li a.username').css('border-right', 'none');
 	}, function() {
 		$(this).hide();
-		$('#person_center_menu').removeClass('border');
-		$('#top_logo_box #login_box li a.username').css('border-right', '1px solid #ED5565');
 	});
 	//我的惠桂林Hover效果结束
 	//点击订阅按钮提交验证
@@ -71,27 +77,7 @@ $(function(){
 		return false;
 	});
 	//点击订阅按钮提交验证结束
-	//关注Hover特效
-	$('#share_li').hover(function() {
-		$('#share_box').show();
-		$(this).addClass('hover');
-		$('#subscription').css('border-right', 'none');
-	}, function() {
-		$('#share_box').hide();
-		$(this).removeClass('hover');
-		$('#subscription').css('border-right', '1px solid black');
-	});
-
-	$('#share_box').hover(function() {
-		$('#share_box').show();
-		$('#share_li').addClass('hover');
-		$('#subscription').css('border-right', 'none');
-	}, function() {
-		$('#share_box').hide();
-		$('#share_li').removeClass('hover');
-		$('#subscription').css('border-right', '1px solid black');
-	});
-	//关注Hover特效结束
+	
 
 	////////////////////////用户注册+用户登录+忘记密码特效全部代码区域////////////////////
 	//用户注册弹框效果
@@ -165,7 +151,6 @@ $(function(){
 		var next= $('#Userlogin').attr('next');
 		if(vcode != "" && username != "" && password != ""){
 			$.post(ajaxPostURL+"User/checkLogin", { username: username, password: password, vcode: vcode },function(data){
-				
             	if(data.status == 1){
             		location.href = loginSucessURL+next;
             	}else if(data.status == 0){

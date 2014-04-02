@@ -8,7 +8,6 @@ class CouponAction extends Action {
         '3' => '生活服务',
         '4' => '酒店',
         '5' => '旅游',
-        '6' => '丽人',
     );
     public function _empty($name){
         $this->error("非法提交！");
@@ -98,6 +97,8 @@ class CouponAction extends Action {
         $this->assign("hot_coupons", $hotCouponInfo);
         $this->assign("ads", $adInfo);
         $this->assign("get_info", $_GET);
+         $templateName = $_GET["_URL_"][1]; 
+        $this->assign('templateName',$templateName);
         $this->display();
     }
 
@@ -121,7 +122,7 @@ class CouponAction extends Action {
     private function getLocation() {
        $helper = new LocationModel();
         $params = array(
-            'limit' => '0,7',
+            'limit' => '',
             'status' => 1,
         );
        $locationInfo = $helper->getLocationInfo($params);
@@ -181,7 +182,17 @@ class CouponAction extends Action {
             $satisfaction =0;
             array_push($rateInfo, $satisfaction,$avgRate);
         }
-    
+        
+        for ($i=0; $i < count($otherCoupons); $i++) { 
+                if(strlen($otherCoupons[$i]['description']) > 109){   
+                    $otherCoupons[$i]['description'] = trim(mb_substr($otherCoupons[$i]['description'], 0,38,'utf-8'))."...";
+                }else{
+                    $otherCoupons[$i]['description'] = trim($otherCoupons[$i]['description']);
+                }
+        }
+        $use_rule = str_replace('；', '<br>', $couponInfo[0]['use_rule']);
+
+
         $userId = DataToArray($eInfo, 'user_id');
         $userHelper = new UserProfileModel();
         $userInfo = $userHelper->getUserProfileByUserId($userId);
@@ -195,6 +206,7 @@ class CouponAction extends Action {
         $this->assign("label_info", $this->labelType[$couponInfo[0]['label_type']]);
         $this->assign("partnerPictures",$partnerPictureInfo);
         $this->assign('rateInfo',$rateInfo);
+        $this->assign('use_rule',$use_rule);
         $this->display();
     }
 

@@ -7,7 +7,6 @@ class PartnerAction extends Action {
         '3' => '生活服务',
         '4' => '酒店',
         '5' => '旅游',
-        '6' => '丽人',
     );
     public function _empty($name){
         $this->error("非法提交！");
@@ -108,6 +107,8 @@ class PartnerAction extends Action {
         $this->assign("partner_rates", $partnerRateResult);
         $this->assign("partner_tags", $partnerTagsInfo);
         $this->assign("get_info", $_GET);
+        $templateName = $_GET["_URL_"][1]; 
+        $this->assign('templateName',$templateName);
         $this->display();
     }
     public function detail(){
@@ -231,7 +232,7 @@ class PartnerAction extends Action {
     private function getLocation() {
        $helper = new LocationModel();
         $params = array(
-            'limit' => '0,7',
+            'limit' => '',
             'status' => 1,
         );
        $locationInfo = $helper->getLocationInfo($params);

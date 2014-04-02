@@ -26,9 +26,6 @@
 <!-- 顶部订阅分享区域+Logo区域 -->
 	<include file="./App/Tpl/Home/Public/header.html" />
 <!-- 顶部订阅分享区域+Logo区域结束 -->
-<!--  导航区域 -->
-	<include file="./App/Tpl/Home/Public/nav_coupon.html" />
-<!-- 导航区域结束-->
 <!-- 内容区域 -->
 	<div id="main">
 		<div id="sub_nav_box">
@@ -45,6 +42,7 @@
 				</div>
 				<div class="coupon_desc_box">
 					<p class="coupon_title">{$coupon.name}<!-- <span>{$coupon.title}</span> --></p>
+					<p class="coupon_description">{$coupon.description}</p>
 				</div>
 
 				<a href="{:U("Coupon/printCoupon","","","")}/{$coupon.coupon_id}" class="print_coupon_btn">打印此优惠券</a>
@@ -71,13 +69,13 @@
                         </p>
 						<p>使用规则：</p>
 						<ul>
-                        {$coupon.use_rule}
+                        {$use_rule}
 						</ul>
 					</div>
 				</div>
 				<a href="{:U("Coupon/printCoupon","","","")}/{$coupon.coupon_id}" class="print_coupon_btn print_coupon_btn2">打印此优惠券</a>
 
-				<a href="javascript:void(0);" class="download_coupon_btn" id="download_coupon_btn_two" couponid="{$coupon.coupon_id}">下载到手机</a>
+				<a href="javascript:void(0);" class="download_coupon_btn download_coupon_btn2" id="download_coupon_btn_two" couponid="{$coupon.coupon_id}">下载到手机</a>
 				<a id="download_coupon_id" style="visibility:hidden" couponid="{$coupon.coupon_id}">{$coupon.coupon_id}</a>
 			</div>
 			<div class="share">
@@ -99,17 +97,25 @@
 			<div class="other_coupons_box">
 				<p class="other_coupon_title">本商户其他优惠券</p>
                 <foreach name="other_coupon" item="ocoupon">
-				<p class="other_coupon_content">[{$partner.name}]<a href="{:U("Coupon/detail","","","")}/{$ocoupon.coupon_id}">{$ocoupon.name}</a></p>
+				<p class="other_coupon_content"><a href="{:U("Coupon/detail","","","")}/{$ocoupon.coupon_id}" class="other_coupon_title" target="_blank">{$ocoupon.name}</a><a class="other_coupon_description">：{$ocoupon.description}</a></p>
                 </foreach>
 			</div>
 			<div class="business_detail_info_box">
-				<ul class="business_nav clearfix">
-					<li class="no_bottom_border"><a href="" >商家位置</a></li>
+				<ul class="business_nav clearfix" id="business_nav">
+					<li class="no_bottom_border"><a href="#back_business_location" >商家位置</a></li>
+					<li><a href="#back_business_intro">商家介绍</a></li>
+					<li><a href="#back_comment_performance">评价晒单</a></li>
+				</ul>
+				<!-- 隐藏商家导航菜单 -->
+				<ul class="jquery_business_nav clearfix" id="jquery_business_nav">
+				    <a name="business_nav"></a>
+					<li class="no_bottom_border"><a href="">商家位置</a></li>
 					<li><a href="">商家介绍</a></li>
 					<li><a href="">评价晒单</a></li>
 				</ul>
+
 				<div class="business_location">
-					<p class="title">商家位置</p>
+					<p class="title">商家位置<a name="back_business_location" id="business_location"></a></p>
 					<div class="map_box">
 						<div class="map" id="map">
 						</div>
@@ -137,7 +143,7 @@
 					</div>
 				</div>
 				<div class="business_intro">
-					<p class="title">商家介绍</p>
+					<p class="title">商家介绍<a name="back_business_intro" id="business_intro"></p>
 					<p class="business_name">{$partner.name}</p>
 					<p class="business_intro_detail">{$partner.description}</p>
 					 <foreach name="partnerPictures" item="partnerPicture">
@@ -146,6 +152,7 @@
 					
 
 				</div>
+				<a name="back_comment_performance" id="comment_performance"></a>
 				<div class="show_comment">
 					<div class="comment_performance">
 						<p class="title">晒单点评</p>

@@ -21,25 +21,25 @@
 <!-- 顶部订阅分享区域+Logo区域 -->
 	<include file="./App/Tpl/Home/Public/header.html" />
 <!-- 顶部订阅分享区域+Logo区域结束 -->
-<!--  导航区域 -->
-	<include file="./App/Tpl/Home/Public/nav_index.html" />
-<!-- 导航区域结束-->
 <!-- 内容区域 -->
 	<div id="right_function_box"><a href="">回到顶部</a></div>
 	<div id="main">
 		<!-- 主要内容顶部区域 -->
 		<div id="main_content_top_box">
-			<!-- 全部分类区域 -->
-			<ul class="category_title">
-				<li><a href="{:U('Coupon/coupon?label_type=1','','','')}" class="one" target=_blank>美食</a></li>
-				<li><a href="{:U('Coupon/coupon?label_type=2','','','')}" class="two" target=_blank>休闲娱乐</a></li>
-				<li><a href="{:U('Coupon/coupon?label_type=3','','','')}" class="three" target=_blank>生活服务</a></li>
-				<li><a href="{:U('Coupon/coupon?label_type=4','','','')}" class="four" target=_blank>酒店</a></li>
-				<li><a href="{:U('Coupon/coupon?label_type=5','','','')}" class="five" target=_blank>旅游</a></li>
-				<li><a href="{:U('Coupon/coupon?label_type=6','','','')}" class="six" target=_blank>丽人</a></li>
-			</ul>
-			
-			<!-- 全部分类区域结束 -->
+			<!-- 广告区域 -->
+			<div id="ad_box">
+				<img src="__PUBLIC__/images/flash/1.png" alt="广告图片">
+				<img src="__PUBLIC__/images/flash/2.png" alt="广告图片">
+				<img src="__PUBLIC__/images/flash/3.png" alt="广告图片">
+				<img src="__PUBLIC__/images/flash/4.png" alt="广告图片">
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+				</ul>
+			</div>
+			<!-- 广告区域结束 -->
 			<!-- 热门分类区域 -->
 			<ul class="hot_navigation">
 				<li>
@@ -53,15 +53,15 @@
                     </foreach>
 				</li>
 				<li>
-					<span>全部区域</span>
-					<a href="{:U('Coupon/coupon',array('tag'=>'七星区'),'','')}" class="one" >七星区</a>
-					<a href="{:U('Coupon/coupon',array('tag'=>'秀峰区'),'','')}">秀峰区</a>
-					<a href="{:U('Coupon/coupon',array('tag'=>'象山区'),'','')}">象山区</a>
-					<a href="{:U('Coupon/coupon',array('tag'=>'叠彩区'),'','')}">叠彩区</a>
-					<a href="{:U('Coupon/coupon',array('tag'=>'雁山区'),'','')}">雁山区</a>
+					<span>热门学校</span>
+					<a href="{:U('Coupon/coupon',array('tag'=>'桂林电子科技大学'),'','')}" class="one" >桂林电子科技大学</a>
+					<a href="{:U('Coupon/coupon',array('tag'=>'广西师范大学'),'','')}">广西师范大学</a>
+					<a href="{:U('Coupon/coupon',array('tag'=>'桂林理工大学'),'','')}">桂林理工大学</a>
+					<a href="{:U('Coupon/coupon',array('tag'=>'桂林医学院'),'','')}">桂林医学院</a>
+					<a href="{:U('Coupon/coupon',array('tag'=>'桂林旅专'),'','')}">桂林旅专</a>
 				</li>
 				<li class="no_bottom_border">
-					<span>热门商圈</span>
+					<span>热门校区</span>
                     <foreach name="locations" item="location">
                     <if condition="$key eq 0">
 					<a href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}" class="one">{$location.name}</a>
@@ -72,35 +72,13 @@
 				</li>
 			</ul>
 			<!-- 热门分类区域结束 -->
-			<!-- 广告区域 -->
-			<div id="ad_box">
-           <!--  <foreach name="ads" item="ad"> -->
-            	
-				<!-- <img src="__PUBLIC__/{$ad.img_path}"> -->
-				<img src="__PUBLIC__/images/flash/1.png" alt="广告图片">
-				<img src="__PUBLIC__/images/flash/2.png" alt="广告图片">
-				<img src="__PUBLIC__/images/flash/3.png" alt="广告图片">
-				<img src="__PUBLIC__/images/flash/4.png" alt="广告图片">
-           <!--  </foreach> -->
-				<ul>
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-					<li>4</li>
-				</ul>
-			</div>
-			<!-- 广告区域结束 -->
 			<!-- 微信区域 -->
 			<div class="QRcode_box">
 				<p>扫描我,关注惠桂林官方微博</p>
 				<img src="__PUBLIC__/images/weibo_barcode.png" alt="二维码">
 			</div>
 			<!-- 微信区域结束 -->
-			<!-- 我推荐你来谈区域 -->
-			<div class="recommend_box">
-				<a href="{:U("Intention/recommend")}">您推荐，我来谈</a>
-			</div>
-			<!-- 我推荐你来谈区域结束 -->
+			
 		</div>
 		<!-- 主要内容顶部区域结束 -->
 		<!-- 热门品牌+新入驻品牌区域 -->
@@ -139,7 +117,8 @@
 				<p class="title">民以食为天</p>
 				<ul class="title_content">
                     <foreach name="eat_cat" item="e_cat" key="k">
-                    <if condition="$k lt 5">
+                    <if condition="$k lt 4">
+
 					<li><a href="{:U('Coupon/coupon',array('label_type'=>1,'cat_id'=>$e_cat['cat_id']),'','')}">{$e_cat.cat_name}</a></li>
 
                     <else />
@@ -221,7 +200,7 @@
 				<p class="title">休闲娱乐</p>
 				<ul class="title_content">
                     <foreach name="play_cat" item="p_cat" key="k">
-                    <if condition="$k lt 5">
+                    <if condition="$k lt 4">
 					<li><a href="{:U('Coupon/coupon',array('label_type'=>2,'cat_id'=>$p_cat['cat_id']),'','')}">{$p_cat.cat_name}</a></li>
                     <else />
 					<li><a href="{:U('Coupon/coupon',array('label_type'=>2,'cat_id'=>$p_cat['cat_id']),'','')}" class="no_right_border">{$p_cat.cat_name}</a></li>
@@ -300,10 +279,10 @@
 				<p class="title">生活服务</p>
 				<ul class="title_content">
                     <foreach name="life_cat" item="l_cat" key="k">
-                    <if condition="$k lt 5">
+                    <if condition="$k lt 3">
 					<li><a href="{:U('Coupon/coupon',array('label_type'=>3,'cat_id'=>$l_cat['cat_id']),'','')}">{$l_cat.cat_name}</a></li>
                     <else />
-					<li><a href="{:U('Coupon/coupon',array('label_type'=>3,'cat_id'=>$l_cat['cat_id']),'','')}">{$l_cat.cat_name}</a></li>
+					<li><a href="{:U('Coupon/coupon',array('label_type'=>3,'cat_id'=>$l_cat['cat_id']),'','')}" class="no_right_border">{$l_cat.cat_name}</a></li>
                     </if>
                     </foreach>
 				</ul>
