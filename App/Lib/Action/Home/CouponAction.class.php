@@ -192,7 +192,7 @@ class CouponAction extends Action {
         }
         
         $couponHelper = new CouponModel();
-        $params['coupon_type'] = 1;
+        $params['coupon_type'] = 2;
         $time = date("Y-m-d H:i:s");
         $params['start_time_lt'] = $time;
         $params['end_time_gt'] = $time;
