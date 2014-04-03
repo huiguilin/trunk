@@ -51,6 +51,9 @@ class CouponModel extends Model {
         if (isset($params['partner_id'])) {
             $str .= " AND partner_id IN ({$params['partner_id']})";
         }
+        if (isset($params['coupon_type'])) {
+            $str .= " AND coupon_type IN ({$params['coupon_type']})";
+        }
         if (isset($params['label_type'])) {
             $str .= " AND (label_type & {$this->labelType[$params['label_type']][1]} = {$this->labelType[$params['label_type']][1]})";
         }
