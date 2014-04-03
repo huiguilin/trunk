@@ -86,6 +86,11 @@
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li class="border"><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php elseif($templateName == 'specialcoupon'): ?>
+						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li class="border"><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php else: ?>
 						<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
@@ -94,6 +99,7 @@
 				</ul>
 				<form id="search_box" method="get" action="<?php echo U("Home/Search/search");?>">
 					<div>
+						<label for="search_con" class="default_content" id="default_content">请输入您要查询的内容</label>
 						<input id="search_con" type="text"  name="search_con"/>
 						<input id="search_btn" type="submit" value="" name="search_btn"/>
 					</div>
@@ -385,6 +391,19 @@
 		</ul>
 	</div>
 </div>
+
+<script>
+	var searchInput=document.getElementById("search_con");
+	searchInput.onfocus = function(){
+		document.getElementById("default_content").style.display = 'none';
+	};
+	searchInput.onblur = function(){
+		var content = document.getElementById("search_con").value;
+		if(content == ""){
+			document.getElementById("default_content").style.display = '';
+		}
+	};
+</script>
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!-- 内容区域 -->
 	<div id="right_function_box"><a href="">回到顶部</a></div>
@@ -483,7 +502,6 @@
 						<p class="two" title="<?php echo ($coupon["title"]); ?>"><?php echo ($coupon["title"]); ?></p>
 						<p class="three" >下载：<?php echo ($coupon["download_times"]); ?>次</p>
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download">立即下载</a>
-
 						<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
 					</li><?php endif; endforeach; endif; ?>
 				</ul>

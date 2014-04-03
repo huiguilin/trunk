@@ -35,66 +35,7 @@
 		<div id="search_summary_box">
 			<p>找到“<span class="keyword">{$get_info['search_con']}</span>”相关的内容<span class="number">{$total_number}</span>条</p>
 		</div>
-		<div id="classification_location_box" style="display:none">
-			<div id="content_box">
-				<div id="classification_box">
-					<p>分类</p>
-					<ul class="parent_classification">
-                        <if condition="$get_info.label_type neq ''">
-						<li><a href="">全部</a></li>
-                        <else />
-						<li><a href="" class="current">全部</a></li>
-                        </if>
-                    <foreach name="label_types" item="label_type">
-                        <if condition="$get_info.label_type eq $key">
-						<li><a href="/index.php/Coupon/coupon?label_type={$key}" class="current">{$label_type}</a></li>
-                        <else />
-						<li><a href="/index.php/Coupon/coupon?label_type={$key}">{$label_type}</a></li>
-                        </if>
-                    </foreach>
-					</ul>
-					<div>
-						<ul class="child_classification">
-                            <if condition="$get_info.cat_id neq ''">
-                            <li><a href="">全部</a></li>
-                            <else />
-                            <li><a href="" class="current">全部</a></li>
-                            </if>
-                            <foreach name="categories" item="category">
-                            <if condition="$get_info.cat_id eq $category.cat_id">
-							<li><a href="/index.php/Coupon/coupon?cat_id={$category.cat_id}" class="current">{$category.cat_name}</a></li>
-                            <else />
-							<li><a href="/index.php/Coupon/coupon?cat_id={$category.cat_id}">{$category.cat_name}</a></li>
-                            </if>
-                            </foreach>
-						</ul>
-					</div>
-				</div>
-				<div id="location_box">
-					<p>区域</p>
-					<ul class="parent_classification">
-                        <if condition="$get_info.tag neq ''">
-						<li><a href="">全部</a></li>
-                        <else />
-						<li><a href="" class="current">全部</a></li>
-                        </if>
-						<li><a href="/index.php/Coupon/coupon?tag=秀峰区">秀峰区</a></li>
-						<li><a href="/index.php/Coupon/coupon?tag=象山区">象山区</a></li>
-						<li><a href="/index.php/Coupon/coupon?tag=叠彩区">叠彩区</a></li>
-						<li><a href="/index.php/Coupon/coupon?tag=雁山区">雁山区</a></li>
-						<li><a href="/index.php/Coupon/coupon?tag=七星区">七星区</a></li>
-					</ul>
-					<div>
-						<ul class="child_classification">
-							<li><a href="" class="current">全部</a></li>
-                            <foreach name="locations" item="location">
-							    <li><a href="/index.php/Coupon/coupon?location={$location.id}">{$location.name}</a></li>
-                            </foreach>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 		<div id="sort_price_box">
 			<div class="content_box">
 				<p class="one">排序</p>
@@ -134,15 +75,28 @@
 					
 				</if>
                 <foreach name="coupons" item="coupon" key="k">
-                 <li>
-					<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}" alt="{$coupon.name}"></a>
-					<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
-					<p class="one">{$coupon.description}</p>
-					<p class="two">{$coupon.title}</p>
-					<p class="three">下载：{$coupon.download_times}次</p>
-					<a href="" class="download" couponid="{$coupon.coupon_id}">立即下载</a>
-					<p class="hidden_location">{$coupon.tag}</p>
-				</li>
+                <if condition="($k%2) eq 0">
+                	 <li>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}" alt="{$coupon.name}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
+						<p class="one">{$coupon.description}</p>
+						<p class="two">{$coupon.title}</p>
+						<p class="three">下载：{$coupon.download_times}次</p>
+						<a href="" class="download" couponid="{$coupon.coupon_id}">立即下载</a>
+						<p class="hidden_location">{$coupon.tag}</p>
+					</li>
+				<else />
+					 <li class="no_margin_rignt">
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}" alt="{$coupon.name}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title">{$coupon.name}</a>
+						<p class="one">{$coupon.description}</p>
+						<p class="two">{$coupon.title}</p>
+						<p class="three">下载：{$coupon.download_times}次</p>
+						<a href="" class="download" couponid="{$coupon.coupon_id}">立即下载</a>
+						<p class="hidden_location">{$coupon.tag}</p>
+					</li>
+                </if>
+                
                 </foreach>
 			</ul>
 			<div id="recommend_box">

@@ -11,10 +11,10 @@
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/specialcoupon.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/specialcoupon.js"></script>
 
 
 <title>惠桂林首页</title>
@@ -88,6 +88,11 @@
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li class="border"><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php elseif($templateName == 'specialcoupon'): ?>
+						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li class="border"><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php else: ?>
 						<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
@@ -508,7 +513,7 @@
 						<p class="oldprice">疯狂价<span>￥3</span>元</p>
 						<p class="newprice">原价￥5元</p>
 						<p class="times">已抢购：<?php echo ($coupon["download_times"]); ?>次</p>
-						<a href="" class="download_btn">点击抢购，还剩6份</a>
+						<a href="" class="download_btn" couponid="<?php echo ($coupon["coupon_id"]); ?>">点击抢购，还剩6份</a>
 					</li><?php endforeach; endif; ?>
 
 			</ul>
@@ -529,7 +534,7 @@
 		</div>
 		
 	</div>
-<!-- 内容区域结束
+<!-- 内容区域结束 -->
 	<div id="download_coupon_hidden_box">	
 	<div class="top_content_box">
 		<p id="coupon_id_value">短信优惠券下载</p>
@@ -586,7 +591,7 @@
 			</div>
 		</div>
 </div>
-<!-- 最底部区域结束 -->
+<!-- 最底部区域结束
 
 </body>
 </html>

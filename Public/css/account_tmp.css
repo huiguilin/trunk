@@ -1,7 +1,8 @@
 #main{
 	width: 960px;
 	margin: 0 auto;
-	background-color: #F2F2F2;
+	/*background-color: #F2F2F2;*/
+
 	padding-bottom: 8px;
 }
 #main #clear_float_div{
@@ -10,13 +11,16 @@
 #main #left_content_box{
 	width: 694px;
 	float: left;
+	margin-top: 8px;
+	
 }
 #main #left_content_box div.mycontent_box{
-	background: white;
-	margin-top: 8px;
-	margin-left: 8px;
-	width: 686px;
-	border-radius:5px;
+	background-color: white;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8; 
+	width: 694px;
 	position: relative;
 }
 #main #left_content_box div.mycontent_box p.title{
@@ -54,10 +58,13 @@
 #main #right_content_box div.account_photo{
 	height: 285px;
 	background: white;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8; 
 	margin-top: 8px;
 	margin-left: 8px;
 	width: 250px;
-	border-radius:5px;
 	position: relative;
 }
 #main #right_content_box div.account_photo p.title_box{
@@ -121,10 +128,13 @@
 #main #right_content_box div.hotline_number{
 	height: 88px;
 	background: white;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8; 
 	margin-top: 8px;
 	margin-left: 8px;
 	width: 250px;
-	border-radius:5px;
 	position: relative;
 }
 #main #right_content_box div.hotline_number p.title{
@@ -149,10 +159,13 @@
 #main #right_content_box div.comment_tips{
 	height: 330px;
 	background: white;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8; 
 	margin-top: 8px;
 	margin-left: 8px;
 	width: 250px;
-	border-radius:5px;
 }
 #main #right_content_box div.comment_tips p.title{
 	width: 240px;
