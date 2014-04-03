@@ -86,6 +86,11 @@
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li class="border"><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php elseif($templateName == 'specialcoupon'): ?>
+						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li class="border"><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php else: ?>
 						<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
@@ -483,7 +488,6 @@
 						<p class="two" title="<?php echo ($coupon["title"]); ?>"><?php echo ($coupon["title"]); ?></p>
 						<p class="three" >下载：<?php echo ($coupon["download_times"]); ?>次</p>
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download">立即下载</a>
-
 						<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
 					</li><?php endif; endforeach; endif; ?>
 				</ul>

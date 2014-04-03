@@ -298,9 +298,7 @@
 	margin-left: 5px;
 }
 #main #foot_and_footsort_box div.foot_box ul.content li:hover{
-	/*background: #ECEFF5;*/
-	background:url(../images/coupon-hover.png) no-repeat 0px 0px;
-	
+	background: #F4F1D2;
 }
 #main #foot_and_footsort_box div.foot_box ul.content li a.img_box img{
 	width: 162px;

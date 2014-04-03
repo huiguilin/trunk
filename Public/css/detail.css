@@ -78,6 +78,7 @@
 #main #coupon_box div.coupon_detail_info_box div.coupon_desc_box{
 	margin-left: 18px;
 	margin-right: 18px;
+	position: relative;
 }
 #main #coupon_box div.coupon_detail_info_box div.coupon_desc_box p.coupon_title{
 	color: #ED5565;
@@ -86,19 +87,27 @@
 	height: 60px;
 	line-height: 60px;
 }
-#main #coupon_box div.coupon_detail_info_box div.coupon_desc_box p.coupon_title span{
-	color: #666666;
-	font-size: 16px;
-	font-weight: normal;
-	margin-left: 15px;
-}
 #main #coupon_box div.coupon_detail_info_box div.coupon_desc_box p.coupon_description{
-	
 	margin-bottom: 15px;
 	margin-left:16px;
 	color: #666666;
 	font-size: 13px;
 	line-height: 22px;
+}
+#main #coupon_box div.coupon_detail_info_box div.coupon_desc_box p.coupon_count{
+	color: #ED5565;
+	font-family: 微软雅黑;
+	font-size: 20px;
+	position: absolute;
+	top: 16px;
+	right: 0px;
+}
+#main #coupon_box div.coupon_detail_info_box div.coupon_desc_box p.coupon_count span{
+	font-family: Arial;
+	font-size: 25px;
+	color: #4467A3;
+	padding-left: 8px;
+	padding-right: 8px;
 }
 #main #coupon_box div.coupon_detail_info_box a.print_coupon_btn{
 	color: white;
