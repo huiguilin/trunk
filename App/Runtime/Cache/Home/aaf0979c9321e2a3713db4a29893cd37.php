@@ -31,7 +31,7 @@
 	<!-- 顶部订阅分享区域 --> 
 	<div id="top_box">
 		<div id="top_function_box">
-			<img src="__PUBLIC__/images/slogan2.png" alt="slogan">
+			
 			<ul class="clearfix">
 				<?php if($_SESSION['user']['user_id']== ''): ?><li><a href="" id="Userlogin" next="<?php echo (__SELF__); ?>">登录</a></li>
 				<li><a href="" id="Userreg">快速注册</a></li>
@@ -71,6 +71,7 @@
 				</li>
 				<li><a href="<?php echo U("Admin/Account/login");?>" target=_blank class="no_border_right">商家入口</a></li>
 			</ul>
+			<img src="__PUBLIC__/images/slogan2.png" alt="slogan">
 		</div>
 		<div id="top_logo_box">
 			<a href="<?php echo U("Index/index");?>">
@@ -79,31 +80,35 @@
 		</div>
 		<div id="top_nav_box">
 			<div id="nav_search_box">
-
 				<ul>
 					<?php if($templateName == 'index'): ?><li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php elseif($templateName == 'coupon'): ?>
 						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li class="border"><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php elseif($templateName == 'partner'): ?>
 						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li class="border"><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php elseif($templateName == 'specialcoupon'): ?>
+						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li class="border"><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php else: ?>
 						<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li><?php endif; ?>
 				</ul>
 				<form id="search_box" method="get" action="<?php echo U("Home/Search/search");?>">
 					<div>
-						<input id="search_con" type="text" placeholder="桂林环球美食节" name="search_con"/>
+						<input id="search_con" type="text"  name="search_con"/>
 						<input id="search_btn" type="submit" value="" name="search_btn"/>
 					</div>
 				</form>

@@ -462,12 +462,6 @@ body{
 	position: absolute;
 	top: 20px;
 	left: 7px;
-
-	height: 35px; height/*\**/: 15px \9;
-	padding-top: 0px; padding-top/*\**/:10px \9;
-	padding-bottom: 0px; padding-bottom/*\**/:10px \9;
-	line-height: 35px; line-height/*\**/: 15px \9;
-
 }
 #top_box #top_function_box ul #subscription #subscription_box #subscription_email_btn{
 	display: block;
@@ -619,9 +613,28 @@ body{
 	position: absolute;
 	top: 9px;
 	right: 10px;
-
-	line-height: 33px\9; /*IE6、IE7、IE8背景紅色*/  
+	padding:0px;
+	
+	line-height: 33px\9; /*IE8*/  
 	max-height: 33px\9;
+
+	*height:29px;/*IE6*/  /*解决IE Input 高度bug*/
+	*line-height:29px;/*IE6*/  
+	*max-height:29px;/*IE6*/  
+
+	*height:29px!important;/*IE7*/ 
+	*line-height:29px!important;/*IE7*/  
+	*max-height:29px!important;/*IE7*/  
+}
+#top_box #top_nav_box #nav_search_box div label.default_content{
+	position: absolute;
+	top: 9px;
+	left: 17px;
+	width: 200px;
+	height: 33px;
+	line-height: 33px;
+	color: #666;
+	z-index: 5;
 }
 #top_box #top_nav_box #nav_search_box div #search_btn{
 	width: 30px;
@@ -631,6 +644,7 @@ body{
 	top: 9px;
 	right: 10px;
 	height: 33px;
+	padding:0px;
 }
 #top_box #top_nav_classification_box{
 	background: #ED5565;

@@ -31,7 +31,7 @@
 	<!-- 顶部订阅分享区域 --> 
 	<div id="top_box">
 		<div id="top_function_box">
-			<img src="__PUBLIC__/images/slogan2.png" alt="slogan">
+			
 			<ul class="clearfix">
 				<?php if($_SESSION['user']['user_id']== ''): ?><li><a href="" id="Userlogin" next="<?php echo (__SELF__); ?>">登录</a></li>
 				<li><a href="" id="Userreg">快速注册</a></li>
@@ -71,6 +71,7 @@
 				</li>
 				<li><a href="<?php echo U("Admin/Account/login");?>" target=_blank class="no_border_right">商家入口</a></li>
 			</ul>
+			<img src="__PUBLIC__/images/slogan2.png" alt="slogan">
 		</div>
 		<div id="top_logo_box">
 			<a href="<?php echo U("Index/index");?>">
@@ -80,21 +81,51 @@
 		<div id="top_nav_box">
 			<div id="nav_search_box">
 				<ul>
-					<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
-					<li><a href="<?php echo U("Coupon/coupon");?>">限时优惠</a></li>
-					<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-					<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php if($templateName == 'index'): ?><li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php elseif($templateName == 'coupon'): ?>
+						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li class="border"><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php elseif($templateName == 'partner'): ?>
+						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li class="border"><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php elseif($templateName == 'specialcoupon'): ?>
+						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li class="border"><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php else: ?>
+						<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li><?php endif; ?>
 				</ul>
 				<form id="search_box" method="get" action="<?php echo U("Home/Search/search");?>">
 					<div>
-						<input id="search_con" type="text" placeholder="桂林环球美食节" name="search_con"/>
+						<label for="search_con" class="default_content" id="default_content">请输入您要查询的内容</label>
+						<input id="search_con" type="text"  name="search_con"/>
 						<input id="search_btn" type="submit" value="" name="search_btn"/>
 					</div>
 				</form>
 			</div>
 		</div>
-		<div style="height:10px;background:#ED5565">
-			
+		<div id="top_nav_classification_box">
+			<!-- <ul class="clearfix">
+				<li><a href="">桂林电子科技大学</a></li>
+				<li><a href="">广西师范大学</a></li>
+				<li><a href="">桂林理工大学</a></li>
+				<li><a href="">桂林医学院</a></li>
+				<li><a href="">桂林航天工业学院</a></li>
+				<li><a href="">桂林旅专</a></li>
+				<li><a href="">广艺桂林分校</a></li>
+				<li><a href="">收起全部学校</a></li>
+			</ul> -->
 		</div>
 	</div>
 
@@ -370,77 +401,12 @@
 	</div>
 </div>
 <!-- 顶部订阅分享区域+Logo区域结束 -->
-<!--  导航区域 -->
-	<!--  导航区域 -->
-	<div id="top_nav">
-		<div id="top_nav_box">
-			<div id="left_collection">
-				<img class="left_img" src="__PUBLIC__/images/classification/menu.png" alt="全部分类" />
-				<span>全部分类</span>
-			</div>
-			<ul id="nav">
-				<li><a href="<?php echo U("Index/index");?>">首页</a></li>
-				<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-				<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
-				<!-- <li class="border_right "><a href="">商户</a></li> -->
-			</ul>
-			<form id="search_box" method="get" action="<?php echo U("Home/Search/search");?>">
-				<input id="search_con" type="text" placeholder="桂林环球美食节" name="search_con"/>
-				<input id="search_btn" type="submit" value="" name="search_btn"/>
-			</form>
-		</div>
-	</div>
-<!-- 导航区域结束-->
-<!-- 导航区域结束-->
 <!-- 内容区域 -->
 	<div id="main">
 		<div id="search_summary_box">
 			<p>找到“<span class="keyword"><?php echo ($get_info['search_con']); ?></span>”相关的内容<span class="number"><?php echo ($total_number); ?></span>条</p>
 		</div>
-		<div id="classification_location_box" style="display:none">
-			<div id="content_box">
-				<div id="classification_box">
-					<p>分类</p>
-					<ul class="parent_classification">
-                        <?php if($get_info["label_type"] != ''): ?><li><a href="">全部</a></li>
-                        <?php else: ?>
-						<li><a href="" class="current">全部</a></li><?php endif; ?>
-                    <?php if(is_array($label_types)): foreach($label_types as $key=>$label_type): if($get_info["label_type"] == $key): ?><li><a href="/index.php/Coupon/coupon?label_type=<?php echo ($key); ?>" class="current"><?php echo ($label_type); ?></a></li>
-                        <?php else: ?>
-						<li><a href="/index.php/Coupon/coupon?label_type=<?php echo ($key); ?>"><?php echo ($label_type); ?></a></li><?php endif; endforeach; endif; ?>
-					</ul>
-					<div>
-						<ul class="child_classification">
-                            <?php if($get_info["cat_id"] != ''): ?><li><a href="">全部</a></li>
-                            <?php else: ?>
-                            <li><a href="" class="current">全部</a></li><?php endif; ?>
-                            <?php if(is_array($categories)): foreach($categories as $key=>$category): if($get_info["cat_id"] == $category.cat_id): ?><li><a href="/index.php/Coupon/coupon?cat_id=<?php echo ($category["cat_id"]); ?>" class="current"><?php echo ($category["cat_name"]); ?></a></li>
-                            <?php else: ?>
-							<li><a href="/index.php/Coupon/coupon?cat_id=<?php echo ($category["cat_id"]); ?>"><?php echo ($category["cat_name"]); ?></a></li><?php endif; endforeach; endif; ?>
-						</ul>
-					</div>
-				</div>
-				<div id="location_box">
-					<p>区域</p>
-					<ul class="parent_classification">
-                        <?php if($get_info["tag"] != ''): ?><li><a href="">全部</a></li>
-                        <?php else: ?>
-						<li><a href="" class="current">全部</a></li><?php endif; ?>
-						<li><a href="/index.php/Coupon/coupon?tag=秀峰区">秀峰区</a></li>
-						<li><a href="/index.php/Coupon/coupon?tag=象山区">象山区</a></li>
-						<li><a href="/index.php/Coupon/coupon?tag=叠彩区">叠彩区</a></li>
-						<li><a href="/index.php/Coupon/coupon?tag=雁山区">雁山区</a></li>
-						<li><a href="/index.php/Coupon/coupon?tag=七星区">七星区</a></li>
-					</ul>
-					<div>
-						<ul class="child_classification">
-							<li><a href="" class="current">全部</a></li>
-                            <?php if(is_array($locations)): foreach($locations as $key=>$location): ?><li><a href="/index.php/Coupon/coupon?location=<?php echo ($location["id"]); ?>"><?php echo ($location["name"]); ?></a></li><?php endforeach; endif; ?>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 		<div id="sort_price_box">
 			<div class="content_box">
 				<p class="one">排序</p>
@@ -466,15 +432,25 @@
 				<?php  $coupon_count = count($coupons); ?>
 				<?php if($coupon_count < 8): ?><input type="hidden" value="680" id="hidden_type_value" name="type" />
 					<?php else: endif; ?>
-                <?php if(is_array($coupons)): foreach($coupons as $k=>$coupon): ?><li>
-					<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
-					<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="content_title"><?php echo ($coupon["name"]); ?></a>
-					<p class="one"><?php echo ($coupon["description"]); ?></p>
-					<p class="two"><?php echo ($coupon["title"]); ?></p>
-					<p class="three">下载：<?php echo ($coupon["download_times"]); ?>次</p>
-					<a href="" class="download" couponid="<?php echo ($coupon["coupon_id"]); ?>">立即下载</a>
-					<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
-				</li><?php endforeach; endif; ?>
+                <?php if(is_array($coupons)): foreach($coupons as $k=>$coupon): if(($k%2) == 0): ?><li>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="content_title"><?php echo ($coupon["name"]); ?></a>
+						<p class="one"><?php echo ($coupon["description"]); ?></p>
+						<p class="two"><?php echo ($coupon["title"]); ?></p>
+						<p class="three">下载：<?php echo ($coupon["download_times"]); ?>次</p>
+						<a href="" class="download" couponid="<?php echo ($coupon["coupon_id"]); ?>">立即下载</a>
+						<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
+					</li>
+				<?php else: ?>
+					 <li class="no_margin_rignt">
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="content_title"><?php echo ($coupon["name"]); ?></a>
+						<p class="one"><?php echo ($coupon["description"]); ?></p>
+						<p class="two"><?php echo ($coupon["title"]); ?></p>
+						<p class="three">下载：<?php echo ($coupon["download_times"]); ?>次</p>
+						<a href="" class="download" couponid="<?php echo ($coupon["coupon_id"]); ?>">立即下载</a>
+						<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
+					</li><?php endif; endforeach; endif; ?>
 			</ul>
 			<div id="recommend_box">
 				<p>扫一下，关注惠桂林微博</p>
