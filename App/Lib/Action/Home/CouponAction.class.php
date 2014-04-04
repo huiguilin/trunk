@@ -73,6 +73,9 @@ class CouponAction extends Action {
         
         $couponHelper = new CouponModel();
         $params['coupon_type'] = 1;
+        $time = date("Y-m-d H:i:s");
+        $params['start_time_lt'] = $time;
+        $params['end_time_gt'] = $time;
         $couponInfo = $couponHelper->getCoupon($params);
         
         if ($params['order_by'] != 'download_times DESC') {
@@ -99,7 +102,7 @@ class CouponAction extends Action {
         $this->assign("hot_coupons", $hotCouponInfo);
         $this->assign("ads", $adInfo);
         $this->assign("get_info", $_GET);
-         $templateName = $_GET["_URL_"][1]; 
+        $templateName = $_GET["_URL_"][1]; 
         $this->assign('templateName',$templateName);
         $this->display();
     }
@@ -194,7 +197,7 @@ class CouponAction extends Action {
         $couponHelper = new CouponModel();
         $params['coupon_type'] = 2;
         $time = date("Y-m-d H:i:s");
-        $params['start_time_lt'] = $time;
+        #$params['start_time_lt'] = $time;
         $params['end_time_gt'] = $time;
         $couponInfo = $couponHelper->getCoupon($params);
         foreach ($couponInfo AS $key => $value) {
@@ -328,7 +331,6 @@ class CouponAction extends Action {
             'status' => 0,
             'info' => "",
         );
-
         if (empty($_POST['phone_number']) || empty($_POST['coupon_id'])) {
             $result['info'] = '手机号码不能为空!';
             $this->ajaxReturn($result,'JSON'); 
@@ -358,19 +360,26 @@ class CouponAction extends Action {
            $this->ajaxReturn($result,'JSON');
            return TRUE;
         }
+        $userCouponHelper = new UserCouponModel();
         if ($couponInfo[0]['coupon_type'] == 2) {
             if (empty($_SESSION['user']['user_id'])) {
                 $result['info'] = "请先登陆!";
                 $this->ajaxReturn($result,'JSON');
                 return TRUE;               
             }
-            if ($couponInfo[0]['download_times'] >= $couponInfo[0]['limit_times']) {
+            $stime = $couponInfo[0]['start_time'];
+            $etime = $couponInfo[0]['end_time'];
+            $params = array(
+                'coupon_id' => $couponId,
+                'count' => 'id',
+            );
+            $count = $userCouponHelper->getUserCoupon($params);
+            if ($count >= $couponInfo[0]['limit_times']) {
                 $result['info'] = "已经抢光了，再看看同类优惠券吧~~!";
                 $this->ajaxReturn($result,'JSON');
                 return TRUE;                          
             }
         }
-        $userCouponHelper = new UserCouponModel();
         $params = array(
             'phone_number' => $phoneNumber,
             'coupon_id' => $couponId,
