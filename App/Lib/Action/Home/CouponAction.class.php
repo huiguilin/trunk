@@ -202,8 +202,10 @@ class CouponAction extends Action {
             if ($couponInfo[$key]['left_times'] < 0)  {
                 $couponInfo[$key]['left_times'] = 0;
             }
+            $couponInfo[$key]['Countdown_time'] = (int)($couponInfo[$key]['start_time'] - $time);
         }
-        
+       
+
         if ($params['order_by'] != 'download_times DESC') {
             $params['order_by'] = 'download_times DESC';
         }
@@ -234,9 +236,6 @@ class CouponAction extends Action {
     }
 
 
-
-
-    
     public function detail(){
         if (empty($_GET['_URL_'][2])) {
             return TRUE;

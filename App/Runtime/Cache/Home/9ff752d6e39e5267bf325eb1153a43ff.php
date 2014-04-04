@@ -101,6 +101,7 @@
 				</ul>
 				<form id="search_box" method="get" action="<?php echo U("Home/Search/search");?>">
 					<div>
+						<label for="search_con" class="default_content" id="default_content">请输入您要查询的内容</label>
 						<input id="search_con" type="text"  name="search_con"/>
 						<input id="search_btn" type="submit" value="" name="search_btn"/>
 					</div>
@@ -392,6 +393,19 @@
 		</ul>
 	</div>
 </div>
+
+<script>
+	var searchInput=document.getElementById("search_con");
+	searchInput.onfocus = function(){
+		document.getElementById("default_content").style.display = 'none';
+	};
+	searchInput.onblur = function(){
+		var content = document.getElementById("search_con").value;
+		if(content == ""){
+			document.getElementById("default_content").style.display = '';
+		}
+	};
+</script>
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!-- 内容区域 -->
 	<div id="main">
@@ -507,13 +521,17 @@
 				<?php if($coupon_count < 8): ?><input type="hidden" value="680" id="hidden_type_value" name="type" />
 					<?php else: endif; ?>
                 <?php if(is_array($coupons)): foreach($coupons as $k=>$coupon): ?><li>
+            			
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="content_title" title="<?php echo ($coupon["name"]); ?>"><?php echo ($coupon["name"]); ?></a>
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
 						<p class="keyword" title="<?php echo ($coupon["title"]); ?>"><?php echo ($coupon["title"]); ?></p>
-						<p class="oldprice">疯狂价<span>￥3</span>元</p>
-						<p class="newprice">原价￥5元</p>
+						<p class="oldprice">疯狂价<span>￥<?php echo ($coupon["off_price"]); ?></span>元</p>
+						<p class="newprice">原价￥<?php echo ($coupon["origin_price"]); ?>元</p>
 						<p class="times">已抢购：<?php echo ($coupon["download_times"]); ?>次</p>
-						<a href="" class="download_btn" couponid="<?php echo ($coupon["coupon_id"]); ?>">点击抢购，还剩6份</a>
+						<?php if($coupon['left_times'] == 0): ?><a href="javascript:void()" class="download_btn2" couponid="<?php echo ($coupon["coupon_id"]); ?>">已经卖光啦，下次早点哦！</a>
+						<?php else: ?>
+							<a href="" class="download_btn" couponid="<?php echo ($coupon["coupon_id"]); ?>">点击抢购，还剩<?php echo ($coupon["left_times"]); ?>份</a><?php endif; ?>
+						
 					</li><?php endforeach; endif; ?>
 
 			</ul>

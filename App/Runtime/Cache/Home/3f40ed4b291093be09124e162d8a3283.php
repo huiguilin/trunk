@@ -55,7 +55,7 @@
 				<li id="subscription" class="subscription">
 					<a href="" class="bg_icon" id="subscription_link">订阅</a>
 					<div id="subscription_box">
-						<input type="text" id="subscription_email_textbox" value="" name="subscription_email_textbox"/><span>dada</span>
+						<input type="text" id="subscription_email_textbox" value="" name="subscription_email_textbox"/>
 						<input type="submit" value="订阅" name="subscription_email_btn" id="subscription_email_btn">
 					</div>
 				</li>
@@ -108,6 +108,7 @@
 				</ul>
 				<form id="search_box" method="get" action="<?php echo U("Home/Search/search");?>">
 					<div>
+						<label for="search_con" class="default_content" id="default_content">请输入您要查询的内容</label>
 						<input id="search_con" type="text"  name="search_con"/>
 						<input id="search_btn" type="submit" value="" name="search_btn"/>
 					</div>
@@ -399,6 +400,19 @@
 		</ul>
 	</div>
 </div>
+
+<script>
+	var searchInput=document.getElementById("search_con");
+	searchInput.onfocus = function(){
+		document.getElementById("default_content").style.display = 'none';
+	};
+	searchInput.onblur = function(){
+		var content = document.getElementById("search_con").value;
+		if(content == ""){
+			document.getElementById("default_content").style.display = '';
+		}
+	};
+</script>
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!-- 内容区域 -->
 	 	
@@ -421,11 +435,11 @@
 		<ul>
 			<li>
 				<p>您的称呼:</p>
-				<input type="text" name="nickname" class="one" id="online_submit_username" placeholder="请留下您的称呼" />
+				<input type="text" name="nickname" class="one" id="online_submit_username" />
 			</li>
 			<li class="one">
 				<p>联系方式:</p>
-				<input type="text" name="othercommunication" class="one" id="online_submit_cellphone" placeholder="请留下您的联系方式"/>
+				<input type="text" name="othercommunication" class="one" id="online_submit_cellphone"/>
 				<p class="tip">可以是Email、微信、QQ或者手机号码，方便我们及时回复</p>
 			</li>
 			<li class="two">

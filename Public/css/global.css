@@ -458,6 +458,7 @@ body{
 #top_box #top_function_box ul #subscription #subscription_box #subscription_email_textbox{
 	border: 1px solid #C9C9C9;
 	border-radius: 5px;
+	height: 35px;
 	width: 200px;
 	position: absolute;
 	top: 20px;

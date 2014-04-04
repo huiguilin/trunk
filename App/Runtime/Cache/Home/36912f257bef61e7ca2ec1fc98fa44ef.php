@@ -108,6 +108,7 @@
 				</ul>
 				<form id="search_box" method="get" action="<?php echo U("Home/Search/search");?>">
 					<div>
+						<label for="search_con" class="default_content" id="default_content">请输入您要查询的内容</label>
 						<input id="search_con" type="text"  name="search_con"/>
 						<input id="search_btn" type="submit" value="" name="search_btn"/>
 					</div>
@@ -399,6 +400,19 @@
 		</ul>
 	</div>
 </div>
+
+<script>
+	var searchInput=document.getElementById("search_con");
+	searchInput.onfocus = function(){
+		document.getElementById("default_content").style.display = 'none';
+	};
+	searchInput.onblur = function(){
+		var content = document.getElementById("search_con").value;
+		if(content == ""){
+			document.getElementById("default_content").style.display = '';
+		}
+	};
+</script>
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!-- 内容区域 -->
 	 	
@@ -421,11 +435,11 @@
     	<ul>
 			<li>
 				<p class="title">您的称呼：</p>
-				<input type="text" name="nickname" class="one" id="intention_username" placeholder="请填写您的称呼" />
+				<input type="text" name="nickname" class="one" id="intention_username" />
 			</li>
 			<li>
 				<p class="title">您的电话：</p>
-				<input type="text" name="cellphone" class="one" id="intention_cellphone" placeholder="请填写您的联系方式"/>
+				<input type="text" name="cellphone" class="one" id="intention_cellphone"/>
 			</li>
 			<li class="one">
 				<p class="title">其他联系方式：</p>
@@ -440,11 +454,11 @@
 			</li>
 			<li>
 				<p class="title">参与优惠商户名称：</p>
-				<input type="text" name="shopname" class="one" id="intention_business" placeholder="请填写您公司的名称"/>
+				<input type="text" name="shopname" class="one" id="intention_business"/>
 			</li>
 			<li>
 				<p class="title">公司地址：</p>
-				<input type="text" name="companyaddress" class="one" placeholder="请填写您公司的地址" id="intention_address"/>
+				<input type="text" name="companyaddress" class="one" id="intention_address"/>
 			</li>
 			<li class="three">
 				<p class="title title2">类别：</p>

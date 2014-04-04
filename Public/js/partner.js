@@ -23,7 +23,12 @@ $(function(){
 	 	$('#main #ad_box li').eq(num).addClass('hover');//给对应的li加上hover样式
 	 }
 	//商家页面广告图片轮换版特效结束
-
+   //优惠劵页面广告图片轮换版关闭特效
+     $('#main #ad_box a').click(function(event) {
+          $(this).parent().hide();
+          return false;
+     });
+     //优惠劵页面广告图片轮换版关闭特效结束
 	//下载优惠券弹窗
 	$('#main #partner_content_box div.partner_coupon_info_box ul li a.download_btn').click(function(event) {
 	 	$('#download_coupon_hidden_box').bPopup({});

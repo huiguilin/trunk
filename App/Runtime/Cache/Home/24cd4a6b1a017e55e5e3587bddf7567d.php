@@ -75,27 +75,33 @@
 			<div id="nav_search_box">
 				<ul>
 					<?php if($templateName == 'index'): ?><li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php elseif($templateName == 'coupon'): ?>
 						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li class="border"><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php elseif($templateName == 'partner'): ?>
 						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li class="border"><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php elseif($templateName == 'specialcoupon'): ?>
+						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li class="border"><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php else: ?>
 						<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li><?php endif; ?>
 				</ul>
 				<form id="search_box" method="get" action="<?php echo U("Home/Search/search");?>">
 					<div>
+						<label for="search_con" class="default_content" id="default_content">请输入您要查询的内容</label>
 						<input id="search_con" type="text"  name="search_con"/>
 						<input id="search_btn" type="submit" value="" name="search_btn"/>
 					</div>
@@ -387,6 +393,19 @@
 		</ul>
 	</div>
 </div>
+
+<script>
+	var searchInput=document.getElementById("search_con");
+	searchInput.onfocus = function(){
+		document.getElementById("default_content").style.display = 'none';
+	};
+	searchInput.onblur = function(){
+		var content = document.getElementById("search_con").value;
+		if(content == ""){
+			document.getElementById("default_content").style.display = '';
+		}
+	};
+</script>
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!--  导航区域 -->
 <div style="width:100%">
@@ -437,8 +456,11 @@
 					<!-- 主要内容左边区域优惠券信息部分开始 -->
 					<div id="partnerleft_middle_box">
 						<ul class="coupon_type_nav">
+                        <?php if($get["off_time"] == 1): ?><li class=""><a href="" class="">正在优惠</a></li>
+							<li><a href="/index.php/partner/detail/pid/16?off_time=1" class="red">过期优惠</a></li>
+                        <?php else: ?>
 							<li class="red"><a href="" class="red">正在优惠</a></li>
-							<li><a href="" class="normal">过期优惠</a></li>
+							<li><a href="/index.php/partner/detail/pid/16?off_time=1" class="normal">过期优惠</a></li><?php endif; ?>
 						</ul>
 						<div id="all_coupon_info">
                            <ul class="coupon_content clearfix">
@@ -548,7 +570,7 @@
 							<li class="one"><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>1),'','');?>" class="one">首页</a></li>
 							<li><a href=""><</a></li>
 							
-							<?php $__FOR_START_25103__=1;$__FOR_END_25103__=$pageNums+1;for($i=$__FOR_START_25103__;$i < $__FOR_END_25103__;$i+=1){ if($i == $get_info): ?><li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>" class="red"><?php echo ($i); ?></a></li>
+							<?php $__FOR_START_8011__=1;$__FOR_END_8011__=$pageNums+1;for($i=$__FOR_START_8011__;$i < $__FOR_END_8011__;$i+=1){ if($i == $get_info): ?><li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>" class="red"><?php echo ($i); ?></a></li>
 								<?php else: ?>
 									<li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>"><?php echo ($i); ?></a></li><?php endif; } ?>
 

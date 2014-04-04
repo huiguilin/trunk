@@ -15,9 +15,8 @@
 	<!-- 顶部区域 -->
 	<div id="top_content_box">
 		<div id="top_middle_box">
-			<a href="http://www.huigl.com" class="logoimg_box"><img src="__PUBLIC__/images/logo2.png" alt="" /></a>
+			<a href="http://www.huigl.com" class="logoimg_box"><img src="__PUBLIC__/images/logo.png" alt="" /></a>
 			<p>商家中心</p>
-			<?php echo ($_SESSION['user']['name']); ?>
 			
 			<?php if(($_SESSION['user']['user_id']!= '') and ($templateName != 'login')): ?><a href="" class="one">您好，<?php echo ($_SESSION['user']['name']); ?></a>
 				<a href="<?php echo U('Home/User/logout','','','');?>/type/0" class="two">退出</a>

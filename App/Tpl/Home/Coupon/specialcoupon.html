@@ -196,13 +196,19 @@
 				</if>
                 <foreach name="coupons" item="coupon" key="k">
             		<li>
+            			
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title" title="{$coupon.name}">{$coupon.name}</a>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}" alt="{$coupon.name}"></a>
 						<p class="keyword" title="{$coupon.title}">{$coupon.title}</p>
 						<p class="oldprice">疯狂价<span>￥{$coupon.off_price}</span>元</p>
 						<p class="newprice">原价￥{$coupon.origin_price}元</p>
 						<p class="times">已抢购：{$coupon.download_times}次</p>
-						<a href="" class="download_btn" couponid="{$coupon.coupon_id}">点击抢购，还剩{$coupon.left_times}份</a>
+						<if condition="$coupon['left_times'] eq 0">
+							<a href="javascript:void()" class="download_btn2" couponid="{$coupon.coupon_id}">已经卖光啦，下次早点哦！</a>
+						<else />
+							<a href="" class="download_btn" couponid="{$coupon.coupon_id}">点击抢购，还剩{$coupon.left_times}份</a>	
+						</if>
+						
 					</li>
                 </foreach>
 

@@ -115,7 +115,12 @@
 	border-radius: 5px;
 	width: 371px;
 	height: 40px;
-	
+	background: white;   /*IE6 7 默认背景透明了input不背景不透明，需要手动为input指定BJ和透明*/
+	filter:alpha(opacity=75);  
+    -moz-opacity:0.75;  
+    -khtml-opacity: 0.75;  
+    opacity: 0.75; 
+
 	line-height: 40px\9; /*IE6、IE7、IE8背景紅色*/  
 	max-height: 40px\9;
 }
@@ -128,6 +133,12 @@
 	position: absolute;
 	top: 10px;
 	left: 180px;
+
+	background: white;   /*IE6 7 默认背景透明了input不背景不透明，需要手动为input指定BJ和透明*/
+	filter:alpha(opacity=75);  
+    -moz-opacity:0.75;  
+    -khtml-opacity: 0.75;  
+    opacity: 0.75; 
 }
 #main #left_card form ul li select.one{
 	position: absolute;
@@ -135,6 +146,12 @@
 	left: 180px;
 	width: 100px;
 	height: 25px;
+
+	background: white;   /*IE6 7 默认背景透明了input不背景不透明，需要手动为input指定BJ和透明*/
+	filter:alpha(opacity=75);  
+    -moz-opacity:0.75;  
+    -khtml-opacity: 0.75;  
+    opacity: 0.75; 
 }
 #main #left_card form ul li select.two{
 	position: absolute;
@@ -142,5 +159,11 @@
 	left: 180px;
 	width: 100px;
 	height: 25px;
+
+	background: white;   /*IE6 7 默认背景透明了input不背景不透明，需要手动为input指定BJ和透明*/
+	filter:alpha(opacity=75);  
+    -moz-opacity:0.75;  
+    -khtml-opacity: 0.75;  
+    opacity: 0.75; 
 }
 /*左边主要内容区域结束*/
