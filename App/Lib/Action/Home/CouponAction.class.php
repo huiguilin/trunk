@@ -197,7 +197,8 @@ class CouponAction extends Action {
         $couponHelper = new CouponModel();
         $params['coupon_type'] = 2;
         $time = date("Y-m-d H:i:s");
-        #$params['start_time_lt'] = $time;
+        $stime = date("Y-m-d", strtotime("-2 day")) . " 00:00:00";
+        $params['start_time_gt'] = $stime;
         $params['end_time_gt'] = $time;
         $couponInfo = $couponHelper->getCoupon($params);
         foreach ($couponInfo AS $key => $value) {
