@@ -252,9 +252,24 @@ class CouponAction extends Action {
         $couponHelper = new CouponModel();
         $ids = array((int)$_GET['_URL_'][2]);
         $couponInfo = $couponHelper->getCouponByCouponId($ids);
-
         if (empty($couponInfo)) {
             return TRUE;
+        }
+
+        $time = date("Y-m-d H:i:s");
+        $stime = date("Y-m-d H:i:s", strtotime("-2 day"));
+        foreach ($couponInfo AS $key => $value) {
+            $couponInfo[$key]['left_times'] = (int)($couponInfo[$key]['limit_times'] - $couponInfo[$key]['download_times']);
+            if ($couponInfo[$key]['left_times'] < 0)  {
+                $couponInfo[$key]['left_times'] = 0;
+            }
+            if(strtotime($couponInfo[$key]['start_time']) > strtotime($time)){
+                $couponInfo[$key]['Countdown_time'] = $this->timediff(strtotime($time),strtotime($couponInfo[$key]['start_time']));
+                $couponInfo[$key]['Countdown_label'] = 1;
+            }
+            else{
+                 $couponInfo[$key]['Countdown_label'] = 0;
+            }
         }
         $catIds = $couponInfo[0]['cat_id'];
         $catHelper = new CategoryModel();

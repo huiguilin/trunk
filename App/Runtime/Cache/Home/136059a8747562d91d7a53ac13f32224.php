@@ -426,13 +426,22 @@
 				</div>
 				<div class="coupon_desc_box">
 					<p class="coupon_title"><?php echo ($coupon["name"]); ?><!-- <span><?php echo ($coupon["title"]); ?></span> --></p>
-					<p class="coupon_count">限量抢购中，还剩<span>8</span>份</p>
+					<?php if(($coupon['Countdown_label'] == 1) AND ($coupon['coupon_type'] == 2)): ?><p class="coupon_count">
+							即将上线：<?php echo ($coupon['Countdown_time']['day']); ?>天<?php echo ($coupon['Countdown_time']['hour']); ?>时<?php echo ($coupon['Countdown_time']['min']); ?>分<?php echo ($coupon['Countdown_time']['sec']); ?>秒
+						</p>
+					<?php elseif(($coupon['left_times'] == 0) AND ($coupon['coupon_type'] == 2)): ?>
+						<p class="coupon_count">已经卖光啦，下次早点哦！</p>
+					<?php else: ?>
+						<?php if(($_SESSION['user']['user_id']== '') AND ($coupon['coupon_type'] == 2)): ?><p class="coupon_count">抢购之前需要先登录哦！</p>
+						<?php elseif($coupon['coupon_type'] == 2): ?>
+							<p class="coupon_count">限量抢购中，还剩<span><?php echo ($coupon["left_times"]); ?></span>份</p>
+						<?php else: endif; endif; ?>
 					<p class="coupon_description"><?php echo ($coupon["description"]); ?></p>
 				</div>
 
 				<a href="<?php echo U("Coupon/printCoupon","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="print_coupon_btn">打印此优惠券</a>
 
-
+				
 				<a class="download_coupon_btn" id="download_coupon_btn" couponid="<?php echo ($coupon["coupon_id"]); ?>">下载到手机</a>
 				<img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>" class="coupon_pic" alt="<?php echo ($coupon["name"]); ?>">
 				<div class="coupon_detail_desc_box">

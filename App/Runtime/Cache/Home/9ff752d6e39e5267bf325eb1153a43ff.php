@@ -526,15 +526,15 @@
 						<p class="keyword" title="<?php echo ($coupon["title"]); ?>"><?php echo ($coupon["title"]); ?></p>
 						<p class="oldprice">疯狂价<span>￥<?php echo ($coupon["off_price"]); ?></span>元</p>
 						<p class="newprice">原价￥<?php echo ($coupon["origin_price"]); ?>元</p>
-						<?php if($coupon['Countdown_label'] == 1): ?><a class="download_btn" tag="2" couponid="<?php echo ($coupon["coupon_id"]); ?>" id="download_btn">即将上线：<?php echo ($coupon['Countdown_time']['day']); ?>天<?php echo ($coupon['Countdown_time']['hour']); ?>时<?php echo ($coupon['Countdown_time']['min']); ?>分<?php echo ($coupon['Countdown_time']['sec']); ?>秒</a>
+						<?php if($coupon['Countdown_label'] == 1): ?><a href="" class="download_btn no_cursor" tag="2" couponid="<?php echo ($coupon["coupon_id"]); ?>">即将上线：<?php echo ($coupon['Countdown_time']['day']); ?>天<?php echo ($coupon['Countdown_time']['hour']); ?>时<?php echo ($coupon['Countdown_time']['min']); ?>分<?php echo ($coupon['Countdown_time']['sec']); ?>秒</a>
 						<?php elseif($coupon['left_times'] == 0): ?>
-							<a class="download_btn2" id="download_btn" tag="1" couponid="<?php echo ($coupon["coupon_id"]); ?>">已经卖光啦，下次早点哦！</a>
+							<a href="" class="download_btn download_btn2 no_cursor" tag="1" couponid="<?php echo ($coupon["coupon_id"]); ?>">已经卖光啦，下次早点哦！</a>
 							<p class="times">已抢购：<?php echo ($coupon["download_times"]); ?>次</p>
 						<?php else: ?>
 							<p class="times">已抢购：<?php echo ($coupon["download_times"]); ?>次</p>
-							<?php if($_SESSION['user']['user_id']== ''): ?><a href="" class="download_btn" id="download_btn" tag="3" couponid="<?php echo ($coupon["coupon_id"]); ?>">抢购之前需要先登录哦！</a>
+							<?php if($_SESSION['user']['user_id']== ''): ?><a href="" class="download_btn" tag="3" couponid="<?php echo ($coupon["coupon_id"]); ?>">点击抢购，还剩<?php echo ($coupon["left_times"]); ?>份</a>
 							<?php else: ?>
-								<a href="" class="download_btn" id="download_btn" tag="0" couponid="<?php echo ($coupon["coupon_id"]); ?>">点击抢购，还剩<?php echo ($coupon["left_times"]); ?>份</a><?php endif; endif; ?>
+								<a href="" class="download_btn" tag="0" couponid="<?php echo ($coupon["coupon_id"]); ?>">点击抢购，还剩<?php echo ($coupon["left_times"]); ?>份</a><?php endif; endif; ?>
 					</li><?php endforeach; endif; ?>
 
 			</ul>

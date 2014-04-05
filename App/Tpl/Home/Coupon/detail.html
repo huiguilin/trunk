@@ -42,14 +42,27 @@
 				</div>
 				<div class="coupon_desc_box">
 					<p class="coupon_title">{$coupon.name}<!-- <span>{$coupon.title}</span> --></p>
-					
-					<p class="coupon_count">限量抢购中，还剩<span>8</span>份</p>
+					<if condition="($coupon['Countdown_label'] eq 1) AND ($coupon['coupon_type'] eq 2)">
+						<p class="coupon_count">
+							即将上线：{$coupon['Countdown_time']['day']}天{$coupon['Countdown_time']['hour']}时{$coupon['Countdown_time']['min']}分{$coupon['Countdown_time']['sec']}秒
+						</p>
+					<elseif condition="($coupon['left_times'] eq 0) AND ($coupon['coupon_type'] eq 2)" />
+						<p class="coupon_count">已经卖光啦，下次早点哦！</p>
+					<else />
+						<if condition = "($Think.session.user.user_id eq '') AND ($coupon['coupon_type'] eq 2)">
+							<p class="coupon_count">抢购之前需要先登录哦！</p>
+						<elseif condition="$coupon['coupon_type'] eq 2" />
+							<p class="coupon_count">限量抢购中，还剩<span>{$coupon.left_times}</span>份</p>
+						<else />
+							
+						</if>
+					</if>
 					<p class="coupon_description">{$coupon.description}</p>
 				</div>
 
 				<a href="{:U("Coupon/printCoupon","","","")}/{$coupon.coupon_id}" class="print_coupon_btn">打印此优惠券</a>
 
-
+				
 				<a class="download_coupon_btn" id="download_coupon_btn" couponid="{$coupon.coupon_id}">下载到手机</a>
 				<img src="__PUBLIC__/{$coupon.picture_path}" class="coupon_pic" alt="{$coupon.name}">
 				<div class="coupon_detail_desc_box">

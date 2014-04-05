@@ -363,6 +363,9 @@
 	top: 240px;
 	left: 30px;
 }
+#main #coupon_box ul.coupon_content li a.no_cursor{
+	cursor: default;
+}
 #main #coupon_box ul.coupon_content li p.keyword{
 	font-family: 微软雅黑;
 	font-size: 18px;
