@@ -196,19 +196,25 @@
 				</if>
                 <foreach name="coupons" item="coupon" key="k">
             		<li>
-            			
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="content_title" title="{$coupon.name}">{$coupon.name}</a>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}" alt="{$coupon.name}"></a>
 						<p class="keyword" title="{$coupon.title}">{$coupon.title}</p>
 						<p class="oldprice">疯狂价<span>￥{$coupon.off_price}</span>元</p>
 						<p class="newprice">原价￥{$coupon.origin_price}元</p>
-						<p class="times">已抢购：{$coupon.download_times}次</p>
-						<if condition="$coupon['left_times'] eq 0">
-							<a href="javascript:void()" class="download_btn2" couponid="{$coupon.coupon_id}">已经卖光啦，下次早点哦！</a>
+						<if condition="$coupon['Countdown_label'] eq 1">
+							<a class="download_btn" tag="2" couponid="{$coupon.coupon_id}" id="download_btn">即将上线：{$coupon['Countdown_time']['day']}天{$coupon['Countdown_time']['hour']}时{$coupon['Countdown_time']['min']}分{$coupon['Countdown_time']['sec']}秒</a>
+						<elseif condition="$coupon['left_times'] eq 0" />
+							<a class="download_btn2" id="download_btn" tag="1" couponid="{$coupon.coupon_id}">已经卖光啦，下次早点哦！</a>
+							<p class="times">已抢购：{$coupon.download_times}次</p>
 						<else />
-							<a href="" class="download_btn" couponid="{$coupon.coupon_id}">点击抢购，还剩{$coupon.left_times}份</a>	
+							<p class="times">已抢购：{$coupon.download_times}次</p>
+							<if condition = "$Think.session.user.user_id eq ''">
+								<a href="" class="download_btn" id="download_btn" tag="3" couponid="{$coupon.coupon_id}">抢购之前需要先登录哦！</a>
+							<else />
+								<a href="" class="download_btn" id="download_btn" tag="0" couponid="{$coupon.coupon_id}">点击抢购，还剩{$coupon.left_times}份</a>
+							</if>
+							
 						</if>
-						
 					</li>
                 </foreach>
 

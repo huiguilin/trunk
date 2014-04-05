@@ -197,7 +197,7 @@ class CouponAction extends Action {
         $couponHelper = new CouponModel();
         $params['coupon_type'] = 2;
         $time = date("Y-m-d H:i:s");
-        $stime = date("Y-m-d", strtotime("-2 day")) . " 00:00:00";
+        $stime = date("Y-m-d H:i:s", strtotime("-2 day"));
         $params['start_time_gt'] = $stime;
         $params['end_time_gt'] = $time;
         $couponInfo = $couponHelper->getCoupon($params);
@@ -206,10 +206,15 @@ class CouponAction extends Action {
             if ($couponInfo[$key]['left_times'] < 0)  {
                 $couponInfo[$key]['left_times'] = 0;
             }
-            $couponInfo[$key]['Countdown_time'] = (int)($couponInfo[$key]['start_time'] - $time);
+            if(strtotime($couponInfo[$key]['start_time']) > strtotime($time)){
+                $couponInfo[$key]['Countdown_time'] = $this->timediff(strtotime($time),strtotime($couponInfo[$key]['start_time']));
+                $couponInfo[$key]['Countdown_label'] = 1;
+            }
+            else{
+                 $couponInfo[$key]['Countdown_label'] = 0;
+            }
         }
        
-
         if ($params['order_by'] != 'download_times DESC') {
             $params['order_by'] = 'download_times DESC';
         }
@@ -318,6 +323,26 @@ class CouponAction extends Action {
         $this->assign('rateInfo',$rateInfo);
         $this->assign('use_rule',$use_rule);
         $this->display();
+    }
+
+    function timediff($begin_time,$end_time){
+          if($begin_time < $end_time){
+             $starttime = $begin_time;
+             $endtime = $end_time;
+          }
+          else{
+             $starttime = $end_time;
+             $endtime = $begin_time;
+          }
+          $timediff = $endtime-$starttime;
+          $days = intval($timediff/86400);
+          $remain = $timediff%86400;
+          $hours = intval($remain/3600);
+          $remain = $remain%3600;
+          $mins = intval($remain/60);
+          $secs = $remain%60;
+          $res = array("day" => $days,"hour" => $hours,"min" => $mins,"sec" => $secs);
+          return $res;
     }
 
     private function getEvaluation($eInfo) {

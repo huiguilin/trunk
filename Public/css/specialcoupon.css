@@ -391,7 +391,7 @@
 	font-size: 14px;
 	position: absolute;
 	top: 157px;
-	left: 170px;
+	right: 425px;
 	text-decoration:line-through;
 }
 #main #coupon_box ul.coupon_content li p.times{
