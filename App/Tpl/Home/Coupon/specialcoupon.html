@@ -65,7 +65,6 @@
 	                            <foreach name="categories" item="category">
 	                            <if condition="$get_info['label_type'] eq $category['label_type']">
 									<if condition="$get_info['cat_id'] eq $category['cat_id']">
-									
 								 	<li><a href="{:U('Coupon/coupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}" class="current">{$category.cat_name}</a></li>
 	                            	<else />
 

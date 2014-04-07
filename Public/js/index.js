@@ -130,22 +130,37 @@ $(function(){
 	 	$('#main #main_content_top_box #ad_box ul li').eq(num).addClass('hover');//给对应的li加上hover样式
 	 }
 	 //首页图片轮换版特效结束
-	 $('#main #foot_and_footsort_box div.foot_box ul.content li').hover(function() {
-	 	$(this).find('p.hidden_location').show();
-	 }, function() {
-	 	$(this).find('p.hidden_location').hide();
-	 });
+
+	 // $('#main #foot_and_footsort_box div.foot_box ul.content li').hover(function() {
+	 // 	$(this).find('p.hidden_location').show();
+	 // }, function() {
+	 // 	$(this).find('p.hidden_location').hide();
+	 // });
 	 $('#main #hot_and_new_brand_box div.hot_brand_box li').hover(function() {
 	 	$(this).find('a').css('text-decoration', 'underline');
 	 }, function() {
 	 	$(this).find('a').css('text-decoration', 'none');
 	 });
 	 //下载优惠券弹窗
+	
 	$('#main #foot_and_footsort_box div.foot_box ul.content li a.download').click(function(event) {
-	 	$('#download_coupon_hidden_box').bPopup({});
-	 	coupon_id = $(this).attr('couponid');
-	 	return false;
+     var tag = $(this).attr('tag');
+     if(tag == "0"){
+        $('#Userlogin_box').bPopup({
+            modalClose: false,
+          opacity: 0.6,
+          position: [330, 60],//x, y
+        });
+        return false;
+     }
+     else{
+     	$('#download_coupon_hidden_box').bPopup({});
+        coupon_id = $(this).attr('couponid');
+        return false;
+     }
+	 	
 	 });
+
 	 //下载优惠券弹窗结束
 	 //点击下载手机优惠劵弹窗中发送按钮
      $('#download_coupon_submit_btn').click(function(event) {
@@ -165,12 +180,15 @@ $(function(){
 
      		 		$.post(ajaxPostURL+"Coupon/sendCouponCode", { phone_number: phone, 
 						vcode: vcode,coupon_id:coupon_id},function(data){
+							
 					 	if(data.status == 2){
 					 		$('#hidden_error_tips_vcode').show().text(data.info);
 					 	}else if(data.status == 0){
 					 		$('#hidden_error_tips_phone').show().text(data.info);
 					 	}else if(data.status ==1){
 					 		$("#download_coupon_hidden_box div.middle_content_box").hide().siblings('#download_coupon_hidden_box div.middle_content_box_success').show();
+					 	}else if(data.status == 3){
+					 		$('#hidden_error_tips_phone').show().text(data.info);
 					 	}
 					},"json");
      		 	}

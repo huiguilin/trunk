@@ -54,6 +54,24 @@ $(function(){
         }
     }
 
+    //下载优惠券弹窗
+    $('#download_coupon_btn').add('#download_coupon_btn_two').click(function(event) {
+         var tag = $(this).attr('tag');
+         if(tag == "0"){
+             $('#Userlogin_box').bPopup({
+                modalClose: false,
+              opacity: 0.6,
+              position: [330, 60],//x, y
+            });
+            return false;
+         }
+         else{
+             $('#download_coupon_hidden_box').bPopup({});
+            coupon_id = $(this).attr('couponid');
+            return false;
+         } 
+     });
+    
 	$('#main #coupon_box div.business_detail_info_box div.business_location div.map_box ul li').click(function(event) {
 		$('#main #coupon_box div.business_detail_info_box div.business_location div.map_box ul li div').hide();
 		$('#main #coupon_box div.business_detail_info_box div.business_location div.map_box ul li').removeClass();
@@ -102,15 +120,6 @@ $(function(){
             },"json");
         });
 
-    //点击下载到手机弹窗
-    $('#download_coupon_btn').add('#download_coupon_btn_two').click(function(event) {
-    	coupon_id = $(this).attr('couponid');
-    	$('#download_coupon_hidden_box').bPopup({
-           
-        });
-
-    });
-    //点击下载到手机弹窗结束
 
     //点击下载手机优惠劵弹窗中发送按钮
      $('#download_coupon_submit_btn').click(function(event) {

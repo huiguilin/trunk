@@ -37,7 +37,7 @@ function getPageInfo($count, $url, $nowPage = 0, $pageSize = 10) {
 
 function sendCodeToMobile($phoneNumber, $text, $timeout = 10) {
     $result = array(
-        'data' => false,
+        'data' => 0,
     );
     if (empty($phoneNumber) || empty($text)) {
         return $result;

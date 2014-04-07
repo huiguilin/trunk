@@ -77,7 +77,16 @@ $(function(){
 		return false;
 	});
 	//点击订阅按钮提交验证结束
-	
+	$('#top_box #top_nav_classification_box ul li.expand').click(function(event) {
+		$('#top_box #top_nav_classification_box ul li').slideDown('fast');
+		$(this).hide();
+		return false;
+	});
+	$('#top_box #top_nav_classification_box ul li.collapse').click(function(event) {
+		$('#top_box #top_nav_classification_box ul li').hide();
+		$('#top_box #top_nav_classification_box ul li.expand').show();
+		return false;
+	});
 
 	////////////////////////用户注册+用户登录+忘记密码特效全部代码区域////////////////////
 	//用户注册弹框效果

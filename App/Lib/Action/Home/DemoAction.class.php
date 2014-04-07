@@ -2,7 +2,12 @@
 // 本类由系统自动生成，仅供测试用途
 class DemoAction extends Action {
     public function demo(){
-     
+        
+
+        // $result = sendCodeToMobile('18611244143', '2222');
+        // echo "1111";
+        // var_dump($result);
+        // die;
         $this->display();
         exit();
         echo "今天:",date('Y-m-d H:i:s'),"<br>";

@@ -73,29 +73,29 @@
 			<div id="nav_search_box">
 				<ul>
 					<?php if($templateName == 'index'): ?><li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>" target="_blank">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>" target="_blank">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>" target="_blank">商户</a></li>
 					<?php elseif($templateName == 'coupon'): ?>
-						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Index/index");?>" target="_blank">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>" target="_blank">限时优惠</a></li>
 						<li class="border"><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>" target="_blank">商户</a></li>
 					<?php elseif($templateName == 'partner'): ?>
-						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Index/index");?>" target="_blank">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>" target="_blank">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>" target="_blank">优惠券</a></li>
 						<li class="border"><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php elseif($templateName == 'specialcoupon'): ?>
-						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li><a href="<?php echo U("Index/index");?>" target="_blank">首页</a></li>
 						<li class="border"><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>" target="_blank">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>" target="_blank">商户</a></li>
 					<?php else: ?>
 						<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li><?php endif; ?>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>" target="_blank">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>" target="_blank">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>" target="_blank">商户</a></li><?php endif; ?>
 				</ul>
 				<form id="search_box" method="get" action="<?php echo U("Home/Search/search");?>">
 					<div>
@@ -107,16 +107,17 @@
 			</div>
 		</div>
 		<div id="top_nav_classification_box">
-			<!-- <ul class="clearfix">
-				<li><a href="">桂林电子科技大学</a></li>
-				<li><a href="">广西师范大学</a></li>
-				<li><a href="">桂林理工大学</a></li>
-				<li><a href="">桂林医学院</a></li>
-				<li><a href="">桂林航天工业学院</a></li>
-				<li><a href="">桂林旅专</a></li>
-				<li><a href="">广艺桂林分校</a></li>
-				<li><a href="">收起全部学校</a></li>
-			</ul> -->
+			<ul class="clearfix">
+				<li class="expand"><a href="" class="white">展开全部学校</a></li>
+				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林电子科技大学" target=_blank>桂林电子科技大学</a></li>
+				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/广西师范大学" target=_blank>广西师范大学</a></li>
+				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林理工大学" target=_blank>桂林理工大学</a></li>
+				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林医学院" target=_blank>桂林医学院</a></li>
+				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林航天工业学院" target=_blank>桂林航天工业学院</a></li>
+				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林旅专" target=_blank>桂林旅专</a></li>
+				<li class="no_border_bottom"><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/广艺桂林分校" target=_blank>广艺桂林分校</a></li>
+				<li class="collapse"><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林电子科技大学" class="red">收起全部学校</a></li>
+			</ul>
 		</div>
 	</div>
 
@@ -486,26 +487,35 @@
 		<!-- 民以食为天+排行榜区域 -->
 		<div id="foot_and_footsort_box">
 			<div class="foot_box">
-				<p class="title">民以食为天</p>
-				<ul class="title_content">
+				<p class="title"><span>限时抢购</span></p>
+				<!-- <ul class="title_content">
                     <?php if(is_array($eat_cat)): foreach($eat_cat as $k=>$e_cat): if($k < 4): ?><li><a href="<?php echo U('Coupon/coupon',array('label_type'=>1,'cat_id'=>$e_cat['cat_id']),'','');?>"><?php echo ($e_cat["cat_name"]); ?></a></li>
 
                     <?php else: ?>
 					<li><a href="<?php echo U('Coupon/coupon',array('label_type'=>1,'cat_id'=>$e_cat['cat_id']),'','');?>" class="no_right_border"><?php echo ($e_cat["cat_name"]); ?></a></li><?php endif; endforeach; endif; ?>
-				</ul>
+				</ul> -->
 				<ul class="content">
                 <?php if(is_array($eat_coupons)): foreach($eat_coupons as $k=>$coupon): if($k > 3): else: ?>
 						<li>
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box" target=_blank><img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" target=_blank class="content_title" title="<?php echo ($coupon["name"]); ?>"><?php echo ($coupon["name"]); ?></a>
 						<p class="one" title="<?php echo ($coupon["description"]); ?>"><?php echo ($coupon["description"]); ?></p>
-						<p class="two" title="<?php echo ($coupon["title"]); ?>"><?php echo ($coupon["title"]); ?></p>
-						<p class="three" >下载：<?php echo ($coupon["download_times"]); ?>次</p>
-						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download">立即下载</a>
-						<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
+						<p class="two" title="<?php echo ($coupon["title"]); ?>">疯抢价<span>￥<?php echo ($coupon["off_price"]); ?></span>元</p>
+						<p class="three" >已抢购：<?php echo ($coupon["download_times"]); ?>次</p>
+						<?php if($_SESSION['user']['user_id']== ''): ?><a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download" tag="0">立即抢购</a>
+						<?php else: ?>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download" tag="1">立即抢购</a><?php endif; ?>
+						
+						<?php if($coupon['Countdown_label'] == 1): ?><p class="hidden_location">即将上线:<?php echo ($coupon['Countdown_time']['day']); ?>天<?php echo ($coupon['Countdown_time']['hour']); ?>时<?php echo ($coupon['Countdown_time']['min']); ?>分<?php echo ($coupon['Countdown_time']['sec']); ?>秒</p>
+						<?php elseif($coupon['left_times'] == 0): ?>
+							<p class="hidden_location">已经卖光啦,下次早点哦!</p>
+						<?php else: ?>
+							<p class="hidden_location">点击抢购，还剩<?php echo ($coupon["left_times"]); ?>份</p><?php endif; ?>
+
+						
 					</li><?php endif; endforeach; endif; ?>
 				</ul>
-				<a href="<?php echo U('Coupon/coupon',array('label_type'=>1),'','');?>" class="foot_type_more" target=_blank>查看更多</a>
+				<a href="<?php echo U('Coupon/specialcoupon','','','');?>" class="foot_type_more" target=_blank>查看更多</a>
 			</div>
 			<div class="footsort_box">
 				<!-- <p class="title title2" id="foot_hot_title">最热优惠劵排行</p><p class="title" id="foot_new_title">最新优惠劵排行</p> -->
@@ -550,12 +560,12 @@
 		<!-- 休闲娱乐+排行榜区域 -->
 		<div id="foot_and_footsort_box">
 			<div class="foot_box">
-				<p class="title">休闲娱乐</p>
-				<ul class="title_content">
+				<p class="title"><span>校园优惠 |</span>桂林电子科技大学</p>
+				<!-- <ul class="title_content">
                     <?php if(is_array($play_cat)): foreach($play_cat as $k=>$p_cat): if($k < 4): ?><li><a href="<?php echo U('Coupon/coupon',array('label_type'=>2,'cat_id'=>$p_cat['cat_id']),'','');?>"><?php echo ($p_cat["cat_name"]); ?></a></li>
                     <?php else: ?>
 					<li><a href="<?php echo U('Coupon/coupon',array('label_type'=>2,'cat_id'=>$p_cat['cat_id']),'','');?>" class="no_right_border"><?php echo ($p_cat["cat_name"]); ?></a></li><?php endif; endforeach; endif; ?>
-				</ul>
+				</ul> -->
 				<ul class="content">
                 <?php if(is_array($play_coupons)): foreach($play_coupons as $k=>$coupon): if($k > 3 ): else: ?>
 						<li>
@@ -564,11 +574,12 @@
 						<p class="one" title="<?php echo ($coupon["description"]); ?>"><?php echo ($coupon["description"]); ?></p>
 						<p class="two" title="<?php echo ($coupon["title"]); ?>"><?php echo ($coupon["title"]); ?></p>
 						<p class="three">下载：<?php echo ($coupon["download_times"]); ?>次</p>
+						
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download">立即下载</a>
-						<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
+						<!-- <p class="hidden_location"><?php echo ($coupon["tag"]); ?></p> -->
 					</li><?php endif; endforeach; endif; ?>
 				</ul>
-				<a href="<?php echo U('Coupon/coupon',array('label_type'=>2),'','');?>" class="foot_type_more">查看更多</a>
+				<a href="<?php echo U('Coupon/coupon',array('tag'=>'桂林电子科技大学'),'','');?>" class="foot_type_more">查看更多</a>
 			</div>
 			<div class="footsort_box">
 				<!-- <p class="title title2" id="ent_hot_title">最热优惠劵排行</p><p class="title" id="ent_new_title">最新优惠劵排行</p> -->
@@ -611,7 +622,7 @@
 		</div>
 		<!-- 休闲娱乐+排行榜区域结束 -->
 		<!-- 生活服务+排行榜区域 -->
-		<div id="foot_and_footsort_box">
+		<div id="foot_and_footsort_box" style="display:none">
 			<div class="foot_box">
 				<p class="title">生活服务</p>
 				<ul class="title_content">

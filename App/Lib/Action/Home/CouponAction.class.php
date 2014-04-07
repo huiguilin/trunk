@@ -232,6 +232,7 @@ class CouponAction extends Action {
         }
 
         list($categories, $location, $labelType) = $this->getTopButtom();
+       
         $this->assign("categories", $categories);
         $this->assign("locations", $location);
         $this->assign("label_types", $labelType);
@@ -367,25 +368,25 @@ class CouponAction extends Action {
     }
 
     public function sendCouponCode() {
-        $result = array(
+        $data = array(
             'status' => 0,
             'info' => "",
         );
         if (empty($_POST['phone_number']) || empty($_POST['coupon_id'])) {
-            $result['info'] = '手机号码不能为空!';
-            $this->ajaxReturn($result,'JSON'); 
+            $data['info'] = '手机号码不能为空!';
+            $this->ajaxReturn($data,'JSON'); 
             return TRUE;
         }
         // if (empty($_SESSION['user']['user_id'])) {
-        //     $result['info'] = '未登录!';
-        //     $this->ajaxReturn($result,'JSON');
+        //     $data['info'] = '未登录!';
+        //     $this->ajaxReturn($data,'JSON');
         //     return TRUE;
         // }
     
         if ($_SESSION['verify'] != md5($_POST['vcode'])) {
-            $result['status'] = 2;
-            $result['info'] = "验证码错误!";
-            $this->ajaxReturn($result,'JSON'); 
+            $data['status'] = 2;
+            $data['info'] = "验证码错误!";
+            $this->ajaxReturn($data,'JSON'); 
             return TRUE;
         }
 
@@ -396,15 +397,15 @@ class CouponAction extends Action {
         $ids = array($couponId);
         $couponInfo = $couponHelper->getCouponByCouponId($ids);
         if (empty($couponInfo)) {
-           $result['info'] = "wrong counpon_id!";
-           $this->ajaxReturn($result,'JSON');
+           $data['info'] = "wrong counpon_id!";
+           $this->ajaxReturn($data,'JSON');
            return TRUE;
         }
         $userCouponHelper = new UserCouponModel();
         if ($couponInfo[0]['coupon_type'] == 2) {
             if (empty($_SESSION['user']['user_id'])) {
-                $result['info'] = "请先登陆!";
-                $this->ajaxReturn($result,'JSON');
+                $data['info'] = "请先登陆!";
+                $this->ajaxReturn($data,'JSON');
                 return TRUE;               
             }
             $stime = $couponInfo[0]['start_time'];
@@ -415,8 +416,8 @@ class CouponAction extends Action {
             );
             $count = $userCouponHelper->getUserCoupon($params);
             if ($count >= $couponInfo[0]['limit_times']) {
-                $result['info'] = "已经抢光了，再看看同类优惠券吧~~!";
-                $this->ajaxReturn($result,'JSON');
+                $data['info'] = "已经抢光了，再看看同类优惠券吧~~!";
+                $this->ajaxReturn($data,'JSON');
                 return TRUE;                          
             }
         }
@@ -425,20 +426,32 @@ class CouponAction extends Action {
             'coupon_id' => $couponId,
             'start_time' => date("Y-m-d H:i:s", strtotime("today")),
             'end_time' => date("Y-m-d H:i:s", strtotime("+1 day")),
+            'count' => 'id',
         );
         $coupons = $userCouponHelper->getUserCoupon($params);
-        if (!empty($coupons)) {
-            $result['status'] = 3;
-            $result['info'] = "今天已经申请过了，请明天再来哟!";
-            $this->ajaxReturn($result,'JSON'); 
+        $count = $userCouponHelper->getUserCoupon($params);
+
+        if ($couponInfo[0]['coupon_type'] == 2) {
+            if ($count > 0) {
+            $data['status'] = 3;
+            $data['info'] = "今天已经申请过了，请明天再来哟!";
+            $this->ajaxReturn($data,'JSON'); 
+            return TRUE;           
+            }
+        }
+        if ($count > 1) {
+            $data['status'] = 3;
+            $data['info'] = "今天已经申请次数已超过，请明天再来哟!";
+            $this->ajaxReturn($data,'JSON'); 
             return TRUE;           
         }
+        
         // $phoneNumber = $_SESSION['user']['phone_number'];
         $phoneNumber = $_POST['phone_number'];
         $_SESSION['user']['phone_number'] = $phoneNumber;
         // if (empty($phonNumber) || !is_numeric($phoneNumber) || $_POST['phone_number'] != $phoneNumber) {
-        //     $result['info'] = "erro phone number!";
-        //     $this->ajaxReturn($result, 'JSON');
+        //     $data['info'] = "erro phone number!";
+        //     $this->ajaxReturn($data, 'JSON');
         //     return TRUE;
         // }
 
@@ -448,8 +461,8 @@ class CouponAction extends Action {
 
         $couponDesc = !empty($couponInfo[0]['message']) ? $couponInfo[0]['message'] : $couponInfo[0]['description'];
         $partnerId = $couponInfo[0]['partner_id'];
-        $result = $this->send($phoneNumber, $code, $couponName, $couponId,$couponDesc,$partnerId);
-
+        $data = $this->send($phoneNumber, $code, $couponName, $couponId,$couponDesc,$partnerId);
+       
         //下载成功后数据库中download_times加1
         $helper = new CouponModel();
         $counponDownloadTimes = $couponInfo[0]['download_times'] + 1;
@@ -464,7 +477,7 @@ class CouponAction extends Action {
             $updateresult = $helper->getCouponByCouponId($ids);
             $this->assign("coupons", $couponInfo);
         }
-        $this->ajaxReturn($result, "JSON");
+        $this->ajaxReturn($data, "JSON");
         return TRUE;
     }
 
@@ -506,7 +519,6 @@ class CouponAction extends Action {
                     );
             return $data; 
         }else{
-
             $data = array(
                     'status' => 1,
                     'info' => '发送成功',

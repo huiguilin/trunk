@@ -277,9 +277,20 @@
 	font-size: 14px;
 	font-weight: bold;
 	background-color: #E4E4E4;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8;  
 	height: 32px;
 	line-height: 32px;
 	padding-left: 10px;
+}
+#main #foot_and_footsort_box div.foot_box p.title span{
+	color: #434343;
+	font-size: 14px;
+	font-family: 微软雅黑;
+	font-weight: bold;
+	padding-right: 5px;
 }
 #main #foot_and_footsort_box div.foot_box ul.content{
 	background:white;
@@ -324,12 +335,20 @@
 	left: 182px;
 	width: 152px;
 	color: #999999;
-	height: 15px;
+	height: 25px;
 	overflow: hidden;
+}
+#main #foot_and_footsort_box div.foot_box ul.content li p.two span{
+	color: #ED5565;
+	font-size: 20px;
+	font-weight: normal;
+	font-family: Arial;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 #main #foot_and_footsort_box div.foot_box ul.content li p.three{
 	position: absolute;
-	top: 122px;
+	top: 132px;
 	left: 182px;
 	width: 152px;
 	color: #999999;
@@ -339,18 +358,12 @@
 	top: 132px;
 	left: 13px;
 	height: 40px;
-	width: 145px;
+	width: 162px;
 	color: white;
-	background: red;
 	line-height: 40px;
-	background: url(../images/location.png) no-repeat 1px 10px;
-	background-color: black;
-	filter:alpha(opacity=50); 
-	-moz-opacity:0.5; 
-	opacity:0.5;
-	padding-left: 17px;
+	/*background: url(../images/location.png) no-repeat 1px 10px;*/
+	background-color: #303131;
 	font-weight: bold;
-	display: none;
 }
 #main #foot_and_footsort_box div.foot_box ul.content li a.content_title{
 	color: #ED5565;

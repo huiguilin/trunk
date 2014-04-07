@@ -114,8 +114,8 @@
 		<!-- 民以食为天+排行榜区域 -->
 		<div id="foot_and_footsort_box">
 			<div class="foot_box">
-				<p class="title">民以食为天</p>
-				<ul class="title_content">
+				<p class="title"><span>限时抢购</span></p>
+				<!-- <ul class="title_content">
                     <foreach name="eat_cat" item="e_cat" key="k">
                     <if condition="$k lt 4">
 
@@ -125,7 +125,7 @@
 					<li><a href="{:U('Coupon/coupon',array('label_type'=>1,'cat_id'=>$e_cat['cat_id']),'','')}" class="no_right_border">{$e_cat.cat_name}</a></li>
                     </if>
                     </foreach>
-				</ul>
+				</ul> -->
 				<ul class="content">
                 <foreach name="eat_coupons" item="coupon" key="k">
                 	<if condition="$k gt 3">
@@ -134,15 +134,28 @@
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box" target=_blank><img src="__PUBLIC__/{$coupon.picture_path}" alt="{$coupon.name}"></a>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title" title="{$coupon.name}">{$coupon.name}</a>
 						<p class="one" title="{$coupon.description}">{$coupon.description}</p>
-						<p class="two" title="{$coupon.title}">{$coupon.title}</p>
-						<p class="three" >下载：{$coupon.download_times}次</p>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download">立即下载</a>
-						<p class="hidden_location">{$coupon.tag}</p>
+						<p class="two" title="{$coupon.title}">疯抢价<span>￥{$coupon.off_price}</span>元</p>
+						<p class="three" >已抢购：{$coupon.download_times}次</p>
+						<if condition = "$Think.session.user.user_id eq ''">
+							<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download" tag="0">立即抢购</a>
+						<else />
+							<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download" tag="1">立即抢购</a>
+						</if>
+						
+						<if condition="$coupon['Countdown_label'] eq 1">
+							<p class="hidden_location">即将上线:{$coupon['Countdown_time']['day']}天{$coupon['Countdown_time']['hour']}时{$coupon['Countdown_time']['min']}分{$coupon['Countdown_time']['sec']}秒</p>
+						<elseif condition="$coupon['left_times'] eq 0" />
+							<p class="hidden_location">已经卖光啦,下次早点哦!</p>
+						<else />
+							<p class="hidden_location">点击抢购，还剩{$coupon.left_times}份</p>
+						</if>
+
+						
 					</li>
 					</if>
                 </foreach>
 				</ul>
-				<a href="{:U('Coupon/coupon',array('label_type'=>1),'','')}" class="foot_type_more" target=_blank>查看更多</a>
+				<a href="{:U('Coupon/specialcoupon','','','')}" class="foot_type_more" target=_blank>查看更多</a>
 			</div>
 			<div class="footsort_box">
 				<!-- <p class="title title2" id="foot_hot_title">最热优惠劵排行</p><p class="title" id="foot_new_title">最新优惠劵排行</p> -->
@@ -195,8 +208,8 @@
 		<!-- 休闲娱乐+排行榜区域 -->
 		<div id="foot_and_footsort_box">
 			<div class="foot_box">
-				<p class="title">休闲娱乐</p>
-				<ul class="title_content">
+				<p class="title"><span>校园优惠 |</span>桂林电子科技大学</p>
+				<!-- <ul class="title_content">
                     <foreach name="play_cat" item="p_cat" key="k">
                     <if condition="$k lt 4">
 					<li><a href="{:U('Coupon/coupon',array('label_type'=>2,'cat_id'=>$p_cat['cat_id']),'','')}">{$p_cat.cat_name}</a></li>
@@ -204,7 +217,7 @@
 					<li><a href="{:U('Coupon/coupon',array('label_type'=>2,'cat_id'=>$p_cat['cat_id']),'','')}" class="no_right_border">{$p_cat.cat_name}</a></li>
                     </if>
                     </foreach>
-				</ul>
+				</ul> -->
 				<ul class="content">
                 <foreach name="play_coupons" item="coupon" key="k">
                 	<if condition="$k gt 3 ">
@@ -215,13 +228,14 @@
 						<p class="one" title="{$coupon.description}">{$coupon.description}</p>
 						<p class="two" title="{$coupon.title}">{$coupon.title}</p>
 						<p class="three">下载：{$coupon.download_times}次</p>
+						
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download">立即下载</a>
-						<p class="hidden_location">{$coupon.tag}</p>
+						<!-- <p class="hidden_location">{$coupon.tag}</p> -->
 					</li>
 					</if>
                 </foreach>
 				</ul>
-				<a href="{:U('Coupon/coupon',array('label_type'=>2),'','')}" class="foot_type_more">查看更多</a>
+				<a href="{:U('Coupon/coupon',array('tag'=>'桂林电子科技大学'),'','')}" class="foot_type_more">查看更多</a>
 			</div>
 			<div class="footsort_box">
 				<!-- <p class="title title2" id="ent_hot_title">最热优惠劵排行</p><p class="title" id="ent_new_title">最新优惠劵排行</p> -->
@@ -272,7 +286,7 @@
 		</div>
 		<!-- 休闲娱乐+排行榜区域结束 -->
 		<!-- 生活服务+排行榜区域 -->
-		<div id="foot_and_footsort_box">
+		<div id="foot_and_footsort_box" style="display:none">
 			<div class="foot_box">
 				<p class="title">生活服务</p>
 				<ul class="title_content">

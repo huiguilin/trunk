@@ -75,29 +75,29 @@
 			<div id="nav_search_box">
 				<ul>
 					<?php if($templateName == 'index'): ?><li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>" target="_blank">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>" target="_blank">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>" target="_blank">商户</a></li>
 					<?php elseif($templateName == 'coupon'): ?>
-						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Index/index");?>" target="_blank">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>" target="_blank">限时优惠</a></li>
 						<li class="border"><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>" target="_blank">商户</a></li>
 					<?php elseif($templateName == 'partner'): ?>
-						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Index/index");?>" target="_blank">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>" target="_blank">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>" target="_blank">优惠券</a></li>
 						<li class="border"><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php elseif($templateName == 'specialcoupon'): ?>
-						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li><a href="<?php echo U("Index/index");?>" target="_blank">首页</a></li>
 						<li class="border"><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>" target="_blank">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>" target="_blank">商户</a></li>
 					<?php else: ?>
 						<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li><?php endif; ?>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>" target="_blank">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>" target="_blank">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>" target="_blank">商户</a></li><?php endif; ?>
 				</ul>
 				<form id="search_box" method="get" action="<?php echo U("Home/Search/search");?>">
 					<div>
@@ -109,16 +109,17 @@
 			</div>
 		</div>
 		<div id="top_nav_classification_box">
-			<!-- <ul class="clearfix">
-				<li><a href="">桂林电子科技大学</a></li>
-				<li><a href="">广西师范大学</a></li>
-				<li><a href="">桂林理工大学</a></li>
-				<li><a href="">桂林医学院</a></li>
-				<li><a href="">桂林航天工业学院</a></li>
-				<li><a href="">桂林旅专</a></li>
-				<li><a href="">广艺桂林分校</a></li>
-				<li><a href="">收起全部学校</a></li>
-			</ul> -->
+			<ul class="clearfix">
+				<li class="expand"><a href="" class="white">展开全部学校</a></li>
+				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林电子科技大学" target=_blank>桂林电子科技大学</a></li>
+				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/广西师范大学" target=_blank>广西师范大学</a></li>
+				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林理工大学" target=_blank>桂林理工大学</a></li>
+				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林医学院" target=_blank>桂林医学院</a></li>
+				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林航天工业学院" target=_blank>桂林航天工业学院</a></li>
+				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林旅专" target=_blank>桂林旅专</a></li>
+				<li class="no_border_bottom"><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/广艺桂林分校" target=_blank>广艺桂林分校</a></li>
+				<li class="collapse"><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林电子科技大学" class="red">收起全部学校</a></li>
+			</ul>
 		</div>
 	</div>
 

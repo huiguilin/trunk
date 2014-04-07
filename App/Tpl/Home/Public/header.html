@@ -55,29 +55,29 @@
 				<ul>
 					<if condition="$templateName eq 'index'">
 						<li class="border"><a href="{:U("Index/index")}">首页</a></li>
-						<li><a href="{:U("Coupon/specialcoupon")}">限时优惠</a></li>
-						<li><a href="{:U("Coupon/coupon")}">优惠券</a></li>
-						<li><a href="{:U("Partner/partner")}">商户</a></li>
+						<li><a href="{:U("Coupon/specialcoupon")}" target="_blank">限时优惠</a></li>
+						<li><a href="{:U("Coupon/coupon")}" target="_blank">优惠券</a></li>
+						<li><a href="{:U("Partner/partner")}" target="_blank">商户</a></li>
 					<elseif condition="$templateName eq 'coupon'" />
-						<li><a href="{:U("Index/index")}">首页</a></li>
-						<li><a href="{:U("Coupon/specialcoupon")}">限时优惠</a></li>
+						<li><a href="{:U("Index/index")}" target="_blank">首页</a></li>
+						<li><a href="{:U("Coupon/specialcoupon")}" target="_blank">限时优惠</a></li>
 						<li class="border"><a href="{:U("Coupon/coupon")}">优惠券</a></li>
-						<li><a href="{:U("Partner/partner")}">商户</a></li>
+						<li><a href="{:U("Partner/partner")}" target="_blank">商户</a></li>
 					<elseif condition="$templateName eq 'partner'" />
-						<li><a href="{:U("Index/index")}">首页</a></li>
-						<li><a href="{:U("Coupon/specialcoupon")}">限时优惠</a></li>
-						<li><a href="{:U("Coupon/coupon")}">优惠券</a></li>
+						<li><a href="{:U("Index/index")}" target="_blank">首页</a></li>
+						<li><a href="{:U("Coupon/specialcoupon")}" target="_blank">限时优惠</a></li>
+						<li><a href="{:U("Coupon/coupon")}" target="_blank">优惠券</a></li>
 						<li class="border"><a href="{:U("Partner/partner")}">商户</a></li>
 					<elseif condition="$templateName eq 'specialcoupon'" />
-						<li><a href="{:U("Index/index")}">首页</a></li>
+						<li><a href="{:U("Index/index")}" target="_blank">首页</a></li>
 						<li class="border"><a href="{:U("Coupon/specialcoupon")}">限时优惠</a></li>
-						<li><a href="{:U("Coupon/coupon")}">优惠券</a></li>
-						<li><a href="{:U("Partner/partner")}">商户</a></li>
+						<li><a href="{:U("Coupon/coupon")}" target="_blank">优惠券</a></li>
+						<li><a href="{:U("Partner/partner")}" target="_blank">商户</a></li>
 					<else />
 						<li class="border"><a href="{:U("Index/index")}">首页</a></li>
-						<li><a href="{:U("Coupon/specialcoupon")}">限时优惠</a></li>
-						<li><a href="{:U("Coupon/coupon")}">优惠券</a></li>
-						<li><a href="{:U("Partner/partner")}">商户</a></li>
+						<li><a href="{:U("Coupon/specialcoupon")}" target="_blank">限时优惠</a></li>
+						<li><a href="{:U("Coupon/coupon")}" target="_blank">优惠券</a></li>
+						<li><a href="{:U("Partner/partner")}" target="_blank">商户</a></li>
 					</if>
 				</ul>
 				<form id="search_box" method="get" action="{:U("Home/Search/search")}">
@@ -90,16 +90,17 @@
 			</div>
 		</div>
 		<div id="top_nav_classification_box">
-			<!-- <ul class="clearfix">
-				<li><a href="">桂林电子科技大学</a></li>
-				<li><a href="">广西师范大学</a></li>
-				<li><a href="">桂林理工大学</a></li>
-				<li><a href="">桂林医学院</a></li>
-				<li><a href="">桂林航天工业学院</a></li>
-				<li><a href="">桂林旅专</a></li>
-				<li><a href="">广艺桂林分校</a></li>
-				<li><a href="">收起全部学校</a></li>
-			</ul> -->
+			<ul class="clearfix">
+				<li class="expand"><a href="" class="white">展开全部学校</a></li>
+				<li><a href="{:U('Home/Coupon/coupon','','','')}/tag/桂林电子科技大学" target=_blank>桂林电子科技大学</a></li>
+				<li><a href="{:U('Home/Coupon/coupon','','','')}/tag/广西师范大学" target=_blank>广西师范大学</a></li>
+				<li><a href="{:U('Home/Coupon/coupon','','','')}/tag/桂林理工大学" target=_blank>桂林理工大学</a></li>
+				<li><a href="{:U('Home/Coupon/coupon','','','')}/tag/桂林医学院" target=_blank>桂林医学院</a></li>
+				<li><a href="{:U('Home/Coupon/coupon','','','')}/tag/桂林航天工业学院" target=_blank>桂林航天工业学院</a></li>
+				<li><a href="{:U('Home/Coupon/coupon','','','')}/tag/桂林旅专" target=_blank>桂林旅专</a></li>
+				<li class="no_border_bottom"><a href="{:U('Home/Coupon/coupon','','','')}/tag/广艺桂林分校" target=_blank>广艺桂林分校</a></li>
+				<li class="collapse"><a href="{:U('Home/Coupon/coupon','','','')}/tag/桂林电子科技大学" class="red">收起全部学校</a></li>
+			</ul>
 		</div>
 	</div>
 
