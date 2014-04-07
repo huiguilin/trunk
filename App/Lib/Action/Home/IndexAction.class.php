@@ -23,7 +23,9 @@ class IndexAction extends Action {
         $cmsData = $helper->readCmsIndex();
         $this->releaseData($cmsData);
 
-        list($coupon, $eatCoupon, $lifeCoupon, $playCoupon) = $this->getCoupon($this->$coupon);
+        list($coupon, $eatCoupon, $lifeCoupon, $playCoupon,$hotCouponInfo) = $this->getCoupon($this->$coupon);
+      
+       
         $card = $this->getCard($this->card);
         $news = $this->getNews($this->news);
         $ads = $this->getAds($this->ads);
@@ -33,7 +35,7 @@ class IndexAction extends Action {
         $location = $this->getLocation();
         $category = $this->getCategory();
         $this->assign("coupons", $coupon);
-        $this->assign("hot_coupons", $coupon);
+        $this->assign("hot_coupons", $hotCouponInfo);
         $this->assign("eat_coupons", $eatCoupon[0]);
         $this->assign("eat_cat", $eatCoupon[1]);
         $this->assign("life_coupons", $lifeCoupon[0]);
@@ -132,8 +134,15 @@ class IndexAction extends Action {
         $playCategory = $cHelper->getCategoryInfo($params);
         $playCoupon = array($playCoupon, $playCategory);
 
+        $params = array(
+            'limit' => '0,5',
+        );
+        $hotCouponInfo = $helper->getCoupon($params);
+        $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);
+
+
         $result = $this->mergeData($coupon, $info, 'coupon_id');
-        return array($result, $eatCoupon, $lifeCoupon, $playCoupon);
+        return array($result, $eatCoupon, $lifeCoupon, $playCoupon,$hotCouponInfo);
     }
 
     private function cutCouponWords($info) {
