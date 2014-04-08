@@ -117,4 +117,12 @@ class CouponModel extends Model {
         $result = $this->where("{$condition}")->save($data);
         return $result;
     }
+
+    public function getPartnerCouponOrderBy($orderBy) {
+        $condition = "1 = 1";
+        $str = "select sum(`download_times`) as download_times, partner_id from t_monkey_coupon_info where 1 = 1 group by partner_id order by {$orderBy}";
+        $result = $this->query($str);
+        return $result;
+
+    }
 }

@@ -64,4 +64,12 @@ class CouponEvaluationModel extends Model {
             );
         return $data;
     }
+
+    public function getPartnerRate($orderBy) {
+        $condition = "1 = 1";
+        $str = "select sum(`rate`)/count(`e_id`) as rate, partner_id from t_monkey_coupon_evaluation where 1 = 1 group by partner_id order by {$orderBy}";
+        $result = $this->query($str);
+        return $result;
+
+    }
 }
