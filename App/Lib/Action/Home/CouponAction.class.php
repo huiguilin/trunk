@@ -14,7 +14,6 @@ class CouponAction extends Action {
     }
     public function coupon(){
         $locationId = !empty($_GET['location']) ? $_GET['location'] : 0;
-
         $params = array();
         if (!empty($locationId)) {
             $params = array(
@@ -389,7 +388,7 @@ class CouponAction extends Action {
             $this->ajaxReturn($data,'JSON'); 
             return TRUE;
         }
-
+        $phoneNumber = $_POST['phone_number'];
         $couponHelper = new CouponModel();
         $couponId = (int)$_POST['coupon_id'];
 
@@ -447,7 +446,7 @@ class CouponAction extends Action {
         }
         
         // $phoneNumber = $_SESSION['user']['phone_number'];
-        $phoneNumber = $_POST['phone_number'];
+        
         $_SESSION['user']['phone_number'] = $phoneNumber;
         // if (empty($phonNumber) || !is_numeric($phoneNumber) || $_POST['phone_number'] != $phoneNumber) {
         //     $data['info'] = "erro phone number!";

@@ -17,7 +17,7 @@
 <script type="text/javascript" src="__PUBLIC__/js/specialcoupon.js"></script>
 
 
-<title>惠桂林首页</title>
+<title>限时优惠券 | 惠校园</title>
 </head>
 <body>
 <!-- 顶部订阅分享区域+Logo区域 -->
@@ -75,29 +75,29 @@
 			<div id="nav_search_box">
 				<ul>
 					<?php if($templateName == 'index'): ?><li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/specialcoupon");?>" target="_blank">限时优惠</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>" target="_blank">优惠券</a></li>
-						<li><a href="<?php echo U("Partner/partner");?>" target="_blank">商户</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php elseif($templateName == 'coupon'): ?>
-						<li><a href="<?php echo U("Index/index");?>" target="_blank">首页</a></li>
-						<li><a href="<?php echo U("Coupon/specialcoupon");?>" target="_blank">限时优惠</a></li>
+						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li class="border"><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
-						<li><a href="<?php echo U("Partner/partner");?>" target="_blank">商户</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php elseif($templateName == 'partner'): ?>
-						<li><a href="<?php echo U("Index/index");?>" target="_blank">首页</a></li>
-						<li><a href="<?php echo U("Coupon/specialcoupon");?>" target="_blank">限时优惠</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>" target="_blank">优惠券</a></li>
+						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li class="border"><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php elseif($templateName == 'specialcoupon'): ?>
-						<li><a href="<?php echo U("Index/index");?>" target="_blank">首页</a></li>
+						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
 						<li class="border"><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>" target="_blank">优惠券</a></li>
-						<li><a href="<?php echo U("Partner/partner");?>" target="_blank">商户</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php else: ?>
 						<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
-						<li><a href="<?php echo U("Coupon/specialcoupon");?>" target="_blank">限时优惠</a></li>
-						<li><a href="<?php echo U("Coupon/coupon");?>" target="_blank">优惠券</a></li>
-						<li><a href="<?php echo U("Partner/partner");?>" target="_blank">商户</a></li><?php endif; ?>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li><?php endif; ?>
 				</ul>
 				<form id="search_box" method="get" action="<?php echo U("Home/Search/search");?>">
 					<div>
@@ -109,7 +109,7 @@
 			</div>
 		</div>
 		<div id="top_nav_classification_box">
-			<ul class="clearfix">
+			<ul>
 				<li class="expand"><a href="" class="white">展开全部学校</a></li>
 				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林电子科技大学" target=_blank>桂林电子科技大学</a></li>
 				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/广西师范大学" target=_blank>广西师范大学</a></li>
@@ -499,19 +499,30 @@
 			<div class="content_box">
 				<p class="one">排序</p>
 				<ul>
-					<li><a href="">默认</a></li>
-                    <?php if($get_info["sort"] != 'times_a'): ?><li><a href="?sort=times_a">下载次数</a></li>
-                    <?php else: ?>
-					<li><a href="?sort=times_d">下载次数</a></li><?php endif; ?>
-                    <?php if($get_info["sort"] != 'price_a'): ?><li><a href="?sort=price_a">价格</a></li>
-                    <?php else: ?>
-					<li><a href="?sort=price_d">价格</a></li><?php endif; ?>
-                    <?php if($get_info["sort"] != 'likes_num_a'): ?><li><a href="?sort=likes_num_a">好评</a></li>
-                    <?php else: ?>
-					<li><a href="?sort=likes_num_d">好评</a></li><?php endif; ?>
-                    <?php if($get_info["sort"] != 'time_a'): ?><li><a href="?sort=time_a">发布时间</a></li>
-                    <?php else: ?>
-					<li><a href="?sort=time_d">发布时间</a></li><?php endif; ?>
+					<?php if($get_info['sort'] == ''): ?><li><a href="?sort=times_a">下载次数</a></li>
+					<?php elseif($get_info['sort'] == 'times_a'): ?>
+						<li><a href="?sort=times_d" class="hover bg_up">下载次数</a></li>
+                    <?php elseif($get_info['sort'] == 'times_d'): ?>
+						<li><a href="?sort=times_a" class="hover bg_down">下载次数</a></li>
+					<?php else: ?>
+						<li><a href="?sort=times_a">下载次数</a></li><?php endif; ?>
+                  	
+					<?php if($get_info['sort'] == ''): ?><li><a href="?sort=likes_num_a">好评</a></li>
+					<?php elseif($get_info['sort'] == 'likes_num_a'): ?>
+						<li><a href="?sort=likes_num_d" class="hover">好评</a></li>
+                    <?php elseif($get_info['sort'] == 'likes_num_d'): ?>
+						<li><a href="?sort=likes_num_a" class="hover">好评</a></li>
+					<?php else: ?>
+						<li><a href="?sort=likes_num_a">好评</a></li><?php endif; ?>
+					
+					<?php if($get_info['sort'] == ''): ?><li><a href="?sort=time_a">发布时间</a></li>
+					<?php elseif($get_info['sort'] == 'time_a'): ?>
+						<li><a href="?sort=time_d" class="hover bg_up">发布时间</a></li>
+                    <?php elseif($get_info['sort'] == 'time_d'): ?>
+						<li><a href="?sort=time_a" class="hover bg_down">发布时间</a></li>
+					<?php else: ?>
+						<li><a href="?sort=time_a">发布时间</a></li><?php endif; ?>
+
 				</ul>
 			</div>
 		</div>
@@ -605,7 +616,7 @@
 				<p class="three">地址：桂林市高新区桂磨大道互联网产业基地503室</p>
 				<p class="four">经营许可证：桂ICP备 14000606号</p> -->
 				<p class="one">
-					<span>桂ICP备 14000606号</span><span class="padding_left">地址：桂林市高新区桂磨大道互联网产业基地503室</span><span class="padding_left">客服电话：（0773）8993520</span><span class="padding_left">邮箱:<a href="mailto:huigl@outlook.com">service@huigl.com</a></span>
+					<span>桂ICP备 14000606号</span><span class="padding_left">地址：桂林市高新区桂磨大道互联网产业基地503室</span><span class="padding_left">客服电话：（0773）8993520</span><span class="padding_left">邮箱:<a href="mailto:huigl@outlook.com">service@huixiaoyuan.com</a></span>
 				</p>
 				<p class="two">
 					<span>Copyright @ 2014 Huixiaoyuan.com Inc.All Rights Reserved</span>

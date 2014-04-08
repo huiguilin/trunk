@@ -17,7 +17,7 @@
 <script type="text/javascript" src="__PUBLIC__/js/specialcoupon.js"></script>
 
 
-<title>惠桂林首页</title>
+<title>限时优惠券 | 惠校园</title>
 </head>
 <body>
 <!-- 顶部订阅分享区域+Logo区域 -->
@@ -158,27 +158,36 @@
 			<div class="content_box">
 				<p class="one">排序</p>
 				<ul>
-					<li><a href="">默认</a></li>
-                    <if condition="$get_info.sort neq 'times_a'">
-					<li><a href="?sort=times_a">下载次数</a></li>
-                    <else />
-					<li><a href="?sort=times_d">下载次数</a></li>
+					<if condition="$get_info['sort'] eq ''">
+						<li><a href="?sort=times_a">下载次数</a></li>
+					<elseif condition="$get_info['sort'] eq 'times_a'" />
+						<li><a href="?sort=times_d" class="hover bg_up">下载次数</a></li>
+                    <elseif condition="$get_info['sort'] eq 'times_d'"/>
+						<li><a href="?sort=times_a" class="hover bg_down">下载次数</a></li>
+					<else />
+						<li><a href="?sort=times_a">下载次数</a></li>
                     </if>
-                    <if condition="$get_info.sort neq 'price_a'">
-					<li><a href="?sort=price_a">价格</a></li>
-                    <else />
-					<li><a href="?sort=price_d">价格</a></li>
+                  	
+					<if condition="$get_info['sort'] eq ''">
+						<li><a href="?sort=likes_num_a">好评</a></li>
+					<elseif condition="$get_info['sort'] eq 'likes_num_a'" />
+						<li><a href="?sort=likes_num_d" class="hover">好评</a></li>
+                    <elseif condition="$get_info['sort'] eq 'likes_num_d'"/>
+						<li><a href="?sort=likes_num_a" class="hover">好评</a></li>
+					<else />
+						<li><a href="?sort=likes_num_a">好评</a></li>
                     </if>
-                    <if condition="$get_info.sort neq 'likes_num_a'">
-					<li><a href="?sort=likes_num_a">好评</a></li>
-                    <else/>
-					<li><a href="?sort=likes_num_d">好评</a></li>
+					
+					<if condition="$get_info['sort'] eq ''">
+						<li><a href="?sort=time_a">发布时间</a></li>
+					<elseif condition="$get_info['sort'] eq 'time_a'" />
+						<li><a href="?sort=time_d" class="hover bg_up">发布时间</a></li>
+                    <elseif condition="$get_info['sort'] eq 'time_d'"/>
+						<li><a href="?sort=time_a" class="hover bg_down">发布时间</a></li>
+					<else />
+						<li><a href="?sort=time_a">发布时间</a></li>
                     </if>
-                    <if condition="$get_info.sort neq 'time_a'">
-					<li><a href="?sort=time_a">发布时间</a></li>
-                    <else />
-					<li><a href="?sort=time_d">发布时间</a></li>
-                    </if>
+
 				</ul>
 			</div>
 		</div>

@@ -67,9 +67,9 @@ $(function(){
      		 		$('#hidden_error_tips_phone').hide();
      		 		$('#hidden_error_tips_vcode').show().text('验证码不能为空');
      		 	}else{
-
      		 		$.post(ajaxPostURL+"Coupon/sendCouponCode", { phone_number: phone, 
 						vcode: vcode,coupon_id:coupon_id},function(data){
+          
 					 	if(data.status == 2){
 					 		$('#hidden_error_tips_vcode').show().text('验证码错误');
 					 	}else if(data.status == 0){
@@ -77,7 +77,9 @@ $(function(){
 					 	}else if(data.status ==1){
 					 		$('#download_coupon_hidden_box div.middle_content_box_success div p.sucess_tip span').text(phone);
 					 		$("#download_coupon_hidden_box div.middle_content_box").hide().siblings('#download_coupon_hidden_box div.middle_content_box_success').show();
-					 	}
+					 	}else if(data.status == 3){
+                $('#hidden_error_tips_phone').show().text(data.info);
+            }
 					},"json");
      		 	}
      		 }
