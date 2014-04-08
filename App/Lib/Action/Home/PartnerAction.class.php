@@ -36,6 +36,12 @@ class PartnerAction extends Action {
                 case 'times_d':
                     $params['order_by'] = "download_times DESC";
                     break;
+                case 'rate_a':
+                    $params['order_by'] = "rate ASC";
+                    break;
+                case 'rate_d':
+                    $params['order_by'] = "rate DESC";
+                    break;
                 case 'price_a':
                     $params['order_by'] = "price ASC";
                     break;
@@ -61,6 +67,17 @@ class PartnerAction extends Action {
     	$couponHelper = new CouponModel();
     	$Evaluationhelper = new CouponEvaluationModel();
         $partnerTagshelper = new PartnerTagsModel();
+        if (!empty($params['order_by'])) {
+            if (stristr($params['order_by'], 'rate')) {
+                $orderPartner= $Evaluationhelper->getPartnerRate($params['order_by']);
+            }
+            else if (stristr($params['order_by'], 'download_times')) {
+                $orderPartner = $couponHelper->getPartnerCouponOrderBy($params['order_by']);
+            }
+            unset($params['order_by']);
+
+        }
+
 
     	//获取热门优惠券
         $param =array();
@@ -78,6 +95,7 @@ class PartnerAction extends Action {
         $partnerInfo = $partnerHelper->getPartner($params);
        
         $partnerInfo = $this->cutPartnerWords($partnerInfo);
+
 
 
         //获取优惠券评分
@@ -98,6 +116,23 @@ class PartnerAction extends Action {
         $partnerTagsInfo = $partnerTagshelper->getPartnerTagsInfo();
 
         
+        if (!empty($orderPartner)) {
+            $partner = array();
+            foreach ($partnerInfo AS $key => $value) {
+                $partner[$partnerInfo[$key]['partner_id']] = $partnerInfo[$key];
+            }
+            unset($partnerInfo);
+            foreach ($orderPartner AS $key => $value) {
+                $partnerInfo[$orderPartner[$key]['partner_id']] = $partner[$orderPartner[$key]['partner_id']];
+            }
+            if (count($partnerInfo) < count($partner)) {
+                foreach ($partner AS $key => $value) {
+                    if (!isset ($partnerInfo[$key])) {
+                        $partnerInfo[$key] = $partner[$key];
+                    }
+                }
+            }
+        }
         $this->assign("categories", $categories);
         $this->assign("locations", $location);
         $this->assign("label_types", $labelType);
