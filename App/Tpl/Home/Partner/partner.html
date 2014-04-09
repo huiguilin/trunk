@@ -157,13 +157,6 @@
 			<div class="content_box">
 				<p class="one">排序</p>
 				<ul>
-<<<<<<< HEAD
-					<li><a href="">默认</a></li>
-                   <li><a href="">销量</a></li>
-                   <li><a href="">好评</a></li>
-                   
-				</ul>
-=======
 					<li><a href="{:U('Partner/partner')}">默认</a></li>
                     <if condition="$get_info.sort neq 'times_a'">
                     <li><a href="{:U('Partner/partner', array('sort'=> 'times_d'))}">销量</a></li>
@@ -176,7 +169,6 @@
                     <li><a href="{:U('Partner/partner', array('sort'=> 'rate_a'))}">好评</a></li>
                     </if>
                 </ul>
->>>>>>> 2bc29e7a5968627576334c4835f986747a01733f
 			</div>
 		</div>
 		<div id="partner_box">
