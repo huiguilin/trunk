@@ -593,7 +593,7 @@
 							<li class="one"><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>1),'','');?>" class="one">首页</a></li>
 							<li><a href=""><</a></li>
 							
-							<?php $__FOR_START_6014__=1;$__FOR_END_6014__=$pageNums+1;for($i=$__FOR_START_6014__;$i < $__FOR_END_6014__;$i+=1){ if($i == $get_info): ?><li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>" class="red"><?php echo ($i); ?></a></li>
+							<?php $__FOR_START_19643__=1;$__FOR_END_19643__=$pageNums+1;for($i=$__FOR_START_19643__;$i < $__FOR_END_19643__;$i+=1){ if($i == $get_info): ?><li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>" class="red"><?php echo ($i); ?></a></li>
 								<?php else: ?>
 									<li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>"><?php echo ($i); ?></a></li><?php endif; } ?>
 

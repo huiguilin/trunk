@@ -415,13 +415,17 @@ class CouponAction extends Action {
                 $this->ajaxReturn($data,'JSON');
                 return TRUE;                          
             }
+            
         }
+       
+
         $params = array(
             'phone_number' => $phoneNumber,
             'coupon_id' => $couponId,
             'start_time' => date("Y-m-d H:i:s", strtotime("today")),
             'end_time' => date("Y-m-d H:i:s", strtotime("+1 day")),
             'count' => 'id',
+            'user_id' =>$_SESSION['user']['user_id'],
         );
         $coupons = $userCouponHelper->getUserCoupon($params);
         $count = $userCouponHelper->getUserCoupon($params);
@@ -434,11 +438,24 @@ class CouponAction extends Action {
             return TRUE;           
             }
         }
-        if ($count > 1) {
-            $data['status'] = 3;
-            $data['info'] = "今天已经申请次数已超过，请明天再来哟!";
-            $this->ajaxReturn($data,'JSON'); 
-            return TRUE;           
+        if (empty($_SESSION['user']['user_id'])) {
+            if ($count > 0) {
+                $data['status'] = 3;
+                $data['info'] = "匿名用户同一张优惠券只能下载两张，会员无限哟!";
+                $this->ajaxReturn($data,'JSON'); 
+                return TRUE;           
+            }
+            $params = array(
+                'phone_number' => $phoneNumber,
+               
+                'count' => 'id',
+            );
+            $counts = $userCouponHelper->getUserCoupon($params);
+            if ( $counts == 5) {
+                $data['status'] = 3;
+                $data['info'] = "匿名用户总共只能下载5条优惠券，会员无限哟!";
+                $this->ajaxReturn($data,'JSON');
+            }
         }
         
         // $phoneNumber = $_SESSION['user']['phone_number'];
