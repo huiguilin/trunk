@@ -3,11 +3,11 @@ $(function(){
 	//订阅Hover特效
 	$('#subscription').hover(function() {
 		$('#subscription_box').show();
-		$(this).addClass('current').find('a').css('color', 'black').addClass('hover_bg_icon');
+		$(this).css('background','#FBE5E7').addClass('current').find('a').css('color', 'black').addClass('hover_bg_icon');
 		$('#help_link').css('border-right', 'none');
 	}, function() {
 		$('#subscription_box').hide();
-		$(this).removeClass('current').find('a').css('color', 'white').removeClass('hover_bg_icon');
+		$(this).css({'background': '#ED5565','border-bottom': '2px solid white','height': '29px'}).removeClass('current').find('a').css('color', 'white').removeClass('hover_bg_icon');
 		$('#help_link').css('border-right', '1px solid white');
 	});
 
@@ -20,11 +20,11 @@ $(function(){
 	//关注Hover特效
 	$('#share').hover(function() {
 		$('#share_box').show();
-		$(this).addClass('current').find('a').css('color', 'black').addClass('hover_bg_icon');
+		$(this).css('background','#FBE5E7').addClass('current').find('a').css('color', 'black').addClass('hover_bg_icon');
 		$('#subscription_link').css('border-right', 'none');
 	}, function() {
 		$('#share_box').hide();
-		$(this).removeClass('current').find('a').css('color', 'white').removeClass('hover_bg_icon');
+		$(this).css({'background': '#ED5565','border-bottom': '2px solid white','height': '29px'}).removeClass('current').find('a').css('color', 'white').removeClass('hover_bg_icon');
 		$('#subscription_link').css('border-right', '1px solid white');
 	});
 	$('#share_box').hover(function() {
@@ -32,7 +32,9 @@ $(function(){
 	}, function() {
 		$('#share_box').hide();
 	});
-	//关注Hover特效结束
+	
+
+
 	//我的惠桂林Hover效果
 	$('#person_center_menu').hover(function() {
 		$('#login_dropdownlist_box').show();
@@ -92,9 +94,7 @@ $(function(){
 	//用户注册弹框效果
 	$('#Userreg').click(function(event) {
 		$('#Userreg_box').bPopup({
-           	modalClose: false,
-	        opacity: 0.6,
-	        position: [320, 15],//x, y
+     
         });
 		return false;
 	});
@@ -103,9 +103,7 @@ $(function(){
 	$('#Userlogin').click(function(event) {
 		$('#m_bottom_box').css('display', 'none');  //隐藏修改密码界面
 		$('#Userlogin_box').bPopup({
-           	modalClose: false,
-	        opacity: 0.6,
-	        position: [330, 60],//x, y
+           	
         });
 		return false;
 	});
@@ -1091,10 +1089,10 @@ $(function(){
 					$('#Userreg_box #UserregSuccess_email').css('display', 'block');
 			 	}
 			 	else if(data.status ==0){
-			 		$('#Userreg_box #u_bottom #email_box form p.twelve').text(data.info).css('color', '#F14B2B')
+			 		$('#Userreg_box #u_bottom #email_box form p.twelve').show().text(data.info).css('color', '#F14B2B')
 					.css('background-image', backgroundURL_error);
 			 	}else if(data.status ==2){
-			 		$('#Userreg_box #u_bottom #email_box form p.twelve').text(data.info).css('color', '#F14B2B')
+			 		$('#Userreg_box #u_bottom #email_box form p.twelve').show().text(data.info).css('color', '#F14B2B')
 					.css('background-image', backgroundURL_error);
 			 	}
 			},"json");

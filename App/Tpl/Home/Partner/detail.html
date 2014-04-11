@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 a//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>商家信息</title>
+	<title>{$partnerInfo[0]['name']} | 惠校园</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/partnerdetail.css" />
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
@@ -9,15 +9,15 @@
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/M_sendCouponToCellphone.css">
 	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/partner.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
 	<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+
 	<script type="text/javascript" src="__PUBLIC__/js/baidumap.js"></script>
+	
 </head>
 <body>
 <!-- 顶部订阅分享区域+Logo区域 -->
@@ -75,11 +75,11 @@
 					<div id="partnerleft_middle_box">
 						<ul class="coupon_type_nav">
                         <if condition='$get.off_time eq 1'>
-							<li class=""><a href="" class="">正在优惠</a></li>
-							<li><a href="/index.php/partner/detail/pid/16?off_time=1" class="red">过期优惠</a></li>
+							<li class=""><a href="{:U('Partner/detail','','','')}/pid/{$partnerInfo[0]['partner_id']}" class="">正在优惠</a></li>
+							<li class="red"><a href="/trunk/index.php/partner/detail/pid/{$partnerInfo[0]['partner_id']}?off_time=1" class="red">过期优惠</a></li>
                         <else />
-							<li class="red"><a href="" class="red">正在优惠</a></li>
-							<li><a href="/index.php/partner/detail/pid/16?off_time=1" class="normal">过期优惠</a></li>
+							<li class="red"><a href="{:U('Partner/detail','','','')}/pid/{$partnerInfo[0]['partner_id']}" class="red">正在优惠</a></li>
+							<li><a href="/trunk/index.php/partner/detail/pid/{$partnerInfo[0]['partner_id']}?off_time=1" class="normal">过期优惠</a></li>
                         </if>
 						</ul>
 						<div id="all_coupon_info">
@@ -90,12 +90,24 @@
 								?>
                            		<if condition="$i eq '0'">
 									<li class="no_margin_left">
-										<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$partnercoupon.header_path}" alt="{$partnercoupon.name}"></a>
+										<if condition="$get.off_time eq 1">
+											<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$partnercoupon.header_path}" alt="{$partnercoupon.name}"></a>
+											<div class="one">已过期</div>
+										<else />
+											<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$partnercoupon.header_path}" alt="{$partnercoupon.name}"></a>
+										</if>
+										
 										<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="content_title" title="{$partnercoupon.name}">{$partnercoupon.name}</a>
 										<p class="one" title="{$partnercoupon.description}">{$partnercoupon.description}</p>
 										<p class="two" title="{$partnercoupon.title}">{$partnercoupon.title}</p>
 										<p class="three">下载：{$partnercoupon.download_times}次</p>
-										<a href="" class="download" couponid="{$partnercoupon.coupon_id}">立即下载</a>
+										<if condition="$get.off_time eq 1">
+											
+										<else />
+											<a href="" class="download" couponid="{$partnercoupon.coupon_id}">立即下载</a>
+										</if>
+										
+
 										<p class="hidden_location">{$coupon.tag}</p>
 									</li>
                            		<else/>
@@ -238,7 +250,7 @@
 					    <foreach name="hot_coupons" item="hot_coupon" key="k">
 					    <div id="nearcoupon_detail_contents">
 							<p class="c_title">{$hot_coupon.name}}</p>
-							<p class="c_desc">{$hot_coupon.title}</p>
+							<p class="c_desc">{$hot_coupon.description}</p>
 							<a href="#"><img src="__PUBLIC__/{$hot_coupon.header_path}" align="优惠券" /></a>
 						</div>
 						</foreach>	
@@ -253,7 +265,7 @@
 			   <img class="content" src="__PUBLIC__/{$partnerPicture.picture_path}" alt="" />
 			   </foreach>
 			   <div class="bottom_box">
-			   		<!-- <a href="http://www.huigl.com" class="index_link">惠桂林</a> -->
+			   		<!-- <a href="http://www.huigl.com" class="index_link">惠校园</a> -->
 			   		<img src="__PUBLIC__/images/news_n.jpg" alt="" class="p_bg"/>
 			   		<a href="" class="prev" id="prev_btn" num="">PREV</a>
 			   		<img src="__PUBLIC__/images/news_p.jpg" alt="" class="n_bg"/>
@@ -270,7 +282,8 @@
 		<script type="text/javascript">
 			
 		   	  var partner_info = $('#partner_hidden').text();
-			  var partner = JSON.parse(partner_info);
+
+			  var partner = jQuery.parseJSON(partner_info);
 			  var mapBoxDetailId = "detail_map_box";
 			  var mapBoxFullId = "view_map"; 
 			    

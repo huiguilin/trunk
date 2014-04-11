@@ -56,6 +56,7 @@
 	background: url('../images/ico_13.png') no-repeat;
 	padding-left: 20px;
 	color: #F14B2B;	
+	display: none;
 }
 #download_coupon_hidden_box div.middle_content_box ul li input{
 	border:1px solid #C9C9C9;

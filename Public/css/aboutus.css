@@ -38,7 +38,10 @@
 	top: 165px;
 	left: 45px;	
 }
-
+#main #left_card p.four a{
+	color: #CA5354;
+	padding-right: 10px;
+}
 
 #main #left_card ul{
 	position: absolute;

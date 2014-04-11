@@ -147,9 +147,7 @@ $(function(){
      var tag = $(this).attr('tag');
      if(tag == "0"){
         $('#Userlogin_box').bPopup({
-            modalClose: false,
-          opacity: 0.6,
-          position: [330, 60],//x, y
+        
         });
         return false;
      }
@@ -197,6 +195,4 @@ $(function(){
      	return false;
      });
 
-     //点击下载手机优惠劵弹窗中发送按钮结束
-    
 })

@@ -87,8 +87,46 @@ class PartnerAction extends Action {
 
         //获取全部优惠券
         $param['limit'] = '';
+        $param['coupon_type'] = 1;
+        $time = date("Y-m-d H:i:s");
+        $param['start_time_lt'] = $time;
+        $param['end_time_gt'] = $time;
         $couponInfo = $couponHelper->getCoupon($param);
         $couponInfo = $this->cutCouponWords($couponInfo);
+
+        $params = array();
+        $params['limit'] = '';
+        $params['coupon_type'] = 2;
+        $ScouponInfo = $couponHelper->getCoupon($params);
+        $ScouponInfo = $this->cutCouponWords($ScouponInfo);
+
+        foreach ($ScouponInfo as $k => $v) {
+
+            if (strtotime($v['start_time'])-strtotime($time) >= 0 && strtotime($v['start_time'])-strtotime($time) < (3600*48)) {
+               $newcouponInfo[] = $v;
+            }
+             if (strtotime($time) >= strtotime($v['start_time']) && strtotime($time) <= strtotime($v['end_time'])) {
+               $newcouponInfo[] = $v;
+            }
+        }
+         foreach ($newcouponInfo AS $key => $value) {
+            $newcouponInfo[$key]['left_times'] = (int)($newcouponInfo[$key]['limit_times'] - $newcouponInfo[$key]['download_times']);
+            if ($newcouponInfo[$key]['left_times'] < 0)  {
+                $newcouponInfo[$key]['left_times'] = 0;
+            }
+            if(strtotime($newcouponInfo[$key]['start_time']) > strtotime($time)){
+                $newcouponInfo[$key]['Countdown_time'] = timediff(strtotime($time),strtotime($newcouponInfo[$key]['start_time']));
+                $newcouponInfo[$key]['Countdown_label'] = 1;
+            }
+            else{
+                 $newcouponInfo[$key]['Countdown_label'] = 0;
+            }
+        }
+        $couponInfo = array_merge($couponInfo,$newcouponInfo);
+      
+
+
+
         
        //获取全部商家
         $params['limit'] = '';
@@ -142,7 +180,7 @@ class PartnerAction extends Action {
         $this->assign("partner_rates", $partnerRateResult);
         $this->assign("partner_tags", $partnerTagsInfo);
         $this->assign("get_info", $_GET);
-        $templateName = $_GET["_URL_"][1]; 
+        $templateName = $_GET["_URL_"][0]; 
         $this->assign('templateName',$templateName);
         $this->display();
     }
@@ -189,7 +227,8 @@ class PartnerAction extends Action {
                     );       
         }
         $partnerCouponInfo = $couponHelper->getCoupon($params);
-       
+        
+        
         //获取商家分类标签
         $partnerTagshelper = new PartnerTagsModel();
         $partnerTagsInfo = $partnerTagshelper->getPartnerTagsInfoById($data[0]['partner_id']);
@@ -239,6 +278,8 @@ class PartnerAction extends Action {
         $this->assign("pageNums", $pageNum);
         $this->assign("get_info", $page);
         $this->assign("get", $_GET);
+        $templateName = $_GET["_URL_"][0]; 
+        $this->assign('templateName',$templateName);
         $this->display();
     }
     private function cutCouponWords($info) {

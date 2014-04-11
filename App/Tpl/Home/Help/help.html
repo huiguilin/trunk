@@ -1,5 +1,5 @@
 
-<include file="Public:about_tpl_top" title="使用帮助"/>
+<include file="Public:about_tpl_top" title="使用帮助 | 惠校园"/>
 <load href="__PUBLIC__/css/help.css" />
 <!-- 关于我们页面的内容 -->
 <div id="left_card">
@@ -7,8 +7,9 @@
 	<div id="seach_box">
 		<img src="__PUBLIC__/images/ico_help.png" alt="搜索帮助">
 		<p>请输入您想要询问的<span>关键词</span>，查找相关问题的答案：</p>
+		<label for="help_search_textbox" class="help_search_default_content" id="help_search_default_contents">例如输入"优惠劵",查找"优惠劵"相关问题的答案</label>
 		<form method="get" action="{:U('Help/search')}">
-			<input name="keyword" type="text" placeholder='例如输入"优惠劵",查找"优惠劵"相关问题的答案' id="help_search_textbox" />
+			<input name="keyword" type="text" id="help_search_textbox" />
 			<input name="help_btn_search" id="help_btn_search" type="submit" value="搜索"/>
 		</form>
 	</div>
@@ -36,7 +37,7 @@
 		<li>
 			<img src="__PUBLIC__/images/help_ico04.png" alt="搜索帮助">
 			<a href="{:U("Help/faq05")}" class="one">订阅/关注</a>
-			<p class='three'>包括怎样订阅惠桂林优惠信息，会员卡信息，商户促销信息等问题。</p>
+			<p class='three'>包括怎样订阅惠校园优惠信息，会员卡信息，商户促销信息等问题。</p>
 		</li>		
 	</ul>
 				
@@ -47,3 +48,16 @@
 <!-- 最底部区域 -->
 	<include file="Public:footer" />
 <!-- 最底部区域结束 -->
+<script type="text/javascript">
+var helpSearchInput = document.getElementById("help_search_textbox");
+	var help_search__default_content = document.getElementById("help_search_default_contents");
+	helpSearchInput.onfocus = function(){
+		help_search__default_content.style.display = 'none';
+	}
+	helpSearchInput.onblur = function(){
+		var helpSearchInputValue = helpSearchInput.value;
+		if (helpSearchInputValue == "") {
+			help_search__default_content.style.display = '';
+		}
+	}
+</script>

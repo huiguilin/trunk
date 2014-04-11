@@ -2,6 +2,7 @@
 #main{
 	width: 960px;
 	margin: 0 auto;
+	overflow: hidden; /*Chrome 宽度7000多的问题 不知道为什么*/
 }
 #main #sub_nav_box{
 	height: 28px;
@@ -30,6 +31,11 @@
 #main #sub_nav_box div.content_box a.gray{
 	color: #666666;
 }
+#main #sub_nav_box div.content_box span{
+	padding-left: 5px;
+	padding-right: 5px;
+} 
+
 #main #coupon_box{
 	position: relative;
 	padding-bottom: 40px;
@@ -43,6 +49,25 @@
     -moz-opacity:0.8;  
     -khtml-opacity: 0.8;  
     opacity: 0.8; 
+}
+#main #coupon_box div.sellAll{
+    position: absolute;
+    top: 339px;
+    left:275px;
+    font-weight: bold;
+    height: 100px;
+    width: 140px;
+    line-height: 35px;  /*单行文本垂直居中,与高度相等*/
+    overflow: hidden;
+    text-align: center;
+    /*
+    *设置div旋转一定角度
+    */
+    /*transform: rotate(40deg);*/ /*设置变形及变形*/
+    /*-o-transform: rotate(40deg);*/ /*设置Opera浏览器*/
+    /*-webkit-transform: rotate(40deg); *//*设置Chrome浏览器*/
+    /*-moz-transform: rotate(40deg);*/  /*设置Firefox浏览器*/
+    /*filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1.2660444431189777, M12=-0.3327876096865394, M21=0.1127876096865398, M22=0.9660444431189779);*/ /*设置IE浏览器*/
 }
 #main #coupon_box div.coupon_detail_info_box div.effective_date_box{
 	border-bottom:1px solid #E3E3E3;

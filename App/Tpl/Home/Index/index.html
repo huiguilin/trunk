@@ -1,22 +1,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 a//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/><!--强制让ie8装换成ie7显示模式 -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活"> <!-- 向搜索引擎说明你的网页的关键词； --> 
-<meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
+<meta name="Keywords" content="惠校园,huigl,优惠,优惠券,吃喝玩乐,惠享生活"> <!-- 向搜索引擎说明你的网页的关键词； --> 
+<meta name="description" content=" 惠校园网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠校园网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/M_sendCouponToCellphone.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.fixpng.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
-<title>惠桂林首页</title>
+<title>惠校园首页 | 生活费终于够用了</title>
 </head>
+<script>
+	$(document).ready(function(){   
+   		$(document.body).fixpng({scope:'img'});
+		$('#top_box #top_nav_box #nav_search_box ul li').fixpng();
+		$('#top_box #top_nav_box #nav_search_box div #search_btn').fixpng();
+		
+	
+	});   
+</script>
 <body>
 <!-- 顶部订阅分享区域+Logo区域 -->
 	<include file="./App/Tpl/Home/Public/header.html" />
@@ -74,7 +83,7 @@
 			<!-- 热门分类区域结束 -->
 			<!-- 微信区域 -->
 			<div class="QRcode_box">
-				<p>扫描我,关注惠桂林官方微博</p>
+				<p>扫描我,关注惠校园官方微博</p>
 				<img src="__PUBLIC__/images/weibo_barcode.png" alt="二维码">
 			</div>
 			<!-- 微信区域结束 -->

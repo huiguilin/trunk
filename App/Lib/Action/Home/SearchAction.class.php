@@ -15,7 +15,6 @@ class SearchAction extends Action {
     public function search(){
         $searchKey = !empty($_GET['search_con']) ? $_GET['search_con'] : "";
         $couponInfo = $this->hackSearchWords($searchKey);
-
         $locationId = !empty($_GET['location']) ? $_GET['location'] : 0;
         $params = array();
         if (!empty($locationId)) {
@@ -74,6 +73,9 @@ class SearchAction extends Action {
 
         $couponHelper = new CouponModel();
         if (empty($couponInfo)) {
+            $time = date("Y-m-d H:i:s");
+            $params['start_time_lt'] = $time;
+            $params['end_time_gt'] = $time;
             $couponInfo = $couponHelper->getCoupon($params);
         }
         if ($params['order_by'] != 'download_times DESC') {

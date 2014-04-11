@@ -114,18 +114,29 @@
 	top: 57px;
 	left: 180px;
 }
+#main #left_card form ul li label{
+	position: absolute;
+	top: 10px;
+	left: 185px;
+	height: 40px;
+	line-height: 40px;
+	color: #5C564B;
+	z-index: 21;
+}
+#main #left_card form ul li label.default_content_description{
+	position: absolute;
+	top: 5px;
+	left: 185px;
+	color: #5C564B;
+	z-index: 21;
+}
 #main #left_card form ul li input{
 	border: 1px solid #C9C9C9;
 	border-radius: 5px;
 	width: 371px;
 	height: 40px;
 	
-	background: white;   /*IE6 7 默认背景透明了input不背景不透明，需要手动为input指定BJ和透明*/
-	filter:alpha(opacity=75);  
-    -moz-opacity:0.75;  
-    -khtml-opacity: 0.75;  
-    opacity: 0.75; 
-
+	
 	line-height: 40px\9; /*IE6、IE7、IE8背景紅色*/  
 	max-height: 40px\9;
 }
@@ -139,11 +150,7 @@
 	top: 10px;
 	left: 180px;
 
-	background: white;   /*IE6 7 默认背景透明了input不背景不透明，需要手动为input指定BJ和透明*/
-	filter:alpha(opacity=75);  
-    -moz-opacity:0.75;  
-    -khtml-opacity: 0.75;  
-    opacity: 0.75; 
+	
 }
 #main #left_card form ul li select.one{
 	position: absolute;

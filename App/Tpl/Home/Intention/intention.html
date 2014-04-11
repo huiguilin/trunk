@@ -1,25 +1,27 @@
-
-<include file="./App/Tpl/Home/Public/about_tpl_top.html" title="商务合作"/>
+<include file="./App/Tpl/Home/Public/about_tpl_top.html" title="商务合作 | 惠校园"/>
 <load href="__PUBLIC__/css/intention.css" />
 <!-- 关于我们页面的内容 -->
 <div id="left_card">
 	<p class="one">商务合作</p>
-	<p class="two">如果您有意与惠桂林合作，让自己的生意更上一层楼，请补充以下信息，尽快与我们取得联系！</p>
+	<p class="two">如果您有意与惠校园合作，让自己的生意更上一层楼，请补充以下信息，尽快与我们取得联系！</p>
 	<p class="three">提交成功，感谢您的支持，我们的销售代表会尽快与您联系！</p>
 	<form id="intention_sumbit_form">
     	<input type="hidden" name="type" value="1"  id="hidden_type_value"/>
     	<ul>
 			<li>
 				<p class="title">您的称呼：</p>
+				<label for="intention_username" status="intention_username">请输入您的称呼</label>
 				<input type="text" name="nickname" class="one" id="intention_username" />
 			</li>
 			<li>
 				<p class="title">您的电话：</p>
-				<input type="text" name="cellphone" class="one" id="intention_cellphone"/>
+				<label for="intention_cellphone" status="intention_cellphone">请输入您的电话</label>
+				<input type="text" name="cellphone" class="one" id="intention_cellphone" />
 			</li>
 			<li class="one">
 				<p class="title">其他联系方式：</p>
-				<input type="text" name="othercommunication" class="one"/>
+				<label for="intention_othercommunication" status="intention_othercommunication">请输入您的其他联系方式</label>
+				<input type="text" name="othercommunication" id="intention_othercommunication" class="one" />
 				<p class="othercommunication">请留下其他联系方式，如QQ, Email等。方便我们回复</p>
 			</li>
 			<li class="two">
@@ -32,11 +34,14 @@
 			</li>
 			<li>
 				<p class="title">参与优惠商户名称：</p>
-				<input type="text" name="shopname" class="one" id="intention_business"/>
+				<label for="intention_business" status="intention_business">请输入您公司或店铺名称</label>
+				<!-- <input type="text" name="shopname" class="one" id="intention_business" /> -->
+				<input type="text" name="shopname" class="one" id="intention_business" />
 			</li>
 			<li>
 				<p class="title">公司地址：</p>
-				<input type="text" name="companyaddress" class="one" id="intention_address"/>
+				<label for="intention_address" status="intention_address">请输入您的公司地址</label>
+				<input type="text" name="companyaddress" class="one" id="intention_address" />
 			</li>
 			<li class="three">
 				<p class="title title2">类别：</p>
@@ -48,7 +53,8 @@
 			</li>
 			<li class="four">
 				<p class="title">优惠内容描述：</p>
-				<textarea cols="50" rows="8" class="one" id="intention_content" name="intention_content"></textarea>
+				<label for="intention_contents" id="default_contents" class="default_content_description" status="intention_contents">请输入优惠内容描述</label>
+				<textarea cols="50" rows="8" class="one" id="intention_contents" name="intention_content"></textarea>
 			</li>
 		</ul>
 		<input id="intention_btn_submit" type="submit" value="提交">
@@ -57,3 +63,52 @@
 </div>
 <!-- 关于我们页面的内容结束 -->
 <include file="Public:footer" />
+<script>
+    var intentionForm=document.getElementById("intention_sumbit_form");
+	var intentionInput = intentionForm.getElementsByTagName("input");
+	var default_content = intentionForm.getElementsByTagName("label");
+	var intentionContent = document.getElementById("intention_contents");
+	var content = document.getElementById("default_contents");
+	intentionContent.onfocus = function(){
+		content.style.display = 'none';
+	}
+	intentionContent.onblur = function(){
+		var intentionContentValue = document.getElementById("intention_contents").value;
+		if(intentionContentValue == ""){
+		   content.style.display = '';
+	    }
+	}
+	
+	for(var i= 1;i<intentionInput.length;i++){
+		//javascript循环绑定事件，使用闭包的写法
+		  (function(k){
+				var k = k;
+				intentionInput[k].onfocus = function(){
+
+					var for_id = intentionInput[k]['id'];
+
+					for(var j = 0;j<default_content.length;j++){
+						var for_name = default_content[j].getAttribute('status');
+						
+						if(for_name == for_id){
+							default_content[j].style.display = 'none';
+
+						}						
+					}
+				}
+				intentionInput[k].onblur = function(){
+					var for_id = intentionInput[k]['id'];
+					for(var j=0;j<default_content.length;j++){
+						var content = intentionInput[k].value;
+						if(content == ""){
+
+							var for_name = default_content[j].getAttribute('status');
+							if(for_name == for_id){
+								default_content[j].style.display = '';
+							}
+						}
+					}
+			    }
+		  })(i);
+	}
+</script>

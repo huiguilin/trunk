@@ -48,7 +48,7 @@ $(function(){
 		var intention_username =$('#intention_username');
 		var intention_cellphone =$('#intention_cellphone');
 		var intention_business =$('#intention_business');
-		var intention_content =$('#intention_content');
+		var intention_content =$('#intention_contents');
 		var type =$('#hidden_type_value')
 		var intention_address = $('#intention_address');
 		var area = $('#intention_area option:selected');

@@ -11,6 +11,9 @@ class UserCouponModel extends Model {
         if (isset($params['id'])) {
             $str .= " AND id IN ({$params['id']})";
         }
+        if (isset($params['phone_number'])) {
+            $str .= " AND telephone = ({$params['phone_number']})";
+        }
         if (isset($params['user_id'])) {
             $str .= " AND user_id IN ({$params['user_id']})";
         }
@@ -47,6 +50,7 @@ class UserCouponModel extends Model {
         else {
             $data = $this->where($str)->order($params['order_by'])->limit($params['limit'])->count($params['count']);
         }
+     
         return $data;
     }
 

@@ -42,6 +42,13 @@
 	font-size: 14px;
 	
 }
+#main #left_card #seach_box label.help_search_default_content{
+	position: absolute;
+	top:73px;
+	left: 155px;
+	color: #666666;
+	z-index:2;
+}
 #main #left_card #seach_box form #help_search_textbox{
 	border: 1px solid #C9C9C9;
 	border-radius: 5px;

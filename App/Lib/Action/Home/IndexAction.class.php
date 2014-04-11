@@ -23,9 +23,7 @@ class IndexAction extends Action {
         $cmsData = $helper->readCmsIndex();
         $this->releaseData($cmsData);
 
-        list($coupon, $eatCoupon, $lifeCoupon, $playCoupon,$hotCouponInfo) = $this->getCoupon($this->$coupon);
-      
-       
+        list($coupon,$newSpecicalCoupon, $GDCoupon,$hotCouponInfo) = $this->getCoupon($this->$coupon);
         $card = $this->getCard($this->card);
         $news = $this->getNews($this->news);
         $ads = $this->getAds($this->ads);
@@ -36,12 +34,8 @@ class IndexAction extends Action {
         $category = $this->getCategory();
         $this->assign("coupons", $coupon);
         $this->assign("hot_coupons", $hotCouponInfo);
-        $this->assign("eat_coupons", $eatCoupon[0]);
-        $this->assign("eat_cat", $eatCoupon[1]);
-        $this->assign("life_coupons", $lifeCoupon[0]);
-        $this->assign("life_cat", $lifeCoupon[1]);
-        $this->assign("play_coupons", $playCoupon[0]);
-        $this->assign("play_cat", $playCoupon[1]);
+        $this->assign("eat_coupons", $newSpecicalCoupon);
+        $this->assign("play_coupons", $GDCoupon);
         $this->assign("cards", $card);
         $this->assign("news", $news);
         $this->assign("ads", $ads);
@@ -82,58 +76,51 @@ class IndexAction extends Action {
             return array();
         }
         $time = date("Y-m-d H:i:s");
-        $stime = date("Y-m-d H:i:s", strtotime("-2 day"));
-       
         $ids = DataToArray($coupon, 'id');
         $helper = new CouponModel();
         $cHelper = new CategoryModel();
         $info = $helper->getCouponByCouponId($ids);
         $info = $this->cutCouponWords($info);
+
+        //获取限时优惠券
         $params = array(
             'coupon_type' => 2,
-            'start_time_gt' =>$stime,
-            'end_time_gt' =>$time,
-            'limit' => '0,10',
         );
-        $eatCoupon = $helper->getCoupon($params);
-        $eatCoupon = $this->cutCouponWords($eatCoupon);
-         foreach ($eatCoupon AS $key => $value) {
-            $eatCoupon[$key]['left_times'] = (int)($eatCoupon[$key]['limit_times'] - $eatCoupon[$key]['download_times']);
-            if ($eatCoupon[$key]['left_times'] < 0)  {
-                $eatCoupon[$key]['left_times'] = 0;
+        $specicalCoupon = $helper->getCoupon($params);
+        $specicalCoupon = $this->cutCouponWords($specicalCoupon);
+
+        foreach ($specicalCoupon as $k => $v) {
+
+            if (strtotime($v['start_time'])-strtotime($time) >= 0 && strtotime($v['start_time'])-strtotime($time) < (3600*48)) {
+               $newSpecicalCoupon[] = $v;
             }
-            if(strtotime($eatCoupon[$key]['start_time']) > strtotime($time)){
-                $eatCoupon[$key]['Countdown_time'] = $this->timediff(strtotime($time),strtotime($eatCoupon[$key]['start_time']));
-                $eatCoupon[$key]['Countdown_label'] = 1;
+             if (strtotime($time) >= strtotime($v['start_time']) && strtotime($time) <= strtotime($v['end_time'])) {
+               $newSpecicalCoupon[] = $v;
+            }
+        }
+
+         foreach ($newSpecicalCoupon AS $key => $value) {
+            $newSpecicalCoupon[$key]['left_times'] = (int)($newSpecicalCoupon[$key]['limit_times'] - $newSpecicalCoupon[$key]['download_times']);
+            if ($newSpecicalCoupon[$key]['left_times'] < 0)  {
+                $newSpecicalCoupon[$key]['left_times'] = 0;
+            }
+            if(strtotime($newSpecicalCoupon[$key]['start_time']) > strtotime($time)){
+                $newSpecicalCoupon[$key]['Countdown_time'] = timediff(strtotime($time),strtotime($newSpecicalCoupon[$key]['start_time']));
+                $newSpecicalCoupon[$key]['Countdown_label'] = 1;
             }
             else{
-                 $eatCoupon[$key]['Countdown_label'] = 0;
+                 $newSpecicalCoupon[$key]['Countdown_label'] = 0;
             }
         }
        
-
-        $params['limit'] = '0,5';
-        $eatCategory = $cHelper->getCategoryInfo($params);
-        $eatCoupon = array($eatCoupon, $eatCategory);
-        $params = array(
-            'label_type' => 3,
-            'limit' => '0,10',
-        );
-        $lifeCoupon = $helper->getCoupon($params);
-        $lifeCoupon = $this->cutCouponWords($lifeCoupon);
-        $params['limit'] = '0,5';
-        $lifeCategory = $cHelper->getCategoryInfo($params);
-        $lifeCoupon = array($lifeCoupon, $lifeCategory);
+        //获取校园优惠券
         $params = array(
             'tag' => '桂林电子科技大学',
-            'limit' => '0,10',
+            'limit' => '0,4',
         );
-        $playCoupon = $helper->getCoupon($params);
-        $playCoupon = $this->cutCouponWords($playCoupon);
-        $params['limit'] = '0,5';
-        $playCategory = $cHelper->getCategoryInfo($params);
-        $playCoupon = array($playCoupon, $playCategory);
-
+        $GDCoupon = $helper->getCoupon($params);
+        $GDCoupon = $this->cutCouponWords($GDCoupon);
+        //获取热门优惠券
         $params = array(
             'limit' => '0,5',
         );
@@ -142,7 +129,7 @@ class IndexAction extends Action {
 
 
         $result = $this->mergeData($coupon, $info, 'coupon_id');
-        return array($result, $eatCoupon, $lifeCoupon, $playCoupon,$hotCouponInfo);
+        return array($result, $newSpecicalCoupon, $GDCoupon,$hotCouponInfo);
     }
 
     private function cutCouponWords($info) {
@@ -216,25 +203,7 @@ class IndexAction extends Action {
         $result = $this->mergeData($result, $partnerInfo, 'partner_id', 'id');
         return $result;
     }
-     function timediff($begin_time,$end_time){
-          if($begin_time < $end_time){
-             $starttime = $begin_time;
-             $endtime = $end_time;
-          }
-          else{
-             $starttime = $end_time;
-             $endtime = $begin_time;
-          }
-          $timediff = $endtime-$starttime;
-          $days = intval($timediff/86400);
-          $remain = $timediff%86400;
-          $hours = intval($remain/3600);
-          $remain = $remain%3600;
-          $mins = intval($remain/60);
-          $secs = $remain%60;
-          $res = array("day" => $days,"hour" => $hours,"min" => $mins,"sec" => $secs);
-          return $res;
-    }
+    
     private function mergeData($cmsInfo, $info, $key, $cmsKey = 'id') {
         $info = ArrayKeys($info, $key);
         $result = array();
