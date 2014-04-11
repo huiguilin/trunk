@@ -222,6 +222,24 @@
 #partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li.no_margin_right{
 	margin-left: 3px;
 }
+#partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li div.one{
+	width: 142px;
+	height: 142px;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	background: #C9C9C9;
+	filter:alpha(opacity=70);  
+    -moz-opacity:0.7;  
+    -khtml-opacity: 0.7;  
+    opacity: 0.7; 
+	z-index: 20px;
+	text-align:center;
+	height: 142px;
+	line-height: 142px;
+	color: black;
+	font-size: 14px;
+}
 #partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li a.img_box img{
 	width: 142px;
 	height: 142px;
@@ -596,6 +614,9 @@
 	top: 35px;
 	left: 10px;
 	width: 140px;
+	height: 60px;
+	overflow: hidden;
+
 }
 #partnermain #partnerright div.nearcoupon #nearcoupon_detail_contents a{
 	display: block;

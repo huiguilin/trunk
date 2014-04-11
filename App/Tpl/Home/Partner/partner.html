@@ -3,15 +3,13 @@
 <head>
 <title>校园商家 | 惠校园</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
-<meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
+<meta name="Keywords" content="惠校园,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
+<meta name="description" content=" 惠校园网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠校园网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/partner.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/M_sendCouponToCellphone.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/partner.js"></script>
@@ -37,94 +35,100 @@
 		<div id="classification_location_box">
 			<div id="content_box">
 				<div id="classification_box">
-					<p>分类</p><ul class="parent_classification">
-                        <if condition="$get_info.label_type neq ''">
-						<li><a href="{:U('Partner/partner')}">全部</a></li>
-                        <else />
-						<li><a href="{:U('Partner/partner')}" class="current">全部</a></li>
-                        </if>
-                    <foreach name="label_types" item="label_type">
-                        <if condition="$get_info.label_type eq $key">
-						<li><a href="{:U('Partner/partner',array('label_type'=>$key),'','')}" class="current">{$label_type}</a></li>
-                        <else />
-						<li><a href="{:U('Partner/partner',array('label_type'=>$key),'','')}">{$label_type}</a></li>
-                        </if>
-                    </foreach>
-					</ul>
+					<div class="classification_box_top_box">
+						<p>分类</p>
+						<ul class="parent_classification">
+	                        <if condition="$get_info.label_type neq ''">
+							<li><a href="{:U('Partner/partner')}">全部</a></li>
+	                        <else />
+							<li><a href="{:U('Partner/partner')}" class="current">全部</a></li>
+	                        </if>
+	                    <foreach name="label_types" item="label_type">
+	                        <if condition="$get_info.label_type eq $key">
+							<li><a href="{:U('Partner/partner',array('label_type'=>$key),'','')}" class="current">{$label_type}</a></li>
+	                        <else />
+							<li><a href="{:U('Partner/partner',array('label_type'=>$key),'','')}">{$label_type}</a></li>
+	                        </if>
+	                    </foreach>
+						</ul>
+					</div>
 					<if condition="($_GET.label_type neq '') or ($_GET.cat_id neq '')">
-						<div>
-							<ul class="child_classification clearfix">
-	                            <if condition="$get_info.cat_id neq ''">
-	                            <li><a href="{:U('Partner/partner',array('label_type'=>$get_info['label_type']),'','')}">全部</a></li>
-	                            <else />
-	                            <li><a href="{:U('Partner/partner',array('label_type'=>$get_info['label_type']),'','')}" class="current">全部</a></li>
-	                            </if>
+					<div class="classification_box_bottom_box">
+						<ul class="child_classification clearfix">
+                            <if condition="$get_info.cat_id neq ''">
+                            <li><a href="{:U('Partner/partner',array('label_type'=>$get_info['label_type']),'','')}">全部</a></li>
+                            <else />
+                            <li><a href="{:U('Partner/partner',array('label_type'=>$get_info['label_type']),'','')}" class="current">全部</a></li>
+                            </if>
+							
+                            <foreach name="categories" item="category">
+                            <if condition="$get_info['label_type'] eq $category['label_type']">
+								<if condition="$get_info['cat_id'] eq $category['cat_id']">
 								
-	                            <foreach name="categories" item="category">
-	                            <if condition="$get_info['label_type'] eq $category['label_type']">
-									<if condition="$get_info['cat_id'] eq $category['cat_id']">
-									
-								 	<li><a href="{:U('Partner/partner',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}" class="current">{$category.cat_name}</a></li>
-	                            	<else />
+							 	<li><a href="{:U('Partner/partner',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}" class="current">{$category.cat_name}</a></li>
+                            	<else />
 
-									<li><a href="{:U('Partner/partner',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}">{$category.cat_name}</a></li>
-	                            </if>
-	                            <else />
-	                            </if>
-	                            </foreach>
-							</ul>
-						</div>
-						<else />
+								<li><a href="{:U('Partner/partner',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}">{$category.cat_name}</a></li>
+                            </if>
+                            <else />
+                            </if>
+                            </foreach>
+						</ul>
+					</div>
+					<else />
 					</if>
 				</div>
 				<div id="location_box">
-					<p>学校</p><ul class="parent_classification">
-                        <if condition="$get_info.tag neq ''">
-						<li><a href="{:U('Partner/partner')}">全部</a></li>
-                        <else />
-						<li><a href="{:U('Partner/partner')}" class="current">全部</a></li>
-                        </if>
-                        <if condition="$get_info.tag neq '桂林电子科技大学'">
-						<li><a href="{:U('Partner/partner',array('tag'=>'桂林电子科技大学'),'','')}">桂林电子科技大学</a></li>
-                        <else />
-						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'桂林电子科技大学'),'','')}">桂林电子科技大学</a></li>
-                        </if>
-						<if condition="$get_info.tag neq '广西师范大学'">
-						<li><a href="{:U('Partner/partner',array('tag'=>'广西师范大学'),'','')}">广西师范大学</a></li>
-                        <else />
-						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'广西师范大学'),'','')}">广西师范大学</a></li>
-                        </if>
-                        <if condition="$get_info.tag neq '桂林理工大学'">
-						<li><a href="{:U('Partner/partner',array('tag'=>'桂林理工大学'),'','')}">桂林理工大学</a></li>
-                        <else />
-						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'桂林理工大学'),'','')}">桂林理工大学</a></li>
-                        </if>
-                        <if condition="$get_info.tag neq '桂林医学院'">
-						<li><a href="{:U('Partner/partner',array('tag'=>'桂林医学院'),'','')}">桂林医学院</a></li>
-                        <else />
-						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'桂林医学院'),'','')}">桂林医学院</a></li>
-                        </if>
+					<div class="location_box_top_box">
+						<p>学校</p>
+						<ul class="parent_classification">
+	                        <if condition="$get_info.tag neq ''">
+							<li><a href="{:U('Partner/partner')}">全部</a></li>
+	                        <else />
+							<li><a href="{:U('Partner/partner')}" class="current">全部</a></li>
+	                        </if>
+	                        <if condition="$get_info.tag neq '桂林电子科技大学'">
+							<li><a href="{:U('Partner/partner',array('tag'=>'桂林电子科技大学'),'','')}">桂林电子科技大学</a></li>
+	                        <else />
+							<li><a class="current" href="{:U('Partner/partner',array('tag'=>'桂林电子科技大学'),'','')}">桂林电子科技大学</a></li>
+	                        </if>
+							<if condition="$get_info.tag neq '广西师范大学'">
+							<li><a href="{:U('Partner/partner',array('tag'=>'广西师范大学'),'','')}">广西师范大学</a></li>
+	                        <else />
+							<li><a class="current" href="{:U('Partner/partner',array('tag'=>'广西师范大学'),'','')}">广西师范大学</a></li>
+	                        </if>
+	                        <if condition="$get_info.tag neq '桂林理工大学'">
+							<li><a href="{:U('Partner/partner',array('tag'=>'桂林理工大学'),'','')}">桂林理工大学</a></li>
+	                        <else />
+							<li><a class="current" href="{:U('Partner/partner',array('tag'=>'桂林理工大学'),'','')}">桂林理工大学</a></li>
+	                        </if>
+	                        <if condition="$get_info.tag neq '桂林医学院'">
+							<li><a href="{:U('Partner/partner',array('tag'=>'桂林医学院'),'','')}">桂林医学院</a></li>
+	                        <else />
+							<li><a class="current" href="{:U('Partner/partner',array('tag'=>'桂林医学院'),'','')}">桂林医学院</a></li>
+	                        </if>
 
-                        <if condition="$get_info.tag neq '桂林航空学院'">
-						<li><a href="{:U('Partner/partner',array('tag'=>'桂林航空学院'),'','')}">桂林航空学院</a></li>
-                        <else />
-						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'桂林航空学院'),'','')}">桂林航空学院</a></li>
-                        </if>
+	                        <if condition="$get_info.tag neq '桂林航空学院'">
+							<li><a href="{:U('Partner/partner',array('tag'=>'桂林航空学院'),'','')}">桂林航空学院</a></li>
+	                        <else />
+							<li><a class="current" href="{:U('Partner/partner',array('tag'=>'桂林航空学院'),'','')}">桂林航空学院</a></li>
+	                        </if>
 
-                        <if condition="$get_info.tag neq '桂林旅专'">
-						<li><a href="{:U('Partner/partner',array('tag'=>'桂林旅专'),'','')}">桂林旅专</a></li>
-                        <else />
-						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'桂林旅专'),'','')}">桂林旅专</a></li>
-                        </if>
+	                        <if condition="$get_info.tag neq '桂林旅专'">
+							<li><a href="{:U('Partner/partner',array('tag'=>'桂林旅专'),'','')}">桂林旅专</a></li>
+	                        <else />
+							<li><a class="current" href="{:U('Partner/partner',array('tag'=>'桂林旅专'),'','')}">桂林旅专</a></li>
+	                        </if>
 
-                         <if condition="$get_info.tag neq '广艺桂林分校'">
-						<li><a href="{:U('Partner/partner',array('tag'=>'广艺桂林分校'),'','')}">广艺桂林分校</a></li>
-                        <else />
-						<li><a class="current" href="{:U('Partner/partner',array('tag'=>'广艺桂林分校'),'','')}">广艺桂林分校</a></li>
-                        </if>
-					</ul>
+	                         <if condition="$get_info.tag neq '广艺桂林分校'">
+							<li><a href="{:U('Partner/partner',array('tag'=>'广艺桂林分校'),'','')}">广艺桂林分校</a></li>
+	                        <else />
+							<li><a class="current" href="{:U('Partner/partner',array('tag'=>'广艺桂林分校'),'','')}">广艺桂林分校</a></li>
+	                        </if>
+						</ul>
+					</div>
 					<if condition="$_GET['tag'] neq ''">
-						<div>
+						<div class="location_box_bottom_box">
 							<ul class="child_classification clearfix">
 								<if condition="$get_info['location'] eq ''">
 									<li><a href="{:U('Partner/partner',array('tag'=>$get_info['tag']),'','')}" class="current">全部</a></li>
@@ -157,17 +161,37 @@
 			<div class="content_box">
 				<p class="one">排序</p>
 				<ul>
-					<li><a href="{:U('Partner/partner')}">默认</a></li>
+					<if condition="$get_info['sort'] eq ''">
+						<li><a href="?sort=times_a">下载次数</a></li>
+					<elseif condition="$get_info['sort'] eq 'times_a'" />
+						<li><a href="?sort=times_d" class="hover bg_up">下载次数</a></li>
+                    <elseif condition="$get_info['sort'] eq 'times_d'"/>
+						<li><a href="?sort=times_a" class="hover bg_down">下载次数</a></li>
+					<else />
+						<li><a href="?sort=times_a">下载次数</a></li>
+                    </if>
+					
+					<if condition="$get_info['sort'] eq ''">
+						<li><a href="?sort=rate_a">用户好评</a></li>
+					<elseif condition="$get_info['sort'] eq 'rate_a'" />
+						<li><a href="?sort=rate_d" class="hover bg_up">用户好评</a></li>
+                    <elseif condition="$get_info['sort'] eq 'rate_d'"/>
+						<li><a href="?sort=rate_a" class="hover bg_down">用户好评</a></li>
+					<else />
+						<li><a href="?sort=rate_a">用户好评</a></li>
+                    </if>
+
+<!-- 
                     <if condition="$get_info.sort neq 'times_a'">
-                    <li><a href="{:U('Partner/partner', array('sort'=> 'times_d'))}">销量</a></li>
+                    <li><a href="{:U('Partner/partner', array('sort'=> 'times_d'),'','')}">销量</a></li>
                     <else />
-                    <li><a href="{:U('Partner/partner', array('sort'=> 'times_a'))}">销量</a></li>
+                    <li><a href="{:U('Partner/partner', array('sort'=> 'times_a'),'','')}">销量</a></li>
                     </if>
                     <if condition="$get_info.sort neq 'rate_a'">
-                    <li><a href="{:U('Partner/partner', array('sort'=> 'rate_d'))}">好评</a></li>
+                    <li><a href="{:U('Partner/partner', array('sort'=> 'rate_d'),'','')}">好评</a></li>
                     <else />
-                    <li><a href="{:U('Partner/partner', array('sort'=> 'rate_a'))}">好评</a></li>
-                    </if>
+                    <li><a href="{:U('Partner/partner', array('sort'=> 'rate_a'),'','')}">好评</a></li>
+                    </if> -->
                 </ul>
 			</div>
 		</div>
@@ -180,7 +204,7 @@
 			<else /> 	
 			</if>
 			<div id="webchat_box">
-				<p>扫一下，关注惠桂林微博</p>
+				<p>扫一下，关注惠校园微博</p>
 				<img src="__PUBLIC__/images/weibo_barcode.png" alt="微博icon">
 			</div>
 			<div id="hot_coupon_box">
@@ -235,13 +259,37 @@
 				<if condition="$coupon['partner_id'] eq $partner['partner_id']">
 				<div class="partner_coupon_info_box">
 					<ul>
-						<li>
+						<if condition="$coupon['coupon_type'] eq 2">
+							<li>
+							<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon['header_path']}" alt="{$coupon['name']}" /></a>
+							<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="coupon_desc">{$coupon['description']}</a>
+							<p class="oldprice">￥<span>{$coupon.off_price}</span></p>
+							<p class="newprice">原价<span>{$coupon.origin_price}元</span></p>
+							<p class="download_times">已下载{$coupon['download_times']}次</p>
+							
+							<if condition="$coupon['Countdown_label'] eq 1">
+							<a class="download_btn" tag="2">{$coupon['Countdown_time']['day']}天{$coupon['Countdown_time']['hour']}时{$coupon['Countdown_time']['min']}分{$coupon['Countdown_time']['sec']}秒</a>
+							<elseif condition="$coupon['left_times'] eq 0" />
+							<a class="download_btn" tag="2">已抢光哦！</a>
+							<else />
+							<if condition = "$Think.session.user.user_id eq ''">
+								<a href="" class="download_btn" tag="0" couponid="{$coupon.coupon_id}">还剩{$coupon.left_times}份</a>
+							<else />
+								<a href="" class="download_btn" tag="1" couponid="{$coupon.coupon_id}">还剩{$coupon.left_times}份</a>
+							</if>
+							
+							</if>
+
+							</li>
+						<else />
+							<li>
 							<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon['header_path']}" alt="{$coupon['name']}" /></a>
 							<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="coupon_desc">{$coupon['description']}</a>
 							<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="coupon_keyword">{$coupon['title']}</a>
 							<p class="download_times">已下载{$coupon['download_times']}次</p>
-							<a href="" class="download_btn" couponid="{$coupon['coupon_id']}">立即下载</a>
+							<a href="" class="download_btn" couponid="{$coupon['coupon_id']}" tag="1">立即下载</a>
 						</li>
+						</if>
 					</ul>
 				</div>
 				<else />

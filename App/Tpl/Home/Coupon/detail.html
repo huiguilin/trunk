@@ -2,15 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
-<meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
+<meta name="Keywords" content="惠校园,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
+<meta name="description" content=" 惠校园网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠校园网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/detail.css">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/M_sendCouponToCellphone.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/jquery-placeholder.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/detail.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
@@ -70,6 +68,9 @@
 
 				
 				<img src="__PUBLIC__/{$coupon.picture_path}" class="coupon_pic" alt="{$coupon.name}">
+				<if condition="($coupon['download_times'] eq $coupon['limit_times'])">
+                  <div class="sellAll"><img src="__PUBLIC__/images/sell_all.png" alt="抢光啦"></div>
+                </if>
 				<div class="coupon_detail_desc_box">
 					<p class="desc_title">详细介绍</p>
 					<p class="desc_content"><span>{$coupon.message}</span></p>
@@ -194,7 +195,7 @@
 								<p class="two"><span>{$rateInfo[0]}</span>的会员满意本优惠券</p>
 							</li>
 							<li class="no_border_right">
-								<p>我在惠桂林下载过此优惠券</p>
+								<p>我在惠校园下载过此优惠券</p>
 								<if condition="$Think.session.user.user_id eq ''">
 								<else />
 								<a href="{:U('Home/Account/mytocomment')}">我要评论</a>
@@ -237,14 +238,14 @@
 				</div>
 			</div>
 			<div id="webchat_box">
-				<p>扫一下，关注惠桂林微博</p>
+				<p>扫一下，关注惠校园微博</p>
 				<img src="__PUBLIC__/images/weibo_barcode.png" alt="微博icon">
 			</div>
 			<div id="hot_tips_box">
 				<p class="title">温馨提示</p>
 				<ul>
 					<li>相同的信息，一个手机号24小时内只能接收5条；</li>
-					<li>24小时内，您最多可接收10条来自惠桂林的短信；若注册成为惠桂林会员可享受无限制接收短信的服务</li>
+					<li>24小时内，您最多可接收10条来自惠校园的短信；若注册成为惠校园会员可享受无限制接收短信的服务</li>
 				</ul>
 			</div>
 		</div>
@@ -258,7 +259,7 @@
 <!-- 最底部区域结束 -->
 	<script type="text/javascript">
 	   	var partner_info = $('#partner_hidden').text();
-		var partner = JSON.parse(partner_info);
+		var partner = jQuery.parseJSON(partner_info);
 		var mapBoxDetailId = "detail_map_box";
 		var mapBoxFullId = "map";	    
 	</script>

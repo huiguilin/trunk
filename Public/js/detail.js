@@ -58,11 +58,7 @@ $(function(){
     $('#download_coupon_btn').add('#download_coupon_btn_two').click(function(event) {
          var tag = $(this).attr('tag');
          if(tag == "0"){
-             $('#Userlogin_box').bPopup({
-                modalClose: false,
-              opacity: 0.6,
-              position: [330, 60],//x, y
-            });
+             $('#Userlogin_box').bPopup({});
             return false;
          }
          else{

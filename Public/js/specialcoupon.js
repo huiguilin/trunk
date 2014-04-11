@@ -40,9 +40,7 @@ $(function(){
      }
      else if(tag == "3"){
          $('#Userlogin_box').bPopup({
-            modalClose: false,
-          opacity: 0.6,
-          position: [330, 60],//x, y
+           
         });
         return false;
      }
@@ -88,6 +86,7 @@ $(function(){
      });
 
      //点击下载手机优惠劵弹窗中发送按钮结束
-
+     var hidden_type_value = $('#hidden_type_value').val();
+    $('#coupon_box').css('height', hidden_type_value);
 
 })

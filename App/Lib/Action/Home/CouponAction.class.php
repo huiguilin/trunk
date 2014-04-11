@@ -101,7 +101,7 @@ class CouponAction extends Action {
         $this->assign("hot_coupons", $hotCouponInfo);
         $this->assign("ads", $adInfo);
         $this->assign("get_info", $_GET);
-        $templateName = $_GET["_URL_"][1]; 
+        $templateName = $_GET["_URL_"][0]; 
         $this->assign('templateName',$templateName);
         $this->display();
     }
@@ -192,28 +192,37 @@ class CouponAction extends Action {
                     break;
             }
         }
-        
         $couponHelper = new CouponModel();
         $params['coupon_type'] = 2;
         $time = date("Y-m-d H:i:s");
-        $stime = date("Y-m-d H:i:s", strtotime("-2 day"));
-        $params['start_time_gt'] = $stime;
-        $params['end_time_gt'] = $time;
+      
+       
         $couponInfo = $couponHelper->getCoupon($params);
-        foreach ($couponInfo AS $key => $value) {
-            $couponInfo[$key]['left_times'] = (int)($couponInfo[$key]['limit_times'] - $couponInfo[$key]['download_times']);
-            if ($couponInfo[$key]['left_times'] < 0)  {
-                $couponInfo[$key]['left_times'] = 0;
+
+        foreach ($couponInfo as $k => $v) {
+
+            if (strtotime($v['start_time'])-strtotime($time) >= 0 && strtotime($v['start_time'])-strtotime($time) < (3600*48)) {
+               $newcouponInfo[] = $v;
             }
-            if(strtotime($couponInfo[$key]['start_time']) > strtotime($time)){
-                $couponInfo[$key]['Countdown_time'] = $this->timediff(strtotime($time),strtotime($couponInfo[$key]['start_time']));
-                $couponInfo[$key]['Countdown_label'] = 1;
-            }
-            else{
-                 $couponInfo[$key]['Countdown_label'] = 0;
+             if (strtotime($time) >= strtotime($v['start_time']) && strtotime($time) <= strtotime($v['end_time'])) {
+               $newcouponInfo[] = $v;
             }
         }
-       
+        // var_dump($newcouponInfo);
+        foreach ($newcouponInfo AS $key => $value) {
+            $newcouponInfo[$key]['left_times'] = (int)($newcouponInfo[$key]['limit_times'] - $newcouponInfo[$key]['download_times']);
+            if ($newcouponInfo[$key]['left_times'] < 0)  {
+                $newcouponInfo[$key]['left_times'] = 0;
+            }
+            if(strtotime($newcouponInfo[$key]['start_time']) > strtotime($time)){
+                $newcouponInfo[$key]['Countdown_time'] = timediff(strtotime($time),strtotime($newcouponInfo[$key]['start_time']));
+                $newcouponInfo[$key]['Countdown_label'] = 1;
+            }
+            else{
+                 $newcouponInfo[$key]['Countdown_label'] = 0;
+            }
+        }
+      
         if ($params['order_by'] != 'download_times DESC') {
             $params['order_by'] = 'download_times DESC';
         }
@@ -231,11 +240,11 @@ class CouponAction extends Action {
         }
 
         list($categories, $location, $labelType) = $this->getTopButtom();
-       
+      
         $this->assign("categories", $categories);
         $this->assign("locations", $location);
         $this->assign("label_types", $labelType);
-        $this->assign("coupons", $couponInfo);
+        $this->assign("coupons", $newcouponInfo);
         $this->assign("hot_coupons", $hotCouponInfo);
         $this->assign("ads", $adInfo);
         $this->assign("get_info", $_GET);
@@ -264,7 +273,7 @@ class CouponAction extends Action {
                 $couponInfo[$key]['left_times'] = 0;
             }
             if(strtotime($couponInfo[$key]['start_time']) > strtotime($time)){
-                $couponInfo[$key]['Countdown_time'] = $this->timediff(strtotime($time),strtotime($couponInfo[$key]['start_time']));
+                $couponInfo[$key]['Countdown_time'] = timediff(strtotime($time),strtotime($couponInfo[$key]['start_time']));
                 $couponInfo[$key]['Countdown_label'] = 1;
             }
             else{
@@ -337,28 +346,15 @@ class CouponAction extends Action {
         $this->assign("partnerPictures",$partnerPictureInfo);
         $this->assign('rateInfo',$rateInfo);
         $this->assign('use_rule',$use_rule);
+
+        $templateName = $_GET["_URL_"][3]; 
+        if(empty($templateName)){
+            $templateName = $_GET["_URL_"][0]; 
+        }
+        $this->assign('templateName',$templateName);
         $this->display();
     }
 
-    function timediff($begin_time,$end_time){
-          if($begin_time < $end_time){
-             $starttime = $begin_time;
-             $endtime = $end_time;
-          }
-          else{
-             $starttime = $end_time;
-             $endtime = $begin_time;
-          }
-          $timediff = $endtime-$starttime;
-          $days = intval($timediff/86400);
-          $remain = $timediff%86400;
-          $hours = intval($remain/3600);
-          $remain = $remain%3600;
-          $mins = intval($remain/60);
-          $secs = $remain%60;
-          $res = array("day" => $days,"hour" => $hours,"min" => $mins,"sec" => $secs);
-          return $res;
-    }
 
     private function getEvaluation($eInfo) {
         if (empty($eInfo)) {

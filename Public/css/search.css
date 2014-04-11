@@ -63,7 +63,7 @@
 }
 #main #sort_price_box div.content_box ul li{
 	float: left;
-	width: 68px;
+	width: 78px;
 	height: 25px;
 	background:white;
 	margin-right: 1px;
@@ -79,6 +79,22 @@
 #main #sort_price_box div.content_box ul li a:hover{
 	border:1px solid #4467A3;
 	color: black;
+}
+#main #sort_price_box div.content_box ul li a.hover{
+	border:1px solid #4467A3;
+	color: black;
+}
+#main #sort_price_box div.content_box ul li a.bg_up{
+	background: url(../images/sort_up.png) no-repeat 0px 2px;
+	border:1px solid #4467A3;
+	color: black;
+	padding-left: 12px;
+}
+#main #sort_price_box div.content_box ul li a.bg_down{
+	background: url(../images/sort_down.png) no-repeat 0px 2px;
+	border:1px solid #4467A3;
+	color: black;
+	padding-left: 12px;
 }
 #main #coupon_box{
 	position: relative;
@@ -109,6 +125,7 @@
 	position: absolute;
 	top: 10px;
 	left: 13px;
+	border:none;
 }
 #main #coupon_box ul.coupon_content li p.one{
 	position: absolute;

@@ -106,12 +106,15 @@
 	display: inline-block;
 	height:25px;
 	line-height: 25px;
-
+	padding-left: 5px;
+	padding-right: 5px;
 }
 #main #main_content_top_box ul.hot_navigation li a:hover{
 	background: #4467A3;
 	border-radius: 5px;
 	color: white;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 #main #main_content_top_box ul.hot_navigation li a.one{
 	margin-left: 30px;
@@ -195,6 +198,9 @@
 	font-weight: bold;
 	width:113px;
 	text-align: center;
+}
+#main #hot_and_new_brand_box div.hot_brand_box ul li a.title:hover{
+	text-decoration: underline;
 }
 #main #hot_and_new_brand_box div.hot_brand_box ul li a.img_box{
 	display: block;

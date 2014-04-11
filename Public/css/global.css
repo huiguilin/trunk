@@ -16,6 +16,7 @@ input{
 }
 body{
 	background: url(../images/newUI-bg.jpg) fixed;
+	/*background: url(../images/网站背景11.jpg) fixed;*/
 }
 .clearfix:after {content:"."; display:block; height:0; visibility:hidden; clear:both; }
 .clearfix { *zoom:1; }
@@ -383,18 +384,13 @@ body{
 	padding-top: 9px;
 }
 #top_box #top_function_box ul li.current{
-	background: white;
-	filter:alpha(opacity=75);  
-    -moz-opacity:0.75;
-    -khtml-opacity: 0.75;
 
-    opacity: 0.75;
-	height: 22px;
+    border:1px solid white;
+	/*height: 20px;*/
 	margin-top: 8px;
-	line-height: 0px;
-	border:1px solid white;
 	border-bottom: none;
-
+	padding-top: 0px;
+	/*line-height: 0px;*/
 }
 #top_box #top_function_box ul li a{
 	font-size: 14px;
@@ -413,6 +409,7 @@ body{
 #top_box #top_function_box ul li a.bg_icon{
 	background: url(../images/down-white.png) no-repeat 40px 2px;
 	padding-right: 20px;
+
 }
 #top_box #top_function_box ul li a.hover_bg_icon{
 	background: url(../images/up.png) no-repeat 42px 4px;
@@ -455,6 +452,13 @@ body{
     opacity: 0.85;
 	display: none;
 }
+#top_box #top_function_box ul li.subscription #subscription_box label.subscription_default_content{
+	position: relative;
+	left: 15px;
+	top: 37px;
+	color: #666666;
+	z-index:2;
+}
 #top_box #top_function_box ul #subscription #subscription_box #subscription_email_textbox{
 	border: 1px solid #C9C9C9;
 	border-radius: 5px;
@@ -490,9 +494,13 @@ body{
 	left: -137px;
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
-	z-index: 30;
-	background: white;
+	z-index: 300;
 	display: none;
+	background: white;
+	filter:alpha(opacity=85);  
+    -moz-opacity:0.85;
+    -khtml-opacity: 0.85;
+    opacity: 0.85;
 }
 #top_box #top_function_box ul li.share #share_box ul{
 	padding-bottom: 10px;
@@ -653,6 +661,7 @@ body{
 	margin: 0 auto;
 }
 #top_box #top_nav_classification_box ul{
+	position: absolute; /*解决 IE 兼容性问题*/
 	width: 160px;
 	background: #ED5565;
 }
@@ -867,6 +876,7 @@ body{
 	left:390px;
 	padding-left: 20px;
 	background: url(../images/ico_12.png) no-repeat;
+	display: none;
 }
 #Userreg_box #u_bottom #email_box form p.thirteen{
 	color: #999;
@@ -969,6 +979,7 @@ body{
 	text-align: center;
 	line-height: 46px;
 	cursor: pointer;
+	border:none;
 }
 #Userreg_box #u_bottom #cellphone_box{
 	margin: 0 auto;
@@ -1173,6 +1184,7 @@ body{
 	font-weight: bold;
 	text-align: center;
 	line-height: 46px;
+	border:none;
 }
 #Userreg_box #u_bottom #cellphone_box form #sendcode{
 	position: absolute;
@@ -1482,6 +1494,7 @@ body{
 	font-weight: bold;
 	text-align: center;
 	line-height: 46px;
+	border:none;
 }
 #Userlogin_box #u_middle_box  #forgetpwd{
 	position: absolute;

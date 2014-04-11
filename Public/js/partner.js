@@ -31,9 +31,23 @@ $(function(){
      //优惠劵页面广告图片轮换版关闭特效结束
 	//下载优惠券弹窗
 	$('#main #partner_content_box div.partner_coupon_info_box ul li a.download_btn').click(function(event) {
-	 	$('#download_coupon_hidden_box').bPopup({});
-	 	coupon_id = $(this).attr('couponid');
-	 	return false;
+
+     var tag = $(this).attr('tag');
+     if(tag == "0"){
+        $('#Userlogin_box').bPopup({
+        
+        });
+        return false;
+     }
+     else if(tag == "1"){
+      $('#download_coupon_hidden_box').bPopup({});
+        coupon_id = $(this).attr('couponid');
+        return false;
+     }
+     else{
+        return false;
+     }
+
 	 });
 	//下载优惠券弹窗结束
 
