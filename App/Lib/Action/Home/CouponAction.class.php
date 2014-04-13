@@ -163,6 +163,7 @@ class CouponAction extends Action {
         if (!empty($_GET['status'])) {
             $params['status'] = $_GET['status'];
         }
+        $sort = "weight DESC";
         if (!empty($_GET['sort'])) {
             $orderBy = $_GET['sort'];
             switch($orderBy) {
@@ -190,11 +191,20 @@ class CouponAction extends Action {
                 case 'time_d':
                     $params['order_by'] = "ctime DESC";
                     break;
+                default :
+                    $params['order_by'] = "ctime DESC";
+                    break;
             }
+            $params['order_by'] = $sort . ", " . $params['order_by'];
+        }
+        else {
+            $params['order_by'] = $sort;
         }
         $couponHelper = new CouponModel();
         $params['coupon_type'] = 2;
         $time = date("Y-m-d H:i:s");
+        $params['start_time_lt'] = $time;
+        $params['end_time_gt'] = $time;
       
        
         $couponInfo = $couponHelper->getCoupon($params);
@@ -468,7 +478,9 @@ class CouponAction extends Action {
         // }
 
         $code = md5(mt_rand(1000,9999) . mb_substr($phoneNumber, -4, 4) . time());
-        $code = mb_substr($code, 0, 8);
+        $code = mb_substr($code, 0, 8); 
+        $code = hexdec($code);
+        $code = mb_substr("$code", -8, 8); 
         $couponName = $couponInfo[0]['name'];
 
         $couponDesc = !empty($couponInfo[0]['message']) ? $couponInfo[0]['message'] : $couponInfo[0]['description'];
