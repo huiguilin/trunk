@@ -118,6 +118,7 @@ class IndexAction extends Action {
         $params = array(
             'tag' => '桂林电子科技大学',
             'limit' => '0,4',
+            'order_by' => "weight DESC",
         );
         $GDCoupon = $helper->getCoupon($params);
         $GDCoupon = $this->cutCouponWords($GDCoupon);

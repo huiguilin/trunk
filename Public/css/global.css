@@ -373,6 +373,7 @@ body{
 	height: 26px;
 	border:none;
 	margin-top: 6px;
+	margin-left: 6px;
 }
 #top_box #top_function_box ul{
 	float: right;
@@ -602,6 +603,7 @@ body{
 	width: 112px;
 	line-height: 38px;
 	text-align: center;
+	
 }
 #top_box #top_nav_box #nav_search_box input{
 	outline: none;
@@ -659,11 +661,14 @@ body{
 	height:10px;
 	width: 1296px;
 	margin: 0 auto;
+	
 }
 #top_box #top_nav_classification_box ul{
 	position: absolute; /*解决 IE 兼容性问题*/
 	width: 160px;
 	background: #ED5565;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 #top_box #top_nav_classification_box ul li{
 	margin-left: 15px;
@@ -677,10 +682,12 @@ body{
 	background: white;
 	margin-left: 0px;
 	margin-right: 0px;
+
 }
 #top_box #top_nav_classification_box ul li.expand{
 	display: none;
 	border-bottom: none;
+
 }
 #top_box #top_nav_classification_box ul li a{
 	display: block;

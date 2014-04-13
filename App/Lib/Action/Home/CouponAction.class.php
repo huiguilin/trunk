@@ -71,12 +71,13 @@ class CouponAction extends Action {
         }
         
         $couponHelper = new CouponModel();
-        $params['coupon_type'] = 1;
-        $time = date("Y-m-d H:i:s");
-        $params['start_time_lt'] = $time;
-        $params['end_time_gt'] = $time;
+        // $params['coupon_type'] = 1;
+        // $time = date("Y-m-d H:i:s");
+        // $params['start_time_lt'] = $time;
+        // $params['end_time_gt'] = $time;
+
         $couponInfo = $couponHelper->getCoupon($params);
-        
+         var_dump($couponInfo);
         if ($params['order_by'] != 'download_times DESC') {
             $params['order_by'] = 'download_times DESC';
         }

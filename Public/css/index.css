@@ -161,6 +161,13 @@
 	height: 212px;
 	overflow: hidden;
 }
+#main #hot_and_new_brand_box div.hot_brand_box a.view_more{
+	color: #4467A3;
+	position: absolute;
+	top: 9px;
+	right: 8px;
+}
+
 #main #hot_and_new_brand_box div.hot_brand_box p{
 	color: #ED5565;
 	font-size: 14px;
@@ -370,7 +377,7 @@
 	line-height: 40px;
 	/*background: url(../images/location.png) no-repeat 1px 10px;*/
 	background-color: #303131;
-	font-weight: bold;
+	
 }
 #main #foot_and_footsort_box div.foot_box ul.content li a.content_title{
 	color: #ED5565;

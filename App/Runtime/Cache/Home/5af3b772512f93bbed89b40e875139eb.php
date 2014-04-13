@@ -499,6 +499,7 @@
 						</a>
 					</li><?php endforeach; endif; ?>
 				</ul>
+				<a href="<?php echo U('Partner/partner','','','');?>" class="view_more" target=_blank>查看更多</a>
 			</div>
 			<div class="new_brand_box">
 				<p>新入驻品牌</p>
@@ -520,7 +521,7 @@
 				<ul class="content">
                 <?php if(is_array($eat_coupons)): foreach($eat_coupons as $k=>$coupon): if($k > 3): else: ?>
 						<li>
-						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box" target=_blank><img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box" target=_blank><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" target=_blank class="content_title" title="<?php echo ($coupon["name"]); ?>"><?php echo ($coupon["name"]); ?></a>
 						<p class="one" title="<?php echo ($coupon["description"]); ?>"><?php echo ($coupon["description"]); ?></p>
 						<p class="two" title="<?php echo ($coupon["title"]); ?>">疯抢价<span>￥<?php echo ($coupon["off_price"]); ?></span>元</p>
@@ -559,7 +560,7 @@
 				<ul class="content">
                 <?php if(is_array($play_coupons)): foreach($play_coupons as $k=>$coupon): if($k > 3 ): else: ?>
 						<li>
-						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" target=_blank class="img_box"><img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" target=_blank class="img_box"><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" target=_blank class="content_title" title="<?php echo ($coupon["name"]); ?>"><?php echo ($coupon["name"]); ?></a>
 						<p class="one" title="<?php echo ($coupon["description"]); ?>"><?php echo ($coupon["description"]); ?></p>
 						<p class="two" title="<?php echo ($coupon["title"]); ?>"><?php echo ($coupon["title"]); ?></p>
