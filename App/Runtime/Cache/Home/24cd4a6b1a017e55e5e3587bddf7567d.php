@@ -95,6 +95,11 @@
 						<li class="border"><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php elseif($templateName == ''): ?>
+						<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php else: ?>
 						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
@@ -473,10 +478,10 @@
 					<div id="partnerleft_middle_box">
 						<ul class="coupon_type_nav">
                         <?php if($get["off_time"] == 1): ?><li class=""><a href="<?php echo U('Partner/detail','','','');?>/pid/<?php echo ($partnerInfo[0]['partner_id']); ?>" class="">正在优惠</a></li>
-							<li class="red"><a href="/trunk/index.php/partner/detail/pid/<?php echo ($partnerInfo[0]['partner_id']); ?>?off_time=1" class="red">过期优惠</a></li>
+							<li class="red"><a href="/index.php/partner/detail/pid/<?php echo ($partnerInfo[0]['partner_id']); ?>?off_time=1" class="red">过期优惠</a></li>
                         <?php else: ?>
 							<li class="red"><a href="<?php echo U('Partner/detail','','','');?>/pid/<?php echo ($partnerInfo[0]['partner_id']); ?>" class="red">正在优惠</a></li>
-							<li><a href="/trunk/index.php/partner/detail/pid/<?php echo ($partnerInfo[0]['partner_id']); ?>?off_time=1" class="normal">过期优惠</a></li><?php endif; ?>
+							<li><a href="/index.php/partner/detail/pid/<?php echo ($partnerInfo[0]['partner_id']); ?>?off_time=1" class="normal">过期优惠</a></li><?php endif; ?>
 						</ul>
 						<div id="all_coupon_info">
                            <ul class="coupon_content clearfix">
@@ -593,7 +598,7 @@
 							<li class="one"><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>1),'','');?>" class="one">首页</a></li>
 							<li><a href=""><</a></li>
 							
-							<?php $__FOR_START_19643__=1;$__FOR_END_19643__=$pageNums+1;for($i=$__FOR_START_19643__;$i < $__FOR_END_19643__;$i+=1){ if($i == $get_info): ?><li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>" class="red"><?php echo ($i); ?></a></li>
+							<?php $__FOR_START_5446__=1;$__FOR_END_5446__=$pageNums+1;for($i=$__FOR_START_5446__;$i < $__FOR_END_5446__;$i+=1){ if($i == $get_info): ?><li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>" class="red"><?php echo ($i); ?></a></li>
 								<?php else: ?>
 									<li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>"><?php echo ($i); ?></a></li><?php endif; } ?>
 

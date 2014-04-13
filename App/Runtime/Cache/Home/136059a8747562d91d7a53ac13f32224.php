@@ -96,6 +96,11 @@
 						<li class="border"><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php elseif($templateName == ''): ?>
+						<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php else: ?>
 						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
@@ -461,7 +466,7 @@
 
 				
 				<img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>" class="coupon_pic" alt="<?php echo ($coupon["name"]); ?>">
-				<?php if(($coupon['download_times'] == $coupon['limit_times'])): ?><div class="sellAll"><img src="__PUBLIC__/images/sell_all.png" alt="抢光啦"></div><?php endif; ?>
+				<?php if(($coupon['download_times'] == $coupon['limit_times']) AND ($coupon['download_times'] != '0') AND ($coupon['limit_times'] != '0')): ?><div class="sellAll"><img src="__PUBLIC__/images/sell_all.png" alt="抢光啦"></div><?php endif; ?>
 				<div class="coupon_detail_desc_box">
 					<p class="desc_title">详细介绍</p>
 					<p class="desc_content"><span><?php echo ($coupon["message"]); ?></span></p>

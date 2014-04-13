@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
-<meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
+<meta name="Keywords" content="惠校园,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
+<meta name="description" content=" 惠校园网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠校园网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/about_tpl.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
@@ -35,10 +35,10 @@
 				<?php else: ?>
 				<li><a href="<?php echo U("Home/Account/mysetting");?>" class="no_border_right">您好,<?php echo ($_SESSION['user']['nickname']); ?></a></li>
 				<li id="person_center_menu" class="person_center_menu">
-					<a href="<?php echo U("Home/Account/mycoupon");?>" class="border_left" id="myhuigl">我的惠桂林</a>
+					<a href="<?php echo U("Home/Account/mycoupon");?>" class="border_left" id="myhuigl">我的惠校园</a>
 					<div id="login_dropdownlist_box">
 						<ul id="login_dropdownlist">
-							<li class="title"><a href="<?php echo U("Home/Account/mycoupon");?>">我的惠桂林</a></li>
+							<li class="title"><a href="<?php echo U("Home/Account/mycoupon");?>">我的惠校园</a></li>
 							<li><a href="<?php echo U("Home/Account/mycoupon");?>" class="one">我的券包</a></li>
 							<li><a href="<?php echo U("Home/Account/myfavorite");?>" class="one">我的收藏</a></li>
 							<li><a href="<?php echo U("Home/Account/mycommented");?>" class="one">我的评论</a></li>
@@ -62,15 +62,15 @@
 					<a href="" class="bg_icon">分享</a>
 					<div id="share_box">
 						<ul class="clearfix">
-							<li><a href="http://weibo.com/huigl?topnav=1&wvr=5" class="weibo">惠桂林新浪微博</a></li>
-							<li><a href="http://user.qzone.qq.com/2042534770" class="qzone">惠桂林QQ空间</a></li>
-							<li><a href="http://t.qq.com/ihuigl?preview" class="QQweibo">惠桂林腾讯微博</a></li>
+							<li><a href="http://weibo.com/huigl?topnav=1&wvr=5" class="weibo">惠校园新浪微博</a></li>
+							<li><a href="http://user.qzone.qq.com/2042534770" class="qzone">惠校园QQ空间</a></li>
+							<li><a href="http://t.qq.com/ihuigl?preview" class="QQweibo">惠校园腾讯微博</a></li>
 						</ul>
 					</div>
 				</li>
 				<li><a href="<?php echo U("Admin/Account/login");?>" target=_blank class="no_border_right">商家入口</a></li>
 			</ul>
-			<img src="__PUBLIC__/images/slogan2.png" alt="slogan">
+			<img src="__PUBLIC__/images/slogan2.png" alt="slogan" id="slogan">
 		</div>
 		<div id="top_logo_box">
 			<a href="<?php echo U("Index/index");?>">
@@ -84,12 +84,12 @@
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
-					<?php elseif($templateName == 'coupon'): ?>
+					<?php elseif(($templateName == 'coupon')): ?>
 						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li class="border"><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
-					<?php elseif($templateName == 'partner'): ?>
+					<?php elseif(($templateName == 'partner')): ?>
 						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
@@ -99,8 +99,13 @@
 						<li class="border"><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
-					<?php else: ?>
+					<?php elseif($templateName == ''): ?>
 						<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php else: ?>
+						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li><?php endif; ?>
@@ -117,14 +122,14 @@
 		<div id="top_nav_classification_box">
 			<ul>
 				<li class="expand"><a href="" class="white">展开全部学校</a></li>
-				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林电子科技大学" target=_blank>桂林电子科技大学</a></li>
-				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/广西师范大学" target=_blank>广西师范大学</a></li>
-				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林理工大学" target=_blank>桂林理工大学</a></li>
-				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林医学院" target=_blank>桂林医学院</a></li>
-				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林航天工业学院" target=_blank>桂林航天工业学院</a></li>
-				<li><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林旅专" target=_blank>桂林旅专</a></li>
-				<li class="no_border_bottom"><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/广艺桂林分校" target=_blank>广艺桂林分校</a></li>
-				<li class="collapse"><a href="<?php echo U('Home/Coupon/coupon','','','');?>/tag/桂林电子科技大学" class="red">收起全部学校</a></li>
+				<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林电子科技大学" target=_blank>桂林电子科技大学</a></li>
+				<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/广西师范大学" target=_blank>广西师范大学</a></li>
+				<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林理工大学" target=_blank>桂林理工大学</a></li>
+				<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林医学院" target=_blank>桂林医学院</a></li>
+				<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林航天工业学院" target=_blank>桂林航天工业学院</a></li>
+				<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林旅专" target=_blank>桂林旅专</a></li>
+				<li class="no_border_bottom"><a href="<?php echo U('Coupon/coupon','','','');?>/tag/广艺桂林分校" target=_blank>广艺桂林分校</a></li>
+				<li class="collapse"><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林电子科技大学" class="red">收起全部学校</a></li>
 			</ul>
 		</div>
 	</div>
@@ -164,10 +169,10 @@
 				<img src="<?php echo U("Home/User/verifyImg","","","");?>" class="one" alt="验证码">
 				<input type="checkbox" name="license" class="six" checked="true">
 				<p class="six">
-					我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠桂林用户条款>>.</a>
+					我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠校园用户条款>>.</a>
 				</p>
 				<input type="submit" name="email_reg_btn" id="email_reg_btn" value="注册" />
-				<p class="seven">已经是惠桂林的用户？点击<a href="" id="login_now_email">登录.</a></p>
+				<p class="seven">已经是惠校园的用户？点击<a href="" id="login_now_email">登录.</a></p>
 				<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 				<p class="nine" id="reg_hidebox02">密码由6-32位的字母、数字或符号组成</p>
 				<p class="ten" id="reg_hidebox03">请再次输入密码</p>
@@ -197,10 +202,10 @@
 				<input type="text" name="nickname" class="four"/>
 				<input type="checkbox" name="license" class="five" checked="true">
 				<p class="five">
-					我已阅读并同意<a href=""><<惠桂林用户条款>>.</a>
+					我已阅读并同意<a href=""><<惠校园用户条款>>.</a>
 				</p>
 				<input type="submit" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
-				<p class="thirteen">已经是惠桂林的用户？点击<a href="" id="login_now_cellphone">登录.</a></p>
+				<p class="thirteen">已经是惠校园的用户？点击<a href="" id="login_now_cellphone">登录.</a></p>
 				<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 				<p class="nine" id="reg_hidebox02">请输入手机收到的短信验证码</p>
 				<p class="ten" id="reg_hidebox03">密码由6-32位的字母、数字或符号组成</p>
@@ -213,8 +218,8 @@
 	<div id="UserregSuccess_email">
 		<div id="tips_box">
 			<img src="__PUBLIC__/images/regsucess.png">
-			<p class="one">注册成功并已登录惠桂林网！</p>
-			<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="" id="return_page">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠桂林网首页</a></p>
+			<p class="one">注册成功并已登录惠校园网！</p>
+			<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="" id="return_page">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠校园网首页</a></p>
 		</div>
 		<div id="bindingcellphone_box">
 			<p class="one">30秒绑定手机号，更方便获取优惠券以及会员卡：</p>
@@ -251,8 +256,8 @@
 	<div id="UserregSuccess_cellphone">
 		<div id="tips_box2">
 			<img src="__PUBLIC__/images/regsucess.png">
-			<p class="one">注册成功并已登录惠桂林网！</p>
-			<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="" id="return_page2">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠桂林网首页</a></p>
+			<p class="one">注册成功并已登录惠校园网！</p>
+			<p class="two">您可以关闭此窗口回到原来的页面，或者点击 <a href="" id="return_page2">返回原来页面</a> 或去 <a href="<?php echo U("Index/index");?>">惠校园网首页</a></p>
 		</div>
 		<p class="count">如果没有选择，页面将在<span id="cellphone_reg_success_count_down">3秒</span>后自动关闭此窗口。</p>
 	</div>
@@ -333,7 +338,7 @@
 	</div>
 </div>
 <div id="cellphone_version_box">
-	<p class="one">惠桂林手机客户端</p>	
+	<p class="one">惠校园手机客户端</p>	
 	<p class="two">吃喝玩乐，惠享生活！</p>
 	<a class="iphone" href="">iPhone</a>
 	<a class="android" href="">Android</a>
@@ -358,7 +363,7 @@
 				<p><span>方法一：</span><a href="">去AppStore下载</a></p>
 			</li>
 			<li>
-				<p><span>方法二：</span>用手机在AppStore中搜索"惠桂林"下载</p>
+				<p><span>方法二：</span>用手机在AppStore中搜索"惠校园"下载</p>
 			</li>
 			<li class="one">
 				<p><span>方法三：</span>手机扫描二维码下载</p>
@@ -374,7 +379,7 @@
 				<p><span>方法一：</span><a href="">下载安装包</a></p>
 			</li>
 			<li>
-				<p><span>方法二：</span>在Android Market中搜索"惠桂林"下载</p>
+				<p><span>方法二：</span>在Android Market中搜索"惠校园"下载</p>
 			</li>
 			<li class="one">
 				<p><span>方法三：</span>手机扫描二维码下载</p>
@@ -390,7 +395,7 @@
 				<p><span>方法一：</span><a href="">下载安装包</a></p>
 			</li>
 			<li>
-				<p><span>方法二：</span>在Windows Market中搜索"惠桂林"下载</p>
+				<p><span>方法二：</span>在Windows Market中搜索"惠校园"下载</p>
 			</li>
 			<li class="one">
 				<p><span>方法三：</span>手机扫描二维码下载</p>
@@ -441,7 +446,7 @@
 <!-- 关于我们页面的内容 -->
 <div id="left_card">
 	<p class="one">商务合作</p>
-	<p class="two">如果您有意与惠桂林合作，让自己的生意更上一层楼，请补充以下信息，尽快与我们取得联系！</p>
+	<p class="two">如果您有意与惠校园合作，让自己的生意更上一层楼，请补充以下信息，尽快与我们取得联系！</p>
 	<p class="three">提交成功，感谢您的支持，我们的销售代表会尽快与您联系！</p>
 	<form id="intention_sumbit_form">
     	<input type="hidden" name="type" value="1"  id="hidden_type_value"/>
@@ -507,8 +512,8 @@
 				<li><a href="<?php echo U("Eula/eula");?>" class="no_border_right">用户协议</a></li>
 			</ul>
 			<div class="detail_box">
-				<!-- <p class="one">版权归惠桂林所有，未经书面授权禁止复制或建立镜像。 Email：<a href="mailto:huigl@outlook.com">service@huigl.com</a></p>
-				<p class="two">惠桂林网客服电话：（0773）8993520</p>
+				<!-- <p class="one">版权归惠校园所有，未经书面授权禁止复制或建立镜像。 Email：<a href="mailto:huigl@outlook.com">service@huigl.com</a></p>
+				<p class="two">惠校园网客服电话：（0773）8993520</p>
 				<p class="three">地址：桂林市高新区桂磨大道互联网产业基地503室</p>
 				<p class="four">经营许可证：桂ICP备 14000606号</p> -->
 				<p class="one">

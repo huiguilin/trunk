@@ -2,7 +2,7 @@
 // 本类由系统自动生成，仅供测试用途
 class IntentionAction extends Action {
 	private $area_array = array(1=>'桂林',2=>'南宁',3=>'柳州',4=>'梧州',);
-	private $classification_array = array(1=>'美食',2=>'休闲娱乐',3=>'生活服务',4=>'酒店',5=>'旅游',6=>'丽人',);
+	private $classification_array = array(1=>'美食',2=>'休闲娱乐',3=>'生活服务',4=>'酒店',5=>'旅游');
 	public function _empty($name){
         $this->error("非法提交！");
     }

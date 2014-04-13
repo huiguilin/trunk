@@ -352,7 +352,8 @@
 	margin-right: 0px;
 }
 #main #coupon_box ul.coupon_content li:hover{
-	background:url(../images/coupon-hover.png) no-repeat 0px 0px;
+	/*background:url(../images/coupon-hover.png) no-repeat 0px 0px;*/
+	background: #F4F1D2;
 }
 #main #coupon_box ul.coupon_content li a.img_box img{
 	width: 162px;

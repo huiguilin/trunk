@@ -104,6 +104,7 @@
 					</li>
                 </foreach>
 				</ul>
+				<a href="{:U('Partner/partner','','','')}" class="view_more" target=_blank>查看更多</a>
 			</div>
 			<div class="new_brand_box">
 				<p>新入驻品牌</p>
@@ -129,7 +130,7 @@
                 	<if condition="$k gt 3">
 					<else />
 						<li>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box" target=_blank><img src="__PUBLIC__/{$coupon.picture_path}" alt="{$coupon.name}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box" target=_blank><img src="__PUBLIC__/{$coupon.header_path}" alt="{$coupon.name}"></a>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title" title="{$coupon.name}">{$coupon.name}</a>
 						<p class="one" title="{$coupon.description}">{$coupon.description}</p>
 						<p class="two" title="{$coupon.title}">疯抢价<span>￥{$coupon.off_price}</span>元</p>
@@ -178,7 +179,7 @@
                 	<if condition="$k gt 3 ">
 					<else />
 						<li>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$coupon.picture_path}" alt="{$coupon.name}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="img_box"><img src="__PUBLIC__/{$coupon.header_path}" alt="{$coupon.name}"></a>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title" title="{$coupon.name}">{$coupon.name}</a>
 						<p class="one" title="{$coupon.description}">{$coupon.description}</p>
 						<p class="two" title="{$coupon.title}">{$coupon.title}</p>

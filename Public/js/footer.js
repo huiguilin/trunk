@@ -78,6 +78,7 @@ $(function(){
 							if(returnData.status == 0){
 								alert(returnData.info);
 							}else if(returnData.status == 1){
+								alert('提交成功！')
 								$('#main #left_card p.three').css('display', 'block');
 								$('#intention_sumbit_form').addClass('one');
 								$('#main #left_card form ul li input').val("");

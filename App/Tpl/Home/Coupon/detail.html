@@ -68,7 +68,7 @@
 
 				
 				<img src="__PUBLIC__/{$coupon.picture_path}" class="coupon_pic" alt="{$coupon.name}">
-				<if condition="($coupon['download_times'] eq $coupon['limit_times'])">
+				<if condition="($coupon['download_times'] eq $coupon['limit_times']) AND ($coupon['download_times'] neq '0') AND ($coupon['limit_times'] neq '0')">
                   <div class="sellAll"><img src="__PUBLIC__/images/sell_all.png" alt="抢光啦"></div>
                 </if>
 				<div class="coupon_detail_desc_box">

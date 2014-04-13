@@ -72,9 +72,7 @@
 			</a>
 		</div>
 		<div id="top_nav_box">
-		<?php echo ($templateName); ?>
 			<div id="nav_search_box">
-		
 				<ul>
 					<?php if($templateName == 'index'): ?><li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
@@ -447,24 +445,24 @@
 					<div class="classification_box_top_box">
 						<p>分类</p>
 						<ul class="parent_classification">
-	                        <?php if($get_info["label_type"] != ''): ?><li><a href="<?php echo U('Coupon/coupon');?>">全部</a></li>
+	                        <?php if($get_info["label_type"] != ''): ?><li><a href="<?php echo U('Coupon/specialcoupon');?>">全部</a></li>
 	                        <?php else: ?>
-							<li><a href="<?php echo U('Coupon/coupon');?>" class="current">全部</a></li><?php endif; ?>
-	                    <?php if(is_array($label_types)): foreach($label_types as $key=>$label_type): if($get_info["label_type"] == $key): ?><li><a href="<?php echo U('Coupon/coupon',array('label_type'=>$key),'','');?>" class="current"><?php echo ($label_type); ?></a></li>
+							<li><a href="<?php echo U('Coupon/specialcoupon');?>" class="current">全部</a></li><?php endif; ?>
+	                    <?php if(is_array($label_types)): foreach($label_types as $key=>$label_type): if($get_info["label_type"] == $key): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('label_type'=>$key),'','');?>" class="current"><?php echo ($label_type); ?></a></li>
 	                        <?php else: ?>
-							<li><a href="<?php echo U('Coupon/coupon',array('label_type'=>$key),'','');?>"><?php echo ($label_type); ?></a></li><?php endif; endforeach; endif; ?>
+							<li><a href="<?php echo U('Coupon/specialcoupon',array('label_type'=>$key),'','');?>"><?php echo ($label_type); ?></a></li><?php endif; endforeach; endif; ?>
 						</ul>
 					</div>
 					<?php if(($_GET["label_type"] != '') or ($_GET["cat_id"] != '')): ?><div class="classification_box_bottom_box">
 						<ul class="child_classification clearfix">
-                            <?php if($get_info["cat_id"] != ''): ?><li><a href="<?php echo U('Coupon/coupon',array('label_type'=>$get_info['label_type']),'','');?>">全部</a></li>
+                            <?php if($get_info["cat_id"] != ''): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('label_type'=>$get_info['label_type']),'','');?>">全部</a></li>
                             <?php else: ?>
-                            <li><a href="<?php echo U('Coupon/coupon',array('label_type'=>$get_info['label_type']),'','');?>" class="current">全部</a></li><?php endif; ?>
+                            <li><a href="<?php echo U('Coupon/specialcoupon',array('label_type'=>$get_info['label_type']),'','');?>" class="current">全部</a></li><?php endif; ?>
 							
-                            <?php if(is_array($categories)): foreach($categories as $key=>$category): if($get_info['label_type'] == $category['label_type']): if($get_info['cat_id'] == $category['cat_id']): ?><li><a href="<?php echo U('Coupon/coupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','');?>" class="current"><?php echo ($category["cat_name"]); ?></a></li>
+                            <?php if(is_array($categories)): foreach($categories as $key=>$category): if($get_info['label_type'] == $category['label_type']): if($get_info['cat_id'] == $category['cat_id']): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','');?>" class="current"><?php echo ($category["cat_name"]); ?></a></li>
                             	<?php else: ?>
 
-								<li><a href="<?php echo U('Coupon/coupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','');?>"><?php echo ($category["cat_name"]); ?></a></li><?php endif; ?>
+								<li><a href="<?php echo U('Coupon/specialcoupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','');?>"><?php echo ($category["cat_name"]); ?></a></li><?php endif; ?>
                             <?php else: endif; endforeach; endif; ?>
 						</ul>
 					</div>
@@ -474,45 +472,45 @@
 					<div class="location_box_top_box">
 						<p>学校</p>
 						<ul class="parent_classification">
-	                        <?php if($get_info["tag"] != ''): ?><li><a href="<?php echo U('Coupon/coupon');?>">全部</a></li>
+	                        <?php if($get_info["tag"] != ''): ?><li><a href="<?php echo U('Coupon/specialcoupon');?>">全部</a></li>
 	                        <?php else: ?>
-							<li><a href="<?php echo U('Coupon/coupon');?>" class="current">全部</a></li><?php endif; ?>
-	                        <?php if($get_info["tag"] != '桂林电子科技大学'): ?><li><a href="<?php echo U('Coupon/coupon',array('tag'=>'桂林电子科技大学'),'','');?>">桂林电子科技大学</a></li>
+							<li><a href="<?php echo U('Coupon/specialcoupon');?>" class="current">全部</a></li><?php endif; ?>
+	                        <?php if($get_info["tag"] != '桂林电子科技大学'): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林电子科技大学'),'','');?>">桂林电子科技大学</a></li>
 	                        <?php else: ?>
-							<li><a class="current" href="<?php echo U('Coupon/coupon',array('tag'=>'桂林电子科技大学'),'','');?>">桂林电子科技大学</a></li><?php endif; ?>
-							<?php if($get_info["tag"] != '广西师范大学'): ?><li><a href="<?php echo U('Coupon/coupon',array('tag'=>'广西师范大学'),'','');?>">广西师范大学</a></li>
+							<li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林电子科技大学'),'','');?>">桂林电子科技大学</a></li><?php endif; ?>
+							<?php if($get_info["tag"] != '广西师范大学'): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>'广西师范大学'),'','');?>">广西师范大学</a></li>
 	                        <?php else: ?>
-							<li><a class="current" href="<?php echo U('Coupon/coupon',array('tag'=>'广西师范大学'),'','');?>">广西师范大学</a></li><?php endif; ?>
-	                        <?php if($get_info["tag"] != '桂林理工大学'): ?><li><a href="<?php echo U('Coupon/coupon',array('tag'=>'桂林理工大学'),'','');?>">桂林理工大学</a></li>
+							<li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>'广西师范大学'),'','');?>">广西师范大学</a></li><?php endif; ?>
+	                        <?php if($get_info["tag"] != '桂林理工大学'): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林理工大学'),'','');?>">桂林理工大学</a></li>
 	                        <?php else: ?>
-							<li><a class="current" href="<?php echo U('Coupon/coupon',array('tag'=>'桂林理工大学'),'','');?>">桂林理工大学</a></li><?php endif; ?>
-	                        <?php if($get_info["tag"] != '桂林医学院'): ?><li><a href="<?php echo U('Coupon/coupon',array('tag'=>'桂林医学院'),'','');?>">桂林医学院</a></li>
+							<li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林理工大学'),'','');?>">桂林理工大学</a></li><?php endif; ?>
+	                        <?php if($get_info["tag"] != '桂林医学院'): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林医学院'),'','');?>">桂林医学院</a></li>
 	                        <?php else: ?>
-							<li><a class="current" href="<?php echo U('Coupon/coupon',array('tag'=>'桂林医学院'),'','');?>">桂林医学院</a></li><?php endif; ?>
-	                        <?php if($get_info["tag"] != '桂林航空学院'): ?><li><a href="<?php echo U('Coupon/coupon',array('tag'=>'桂林航空学院'),'','');?>">桂林航空学院</a></li>
+							<li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林医学院'),'','');?>">桂林医学院</a></li><?php endif; ?>
+	                        <?php if($get_info["tag"] != '桂林航空学院'): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林航空学院'),'','');?>">桂林航空学院</a></li>
 	                        <?php else: ?>
-							<li><a class="current" href="<?php echo U('Coupon/coupon',array('tag'=>'桂林航空学院'),'','');?>">桂林航空学院</a></li><?php endif; ?>
+							<li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林航空学院'),'','');?>">桂林航空学院</a></li><?php endif; ?>
 
-	                         <?php if($get_info["tag"] != '桂林旅专'): ?><li><a href="<?php echo U('Coupon/coupon',array('tag'=>'桂林旅专'),'','');?>">桂林旅专</a></li>
+	                         <?php if($get_info["tag"] != '桂林旅专'): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林旅专'),'','');?>">桂林旅专</a></li>
 	                        <?php else: ?>
-							<li><a class="current" href="<?php echo U('Coupon/coupon',array('tag'=>'桂林旅专'),'','');?>">桂林旅专</a></li><?php endif; ?>
+							<li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林旅专'),'','');?>">桂林旅专</a></li><?php endif; ?>
 
-	                         <?php if($get_info["tag"] != '广艺桂林分校'): ?><li><a href="<?php echo U('Coupon/coupon',array('tag'=>'广艺桂林分校'),'','');?>">广艺桂林分校</a></li>
+	                         <?php if($get_info["tag"] != '广艺桂林分校'): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>'广艺桂林分校'),'','');?>">广艺桂林分校</a></li>
 	                        <?php else: ?>
-							<li><a class="current" href="<?php echo U('Coupon/coupon',array('tag'=>'广艺桂林分校'),'','');?>">广艺桂林分校</a></li><?php endif; ?>
+							<li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>'广艺桂林分校'),'','');?>">广艺桂林分校</a></li><?php endif; ?>
 						</ul>
 					</div>
 					<?php if($_GET['tag'] != ''): ?><div class="location_box_bottom_box">
 							<ul class="child_classification clearfix">
-								<?php if($get_info['location'] == ''): ?><li><a href="<?php echo U('Coupon/coupon',array('tag'=>$get_info['tag']),'','');?>" class="current">全部</a></li>
+								<?php if($get_info['location'] == ''): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>$get_info['tag']),'','');?>" class="current">全部</a></li>
 								<?php else: ?>
-									<li><a href="<?php echo U('Coupon/coupon',array('tag'=>$get_info['tag']),'','');?>">全部</a></li><?php endif; ?>
+									<li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>$get_info['tag']),'','');?>">全部</a></li><?php endif; ?>
 								
-	                            <?php if(is_array($locations)): foreach($locations as $key=>$location): if($get_info['tag'] == $location['belong']): if($get_info['location'] != ''): if($get_info['location'] == $location['id'] ): ?><li><a class="current" href="<?php echo U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','');?>"><?php echo ($location["name"]); ?></a></li>
+	                            <?php if(is_array($locations)): foreach($locations as $key=>$location): if($get_info['tag'] == $location['belong']): if($get_info['location'] != ''): if($get_info['location'] == $location['id'] ): ?><li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','');?>"><?php echo ($location["name"]); ?></a></li>
 											<?php else: ?>
-												<li><a href="<?php echo U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','');?>"><?php echo ($location["name"]); ?></a></li><?php endif; ?>
+												<li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','');?>"><?php echo ($location["name"]); ?></a></li><?php endif; ?>
 										<?php else: ?>
-											<li><a href="<?php echo U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','');?>"><?php echo ($location["name"]); ?></a></li><?php endif; ?>
+											<li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','');?>"><?php echo ($location["name"]); ?></a></li><?php endif; ?>
 									<?php else: endif; endforeach; endif; ?>
 							</ul>
 						</div>

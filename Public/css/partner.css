@@ -413,11 +413,7 @@
 	margin-top: 8px;
 	width: 697px;
 	/*border:1px solid #E4E4E4;*/
-	background-color: white;
-	filter:alpha(opacity=80);  
-    -moz-opacity:0.8;  
-    -khtml-opacity: 0.8;  
-    opacity: 0.8; 
+	
     float: left;
 
 }
@@ -425,6 +421,8 @@
 	height: 130px;
 	padding-top: 8px;
 	border-bottom:3px solid #D7D7D7;
+	background: #F9F7F8;
+	
 }
 #main #partner_content_box div.partner_info_box p.title_box{
 	position: relative;
@@ -433,7 +431,7 @@
 	color: #666666;
 	font-family: 微软雅黑;
 	font-size: 23px;
-	margin-left: 5px;
+	margin-left: 10px;
 }
 #main #partner_content_box div.partner_info_box p.title_box a.viewAllBranch{
 	color: #4467A3;
@@ -464,7 +462,7 @@
 #main #partner_content_box div.partner_info_box p.detail_box a.partner_address{
 	color: #666;
 	font-size: 13px;
-	margin-left: 5px;
+	margin-left: 10px;
 	
 }
 #main #partner_content_box div.partner_info_box p.detail_box a.partner_phone{
@@ -506,7 +504,11 @@
 	background: white;
 }
 #main #partner_content_box div.partner_coupon_info_box{
-	background: white;
+	background-color: white;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8; 
 }
 #main #partner_content_box div.partner_coupon_info_box ul{
 	
@@ -516,11 +518,14 @@
 	position: relative;
 	border-bottom: 1px solid #D7D7D7;
 }
+#main #partner_content_box div.partner_coupon_info_box ul li:hover{
+	background: #F4F1D2;
+}
 #main #partner_content_box div.partner_coupon_info_box ul li a.img_box{
 	display: block;
 	position: absolute;
 	top: 10px;
-	left: 5px;
+	left: 10px;
 }
 #main #partner_content_box div.partner_coupon_info_box ul li a.img_box img{
 	height: 80px;
