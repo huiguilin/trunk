@@ -41,15 +41,15 @@
 						<p>分类</p>
 						<ul class="parent_classification">
 	                        <if condition="$get_info.label_type neq ''">
-							<li><a href="{:U('Coupon/coupon')}">全部</a></li>
+							<li><a href="{:U('Coupon/specialcoupon')}">全部</a></li>
 	                        <else />
-							<li><a href="{:U('Coupon/coupon')}" class="current">全部</a></li>
+							<li><a href="{:U('Coupon/specialcoupon')}" class="current">全部</a></li>
 	                        </if>
 	                    <foreach name="label_types" item="label_type">
 	                        <if condition="$get_info.label_type eq $key">
-							<li><a href="{:U('Coupon/coupon',array('label_type'=>$key),'','')}" class="current">{$label_type}</a></li>
+							<li><a href="{:U('Coupon/specialcoupon',array('label_type'=>$key),'','')}" class="current">{$label_type}</a></li>
 	                        <else />
-							<li><a href="{:U('Coupon/coupon',array('label_type'=>$key),'','')}">{$label_type}</a></li>
+							<li><a href="{:U('Coupon/specialcoupon',array('label_type'=>$key),'','')}">{$label_type}</a></li>
 	                        </if>
 	                    </foreach>
 						</ul>
@@ -58,18 +58,18 @@
 					<div class="classification_box_bottom_box">
 						<ul class="child_classification clearfix">
                             <if condition="$get_info.cat_id neq ''">
-                            <li><a href="{:U('Coupon/coupon',array('label_type'=>$get_info['label_type']),'','')}">全部</a></li>
+                            <li><a href="{:U('Coupon/specialcoupon',array('label_type'=>$get_info['label_type']),'','')}">全部</a></li>
                             <else />
-                            <li><a href="{:U('Coupon/coupon',array('label_type'=>$get_info['label_type']),'','')}" class="current">全部</a></li>
+                            <li><a href="{:U('Coupon/specialcoupon',array('label_type'=>$get_info['label_type']),'','')}" class="current">全部</a></li>
                             </if>
 							
                             <foreach name="categories" item="category">
                             <if condition="$get_info['label_type'] eq $category['label_type']">
 								<if condition="$get_info['cat_id'] eq $category['cat_id']">
-							 	<li><a href="{:U('Coupon/coupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}" class="current">{$category.cat_name}</a></li>
+							 	<li><a href="{:U('Coupon/specialcoupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}" class="current">{$category.cat_name}</a></li>
                             	<else />
 
-								<li><a href="{:U('Coupon/coupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}">{$category.cat_name}</a></li>
+								<li><a href="{:U('Coupon/specialcoupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','')}">{$category.cat_name}</a></li>
                             </if>
                             <else />
                             </if>
@@ -84,46 +84,46 @@
 						<p>学校</p>
 						<ul class="parent_classification">
 	                        <if condition="$get_info.tag neq ''">
-							<li><a href="{:U('Coupon/coupon')}">全部</a></li>
+							<li><a href="{:U('Coupon/specialcoupon')}">全部</a></li>
 	                        <else />
-							<li><a href="{:U('Coupon/coupon')}" class="current">全部</a></li>
+							<li><a href="{:U('Coupon/specialcoupon')}" class="current">全部</a></li>
 	                        </if>
 	                        <if condition="$get_info.tag neq '桂林电子科技大学'">
-							<li><a href="{:U('Coupon/coupon',array('tag'=>'桂林电子科技大学'),'','')}">桂林电子科技大学</a></li>
+							<li><a href="{:U('Coupon/specialcoupon',array('tag'=>'桂林电子科技大学'),'','')}">桂林电子科技大学</a></li>
 	                        <else />
-							<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'桂林电子科技大学'),'','')}">桂林电子科技大学</a></li>
+							<li><a class="current" href="{:U('Coupon/specialcoupon',array('tag'=>'桂林电子科技大学'),'','')}">桂林电子科技大学</a></li>
 	                        </if>
 							<if condition="$get_info.tag neq '广西师范大学'">
-							<li><a href="{:U('Coupon/coupon',array('tag'=>'广西师范大学'),'','')}">广西师范大学</a></li>
+							<li><a href="{:U('Coupon/specialcoupon',array('tag'=>'广西师范大学'),'','')}">广西师范大学</a></li>
 	                        <else />
-							<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'广西师范大学'),'','')}">广西师范大学</a></li>
+							<li><a class="current" href="{:U('Coupon/specialcoupon',array('tag'=>'广西师范大学'),'','')}">广西师范大学</a></li>
 	                        </if>
 	                        <if condition="$get_info.tag neq '桂林理工大学'">
-							<li><a href="{:U('Coupon/coupon',array('tag'=>'桂林理工大学'),'','')}">桂林理工大学</a></li>
+							<li><a href="{:U('Coupon/specialcoupon',array('tag'=>'桂林理工大学'),'','')}">桂林理工大学</a></li>
 	                        <else />
-							<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'桂林理工大学'),'','')}">桂林理工大学</a></li>
+							<li><a class="current" href="{:U('Coupon/specialcoupon',array('tag'=>'桂林理工大学'),'','')}">桂林理工大学</a></li>
 	                        </if>
 	                        <if condition="$get_info.tag neq '桂林医学院'">
-							<li><a href="{:U('Coupon/coupon',array('tag'=>'桂林医学院'),'','')}">桂林医学院</a></li>
+							<li><a href="{:U('Coupon/specialcoupon',array('tag'=>'桂林医学院'),'','')}">桂林医学院</a></li>
 	                        <else />
-							<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'桂林医学院'),'','')}">桂林医学院</a></li>
+							<li><a class="current" href="{:U('Coupon/specialcoupon',array('tag'=>'桂林医学院'),'','')}">桂林医学院</a></li>
 	                        </if>
 	                        <if condition="$get_info.tag neq '桂林航空学院'">
-							<li><a href="{:U('Coupon/coupon',array('tag'=>'桂林航空学院'),'','')}">桂林航空学院</a></li>
+							<li><a href="{:U('Coupon/specialcoupon',array('tag'=>'桂林航空学院'),'','')}">桂林航空学院</a></li>
 	                        <else />
-							<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'桂林航空学院'),'','')}">桂林航空学院</a></li>
+							<li><a class="current" href="{:U('Coupon/specialcoupon',array('tag'=>'桂林航空学院'),'','')}">桂林航空学院</a></li>
 	                        </if>
 
 	                         <if condition="$get_info.tag neq '桂林旅专'">
-							<li><a href="{:U('Coupon/coupon',array('tag'=>'桂林旅专'),'','')}">桂林旅专</a></li>
+							<li><a href="{:U('Coupon/specialcoupon',array('tag'=>'桂林旅专'),'','')}">桂林旅专</a></li>
 	                        <else />
-							<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'桂林旅专'),'','')}">桂林旅专</a></li>
+							<li><a class="current" href="{:U('Coupon/specialcoupon',array('tag'=>'桂林旅专'),'','')}">桂林旅专</a></li>
 	                        </if>
 
 	                         <if condition="$get_info.tag neq '广艺桂林分校'">
-							<li><a href="{:U('Coupon/coupon',array('tag'=>'广艺桂林分校'),'','')}">广艺桂林分校</a></li>
+							<li><a href="{:U('Coupon/specialcoupon',array('tag'=>'广艺桂林分校'),'','')}">广艺桂林分校</a></li>
 	                        <else />
-							<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>'广艺桂林分校'),'','')}">广艺桂林分校</a></li>
+							<li><a class="current" href="{:U('Coupon/specialcoupon',array('tag'=>'广艺桂林分校'),'','')}">广艺桂林分校</a></li>
 	                        </if>
 						</ul>
 					</div>
@@ -131,21 +131,21 @@
 						<div class="location_box_bottom_box">
 							<ul class="child_classification clearfix">
 								<if condition="$get_info['location'] eq ''">
-									<li><a href="{:U('Coupon/coupon',array('tag'=>$get_info['tag']),'','')}" class="current">全部</a></li>
+									<li><a href="{:U('Coupon/specialcoupon',array('tag'=>$get_info['tag']),'','')}" class="current">全部</a></li>
 								<else />
-									<li><a href="{:U('Coupon/coupon',array('tag'=>$get_info['tag']),'','')}">全部</a></li>
+									<li><a href="{:U('Coupon/specialcoupon',array('tag'=>$get_info['tag']),'','')}">全部</a></li>
 								</if>
 								
 	                            <foreach name="locations" item="location">
 									<if condition="$get_info['tag'] eq $location['belong']">
 										<if condition="$get_info['location'] neq ''">
 											<if condition="$get_info['location'] eq $location['id'] ">
-												<li><a class="current" href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a></li>
+												<li><a class="current" href="{:U('Coupon/specialcoupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a></li>
 											<else />
-												<li><a href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a></li>
+												<li><a href="{:U('Coupon/specialcoupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a></li>
 											</if>
 										<else />
-											<li><a href="{:U('Coupon/coupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a></li>
+											<li><a href="{:U('Coupon/specialcoupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','')}">{$location.name}</a></li>
 										</if>
 									<else />
 									</if>

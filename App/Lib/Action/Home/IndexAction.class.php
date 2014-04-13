@@ -85,6 +85,7 @@ class IndexAction extends Action {
         //获取限时优惠券
         $params = array(
             'coupon_type' => 2,
+            'order_by' => "weight DESC",
         );
         $specicalCoupon = $helper->getCoupon($params);
         $specicalCoupon = $this->cutCouponWords($specicalCoupon);
