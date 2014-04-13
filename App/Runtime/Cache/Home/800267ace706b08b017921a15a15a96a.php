@@ -71,7 +71,7 @@
 				</li>
 				<li><a href="<?php echo U("Admin/Account/login");?>" target=_blank class="no_border_right">商家入口</a></li>
 			</ul>
-			<img src="__PUBLIC__/images/slogan2.png" alt="slogan">
+			<img src="__PUBLIC__/images/slogan2.png" alt="slogan" id="slogan">
 		</div>
 		<div id="top_logo_box">
 			<a href="<?php echo U("Index/index");?>">
@@ -79,7 +79,9 @@
 			</a>
 		</div>
 		<div id="top_nav_box">
+		<?php echo ($templateName); ?>
 			<div id="nav_search_box">
+		
 				<ul>
 					<?php if($templateName == 'index'): ?><li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
@@ -98,6 +100,11 @@
 					<?php elseif($templateName == 'specialcoupon'): ?>
 						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
 						<li class="border"><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php elseif($templateName == ''): ?>
+						<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php else: ?>

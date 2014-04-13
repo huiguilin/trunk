@@ -102,6 +102,11 @@
 						<li class="border"><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php elseif($templateName == ''): ?>
+						<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php else: ?>
 						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
