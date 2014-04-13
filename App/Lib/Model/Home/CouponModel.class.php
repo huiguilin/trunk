@@ -55,7 +55,7 @@ class CouponModel extends Model {
             $str .= " AND coupon_type IN ({$params['coupon_type']})";
         }
         if (isset($params['label_type'])) {
-            $str .= " AND (label_type & {$this->labelType[$params['label_type']][1]} = {$this->labelType[$params['label_type']][1]})";
+            $str .= " AND (label_type & {$params['label_type']} = {$params['label_type']})";
         }
         if (isset($params['start_time_lt'])) {
             $str .= " AND start_time <= '{$params['start_time_lt']}'";
