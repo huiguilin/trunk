@@ -45,11 +45,11 @@
 	                        <else />
 							<li><a href="{:U('Coupon/specialcoupon')}" class="current">全部</a></li>
 	                        </if>
-	                    <foreach name="label_types" item="label_type">
-	                        <if condition="$get_info.label_type eq $key">
-							<li><a href="{:U('Coupon/specialcoupon',array('label_type'=>$key),'','')}" class="current">{$label_type}</a></li>
+	                    <foreach name="label_types" item="label_type" key="i">
+	                        <if condition="$get_info.label_type eq $label_type">
+							<li><a href="{:U('Coupon/specialcoupon',array('label_type'=>$i),'','')}" class="current">{$i}</a></li>
 	                        <else />
-							<li><a href="{:U('Coupon/specialcoupon',array('label_type'=>$key),'','')}">{$label_type}</a></li>
+							<li><a href="{:U('Coupon/specialcoupon',array('label_type'=>$i),'','')}">{$i}</a></li>
 	                        </if>
 	                    </foreach>
 						</ul>
