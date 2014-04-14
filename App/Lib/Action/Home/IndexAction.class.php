@@ -125,6 +125,7 @@ class IndexAction extends Action {
         //获取热门优惠券
         $params = array(
             'limit' => '0,5',
+            'order_by' => "weight DESC",
         );
         $hotCouponInfo = $helper->getCoupon($params);
         $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);

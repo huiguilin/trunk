@@ -103,8 +103,8 @@ class ValidateManagementAction extends Action {
         $coupon = mergeData($coupon, $couponInfo, 'coupon_id', 'coupon_id');
         $data = array(
             'status' => 1,
-            'name' => $coupon[0]['name'],
-            'title'=> $coupon[0]['title'],
+            'name' => $coupon[0]['description'],
+            'title'=> $coupon[0]['description'],
             'code' => $coupon[0]['code'],
             'stime' => $coupon[0]['start_time'],
             'etime' => $coupon[0]['end_time'],

@@ -1,7 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 a//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>商家单个验证|惠桂林</title>
+<title>商家单个验证|惠校园</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
 <meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
@@ -15,14 +15,14 @@
 	<!-- 顶部区域 -->
 	<div id="top_content_box">
 		<div id="top_middle_box">
-			<a href="http://www.huigl.com" class="logoimg_box"><img src="__PUBLIC__/images/logo.png" alt="" /></a>
+			<a href="<?php echo U('Home/Index/index');?>" class="logoimg_box"><img src="__PUBLIC__/images/logo.png" alt="" /></a>
 			<p>商家中心</p>
 			
 			<?php if(($_SESSION['user']['user_id']!= '') and ($templateName != 'login')): ?><a href="" class="one">您好，<?php echo ($_SESSION['user']['name']); ?></a>
 				<a href="<?php echo U('Home/User/logout','','','');?>/type/0" class="two">退出</a>
 			<?php else: ?>
 				<a href="" class="one">登录</a>
-				<a href="http://www.huigl.com" class="two">惠桂林首页</a><?php endif; ?>
+				<a href="<?php echo U('Home/Index/index');?>" class="two">惠校园首页</a><?php endif; ?>
 
 		</div>
 	</div>
@@ -84,7 +84,7 @@
 					</div>
 					<div class="coupon_detail_box" id="single_validate_coupon_detail_box">
 						<p class="c_title">优惠券信息</p>
-						<p>优惠券名称<span id="coupon_name"></span></p>
+						<!-- <p>优惠券名称<span id="coupon_name"></span></p> -->
 						<p>优惠券标题<span id="coupon_title"></span></p>
 						<p>优惠券有效期<span class="c_date" id="coupon_date"></span></p>
 						<p>优惠券密码<span class="c_code" id="coupon_code"></span></p>
