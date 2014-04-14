@@ -60,12 +60,24 @@
 						</table>
 						<input type="hidden" value="{$couponids}" id="couponids" />
 						<ul class="page_box clearfix">
-							<li class="one"><a href="" class="one">首页</a></li>
+							<!-- <li class="one"><a href="" class="one">首页</a></li>
 							<li><a href=""><</a></li>
 							<li><a href="" class="red">1</a></li>
 							<li><a href="">2</a></li>
 							<li><a href="">></a></li>
-							<li class="one"><a href="" class="one">尾页</a></li>
+							<li class="one"><a href="" class="one">尾页</a></li> -->
+							<li class="one"><a href="{$pageArrayInfo.url}?pageNow=1" class="one">首页</a></li>
+							{$pageArrayInfo.previous}
+							<for start="$pageArrayInfo.start" end="$pageArrayInfo.end">
+					            <if condition="($pageNow eq $i)">
+					               <li><a class="red" href="{$pageArrayInfo.url}?pageNow={$i}">{$i}</a></li>
+					               <else />
+					               <li><a href="{$pageArrayInfo.url}?pageNow={$i}">{$i}</a></li>
+					            </if>
+					        </for>
+							{$pageArrayInfo.nexts}
+							
+							<li class="one"><a href="{$pageArrayInfo.url}?pageNow={$pageAll}" class="one">尾页</a></li>
 						</ul>
 					</div>
 				</form>

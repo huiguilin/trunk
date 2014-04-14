@@ -127,4 +127,39 @@ function timediff($begin_time,$end_time){
       $res = array("day" => $days,"hour" => $hours,"min" => $mins,"sec" => $secs);
       return $res;
 }
-
+//分配给前台显示
+function homePage($page_whole,$pageAll,$pageNow,$url,$sortName='',$sortValue=''){
+    $start = floor(($pageNow-1)/$page_whole)*$page_whole+1;
+    if ($pageNow > $page_whole) {
+       $previou = $start-1;
+       /*
+        *整体向后翻页变量，每次整体向后翻$page_whole页
+       */
+        $previous = "<li><a href='$url?pageNow=$previou&$sortName=$sortValue'><</a></li>";
+    }else{
+        $previous = "<li><a href='$url?pageNow=1&$sortName=$sortValue'><</a></li>";
+    }
+    if (($pageAll - $pageNow) <= $page_whole) {
+        $nexts = "<li><a href='javascript:;'>></a></li>";
+    }else{
+        $next = $start+$page_whole;
+        /*
+        *整体向前翻页变量，每次整体向前翻$page_whole页
+       */
+        $nexts = "<li><a href='$url?pageNow=$next&$sortName=$sortValue'>></a></li>";
+    }
+    if ($pageAll <= $page_whole) {
+        $end = $pageAll + 1;  //$end为前台打印页码变量，for循环结束值
+    }else if($pageAll == $pageNow){
+        $end = $pageAll + 1;
+    }
+    else{
+        $end = $start+$page_whole;
+    }
+    $pageArray = array();
+    $pageArray['start'] = $start;  //$start为前台打印页码变量，for循环开始值
+    $pageArray['previous'] = $previous;
+    $pageArray['nexts'] = $nexts;
+    $pageArray['end'] = $end;
+    return $pageArray;
+}

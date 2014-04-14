@@ -4,9 +4,9 @@ class PartnerAction extends Action {
      private $labelType = array(
         '1' => '美食',
         '2' => '休闲娱乐',
-        '3' => '生活服务',
-        '4' => '酒店',
-        '5' => '旅游',
+        '4' => '生活服务',
+        '8' => '酒店',
+        '16' => '旅游',
     );
     public function _empty($name){
         $this->error("非法提交！");
@@ -78,14 +78,14 @@ class PartnerAction extends Action {
 
         }
 
-
     	//获取热门优惠券
-        $param =array();
-    	$param['limit'] = '0,5';
-        $hotCouponInfo = $couponHelper->getCoupon($param);
+        $hotParam =array();
+    	$hotParam['limit'] = '0,5';
+        $hotCouponInfo = $couponHelper->getCoupon($hotParam);
         $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);
 
         //获取全部优惠券
+        $param = array();
         $param['limit'] = '';
         $param['coupon_type'] = 1;
         $time = date("Y-m-d H:i:s");
@@ -94,10 +94,10 @@ class PartnerAction extends Action {
         $couponInfo = $couponHelper->getCoupon($param);
         $couponInfo = $this->cutCouponWords($couponInfo);
 
-        $params = array();
-        $params['limit'] = '';
-        $params['coupon_type'] = 2;
-        $ScouponInfo = $couponHelper->getCoupon($params);
+        $param = array();
+        $param['limit'] = '';
+        $param['coupon_type'] = 2;
+        $ScouponInfo = $couponHelper->getCoupon($param);
         $ScouponInfo = $this->cutCouponWords($ScouponInfo);
 
         foreach ($ScouponInfo as $k => $v) {
@@ -131,7 +131,7 @@ class PartnerAction extends Action {
        //获取全部商家
         $params['limit'] = '';
         $partnerInfo = $partnerHelper->getPartner($params);
-       
+     
         $partnerInfo = $this->cutPartnerWords($partnerInfo);
 
 

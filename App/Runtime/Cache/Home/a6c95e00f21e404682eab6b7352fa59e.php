@@ -447,9 +447,9 @@
                         <?php if($get_info["label_type"] != ''): ?><li><a href="<?php echo U('Coupon/coupon');?>">全部</a></li>
                         <?php else: ?>
 						<li><a href="<?php echo U('Coupon/coupon');?>" class="current">全部</a></li><?php endif; ?>
-                   		 <?php if(is_array($label_types)): foreach($label_types as $key=>$label_type): if($get_info["label_type"] == $key): ?><li><a href="<?php echo U('Coupon/coupon',array('label_type'=>$key),'','');?>" class="current"><?php echo ($label_type); ?></a></li>
+                   		 <?php if(is_array($label_types)): foreach($label_types as $key=>$label_type): if($get_info["label_type"] == $label_type): ?><li><a href="<?php echo U('Coupon/coupon',array('label_type'=>$key),'','');?>" class="current"><?php echo ($key); ?></a></li>
                         <?php else: ?>
-						<li><a href="<?php echo U('Coupon/coupon',array('label_type'=>$key),'','');?>"><?php echo ($label_type); ?></a></li><?php endif; endforeach; endif; ?>
+						<li><a href="<?php echo U('Coupon/coupon',array('label_type'=>$key),'','');?>"><?php echo ($key); ?></a></li><?php endif; endforeach; endif; ?>
 						</ul>
 					</div>
 					<?php if(($_GET["label_type"] != '') or ($_GET["cat_id"] != '')): ?><div class="classification_box_bottom_box">

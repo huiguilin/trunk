@@ -103,12 +103,20 @@
 						</table>
 						<input type="hidden" value="<?php echo ($couponids); ?>" id="couponids" />
 						<ul class="page_box clearfix">
-							<li class="one"><a href="" class="one">首页</a></li>
+							<!-- <li class="one"><a href="" class="one">首页</a></li>
 							<li><a href=""><</a></li>
 							<li><a href="" class="red">1</a></li>
 							<li><a href="">2</a></li>
 							<li><a href="">></a></li>
-							<li class="one"><a href="" class="one">尾页</a></li>
+							<li class="one"><a href="" class="one">尾页</a></li> -->
+							<li class="one"><a href="/trunk<?php echo ($pageArrayInfo["url"]); ?>?pageNow=1" class="one">首页</a></li>
+							<?php echo ($pageArrayInfo["previous"]); ?>
+							<?php $__FOR_START_9035__=$pageArrayInfo["start"];$__FOR_END_9035__=$pageArrayInfo["end"];for($i=$__FOR_START_9035__;$i < $__FOR_END_9035__;$i+=1){ if(($pageNow == $i)): ?><li><a class="red" href="/trunk<?php echo ($pageArrayInfo["url"]); ?>?pageNow=<?php echo ($i); ?>"><?php echo ($i); ?></a></li>
+					               <?php else: ?>
+					               <li><a href="/trunk<?php echo ($pageArrayInfo["url"]); ?>?pageNow=<?php echo ($i); ?>"><?php echo ($i); ?></a></li><?php endif; } ?>
+							<?php echo ($pageArrayInfo["nexts"]); ?>
+							
+							<li class="one"><a href="/trunk<?php echo ($pageArrayInfo["url"]); ?>?pageNow=<?php echo ($pageAll); ?>" class="one">尾页</a></li>
 						</ul>
 					</div>
 				</form>

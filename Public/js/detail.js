@@ -169,4 +169,10 @@ $(function(){
             },"json");
         });
 
+
+    $('#main #coupon_box div.other_coupons_box p.other_coupon_content').hover(function() {
+        $(this).find('a').addClass('underline');
+    }, function() {
+         $(this).find('a').removeClass('underline');
+    });
 })

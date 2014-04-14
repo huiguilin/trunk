@@ -8,7 +8,6 @@ class CouponAction extends Action {
         '生活服务' => '4',
         '酒店' => '8',
         '旅游' => '16',
-        '丽人' => '32',
     );
     public function _empty($name){
         $this->error("非法提交！");
@@ -76,7 +75,7 @@ class CouponAction extends Action {
                     break;
             }
         }
-        
+       
         $couponHelper = new CouponModel();
         $params['coupon_type'] = 1;
         $time = date("Y-m-d H:i:s");
@@ -217,12 +216,10 @@ class CouponAction extends Action {
         $couponHelper = new CouponModel();
         $params['coupon_type'] = 2;
         $time = date("Y-m-d H:i:s");
-        $params['start_time_lt'] = $time;
-        $params['end_time_gt'] = $time;
-      
        
+    
         $couponInfo = $couponHelper->getCoupon($params);
-
+         
         foreach ($couponInfo as $k => $v) {
 
             if (strtotime($v['start_time'])-strtotime($time) >= 0 && strtotime($v['start_time'])-strtotime($time) < (3600*48)) {
