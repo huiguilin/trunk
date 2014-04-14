@@ -3,11 +3,12 @@
 class CouponAction extends Action {
 
     private $labelType = array(
-        '1' => '美食',
-        '2' => '休闲娱乐',
-        '3' => '生活服务',
-        '4' => '酒店',
-        '5' => '旅游',
+        '美食' => '1',
+        '休闲娱乐' => '2',
+        '生活服务' => '4',
+        '酒店' => '8',
+        '旅游' => '16',
+        '丽人' => '32',
     );
     public function _empty($name){
         $this->error("非法提交！");
@@ -32,7 +33,13 @@ class CouponAction extends Action {
             $params['cat_id'] = $_GET['cat_id'];
         }
         if (!empty($_GET['label_type'])) {
-            $params['label_type'] = $_GET['label_type'];
+            if (is_numeric($_GET['label_type'])) {
+                $params['label_type'] = $_GET['label_type'];
+            }
+            else {
+                $params['label_type'] = !empty($this->labelType[$_GET['label_type']]) ? $this->labelType[$_GET['label_type']] : 0;
+            }
+            $_GET['label_type'] = $params['label_type'];
         }
         if (!empty($_GET['tag'])) {
             $params['tag'] = $_GET['tag'];
@@ -77,7 +84,7 @@ class CouponAction extends Action {
         $params['end_time_gt'] = $time;
 
         $couponInfo = $couponHelper->getCoupon($params);
-       
+
         if ($params['order_by'] != 'download_times DESC') {
             $params['order_by'] = 'download_times DESC';
         }
@@ -156,7 +163,13 @@ class CouponAction extends Action {
             $params['cat_id'] = $_GET['cat_id'];
         }
         if (!empty($_GET['label_type'])) {
-            $params['label_type'] = $_GET['label_type'];
+            if (is_numeric($_GET['label_type'])) {
+                $params['label_type'] = $_GET['label_type'];
+            }
+            else {
+                $params['label_type'] = !empty($this->labelType[$_GET['label_type']]) ? $this->labelType[$_GET['label_type']] : 0;
+            }
+            $_GET['label_type'] = $params['label_type'];
         }
         if (!empty($_GET['tag'])) {
             $params['tag'] = $_GET['tag'];
