@@ -232,6 +232,11 @@ class PartnerAction extends Action {
         //获取商家分类标签
         $partnerTagshelper = new PartnerTagsModel();
         $partnerTagsInfo = $partnerTagshelper->getPartnerTagsInfoById($data[0]['partner_id']);
+        $partnerTagsInfo[0]['name'] = mb_substr($partnerTagsInfo[0]['name'], 0, 4, 'UTF-8');
+        $partnerTagsInfo[0]['cat_name'] = mb_substr($partnerTagsInfo[0]['cat_name'], 0, 4, 'UTF-8');
+        $partnerTagsInfo[0]['locationname'] = mb_substr($partnerTagsInfo[0]['locationname'], 0, 4, 'UTF-8');
+        $partnerTagsInfo[0]['belong'] = mb_substr($partnerTagsInfo[0]['belong'], 0, 4, 'UTF-8');
+        $partnerTagsInfo[0]['pcat_name'] = mb_substr($partnerTagsInfo[0]['pcat_name'], 0, 4, 'UTF-8');
 
         //获取优惠券评分
         $Evaluationhelper = new CouponEvaluationModel();
@@ -331,6 +336,7 @@ class PartnerAction extends Action {
        $locationInfo = $helper->getLocationInfo($params);
        return $locationInfo;
     }
+
 
 }
 
