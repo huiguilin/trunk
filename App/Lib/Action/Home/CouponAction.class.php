@@ -411,7 +411,14 @@ class CouponAction extends Action {
 
 
         $ids = array($couponId);
-        $couponInfo = $couponHelper->getCouponByCouponId($ids);
+        $time = date('Y-m-d H:i:s');
+        
+        $params = array(
+            'coupon_id' => $couponId,
+            'start_time_lt' => $time,
+            'end_time_gt' => $time,
+        );
+        $couponInfo = $couponHelper->getCoupon($params);
         if (empty($couponInfo)) {
            $data['info'] = "wrong counpon_id!";
            $this->ajaxReturn($data,'JSON');
