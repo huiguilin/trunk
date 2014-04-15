@@ -43,17 +43,38 @@ class ValidateManagementAction extends Action {
         $params['hash_key'] = 'coupon_id';
         $couponInfo = $couponHelper->getCoupon($params);
         $couponIds = implode(',', DataToArray($couponInfo, 'coupon_id'));
-        $pageSize = 10;
-        $offset = $page * $pageSize;
-        $params = array(
-            'coupon_id' => $couponIds,
-            'partner_id' => $user['partner_id'],
-            'limit' => "{$offset},{$pageSize}",
-            //TBC
-            'status' => 0,
-        );
-        $userCouponHelper = D('Home/UserCoupon');
-        $coupon = $userCouponHelper->getUserCoupon($params);
+        // $pageSize = 10;
+        // $offset = $page * $pageSize;
+        // $params = array(
+        //     'coupon_id' => $couponIds,
+        //     'partner_id' => $user['partner_id'],
+        //     'limit' => "{$offset},{$pageSize}",
+        //     //TBC
+        //     'status' => 0,
+        // );
+        // $userCouponHelper = D('Home/UserCoupon');
+        // $coupon = $userCouponHelper->getUserCoupon($params);
+
+        //分页
+        $pageHelper = D('Home/Page');
+        $pageNow = !empty($_GET['pageNow']) ? $_GET['pageNow'] : 1;
+        $pageHelper->pageNow = $pageNow;
+
+        $pageHelper->pageSize = 5;
+        $pageHelper->order = "coupon_id desc";
+        $pageHelper->countTerm = $user['partner_id'];
+        $map['coupon_id'] = array('in',$couponIds);
+        $map['partner_id'] = array('in',$user['partner_id']);
+        $map['status'] = array('in','0');
+        $pageHelper->map = $map;
+        $coupon = $pageHelper->getPages("t_monkey_user_coupon");
+        $pageAll = $pageHelper->pageAll;
+        $url = "/index.php/admin/ValidateManagement/viewvalidate";
+        $pageArrayInfo = homePage(3,$pageAll,$pageNow,$url,'','');
+        $pageArrayInfo['url'] = $url;
+
+
+
         $coupon = mergeData($coupon, $couponInfo, 'coupon_id', 'coupon_id');
        
         $params = array(
@@ -65,6 +86,9 @@ class ValidateManagementAction extends Action {
         $this->assign('coupon_info',$coupon);
         $this->assign('couponTypes',$couponType);
         $this->assign('couponids',$couponId);
+        $this->assign("pageAll",$pageAll);
+        $this->assign("pageNow",$pageNow);
+        $this->assign("pageArrayInfo",$pageArrayInfo);
 		$this->display();
     }
     //用优惠券码获得优惠券对应的信息
@@ -103,8 +127,8 @@ class ValidateManagementAction extends Action {
         $coupon = mergeData($coupon, $couponInfo, 'coupon_id', 'coupon_id');
         $data = array(
             'status' => 1,
-            'name' => $coupon[0]['name'],
-            'title'=> $coupon[0]['title'],
+            'name' => $coupon[0]['description'],
+            'title'=> $coupon[0]['description'],
             'code' => $coupon[0]['code'],
             'stime' => $coupon[0]['start_time'],
             'etime' => $coupon[0]['end_time'],

@@ -514,7 +514,7 @@
 			</div>
 			<div class="other_coupons_box">
 				<p class="other_coupon_title">本商户其他优惠券</p>
-                <?php if(is_array($other_coupon)): foreach($other_coupon as $key=>$ocoupon): ?><p class="other_coupon_content"><a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($ocoupon["coupon_id"]); ?>" class="other_coupon_title" target="_blank"><?php echo ($ocoupon["name"]); ?></a><a class="other_coupon_description">：<?php echo ($ocoupon["description"]); ?></a></p><?php endforeach; endif; ?>
+                <?php if(is_array($other_coupon)): foreach($other_coupon as $key=>$ocoupon): ?><p class="other_coupon_content"><a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($ocoupon["coupon_id"]); ?>" class="other_coupon_title" target="_blank"><?php echo ($ocoupon["name"]); ?></a><a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($ocoupon["coupon_id"]); ?>" class="other_coupon_description" target="_blank">：<?php echo ($ocoupon["description"]); ?></a></p><?php endforeach; endif; ?>
 			</div>
 			<div class="business_detail_info_box">
 				<ul class="business_nav clearfix" id="business_nav">

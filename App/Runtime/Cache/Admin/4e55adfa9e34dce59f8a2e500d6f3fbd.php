@@ -1,7 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 a//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>商家单个验证|惠校园</title>
+<title>商家批量验证|惠校园</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="Keywords" content="惠桂林,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
 <meta name="description" content=" 惠桂林网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠桂林网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
@@ -9,7 +9,7 @@
 <script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
 <script type="text/javascript" src="__PUBLIC__/admin/js/validatemanagement.js"></script>
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/global.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/singlevalidate.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/multivalidate.css" />
 </head>
 <body>
 	<!-- 顶部区域 -->
@@ -69,27 +69,33 @@
 		<div id="right_content_box">
 			<div class="function_nav_box">
 				<ul class="function_nav clearfix">
-					<li><a href="<?php echo U('Admin/ValidateManagement/singlevalidate');?>" class="single current">单券验证</a></li>
-					<li><a href="<?php echo U('Admin/ValidateManagement/multivalidate');?>" class="multi">批量验证</a></li>
+					<li><a href="<?php echo U('Admin/ValidateManagement/singlevalidate');?>" class="single">单券验证</a></li>
+					<li><a href="<?php echo U('Admin/ValidateManagement/multivalidate');?>" class="multi current">批量验证</a></li>
 					<li><a href="<?php echo U('Admin/ValidateManagement/viewvalidate');?>" class="view">已验证优惠券</a></li>
 				</ul>
 			</div>
 			<div class="function_content_box">
-				<form action="<?php echo U('Admin/ValidateManagement/validateCouponCode','','','');?>" method="post">
+				<form action="">
 					<div class="coupon_code_box">
-						<p>请输入优惠券密码</p>
+						<p class="title">请输入优惠券密码</p>
 						<input type="text" name="coupon_code"/>
-						<a href="" id="get_coupon_detail_btn">获取优惠券信息</a>
+						<a href="" id="multi_add_btn">添加</a>
 						<p class="error_tips"></p>
 					</div>
-					<div class="coupon_detail_box" id="single_validate_coupon_detail_box">
-						<p class="c_title">优惠券信息</p>
-						<!-- <p>优惠券名称<span id="coupon_name"></span></p> -->
-						<p>优惠券标题<span id="coupon_title"></span></p>
-						<p>优惠券有效期<span class="c_date" id="coupon_date"></span></p>
-						<p>优惠券密码<span class="c_code" id="coupon_code"></span></p>
-						<input type="submit" name="coupon_validate_confirm_btn" id="coupon_validate_confirm_btn" value="确定消费"/>
-						<a href="" id="coupon_validate_cancel_btn">取消</a>
+					<div class="coupon_detail_box">
+						<table id="validate_coupon_info">
+							<tr>
+								<th class="one">序号</th>
+								<th class="two">操作</th>
+								<th class="three">优惠券信息</th>
+								<!--th class="four">门店</th-->
+								<th class="five">有效期</th>
+								<th class="six">优惠券密码</th>
+							</tr>
+                  
+						</table>
+						<input type="submit" name="multi_coupon_validate_confirm_btn" id="multi_coupon_validate_confirm_btn" value="确定消费" />
+						<a href="" id="cancel_btn">取消</a>
 					</div>
 				</form>
 			</div>

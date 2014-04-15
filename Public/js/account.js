@@ -26,7 +26,7 @@ $(function(){
 				if(data.status == 0){
 						$('#subscription_email_address_hidden_error_tips').show().text(data.info);
 					}else if(data.status == 1){
-						location.href = "http://localhost/trunk/index.php/home/account/mysubscription.html";
+						location.href = ajaxPostURL+"home/account/mysubscription.html";
 					}else if(data.status == 2){
 						$('#subscription_email_address_hidden_error_tips').show().text(data.info);
 					}else if(data.status == 3){
@@ -94,7 +94,7 @@ $(function(){
 				if(data.status == 2){
 					$('#modify_nickname_hidden_box div.middle_content_box ul li p.hidden_error_tips').show().text(data.info);
 				}else if(data.status ==1){
-					location.href = "http://localhost/trunk/index.php/home/account/mysetting.html";
+					location.href = ajaxPostURL+"home/account/mysetting.html";
 				}else{
 					$('#modify_nickname_hidden_box div.middle_content_box ul li p.hidden_error_tips').show().text(data.info);
 				}
@@ -122,7 +122,7 @@ $(function(){
 					if(data.status == 0){
 						$('#old_pwd_tip').show().text(data.info);
 					}else if(data.status == 1){
-						location.href = "http://localhost/trunk/index.php/home/account/mysetting.html";
+						location.href = ajaxPostURL+"home/account/mysetting.html";
 					}else if(data.status == 2){
 						$('#old_pwd_tip').show().text(data.info);
 					}
@@ -163,7 +163,7 @@ $(function(){
 					if(data.status == 0){
 						$('#username_error_tip').show().text(data.info);
 					}else if(data.status == 1){
-						location.href = "http://localhost/trunk/index.php/home/account/mysetting.html";
+						location.href = ajaxPostURL+"home/account/mysetting.html";
 					}else if(data.status == 2){
 						$('#email_error_tip').show().text(data.info);
 					}
@@ -197,7 +197,7 @@ $(function(){
 						$('#old_phone_error_tip').show().text(data.info);
 					}else if(data.status == 1){
 						alert(data.info);
-						location.href = "http://localhost/trunk/index.php/home/account/mysetting.html";
+						location.href = ajaxPostURL+"home/account/mysetting.html";
 					}else if(data.status == 2){
 						$('#old_phone_error_tip').show().text(data.info);
 					}
@@ -232,7 +232,7 @@ $(function(){
 						if(data.status == 0){
 							$('#old_phone_error_tip').show().text(data.info);
 						}else if(data.status == 1){
-							location.href = "http://localhost/trunk/index.php/home/account/mysetting.html";
+							location.href = ajaxPostURL+"home/account/mysetting.html";
 						}else if(data.status == 2){
 							$('#old_phone_error_tip').show().text(data.info);
 						}

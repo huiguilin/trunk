@@ -123,7 +123,7 @@
 			<div class="other_coupons_box">
 				<p class="other_coupon_title">本商户其他优惠券</p>
                 <foreach name="other_coupon" item="ocoupon">
-				<p class="other_coupon_content"><a href="{:U("Coupon/detail","","","")}/{$ocoupon.coupon_id}" class="other_coupon_title" target="_blank">{$ocoupon.name}</a><a class="other_coupon_description">：{$ocoupon.description}</a></p>
+				<p class="other_coupon_content"><a href="{:U("Coupon/detail","","","")}/{$ocoupon.coupon_id}" class="other_coupon_title" target="_blank">{$ocoupon.name}</a><a href="{:U("Coupon/detail","","","")}/{$ocoupon.coupon_id}" class="other_coupon_description" target="_blank">：{$ocoupon.description}</a></p>
                 </foreach>
 			</div>
 			<div class="business_detail_info_box">

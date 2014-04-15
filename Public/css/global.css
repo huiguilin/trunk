@@ -592,7 +592,7 @@ body{
 	height: 42px;
 }
 #top_box #top_nav_box #nav_search_box ul li.border{
-	background: url(../images/nav_bg.png) no-repeat 0px 0px;
+	background: url(../images/nav_bg.png) no-repeat 0px -2px;
 }
 #top_box #top_nav_box #nav_search_box ul li a{
 	color: white;

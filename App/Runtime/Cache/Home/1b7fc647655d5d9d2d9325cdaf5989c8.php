@@ -1,21 +1,28 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 a//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="Keywords" content="惠校园,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
 <meta name="description" content=" 惠校园网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠校园网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/specialcoupon.css">
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/M_sendCouponToCellphone.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/about_tpl.css">
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/specialcoupon.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/footer.js"></script>
 
-
-<title>限时优惠券 | 惠校园</title>
+<title>网站地图 | 惠校园</title>
+<!--[if IE 6]>
+<!--背景图片透明方法-->
+<script src="__PUBLIC__/js/iepng.js" type="text/javascript"></script>
+<!--插入图片透明方法-->
+<script type="text/javascript">
+   EvPNG.fix('div, ul, img, li, input');  //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
+</script>
+<![endif]-->
 </head>
 <body>
 <!-- 顶部订阅分享区域+Logo区域 -->
@@ -427,204 +434,188 @@
 </script>
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!-- 内容区域 -->
+	 	
+	
+	<!-- 主要内容区域 -->
 	<div id="main">
-		<div id="ad_box">
-	        <img src="__PUBLIC__/images/flash/c_1.png" alt="广告图片01">
-	        <img src="__PUBLIC__/images/flash/c_2.png" alt="广告图片02">
-	        <img src="__PUBLIC__/images/flash/c_3.png" alt="广告图片03">
-			<ul>
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
-			</ul>
-			<a href="">x</a>
-		</div>
-		<div id="classification_location_box">
-			<div id="content_box">
-				<div id="classification_box">
-					<div class="classification_box_top_box">
-						<p>分类</p>
-						<ul class="parent_classification">
-	                        <?php if($get_info["label_type"] != ''): ?><li><a href="<?php echo U('Coupon/specialcoupon');?>">全部</a></li>
-	                        <?php else: ?>
-							<li><a href="<?php echo U('Coupon/specialcoupon');?>" class="current">全部</a></li><?php endif; ?>
-	                    <?php if(is_array($label_types)): foreach($label_types as $i=>$label_type): if($get_info["label_type"] == $label_type): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('label_type'=>$i),'','');?>" class="current"><?php echo ($i); ?></a></li>
-	                        <?php else: ?>
-							<li><a href="<?php echo U('Coupon/specialcoupon',array('label_type'=>$i),'','');?>"><?php echo ($i); ?></a></li><?php endif; endforeach; endif; ?>
-						</ul>
-					</div>
-					<?php if(($_GET["label_type"] != '') or ($_GET["cat_id"] != '')): ?><div class="classification_box_bottom_box">
-						<ul class="child_classification clearfix">
-                            <?php if($get_info["cat_id"] != ''): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('label_type'=>$get_info['label_type']),'','');?>">全部</a></li>
-                            <?php else: ?>
-                            <li><a href="<?php echo U('Coupon/specialcoupon',array('label_type'=>$get_info['label_type']),'','');?>" class="current">全部</a></li><?php endif; ?>
-							
-                            <?php if(is_array($categories)): foreach($categories as $key=>$category): if($get_info['label_type'] == $category['label_type']): if($get_info['cat_id'] == $category['cat_id']): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','');?>" class="current"><?php echo ($category["cat_name"]); ?></a></li>
-                            	<?php else: ?>
-
-								<li><a href="<?php echo U('Coupon/specialcoupon',array('label_type'=>$category['label_type'],'cat_id'=>$category['cat_id']),'','');?>"><?php echo ($category["cat_name"]); ?></a></li><?php endif; ?>
-                            <?php else: endif; endforeach; endif; ?>
-						</ul>
-					</div>
-					<?php else: endif; ?>
-				</div>
-				<div id="location_box">
-					<div class="location_box_top_box">
-						<p>学校</p>
-						<ul class="parent_classification">
-	                        <?php if($get_info["tag"] != ''): ?><li><a href="<?php echo U('Coupon/specialcoupon');?>">全部</a></li>
-	                        <?php else: ?>
-							<li><a href="<?php echo U('Coupon/specialcoupon');?>" class="current">全部</a></li><?php endif; ?>
-	                        <?php if($get_info["tag"] != '桂林电子科技大学'): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林电子科技大学'),'','');?>">桂林电子科技大学</a></li>
-	                        <?php else: ?>
-							<li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林电子科技大学'),'','');?>">桂林电子科技大学</a></li><?php endif; ?>
-							<?php if($get_info["tag"] != '广西师范大学'): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>'广西师范大学'),'','');?>">广西师范大学</a></li>
-	                        <?php else: ?>
-							<li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>'广西师范大学'),'','');?>">广西师范大学</a></li><?php endif; ?>
-	                        <?php if($get_info["tag"] != '桂林理工大学'): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林理工大学'),'','');?>">桂林理工大学</a></li>
-	                        <?php else: ?>
-							<li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林理工大学'),'','');?>">桂林理工大学</a></li><?php endif; ?>
-	                        <?php if($get_info["tag"] != '桂林医学院'): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林医学院'),'','');?>">桂林医学院</a></li>
-	                        <?php else: ?>
-							<li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林医学院'),'','');?>">桂林医学院</a></li><?php endif; ?>
-	                        <?php if($get_info["tag"] != '桂林航空学院'): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林航空学院'),'','');?>">桂林航空学院</a></li>
-	                        <?php else: ?>
-							<li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林航空学院'),'','');?>">桂林航空学院</a></li><?php endif; ?>
-
-	                         <?php if($get_info["tag"] != '桂林旅专'): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林旅专'),'','');?>">桂林旅专</a></li>
-	                        <?php else: ?>
-							<li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>'桂林旅专'),'','');?>">桂林旅专</a></li><?php endif; ?>
-
-	                         <?php if($get_info["tag"] != '广艺桂林分校'): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>'广艺桂林分校'),'','');?>">广艺桂林分校</a></li>
-	                        <?php else: ?>
-							<li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>'广艺桂林分校'),'','');?>">广艺桂林分校</a></li><?php endif; ?>
-						</ul>
-					</div>
-					<?php if($_GET['tag'] != ''): ?><div class="location_box_bottom_box">
-							<ul class="child_classification clearfix">
-								<?php if($get_info['location'] == ''): ?><li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>$get_info['tag']),'','');?>" class="current">全部</a></li>
-								<?php else: ?>
-									<li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>$get_info['tag']),'','');?>">全部</a></li><?php endif; ?>
-								
-	                            <?php if(is_array($locations)): foreach($locations as $key=>$location): if($get_info['tag'] == $location['belong']): if($get_info['location'] != ''): if($get_info['location'] == $location['id'] ): ?><li><a class="current" href="<?php echo U('Coupon/specialcoupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','');?>"><?php echo ($location["name"]); ?></a></li>
-											<?php else: ?>
-												<li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','');?>"><?php echo ($location["name"]); ?></a></li><?php endif; ?>
-										<?php else: ?>
-											<li><a href="<?php echo U('Coupon/specialcoupon',array('tag'=>$location['belong'],'location'=>$location['id']),'','');?>"><?php echo ($location["name"]); ?></a></li><?php endif; ?>
-									<?php else: endif; endforeach; endif; ?>
-							</ul>
-						</div>
-					<?php else: endif; ?>
-					
-				</div>
-			</div>
-		</div>
-		<div id="sort_price_box">
-			<div class="content_box">
-				<p class="one">排序</p>
-				<ul>
-					<?php if($get_info['sort'] == ''): ?><li><a href="?sort=times_a">下载次数</a></li>
-					<?php elseif($get_info['sort'] == 'times_a'): ?>
-						<li><a href="?sort=times_d" class="hover bg_up">下载次数</a></li>
-                    <?php elseif($get_info['sort'] == 'times_d'): ?>
-						<li><a href="?sort=times_a" class="hover bg_down">下载次数</a></li>
-					<?php else: ?>
-						<li><a href="?sort=times_a">下载次数</a></li><?php endif; ?>
-                  	
-					<!-- <?php if($get_info['sort'] == ''): ?><li><a href="?sort=likes_num_a">好评</a></li>
-					<?php elseif($get_info['sort'] == 'likes_num_a'): ?>
-						<li><a href="?sort=likes_num_d" class="hover">好评</a></li>
-                    <?php elseif($get_info['sort'] == 'likes_num_d'): ?>
-						<li><a href="?sort=likes_num_a" class="hover">好评</a></li>
-					<?php else: ?>
-						<li><a href="?sort=likes_num_a">好评</a></li><?php endif; ?> -->
-					
-					<?php if($get_info['sort'] == ''): ?><li><a href="?sort=time_a">发布时间</a></li>
-					<?php elseif($get_info['sort'] == 'time_a'): ?>
-						<li><a href="?sort=time_d" class="hover bg_up">发布时间</a></li>
-                    <?php elseif($get_info['sort'] == 'time_d'): ?>
-						<li><a href="?sort=time_a" class="hover bg_down">发布时间</a></li>
-					<?php else: ?>
-						<li><a href="?sort=time_a">发布时间</a></li><?php endif; ?>
-
-				</ul>
-			</div>
-		</div>
-		<div id="coupon_box">
 		
-			<ul class="clearfix coupon_content">
-				<?php  $coupon_count = count($coupons); ?>
-				<?php if($coupon_count < 2): ?><input type="hidden" value="680" id="hidden_type_value" name="type" />
-					<?php else: endif; ?>
-                <?php if(is_array($coupons)): foreach($coupons as $k=>$coupon): ?><li>
-						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>/<?php echo ($templateName); ?>" class="content_title" title="<?php echo ($coupon["name"]); ?>"><?php echo ($coupon["name"]); ?></a>
-						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon['specical_picture_path']); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
-						<p class="keyword" title="<?php echo ($coupon["title"]); ?>"><?php echo ($coupon["description"]); ?></p>
-						<p class="oldprice">疯狂价<span>￥<?php echo ($coupon["off_price"]); ?></span>元</p>
-						<p class="newprice">原价￥<?php echo ($coupon["origin_price"]); ?>元</p>
-						<?php if($coupon['Countdown_label'] == 1): ?><a href="" class="download_btn no_cursor" tag="2" couponid="<?php echo ($coupon["coupon_id"]); ?>">即将上线：<?php echo ($coupon['Countdown_time']['day']); ?>天<?php echo ($coupon['Countdown_time']['hour']); ?>时<?php echo ($coupon['Countdown_time']['min']); ?>分<?php echo ($coupon['Countdown_time']['sec']); ?>秒</a>
-						<?php elseif($coupon['left_times'] == 0): ?>
-							<a href="" class="download_btn download_btn2 no_cursor" tag="1" couponid="<?php echo ($coupon["coupon_id"]); ?>">已经卖光啦，下次早点哦！</a>
-							<p class="times">已抢购：<?php echo ($coupon["download_times"]); ?>次</p>
-						<?php else: ?>
-							<p class="times">已抢购：<?php echo ($coupon["download_times"]); ?>次</p>
-							<?php if($_SESSION['user']['user_id']== ''): ?><a href="" class="download_btn" tag="3" couponid="<?php echo ($coupon["coupon_id"]); ?>">点击抢购，还剩<?php echo ($coupon["left_times"]); ?>份</a>
-							<?php else: ?>
-								<a href="" class="download_btn" tag="0" couponid="<?php echo ($coupon["coupon_id"]); ?>">点击抢购，还剩<?php echo ($coupon["left_times"]); ?>份</a><?php endif; endif; ?>
-					</li><?php endforeach; endif; ?>
-
-			</ul>
-			<div id="webchat_box">
-				<p>扫一下，关注惠校园微博</p>
-				<img src="__PUBLIC__/images/weibo_barcode.png" alt="微博icon">
-			</div>
-			<div id="hot_coupon_box">
-				<p class="title">热门优惠劵</p>
-				<ul class="hot_coupon">
-                <?php if(is_array($hot_coupons)): foreach($hot_coupons as $key=>$coupon): ?><li>
-						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="title"><?php echo ($coupon["name"]); ?></a>
-						<p><?php echo ($coupon["description"]); ?></p>
-						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
-					</li><?php endforeach; endif; ?>
-				</ul>
-			</div>
-		</div>
+		<!-- 左边内容区域 -->
 		
-	</div>
-<!-- 内容区域结束 -->
-	<div id="download_coupon_hidden_box">	
-	<div class="top_content_box">
-		<p id="coupon_id_value">短信优惠券下载</p>
-		<img src="__PUBLIC__/images/login_closed.png" id="closed_download_coupon_hidden_box" alt="关闭">
-	</div>
-	<div class="middle_content_box">
+		<!-- 左边内容区域结束 -->
+		
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/sitemap.css" />
+<!-- 关于我们页面的内容 -->
+<div id="left_card">
+	<p class="one">网站地图</p>
+	<p class="two">类别</p>
+	<div id="food_box">
+		<p>美食:</p>
 		<ul>
-			<li>
-				<p class="label">请输入手机号码</p>
-				<input type="text" name="send_to_phone" id="send_to_phone" />
-				<p class="hidden_error_tips" id="hidden_error_tips_phone"></p>
-			</li>
-			<li>
-				<p class="label">验证码</p>
-				<input type="text" name="cellphone_vcode" id="cellphone_vcode" class="shorter" />
-				<a href="" id="send_to_phone_vcode_not_clear">看不清</a>
-				<img src="<?php echo U("Home/User/verifyImg","","","");?>" alt="验证码">
-				<p class="hidden_error_tips" id="hidden_error_tips_vcode"></p>
-			</li>
+			<li><a href="">美食</a></li>
+			<li><a href="">美容SPA</a></li>
+			<li><a href="">聚会火锅</a></li>
+			<li><a href="">教育培训</a></li>
+			<li><a href="">体检</a></li>
+			<li><a href="">烤鸭</a></li>
+			<li><a href="">云南菜</a></li>
+			<li><a href="">四川火锅</a></li>
+			<li><a href="">韩国料理</a></li>
+			<li><a href="">日本料理</a></li>
+			<li><a href="">东北菜</a></li>
+			<li><a href="">烤鱼</a></li>
+			<li><a href="">四川火锅</a></li>
+			<li><a href="">韩国料理</a></li>
+			<li><a href="">美食</a></li>
+			<li><a href="">美容SPA</a></li>		
+			<li><a href="">烤鸭</a></li>
+			<li><a href="">云南菜</a></li>
+			<li><a href="">四川火锅</a></li>
+			<li><a href="">韩国料理</a></li>
+			<li><a href="">日本料理</a></li>
+			<li><a href="">东北菜</a></li>
+			<li><a href="">烤鱼</a></li>
+			<li><a href="">聚会火锅</a></li>
+			<li><a href="">教育培训</a></li>
+			<li><a href="">体检</a></li>
+			<li><a href="">日本料理</a></li>
+			<li><a href="">东北菜</a></li>
+			<li><a href="">烤鱼</a></li>
+			<li><a href="">聚会火锅</a></li>
+			<li><a href="">教育培训</a></li>
 		</ul>
-		<input type="submit" value="发送" name="download_coupon_submit_btn" id="download_coupon_submit_btn">
 	</div>
-	<div class="middle_content_box_success">
-		<div>
-			<img src="__PUBLIC__/images/regsucess.png" alt="短息发送成功" />
-			<p class="sucess_tip">短信已经成功发送至<span></span></p>
-			<p class="hot_tip">系统繁忙时会有3-5分钟的发送延迟，请不要在短时间内重复下载</p>
-		</div>
-		<a href="" id="close_middle_content_box_success">关闭</a>
+	<div id="entertainment_box">
+		<p>休闲娱乐:</p>
+		<ul>
+			<li><a href="">美食</a></li>
+			<li><a href="">美容SPA</a></li>
+			<li><a href="">聚会火锅</a></li>
+			<li><a href="">教育培训</a></li>
+			<li><a href="">体检</a></li>
+			<li><a href="">烤鸭</a></li>
+			<li><a href="">云南菜</a></li>
+			<li><a href="">四川火锅</a></li>
+			<li><a href="">韩国料理</a></li>
+			<li><a href="">日本料理</a></li>
+			<li><a href="">东北菜</a></li>
+			<li><a href="">烤鱼</a></li>
+			<li><a href="">四川火锅</a></li>
+			<li><a href="">韩国料理</a></li>
+			<li><a href="">美食</a></li>
+			<li><a href="">美容SPA</a></li>		
+			<li><a href="">烤鸭</a></li>
+			<li><a href="">云南菜</a></li>
+			<li><a href="">四川火锅</a></li>
+			<li><a href="">韩国料理</a></li>
+			<li><a href="">日本料理</a></li>
+			<li><a href="">东北菜</a></li>
+			<li><a href="">烤鱼</a></li>
+			<li><a href="">聚会火锅</a></li>
+			<li><a href="">教育培训</a></li>
+			<li><a href="">体检</a></li>
+			<li><a href="">日本料理</a></li>
+			<li><a href="">东北菜</a></li>
+			<li><a href="">烤鱼</a></li>
+			<li><a href="">聚会火锅</a></li>
+			<li><a href="">教育培训</a></li>
+		</ul>
+	</div>
+	<div id="life_box">
+		<p>生活便民:</p>
+		<ul>
+			<li><a href="">美食</a></li>
+			<li><a href="">美容SPA</a></li>
+			<li><a href="">聚会火锅</a></li>
+			<li><a href="">教育培训</a></li>
+			<li><a href="">体检</a></li>
+			<li><a href="">烤鸭</a></li>
+			<li><a href="">云南菜</a></li>
+			<li><a href="">四川火锅</a></li>
+			<li><a href="">韩国料理</a></li>
+			<li><a href="">日本料理</a></li>
+			<li><a href="">东北菜</a></li>
+			<li><a href="">烤鱼</a></li>
+			<li><a href="">四川火锅</a></li>
+			<li><a href="">韩国料理</a></li>
+			<li><a href="">美食</a></li>
+			<li><a href="">美容SPA</a></li>		
+			<li><a href="">烤鸭</a></li>
+			<li><a href="">云南菜</a></li>
+			<li><a href="">四川火锅</a></li>
+			<li><a href="">韩国料理</a></li>
+			<li><a href="">日本料理</a></li>
+			<li><a href="">东北菜</a></li>
+			<li><a href="">烤鱼</a></li>
+			<li><a href="">聚会火锅</a></li>
+			<li><a href="">教育培训</a></li>
+			<li><a href="">体检</a></li>
+			<li><a href="">日本料理</a></li>
+			<li><a href="">东北菜</a></li>
+			<li><a href="">烤鱼</a></li>
+			<li><a href="">聚会火锅</a></li>
+			<li><a href="">教育培训</a></li>
+		</ul>
+	</div>
+	<div id="hotel_box">
+		<p>旅游酒店:</p>
+		<ul>
+			<li><a href="">景点门票</a></li>
+			<li><a href="">酒店</a></li>
+			<li><a href="">租车服务</a></li>
+		</ul>
+	</div>
+	<div id="discount_box">
+		<p>打折信息:</p>
+		<ul>
+			<li><a href="">景点门票</a></li>
+			<li><a href="">酒店</a></li>
+			<li><a href="">租车服务</a></li>
+		</ul>
+	</div>
+	<p class="three">区域</p>
+	<div id="xiufeng_box">
+		<p>秀峰区:</p>
+		<ul>
+			<li><a href="">景点门票</a></li>
+			<li><a href="">酒店</a></li>
+			<li><a href="">租车服务</a></li>
+		</ul>
+	</div>
+	<div id="xiangshan_box">
+		<p>象山区:</p>
+		<ul>
+			<li><a href="">景点门票</a></li>
+			<li><a href="">酒店</a></li>
+			<li><a href="">租车服务</a></li>
+		</ul>
+	</div>
+	<div id="diecai_box">
+		<p>叠彩区:</p>
+		<ul>
+			<li><a href="">景点门票</a></li>
+			<li><a href="">酒店</a></li>
+			<li><a href="">租车服务</a></li>
+		</ul>
+	</div>
+	<div id="yanshan_box">
+		<p>雁山区:</p>
+		<ul>
+			<li><a href="">景点门票</a></li>
+			<li><a href="">酒店</a></li>
+			<li><a href="">租车服务</a></li>
+		</ul>
+	</div>
+	<div id="qixing_box">
+		<p>七星区:</p>
+		<ul>
+			<li><a href="">景点门票</a></li>
+			<li><a href="">酒店</a></li>
+			<li><a href="">租车服务</a></li>
+		</ul>
 	</div>
 </div>
-<!-- 最底部区域 -->
-	<div id="bottom_info">
+</div>
+<div id="bottom_info">
 		<div id="bottom_box">
 			<ul>
 				<li><a href="<?php echo U("About/about");?>">关于我们</a></li>
@@ -648,7 +639,3 @@
 			</div>
 		</div>
 </div>
-<!-- 最底部区域结束
-
-</body>
-</html>

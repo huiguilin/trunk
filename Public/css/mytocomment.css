@@ -1,5 +1,9 @@
 #main #left_content_box div.mycontent_box{
-	height: 700px;
+	background-color: white;
+	filter:alpha(opacity=80);  
+    -moz-opacity:0.8;  
+    -khtml-opacity: 0.8;  
+    opacity: 0.8; 
 }
 #main #left_content_box div.mycontent_box ul.my_classification li a.two{
 	font-weight: bold;

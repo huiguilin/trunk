@@ -176,7 +176,7 @@
 
 #main #coupon_box div.coupon_detail_info_box img.coupon_pic{
 	width: 484px;
-	height: 583px;
+	
 	margin-top: 20px;
 	margin-left: 99px;
 	margin-right: 99px;
@@ -301,12 +301,12 @@
 	color: #ED5565;
 	font-size: 14px;
 }
-#main #coupon_box div.other_coupons_box p.other_coupon_content a.other_coupon_title:hover{
-	text-decoration: underline;
-}
 #main #coupon_box div.other_coupons_box p.other_coupon_content a.other_coupon_description{
 	font-size: 13px;
 	color: #999999;
+}
+#main #coupon_box div.other_coupons_box p.other_coupon_content a.underline{
+	text-decoration: underline;
 }
 #main #coupon_box div.business_detail_info_box{
 	margin-top: 8px;
