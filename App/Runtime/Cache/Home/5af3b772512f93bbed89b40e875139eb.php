@@ -442,7 +442,7 @@
 		<div id="main_content_top_box">
 			<!-- 广告区域 -->
 			<div id="ad_box">
-				<img src="__PUBLIC__/images/flash/1.png" alt="广告图片">
+				<img src="__PUBLIC__/images/flash/5.png" alt="广告图片">
 				<img src="__PUBLIC__/images/flash/2.png" alt="广告图片">
 				<img src="__PUBLIC__/images/flash/3.png" alt="广告图片">
 				<img src="__PUBLIC__/images/flash/4.png" alt="广告图片">
@@ -521,8 +521,8 @@
 				<ul class="content">
                 <?php if(is_array($eat_coupons)): foreach($eat_coupons as $k=>$coupon): if($k > 3): else: ?>
 						<li>
-						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box" target=_blank><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
-						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" target=_blank class="content_title" title="<?php echo ($coupon["name"]); ?>"><?php echo ($coupon["name"]); ?></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>/specialcoupon" class="img_box" target=_blank><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>/specialcoupon" target=_blank class="content_title" title="<?php echo ($coupon["name"]); ?>"><?php echo ($coupon["name"]); ?></a>
 						<p class="one" title="<?php echo ($coupon["description"]); ?>"><?php echo ($coupon["description"]); ?></p>
 						<p class="two" title="<?php echo ($coupon["title"]); ?>">疯抢价<span>￥<?php echo ($coupon["off_price"]); ?></span>元</p>
 						<p class="three" >已抢购：<?php echo ($coupon["download_times"]); ?>次</p>

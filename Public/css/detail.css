@@ -444,12 +444,12 @@
 #main #coupon_box div.business_detail_info_box div.business_location div.map_box ul li.gray{
 	background: #E4E4E4;
 }
-#main #coupon_box div.business_detail_info_box div.business_location div.map_box ul li p.address_title{
+#main #coupon_box div.business_detail_info_box div.business_location div.map_box ul li a.address_title{
 	color: #ED5565;
 	font-size: 14px;
 	height: 40px;
 	line-height: 40px;
-	cursor: pointer;
+	display: block;
 }
 #main #coupon_box div.business_detail_info_box div.business_location div.map_box ul li div{
 	height: 90px;

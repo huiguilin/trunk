@@ -104,9 +104,27 @@
 #partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box{
 	height: 40px;
 	line-height: 40px;
-	overflow: hidden;
 }
 #partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box a{
+	color: #4467A3;
+	font-size: 13px;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	border:1px solid black;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: 5px;
+	border:1px solid #D7D7D7;
+	border-radius: 5px;
+}
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box2{
+	height: 40px;
+	line-height: 40px;
+	padding-left: 45px;
+	
+}
+#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box2 a{
 	color: #4467A3;
 	font-size: 13px;
 	text-align: center;
@@ -599,7 +617,7 @@
 	height: 110px;
 	position: relative;
 }
-#partnermain #partnerright div.nearcoupon #nearcoupon_detail_contents p.c_title{
+#partnermain #partnerright div.nearcoupon #nearcoupon_detail_contents a.c_title{
 	color: #ED5565;
 	font-weight: bold;
 	position: absolute;
@@ -607,7 +625,8 @@
 	left: 10px;
 	overflow: hidden;
 	height: 15px;
-	width: 140px;	
+	width: 140px;
+	display: block;
 }
 #partnermain #partnerright div.nearcoupon #nearcoupon_detail_contents p.c_desc{
 	color: #666;

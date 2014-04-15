@@ -591,8 +591,8 @@
 				<?php if(is_array($coupons)): foreach($coupons as $key=>$coupon): if($coupon['partner_id'] == $partner['partner_id']): ?><div class="partner_coupon_info_box">
 					<ul>
 						<?php if($coupon['coupon_type'] == 2): ?><li>
-							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon['header_path']); ?>" alt="<?php echo ($coupon['name']); ?>" /></a>
-							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="coupon_desc"><?php echo ($coupon['description']); ?></a>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>/specialcoupon" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon['header_path']); ?>" alt="<?php echo ($coupon['name']); ?>" /></a>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>/specialcoupon" class="coupon_desc"><?php echo ($coupon['description']); ?></a>
 							<p class="oldprice">￥<span><?php echo ($coupon["off_price"]); ?></span></p>
 							<p class="newprice">原价<span><?php echo ($coupon["origin_price"]); ?>元</span></p>
 							<p class="download_times">已下载<?php echo ($coupon['download_times']); ?>次</p>

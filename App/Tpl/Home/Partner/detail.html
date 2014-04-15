@@ -51,6 +51,8 @@
 								<a target=_blank href="{:U('Partner/partner','','','')}/label_type/{$partner_tags[0]['label_type']}">{$partner_tags[0]['pcat_name']}</a>
 								<a target=_blank href="{:U('Partner/partner','','','')}/label_type/{$partner_tags[0]['label_type']}/cat_id/{$partner_tags[0]['cat_id']}">{$partner_tags[0]['cat_name']}</a>
 								<a target=_blank href="{:U('Partner/partner','','','')}/tag/{$partner_tags[0]['belong']}">{$partner_tags[0]['belong']}</a>
+							</p>
+							<p class="tag_box2">
 								<a target=_blank href="{:U('Partner/partner','','','')}/tag/{$partner_tags[0]['belong']}/location/{$partner_tags[0]['location_id']}">{$partner_tags[0]['locationname']}</a>
 							</p>
 							<p><span>餐厅描述：</span>
@@ -97,7 +99,12 @@
 											<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$partnercoupon.header_path}" alt="{$partnercoupon.name}"></a>
 										</if>
 										
+										<if condition="$get.off_time eq 1">
+										<a class="content_title" title="{$partnercoupon.name}">{$partnercoupon.name}</a>
+										<else />
 										<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="content_title" title="{$partnercoupon.name}">{$partnercoupon.name}</a>
+										</if>
+
 										<p class="one" title="{$partnercoupon.description}">{$partnercoupon.description}</p>
 										<p class="two" title="{$partnercoupon.title}">{$partnercoupon.title}</p>
 										<p class="three">下载：{$partnercoupon.download_times}次</p>
@@ -113,11 +120,21 @@
                            		<else/>
 									<li class="no_margin_right">
 										<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$partnercoupon.header_path}" alt="{$partnercoupon.name}"></a>
+										<if condition="$get.off_time eq 1">
+										<a class="content_title" title="{$partnercoupon.name}">{$partnercoupon.name}</a>
+										<else />
 										<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="content_title" title="{$partnercoupon.name}">{$partnercoupon.name}</a>
+										</if>
 										<p class="one" title="{$partnercoupon.description}">{$partnercoupon.description}</p>
 										<p class="two" title="{$partnercoupon.title}">{$partnercoupon.title}</p>
 										<p class="three">下载：{$partnercoupon.download_times}次</p>
+
+										<if condition="$get.off_time eq 1">
+										
+										<else />
 										<a href="" class="download" couponid="{$partnercoupon.coupon_id}">立即下载</a>
+										</if>
+
 										<p class="hidden_location">{$coupon.tag}</p>
 									</li>
                            		</if>
@@ -249,9 +266,9 @@
 					    <p class="title">热门优惠券推荐</p>
 					    <foreach name="hot_coupons" item="hot_coupon" key="k">
 					    <div id="nearcoupon_detail_contents">
-							<p class="c_title">{$hot_coupon.name}}</p>
+							<a href="{:U("Coupon/detail","","","")}/{$hot_coupon.coupon_id}" class="c_title">{$hot_coupon.name}}</a>
 							<p class="c_desc">{$hot_coupon.description}</p>
-							<a href="#"><img src="__PUBLIC__/{$hot_coupon.header_path}" align="优惠券" /></a>
+							<a href="{:U("Coupon/detail","","","")}/{$hot_coupon.coupon_id}"><img src="__PUBLIC__/{$hot_coupon.header_path}" align="优惠券" /></a>
 						</div>
 						</foreach>	
 				    </div>

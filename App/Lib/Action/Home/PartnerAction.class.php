@@ -62,7 +62,7 @@ class PartnerAction extends Action {
                     break;
             }
         }
-
+         $time = date("Y-m-d H:i:s");
         $partnerHelper = new PartnerModel();
     	$couponHelper = new CouponModel();
     	$Evaluationhelper = new CouponEvaluationModel();
@@ -79,16 +79,22 @@ class PartnerAction extends Action {
         }
 
     	//获取热门优惠券
-        $hotParam =array();
-    	$hotParam['limit'] = '0,5';
-        $hotCouponInfo = $couponHelper->getCoupon($hotParam);
+        $hotparams = array(
+            'limit' => '0,5',
+            'order_by' => "weight DESC",
+            'coupon_type' => 1,
+            'start_time_lt' => $time,
+            'end_time_gt' => $time,
+        );
+
+        $hotCouponInfo = $couponHelper->getCoupon($hotparams);
         $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);
 
         //获取全部优惠券
         $param = array();
         $param['limit'] = '';
         $param['coupon_type'] = 1;
-        $time = date("Y-m-d H:i:s");
+       
         $param['start_time_lt'] = $time;
         $param['end_time_gt'] = $time;
         $couponInfo = $couponHelper->getCoupon($param);
@@ -99,7 +105,6 @@ class PartnerAction extends Action {
         $param['coupon_type'] = 2;
         $ScouponInfo = $couponHelper->getCoupon($param);
         $ScouponInfo = $this->cutCouponWords($ScouponInfo);
-
         foreach ($ScouponInfo as $k => $v) {
 
             if (strtotime($v['start_time'])-strtotime($time) >= 0 && strtotime($v['start_time'])-strtotime($time) < (3600*48)) {
@@ -109,21 +114,24 @@ class PartnerAction extends Action {
                $newcouponInfo[] = $v;
             }
         }
-         foreach ($newcouponInfo AS $key => $value) {
-            $newcouponInfo[$key]['left_times'] = (int)($newcouponInfo[$key]['limit_times'] - $newcouponInfo[$key]['download_times']);
-            if ($newcouponInfo[$key]['left_times'] < 0)  {
-                $newcouponInfo[$key]['left_times'] = 0;
+        if(!empty($newcouponInfo)){
+            foreach ($newcouponInfo AS $key => $value) {
+                $newcouponInfo[$key]['left_times'] = (int)($newcouponInfo[$key]['limit_times'] - $newcouponInfo[$key]['download_times']);
+                if ($newcouponInfo[$key]['left_times'] < 0)  {
+                    $newcouponInfo[$key]['left_times'] = 0;
+                }
+                if(strtotime($newcouponInfo[$key]['start_time']) > strtotime($time)){
+                    $newcouponInfo[$key]['Countdown_time'] = timediff(strtotime($time),strtotime($newcouponInfo[$key]['start_time']));
+                    $newcouponInfo[$key]['Countdown_label'] = 1;
+                }
+                else{
+                     $newcouponInfo[$key]['Countdown_label'] = 0;
+                }
             }
-            if(strtotime($newcouponInfo[$key]['start_time']) > strtotime($time)){
-                $newcouponInfo[$key]['Countdown_time'] = timediff(strtotime($time),strtotime($newcouponInfo[$key]['start_time']));
-                $newcouponInfo[$key]['Countdown_label'] = 1;
-            }
-            else{
-                 $newcouponInfo[$key]['Countdown_label'] = 0;
-            }
+            $couponInfo = array_merge($couponInfo,$newcouponInfo);
         }
-        $couponInfo = array_merge($couponInfo,$newcouponInfo);
-      
+         
+       
 
 
 
@@ -232,11 +240,7 @@ class PartnerAction extends Action {
         //获取商家分类标签
         $partnerTagshelper = new PartnerTagsModel();
         $partnerTagsInfo = $partnerTagshelper->getPartnerTagsInfoById($data[0]['partner_id']);
-        $partnerTagsInfo[0]['name'] = mb_substr($partnerTagsInfo[0]['name'], 0, 4, 'UTF-8');
-        $partnerTagsInfo[0]['cat_name'] = mb_substr($partnerTagsInfo[0]['cat_name'], 0, 4, 'UTF-8');
-        $partnerTagsInfo[0]['locationname'] = mb_substr($partnerTagsInfo[0]['locationname'], 0, 4, 'UTF-8');
-        $partnerTagsInfo[0]['belong'] = mb_substr($partnerTagsInfo[0]['belong'], 0, 4, 'UTF-8');
-        $partnerTagsInfo[0]['pcat_name'] = mb_substr($partnerTagsInfo[0]['pcat_name'], 0, 4, 'UTF-8');
+     
 
         //获取优惠券评分
         $Evaluationhelper = new CouponEvaluationModel();
@@ -246,9 +250,14 @@ class PartnerAction extends Action {
 
 
         //获取热门优惠券
-        $param =array();
-        $param['limit'] = '0,5';
-        $hotCouponInfo = $couponHelper->getCoupon($param);
+       $hotparams = array(
+            'limit' => '0,5',
+            'order_by' => "weight DESC",
+            'coupon_type' => 1,
+            'start_time_lt' => $time,
+            'end_time_gt' => $time,
+        );
+        $hotCouponInfo = $couponHelper->getCoupon($hotparams);
         $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);
 
         //获取商家所有优惠券的评论

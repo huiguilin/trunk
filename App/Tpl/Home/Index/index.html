@@ -37,7 +37,7 @@
 		<div id="main_content_top_box">
 			<!-- 广告区域 -->
 			<div id="ad_box">
-				<img src="__PUBLIC__/images/flash/1.png" alt="广告图片">
+				<img src="__PUBLIC__/images/flash/5.png" alt="广告图片">
 				<img src="__PUBLIC__/images/flash/2.png" alt="广告图片">
 				<img src="__PUBLIC__/images/flash/3.png" alt="广告图片">
 				<img src="__PUBLIC__/images/flash/4.png" alt="广告图片">
@@ -130,8 +130,8 @@
                 	<if condition="$k gt 3">
 					<else />
 						<li>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box" target=_blank><img src="__PUBLIC__/{$coupon.header_path}" alt="{$coupon.name}"></a>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target=_blank class="content_title" title="{$coupon.name}">{$coupon.name}</a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}/specialcoupon" class="img_box" target=_blank><img src="__PUBLIC__/{$coupon.header_path}" alt="{$coupon.name}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}/specialcoupon" target=_blank class="content_title" title="{$coupon.name}">{$coupon.name}</a>
 						<p class="one" title="{$coupon.description}">{$coupon.description}</p>
 						<p class="two" title="{$coupon.title}">疯抢价<span>￥{$coupon.off_price}</span>元</p>
 						<p class="three" >已抢购：{$coupon.download_times}次</p>

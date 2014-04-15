@@ -209,7 +209,7 @@
                 <foreach name="coupons" item="coupon" key="k">
             		<li>
 						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}/{$templateName}" class="content_title" title="{$coupon.name}">{$coupon.name}</a>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon['specical_picture_path']}" alt="{$coupon.name}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}/{$templateName}" class="img_box"><img src="__PUBLIC__/{$coupon['specical_picture_path']}" alt="{$coupon.name}"></a>
 						<p class="keyword" title="{$coupon.title}">{$coupon.description}</p>
 						<p class="oldprice">疯狂价<span>￥{$coupon.off_price}</span>元</p>
 						<p class="newprice">原价￥{$coupon.origin_price}元</p>
