@@ -261,8 +261,8 @@
 					<ul>
 						<if condition="$coupon['coupon_type'] eq 2">
 							<li>
-							<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon['header_path']}" alt="{$coupon['name']}" /></a>
-							<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="coupon_desc">{$coupon['description']}</a>
+							<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}/specialcoupon" class="img_box"><img src="__PUBLIC__/{$coupon['header_path']}" alt="{$coupon['name']}" /></a>
+							<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}/specialcoupon" class="coupon_desc">{$coupon['description']}</a>
 							<p class="oldprice">￥<span>{$coupon.off_price}</span></p>
 							<p class="newprice">原价<span>{$coupon.origin_price}元</span></p>
 							<p class="download_times">已下载{$coupon['download_times']}次</p>

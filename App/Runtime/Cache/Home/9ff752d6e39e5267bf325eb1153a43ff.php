@@ -558,7 +558,7 @@
 					<?php else: endif; ?>
                 <?php if(is_array($coupons)): foreach($coupons as $k=>$coupon): ?><li>
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>/<?php echo ($templateName); ?>" class="content_title" title="<?php echo ($coupon["name"]); ?>"><?php echo ($coupon["name"]); ?></a>
-						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon['specical_picture_path']); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>/<?php echo ($templateName); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon['specical_picture_path']); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
 						<p class="keyword" title="<?php echo ($coupon["title"]); ?>"><?php echo ($coupon["description"]); ?></p>
 						<p class="oldprice">疯狂价<span>￥<?php echo ($coupon["off_price"]); ?></span>元</p>
 						<p class="newprice">原价￥<?php echo ($coupon["origin_price"]); ?>元</p>

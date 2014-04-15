@@ -547,7 +547,7 @@
 						</div>
 						<ul>
 							<li class="white">
-								<p class="address_title"><?php echo ($partner["name"]); ?></p>
+								<a href="<?php echo U('Partner/detail','','','');?>/pid/<?php echo ($partner["partner_id"]); ?>" class="address_title"><?php echo ($partner["name"]); ?></a>
 								<div>
 									<p class="subway"></p>
 									<p class="telephone">电话：<?php echo ($partner["telephone"]); ?></p>
@@ -625,8 +625,10 @@
 			<div id="hot_tips_box">
 				<p class="title">温馨提示</p>
 				<ul>
-					<li>相同的信息，一个手机号24小时内只能接收5条；</li>
-					<li>24小时内，您最多可接收10条来自惠校园的短信；若注册成为惠校园会员可享受无限制接收短信的服务</li>
+					<li>未注册用户每天只能下载相同优惠券2条；</li>
+					<li>未注册用户累计只能下载5条优惠券；</li>
+					<li>未注册用户不能下载限时优惠券；</li>
+					<li>注册用户无以上限制，可自由下载和使用优惠券。</li>
 				</ul>
 			</div>
 		</div>

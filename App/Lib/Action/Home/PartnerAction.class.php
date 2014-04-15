@@ -62,7 +62,7 @@ class PartnerAction extends Action {
                     break;
             }
         }
-
+         $time = date("Y-m-d H:i:s");
         $partnerHelper = new PartnerModel();
     	$couponHelper = new CouponModel();
     	$Evaluationhelper = new CouponEvaluationModel();
@@ -79,16 +79,22 @@ class PartnerAction extends Action {
         }
 
     	//获取热门优惠券
-        $hotParam =array();
-    	$hotParam['limit'] = '0,5';
-        $hotCouponInfo = $couponHelper->getCoupon($hotParam);
+        $hotparams = array(
+            'limit' => '0,5',
+            'order_by' => "weight DESC",
+            'coupon_type' => 1,
+            'start_time_lt' => $time,
+            'end_time_gt' => $time,
+        );
+
+        $hotCouponInfo = $couponHelper->getCoupon($hotparams);
         $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);
 
         //获取全部优惠券
         $param = array();
         $param['limit'] = '';
         $param['coupon_type'] = 1;
-        $time = date("Y-m-d H:i:s");
+       
         $param['start_time_lt'] = $time;
         $param['end_time_gt'] = $time;
         $couponInfo = $couponHelper->getCoupon($param);
@@ -241,9 +247,14 @@ class PartnerAction extends Action {
 
 
         //获取热门优惠券
-        $param =array();
-        $param['limit'] = '0,5';
-        $hotCouponInfo = $couponHelper->getCoupon($param);
+       $hotparams = array(
+            'limit' => '0,5',
+            'order_by' => "weight DESC",
+            'coupon_type' => 1,
+            'start_time_lt' => $time,
+            'end_time_gt' => $time,
+        );
+        $hotCouponInfo = $couponHelper->getCoupon($hotparams);
         $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);
 
         //获取商家所有优惠券的评论

@@ -81,8 +81,15 @@ class SearchAction extends Action {
         if ($params['order_by'] != 'download_times DESC') {
             $params['order_by'] = 'download_times DESC';
         }
-        $params['limit'] = '0,5';
-        $hotCouponInfo = $couponHelper->getCoupon($params);
+
+        $hotparams = array(
+            'limit' => '0,5',
+            'order_by' => "weight DESC",
+            'coupon_type' => 1,
+            'start_time_lt' => $time,
+            'end_time_gt' => $time,
+        );
+        $hotCouponInfo = $couponHelper->getCoupon($hotparams);
         $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);
         
         $adHelper = new AdModel();

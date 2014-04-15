@@ -599,7 +599,7 @@
 	height: 110px;
 	position: relative;
 }
-#partnermain #partnerright div.nearcoupon #nearcoupon_detail_contents p.c_title{
+#partnermain #partnerright div.nearcoupon #nearcoupon_detail_contents a.c_title{
 	color: #ED5565;
 	font-weight: bold;
 	position: absolute;
@@ -607,7 +607,8 @@
 	left: 10px;
 	overflow: hidden;
 	height: 15px;
-	width: 140px;	
+	width: 140px;
+	display: block;
 }
 #partnermain #partnerright div.nearcoupon #nearcoupon_detail_contents p.c_desc{
 	color: #666;

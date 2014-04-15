@@ -492,7 +492,10 @@
 										<?php else: ?>
 											<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($partnercoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($partnercoupon["header_path"]); ?>" alt="<?php echo ($partnercoupon["name"]); ?>"></a><?php endif; ?>
 										
-										<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($partnercoupon["coupon_id"]); ?>" class="content_title" title="<?php echo ($partnercoupon["name"]); ?>"><?php echo ($partnercoupon["name"]); ?></a>
+										<?php if($get["off_time"] == 1): ?><a class="content_title" title="<?php echo ($partnercoupon["name"]); ?>"><?php echo ($partnercoupon["name"]); ?></a>
+										<?php else: ?>
+										<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($partnercoupon["coupon_id"]); ?>" class="content_title" title="<?php echo ($partnercoupon["name"]); ?>"><?php echo ($partnercoupon["name"]); ?></a><?php endif; ?>
+
 										<p class="one" title="<?php echo ($partnercoupon["description"]); ?>"><?php echo ($partnercoupon["description"]); ?></p>
 										<p class="two" title="<?php echo ($partnercoupon["title"]); ?>"><?php echo ($partnercoupon["title"]); ?></p>
 										<p class="three">下载：<?php echo ($partnercoupon["download_times"]); ?>次</p>
@@ -505,11 +508,16 @@
                            		<?php else: ?>
 									<li class="no_margin_right">
 										<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($partnercoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($partnercoupon["header_path"]); ?>" alt="<?php echo ($partnercoupon["name"]); ?>"></a>
-										<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($partnercoupon["coupon_id"]); ?>" class="content_title" title="<?php echo ($partnercoupon["name"]); ?>"><?php echo ($partnercoupon["name"]); ?></a>
+										<?php if($get["off_time"] == 1): ?><a class="content_title" title="<?php echo ($partnercoupon["name"]); ?>"><?php echo ($partnercoupon["name"]); ?></a>
+										<?php else: ?>
+										<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($partnercoupon["coupon_id"]); ?>" class="content_title" title="<?php echo ($partnercoupon["name"]); ?>"><?php echo ($partnercoupon["name"]); ?></a><?php endif; ?>
 										<p class="one" title="<?php echo ($partnercoupon["description"]); ?>"><?php echo ($partnercoupon["description"]); ?></p>
 										<p class="two" title="<?php echo ($partnercoupon["title"]); ?>"><?php echo ($partnercoupon["title"]); ?></p>
 										<p class="three">下载：<?php echo ($partnercoupon["download_times"]); ?>次</p>
-										<a href="" class="download" couponid="<?php echo ($partnercoupon["coupon_id"]); ?>">立即下载</a>
+
+										<?php if($get["off_time"] == 1): else: ?>
+										<a href="" class="download" couponid="<?php echo ($partnercoupon["coupon_id"]); ?>">立即下载</a><?php endif; ?>
+
 										<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
 									</li><?php endif; endforeach; endif; ?>
                            </ul>
@@ -598,7 +606,7 @@
 							<li class="one"><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>1),'','');?>" class="one">首页</a></li>
 							<li><a href=""><</a></li>
 							
-							<?php $__FOR_START_5446__=1;$__FOR_END_5446__=$pageNums+1;for($i=$__FOR_START_5446__;$i < $__FOR_END_5446__;$i+=1){ if($i == $get_info): ?><li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>" class="red"><?php echo ($i); ?></a></li>
+							<?php $__FOR_START_16343__=1;$__FOR_END_16343__=$pageNums+1;for($i=$__FOR_START_16343__;$i < $__FOR_END_16343__;$i+=1){ if($i == $get_info): ?><li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>" class="red"><?php echo ($i); ?></a></li>
 								<?php else: ?>
 									<li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>"><?php echo ($i); ?></a></li><?php endif; } ?>
 
@@ -628,9 +636,9 @@
 					<div class="nearcoupon">
 					    <p class="title">热门优惠券推荐</p>
 					    <?php if(is_array($hot_coupons)): foreach($hot_coupons as $k=>$hot_coupon): ?><div id="nearcoupon_detail_contents">
-							<p class="c_title"><?php echo ($hot_coupon["name"]); ?>}</p>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hot_coupon["coupon_id"]); ?>" class="c_title"><?php echo ($hot_coupon["name"]); ?>}</a>
 							<p class="c_desc"><?php echo ($hot_coupon["description"]); ?></p>
-							<a href="#"><img src="__PUBLIC__/<?php echo ($hot_coupon["header_path"]); ?>" align="优惠券" /></a>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hot_coupon["coupon_id"]); ?>"><img src="__PUBLIC__/<?php echo ($hot_coupon["header_path"]); ?>" align="优惠券" /></a>
 						</div><?php endforeach; endif; ?>	
 				    </div>
 				    

@@ -127,6 +127,8 @@ class IndexAction extends Action {
             'limit' => '0,5',
             'order_by' => "weight DESC",
             'coupon_type' => 1,
+            'start_time_lt' => $time,
+            'end_time_gt' => $time,
         );
         $hotCouponInfo = $helper->getCoupon($params);
         $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);

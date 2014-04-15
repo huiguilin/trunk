@@ -285,6 +285,7 @@ class UserAction extends Action {
             $this->ajaxReturn($data,'JSON');
             return TRUE;
         }
+        
         $data = $this->send($phoneNumber, $code);
         $this->ajaxReturn($data,'JSON');
         return TRUE;
@@ -298,8 +299,8 @@ class UserAction extends Action {
         session("activeCode","{$code}");
         session("userphone","{$phoneNumber}");
         //TBC
-        #$result = sendCodeToMobile($phoneNumber, "您的激活码是【{$code}】，感谢您注册惠桂林");
-        $result = sendCodeToMobile($phoneNumber, "{$code}");
+        $text = "您好，验证码是：{$code}，感谢您注册惠校园网会员，惠校园网专注于为大学生们提供各种省钱秘籍，让仅有的生活费发挥更大的作用！";
+        $result = sendCodeToMobile($phoneNumber, "{$text}");
         $data = array(
             'status' => 1,
             'info' => '发送成功',

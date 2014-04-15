@@ -70,7 +70,7 @@
 				</li>
 				<li><a href="<?php echo U("Admin/Account/login");?>" target=_blank class="no_border_right">商家入口</a></li>
 			</ul>
-			<img src="__PUBLIC__/images/slogan2.png" alt="slogan">
+			<img src="__PUBLIC__/images/slogan2.png" alt="slogan" id="slogan">
 		</div>
 		<div id="top_logo_box">
 			<a href="<?php echo U("Index/index");?>">
@@ -97,6 +97,11 @@
 					<?php elseif($templateName == 'specialcoupon'): ?>
 						<li><a href="<?php echo U("Index/index");?>">首页</a></li>
 						<li class="border"><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
+						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
+						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
+					<?php elseif($templateName == ''): ?>
+						<li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
+						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>
 						<li><a href="<?php echo U("Coupon/coupon");?>">优惠券</a></li>
 						<li><a href="<?php echo U("Partner/partner");?>">商户</a></li>
 					<?php else: ?>
@@ -523,7 +528,6 @@
 				<a href="<?php echo U("Home/Account/mysetting");?>">编辑个人资料</a>
 				<img src="__PUBLIC__/images/ico_sheng.png" class="sheng">
 				<p class="cost_time">您已经使用优惠券<span><?php echo ($count); ?></span>张</p>
-				<p class="save_money">共节省<span><?php echo ($sum_price); ?></span>元</p>
 			</div>
 			<div class="hotline_number">
 				<p class="title">惠校园客户服务热线</p>

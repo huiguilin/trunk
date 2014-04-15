@@ -79,9 +79,7 @@
 			</a>
 		</div>
 		<div id="top_nav_box">
-		<?php echo ($templateName); ?>
 			<div id="nav_search_box">
-		
 				<ul>
 					<?php if($templateName == 'index'): ?><li class="border"><a href="<?php echo U("Index/index");?>">首页</a></li>
 						<li><a href="<?php echo U("Coupon/specialcoupon");?>">限时优惠</a></li>

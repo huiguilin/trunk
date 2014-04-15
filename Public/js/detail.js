@@ -157,7 +157,7 @@ $(function(){
         var coupon_id = $("#download_coupon_id").text();
         var checklogin = $('#checklogin').val();
     	if (checklogin == "") {
-    		alert('请先登录，谢谢！');
+    		$('#Userlogin_box').bPopup();
     		return false;
     	}
         $.post(ajaxPostURL+"Coupon/addFavorite", { coupon_id : coupon_id

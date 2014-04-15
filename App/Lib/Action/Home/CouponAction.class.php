@@ -84,11 +84,23 @@ class CouponAction extends Action {
 
         $couponInfo = $couponHelper->getCoupon($params);
 
+        //截取tag string的length
+        for ($i = 0; $i < count($couponInfo); $i++) {
+            $couponInfo[$i]['tag'] = trim(mb_substr($couponInfo[$i]['tag'], strrpos($couponInfo[$i]['tag'],"，")),"，");
+        }
+
         if ($params['order_by'] != 'download_times DESC') {
             $params['order_by'] = 'download_times DESC';
         }
-        $params['limit'] = '0,5';
-        $hotCouponInfo = $couponHelper->getCoupon($params);
+
+        $hotparams = array(
+            'limit' => '0,5',
+            'order_by' => "weight DESC",
+            'coupon_type' => 1,
+            'start_time_lt' => $time,
+            'end_time_gt' => $time,
+        );
+        $hotCouponInfo = $couponHelper->getCoupon($hotparams);
         $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);
         
         $adHelper = new AdModel();
@@ -247,8 +259,17 @@ class CouponAction extends Action {
         if ($params['order_by'] != 'download_times DESC') {
             $params['order_by'] = 'download_times DESC';
         }
-        $params['limit'] = '0,5';
-        $hotCouponInfo = $couponHelper->getCoupon($params);
+        
+
+        $hotparams = array(
+            'limit' => '0,5',
+            'order_by' => "weight DESC",
+            'coupon_type' => 1,
+            'start_time_lt' => $time,
+            'end_time_gt' => $time,
+        );
+
+        $hotCouponInfo = $couponHelper->getCoupon($hotparams);
         $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);
         
         $adHelper = new AdModel();

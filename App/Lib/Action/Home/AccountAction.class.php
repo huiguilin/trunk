@@ -71,9 +71,11 @@ class AccountAction extends Action {
                 'coupon_id' => $couponIds,
                 'sum' => 'off_price',
                 );
-        $sum = $couponHelper->getCoupon($params);       
+        $sum = $couponHelper->getCoupon($params); 
+     
         $this->assign('sum_price', $sum);
         $this->assign('count', $count);
+        $this->assign('user',$_SESSION['user']);
     }
 
     public function myfavorite(){
@@ -227,6 +229,7 @@ class AccountAction extends Action {
             $this->error('此页面需要登录才能访问，请先登录！');
             return TRUE;
         }
+        $this->account_tmp_bottom();
         $this->display();
     }
     public function handleEmailSubscription(){
@@ -587,11 +590,13 @@ class AccountAction extends Action {
         $rate = $_POST['ratevalue'];
         $comment = $_POST['coupon_comment_content'];
         $couponId = $_POST['post_coupon_id'];
+        $partner_id = $_POST['post_partner_id'];
         $params = array(
             'user_id' => $userId,
             'coupon_id' => $couponId,
             'evaluation' => $comment,
             'rate' => $rate,
+            'partner_id' => $partner_id,
             );
         $helper = new CouponEvaluationModel();
         $r = $helper->addCouponEvaluation($params);
