@@ -58,7 +58,7 @@
 					<a href="" class="bg_icon">分享</a>
 					<div id="share_box">
 						<ul class="clearfix">
-							<li><a href="http://weibo.com/huigl?topnav=1&wvr=5" class="weibo">惠校园新浪微博</a></li>
+							<li><a href="http://weibo.com/huixy" class="weibo">惠校园新浪微博</a></li>
 							<li><a href="http://user.qzone.qq.com/2042534770" class="qzone">惠校园QQ空间</a></li>
 							<li><a href="http://t.qq.com/ihuigl?preview" class="QQweibo">惠校园腾讯微博</a></li>
 						</ul>
@@ -608,7 +608,7 @@
 							<li class="one"><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>1),'','');?>" class="one">首页</a></li>
 							<li><a href=""><</a></li>
 							
-							<?php $__FOR_START_9817__=1;$__FOR_END_9817__=$pageNums+1;for($i=$__FOR_START_9817__;$i < $__FOR_END_9817__;$i+=1){ if($i == $get_info): ?><li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>" class="red"><?php echo ($i); ?></a></li>
+							<?php $__FOR_START_23938__=1;$__FOR_END_23938__=$pageNums+1;for($i=$__FOR_START_23938__;$i < $__FOR_END_23938__;$i+=1){ if($i == $get_info): ?><li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>" class="red"><?php echo ($i); ?></a></li>
 								<?php else: ?>
 									<li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>"><?php echo ($i); ?></a></li><?php endif; } ?>
 
@@ -696,7 +696,6 @@
 		<div id="bottom_box">
 			<ul>
 				<li><a href="<?php echo U("About/about");?>">关于我们</a></li>
-				<li><a href="<?php echo U("Sitemap/sitemap");?>">网站地图</a></li>
 				<li><a href="<?php echo U("Contactus/contactus");?>">联系我们</a></li>
 				<li><a href="<?php echo U("Intention/intention");?>">商务合作</a></li>
 				<li><a href="<?php echo U("Legalstatement/legalstatement");?>">法律声明</a></li>
@@ -712,7 +711,9 @@
 				</p>
 				<p class="two">
 					<span>Copyright @ 2014 Huixiaoyuan.com Inc.All Rights Reserved</span>
+					<span class="cnzz"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000372030'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000372030%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></span>
 				</p>
+
 			</div>
 		</div>
 </div>

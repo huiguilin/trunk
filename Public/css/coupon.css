@@ -331,10 +331,8 @@
 	margin-top: 8px;
 	width: 698px;
 	background-color: white;
-	filter:alpha(opacity=80);  
-    -moz-opacity:0.8;  
-    -khtml-opacity: 0.8;  
-    opacity: 0.8; 
+	background:rgba(255,255,255,0.75);
+	filter:Alpha(opacity=75);
     float: left;
 
 }
@@ -342,7 +340,9 @@
 	float: left;
 	width: 345px;
 	height: 181px;
-	background: white;
+	background-color: white;
+	background:rgba(255,255,255,0.40);
+	filter:Alpha(opacity=40);
 	position: relative;
 	margin-right: 8px;
 	margin-top: 8px;
@@ -370,22 +370,20 @@
 	width: 154px;
 	height: 45px;
 	overflow: hidden;
-	
 
 }
 #main #coupon_box ul.coupon_content li p.two{
 	position: absolute;
-	top: 98px;
+	top: 93px;
 	left: 182px;
 	width: 154px;
 	color: #999999;
-	height: 15px;
+	height: 30px;
 	overflow: hidden;
-
 }
 #main #coupon_box ul.coupon_content li p.three{
 	position: absolute;
-	top: 122px;
+	top: 130px;
 	left: 182px;
 	width: 154px;
 	color: #999999;
@@ -460,9 +458,8 @@
 
 #main #coupon_box #hot_coupon_box{
 	background-color: white;
-	filter:alpha(opacity=80);  
-    -moz-opacity:0.8;  
-    -khtml-opacity: 0.8;  
+	background:rgba(255,255,255,0.75);
+	filter:Alpha(opacity=75);
     opacity: 0.8; 
 	width: 254px;
 	position: absolute;
@@ -471,21 +468,30 @@
 }
 #main #coupon_box #hot_coupon_box p.title{
 	background: #E4E4E4;
+	background:rgba(228,228,228,0.75);
+	filter:Alpha(opacity=75);
 	height: 35px;
 	color: #666;
 	line-height: 35px;
 	padding-left: 8px;
+}
+#main #coupon_box #hot_coupon_box p.title span{
+	color: #666;
+	position: relative;
+	font-weight: bold;
 }
 #main #coupon_box #hot_coupon_box ul.hot_coupon{
 	margin-top: 5px;
 	margin-left: 5px;
 }
 #main #coupon_box #hot_coupon_box ul.hot_coupon li{
-	background: #ECEFF5;
 	height: 80px;
 	width: 244px;
 	margin-bottom: 5px;
 	position: relative;
+}
+#main #coupon_box #hot_coupon_box ul.hot_coupon li:hover{
+	background: #F4F1D2;
 }
 #main #coupon_box #hot_coupon_box ul.hot_coupon li a.title{
 	color: #ED5565;

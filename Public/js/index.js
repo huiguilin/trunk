@@ -124,8 +124,8 @@ $(function(){
 	 	timer = setInterval(autoRun,5000);//恢复定时器
 	 })
 	 function change(num){//用来控制切换图片和下标样式的函数
-	 	$('#main #main_content_top_box #ad_box img').hide();//先把所有的图片隐藏
-	 	$('#main #main_content_top_box #ad_box img').eq(num).fadeIn(200);//让对应的图片显示出来
+	 	$('#main #main_content_top_box #ad_box a.img_box img').hide();//先把所有的图片隐藏
+	 	$('#main #main_content_top_box #ad_box a.img_box img').eq(num).fadeIn(200);//让对应的图片显示出来
 	 	$('#main #main_content_top_box #ad_box ul li').removeClass('hover');//移除掉所有li上面的hover样式
 	 	$('#main #main_content_top_box #ad_box ul li').eq(num).addClass('hover');//给对应的li加上hover样式
 	 }
@@ -159,6 +159,22 @@ $(function(){
 	 	
 	 });
 
+	$('#main div.school_coupon div.foot_box ul.content li a.download').click(function(event) {
+     var tag = $(this).attr('tag');
+     if(tag == "0"){
+        $('#Userlogin_box').bPopup({
+        
+        });
+        return false;
+     }
+     else{
+     	$('#download_coupon_hidden_box').bPopup({});
+        coupon_id = $(this).attr('couponid');
+        return false;
+     }
+	 	
+	 });
+	
 	 //下载优惠券弹窗结束
 	 //点击下载手机优惠劵弹窗中发送按钮
      $('#download_coupon_submit_btn').click(function(event) {
@@ -194,5 +210,7 @@ $(function(){
      	}
      	return false;
      });
+
+	//限时抢购倒计时
 
 })

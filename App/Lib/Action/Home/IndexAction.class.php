@@ -117,8 +117,11 @@ class IndexAction extends Action {
         //获取校园优惠券
         $params = array(
             'tag' => '桂林电子科技大学',
-            'limit' => '0,4',
+            'limit' => '0,12',
             'order_by' => "weight DESC",
+            'coupon_type' => 1,
+            'start_time_lt' => $time,
+            'end_time_gt' => $time,
         );
         $GDCoupon = $helper->getCoupon($params);
         $GDCoupon = $this->cutCouponWords($GDCoupon);

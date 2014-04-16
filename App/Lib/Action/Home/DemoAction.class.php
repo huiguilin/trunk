@@ -10,6 +10,7 @@ class DemoAction extends Action {
         // die;
         $this->display();
         exit();
+        
         echo "今天:",date('Y-m-d H:i:s'),"<br>";
         echo "明天:",date('Y-m-d H:i:s',strtotime('-7 day'));
 

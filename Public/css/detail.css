@@ -28,6 +28,9 @@
 	color: #4467A3;
 	font-size: 13px;
 }
+#main #sub_nav_box div.content_box a.one{
+	padding-left: 10px;
+}
 #main #sub_nav_box div.content_box a.gray{
 	color: #666666;
 }
@@ -176,7 +179,6 @@
 
 #main #coupon_box div.coupon_detail_info_box img.coupon_pic{
 	width: 484px;
-	
 	margin-top: 20px;
 	margin-left: 99px;
 	margin-right: 99px;
@@ -311,12 +313,6 @@
 #main #coupon_box div.business_detail_info_box{
 	margin-top: 8px;
 	width: 695px;
-	background: white;
-	filter:alpha(opacity=80);  
-    -moz-opacity:0.8;  
-    -khtml-opacity: 0.8;  
-    opacity: 0.8; 
-	padding-bottom: 40px;
 }
 #main #coupon_box div.business_detail_info_box ul.business_nav{
 	background: #E4E4E4;
@@ -377,6 +373,9 @@
 
 #main #coupon_box div.business_detail_info_box div.business_location{
 	background: white;
+    background:rgba(255,255,255,0.75);
+    filter:Alpha(opacity=75);/*只对ie7,ie8有效*/
+    padding-bottom: 20px;
 }
 #main #coupon_box div.business_detail_info_box div.business_location p.title{
 	color: #ED5565;
@@ -394,6 +393,8 @@
 	margin-top: 10px;
 	background: #F5F4F0;
 	position: relative;
+    background:rgba(245,244,240,0.75);
+    filter:Alpha(opacity=75);/*只对ie7,ie8有效*/
 }
 #main #coupon_box div.business_detail_info_box div.business_location div.map_box #map{
 	width: 350px;
@@ -440,6 +441,8 @@
 }
 #main #coupon_box div.business_detail_info_box div.business_location div.map_box ul li.white{
 	background: white;
+    background:rgba(255,255,255,0.55);
+    filter:Alpha(opacity=55);/*只对ie7,ie8有效*/
 }
 #main #coupon_box div.business_detail_info_box div.business_location div.map_box ul li.gray{
 	background: #E4E4E4;
@@ -461,6 +464,18 @@
 	display: none;
 }
 #main #coupon_box div.business_detail_info_box div.business_intro{
+	margin-top: 0px;
+    padding-bottom: 20px;
+    background: white;
+    background:rgba(255,255,255,0.75);
+    filter:Alpha(opacity=75);/*只对ie7,ie8有效*/
+}
+#main #coupon_box div.business_detail_info_box div.business_intro p.business_img{
+	position: relative;
+}
+#main #coupon_box div.business_detail_info_box div.business_intro p.business_img img{
+	width: 644px;
+	margin-left: 19px;
 	margin-top: 20px;
 }
 #main #coupon_box div.business_detail_info_box div.business_intro p.title{
@@ -487,14 +502,11 @@
 	margin-right: 18px;
 	margin-top: 10px;
 }
-#main #coupon_box div.business_detail_info_box div.business_intro img{
-	width: 644px;
-	margin-left: 19px;
-	margin-top: 20px;
-}
 #main #coupon_box div.business_detail_info_box div.show_comment{
-	margin-top: 20px;
-
+	background: white;
+    background:rgba(255,255,255,0.75);
+    filter:Alpha(opacity=75);/*只对ie7,ie8有效*/
+    padding-bottom: 20px;
 }
 #main #coupon_box div.business_detail_info_box div.show_comment div.comment_performance{
 	margin-left: 18px;
@@ -610,6 +622,8 @@
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	position: relative;
+    background:rgba(242,242,242,0.75);
+    filter:Alpha(opacity=75);/*只对ie7,ie8有效*/
 }
 #main #coupon_box div.business_detail_info_box div.show_comment div.all_comment div p{
 	color: #666;

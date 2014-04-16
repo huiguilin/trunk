@@ -15,7 +15,11 @@
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/M_countDownForSpecicalCoupon.js"></script>
+
 <title>惠校园首页 | 生活费终于够用了</title>
+<link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon"> 
+<link rel="shortcut icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon"> 
 </head>
 <script>
 	$(document).ready(function(){   
@@ -65,7 +69,7 @@
 					<a href="" class="bg_icon">分享</a>
 					<div id="share_box">
 						<ul class="clearfix">
-							<li><a href="http://weibo.com/huigl?topnav=1&wvr=5" class="weibo">惠校园新浪微博</a></li>
+							<li><a href="http://weibo.com/huixy" class="weibo">惠校园新浪微博</a></li>
 							<li><a href="http://user.qzone.qq.com/2042534770" class="qzone">惠校园QQ空间</a></li>
 							<li><a href="http://t.qq.com/ihuigl?preview" class="QQweibo">惠校园腾讯微博</a></li>
 						</ul>
@@ -442,10 +446,11 @@
 		<div id="main_content_top_box">
 			<!-- 广告区域 -->
 			<div id="ad_box">
-				<img src="__PUBLIC__/images/flash/5.png" alt="广告图片">
-				<img src="__PUBLIC__/images/flash/2.png" alt="广告图片">
-				<img src="__PUBLIC__/images/flash/3.png" alt="广告图片">
-				<img src="__PUBLIC__/images/flash/4.png" alt="广告图片">
+			
+				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/5.png" alt="广告图片"></a>
+				<a href="http://weibo.com/huixy" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/6.png" alt="广告图片"></a>
+				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/4.png" alt="广告图片"></a>
+				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/7.png" alt="广告图片"></a>
 				<ul>
 					<li>1</li>
 					<li>2</li>
@@ -490,7 +495,7 @@
 		<!-- 热门品牌+新入驻品牌区域 -->
 		<div id="hot_and_new_brand_box">
 			<div class="hot_brand_box">
-				<p>热门品牌</p>
+				<p><span>热门品牌</span></p>
 				<ul>
                 <?php if(is_array($hot_partners)): foreach($hot_partners as $key=>$hpartner): ?><li>
 						<a class="title" href="<?php echo U('partner/detail','','','');?>/pid/<?php echo ($hpartner["partner_id"]); ?>" target=_blank ><?php echo ($hpartner["name"]); ?></a>
@@ -502,7 +507,7 @@
 				<a href="<?php echo U('Partner/partner','','','');?>" class="view_more" target=_blank>查看更多</a>
 			</div>
 			<div class="new_brand_box">
-				<p>新入驻品牌</p>
+				<p><span>新入驻品牌</span></p>
 				<ul>
                <?php if(is_array($partners)): foreach($partners as $key=>$partner): ?><li>
 						<a target=_blank href="<?php echo U('partner/detail','','','');?>/pid/<?php echo ($partner["partner_id"]); ?>" class="img_box">
@@ -518,7 +523,7 @@
 		<div id="foot_and_footsort_box">
 			<div class="foot_box">
 				<p class="title"><span>限时抢购</span></p>
-				<ul class="content">
+				<ul class=" clearfix content">
                 <?php if(is_array($eat_coupons)): foreach($eat_coupons as $k=>$coupon): if($k > 3): else: ?>
 						<li>
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>/specialcoupon" class="img_box" target=_blank><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
@@ -530,7 +535,9 @@
 						<?php else: ?>
 							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download" tag="1">立即抢购</a><?php endif; ?>
 						
-						<?php if($coupon['Countdown_label'] == 1): ?><p class="hidden_location">即将上线:<?php echo ($coupon['Countdown_time']['day']); ?>天<?php echo ($coupon['Countdown_time']['hour']); ?>时<?php echo ($coupon['Countdown_time']['min']); ?>分<?php echo ($coupon['Countdown_time']['sec']); ?>秒</p>
+						<?php if($coupon['Countdown_label'] == 1): ?><p class="hidden_location">即将上线:<span id="countdown_day"><?php echo ($coupon['Countdown_time']['day']); ?></span>天<span id="countdown_hour"><?php echo ($coupon['Countdown_time']['hour']); ?></span>时<span id="countdown_min"><?php echo ($coupon['Countdown_time']['min']); ?></span>分<span id="countdown_sec"><?php echo ($coupon['Countdown_time']['sec']); ?></span>秒</p>
+
+
 						<?php elseif($coupon['left_times'] == 0): ?>
 							<p class="hidden_location">已经卖光啦,下次早点哦!</p>
 						<?php else: ?>
@@ -542,7 +549,7 @@
 				<a href="<?php echo U('Coupon/specialcoupon','','','');?>" class="foot_type_more" target=_blank>查看更多</a>
 			</div>
 			<div id="hot_coupon_box">
-				<p class="title">热门优惠劵</p>
+				<p class="title"><span>热门优惠劵</span></p>
 				<ul class="hot_coupon">
                 <?php if(is_array($hot_coupons)): foreach($hot_coupons as $key=>$coupon): ?><li>
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="title"><?php echo ($coupon["name"]); ?></a>
@@ -554,12 +561,11 @@
 		</div>
 		<!-- 民以食为天+排行榜区域结束 -->
 		<!-- 休闲娱乐+排行榜区域 -->
-		<div id="foot_and_footsort_box">
+		<div class="school_coupon">
 			<div class="foot_box">
 				<p class="title"><span>校园优惠 |</span>桂林电子科技大学</p>
-				<ul class="content">
-                <?php if(is_array($play_coupons)): foreach($play_coupons as $k=>$coupon): if($k > 3 ): else: ?>
-						<li>
+				<ul class="clearfix content">
+                <?php if(is_array($play_coupons)): foreach($play_coupons as $k=>$coupon): ?><li>
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" target=_blank class="img_box"><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" target=_blank class="content_title" title="<?php echo ($coupon["name"]); ?>"><?php echo ($coupon["name"]); ?></a>
 						<p class="one" title="<?php echo ($coupon["description"]); ?>"><?php echo ($coupon["description"]); ?></p>
@@ -568,7 +574,7 @@
 						
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download">立即下载</a>
 						<!-- <p class="hidden_location"><?php echo ($coupon["tag"]); ?></p> -->
-					</li><?php endif; endforeach; endif; ?>
+					</li><?php endforeach; endif; ?>
 				</ul>
 				<a href="<?php echo U('Coupon/coupon',array('tag'=>'桂林电子科技大学'),'','');?>" class="foot_type_more">查看更多</a>
 			</div>
@@ -617,7 +623,6 @@
 		<div id="bottom_box">
 			<ul>
 				<li><a href="<?php echo U("About/about");?>">关于我们</a></li>
-				<li><a href="<?php echo U("Sitemap/sitemap");?>">网站地图</a></li>
 				<li><a href="<?php echo U("Contactus/contactus");?>">联系我们</a></li>
 				<li><a href="<?php echo U("Intention/intention");?>">商务合作</a></li>
 				<li><a href="<?php echo U("Legalstatement/legalstatement");?>">法律声明</a></li>
@@ -633,7 +638,9 @@
 				</p>
 				<p class="two">
 					<span>Copyright @ 2014 Huixiaoyuan.com Inc.All Rights Reserved</span>
+					<span class="cnzz"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000372030'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000372030%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></span>
 				</p>
+
 			</div>
 		</div>
 </div>
