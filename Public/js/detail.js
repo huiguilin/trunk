@@ -8,7 +8,7 @@ $(function(){
         var n2 = parseInt($(window).height());
         var n3 = parseInt($(document).height());
         var middle_val = n3/2;
-        var business_nav_y = parseInt($('#business_nav').position().top)+190;
+        var business_nav_y = parseInt($('#business_nav').position().top)+305;
         var business_location_y = parseInt($('#business_location').position().top)+135;
         var business_intro_y = parseInt($('#business_intro').position().top)+85;
         var comment_performance_y = parseInt($('#comment_performance').position().top)+115;     

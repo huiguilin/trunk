@@ -28,7 +28,7 @@
 	<div id="main">
 		<div id="sub_nav_box">
 			<div class="content_box">
-				<a href="/">桂林优惠</a><span>></span><a href="/index.php/Coupon/coupon?label_type={$coupon.label_type}">{$label_info}</a><span>></span><a href="/index.php/Coupon/coupon?cat_id={$cat_info.cat_id}">{$cat_info.cat_name}</a><span>></span><a href="" class="gray">{$coupon.name}</a>
+				<a href="/" class="one">桂林优惠</a><span>></span><a href="/index.php/Coupon/coupon?label_type={$coupon.label_type}">{$label_info}</a><span>></span><a href="/index.php/Coupon/coupon?cat_id={$cat_info.cat_id}">{$cat_info.cat_name}</a><span>></span><a href="" class="gray">{$coupon.name}</a>
 			</div>
 		</div>
 		<div id="coupon_box">
@@ -172,7 +172,7 @@
 					<p class="business_name">{$partner.name}</p>
 					<p class="business_intro_detail">{$partner.description}</p>
 					 <foreach name="partnerPictures" item="partnerPicture">
-							<img src="__PUBLIC__/{$partnerPicture.picture_path}" alt="商家介绍" />
+							<p class="business_img"><img src="__PUBLIC__/{$partnerPicture.picture_path}" alt="商家介绍" /></p>
                      </foreach>
 					
 

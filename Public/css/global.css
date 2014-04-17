@@ -2005,6 +2005,8 @@ body{
 	text-align: center;
 	color: #434343;
 	margin-top: 5px;
-
+}
+#bottom_info #bottom_box div.detail_box p.two span.cnzz{
+	padding-left: 10px;
 }
 /*最底部区域结束*/

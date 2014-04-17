@@ -59,7 +59,7 @@
 					<a href="" class="bg_icon">分享</a>
 					<div id="share_box">
 						<ul class="clearfix">
-							<li><a href="http://weibo.com/huigl?topnav=1&wvr=5" class="weibo">惠校园新浪微博</a></li>
+							<li><a href="http://weibo.com/huixy" class="weibo">惠校园新浪微博</a></li>
 							<li><a href="http://user.qzone.qq.com/2042534770" class="qzone">惠校园QQ空间</a></li>
 							<li><a href="http://t.qq.com/ihuigl?preview" class="QQweibo">惠校园腾讯微博</a></li>
 						</ul>
@@ -433,7 +433,7 @@
 	<div id="main">
 		<div id="sub_nav_box">
 			<div class="content_box">
-				<a href="/">桂林优惠</a><span>></span><a href="/index.php/Coupon/coupon?label_type=<?php echo ($coupon["label_type"]); ?>"><?php echo ($label_info); ?></a><span>></span><a href="/index.php/Coupon/coupon?cat_id=<?php echo ($cat_info["cat_id"]); ?>"><?php echo ($cat_info["cat_name"]); ?></a><span>></span><a href="" class="gray"><?php echo ($coupon["name"]); ?></a>
+				<a href="/" class="one">桂林优惠</a><span>></span><a href="/index.php/Coupon/coupon?label_type=<?php echo ($coupon["label_type"]); ?>"><?php echo ($label_info); ?></a><span>></span><a href="/index.php/Coupon/coupon?cat_id=<?php echo ($cat_info["cat_id"]); ?>"><?php echo ($cat_info["cat_name"]); ?></a><span>></span><a href="" class="gray"><?php echo ($coupon["name"]); ?></a>
 			</div>
 		</div>
 		<div id="coupon_box">
@@ -441,7 +441,6 @@
 				<div class="effective_date_box">
 					<p class="effective_date">优惠券有效期： <?php echo ($coupon["start_time"]); ?> - <?php echo ($coupon["end_time"]); ?></p>
 					<p class="download_number">下载次数：<span><?php echo ($coupon["download_times"]); ?></span></p>
-					<p class="view_number">查看次数：<span>431234</span></p>
 				</div>
 				<div class="coupon_desc_box">
 					<p class="coupon_title"><?php echo ($coupon["name"]); ?><!-- <span><?php echo ($coupon["title"]); ?></span> --></p>
@@ -562,7 +561,7 @@
 					<p class="title">商家介绍<a name="back_business_intro" id="business_intro"></p>
 					<p class="business_name"><?php echo ($partner["name"]); ?></p>
 					<p class="business_intro_detail"><?php echo ($partner["description"]); ?></p>
-					 <?php if(is_array($partnerPictures)): foreach($partnerPictures as $key=>$partnerPicture): ?><img src="__PUBLIC__/<?php echo ($partnerPicture["picture_path"]); ?>" alt="商家介绍" /><?php endforeach; endif; ?>
+					 <?php if(is_array($partnerPictures)): foreach($partnerPictures as $key=>$partnerPicture): ?><p class="business_img"><img src="__PUBLIC__/<?php echo ($partnerPicture["picture_path"]); ?>" alt="商家介绍" /></p><?php endforeach; endif; ?>
 					
 
 				</div>
@@ -672,7 +671,6 @@
 		<div id="bottom_box">
 			<ul>
 				<li><a href="<?php echo U("About/about");?>">关于我们</a></li>
-				<li><a href="<?php echo U("Sitemap/sitemap");?>">网站地图</a></li>
 				<li><a href="<?php echo U("Contactus/contactus");?>">联系我们</a></li>
 				<li><a href="<?php echo U("Intention/intention");?>">商务合作</a></li>
 				<li><a href="<?php echo U("Legalstatement/legalstatement");?>">法律声明</a></li>
@@ -688,7 +686,9 @@
 				</p>
 				<p class="two">
 					<span>Copyright @ 2014 Huixiaoyuan.com Inc.All Rights Reserved</span>
+					<span class="cnzz"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000372030'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000372030%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></span>
 				</p>
+
 			</div>
 		</div>
 </div>

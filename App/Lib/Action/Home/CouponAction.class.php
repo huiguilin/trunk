@@ -378,13 +378,23 @@ class CouponAction extends Action {
         $userHelper = new UserProfileModel();
         $userInfo = $userHelper->getUserProfileByUserId($userId);
         $eInfo = $this->mergeData($eInfo, $userInfo, 'user_id', 'user_id');
+
+        //获取优惠券分类标签
+        $labels = $this->labelType;
+
+        foreach ($labels as $key => $value) {
+            if($couponInfo[0]['label_type'] == $value){
+                $labels = $key;
+            }
+        }
+        
         $this->assign("coupon", $couponInfo[0]);
         $this->assign("other_coupon", $otherCoupons);
         $this->assign("partner", $partnerInfo[0]);
         $this->assign("partnerInfo", json_encode($partnerInfo[0]));
         $this->assign("evaluation", $eInfo);
         $this->assign("cat_info", $catInfo[0]);
-        $this->assign("label_info", $this->labelType[$couponInfo[0]['label_type']]);
+        $this->assign("label_info", $labels);
         $this->assign("partnerPictures",$partnerPictureInfo);
         $this->assign('rateInfo',$rateInfo);
         $this->assign('use_rule',$use_rule);
@@ -441,7 +451,7 @@ class CouponAction extends Action {
         );
         $couponInfo = $couponHelper->getCoupon($params);
         if (empty($couponInfo)) {
-           $data['info'] = "wrong counpon_id!";
+           $data['info'] = "此优惠券抢购还没开始哦！";
            $this->ajaxReturn($data,'JSON');
            return TRUE;
         }

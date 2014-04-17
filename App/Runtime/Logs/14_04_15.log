@@ -1,0 +1,291 @@
+[ 2014-04-15T19:07:58+08:00 ] 127.0.0.1 /trunk/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002661s ]
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.008676s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001007s ]
+NOTIC: [8] Undefined variable: coupon C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.008728s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.011529s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 86 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND coupon_type IN (2) ) ORDER BY weight DESC  [ RunTime:0.001912s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND tag like '%桂林电子科技大学%' ) ORDER BY weight DESC LIMIT 0,4   [ RunTime:0.001115s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND coupon_type IN (1) AND start_time <= '2014-04-15 19:07:58' AND end_time >= '2014-04-15 19:07:58' ) ORDER BY weight DESC LIMIT 0,5   [ RunTime:0.001112s ]
+NOTIC: [8] Undefined index: id C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 217 行.
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.007264s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (4,3,2,1) )  [ RunTime:0.000561s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.008983s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (24,26,23,20,22,25) )  [ RunTime:0.001409s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.011380s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (24,26,23,20,22,25) )  [ RunTime:0.001089s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.006787s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000737s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.007617s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 216 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.007101s ]
+SQL: SHOW COLUMNS FROM `t_monkey_location` [ RunTime:0.008538s ]
+SQL: SELECT * FROM `t_monkey_location` WHERE ( 1 = 1 ) LIMIT 0,5   [ RunTime:0.000489s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.007672s ]
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND status = 1 ) LIMIT 0,6   [ RunTime:0.000510s ]
+NOTIC: [8] Undefined index: _URL_ C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 48 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.116491s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.116734s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002555s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002095s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001862s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002381s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009504s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002278s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002543s ]
+
+[ 2014-04-15T19:07:58+08:00 ] 127.0.0.1 /trunk/index.php/home/user/verifyImg
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.012143s ]
+INFO: [ route_check ] --END-- [ RunTime:0.012421s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.008045s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008297s ]
+
+[ 2014-04-15T19:08:02+08:00 ] 127.0.0.1 /trunk/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002706s ]
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.006748s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001090s ]
+NOTIC: [8] Undefined variable: coupon C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.009606s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.020210s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 86 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND coupon_type IN (2) ) ORDER BY weight DESC  [ RunTime:0.002221s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND tag like '%桂林电子科技大学%' ) ORDER BY weight DESC LIMIT 0,4   [ RunTime:0.006799s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND coupon_type IN (1) AND start_time <= '2014-04-15 19:08:01' AND end_time >= '2014-04-15 19:08:01' ) ORDER BY weight DESC LIMIT 0,5   [ RunTime:0.001311s ]
+NOTIC: [8] Undefined index: id C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 217 行.
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.007660s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (4,3,2,1) )  [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.007792s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (24,26,23,20,22,25) )  [ RunTime:0.001076s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.006134s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (24,26,23,20,22,25) )  [ RunTime:0.000985s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.008350s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000747s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.007380s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 216 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006798s ]
+SQL: SHOW COLUMNS FROM `t_monkey_location` [ RunTime:0.006368s ]
+SQL: SELECT * FROM `t_monkey_location` WHERE ( 1 = 1 ) LIMIT 0,5   [ RunTime:0.000488s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.006198s ]
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND status = 1 ) LIMIT 0,6   [ RunTime:0.000498s ]
+NOTIC: [8] Undefined index: _URL_ C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 48 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.182709s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.182952s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002439s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002394s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.002201s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.004542s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012197s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002012s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002217s ]
+
+[ 2014-04-15T19:08:02+08:00 ] 127.0.0.1 /trunk/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003036s ]
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.006995s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001003s ]
+NOTIC: [8] Undefined variable: coupon C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.007886s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.007552s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 86 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND coupon_type IN (2) ) ORDER BY weight DESC  [ RunTime:0.002212s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND tag like '%桂林电子科技大学%' ) ORDER BY weight DESC LIMIT 0,4   [ RunTime:0.001013s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND coupon_type IN (1) AND start_time <= '2014-04-15 19:08:02' AND end_time >= '2014-04-15 19:08:02' ) ORDER BY weight DESC LIMIT 0,5   [ RunTime:0.001076s ]
+NOTIC: [8] Undefined index: id C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 217 行.
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.006962s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (4,3,2,1) )  [ RunTime:0.000893s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.007466s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (24,26,23,20,22,25) )  [ RunTime:0.001156s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.008328s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (24,26,23,20,22,25) )  [ RunTime:0.001242s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.014191s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000723s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.006995s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 216 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006898s ]
+SQL: SHOW COLUMNS FROM `t_monkey_location` [ RunTime:0.006487s ]
+SQL: SELECT * FROM `t_monkey_location` WHERE ( 1 = 1 ) LIMIT 0,5   [ RunTime:0.000503s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.006464s ]
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND status = 1 ) LIMIT 0,6   [ RunTime:0.000472s ]
+NOTIC: [8] Undefined index: _URL_ C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 48 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.115230s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.115489s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.003854s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002258s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001819s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002309s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010865s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002522s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002725s ]
+
+[ 2014-04-15T19:08:02+08:00 ] 127.0.0.1 /trunk/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002178s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002467s ]
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.008981s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.001235s ]
+NOTIC: [8] Undefined variable: coupon C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.008188s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.008048s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 86 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND coupon_type IN (2) ) ORDER BY weight DESC  [ RunTime:0.002158s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND tag like '%桂林电子科技大学%' ) ORDER BY weight DESC LIMIT 0,4   [ RunTime:0.001060s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND coupon_type IN (1) AND start_time <= '2014-04-15 19:08:02' AND end_time >= '2014-04-15 19:08:02' ) ORDER BY weight DESC LIMIT 0,5   [ RunTime:0.003334s ]
+NOTIC: [8] Undefined index: id C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 217 行.
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.007305s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (4,3,2,1) )  [ RunTime:0.000603s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.009010s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (24,26,23,20,22,25) )  [ RunTime:0.001069s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.007634s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (24,26,23,20,22,25) )  [ RunTime:0.000862s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.007732s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000550s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.006394s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 216 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006404s ]
+SQL: SHOW COLUMNS FROM `t_monkey_location` [ RunTime:0.007003s ]
+SQL: SELECT * FROM `t_monkey_location` WHERE ( 1 = 1 ) LIMIT 0,5   [ RunTime:0.000553s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.005758s ]
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND status = 1 ) LIMIT 0,6   [ RunTime:0.000697s ]
+NOTIC: [8] Undefined index: _URL_ C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 48 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.152038s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.152526s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.003424s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002536s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001834s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002293s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010813s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.008228s ]
+INFO: [ view_end ] --END-- [ RunTime:0.010230s ]
+
+[ 2014-04-15T19:08:03+08:00 ] 127.0.0.1 /trunk/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.008234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008739s ]
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.006806s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.000981s ]
+NOTIC: [8] Undefined variable: coupon C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.021063s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.005995s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 86 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND coupon_type IN (2) ) ORDER BY weight DESC  [ RunTime:0.001807s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND tag like '%桂林电子科技大学%' ) ORDER BY weight DESC LIMIT 0,4   [ RunTime:0.000927s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND coupon_type IN (1) AND start_time <= '2014-04-15 19:08:02' AND end_time >= '2014-04-15 19:08:02' ) ORDER BY weight DESC LIMIT 0,5   [ RunTime:0.000888s ]
+NOTIC: [8] Undefined index: id C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 217 行.
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.006986s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (4,3,2,1) )  [ RunTime:0.000498s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006568s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (24,26,23,20,22,25) )  [ RunTime:0.000776s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.007688s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (24,26,23,20,22,25) )  [ RunTime:0.000959s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.006710s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.005818s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 216 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006863s ]
+SQL: SHOW COLUMNS FROM `t_monkey_location` [ RunTime:0.007393s ]
+SQL: SELECT * FROM `t_monkey_location` WHERE ( 1 = 1 ) LIMIT 0,5   [ RunTime:0.000833s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.014105s ]
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND status = 1 ) LIMIT 0,6   [ RunTime:0.000779s ]
+NOTIC: [8] Undefined index: _URL_ C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 48 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.126710s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.126976s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.002751s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002381s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001881s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002711s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010401s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002424s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002654s ]
+
+[ 2014-04-15T19:08:03+08:00 ] 127.0.0.1 /trunk/index.php/home/user/verifyImg
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.003324s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003594s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003005s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003263s ]
+
+[ 2014-04-15T19:08:42+08:00 ] 127.0.0.1 /trunk/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002657s ]
+SQL: SHOW COLUMNS FROM `t_monkey_cms_index` [ RunTime:0.006225s ]
+SQL: SELECT * FROM `t_monkey_cms_index` WHERE ( status=1 ) ORDER BY weight DESC  [ RunTime:0.000859s ]
+NOTIC: [8] Undefined variable: coupon C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `t_monkey_coupon_info` [ RunTime:0.007648s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.006338s ]
+NOTIC: [8] Undefined index: limit C:\wamp\www\trunk\App\Lib\Model\Home\CouponModel.class.php 第 86 行.
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND coupon_type IN (2) ) ORDER BY weight DESC  [ RunTime:0.002109s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND tag like '%桂林电子科技大学%' ) ORDER BY weight DESC LIMIT 0,4   [ RunTime:0.000945s ]
+SQL: SELECT * FROM `t_monkey_coupon_info` WHERE ( 1 = 1 AND coupon_type IN (1) AND start_time <= '2014-04-15 19:08:41' AND end_time >= '2014-04-15 19:08:41' ) ORDER BY weight DESC LIMIT 0,5   [ RunTime:0.001232s ]
+NOTIC: [8] Undefined index: id C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 217 行.
+SQL: SHOW COLUMNS FROM monkey.t_monkey_ad [ RunTime:0.008037s ]
+SQL: SELECT * FROM monkey.t_monkey_ad WHERE ( id IN (4,3,2,1) )  [ RunTime:0.000577s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006362s ]
+SQL: SELECT * FROM `t_monkey_partner_info` WHERE ( partner_id IN (24,26,23,20,22,25) )  [ RunTime:0.000852s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_picture` [ RunTime:0.007010s ]
+SQL: SELECT * FROM `t_monkey_partner_picture` WHERE ( partner_id IN (24,26,23,20,22,25) )  [ RunTime:0.000689s ]
+SQL: SHOW COLUMNS FROM `t_monkey_partner_evaluation` [ RunTime:0.007059s ]
+SQL: SELECT * FROM `t_monkey_partner_evaluation` WHERE ( evaluation_type = '0' ) ORDER BY createtime DESC  [ RunTime:0.000852s ]
+SQL: SHOW COLUMNS FROM `t_monkey_user_profile` [ RunTime:0.006756s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 216 行.
+SQL: SHOW COLUMNS FROM `t_monkey_partner_info` [ RunTime:0.006947s ]
+SQL: SHOW COLUMNS FROM `t_monkey_location` [ RunTime:0.006555s ]
+SQL: SELECT * FROM `t_monkey_location` WHERE ( 1 = 1 ) LIMIT 0,5   [ RunTime:0.000528s ]
+SQL: SHOW COLUMNS FROM `t_monkey_category` [ RunTime:0.006413s ]
+SQL: SELECT * FROM `t_monkey_category` WHERE ( 1 = 1 AND status = 1 ) LIMIT 0,6   [ RunTime:0.000923s ]
+NOTIC: [8] Undefined index: _URL_ C:\wamp\www\trunk\App\Lib\Action\Home\IndexAction.class.php 第 48 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.214605s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.214875s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.003407s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.002738s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.002618s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.006667s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.016173s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002780s ]
+INFO: [ view_end ] --END-- [ RunTime:0.003002s ]
+
+[ 2014-04-15T19:08:42+08:00 ] 127.0.0.1 /trunk/index.php/home/user/verifyImg
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002139s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002374s ]
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+NOTIC: [2] stripslashes() expects exactly 1 parameter, 2 given C:\wamp\www\trunk\ThinkPHP\Lib\Core\App.class.php 第 57 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002925s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003143s ]
+
