@@ -24,6 +24,9 @@ class IndexAction extends Action {
         $this->releaseData($cmsData);
 
         list($coupon,$newSpecicalCoupon, $GDCoupon,$hotCouponInfo) = $this->getCoupon($this->$coupon);
+        foreach ($GDCoupon as $k => $v) {
+            $GDCoupon[$k]['tag'] = trim(mb_substr($GDCoupon[$k]['tag'], strrpos($GDCoupon[$k]['tag'] ,'，')),'，');
+        }
         $card = $this->getCard($this->card);
         $news = $this->getNews($this->news);
         $ads = $this->getAds($this->ads);

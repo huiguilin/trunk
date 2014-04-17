@@ -584,11 +584,18 @@
 	top: 132px;
 	left: 13px;
 	height: 40px;
-	width: 162px;
+	width: 145px;
 	color: white;
+	background: red;
 	line-height: 40px;
-	/*background: url(../images/location.png) no-repeat 1px 10px;*/
-	background-color: #303131;
+	background: url(../images/location.png) no-repeat 1px 10px;
+	background-color: black;
+	filter:alpha(opacity=50); 
+	-moz-opacity:0.5; 
+	opacity:0.5;
+	padding-left: 17px;
+	font-weight: bold;
+	display: none;
 	
 }
 #main div.school_coupon div.foot_box ul.content li a.content_title{

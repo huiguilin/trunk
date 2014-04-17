@@ -131,11 +131,11 @@ $(function(){
 	 }
 	 //首页图片轮换版特效结束
 
-	 // $('#main #foot_and_footsort_box div.foot_box ul.content li').hover(function() {
-	 // 	$(this).find('p.hidden_location').show();
-	 // }, function() {
-	 // 	$(this).find('p.hidden_location').hide();
-	 // });
+	 $('#main div.school_coupon div.foot_box ul.content li').hover(function() {
+	 	$(this).find('p.hidden_location').show();
+	 }, function() {
+	 	$(this).find('p.hidden_location').hide();
+	 });
 	 $('#main #hot_and_new_brand_box div.hot_brand_box li').hover(function() {
 	 	$(this).find('a').css('text-decoration', 'underline');
 	 }, function() {
@@ -146,9 +146,11 @@ $(function(){
 	$('#main #foot_and_footsort_box div.foot_box ul.content li a.download').click(function(event) {
      var tag = $(this).attr('tag');
      if(tag == "0"){
-        $('#Userlogin_box').bPopup({
-        
-        });
+        $('#Userlogin_box').bPopup({});
+        $('#login_hidebox05').attr('tag', tag);
+        $('#email_reg_btn').attr('tag', tag);
+        $('#cellphone_reg_btn').attr('tag', tag);
+        coupon_id = $(this).attr('couponid');
         return false;
      }
      else{

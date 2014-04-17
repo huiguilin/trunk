@@ -178,7 +178,7 @@
 				<p class="six">
 					我已阅读并同意<a href="<?php echo U("Eula/eula");?>"><<惠校园用户条款>>.</a>
 				</p>
-				<input type="submit" name="email_reg_btn" id="email_reg_btn" value="注册" />
+				<input type="submit" name="email_reg_btn" tag="1" id="email_reg_btn" value="注册" />
 				<p class="seven">已经是惠校园的用户？点击<a href="" id="login_now_email">登录.</a></p>
 				<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 				<p class="nine" id="reg_hidebox02">密码由6-32位的字母、数字或符号组成</p>
@@ -211,7 +211,7 @@
 				<p class="five">
 					我已阅读并同意<a href=""><<惠校园用户条款>>.</a>
 				</p>
-				<input type="submit" name="cellphone_reg_btn" id="cellphone_reg_btn" value="注册"/>
+				<input type="submit" name="cellphone_reg_btn" tag="1" id="cellphone_reg_btn" value="注册"/>
 				<p class="thirteen">已经是惠校园的用户？点击<a href="" id="login_now_cellphone">登录.</a></p>
 				<p class="eight" id="reg_hidebox01">用于登录和找回密码，不会公开</p>
 				<p class="nine" id="reg_hidebox02">请输入手机收到的短信验证码</p>
@@ -294,7 +294,7 @@
 			<p class="eight" id="login_hidebox02">请输入密码</p>
 			<p class="nine" id="login_hidebox03">请输入验证码</p>
 			<p class="ten" id="login_hidebox04">用户名或密码有误，请重新输入</p>
-			<input type="hidden" id="login_hidebox05" value="<?php echo U("Home/Login/verify");?>" />
+			<input type="hidden" id="login_hidebox05" value="<?php echo U("Home/Login/verify");?>" tag="1" />
 	</div>
 	<div id="u_bottom_box">
 		<p>使用其他账户直接登陆</p>
@@ -573,7 +573,7 @@
 						<p class="three">下载：<?php echo ($coupon["download_times"]); ?>次</p>
 						
 						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download">立即下载</a>
-						<!-- <p class="hidden_location"><?php echo ($coupon["tag"]); ?></p> -->
+						<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
 					</li><?php endforeach; endif; ?>
 				</ul>
 				<a href="<?php echo U('Coupon/coupon',array('tag'=>'桂林电子科技大学'),'','');?>" class="foot_type_more">查看更多</a>

@@ -218,6 +218,7 @@ class PartnerAction extends Action {
             $json_partnerPicInfo[] = $v['picture_path'];
         }
 
+        //获取商家优惠券
         $couponHelper = new CouponModel();
         $time = date('Y-m-d H:i:s');
         if (!empty($offTime) && is_numeric($offTime)) {
@@ -228,6 +229,7 @@ class PartnerAction extends Action {
                     );
         }
         else {
+
             $str = "end_time >= '{$time}' AND start_time <= '{$time}'";
             $params = array(
                     'partner_id' => $data[0]['partner_id'],

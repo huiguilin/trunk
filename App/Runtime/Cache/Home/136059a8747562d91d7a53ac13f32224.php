@@ -456,11 +456,12 @@
 						<?php else: endif; endif; ?>
 					<p class="coupon_description"><?php echo ($coupon["description"]); ?></p>
 				</div>
-				<?php if(($_SESSION['user']['user_id']== '') AND ($coupon['coupon_type'] == 2)): ?><a href="<?php echo U("Coupon/printCoupon","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="print_coupon_btn">打印此优惠券</a>
-					<a class="download_coupon_btn" tag="0" id="download_coupon_btn" couponid="<?php echo ($coupon["coupon_id"]); ?>">下载到手机</a>
-				<?php else: ?>
-					<a href="<?php echo U("Coupon/printCoupon","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="print_coupon_btn">打印此优惠券</a>
-					<a class="download_coupon_btn" tag="1" id="download_coupon_btn" couponid="<?php echo ($coupon["coupon_id"]); ?>">下载到手机</a><?php endif; ?>
+				<?php if(($coupon['Countdown_label'] == 1) AND ($coupon['coupon_type'] == 2)): else: ?>
+				    <?php if(($_SESSION['user']['user_id']== '') AND ($coupon['coupon_type'] == 2)): ?><a href="<?php echo U("Coupon/printCoupon","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="print_coupon_btn">打印此优惠券</a>
+						<a class="download_coupon_btn" tag="0" id="download_coupon_btn" couponid="<?php echo ($coupon["coupon_id"]); ?>">下载到手机</a>
+				    <?php else: ?>
+						<a href="<?php echo U("Coupon/printCoupon","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="print_coupon_btn">打印此优惠券</a>
+						<a class="download_coupon_btn" tag="1" id="download_coupon_btn" couponid="<?php echo ($coupon["coupon_id"]); ?>">下载到手机</a><?php endif; endif; ?>
 
 
 				
@@ -487,11 +488,12 @@
 						</ul>
 					</div>
 				</div>
-				<?php if(($_SESSION['user']['user_id']== '') AND ($coupon['coupon_type'] == 2)): ?><a href="<?php echo U("Coupon/printCoupon","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="print_coupon_btn print_coupon_btn2">打印此优惠券</a>
-					<a href="javascript:void(0);" class="download_coupon_btn download_coupon_btn2" id="download_coupon_btn_two" couponid="<?php echo ($coupon["coupon_id"]); ?>" tag="0">下载到手机</a>
-				<?php else: ?>
-					<a href="<?php echo U("Coupon/printCoupon","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="print_coupon_btn print_coupon_btn2">打印此优惠券</a>
-					<a href="javascript:void(0);" class="download_coupon_btn download_coupon_btn2" id="download_coupon_btn_two" couponid="<?php echo ($coupon["coupon_id"]); ?>" tag="1">下载到手机</a><?php endif; ?>
+				<?php if(($coupon['Countdown_label'] == 1) AND ($coupon['coupon_type'] == 2)): else: ?>
+				    <?php if(($_SESSION['user']['user_id']== '') AND ($coupon['coupon_type'] == 2)): ?><a href="<?php echo U("Coupon/printCoupon","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="print_coupon_btn print_coupon_btn2">打印此优惠券</a>
+					    <a href="javascript:void(0);" class="download_coupon_btn download_coupon_btn2" id="download_coupon_btn_two" couponid="<?php echo ($coupon["coupon_id"]); ?>" tag="0">下载到手机</a>
+				    <?php else: ?>
+						<a href="<?php echo U("Coupon/printCoupon","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="print_coupon_btn print_coupon_btn2">打印此优惠券</a>
+					    <a href="javascript:void(0);" class="download_coupon_btn download_coupon_btn2" id="download_coupon_btn_two" couponid="<?php echo ($coupon["coupon_id"]); ?>" tag="1">下载到手机</a><?php endif; endif; ?>
 
 				<a id="download_coupon_id" style="visibility:hidden" couponid="<?php echo ($coupon["coupon_id"]); ?>"><?php echo ($coupon["coupon_id"]); ?></a>
 			</div>

@@ -336,13 +336,66 @@ class CouponAction extends Action {
         $partnerPictureHelper = new PartnerPictureModel(); 
         $partnerPictureInfo = $partnerPictureHelper->getPartnerPictureByPartnerId($partnerIds);
         $allCoupons = $couponHelper->getCouponByPartnerId($couponInfo[0]['partner_id']);
+
+
+        //获取其他优惠券
         $otherCouponsIds = array();
         foreach ($allCoupons as $k => $v) {
             if($v['coupon_id'] != $_GET['_URL_'][2]){
                array_push($otherCouponsIds, $v['coupon_id']);
             }
         }
-        $otherCoupons = $couponHelper->getCouponByCouponId($otherCouponsIds);
+        $otherCouponsId = implode(',', $otherCouponsIds);
+        $otherParam = array();
+        $otherParam['limit'] = '';
+        $otherParam['coupon_type'] = 1;
+        $otherParam['start_time_lt'] = $time;
+        $otherParam['end_time_gt'] = $time;
+        $otherParam['coupon_id'] = $otherCouponsId;
+        $otherCoupons = $couponHelper->getCoupon($otherParam);
+
+        $otherParam = array();
+        $otherParam['limit'] = '';
+        $otherParam['coupon_type'] = 2;
+        $otherParam['coupon_id'] = $otherCouponsId;
+        $sOtherCoupons = $couponHelper->getCoupon($otherParam);
+       
+        foreach ($sOtherCoupons as $k => $v) {
+
+            if (strtotime($v['start_time'])-strtotime($time) >= 0 && strtotime($v['start_time'])-strtotime($time) < (3600*48)) {
+               $newcouponInfo[] = $v;
+            }
+             if (strtotime($time) >= strtotime($v['start_time']) && strtotime($time) <= strtotime($v['end_time'])) {
+               $newcouponInfo[] = $v;
+            }
+        }
+        if(!empty($newcouponInfo)){
+            foreach ($newcouponInfo AS $key => $value) {
+                $newcouponInfo[$key]['left_times'] = (int)($newcouponInfo[$key]['limit_times'] - $newcouponInfo[$key]['download_times']);
+                if ($newcouponInfo[$key]['left_times'] < 0)  {
+                    $newcouponInfo[$key]['left_times'] = 0;
+                }
+                if(strtotime($newcouponInfo[$key]['start_time']) > strtotime($time)){
+                    $newcouponInfo[$key]['Countdown_time'] = timediff(strtotime($time),strtotime($newcouponInfo[$key]['start_time']));
+                    $newcouponInfo[$key]['Countdown_label'] = 1;
+                }
+                else{
+                     $newcouponInfo[$key]['Countdown_label'] = 0;
+                }
+            }
+            if(empty($otherCoupons)){
+                 $otherCoupons = $newcouponInfo;
+            }else{
+                 $otherCoupons = array_merge($otherCoupons,$newcouponInfo);
+            }
+           
+
+        }
+       
+
+        /////////////////////
+
+
         $partnerHelper = new PartnerModel();
         $partnerInfo = $partnerHelper->getPartnerByPartnerId($partnerIds);
 
