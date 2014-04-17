@@ -26,6 +26,10 @@ class SitemapAction extends Action {
             $sitemap .= "<url>\r\n"."<loc>". $url ."</loc>\r\n"."<priority>{$priority}</priority>\r\n<lastmod>". $v['ctime'] ."</lastmod>\r\n<changefreq>daily</changefreq>\r\n</url>\r\n";
         }   
 
+        foreach ($partnerInfo AS $k => $v) {
+
+        }
+
         $sitemap .= '</urlset>';
         $file = fopen("/tmp/sitemapone.xml","w");
         fwrite($file,$sitemap);    fclose($file);
