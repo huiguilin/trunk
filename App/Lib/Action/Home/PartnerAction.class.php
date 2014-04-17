@@ -232,8 +232,6 @@ class PartnerAction extends Action {
 
 
             $str = "end_time >= '{$time}' AND start_time <= '{$time}'";
-
-
             $params = array(
                     'partner_id' => $data[0]['partner_id'],
                     'str' =>  $str,
