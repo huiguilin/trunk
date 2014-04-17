@@ -230,8 +230,9 @@ class PartnerAction extends Action {
         }
         else {
 
+            $startTime = date("Y-m-d H:i:s", strtotime("+2day"));
+            $str = "end_time >= '{$time}' AND start_time <= '{$startTime}'";
 
-            $str = "end_time >= '{$time}' AND start_time <= '{$time}'";
             $params = array(
                     'partner_id' => $data[0]['partner_id'],
                     'str' =>  $str,
