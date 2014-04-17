@@ -27,6 +27,7 @@ return array(
 
     'URL_404_REDIRECT' => '/',
     'VAR_FILTERS'=>'stripslashes,strip_tags,htmlspecialchars',
+    'URL_MODEL' => 2,
 
 );
 

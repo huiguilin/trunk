@@ -123,6 +123,13 @@ class CouponModel extends Model {
         $str = "select sum(`download_times`) as download_times, partner_id from t_monkey_coupon_info where 1 = 1 group by partner_id order by {$orderBy}";
         $result = $this->query($str);
         return $result;
+    }
 
+    public function getSiteMapInfo() {
+        $time = date('Y-m-d H:i:s');
+        $str = "1 = 1 AND start_time <= '{$time}' AND end_time >= '{$time}'";
+        $str = "select coupon_id, partner_id from t_monkey_coupon_info where {$str} order by weight DESC";
+        $result = $this->query($str);
+        return $result;
     }
 }
