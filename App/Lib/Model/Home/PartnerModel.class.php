@@ -40,5 +40,11 @@ class PartnerModel extends Model {
         return $data;
     }
     
-
+    public function getSiteMapInfo() {
+        $time = date('Y-m-d H:i:s');
+        $str = "1 = 1";
+        $str = "select partner_id from t_monkey_partner_info where {$str}";
+        $result = $this->query($str);
+        return $result;
+    }
 }

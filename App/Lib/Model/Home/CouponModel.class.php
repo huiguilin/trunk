@@ -127,8 +127,8 @@ class CouponModel extends Model {
 
     public function getSiteMapInfo() {
         $time = date('Y-m-d H:i:s');
-        $str = "1 = 1 AND start_time <= '{$time}' AND end_time >= '{$time}'";
-        $str = "select coupon_id, partner_id from t_monkey_coupon_info where {$str} order by weight DESC";
+        $str = "1 = 1 AND end_time >= '{$time}'";
+        $str = "select coupon_id, partner_id, ctime, coupon_type from t_monkey_coupon_info where {$str} order by weight DESC, coupon_type DESC";
         $result = $this->query($str);
         return $result;
     }
