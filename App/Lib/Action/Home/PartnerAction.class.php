@@ -228,7 +228,7 @@ class PartnerAction extends Action {
                     );
         }
         else {
-            $str = "end_time >= '{$time}' AND start_time <= '{$time}'";
+            $str = "end_time >= '{$time}'";
             $params = array(
                     'partner_id' => $data[0]['partner_id'],
                     'str' =>  $str,
