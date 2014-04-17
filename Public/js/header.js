@@ -151,6 +151,8 @@ $(function(){
 	});
 	
 	$('#btn_login').click(function(event) {
+		var tag = $('#login_hidebox05').attr('tag');
+
 		var verifyURL = $("#login_hidebox05").val();
 		var username =$('#Userlogin_box #u_middle_box input.one').val();
 		var password =$('#Userlogin_box #u_middle_box input.two').val();
@@ -159,7 +161,13 @@ $(function(){
 		if(vcode != "" && username != "" && password != ""){
 			$.post(ajaxPostURL+"User/checkLogin", { username: username, password: password, vcode: vcode },function(data){
             	if(data.status == 1){
-            		location.href = loginSucessURL+next;
+            		if (tag == 0) {
+            			$('#Userlogin_box').bPopup().close();
+            			$('#download_coupon_hidden_box').bPopup({});
+                        return false;
+            		}else{
+            			location.href = loginSucessURL+next;
+            		}
             	}else if(data.status == 0){
             		$('#login_hidebox04').show().text(data.info);
             		return false;
@@ -341,13 +349,14 @@ $(function(){
 					}else{
 						if (data.status == 1) {
 							alert(data.info);
+							$('#u_middle_box').css('display', 'none');
+							$('#u_bottom_box').css('display', 'none');
+							$('#m_bottom_box').css('display','none');
+							$('#UserForgetpwd_box').css('display', 'none');
+							$('#Userlogin_box #u_top_box p').text("修改密码");
+							$('#modify_pwd_box').css('display', 'block');				
 						}
-						$('#u_middle_box').css('display', 'none');
-						$('#u_bottom_box').css('display', 'none');
-						$('#m_bottom_box').css('display','none');
-						$('#UserForgetpwd_box').css('display', 'none');
-						$('#Userlogin_box #u_top_box p').text("修改密码");
-						$('#modify_pwd_box').css('display', 'block');						
+								
 					}
 					
 				});
@@ -383,12 +392,8 @@ $(function(){
 				$('#forgetpwd_hidebox02').text('输入的邮箱格式不正确，请重新输入');
 				return false;
 			}else{
-
-				//alert(ajaxPostURL+"User/forgetPwd");
 				$.post(ajaxPostURL+"User/forgetPwd", {user_email: email}, function(data) {
-					/*optional stuff to do after success */
-					//alert(data.email);
-					// alert(data);
+					
 					//判断邮箱是否注册，没注册则不跳转到修改密码页面
 					if (data.status == 5) {
 						$('#forgetpwd_hidebox02').css('display', 'block');
@@ -1062,7 +1067,7 @@ $(function(){
 	//用户登录弹框关闭结束
 	//邮箱注册注册button特效
 	$('#Userreg_box #u_bottom #email_box form #email_reg_btn').click(function(event) {
-
+		var tag = $(this).attr('tag');
 		var backgroundURL='url("http://localhost/Trunk/Public/images/ico_12.png")'
 		var backgroundURL_error= backgroundURL.replace("ico_12.png","ico_13.png");
 
@@ -1085,8 +1090,15 @@ $(function(){
 
 			 	// 做个判断，返回成功执行下面的代码，跳转到注册成功页面
 			 	if(data.status == 1){
-			 		$('#Userreg_box #u_bottom').css('display', 'none');
-					$('#Userreg_box #UserregSuccess_email').css('display', 'block');
+			 		if (tag == 0) {
+			 			$('#Userreg_box').bPopup().close();
+			 			$('#download_coupon_hidden_box').bPopup({});
+				        return false;
+			 		}
+			 		if (tag == 1) {
+			 			$('#Userreg_box #u_bottom').css('display', 'none');
+					    $('#Userreg_box #UserregSuccess_email').css('display', 'block');
+			 		}
 			 	}
 			 	else if(data.status ==0){
 			 		$('#Userreg_box #u_bottom #email_box form p.twelve').show().text(data.info).css('color', '#F14B2B')
@@ -1103,6 +1115,7 @@ $(function(){
 	//邮箱注册注册button特效结束
 	//手机注册注册button特效
 	$('#Userreg_box #u_bottom #cellphone_box form #cellphone_reg_btn').click(function(event) {
+		var tag = $(this).attr('tag');
 		var cellphonereg_cellphone =$('#Userreg_box #u_bottom #cellphone_box form input.one').val();
 		var cellphonereg__pwd =$('#Userreg_box #u_bottom #cellphone_box form input.two').val();
 		var cellphonereg__pwd2 =$('#Userreg_box #u_bottom #cellphone_box form input.three').val();
@@ -1120,19 +1133,27 @@ $(function(){
 			 vcode:cellphonereg__vcode},function(data){
 			 	//做个判断，返回成功执行下面的代码，跳转到注册成功页面
 			 	if(data.status == 1){
-				 	$('#Userreg_box #u_bottom').css('display', 'none');
-				 	$('#Userreg_box #UserregSuccess_cellphone').css('display', 'block');
-				 	var sta =3;
-					setInterval(function(){
-						sta--;
-						if(sta == 0){
-							$('#cellphone_reg_success_count_down').text(sta+"秒");	
-							location.href = "http://www.huigl.com/index.php/index/index.html";
-						}
-						else{
-							$('#cellphone_reg_success_count_down').text(sta+"秒");	
-						}
-					},1000)
+
+			 		if (tag == 0) {
+			 			$('#Userreg_box').bPopup().close();
+			 			$('#download_coupon_hidden_box').bPopup({});
+				        return false;
+			 		}
+			 		if (tag == 1) {
+			 			$('#Userreg_box #u_bottom').css('display', 'none');
+				 		$('#Userreg_box #UserregSuccess_cellphone').css('display', 'block');
+				 		var sta =3;
+							setInterval(function(){
+							sta--;
+							if(sta == 0){
+								$('#cellphone_reg_success_count_down').text(sta+"秒");	
+								location.href = "http://www.huigl.com/index.php/index/index.html";
+							}
+							else{
+								$('#cellphone_reg_success_count_down').text(sta+"秒");	
+							}
+						},1000)
+			 		}
 			 	}
 			 	if(data.status == 0){
 			 		$('#cellphone_reg_final_error_tip').show();

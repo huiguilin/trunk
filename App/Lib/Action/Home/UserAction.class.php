@@ -290,6 +290,22 @@ class UserAction extends Action {
         $this->ajaxReturn($data,'JSON');
         return TRUE;
     }
+    private function sendForgetPWDCode($phoneNumber, $code) {
+        if (empty($phoneNumber) || empty($code)) {
+            return FALSE;
+        }
+        session("pcheck","{$code}");
+        session("activeCode","{$code}");
+        session("userphone","{$phoneNumber}");
+        //TBC
+        $text = "验证码是：{$code}，请及时修改密码！";
+        $result = sendCodeToMobile($phoneNumber, "{$text}");
+        $data = array(
+            'status' => 1,
+            'info' => '发送成功',
+        );
+        return $data;
+    }
 
     private function send($phoneNumber, $code) {
         if (empty($phoneNumber) || empty($code)) {
@@ -492,12 +508,13 @@ class UserAction extends Action {
         if (empty($result)) {
             $data = array(
                 'status' => 12,
-                'info' => '该手机没有在惠桂林注册^^',
+                'info' => '该手机没有在惠校园注册^^',
             );
             $this->ajaxReturn($data,'JSON');
             return TRUE;
         }
-        $data = $this->send($phoneNumber, $code);
+
+        $data = $this->sendForgetPWDCode($phoneNumber, $code);
         $this->ajaxReturn($data,'JSON');
         return TRUE;
     }

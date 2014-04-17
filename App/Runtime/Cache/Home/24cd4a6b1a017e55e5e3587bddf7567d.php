@@ -1,28 +1,27 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 a//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="Keywords" content="惠校园,huigl,优惠,优惠券,吃喝玩乐,惠享生活,折扣,划算,便宜,打折"> <!-- 向搜索引擎说明你的网页的关键词； --> 
-<meta name="description" content=" 惠校园网- 桂林最早，口碑最好的网络优惠平台！超省钱巨划算！惠校园网为您精选自助餐、电影票、KTV、美发、足浴特色商家，享尽无敌优惠"> <!-- 告诉搜索引擎你的站点的主要内容；  -->
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/detail.css">
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/M_sendCouponToCellphone.css">
-<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/detail.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
-<script type="text/javascript" src="__PUBLIC__/js/baidumap.js"></script>
-<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+	<title><?php echo ($partnerInfo[0]['name']); ?> | 惠校园</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/partnerdetail.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/M_sendCouponToCellphone.css">
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/partner.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
 
-
-<title><?php echo ($coupon["name"]); ?> | 惠校园</title>
+	<script type="text/javascript" src="__PUBLIC__/js/baidumap.js"></script>
+	
 </head>
 <body>
 <!-- 顶部订阅分享区域+Logo区域 -->
-	<!-- 顶部订阅分享区域 --> 
+       <!-- 顶部订阅分享区域 --> 
 	<div id="top_box">
 		<div id="top_function_box">
 			
@@ -429,215 +428,239 @@
 
 </script>
 <!-- 顶部订阅分享区域+Logo区域结束 -->
-<!-- 内容区域 -->
-	<div id="main">
-		<div id="sub_nav_box">
-			<div class="content_box">
-				<a href="/" class="one">桂林优惠</a><span>></span><a href="/index.php/Coupon/coupon?label_type=<?php echo ($coupon["label_type"]); ?>"><?php echo ($label_info); ?></a><span>></span><a href="/index.php/Coupon/coupon?cat_id=<?php echo ($cat_info["cat_id"]); ?>"><?php echo ($cat_info["cat_name"]); ?></a><span>></span><a href="" class="gray"><?php echo ($coupon["name"]); ?></a>
+<!--  导航区域 -->
+<div style="width:100%">
+	<div id="partnermain" >
+		<!-- 主要内容顶部区域 -->
+			<div id="partnersitenav">
+				<a href="" class="no_margin_left"><?php echo ($partner_tags[0]['pcat_name']); ?></a><span>></span><a href=""><?php echo ($partner_tags[0]['cat_name']); ?></a><span>></span><a href=""><?php echo ($partner_tags[0]['belong']); ?></a><span>></span><a href=""><?php echo ($partner_tags[0]['locationname']); ?></a><span>></span><a href="" class="gray"><?php echo ($partnerInfo[0]['name']); ?></a>
 			</div>
-		</div>
-		<div id="coupon_box">
-			<div class="coupon_detail_info_box">
-				<div class="effective_date_box">
-					<p class="effective_date">优惠券有效期： <?php echo ($coupon["start_time"]); ?> - <?php echo ($coupon["end_time"]); ?></p>
-					<p class="download_number">下载次数：<span><?php echo ($coupon["download_times"]); ?></span></p>
-				</div>
-				<div class="coupon_desc_box">
-					<p class="coupon_title"><?php echo ($coupon["name"]); ?><!-- <span><?php echo ($coupon["title"]); ?></span> --></p>
-					<?php if(($coupon['Countdown_label'] == 1) AND ($coupon['coupon_type'] == 2)): ?><p class="coupon_count">
-							即将上线：<?php echo ($coupon['Countdown_time']['day']); ?>天<?php echo ($coupon['Countdown_time']['hour']); ?>时<?php echo ($coupon['Countdown_time']['min']); ?>分<?php echo ($coupon['Countdown_time']['sec']); ?>秒
-						</p>
-					<?php elseif(($coupon['left_times'] == 0) AND ($coupon['coupon_type'] == 2)): ?>
-						<p class="coupon_count">已经卖光啦，下次早点哦！</p>
-					<?php else: ?>
-						<?php if(($_SESSION['user']['user_id']== '') AND ($coupon['coupon_type'] == 2)): ?><p class="coupon_count">抢购之前需要先登录哦！</p>
-						<?php elseif($coupon['coupon_type'] == 2): ?>
-							<p class="coupon_count">限量抢购中，还剩<span><?php echo ($coupon["left_times"]); ?></span>份</p>
-						<?php else: endif; endif; ?>
-					<p class="coupon_description"><?php echo ($coupon["description"]); ?></p>
-				</div>
-				<?php if(($coupon['Countdown_label'] == 1) AND ($coupon['coupon_type'] == 2)): else: ?>
-				    <?php if(($_SESSION['user']['user_id']== '') AND ($coupon['coupon_type'] == 2)): ?><a href="<?php echo U("Coupon/printCoupon","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="print_coupon_btn">打印此优惠券</a>
-						<a class="download_coupon_btn" tag="0" id="download_coupon_btn" couponid="<?php echo ($coupon["coupon_id"]); ?>">下载到手机</a>
-				    <?php else: ?>
-						<a href="<?php echo U("Coupon/printCoupon","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="print_coupon_btn">打印此优惠券</a>
-						<a class="download_coupon_btn" tag="1" id="download_coupon_btn" couponid="<?php echo ($coupon["coupon_id"]); ?>">下载到手机</a><?php endif; endif; ?>
-
-
-				
-				<img src="__PUBLIC__/<?php echo ($coupon["picture_path"]); ?>" class="coupon_pic" alt="<?php echo ($coupon["name"]); ?>">
-				<?php if(($coupon['download_times'] == $coupon['limit_times']) AND ($coupon['download_times'] != '0') AND ($coupon['limit_times'] != '0')): ?><div class="sellAll"><img src="__PUBLIC__/images/sell_all.png" alt="抢光啦"></div><?php endif; ?>
-				<div class="coupon_detail_desc_box">
-					<p class="desc_title">详细介绍</p>
-					<p class="desc_content"><span><?php echo ($coupon["message"]); ?></span></p>
-					<div>
-						<p>使用须知</p>
-						<p>有效期：<span><?php echo ($coupon["start_time"]); ?>——<?php echo ($coupon["end_time"]); ?></span></p>
-						<p>不可用日期：<span><?php echo ($coupon["exception_time"]); ?></span></p>
-						<p>使用时间：<span><?php echo ($coupon["use_time"]); ?></span></p>
-						<p>预约提醒：
-                        <span>
-                        <?php if($coupon["need_booking"] == 1): ?>需要预约
+			<!-- 主要内容顶部区域结束 -->
+			<!-- 主要内容左边区域开始 -->
+				<div id="partnerleft">
+				<!-- 主要内容左边区域优商家信息部分开始 -->
+				    <div id="partnerleft_top_box">
+						<div id="partnerleft_top">
+							<a href="#" class="partnertitle"><?php echo ($partnerInfo[0]['name']); ?></a><a href="#" class="otherstore" style="display:none">查看其他分店信息</a>
+							<span class="rate_stars">
+								<span style="width: <?php echo ($partner_rate[0]['rateValue']); ?>%;"></span>
+							</span>
+							<p><a href="#"><?php echo ($partner_rate[0]['rateCount']); ?></a>&nbsp条评论信息</p>
+						</div>
+						<div id="partnerleft_down_left">
+							<p><span>地址：</span><?php echo ($location_desc); ?></p>
+							<p><span>电话：</span><?php echo ($partnerInfo[0]['telephone']); ?></p>
+							<p><span>营业时间：</span>10：00-22：30（ 周末、节假日不休）</p>
+							<p class="tag_box">
+								<span>标签：</span>
+								<a target=_blank href="<?php echo U('Partner/partner','','','');?>/label_type/<?php echo ($partner_tags[0]['label_type']); ?>"><?php echo ($partner_tags[0]['pcat_name']); ?></a>
+								<a target=_blank href="<?php echo U('Partner/partner','','','');?>/label_type/<?php echo ($partner_tags[0]['label_type']); ?>/cat_id/<?php echo ($partner_tags[0]['cat_id']); ?>"><?php echo ($partner_tags[0]['cat_name']); ?></a>
+								<a target=_blank href="<?php echo U('Partner/partner','','','');?>/tag/<?php echo ($partner_tags[0]['belong']); ?>"><?php echo ($partner_tags[0]['belong']); ?></a>
+							</p>
+							<p class="tag_box2">
+								<a target=_blank href="<?php echo U('Partner/partner','','','');?>/tag/<?php echo ($partner_tags[0]['belong']); ?>/location/<?php echo ($partner_tags[0]['location_id']); ?>"><?php echo ($partner_tags[0]['locationname']); ?></a>
+							</p>
+							<p><span>餐厅描述：</span>
+								<p class="description" id="partner_desc_sort">
+								<?php echo ($description); ?>
+								<?php if (strlen($description) > 330) { echo "<a href='#' id='desc_out'>展开</a>"; } ?>
+								</p>
+								<p class="description" id="partner_desc_long" style="display:none;">
+									<?php echo ($partnerInfo[0]['description']); ?><a href='#' id="desc_up">收起</a>
+								</p>
+							</p>
+						</div>
+						<div id="partnerleft_down_right">
+							<a href=""><img src="__PUBLIC__/<?php echo ($partnerInfo[0]['header_path']); ?>" alt="gg" id="viewallpic_img"/></a>
+							<p id="viewallpic_btn"><a href="" class="moreimg">查看全部<span><?php echo (count($partnerPictureInfo)); ?></span>张照片</a></p>
+						</div>
+					</div>
+					<!-- 主要内容左边区域优商家信息部分结束 -->
+					<!-- 主要内容左边区域优惠券信息部分开始 -->
+					<div id="partnerleft_middle_box">
+						<ul class="coupon_type_nav">
+                        <?php if($get["off_time"] == 1): ?><li class=""><a href="<?php echo U('Partner/detail','','','');?>/pid/<?php echo ($partnerInfo[0]['partner_id']); ?>" class="">正在优惠</a></li>
+							<li class="red"><a href="/index.php/partner/detail/pid/<?php echo ($partnerInfo[0]['partner_id']); ?>?off_time=1" class="red">过期优惠</a></li>
                         <?php else: ?>
-                        无需预约<?php endif; ?>
-                        </span>
-                        </p>
-						<p>使用规则：</p>
-						<ul>
-                        <?php echo ($use_rule); ?>
+							<li class="red"><a href="<?php echo U('Partner/detail','','','');?>/pid/<?php echo ($partnerInfo[0]['partner_id']); ?>" class="red">正在优惠</a></li>
+							<li><a href="/index.php/partner/detail/pid/<?php echo ($partnerInfo[0]['partner_id']); ?>?off_time=1" class="normal">过期优惠</a></li><?php endif; ?>
 						</ul>
+						<div id="all_coupon_info">
+                           <ul class="coupon_content clearfix">
+                           		<?php if(is_array($partnerCouponInfo)): foreach($partnerCouponInfo as $k=>$partnercoupon): $i = $k%2; ?>
+                           		<?php if($i == '0'): ?><li class="no_margin_left">
+										<?php if($get["off_time"] == 1): ?><a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($partnercoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($partnercoupon["header_path"]); ?>" alt="<?php echo ($partnercoupon["name"]); ?>"></a>
+											<div class="one">已过期</div>
+										<?php else: ?>
+											<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($partnercoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($partnercoupon["header_path"]); ?>" alt="<?php echo ($partnercoupon["name"]); ?>"></a><?php endif; ?>
+										
+										<?php if($get["off_time"] == 1): ?><a class="content_title" title="<?php echo ($partnercoupon["name"]); ?>"><?php echo ($partnercoupon["name"]); ?></a>
+										<?php else: ?>
+										<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($partnercoupon["coupon_id"]); ?>" class="content_title" title="<?php echo ($partnercoupon["name"]); ?>"><?php echo ($partnercoupon["name"]); ?></a><?php endif; ?>
+
+										<p class="one" title="<?php echo ($partnercoupon["description"]); ?>"><?php echo ($partnercoupon["description"]); ?></p>
+										<p class="two" title="<?php echo ($partnercoupon["title"]); ?>"><?php echo ($partnercoupon["title"]); ?></p>
+										<p class="three">下载：<?php echo ($partnercoupon["download_times"]); ?>次</p>
+										<?php if($get["off_time"] == 1): else: ?>
+											<a href="" class="download" couponid="<?php echo ($partnercoupon["coupon_id"]); ?>">立即下载</a><?php endif; ?>
+										
+
+										<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
+									</li>
+                           		<?php else: ?>
+									<li class="no_margin_right">
+										<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($partnercoupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($partnercoupon["header_path"]); ?>" alt="<?php echo ($partnercoupon["name"]); ?>"></a>
+										<?php if($get["off_time"] == 1): ?><a class="content_title" title="<?php echo ($partnercoupon["name"]); ?>"><?php echo ($partnercoupon["name"]); ?></a>
+										<?php else: ?>
+										<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($partnercoupon["coupon_id"]); ?>" class="content_title" title="<?php echo ($partnercoupon["name"]); ?>"><?php echo ($partnercoupon["name"]); ?></a><?php endif; ?>
+										<p class="one" title="<?php echo ($partnercoupon["description"]); ?>"><?php echo ($partnercoupon["description"]); ?></p>
+										<p class="two" title="<?php echo ($partnercoupon["title"]); ?>"><?php echo ($partnercoupon["title"]); ?></p>
+										<p class="three">下载：<?php echo ($partnercoupon["download_times"]); ?>次</p>
+
+										<?php if($get["off_time"] == 1): else: ?>
+										<a href="" class="download" couponid="<?php echo ($partnercoupon["coupon_id"]); ?>">立即下载</a><?php endif; ?>
+
+										<p class="hidden_location"><?php echo ($coupon["tag"]); ?></p>
+									</li><?php endif; endforeach; endif; ?>
+                           </ul>
+                        </div>  
 					</div>
-				</div>
-				<?php if(($coupon['Countdown_label'] == 1) AND ($coupon['coupon_type'] == 2)): else: ?>
-				    <?php if(($_SESSION['user']['user_id']== '') AND ($coupon['coupon_type'] == 2)): ?><a href="<?php echo U("Coupon/printCoupon","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="print_coupon_btn print_coupon_btn2">打印此优惠券</a>
-					    <a href="javascript:void(0);" class="download_coupon_btn download_coupon_btn2" id="download_coupon_btn_two" couponid="<?php echo ($coupon["coupon_id"]); ?>" tag="0">下载到手机</a>
-				    <?php else: ?>
-						<a href="<?php echo U("Coupon/printCoupon","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="print_coupon_btn print_coupon_btn2">打印此优惠券</a>
-					    <a href="javascript:void(0);" class="download_coupon_btn download_coupon_btn2" id="download_coupon_btn_two" couponid="<?php echo ($coupon["coupon_id"]); ?>" tag="1">下载到手机</a><?php endif; endif; ?>
-
-				<a id="download_coupon_id" style="visibility:hidden" couponid="<?php echo ($coupon["coupon_id"]); ?>"><?php echo ($coupon["coupon_id"]); ?></a>
-			</div>
-			<div class="share">
-				<a href="javascript:void(0)" class="add_favorite" id="add_favorite_btn">收藏到我的券包</a>
-				<input type="hidden" id="checklogin" value="<?php echo ($_SESSION['user']['nickname']); ?>" />
-				<p>分享到</p>
-				<ul>
-					<!-- <li><a href="" class="one"></a></li> -->
-				<!-- 	<li><a href="" class="two"></a></li> -->
-				<!-- 	<li><a href="" class="three"></a></li>
-					<li><a href="" class="four"></a></li>
-					<li><a href="" class="five"></a></li>
-					<li><a href="" class="six"></a></li> -->
-
-
-					<li><wb:share-button addition="simple" type="icon" ralateUid="3977849998" default_text="<?php echo ($coupon["name"]); ?> <?php echo ($coupon["title"]); ?>" pic="http://www.huigl.com/Public/<?php echo ($coupon["picture_path"]); ?>||http://www.huigl.com/Public/<?php echo ($coupon["header_path"]); ?>"></wb:share-button></li>
-				</ul>
-			</div>
-			<div class="other_coupons_box">
-				<p class="other_coupon_title">本商户其他优惠券</p>
-                <?php if(is_array($other_coupon)): foreach($other_coupon as $key=>$ocoupon): ?><p class="other_coupon_content"><a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($ocoupon["coupon_id"]); ?>" class="other_coupon_title" target="_blank"><?php echo ($ocoupon["name"]); ?></a><a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($ocoupon["coupon_id"]); ?>" class="other_coupon_description" target="_blank">：<?php echo ($ocoupon["description"]); ?></a></p><?php endforeach; endif; ?>
-			</div>
-			<div class="business_detail_info_box">
-				<ul class="business_nav clearfix" id="business_nav">
-					<li class="no_bottom_border"><a href="#back_business_location" >商家位置</a></li>
-					<li><a href="#back_business_intro">商家介绍</a></li>
-					<li><a href="#back_comment_performance">评价晒单</a></li>
-				</ul>
-				<!-- 隐藏商家导航菜单 -->
-				<ul class="jquery_business_nav clearfix" id="jquery_business_nav">
-				    <a name="business_nav"></a>
-					<li class="no_bottom_border"><a href="">商家位置</a></li>
-					<li><a href="">商家介绍</a></li>
-					<li><a href="">评价晒单</a></li>
-				</ul>
-
-				<div class="business_location">
-					<p class="title">商家位置<a name="back_business_location" id="business_location"></a></p>
-					<div class="map_box">
-						<div class="map" id="map">
-						</div>
-						<div class="view_map">
-							<a id="view_full_map">查看完整地图</a>
-						</div>
-						<div id="hidden_detail_map">
-							<div class="title_box">
-								<p>查看全图</p>
-								<a></a>
-							</div>
-							<div class="detail_map_box" id="detail_map_box"></div>
-						</div>
-						<ul>
-							<li class="white">
-								<a href="<?php echo U('Partner/detail','','','');?>/pid/<?php echo ($partner["partner_id"]); ?>" class="address_title"><?php echo ($partner["name"]); ?></a>
-								<div>
-									<p class="subway"></p>
-									<p class="telephone">电话：<?php echo ($partner["telephone"]); ?></p>
-									<p class="address">地址：<?php echo ($partner["location_desc"]); ?></p>
-								</div>
-							</li>
-							<a href="" class="summary_number">查看全部分店(共1家)</a>
-						</ul>
-					</div>
-				</div>
-				<div class="business_intro">
-					<p class="title">商家介绍<a name="back_business_intro" id="business_intro"></p>
-					<p class="business_name"><?php echo ($partner["name"]); ?></p>
-					<p class="business_intro_detail"><?php echo ($partner["description"]); ?></p>
-					 <?php if(is_array($partnerPictures)): foreach($partnerPictures as $key=>$partnerPicture): ?><p class="business_img"><img src="__PUBLIC__/<?php echo ($partnerPicture["picture_path"]); ?>" alt="商家介绍" /></p><?php endforeach; endif; ?>
-					
-
-				</div>
-				<a name="back_comment_performance" id="comment_performance"></a>
-				<div class="show_comment">
-					<div class="comment_performance">
-						<p class="title">晒单点评</p>
-						<ul>
-							<li>
-								
-								<p class="three"><?php echo ($rateInfo[1]); ?><span>分</span></p>
-								<span class="rate_stars">
-									<span style="width: <?php echo ($rateInfo[0]); ?>"></span>
-								</span>
-							</li>
-							<li>
-								<p class="one">已有<span><?php echo (count($evaluation )); ?></span>人对本优惠券做出评价</p>
-								<p class="two"><span><?php echo ($rateInfo[0]); ?></span>的会员满意本优惠券</p>
-							</li>
-							<li class="no_border_right">
-								<p>我在惠校园下载过此优惠券</p>
-								<?php if($_SESSION['user']['user_id']== ''): else: ?>
-								<a href="<?php echo U('Home/Account/mytocomment');?>">我要评论</a><?php endif; ?>
-
-							</li>
-						</ul>
-					</div>
-					<div class="all_comment">
-						<div>	
-							<p>全部评论</p>
-							<ul>
-								<li><a href="">默认</a></li>
-								<li><a href="">评分</a></li>
+					<!-- 主要内容左边区域优惠券信息部分结束 -->
+					<!-- 主要内容左边区域商家菜单部分开始 -->
+					<div id="partnermenu">
+						<p class="partner_menu_title">商家菜单</p>
+						<div id="catlink">
+							<ul class="clearfix">
+								<li><a href="#">新品推荐</a></li>
+								<li class="no_border_top"><a href="#">人气菜品</a></li>
+								<li class="no_border_top"><a href="#">精品凉菜</a></li>
+								<li class="no_border_top"><a href="#">海鲜</a></li>
+								<li class="no_border_top"><a href="#">经典热菜</a></li>
+								<li class="no_border_top"><a href="#">餐后甜点</a></li>
+								<li class="no_border_top"><a href="#">酒水饮料</a></li>
 							</ul>
 						</div>
-						<ul class="comment_ul">
-                        <?php if(is_array($evaluation)): foreach($evaluation as $key=>$eva): $rate_vaule = $eva['rate']; $rate_vaule = $rate_vaule*20; ?>
-							<li>
-								<p class="one"><?php echo ($eva["nickname"]); ?><a class="red">@<?php echo ($partner["name"]); ?></a><span><?php echo ($eva["createtime"]); ?></span><span class="rate_stars"><span style="width: <?php echo ($rate_vaule); ?>%;"></span></span></p>
-								<p class="two"><?php echo ($eva["evaluation"]); ?></p>
-								
-							</li><?php endforeach; endif; ?>
-						</ul>
+						<div id="menuinfo">
+							<ul class="menuinfo_detail clearfix">
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+								<li>
+									<a href="" class="img_box"><img src="__PUBLIC__/images/pic/ls_162_01.jpg" alt="" /></a>
+									<a href="" class="title">Dish Name ￥99</a>
+								</li>
+							</ul>
+						</div>
+						 <div style="clear:both"></div>
+					</div>
+					<!-- 主要内容左边区域商家菜单部分结束 -->
+					<!-- 主要内容左边区域评论部分开始 -->
+					<div id="alleva_box">
+					    <div id="alleva_top_box">
+							<p class="alleva_top_title">全部评价</p>
+							<div id="select_p">
+								<ul class="clearfix">
+									<li><a href="#">默认</a></li>
+									<li><a href="#" class="no_border_right">时间</a></li>
+									<li><a href="#" class="no_border_right">评分</a></li>
+								</ul>		
+							</div>
+						</div>
+						<div class="evacontent_box">
+							<?php if(is_array($partnerComments)): foreach($partnerComments as $k=>$partnerComment): ?><div class="evacontent">
+								<div class="evacontent_top">
+									<a class="username" href="#"><?php echo ($partnerComment["nickname"]); ?>**<?php echo ($partnerComment["createtime"]); ?></a>
+									<span class="eva_rate_stars">
+										<?php  $rate = $partnerComment['rate']*20; ?>
+										<span style="width: <?php echo ($rate); ?>%;"></span>
+									</span>
+								</div>
+								<p class="comment_desc"><?php echo ($partnerComment["evaluation"]); ?></p>
+								<p class="storename"><?php echo ($partnerComment["couponname"]); ?>(<?php echo ($partnerComment["coupontitle"]); ?>)</p>
+							</div><?php endforeach; endif; ?>
+						</div>
 						<ul class="page_box clearfix">
-							<li><a href="" class="one">首页</a></li>
+							<li class="one"><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>1),'','');?>" class="one">首页</a></li>
 							<li><a href=""><</a></li>
-							<li><a href="" class="red">1</a></li>
-							<li><a href="">2</a></li>
-							<li><a href="">3</a></li>
+							
+							<?php $__FOR_START_24450__=1;$__FOR_END_24450__=$pageNums+1;for($i=$__FOR_START_24450__;$i < $__FOR_END_24450__;$i+=1){ if($i == $get_info): ?><li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>" class="red"><?php echo ($i); ?></a></li>
+								<?php else: ?>
+									<li><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','');?>"><?php echo ($i); ?></a></li><?php endif; } ?>
+
 							<li><a href="">></a></li>
-							<li><a href="" class="one">尾页</a></li>
+							<li class="one"><a href="<?php echo U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$pageNums),'','');?>" class="one">尾页</a></li>
 						</ul>
-					</div>	
+					</div>
+					<!-- 主要内容左边区域评论部分结束 -->
 				</div>
+				<!--左边部分内容结束-->
+				<!-- 主要内容右边区域开始 -->
+				<div id="partnerright">
+					<div id="storemap">
+						<div id="view_map"></div>
+						<a href="" class="viewfullmap" id="viewfullmap">查看完整地图</a>
+						<p class="partnerlocation"><?php echo trim($location_desc,'.'); ?></p>
+					</div>
+
+					<div id="hidden_detail_map">
+						<div class="title_box">
+							<p>查看全图</p>
+							<a href="" class="close" id="close_box"></a>
+						</div>
+						<div class="detail_map_box" id="detail_map_box"></div>
+				 	</div>
+
+					<div class="nearcoupon">
+					    <p class="title">热门优惠券推荐</p>
+					    <?php if(is_array($hot_coupons)): foreach($hot_coupons as $k=>$hot_coupon): ?><div id="nearcoupon_detail_contents">
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hot_coupon["coupon_id"]); ?>" class="c_title"><?php echo ($hot_coupon["name"]); ?>}</a>
+							<p class="c_desc"><?php echo ($hot_coupon["description"]); ?></p>
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($hot_coupon["coupon_id"]); ?>"><img src="__PUBLIC__/<?php echo ($hot_coupon["header_path"]); ?>" align="优惠券" /></a>
+						</div><?php endforeach; endif; ?>	
+				    </div>
+				    
+				 </div>
 			</div>
-			<div id="webchat_box">
-				<p>扫一下，关注惠校园微博</p>
-				<img src="__PUBLIC__/images/weibo_barcode.png" alt="微博icon">
+			<div id="view_partner_pics_hidden_box">
+			
+			   <a href="" class="closed" id="closed_btn">关闭</a>
+			   <?php if(is_array($partnerPictureInfo)): foreach($partnerPictureInfo as $k=>$partnerPicture): ?><img class="content" src="__PUBLIC__/<?php echo ($partnerPicture["picture_path"]); ?>" alt="" /><?php endforeach; endif; ?>
+			   <div class="bottom_box">
+			   		<!-- <a href="http://www.huigl.com" class="index_link">惠校园</a> -->
+			   		<img src="__PUBLIC__/images/news_n.jpg" alt="" class="p_bg"/>
+			   		<a href="" class="prev" id="prev_btn" num="">PREV</a>
+			   		<img src="__PUBLIC__/images/news_p.jpg" alt="" class="n_bg"/>
+			   		<a href="" class="next" id="next_btn" num="">NEXT</a>
+			   </div>
 			</div>
-			<div id="hot_tips_box">
-				<p class="title">温馨提示</p>
-				<ul>
-					<li>未注册用户每天只能下载相同优惠券2条；</li>
-					<li>未注册用户累计只能下载5条优惠券；</li>
-					<li>未注册用户不能下载限时优惠券；</li>
-					<li>注册用户无以上限制，可自由下载和使用优惠券。</li>
-				</ul>
-			</div>
-		</div>
-        <a id="partner_hidden" style="visibility:hidden" value="<?php echo ($partnerInfo); ?>"><?php echo ($partnerInfo); ?></a>
-		
-	</div>
-<!-- 内容区域结束 -->
-	<div id="download_coupon_hidden_box">	
+				<a id="partner_hidden" style="display:none" value="<?php echo ($partner); ?>"><?php echo ($partner); ?></a>
+				<a id="partner_pic_hidden" style="display:none" value="<?php echo ($partnerPicture); ?>"><?php echo ($partnerPicture); ?></a>
+				<div id="download_coupon_hidden_box">	
 	<div class="top_content_box">
 		<p id="coupon_id_value">短信优惠券下载</p>
 		<img src="__PUBLIC__/images/login_closed.png" id="closed_download_coupon_hidden_box" alt="关闭">
@@ -668,8 +691,8 @@
 		<a href="" id="close_middle_content_box_success">关闭</a>
 	</div>
 </div>
-<!-- 最底部区域 -->
-	<div id="bottom_info">
+				<!-- 最底部区域 -->
+				<div id="bottom_info">
 		<div id="bottom_box">
 			<ul>
 				<li><a href="<?php echo U("About/about");?>">关于我们</a></li>
@@ -694,13 +717,16 @@
 			</div>
 		</div>
 </div>
-<!-- 最底部区域结束 -->
-	<script type="text/javascript">
-	   	var partner_info = $('#partner_hidden').text();
-		var partner = jQuery.parseJSON(partner_info);
-		var mapBoxDetailId = "detail_map_box";
-		var mapBoxFullId = "map";	    
-	</script>
-</body>
+				<!-- 最底部区域结束 -->
+          
+		<script type="text/javascript">
+			
+		   	  var partner_info = $('#partner_hidden').text();
 
+			  var partner = jQuery.parseJSON(partner_info);
+			  var mapBoxDetailId = "detail_map_box";
+			  var mapBoxFullId = "view_map"; 
+			    
+		</script>
+	</body>
 </html>
