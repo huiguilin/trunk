@@ -96,13 +96,24 @@
 											<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$partnercoupon.header_path}" alt="{$partnercoupon.name}"></a>
 											<div class="one">已过期</div>
 										<else />
-											<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$partnercoupon.header_path}" alt="{$partnercoupon.name}"></a>
+											<if condition="$partnercoupon['coupon_type'] eq 2">
+												<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}/specialcoupon" class="img_box"><img src="__PUBLIC__/{$partnercoupon.header_path}" alt="{$partnercoupon.name}"></a>
+											<else />
+												<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$partnercoupon.header_path}" alt="{$partnercoupon.name}"></a>
+											</if>
+											
 										</if>
 										
 										<if condition="$get.off_time eq 1">
 										<a class="content_title" title="{$partnercoupon.name}">{$partnercoupon.name}</a>
 										<else />
-										<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="content_title" title="{$partnercoupon.name}">{$partnercoupon.name}</a>
+											<if condition="$partnercoupon['coupon_type'] eq 2">
+												<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}/specialcoupon" class="content_title" title="{$partnercoupon.name}">{$partnercoupon.name}</a>
+											<else />
+												<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="content_title" title="{$partnercoupon.name}">{$partnercoupon.name}</a>
+
+											</if>
+										
 										</if>
 
 										<p class="one" title="{$partnercoupon.description}">{$partnercoupon.description}</p>
@@ -119,11 +130,26 @@
 									</li>
                            		<else/>
 									<li class="no_margin_right">
-										<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$partnercoupon.header_path}" alt="{$partnercoupon.name}"></a>
+										<if condition="$get.off_time eq 1">
+											<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$partnercoupon.header_path}" alt="{$partnercoupon.name}"></a>
+											<div class="one">已过期</div>
+										<else />
+											<if condition="$partnercoupon['coupon_type'] eq 2">
+												<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}/specialcoupon" class="img_box"><img src="__PUBLIC__/{$partnercoupon.header_path}" alt="{$partnercoupon.name}"></a>
+											<else />
+												<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$partnercoupon.header_path}" alt="{$partnercoupon.name}"></a>
+											</if>
+										</if>
+										
 										<if condition="$get.off_time eq 1">
 										<a class="content_title" title="{$partnercoupon.name}">{$partnercoupon.name}</a>
 										<else />
-										<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="content_title" title="{$partnercoupon.name}">{$partnercoupon.name}</a>
+											<if condition="$partnercoupon['coupon_type'] eq 2">
+												<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}/specialcoupon" class="content_title" title="{$partnercoupon.name}">{$partnercoupon.name}</a>
+											<else />
+												<a href="{:U("Coupon/detail","","","")}/{$partnercoupon.coupon_id}" class="content_title" title="{$partnercoupon.name}">{$partnercoupon.name}</a>
+											</if>
+										
 										</if>
 										<p class="one" title="{$partnercoupon.description}">{$partnercoupon.description}</p>
 										<p class="two" title="{$partnercoupon.title}">{$partnercoupon.title}</p>
