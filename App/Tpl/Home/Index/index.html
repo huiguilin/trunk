@@ -42,10 +42,10 @@
 			<!-- 广告区域 -->
 			<div id="ad_box">
 			
-				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/5.png" alt="广告图片"></a>
+				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/7.png" alt="广告图片"></a>
 				<a href="http://weibo.com/huixy" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/6.png" alt="广告图片"></a>
 				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/4.png" alt="广告图片"></a>
-				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/7.png" alt="广告图片"></a>
+				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/5.png" alt="广告图片"></a>
 				<ul>
 					<li>1</li>
 					<li>2</li>
@@ -129,7 +129,7 @@
 		<!-- 民以食为天+排行榜区域 -->
 		<div id="foot_and_footsort_box">
 			<div class="foot_box">
-				<p class="title"><span>限时抢购</span></p>
+				<p class="title"><span>限时抢购 |</span>每天更新2-4款</p>
 				<ul class=" clearfix content">
                 <foreach name="eat_coupons" item="coupon" key="k">
                 	<if condition="$k gt 3">
@@ -140,12 +140,15 @@
 						<p class="one" title="{$coupon.description}">{$coupon.description}</p>
 						<p class="two" title="{$coupon.title}">疯抢价<span>￥{$coupon.off_price}</span>元</p>
 						<p class="three" >已抢购：{$coupon.download_times}次</p>
+
+						<if condition="($coupon['Countdown_label'] eq 1) AND ($coupon['coupon_type'] eq 2) OR ($coupon['left_times'] eq 0)">
+						<else />
 						<if condition = "$Think.session.user.user_id eq ''">
 							<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download" tag="0">立即抢购</a>
 						<else />
 							<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" couponid="{$coupon.coupon_id}" class="download" tag="1">立即抢购</a>
 						</if>
-						
+						</if>
 						<if condition="$coupon['Countdown_label'] eq 1">
 							
 							<p class="hidden_location">即将上线:<span id="countdown_day">{$coupon['Countdown_time']['day']}</span>天<span id="countdown_hour">{$coupon['Countdown_time']['hour']}</span>时<span id="countdown_min">{$coupon['Countdown_time']['min']}</span>分<span id="countdown_sec">{$coupon['Countdown_time']['sec']}</span>秒</p>

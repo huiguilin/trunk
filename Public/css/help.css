@@ -2,7 +2,7 @@
 
 #main #left_card{
 	position: relative;
-	width: 715px;
+	width: 960px;
 	height: 560px;
 	border: 2px solid #F7F8FA;
 	background-color: white;
@@ -17,7 +17,7 @@
 	top: 25px;
 	left: 40px;	
 	border-bottom: #E4E4E4 2px solid;
-	width: 630px;
+	width: 880px;
 	height: 35px;
 }
 #main #left_card #seach_box{

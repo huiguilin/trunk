@@ -300,8 +300,16 @@ class CouponAction extends Action {
         if (empty($_GET['_URL_'][2])) {
             return TRUE;
         }
+        $ids = (int)$_GET['_URL_'][2];
+        if ($ids > 0) {
+            $ids = array($ids);
+        }
+        if ($ids == 0) {
+            $ids = array((int)$_GET['_URL_'][3]);
+        }
+
         $couponHelper = new CouponModel();
-        $ids = array((int)$_GET['_URL_'][2]);
+     
         $couponInfo = $couponHelper->getCouponByCouponId($ids);
         if (empty($couponInfo)) {
             return TRUE;
@@ -391,9 +399,7 @@ class CouponAction extends Action {
            
 
         }
-       
-
-        /////////////////////
+     
 
 
         $partnerHelper = new PartnerModel();
@@ -409,14 +415,34 @@ class CouponAction extends Action {
             $avgRate = round($totalRate/count($eInfo),1); 
             $satisfaction = round($totalRate/(count($eInfo)*5),4)*"100".'%';
             $rateInfo  = array();
-            array_push($rateInfo, $satisfaction,$avgRate);
+            $eCount = count($eInfo);
+            array_push($rateInfo, $satisfaction,$avgRate,$eCount);
         }else{
             $rateInfo  = array();
             $avgRate = 0;
             $satisfaction =0;
-            array_push($rateInfo, $satisfaction,$avgRate);
+            $eCount = count($eInfo);
+            array_push($rateInfo, $satisfaction,$avgRate,$eCount);
         }
+        //分页
+        $nowPage = isset($_GET['p'])?$_GET['p']:1;
+       
+        import('ORG.Util.Page'); // 导入分页类
+        $map['coupon_id'] = array('in',$couponInfo[0]['coupon_id']);
+
+        $count = $helper->where($map)->count(); // 查询满足要求的总记录数
+        $Page = new Page($count,10); // 实例化分页类 传入总记录数
+        $Page->url = "coupon/detail/cid/".$couponInfo[0]['coupon_id']."/p/";
+        $Page->setConfig('next','<li style="width:55px;line-height:25px;text-align:center">下一页</li>');
+        $Page->setConfig('prev','<li style="width:55px;line-height:25px;text-align:center">上一页</li>');
+        $Page->setConfig('first','<li style="width:55px;line-height:25px;text-align:center">首页</li>');
+        $Page->setConfig('last','<li style="width:55px;line-height:25px;text-align:center">末页</li>');
+        $eInfo = $helper->where($map)->page($nowPage.','.$Page->listRows)->select();
         
+        $show = $Page->show(); // 分页显示输出
+        $linkPage = $show['linkPage'];
+       
+
         for ($i=0; $i < count($otherCoupons); $i++) { 
                 if(strlen($otherCoupons[$i]['description']) > 109){   
                     $otherCoupons[$i]['description'] = trim(mb_substr($otherCoupons[$i]['description'], 0,38,'utf-8'))."...";
@@ -457,6 +483,8 @@ class CouponAction extends Action {
             $templateName = $_GET["_URL_"][0]; 
         }
         $this->assign('templateName',$templateName);
+        $this->assign('show',$show);
+        $this->assign('linkPage',$linkPage);
         $this->display();
     }
 
@@ -555,7 +583,7 @@ class CouponAction extends Action {
         if (empty($_SESSION['user']['user_id'])) {
             if ($count > 0) {
                 $data['status'] = 3;
-                $data['info'] = "匿名用户同一张优惠券一天只能下载一站张，会员无限哟!";
+                $data['info'] = "非登录用户同一张优惠券一天只能下载一站张，会员无限哟!";
                 $this->ajaxReturn($data,'JSON'); 
                 return TRUE;           
             }
@@ -566,7 +594,7 @@ class CouponAction extends Action {
             $counts = $userCouponHelper->getUserCoupon($params);
             if ($counts >= 5) {
                 $data['status'] = 3;
-                $data['info'] = "匿名用户总共只能下载5条优惠券，会员无限哟!";
+                $data['info'] = "非登录用户总共只能下载5条优惠券，会员无限哟!";
                 $this->ajaxReturn($data,'JSON');
             }
         }
@@ -637,7 +665,7 @@ class CouponAction extends Action {
         }
         session("pcheck","{$code}");
         //TODO
-        $text = "您的{$couponName}优惠券码是【{$code}】，{$couponDesc}，感谢您使用";
+        $text = "您的{$couponName}优惠券码是【{$code}】，{$couponDesc}，请在消费前向商家出示此短信，感谢您试用";
         $result = sendCodeToMobile($phoneNumber, $text);
         if ($result['result'] != 1) {
             $data = array(

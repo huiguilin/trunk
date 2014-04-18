@@ -15,20 +15,28 @@ class AccountAction extends Action {
             $this->error('此页面需要登录才能访问，请先登录！');
             return TRUE;
         }
-        $pageSize = 10;
-        $nowPage = !empty($_GET['page']) ? $_GET['page'] : 0;
-        $status = isset($_GET['status']) ? (int) $_GET['status'] : "0,1,2";
-       
-        $offset = $pageSize * $page;
+
+        //分页
+        $nowPage = isset($_GET['p'])?$_GET['p']:1;
+        $status = $_GET['status'];
+        if(!empty($status)){
+            $map['status'] = array('in',$status);
+        }
         $userId = $_SESSION['user']['user_id'];
-        $userCouponHelper = new UserCouponModel();
-        $params = array(
-            'user_id' => $userId,
-            'status' => $status,
-            'limit' => "$offset, $pageSize",
-            'order_by' => 'createtime DESC',
-        );
-        $userCouponInfo = $userCouponHelper->getUserCoupon($params);
+        $userCouponHelper = M('User_coupon','t_monkey_');
+        import('ORG.Util.Page'); // 导入分页类
+        $map['user_id'] = array('in',$userId);
+
+        $count = $userCouponHelper->where($map)->count(); // 查询满足要求的总记录数
+        $Page = new Page($count,7); // 实例化分页类 传入总记录数
+        $Page->setConfig('next','<li style="width:55px;line-height:25px;text-align:center">下一页</li>');
+        $Page->setConfig('prev','<li style="width:55px;line-height:25px;text-align:center">上一页</li>');
+        $Page->setConfig('first','<li style="width:55px;line-height:25px;text-align:center">首页</li>');
+        $Page->setConfig('last','<li style="width:55px;line-height:25px;text-align:center">末页</li>');
+        $userCouponInfo = $userCouponHelper->where($map)->page($nowPage.','.$Page->listRows)->select();
+        $show = $Page->show(); // 分页显示输出
+        $linkPage = $show['linkPage'];
+      
 
         $couponIds = DataToArray($userCouponInfo, 'coupon_id');
         $couponIds = implode(',', $couponIds);
@@ -44,8 +52,8 @@ class AccountAction extends Action {
         $pageInfo = getPageInfo($count, $url, $nowPage, $pageSize);
         $this->account_tmp_bottom();
         $this->assign('coupons', $couponInfo);
-        $this->assign('page_info', $pageInfo);
-        $this->assign('links', $pageInfo['links']);
+        $this->assign('show',$show);
+        $this->assign('linkPage',$linkPage);
 		$this->display();
     }
 
@@ -84,18 +92,38 @@ class AccountAction extends Action {
             $this->error('此页面需要登录才能访问，请先登录！');
             return TRUE;
         }
-        $status = isset($_GET['status']) ? (int) $_GET['status'] : 0;
-        $page = !empty($_GET['page']) ? (int) $_GET['page'] : 0;
-        $pageSize = 10;
-        $offset = $page * $pageSize;
+        //分页
+        $nowPage = isset($_GET['p'])?$_GET['p']:1;
+        $status = $_GET['status'];
+        if(!empty($status)){
+            $map['status'] = array('in',$status);
+        }
+        $userId = $_SESSION['user']['user_id'];
+        $userCollectionHelper = M('User_collection','t_monkey_');
+        import('ORG.Util.Page'); // 导入分页类
+        $map['user_id'] = array('in',$userId);
 
-        $userCollectionHelper = new UserCollectionModel();
-        $params = array(
-            'user_id' => $_SESSION['user']['user_id'],
-            'limit' => "{$offset}, {$pageSize}",
-            'order_by' => "createtime DESC",
-        );
-        $collection = $userCollectionHelper->getUserCollection($params);
+        $count = $userCollectionHelper->where($map)->count(); // 查询满足要求的总记录数
+        $Page = new Page($count,3); // 实例化分页类 传入总记录数
+        $Page->setConfig('next','<li style="width:55px;line-height:25px;text-align:center">下一页</li>');
+        $Page->setConfig('prev','<li style="width:55px;line-height:25px;text-align:center">上一页</li>');
+        $Page->setConfig('first','<li style="width:55px;line-height:25px;text-align:center">首页</li>');
+        $Page->setConfig('last','<li style="width:55px;line-height:25px;text-align:center">末页</li>');
+        $collection = $userCollectionHelper->where($map)->page($nowPage.','.$Page->listRows)->select();
+        $show = $Page->show(); // 分页显示输出
+        $linkPage = $show['linkPage'];
+        // $status = isset($_GET['status']) ? (int) $_GET['status'] : 0;
+        // $page = !empty($_GET['page']) ? (int) $_GET['page'] : 0;
+        // $pageSize = 10;
+        // $offset = $page * $pageSize;
+
+        // $userCollectionHelper = new UserCollectionModel();
+        // $params = array(
+        //     'user_id' => $_SESSION['user']['user_id'],
+        //     'limit' => "{$offset}, {$pageSize}",
+        //     'order_by' => "createtime DESC",
+        // );
+        // $collection = $userCollectionHelper->getUserCollection($params);
         $couponIds = implode(',', DataToArray($collection, 'coupon_id'));
         $couponHelper = new CouponModel();
         $params = array(
@@ -134,7 +162,11 @@ class AccountAction extends Action {
             }
         }
         $this->assign("coupons", $info);
+        $this->assign('show',$show);
+        $this->assign('linkPage',$linkPage);
+        $this->assign('get_info',$_GET);
         $this->account_tmp_bottom();
+
         $this->display();
     }
     public function mytocomment(){
@@ -142,21 +174,26 @@ class AccountAction extends Action {
             $this->error('此页面需要登录才能访问，请先登录！');
             return TRUE;
         }
-        $pageSize = 10;
-        $nowPage = !empty($_GET['page']) ? $_GET['page'] : 0;
+        //分页
+        $nowPage = isset($_GET['p'])?$_GET['p']:1;
         $status = isset($_GET['status']) ? (int) $_GET['status'] : "0,1,2";
         $evaluated = isset($_GET['evaluated']) ? (int) $_GET['evaluated'] : 0;
-        $offset = $pageSize * $page;
         $userId = $_SESSION['user']['user_id'];
-        $userCouponHelper = new UserCouponModel();
-        $params = array(
-            'user_id' => $userId,
-            'status' => $status,
-            'evaluated' => $evaluated,
-            'limit' => "$offset, $pageSize",
-            'order_by' => 'createtime DESC',
-        );
-        $userCouponInfo = $userCouponHelper->getUserCoupon($params);
+        $userCouponHelper = M('User_coupon','t_monkey_');
+        import('ORG.Util.Page'); // 导入分页类
+        $map['user_id'] = array('in',$userId);
+        $map['evaluated'] = array('eq',$evaluated);
+        $count = $userCouponHelper->where($map)->count(); // 查询满足要求的总记录数
+        $Page = new Page($count,3); // 实例化分页类 传入总记录数
+        $Page->setConfig('next','<li style="width:55px;line-height:25px;text-align:center">下一页</li>');
+        $Page->setConfig('prev','<li style="width:55px;line-height:25px;text-align:center">上一页</li>');
+        $Page->setConfig('first','<li style="width:55px;line-height:25px;text-align:center">首页</li>');
+        $Page->setConfig('last','<li style="width:55px;line-height:25px;text-align:center">末页</li>');
+        $userCouponInfo = $userCouponHelper->where($map)->page($nowPage.','.$Page->listRows)->select();
+        $show = $Page->show(); // 分页显示输出
+        $linkPage = $show['linkPage'];
+
+       
         $couponIds = implode(',', DataToArray($userCouponInfo, 'coupon_id'));
         $eHelper = new EvaluationModel();
         $params = array(
@@ -172,6 +209,8 @@ class AccountAction extends Action {
         $couponInfo = $cHelper->getCoupon($params);
         $eInfo = mergeData($userCouponInfo, $couponInfo, 'coupon_id', 'coupon_id');
         $this->assign('evaluations', $eInfo);
+        $this->assign('show',$show);
+        $this->assign('linkPage',$linkPage);
         $this->account_tmp_bottom();
 		$this->display();
     }
@@ -180,19 +219,26 @@ class AccountAction extends Action {
             $this->error('此页面需要登录才能访问，请先登录！');
             return TRUE;
         }
-        $pageSize = 10;
-        $nowPage = !empty($_GET['page']) ? $_GET['page'] : 0;
+        //分页
+        $nowPage = isset($_GET['p'])?$_GET['p']:1;
         $status = isset($_GET['status']) ? (int) $_GET['status'] : "0,1,2";
-        $evaluated = isset($_GET['evaluated']) ? (int) $_GET['evaluated'] : 0;
-        $offset = $pageSize * $page;
+        $evaluated = isset($_GET['evaluated']) ? (int) $_GET['evaluated'] : 1;
         $userId = $_SESSION['user']['user_id'];
-        $helper = new CouponEvaluationModel();
-        $params = array(
-            'user_id' => $userId,
-            'limit' => "$offset, $pageSize",
-            'order_by' => 'createtime DESC',
-        );
-        $info = $helper->getInfo($params);
+        $couponEvaluationHelper = M('Coupon_evaluation','t_monkey_');
+        import('ORG.Util.Page'); // 导入分页类
+        $map['user_id'] = array('in',$userId);
+        $map['evaluated'] = array('eq',$evaluated);
+        $count = $couponEvaluationHelper->where($map)->count(); // 查询满足要求的总记录数
+        $Page = new Page($count,3); // 实例化分页类 传入总记录数
+        $Page->setConfig('next','<li style="width:55px;line-height:25px;text-align:center">下一页</li>');
+        $Page->setConfig('prev','<li style="width:55px;line-height:25px;text-align:center">上一页</li>');
+        $Page->setConfig('first','<li style="width:55px;line-height:25px;text-align:center">首页</li>');
+        $Page->setConfig('last','<li style="width:55px;line-height:25px;text-align:center">末页</li>');
+        $info = $couponEvaluationHelper->where($map)->page($nowPage.','.$Page->listRows)->select();
+        $show = $Page->show(); // 分页显示输出
+        $linkPage = $show['linkPage'];
+
+       
         $couponIds = implode(',', DataToArray($info, 'coupon_id'));
         $cHelper = new CouponModel();
         $params = array(
@@ -201,8 +247,10 @@ class AccountAction extends Action {
         $couponInfo = $cHelper->getCoupon($params);
         $eInfo = mergeData($info, $couponInfo, 'coupon_id', 'coupon_id');
         $this->assign('evaluations', $eInfo);
-
+        $this->assign('show',$show);
+        $this->assign('linkPage',$linkPage);
         $this->account_tmp_bottom();
+       
         $this->display();
     }
     public function mysetting(){

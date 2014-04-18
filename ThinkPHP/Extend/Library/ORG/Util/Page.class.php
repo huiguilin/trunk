@@ -130,25 +130,40 @@ class Page {
             $theEnd     =   "<a href='".str_replace('__PAGE__',$theEndRow,$url)."' >".$this->config['last']."</a>";
         }
         // 1 2 3 4 5
-        $linkPage = "";
+        $linkPage = array();
         for($i=1;$i<=$this->rollPage;$i++){
             $page       =   ($nowCoolPage-1)*$this->rollPage+$i;
             if($page!=$this->nowPage){
                 if($page<=$this->totalPages){
-                    $linkPage .= "<a href='".str_replace('__PAGE__',$page,$url)."'>".$page."</a>";
+                    $linkPage[] = "<a href='".str_replace('__PAGE__',$page,$url)."'>".$page."</a>";
                 }else{
                     break;
                 }
             }else{
                 if($this->totalPages != 1){
-                    $linkPage .= "<span class='current'>".$page."</span>";
+                    $linkPage[] = "<a class='red' href='".str_replace('__PAGE__',$page,$url)."'>".$page."</a>";
                 }
             }
         }
         $pageStr     =   str_replace(
             array('%header%','%nowPage%','%totalRow%','%totalPage%','%upPage%','%downPage%','%first%','%prePage%','%linkPage%','%nextPage%','%end%'),
             array($this->config['header'],$this->nowPage,$this->totalRows,$this->totalPages,$upPage,$downPage,$theFirst,$prePage,$linkPage,$nextPage,$theEnd),$this->config['theme']);
-        return $pageStr;
+
+        //自定义内容
+        $pageArrInfo = array(
+            'header' => $this->config['header'],
+            'nowPage' => $this->nowPage,
+            'totalRow' => $this->totalRows,
+            'totalPage' => $this->totalPages,
+            'upPage' => $upPage,
+            'downPage' => $downPage,
+            'first' => $theFirst,
+            'prePage' => $prePage,
+            'nextPage' => $nextPage,
+            'end' => $theEnd,
+            'linkPage' => $linkPage,
+            );
+        return $pageArrInfo;
     }
 
 }

@@ -1,7 +1,7 @@
 <?php
 // 本类由系统自动生成，仅供测试用途
 class HelpAction extends Action {
-	private $help_search_pagesize = 10;	//搜索每页显示条数
+	private $help_search_pagesize = 2;	//搜索每页显示条数
 	private $help_search_max_keyword = 10;	//搜索每次最大允许搜索的关键词数量
 	public function _empty($name){
         $this->error("非法提交！");
@@ -72,13 +72,15 @@ class HelpAction extends Action {
 			import('ORG.Util.Page');// 导入分页类
 			$Page = new Page($count,$this->help_search_pagesize);// 实例化分页类 传入总记录数和每页显示
 			$show = $Page->show();// 分页显示输出
+			$linkPage = $show['linkPage'];
 			$data = $m_help->getHelpInfo($map,$Page->firstRow,$Page->listRows);
 		}
 		
 		$this->assign("keyword",$keyword);
 		$this->assign("count",$count);
 		$this->assign("data",$data);
-		$this->assign("page",$show);
+		// $this->assign("page",$show);
+		$this->assign("linkPage",$linkPage);
         $this->display();
     }
 }

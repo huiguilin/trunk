@@ -447,10 +447,10 @@
 			<!-- 广告区域 -->
 			<div id="ad_box">
 			
-				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/5.png" alt="广告图片"></a>
+				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/7.png" alt="广告图片"></a>
 				<a href="http://weibo.com/huixy" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/6.png" alt="广告图片"></a>
 				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/4.png" alt="广告图片"></a>
-				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/7.png" alt="广告图片"></a>
+				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/5.png" alt="广告图片"></a>
 				<ul>
 					<li>1</li>
 					<li>2</li>
@@ -522,7 +522,7 @@
 		<!-- 民以食为天+排行榜区域 -->
 		<div id="foot_and_footsort_box">
 			<div class="foot_box">
-				<p class="title"><span>限时抢购</span></p>
+				<p class="title"><span>限时抢购 |</span>每天更新2-4款</p>
 				<ul class=" clearfix content">
                 <?php if(is_array($eat_coupons)): foreach($eat_coupons as $k=>$coupon): if($k > 3): else: ?>
 						<li>
@@ -531,10 +531,11 @@
 						<p class="one" title="<?php echo ($coupon["description"]); ?>"><?php echo ($coupon["description"]); ?></p>
 						<p class="two" title="<?php echo ($coupon["title"]); ?>">疯抢价<span>￥<?php echo ($coupon["off_price"]); ?></span>元</p>
 						<p class="three" >已抢购：<?php echo ($coupon["download_times"]); ?>次</p>
+
+						<?php if(($coupon['Countdown_label'] == 1) AND ($coupon['coupon_type'] == 2) OR ($coupon['left_times'] == 0)): else: ?>
 						<?php if($_SESSION['user']['user_id']== ''): ?><a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download" tag="0">立即抢购</a>
 						<?php else: ?>
-							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download" tag="1">立即抢购</a><?php endif; ?>
-						
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download" tag="1">立即抢购</a><?php endif; endif; ?>
 						<?php if($coupon['Countdown_label'] == 1): ?><p class="hidden_location">即将上线:<span id="countdown_day"><?php echo ($coupon['Countdown_time']['day']); ?></span>天<span id="countdown_hour"><?php echo ($coupon['Countdown_time']['hour']); ?></span>时<span id="countdown_min"><?php echo ($coupon['Countdown_time']['min']); ?></span>分<span id="countdown_sec"><?php echo ($coupon['Countdown_time']['sec']); ?></span>秒</p>
 
 

@@ -1,9 +1,21 @@
 <include file="Account:account_tmp_top" title="我的惠校园-我的收藏"/>
 <load href="__PUBLIC__/css/myfavorite.css" />
 	<ul class="expire_filter_box">
-		<li><a href="" class="hover">全部</a></li>
-		<li><a href="/index.php/account/myfavorite?status=1">未到期</a></li>
-		<li><a href="/index.php/account/myfavorite?status=2">已到期</a></li>
+		<if condition="$get_info['status'] eq ''">
+			<li><a href="{:U('Account/myfavorite')}" class="hover">全部</a></li>
+		<else />
+			<li><a href="{:U('Account/myfavorite')}">全部</a></li>
+		</if>
+		<if condition="$get_info['status'] eq '1'">
+			<li><a href="/index.php/account/myfavorite?status=1" class="hover">未到期</a></li>
+		<else />
+			<li><a href="/index.php/account/myfavorite?status=1">未到期</a></li>
+		</if>
+		<if condition="$get_info['status'] eq '2'">
+			<li><a href="/index.php/account/myfavorite?status=2" class="hover">已到期</a></li>
+		<else />
+			<li><a href="/index.php/account/myfavorite?status=2">已到期</a></li>
+		</if>
 	</ul>
 	<div class="myconpon_items">
 		<table>
@@ -56,15 +68,11 @@
 			</div>
 		</div>
 	</div>
-	<ul class="page_box">
-		<li class="one"><a href="" class="one">首页</a></li>
-		<li><a href=""></a></li>
-		<li><a href="" class="red">1</a></li>
-		<li><a href="">2</a></li>
-		<li><a href="">3</a></li>
-		<li><a href="">></a></li>
-		<li class="one"><a href="" class="one">尾页</a></li>
-	</ul>
+	<div class="page_div">
+		<ul class="clearfix page_box">
+			{$show.first}{$show.upPage}<foreach name="linkPage" item="lp"><li>{$lp}</li></foreach>{$show.downPage}{$show.end}
+		</ul>
+	</div>
 	
 
 <include file="Account:account_tmp_bottom"/>

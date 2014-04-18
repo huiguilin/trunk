@@ -511,44 +511,43 @@
 	padding-top: 20px;
 }
 
-
-
-
-
-#partnermain #partnerleft #alleva_box ul.page_box{
-	margin-top: 40px;
+#partnermain #partnerleft #alleva_box div.page_div{
+	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 40px;
+}
+#partnermain #partnerleft #alleva_box div.page_div ul.page_box{
+	margin: 0 auto;
+}
+#partnermain #partnerleft #alleva_box div.page_div ul.page_box li{
+	float: none;
 	display: inline-block;
-	float: right;
-	margin-bottom: 30px;
-}
-#partnermain #partnerleft #alleva_box ul.page_box li{
-	float: left;
-	height: 25px;
-	width: 30px;
-	background: white;
+	zoom: 1;
+	*display: inline;
+	background: #D7D7D7;
 	margin-right: 3px;
-	border:1px solid #E3E3E3;
 }
-#partnermain #partnerleft #alleva_box ul.page_box li.one{
+#partnermain #partnerleft #alleva_box div.page_div ul.page_box li.one{
 	width: 50px;
+
 }
-#partnermain #partnerleft #alleva_box ul.page_box li a{
+#partnermain #partnerleft #alleva_box div.page_div ul.page_box li a{
 	display: block;
 	height: 25px;
 	width:30px;
 	line-height: 25px;
-	color: #666;
+	color: #C3B5B5;
 	font-style: 微软雅黑;
 	text-align: center;
 }
-#partnermain #partnerleft #alleva_box ul.page_box li a.one{
+#partnermain #partnerleft #alleva_box div.page_div ul.page_box li a.one{
 	width: 50px;
 	font-weight: bold;
 }
-#partnermain #partnerleft #alleva_box ul.page_box li a.red{
+#partnermain #partnerleft #alleva_box div.page_div ul.page_box li a.red{
 	background: #EB5B4C;
-	color: white;
 }
+
 #partnermain #partnerright{
 	float: right;
 	margin-top:7px;
