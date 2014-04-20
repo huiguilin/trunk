@@ -16,6 +16,7 @@
 <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
 <script type="text/javascript" src="__PUBLIC__/js/baidumap.js"></script>
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="__PUBLIC__/js/M_countDownForSpecicalCoupon.js"></script>
 
 
 <title>{$coupon.name} | 惠校园</title>
@@ -40,9 +41,9 @@
 				<div class="coupon_desc_box">
 					<p class="coupon_title">{$coupon.name}<!-- <span>{$coupon.title}</span> --></p>
 					<if condition="($coupon['Countdown_label'] eq 1) AND ($coupon['coupon_type'] eq 2)">
-						<p class="coupon_count">
-							即将上线：{$coupon['Countdown_time']['day']}天{$coupon['Countdown_time']['hour']}时{$coupon['Countdown_time']['min']}分{$coupon['Countdown_time']['sec']}秒
-						</p>
+						
+						<p class="coupon_count">即将上线:<span id="countdown_day_{$k}">{$coupon['Countdown_time']['day']}</span>天<span id="countdown_hour_{$k}">{$coupon['Countdown_time']['hour']}</span>时<span id="countdown_min_{$k}">{$coupon['Countdown_time']['min']}</span>分<span id="countdown_sec_{$k}">{$coupon['Countdown_time']['sec']}</span>秒</p>
+
 					<elseif condition="($coupon['left_times'] eq 0) AND ($coupon['coupon_type'] eq 2)" />
 						<p class="coupon_count">已经卖光啦，下次早点哦！</p>
 					<else />
@@ -275,6 +276,28 @@
 		var mapBoxDetailId = "detail_map_box";
 		var mapBoxFullId = "map";	    
 	</script>
+	<script type="text/javascript">
+	var ps = $('#main #coupon_box div.coupon_detail_info_box div.coupon_desc_box p.coupon_count');
+	for(var i =0;i<ps.length;i++){
+		var p = ps[i].children;
+		var dayid;
+		var hourid;
+		var minid;
+		var secid;
+		for(var j =0;j<p.length;j++){
+			if(j == 0){
+				dayid = p[j].id;
+			}else if(j == 1){
+				hourid = p[j].id;
+			}else if(j == 2){
+				minid = p[j].id;
+			}else if(j == 3){
+				secid = p[j].id;
+			}
+		}
+		Test(dayid,hourid,minid,secid);
+	}
+</script>
 </body>
 
 </html>

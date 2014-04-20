@@ -536,9 +536,8 @@
 						<?php if($_SESSION['user']['user_id']== ''): ?><a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download" tag="0">立即抢购</a>
 						<?php else: ?>
 							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download" tag="1">立即抢购</a><?php endif; endif; ?>
-						<?php if($coupon['Countdown_label'] == 1): ?><p class="hidden_location">即将上线:<span id="countdown_day"><?php echo ($coupon['Countdown_time']['day']); ?></span>天<span id="countdown_hour"><?php echo ($coupon['Countdown_time']['hour']); ?></span>时<span id="countdown_min"><?php echo ($coupon['Countdown_time']['min']); ?></span>分<span id="countdown_sec"><?php echo ($coupon['Countdown_time']['sec']); ?></span>秒</p>
-
-
+						<?php if($coupon['Countdown_label'] == 1): ?><p class="hidden_location">即将上线:<span id="countdown_day_<?php echo ($k); ?>"><?php echo ($coupon['Countdown_time']['day']); ?></span>天<span id="countdown_hour_<?php echo ($k); ?>"><?php echo ($coupon['Countdown_time']['hour']); ?></span>时<span id="countdown_min_<?php echo ($k); ?>"><?php echo ($coupon['Countdown_time']['min']); ?></span>分<span id="countdown_sec_<?php echo ($k); ?>"><?php echo ($coupon['Countdown_time']['sec']); ?></span>秒</p>
+							
 						<?php elseif($coupon['left_times'] == 0): ?>
 							<p class="hidden_location">已经卖光啦,下次早点哦!</p>
 						<?php else: ?>
@@ -648,4 +647,26 @@
 <!-- 最底部区域结束 -->
 
 </body>
+<script type="text/javascript">
+	var ps = $('#main #foot_and_footsort_box div.foot_box ul.content li p.hidden_location');
+	for(var i =0;i<ps.length;i++){
+		var p = ps[i].children;
+		var dayid;
+		var hourid;
+		var minid;
+		var secid;
+		for(var j =0;j<p.length;j++){
+			if(j == 0){
+				dayid = p[j].id;
+			}else if(j == 1){
+				hourid = p[j].id;
+			}else if(j == 2){
+				minid = p[j].id;
+			}else if(j == 3){
+				secid = p[j].id;
+			}
+		}
+		Test(dayid,hourid,minid,secid);
+	}
+</script>
 </html>

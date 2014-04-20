@@ -215,4 +215,25 @@ $(function(){
 
 	//限时抢购倒计时
 
+	// var ps = $('#main #foot_and_footsort_box div.foot_box ul.content li p.hidden_location');
+	// for(var i =0;i<ps.length;i++){
+	// 	var p = ps[i].children;
+	// 	var dayid;
+	// 	var hourid;
+	// 	var minid;
+	// 	var secid;
+	// 	for(var j =0;j<p.length;j++){
+	// 		if(j == 0){
+	// 			dayid = p[j].id;
+	// 		}else if(j == 1){
+	// 			hourid = p[j].id;
+	// 		}else if(j == 2){
+	// 			minid = p[j].id;
+	// 		}else if(j == 3){
+	// 			secid = p[j].id;
+	// 		}
+	// 	}
+	// 	Test(dayid,hourid,minid,secid);
+	// }
+
 })

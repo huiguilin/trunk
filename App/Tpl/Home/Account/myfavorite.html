@@ -28,7 +28,7 @@
 				</tr>
                 <foreach name="coupons" item="coupon">
 				<tr>
-					<td >{$coupon.title}</td>
+					<td >{$coupon.name}&nbsp{$coupon.description}</td>
 					<!-- <!TODO--  td class="center">400</td--> 
                     <if condition="$coupon.end eq 0" >
 					<td class="center green">未到期</td>

@@ -13,6 +13,7 @@
 <script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/specialcoupon.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/M_countDownForSpecicalCoupon.js"></script>
 
 
 <title>限时优惠券 | 惠校园</title>
@@ -214,7 +215,9 @@
 						<p class="oldprice">疯狂价<span>￥{$coupon.off_price}</span>元</p>
 						<p class="newprice">原价￥{$coupon.origin_price}元</p>
 						<if condition="$coupon['Countdown_label'] eq 1">
-							<a href="" class="download_btn no_cursor" tag="2" couponid="{$coupon.coupon_id}">即将上线：{$coupon['Countdown_time']['day']}天{$coupon['Countdown_time']['hour']}时{$coupon['Countdown_time']['min']}分{$coupon['Countdown_time']['sec']}秒</a>
+							
+							<p class="download_btn no_cursor" tag="2" couponid="{$coupon.coupon_id}">即将上线：<span id="countdown_day_{$k}">{$coupon['Countdown_time']['day']}</span>天<span id="countdown_hour_{$k}">{$coupon['Countdown_time']['hour']}</span>时<span id="countdown_min_{$k}">{$coupon['Countdown_time']['min']}</span>分<span id="countdown_sec_{$k}">{$coupon['Countdown_time']['sec']}</span>秒</p>
+
 						<elseif condition="$coupon['left_times'] eq 0" />
 							<a href="" class="download_btn download_btn2 no_cursor" tag="1" couponid="{$coupon.coupon_id}">已经卖光啦，下次早点哦！</a>
 							<p class="times">已抢购：{$coupon.download_times}次</p>
@@ -254,7 +257,29 @@
 	<include file="./App/Tpl/Home/Public/M_sendCouponToCellphone.html" />
 <!-- 最底部区域 -->
 	<include file="./App/Tpl/Home/Public/footer.html" />
-<!-- 最底部区域结束
 
+	<script type="text/javascript">
+	var ps = $('#main #coupon_box ul.coupon_content li p.download_btn');
+	for(var i =0;i<ps.length;i++){
+		var p = ps[i].children;
+		var dayid;
+		var hourid;
+		var minid;
+		var secid;
+		for(var j =0;j<p.length;j++){
+			if(j == 0){
+				dayid = p[j].id;
+			}else if(j == 1){
+				hourid = p[j].id;
+			}else if(j == 2){
+				minid = p[j].id;
+			}else if(j == 3){
+				secid = p[j].id;
+			}
+		}
+		Test(dayid,hourid,minid,secid);
+	}
+</script>
+	
 </body>
 </html>
