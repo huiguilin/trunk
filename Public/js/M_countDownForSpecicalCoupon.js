@@ -47,3 +47,4 @@ function Test(dayid, hourid, minid, secid) {
         $('#' + dayid).text(day);
     }
 }
+
