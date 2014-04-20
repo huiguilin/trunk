@@ -2,7 +2,26 @@
 // 本类由系统自动生成，仅供测试用途
 class DemoAction extends Action {
     public function demo(){
-        
+        $mail = "dushuren1987@126.com";
+         $activeCode = mt_rand(1, 9) * 1000 + mt_rand(0, 9) * 100 + mt_rand(0, 9) * 10 + mt_rand(0, 9);
+            $content = "尊敬的惠桂林用户，您好！您修改密码的验证码是：<span style='color:red'>$activeCode</span>，验证码有效期为5分钟，请您尽快修改密码，谢谢!";
+            import('ORG.Email');
+            $data['mailto'] = $mail;
+            $data['subject'] = '惠桂林改密验证码';
+            $data['body'] = $content;
+           
+            $mail = new Email();
+            $mail->send($data);
+            $a = $mail->send($data);
+
+            if ($a) {
+                 echo '1';
+                
+            }else {
+                echo '2';
+               
+            }
+            die;
 
         // $result = sendCodeToMobile('18611244143', '2222');
         // echo "1111";

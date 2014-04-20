@@ -12,10 +12,10 @@ return array(
     'DB_PORT'   => 3306, // 端口
     'DB_PREFIX' => 't_monkey_', // 数据库表前缀
 
-    'SMTP_SERVER' => 'smtp.163.com',  // 邮件服务器
+    'SMTP_SERVER' => 'smtp.126.com',  // 邮件服务器
     'SMTP_PORT' => '25',  // 邮件服务器端口
-    'SMTP_USER_EMAIL' => 'huigl@outlook.com',  // SMTP服务器的用户邮箱(一般发件人也得用这个邮箱)
-    'SMTP_USER' => 'huigl@outlook.com',  // SMTP服务器账户名
+    'SMTP_USER_EMAIL' => 'dushuren1987@126.com',  // SMTP服务器的用户邮箱(一般发件人也得用这个邮箱)
+    'SMTP_USER' => 'dushuren1987@126.com',  // SMTP服务器账户名
     'SMTP_PWD' => 'abcd.1234',  // SMTP服务器账户密码
     'SMTP_MAIL_TYPE' => 'HTML',  // 发送邮件类型:HTML,TXT(注意都是大写)
     'SMTP_TIME_OUT' => 30,  // 超时时间
