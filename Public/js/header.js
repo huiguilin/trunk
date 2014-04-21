@@ -1253,7 +1253,6 @@ function window_change(){//用来计算top和left值的函数
 		
 	// var jump_box_top = parseInt(($(window).height()-$('#top_nav_classification_box').height())/2);//计算top值
 	jump_box_left = parseInt(($(window).width()-$('#main').width())/2 - $('#top_nav_classification_box').width() - 10);//计算left值
-
  	// $('#top_nav_classification_box').css({'top':jump_box_top+'px','left':jump_box_left + 'px'})
  	$('#top_nav_classification_box').css({'top':'194px','left':jump_box_left + 'px'})
 }

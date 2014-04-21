@@ -1,10 +1,10 @@
-#partnermain{
+#main{
 	margin:0 auto;
     width: 960px;
     overflow: hidden;
     zoom:1;
 }
-#partnermain #partnersitenav{
+#main #partnersitenav{
 	margin-top:8px;
 	background-color: #F9F7F8;
 	filter:alpha(opacity=80);  
@@ -13,7 +13,7 @@
     opacity: 0.8; 
     height: 28px;
 }
-#partnermain #partnersitenav a{
+#main #partnersitenav a{
 	display: inline-block;
 	height: 28px;
 	line-height: 28px;
@@ -22,18 +22,18 @@
 	padding-left: 7px;
 	padding-right: 7px;
 }
-#partnermain #partnersitenav a.gray{
+#main #partnersitenav a.gray{
 	color: #666666;
 }
-#partnermain #partnersitenav a.no_margin_left{
+#main #partnersitenav a.no_margin_left{
 	margin-left: 0px;
 }
-#partnermain #partnerleft{
+#main #partnerleft{
 	float: left;
 	margin-top:8px;
 	width:695px;
 }
-#partnermain #partnerleft #partnerleft_top_box{
+#main #partnerleft #partnerleft_top_box{
 	/*height:365px;*/
 	border:1px solid #D7D7D7;
 	overflow: hidden;
@@ -45,7 +45,7 @@
     -khtml-opacity: 0.8;  
     opacity: 0.8; 
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_top{
+#main #partnerleft #partnerleft_top_box #partnerleft_top{
 	height:70px;
 	background: #F9F7F8;
 	filter:alpha(opacity=80);  
@@ -54,21 +54,21 @@
     opacity: 0.8; 
 	border-bottom:2px solid #D7D7D7;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_top .partnertitle{
+#main #partnerleft #partnerleft_top_box #partnerleft_top .partnertitle{
     position:relative;
 	font-size: 25px;
 	color: #ED5565;
 	top:22px;
 	margin-left:17px;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_top .otherstore{
+#main #partnerleft #partnerleft_top_box #partnerleft_top .otherstore{
 	position: relative;
 	font-size: 12px;
 	color: #4467A3;
 	margin-left:15px;
 	top:22px;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_top .rate_stars{
+#main #partnerleft #partnerleft_top_box #partnerleft_top .rate_stars{
 	background: url(../images/rate_stars.png) repeat-x 0px -21px;
 	display: block;
 	height: 21px;
@@ -77,35 +77,35 @@
 	margin-top: -19px;
 	margin-left: 562px;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_top .rate_stars span{
+#main #partnerleft #partnerleft_top_box #partnerleft_top .rate_stars span{
 	background: url(../images/rate_stars.png) repeat-x 0px 0px;
 	display: block;
 	height: 21px;
 	overflow: hidden;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_top p{
+#main #partnerleft #partnerleft_top_box #partnerleft_top p{
 	/*position: relative;*/
 	margin-left:565px;
 	margin-top:15px;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_top p a{
+#main #partnerleft #partnerleft_top_box #partnerleft_top p a{
 	color:#4467A3;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left{
+#main #partnerleft #partnerleft_top_box #partnerleft_down_left{
 	float: left;
 	line-height: 25px;
 	margin-top: 10px;
 	margin-left: 19px;
 	width:375px;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left p{
+#main #partnerleft #partnerleft_top_box #partnerleft_down_left p{
 	color:#666666;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box{
+#main #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box{
 	height: 40px;
 	line-height: 40px;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box a{
+#main #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box a{
 	color: #4467A3;
 	font-size: 13px;
 	text-align: center;
@@ -118,13 +118,13 @@
 	border:1px solid #D7D7D7;
 	border-radius: 5px;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box2{
+#main #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box2{
 	height: 40px;
 	line-height: 40px;
 	padding-left: 45px;
 	
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box2 a{
+#main #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box2 a{
 	color: #4467A3;
 	font-size: 13px;
 	text-align: center;
@@ -137,49 +137,49 @@
 	border:1px solid #D7D7D7;
 	border-radius: 5px;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left .labletype{
+#main #partnerleft #partnerleft_top_box #partnerleft_down_left .labletype{
 	color:#4467A3;
 	width:55;
 	margin-left:5px;
 	border:1px solid #D7D7D7;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left a{
+#main #partnerleft #partnerleft_top_box #partnerleft_down_left a{
 	color:#4467A3;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_left .description{
+#main #partnerleft #partnerleft_top_box #partnerleft_down_left .description{
 	color:#666666;
 	position: relative;
 	margin-left:65px;
 	margin-top:-22px;
 	line-height: 20px;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_right{
+#main #partnerleft #partnerleft_top_box #partnerleft_down_right{
 	float: right;
 	margin-top:15px;
 	margin-right:10px;
 	width:250px;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_right img{
+#main #partnerleft #partnerleft_top_box #partnerleft_down_right img{
 	width:250px;
 	height:195px;
 	border:none;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_right p{
+#main #partnerleft #partnerleft_top_box #partnerleft_down_right p{
 	display: block;
 	height: 30px;
 	border:1px solid #D7D7D7;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_right p span{
+#main #partnerleft #partnerleft_top_box #partnerleft_down_right p span{
 	color: #4467A3;
 	padding-left: 5px;
 	padding-right: 5px;
 }
-#partnermain #partnerleft #partnerleft_top_box #partnerleft_down_right .moreimg{
+#main #partnerleft #partnerleft_top_box #partnerleft_down_right .moreimg{
 	display: block;
 	margin-top: 9px;
 	margin-left:65px;
 }
-#partnermain #partnerleft_middle_box{
+#main #partnerleft_middle_box{
 	border:1px solid #D7D7D7;
 	margin-top: 8px;
 	background-color: white;
@@ -188,19 +188,19 @@
     -khtml-opacity: 0.8;  
     opacity: 0.8; 
 }
-#partnermain #partnerleft_middle_box ul.coupon_type_nav{
+#main #partnerleft_middle_box ul.coupon_type_nav{
 	height: 45px;
 	margin-right:12px;
 	margin-left: 12px;
 	border-bottom: 2px solid #E3E3E3;
 }
-#partnermain #partnerleft_middle_box ul.coupon_type_nav li{
+#main #partnerleft_middle_box ul.coupon_type_nav li{
 	float: left;
 }
-#partnermain #partnerleft_middle_box ul.coupon_type_nav li.red{
+#main #partnerleft_middle_box ul.coupon_type_nav li.red{
 	border-bottom: 2px solid #ED5565;
 }
-#partnermain #partnerleft_middle_box ul.coupon_type_nav li a{
+#main #partnerleft_middle_box ul.coupon_type_nav li a{
 	display: block;
 	width: 125px;
 	height: 45px;
@@ -208,20 +208,20 @@
 	font-size: 14px;
 	text-align: center;
 }
-#partnermain #partnerleft_middle_box ul.coupon_type_nav li a.normal{
+#main #partnerleft_middle_box ul.coupon_type_nav li a.normal{
 	color: #666;
 }
-#partnermain #partnerleft_middle_box ul.coupon_type_nav li a.red{
+#main #partnerleft_middle_box ul.coupon_type_nav li a.red{
 	color: #ED5565;
 }
-#partnermain #partnerleft_middle_box #all_coupon_info{
+#main #partnerleft_middle_box #all_coupon_info{
 	margin-top: 7px;
     margin-right:12px;
 	margin-left: 12px;
 }
-#partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content{
+#main #partnerleft_middle_box #all_coupon_info ul.coupon_content{
 }
-#partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li{
+#main #partnerleft_middle_box #all_coupon_info ul.coupon_content li{
 	float: left;
 	width: 324px;
 	height: 150px;
@@ -230,18 +230,18 @@
 	margin-bottom: 7px;
 	border:1px solid #E4E4E4;
 }
-#partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li:hover{
+#main #partnerleft_middle_box #all_coupon_info ul.coupon_content li:hover{
 	/*background: #DEE6F1;
 	border:1px dashed #ED5565;*/
 	background: #F4F1D2;
 }
-#partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li.no_margin_left{
+#main #partnerleft_middle_box #all_coupon_info ul.coupon_content li.no_margin_left{
 	margin-right: 4px;
 }
-#partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li.no_margin_right{
+#main #partnerleft_middle_box #all_coupon_info ul.coupon_content li.no_margin_right{
 	margin-left: 3px;
 }
-#partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li div.one{
+#main #partnerleft_middle_box #all_coupon_info ul.coupon_content li div.one{
 	width: 142px;
 	height: 142px;
 	position: absolute;
@@ -259,7 +259,7 @@
 	color: black;
 	font-size: 14px;
 }
-#partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li a.img_box img{
+#main #partnerleft_middle_box #all_coupon_info ul.coupon_content li a.img_box img{
 	width: 142px;
 	height: 142px;
 	position: absolute;
@@ -267,7 +267,7 @@
 	left: 4px;
 	border:none;
 }
-#partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li p.one{
+#main #partnerleft_middle_box #all_coupon_info ul.coupon_content li p.one{
 	position: absolute;
 	top: 30px;
 	left: 155px;
@@ -275,7 +275,7 @@
 	height: 45px;
 	overflow: hidden;
 }
-#partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li p.two{
+#main #partnerleft_middle_box #all_coupon_info ul.coupon_content li p.two{
 	position: absolute;
 	top: 85px;
 	left: 155px;
@@ -284,14 +284,14 @@
 	height: 15px;
 	overflow: hidden;
 }
-#partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li p.three{
+#main #partnerleft_middle_box #all_coupon_info ul.coupon_content li p.three{
 	position: absolute;
 	top: 110px;
 	left: 155px;
 	width: 162px;
 	color: #999999;
 }
-#partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li p.hidden_location{
+#main #partnerleft_middle_box #all_coupon_info ul.coupon_content li p.hidden_location{
 	position: absolute;
 	top: 132px;
 	left: 13px;
@@ -309,7 +309,7 @@
 	font-weight: bold;
 	display: none;
 }
-#partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li a.content_title{
+#main #partnerleft_middle_box #all_coupon_info ul.coupon_content li a.content_title{
 	color: #ED5565;
 	font-size: 14px;
 	font-weight: bold;
@@ -319,7 +319,7 @@
 	height: 15px;
 	overflow: hidden;
 }
-#partnermain #partnerleft_middle_box #all_coupon_info ul.coupon_content li a.download{
+#main #partnerleft_middle_box #all_coupon_info ul.coupon_content li a.download{
 	color: #ED5565;
 	position: absolute;
 	top: 128px;
@@ -328,12 +328,12 @@
 	padding-left: 19px;
 }
 
-#partnermain #partnermenu{
+#main #partnermenu{
 	border:1px solid #D7D7D7;
 	margin-top: 10px;
 	display: none;
 }
-#partnermain #partnermenu p.partner_menu_title{
+#main #partnermenu p.partner_menu_title{
 	color: #ED5565;
 	font-size: 14px;
 	height: 45px;
@@ -343,35 +343,35 @@
 	border-bottom: 2px solid #E3E3E3;
 	padding-left: 10px;
 }
-#partnermain #partnermenu #catlink{
+#main #partnermenu #catlink{
 	float: left;
 	margin-top:7px;
 	margin-left:12px;
 }
-#partnermain #partnermenu #catlink ul{
+#main #partnermenu #catlink ul{
 	
 }
-#partnermain #partnermenu #catlink ul li{
+#main #partnermenu #catlink ul li{
 	width:112px;
 	height:33px;
 	border:1px solid #D7D7D7;
 	border-right: none;
 }
-#partnermain #partnermenu #catlink ul li.no_border_top{
+#main #partnermenu #catlink ul li.no_border_top{
 	border-top: none;
 }
-#partnermain #partnermenu #catlink ul li a{
+#main #partnermenu #catlink ul li a{
 	display: block;
 	padding-top:9px;
 	padding-left:25px;
 	width:87px;
 	height:24px;
 }
-#partnermain #partnermenu #catlink ul li a:hover{
+#main #partnermenu #catlink ul li a:hover{
 	background-color: #ED5565;
 	color:black;
 }
-#partnermain #partnermenu #menuinfo{
+#main #partnermenu #menuinfo{
 	float:right;
 	margin-top:7px;
 	margin-right:12px;
@@ -379,26 +379,26 @@
 	border:1px solid #D7D7D7;
 	margin-bottom: 30px;
 }
-#partnermain #partnermenu #menuinfo ul.menuinfo_detail{
+#main #partnermenu #menuinfo ul.menuinfo_detail{
 
 }
-#partnermain #partnermenu #menuinfo ul.menuinfo_detail li{
+#main #partnermenu #menuinfo ul.menuinfo_detail li{
 	width: 181px;
 	height: 160px;
 	float: left;
 }
-#partnermain #partnermenu #menuinfo ul.menuinfo_detail li a.img_box{
+#main #partnermenu #menuinfo ul.menuinfo_detail li a.img_box{
 	display: block;
 	padding-left: 9px;
 	padding-right: 9px;
 	padding-top: 9px;
 }
-#partnermain #partnermenu #menuinfo ul.menuinfo_detail li a.img_box img{
+#main #partnermenu #menuinfo ul.menuinfo_detail li a.img_box img{
 	height: 120px;
 	width: 161px;
 	border:none;
 }
-#partnermain #partnermenu #menuinfo ul.menuinfo_detail li a.title{
+#main #partnermenu #menuinfo ul.menuinfo_detail li a.title{
 	color: #666;
 	font-family: Arial;
 	display: block;
@@ -408,7 +408,7 @@
 	margin-top: 3px;
 }
 
-#partnermain #alleva_box{
+#main #alleva_box{
 	border:1px solid #D7D7D7;
 	background-color: white;
 	filter:alpha(opacity=80);  
@@ -419,12 +419,12 @@
 	overflow: hidden;
 	zoom:1;
 }
-#partnermain #alleva_box #alleva_top_box{
+#main #alleva_box #alleva_top_box{
 	margin-right:12px;
 	margin-left: 12px;
 	margin-bottom: 10px;
 }
-#partnermain #alleva_box #alleva_top_box p.alleva_top_title{
+#main #alleva_box #alleva_top_box p.alleva_top_title{
 	color: #ED5565;
 	font-size: 14px;
 	height: 45px;
@@ -432,21 +432,21 @@
 	border-bottom: 2px solid #E3E3E3;
 	padding-left: 10px;
 }
-#partnermain #alleva_box #alleva_top_box #select_p{
+#main #alleva_box #alleva_top_box #select_p{
 	margin-top:-39px;
 	margin-left:370px;
 	margin-right: 19px;
 }
-#partnermain #alleva_box #alleva_top_box #select_p ul{
+#main #alleva_box #alleva_top_box #select_p ul{
 
 }
-#partnermain #alleva_box #alleva_top_box #select_p ul li{
+#main #alleva_box #alleva_top_box #select_p ul li{
 	float: right;
 	width:70px;
 	height:27px;
 	
 }
-#partnermain #alleva_box #alleva_top_box #select_p a{
+#main #alleva_box #alleva_top_box #select_p a{
 	float: right;
 	display:block;
 	padding-top:7px;
@@ -455,13 +455,13 @@
 	height:20px;
 	border:1px solid #D7D7D7;
 }
-#partnermain #alleva_box #alleva_top_box #select_p a.no_border_right{
+#main #alleva_box #alleva_top_box #select_p a.no_border_right{
 	border-right: none;
 }
-#partnermain #alleva_box #alleva_top_box #select_p a:hover{
+#main #alleva_box #alleva_top_box #select_p a:hover{
 	border:1px solid #4467A3;
 }
-#partnermain #alleva_box div.evacontent_box{
+#main #alleva_box div.evacontent_box{
 	margin-top: 25px;
 	margin-left: 12px;
 	margin-right: 12px;
@@ -469,16 +469,16 @@
 	padding-bottom: 20px;
 	padding-left: 5px;
 }
-#partnermain #alleva_box div.evacontent_box div.evacontent{
+#main #alleva_box div.evacontent_box div.evacontent{
 	border-bottom:1px dashed #E3E3E3;
 	padding-bottom: 20px;
 }
-#partnermain #alleva_box div.evacontent_box div.evacontent div.evacontent_top{
+#main #alleva_box div.evacontent_box div.evacontent div.evacontent_top{
 	height: 21px;
 	
 	margin-top: 10px;
 }
-#partnermain #alleva_box div.evacontent_box div.evacontent div.evacontent_top a.username{
+#main #alleva_box div.evacontent_box div.evacontent div.evacontent_top a.username{
 	color: #666666;
 	font-weight: bold;
 	font-size: 13px;
@@ -487,7 +487,7 @@
 	line-height: 21px;
 	float: left;
 }
-#partnermain #alleva_box div.evacontent_box div.evacontent div.evacontent_top span.eva_rate_stars{
+#main #alleva_box div.evacontent_box div.evacontent div.evacontent_top span.eva_rate_stars{
 	background: url(../images/rate_stars.png) repeat-x 0px -21px;
 	height: 21px;
 	width: 105px;
@@ -495,31 +495,31 @@
 	display: block;
 	float: right;
 }
-#partnermain #alleva_box div.evacontent_box div.evacontent div.evacontent_top span.eva_rate_stars span{
+#main #alleva_box div.evacontent_box div.evacontent div.evacontent_top span.eva_rate_stars span{
 	background: url(../images/rate_stars.png) repeat-x 0px 0px;
 	display: inline-block;
 	height: 21px;
 	overflow: hidden;
 }
-#partnermain #alleva_box div.evacontent_box div.evacontent p.comment_desc{
+#main #alleva_box div.evacontent_box div.evacontent p.comment_desc{
 	color: #AEAEAE;
 	padding-top: 10px;
 	overflow: hidden;
 }
-#partnermain #alleva_box div.evacontent_box div.evacontent p.storename{
+#main #alleva_box div.evacontent_box div.evacontent p.storename{
 	color: #999999;
 	padding-top: 20px;
 }
 
-#partnermain #partnerleft #alleva_box div.page_div{
+#main #partnerleft #alleva_box div.page_div{
 	text-align: center;
 	margin-top: 60px;
 	margin-bottom: 40px;
 }
-#partnermain #partnerleft #alleva_box div.page_div ul.page_box{
+#main #partnerleft #alleva_box div.page_div ul.page_box{
 	margin: 0 auto;
 }
-#partnermain #partnerleft #alleva_box div.page_div ul.page_box li{
+#main #partnerleft #alleva_box div.page_div ul.page_box li{
 	float: none;
 	display: inline-block;
 	zoom: 1;
@@ -527,11 +527,11 @@
 	background: #D7D7D7;
 	margin-right: 3px;
 }
-#partnermain #partnerleft #alleva_box div.page_div ul.page_box li.one{
+#main #partnerleft #alleva_box div.page_div ul.page_box li.one{
 	width: 50px;
 
 }
-#partnermain #partnerleft #alleva_box div.page_div ul.page_box li a{
+#main #partnerleft #alleva_box div.page_div ul.page_box li a{
 	display: block;
 	height: 25px;
 	width:30px;
@@ -540,20 +540,20 @@
 	font-style: 微软雅黑;
 	text-align: center;
 }
-#partnermain #partnerleft #alleva_box div.page_div ul.page_box li a.one{
+#main #partnerleft #alleva_box div.page_div ul.page_box li a.one{
 	width: 50px;
 	font-weight: bold;
 }
-#partnermain #partnerleft #alleva_box div.page_div ul.page_box li a.red{
+#main #partnerleft #alleva_box div.page_div ul.page_box li a.red{
 	background: #EB5B4C;
 }
 
-#partnermain #partnerright{
+#main #partnerright{
 	float: right;
 	margin-top:7px;
 	width: 255px;
 }
-#partnermain #partnerright #storemap{
+#main #partnerright #storemap{
 	border:1px solid #D7D7D7;
 	width: 253px;
 	height:295px;
@@ -563,14 +563,14 @@
     -khtml-opacity: 0.8;  
     opacity: 0.8; 
 }
-#partnermain #partnerright #storemap #view_map{
+#main #partnerright #storemap #view_map{
 	width:241px;
 	height: 200px;
 	margin-left: 7px;
 	margin-right: 7px;
 	margin-top: 7px;
 }
-#partnermain #partnerright #storemap a.viewfullmap{
+#main #partnerright #storemap a.viewfullmap{
 	display: block;
 	background: #F3F1F1;
 	color: #4467A3;
@@ -580,7 +580,7 @@
 	margin-left: 7px;
 	margin-right: 7px;
 }
-#partnermain #partnerright #storemap p.partnerlocation{
+#main #partnerright #storemap p.partnerlocation{
 	color:#666666;
 	font-size: 14px;
 	border-top: 1px solid #E4E4E4;
@@ -590,7 +590,7 @@
 	padding-left: 10px;
 }
 
-#partnermain #partnerright div.nearcoupon{
+#main #partnerright div.nearcoupon{
 	margin-top:8px;
 	border:1px solid #D7D7D7;
 	width: 253px;
@@ -600,7 +600,7 @@
     -khtml-opacity: 0.8;  
     opacity: 0.8; 
 }
-#partnermain #partnerright div.nearcoupon p.title{
+#main #partnerright div.nearcoupon p.title{
 	height:25px;
 	padding-top:10px;
 	padding-left: 10px;
@@ -612,11 +612,11 @@
 	color:#666666;
 	border-bottom: 1px solid #D7D7D7;
 }
-#partnermain #partnerright div.nearcoupon #nearcoupon_detail_contents{
+#main #partnerright div.nearcoupon #nearcoupon_detail_contents{
 	height: 110px;
 	position: relative;
 }
-#partnermain #partnerright div.nearcoupon #nearcoupon_detail_contents a.c_title{
+#main #partnerright div.nearcoupon #nearcoupon_detail_contents a.c_title{
 	color: #ED5565;
 	font-weight: bold;
 	position: absolute;
@@ -627,7 +627,7 @@
 	width: 140px;
 	display: block;
 }
-#partnermain #partnerright div.nearcoupon #nearcoupon_detail_contents p.c_desc{
+#main #partnerright div.nearcoupon #nearcoupon_detail_contents p.c_desc{
 	color: #666;
 	position: absolute;
 	top: 35px;
@@ -637,13 +637,13 @@
 	overflow: hidden;
 
 }
-#partnermain #partnerright div.nearcoupon #nearcoupon_detail_contents a{
+#main #partnerright div.nearcoupon #nearcoupon_detail_contents a{
 	display: block;
 	position: absolute;
 	top: 10px;
 	left: 152px;
 }
-#partnermain #partnerright div.nearcoupon #nearcoupon_detail_contents a img{
+#main #partnerright div.nearcoupon #nearcoupon_detail_contents a img{
 	width: 90px;
 	height: 90px;
 	border:none;
