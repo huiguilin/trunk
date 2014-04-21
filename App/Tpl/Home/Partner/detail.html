@@ -25,7 +25,7 @@
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!--  导航区域 -->
 <div style="width:100%">
-	<div id="partnermain" >
+	<div id="main" >
 		<!-- 主要内容顶部区域 -->
 			<div id="partnersitenav">
 				<a href="" class="no_margin_left">{$partner_tags[0]['pcat_name']}</a><span>></span><a href="">{$partner_tags[0]['cat_name']}</a><span>></span><a href="">{$partner_tags[0]['belong']}</a><span>></span><a href="">{$partner_tags[0]['locationname']}</a><span>></span><a href="" class="gray">{$partnerInfo[0]['name']}</a>
@@ -122,6 +122,7 @@
 										<if condition="$get.off_time eq 1">
 											
 										<else />
+											
 											<a href="" class="download" couponid="{$partnercoupon.coupon_id}">立即下载</a>
 										</if>
 										
@@ -252,22 +253,11 @@
 							</div>
 							</foreach>
 						</div>
-						<ul class="page_box clearfix">
-							<li class="one"><a href="{:U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>1),'','')}" class="one">首页</a></li>
-							<li><a href=""><</a></li>
-							
-							<for start="1" end="$pageNums+1" step="1" name="i" >
-								<if condition="$i eq $get_info">
-									<li><a href="{:U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','')}" class="red">{$i}</a></li>
-								<else />
-									<li><a href="{:U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$i),'','')}">{$i}</a></li>
-								</if>
-								
-							</for>
-
-							<li><a href="">></a></li>
-							<li class="one"><a href="{:U('Partner/detail',array('pid'=>$partnerInfo[0]['partner_id'],'page'=>$pageNums),'','')}" class="one">尾页</a></li>
-						</ul>
+						<div class="page_div">
+							<ul class="clearfix page_box">
+								{$show.first}{$show.upPage}<foreach name="linkPage" item="lp"><li>{$lp}</li></foreach>{$show.downPage}{$show.end}
+							</ul>
+						</div>
 					</div>
 					<!-- 主要内容左边区域评论部分结束 -->
 				</div>

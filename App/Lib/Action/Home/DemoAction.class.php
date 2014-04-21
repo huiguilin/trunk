@@ -2,7 +2,7 @@
 // 本类由系统自动生成，仅供测试用途
 class DemoAction extends Action {
     public function demo(){
-        
+       
 
         // $result = sendCodeToMobile('18611244143', '2222');
         // echo "1111";

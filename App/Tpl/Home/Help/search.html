@@ -28,7 +28,11 @@
     </if>
     </foreach>
     <div class="clear"></div>
-    <div id="page">{$page}</div>	
+    <div id="page">
+    	<foreach name="linkPage" item="lp">
+			{$lp}
+    	</foreach>
+    </div>	
 	</ul>
     
 </div>

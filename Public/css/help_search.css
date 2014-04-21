@@ -2,7 +2,7 @@
 
 #main #left_card{
 	position: relative;
-	width: 715px;
+	width: 960px;
 	height: 860px;
 	border: 2px solid #F7F8FA;
 	background-color: white;
@@ -17,11 +17,11 @@
 	top: 25px;
 	left: 40px;	
 	border-bottom: #E4E4E4 2px solid;
-	width: 630px;
+	width: 880px;
 	height: 35px;
 }
 #main #left_card p.two{
-	width: 630px;
+	width: 880px;
 	height: 46px;
 	background: #E3E3E3;
 	background:rgba(227,227,227,0.75);
@@ -96,7 +96,7 @@
 
 }
 #main #left_card #help_search_result{
-	width: 630px;
+	width: 880px;
 	position: relative;
 	top: 270px;
 	left: 40px;

@@ -264,22 +264,24 @@ class PartnerAction extends Action {
         $hotCouponInfo = $this->cutCouponWords($hotCouponInfo);
 
         //获取商家所有优惠券的评论
-        $param['partner_id'] = $data[0]['partner_id'];
-        $page = !empty($_GET['_URL_'][5]) ? $_GET['_URL_'][5] : 0;
-        $pageSize = 2;
-        $offset = $page * $pageSize;
-        $firstset = ($page-1)* $pageSize;
-
-        if($page == 0 || $page ==1){
-            $param['limit'] = "0,{$pageSize}";
-        }else{
-            $param['limit'] = "{$firstset},{$offset}";
-        }
+       
+          //分页
         $pEvaluationHelper = new PartnerEvaluationModel();
-        $count = $pEvaluationHelper->getCountByPartnerId($data[0]['partner_id']);
-        $pageNum = ceil($count/$pageSize);
+        $nowPage = isset($_GET['p'])?$_GET['p']:1;
+        import('ORG.Util.Page'); // 导入分页类
+        $map['partner_id'] = array('in',$data[0]['partner_id']);
 
-        $partnerCommentResult = $pEvaluationHelper->getPartnerEvaluationInfoById($param);
+        $count = $pEvaluationHelper->where($map)->count(); // 查询满足要求的总记录数
+        $Page = new Page($count,10); // 实例化分页类 传入总记录数
+        $Page->setConfig('next','<li style="width:55px;line-height:25px;text-align:center">下一页</li>');
+        $Page->setConfig('prev','<li style="width:55px;line-height:25px;text-align:center">上一页</li>');
+        $Page->setConfig('first','<li style="width:55px;line-height:25px;text-align:center">首页</li>');
+        $Page->setConfig('last','<li style="width:55px;line-height:25px;text-align:center">末页</li>');
+        $partnerCommentResult = $pEvaluationHelper->where($map)->page($nowPage.','.$Page->listRows)->select();
+        $show = $Page->show(); // 分页显示输出
+        $linkPage = $show['linkPage'];
+      
+
 
         $this->assign('location_desc',$location_desc);
         $this->assign('description',$description);
@@ -297,6 +299,8 @@ class PartnerAction extends Action {
         $this->assign("get", $_GET);
         $templateName = $_GET["_URL_"][0]; 
         $this->assign('templateName',$templateName);
+        $this->assign('show',$show);
+        $this->assign('linkPage',$linkPage);
         $this->display();
     }
     private function cutCouponWords($info) {

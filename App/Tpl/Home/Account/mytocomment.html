@@ -63,18 +63,10 @@
 		</li>
             </foreach>
 	</ul>
-	<ul class="page_box">
-		<li class="one"><a href="{$page_info.first_url}" class="one">首页</a></li>
-		<li><a href="{$page_info.front_url}"><</a></li>
-<foreach name="links" item="link">
-        <if condition="$key eq $page_info.page">
-		<li><a href="{$link.url}" class="red">{$link.i}</a></li>
-        <else />
-		<li><a href="{$link.url}">{$link.i}</a></li>
-        </if>
- </foreach>
-		<li><a href="{$page_info.next_url}">></a></li>
-		<li class="one"><a href="{$page_info.last_url}" class="one">尾页</a></li>
-	</ul>
+	<div class="page_div">
+		<ul class="clearfix page_box">
+			{$show.first}{$show.upPage}<foreach name="linkPage" item="lp"><li>{$lp}</li></foreach>{$show.downPage}{$show.end}
+		</ul>
+	</div>
 	
 <include file="Account:account_tmp_bottom"/>

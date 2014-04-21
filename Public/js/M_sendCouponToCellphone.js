@@ -2,7 +2,7 @@ $(function(){
 
 	$('#closed_download_coupon_hidden_box').click(function(event) {
     	$('#download_coupon_hidden_box').bPopup().close();
-    	location.reload();
+    	
     });
 
     //点击下载手机优惠劵弹窗中验证码看不清特效
@@ -17,7 +17,7 @@ $(function(){
 	//关闭发送成功弹窗
 	$('#close_middle_content_box_success').click(function(event) {
     	$('#download_coupon_hidden_box').bPopup().close();
-    	location.reload();
+    	
     
     });
 	//关闭发送成功弹窗结束

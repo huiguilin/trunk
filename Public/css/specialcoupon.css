@@ -39,7 +39,7 @@
 	top: 10px;
 	right: 10px;
 	font-size: 15px;
-	color: white;
+	color: black;
 }
 #main #classification_location_box{
 	width: 960px;
@@ -355,7 +355,6 @@
 	border:none;
 }
 #main #coupon_box ul.coupon_content li a.download_btn{
-	display: block;
 	width: 317px;
 	height: 45px;
 	line-height: 45px;
@@ -367,6 +366,23 @@
 	position: absolute;
 	top: 240px;
 	left: 30px;
+}
+#main #coupon_box ul.coupon_content li p.download_btn{
+	width: 317px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	font-size: 16px;
+	font-family: 微软雅黑;
+	color: white;
+	background: #ED5565;
+	position: absolute;
+	top: 240px;
+	left: 30px;
+}
+#main #coupon_box ul.coupon_content li p.download_btn span{
+	font-size: 16px;
+	font-family: 微软雅黑;		
 }
 #main #coupon_box ul.coupon_content li a.download_btn2{
 	display: block;

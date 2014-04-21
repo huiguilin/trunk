@@ -208,6 +208,7 @@ class UserAction extends Action {
             $data['subject'] = '账号激活邮件';
             $data['body'] = $content;
         }
+      
         $mail = new Email();
         if ($mail->send($data)) {
             #$this->success('发送成功,请登录邮件激活');
@@ -423,7 +424,9 @@ class UserAction extends Action {
             $this->ajaxReturn($data,'JSON');
         }
         if (!empty($useremail)) {
+            
             $activeCode = $this->sendEmail($useremail,'modifyCode');
+           
             if (empty($activeCode)) {
                 return FALSE;
             }else{

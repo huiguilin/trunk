@@ -79,14 +79,14 @@ $(function(){
 		return false;
 	});
 	//点击订阅按钮提交验证结束
-	$('#top_box #top_nav_classification_box ul li.expand').click(function(event) {
-		$('#top_box #top_nav_classification_box ul li').slideDown('fast');
+	$('#top_nav_classification_box ul li.expand').click(function(event) {
+		$('#top_nav_classification_box ul li').slideDown('fast');
 		$(this).hide();
 		return false;
 	});
-	$('#top_box #top_nav_classification_box ul li.collapse').click(function(event) {
-		$('#top_box #top_nav_classification_box ul li').hide();
-		$('#top_box #top_nav_classification_box ul li.expand').show();
+	$('#top_nav_classification_box ul li.collapse').click(function(event) {
+		$('#top_nav_classification_box ul li').hide();
+		$('#top_nav_classification_box ul li.expand').show();
 		return false;
 	});
 
@@ -1238,4 +1238,31 @@ $(function(){
 	});
 	//手机APP弹窗区域中关闭特效结束
 	////////////////////////手机版弹窗中的全部特效代码区域结束////////////////////////////
+
+
+	/////////学校导航特效
+	window_change();
+	$(window).resize(window_change);
+
+
 })
+
+
+var jump_box_left;
+function window_change(){//用来计算top和left值的函数
+		
+	// var jump_box_top = parseInt(($(window).height()-$('#top_nav_classification_box').height())/2);//计算top值
+	jump_box_left = parseInt(($(window).width()-$('#main').width())/2 - $('#top_nav_classification_box').width() - 10);//计算left值
+ 	// $('#top_nav_classification_box').css({'top':jump_box_top+'px','left':jump_box_left + 'px'})
+ 	$('#top_nav_classification_box').css({'top':'194px','left':jump_box_left + 'px'})
+}
+$(window).scroll( function() {
+	var n1 = parseInt($(window).scrollTop());
+  	if(n1 > 194){
+  		$('#top_nav_classification_box').css({'top':'0px','left':jump_box_left+'px'});
+  	}else{
+  		var top = 194-n1;
+  		$('#top_nav_classification_box').css({'top':top+'px','left':jump_box_left+'px'});
+  	}
+  	
+});

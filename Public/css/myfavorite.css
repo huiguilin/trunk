@@ -74,22 +74,26 @@
 	color: #4467A3;
 	margin-left: 20px;
 }
-#main #left_content_box div.mycontent_box ul.page_box{
-	margin-left: 380px;
-	margin-top: 40px;
+#main #left_content_box div.mycontent_box div.page_div{
+	text-align: center;
+	margin-top: 60px;
 }
-#main #left_content_box div.mycontent_box ul.page_box li{
-	float: left;
-	height: 25px;
-	width: 30px;
+#main #left_content_box div.mycontent_box div.page_div ul.page_box{
+	margin: 0 auto;
+}
+#main #left_content_box div.mycontent_box div.page_div ul.page_box li{
+	float: none;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
 	background: #D7D7D7;
 	margin-right: 3px;
 }
-#main #left_content_box div.mycontent_box ul.page_box li.one{
+#main #left_content_box div.mycontent_box div.page_div ul.page_box li.one{
 	width: 50px;
 
 }
-#main #left_content_box div.mycontent_box ul.page_box li a{
+#main #left_content_box div.mycontent_box div.page_div ul.page_box li a{
 	display: block;
 	height: 25px;
 	width:30px;
@@ -98,11 +102,11 @@
 	font-style: 微软雅黑;
 	text-align: center;
 }
-#main #left_content_box div.mycontent_box ul.page_box li a.one{
+#main #left_content_box div.mycontent_box div.page_div ul.page_box li a.one{
 	width: 50px;
 	font-weight: bold;
 }
-#main #left_content_box div.mycontent_box ul.page_box li a.red{
+#main #left_content_box div.mycontent_box div.page_div ul.page_box li a.red{
 	background: #EB5B4C;
 }
 

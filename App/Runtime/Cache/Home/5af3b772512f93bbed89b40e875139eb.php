@@ -126,22 +126,23 @@
 				</form>
 			</div>
 		</div>
-		<div id="top_nav_classification_box">
-			<ul>
-				<li class="expand"><a href="" class="white">展开全部学校</a></li>
-				<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林电子科技大学" target=_blank>桂林电子科技大学</a></li>
-				<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/广西师范大学" target=_blank>广西师范大学</a></li>
-				<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林理工大学" target=_blank>桂林理工大学</a></li>
-				<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林医学院" target=_blank>桂林医学院</a></li>
-				<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林航天工业学院" target=_blank>桂林航天工业学院</a></li>
-				<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林旅专" target=_blank>桂林旅专</a></li>
-				<li class="no_border_bottom"><a href="<?php echo U('Coupon/coupon','','','');?>/tag/广艺桂林分校" target=_blank>广艺桂林分校</a></li>
-				<li class="collapse"><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林电子科技大学" class="red">收起全部学校</a></li>
-			</ul>
-		</div>
+		<div class="bottom_box"></div>
+		
 	</div>
 
-
+<div id="top_nav_classification_box">
+	<ul>
+		<li class="expand"><a href="" class="white">展开全部学校</a></li>
+		<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林电子科技大学" target=_blank>桂林电子科技大学</a></li>
+		<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/广西师范大学" target=_blank>广西师范大学</a></li>
+		<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林理工大学" target=_blank>桂林理工大学</a></li>
+		<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林医学院" target=_blank>桂林医学院</a></li>
+		<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林航天工业学院" target=_blank>桂林航天工业学院</a></li>
+		<li><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林旅专" target=_blank>桂林旅专</a></li>
+		<li class="no_border_bottom"><a href="<?php echo U('Coupon/coupon','','','');?>/tag/广艺桂林分校" target=_blank>广艺桂林分校</a></li>
+		<li class="collapse"><a href="<?php echo U('Coupon/coupon','','','');?>/tag/桂林电子科技大学" class="red">收起全部学校</a></li>
+	</ul>
+</div>
 		
 <!-- 顶部订阅分享区域结束 -->
 
@@ -438,6 +439,7 @@
 	}
 
 </script>
+
 <!-- 顶部订阅分享区域+Logo区域结束 -->
 <!-- 内容区域 -->
 	<div id="right_function_box"><a href="">回到顶部</a></div>
@@ -447,10 +449,10 @@
 			<!-- 广告区域 -->
 			<div id="ad_box">
 			
-				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/5.png" alt="广告图片"></a>
+				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/7.png" alt="广告图片"></a>
 				<a href="http://weibo.com/huixy" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/6.png" alt="广告图片"></a>
 				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/4.png" alt="广告图片"></a>
-				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/7.png" alt="广告图片"></a>
+				<a href="" target="_blank" class="img_box"><img src="__PUBLIC__/images/flash/5.png" alt="广告图片"></a>
 				<ul>
 					<li>1</li>
 					<li>2</li>
@@ -522,7 +524,7 @@
 		<!-- 民以食为天+排行榜区域 -->
 		<div id="foot_and_footsort_box">
 			<div class="foot_box">
-				<p class="title"><span>限时抢购</span></p>
+				<p class="title"><span>限时抢购 |</span>每天更新2-4款</p>
 				<ul class=" clearfix content">
                 <?php if(is_array($eat_coupons)): foreach($eat_coupons as $k=>$coupon): if($k > 3): else: ?>
 						<li>
@@ -531,13 +533,13 @@
 						<p class="one" title="<?php echo ($coupon["description"]); ?>"><?php echo ($coupon["description"]); ?></p>
 						<p class="two" title="<?php echo ($coupon["title"]); ?>">疯抢价<span>￥<?php echo ($coupon["off_price"]); ?></span>元</p>
 						<p class="three" >已抢购：<?php echo ($coupon["download_times"]); ?>次</p>
+
+						<?php if(($coupon['Countdown_label'] == 1) AND ($coupon['coupon_type'] == 2) OR ($coupon['left_times'] == 0)): else: ?>
 						<?php if($_SESSION['user']['user_id']== ''): ?><a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download" tag="0">立即抢购</a>
 						<?php else: ?>
-							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download" tag="1">立即抢购</a><?php endif; ?>
-						
-						<?php if($coupon['Countdown_label'] == 1): ?><p class="hidden_location">即将上线:<span id="countdown_day"><?php echo ($coupon['Countdown_time']['day']); ?></span>天<span id="countdown_hour"><?php echo ($coupon['Countdown_time']['hour']); ?></span>时<span id="countdown_min"><?php echo ($coupon['Countdown_time']['min']); ?></span>分<span id="countdown_sec"><?php echo ($coupon['Countdown_time']['sec']); ?></span>秒</p>
-
-
+							<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" couponid="<?php echo ($coupon["coupon_id"]); ?>" class="download" tag="1">立即抢购</a><?php endif; endif; ?>
+						<?php if($coupon['Countdown_label'] == 1): ?><p class="hidden_location">即将上线:<span id="countdown_day_<?php echo ($k); ?>"><?php echo ($coupon['Countdown_time']['day']); ?></span>天<span id="countdown_hour_<?php echo ($k); ?>"><?php echo ($coupon['Countdown_time']['hour']); ?></span>时<span id="countdown_min_<?php echo ($k); ?>"><?php echo ($coupon['Countdown_time']['min']); ?></span>分<span id="countdown_sec_<?php echo ($k); ?>"><?php echo ($coupon['Countdown_time']['sec']); ?></span>秒</p>
+							
 						<?php elseif($coupon['left_times'] == 0): ?>
 							<p class="hidden_location">已经卖光啦,下次早点哦!</p>
 						<?php else: ?>
@@ -647,4 +649,26 @@
 <!-- 最底部区域结束 -->
 
 </body>
+<script type="text/javascript">
+	var ps = $('#main #foot_and_footsort_box div.foot_box ul.content li p.hidden_location');
+	for(var i =0;i<ps.length;i++){
+		var p = ps[i].children;
+		var dayid;
+		var hourid;
+		var minid;
+		var secid;
+		for(var j =0;j<p.length;j++){
+			if(j == 0){
+				dayid = p[j].id;
+			}else if(j == 1){
+				hourid = p[j].id;
+			}else if(j == 2){
+				minid = p[j].id;
+			}else if(j == 3){
+				secid = p[j].id;
+			}
+		}
+		Test(dayid,hourid,minid,secid);
+	}
+</script>
 </html>
