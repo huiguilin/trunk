@@ -3,65 +3,24 @@
 class DemoAction extends Action {
     public function demo(){
        
-
-        // $result = sendCodeToMobile('18611244143', '2222');
-        // echo "1111";
-        // var_dump($result);
-        // die;
-        $this->display();
-        exit();
+        $id = $_GET['p'];
+     
+        import("ORG.Util.AjaxPage");// 导入分页类  注意导入的是自己写的AjaxPage类
+  
+        $credit = new CouponEvaluationModel();
         
-        echo "今天:",date('Y-m-d H:i:s'),"<br>";
-        echo "明天:",date('Y-m-d H:i:s',strtotime('-7 day'));
-
-        $Ytime =date('Y-m-d H:i:s',strtotime('-1 day'));
-
-        $time = "2014-03-12 21:00:00";
-        if(strtotime($Ytime) > strtotime($time)){
-            echo "1";
-        }else{
-            echo "2";
-        }
-
+        $count = $credit->count(); //计算记录数
+        $limitRows = 2; // 设置每页记录数
+      
        
-    	$this->display();
-        exit();
-    	$date = date('Y-m-d H:i:s');
-    	$couponHelper = new CouponModel();
-    	$params = array(
-    			'end_time_lt' => $date,
-    		);
-    	$result = $couponHelper->getCoupon($params);
-    	if(empty($result)){
-    		echo "优惠券都在有效期内";
-    	}else{
-    		$couponIds = DataToArray($result, 'coupon_id');
-	        $couponIds = implode(',', $couponIds);
-	        $params = array(
-	            'coupon_id' => $couponIds,
-	        );
-    		$userCouponHelper = new UserCouponModel();
-    		$result = $userCouponHelper-> getUserCoupon($params);
-
-    		if(!empty($result)){
-    			$couponIds = DataToArray($result, 'coupon_id');
-    			$time = date("Y-m-d H:i:s");
-    			$updateData = array(
-    				'status' => '2',
-    				'updatetime' => $time,
-    				);
-    			$condition = array(
-    				'coupon_id' => array(
-    					'IN', $couponIds,
-    					),
-    				);
-    			$r = $userCouponHelper ->updateUserCoupon($condition,$updateData);
-    			if(!empty($r)){
-    				echo "优惠券过期状态修改成功！";
-    			}else{
-    				echo "优惠券过期状态修改失败！";
-    			}
-    		}
-    	}
+        $p = new AjaxPage($count, $limitRows,"test"); //第三个参数是你需要调用换页的ajax函数名
+        $limit_value = $p->firstRow . "," . $p->listRows;
+       
+        $data = $credit->limit($limit_value)->select(); // 查询数据
+        var_dump($data);
+        $page = $p->show(); // 产生分页信息，AJAX的连接在此处生成
+        $this->assign('list',$data);
+        $this->assign('page',$page);
+        $this->display();
     }
 }

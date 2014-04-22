@@ -506,7 +506,7 @@
 						</a>
 					</li><?php endforeach; endif; ?>
 				</ul>
-				<a href="<?php echo U('Partner/partner','','','');?>" class="view_more" target=_blank>查看更多</a>
+				<a href="<?php echo U('Partner/partner','','','');?>" class="view_more" target="_blank">查看更多</a>
 			</div>
 			<div class="new_brand_box">
 				<p><span>新入驻品牌</span></p>
@@ -548,15 +548,15 @@
 						
 					</li><?php endif; endforeach; endif; ?>
 				</ul>
-				<a href="<?php echo U('Coupon/specialcoupon','','','');?>" class="foot_type_more" target=_blank>查看更多</a>
+				<a href="<?php echo U('Coupon/specialcoupon','','','');?>" class="foot_type_more" target="_blank">查看更多</a>
 			</div>
 			<div id="hot_coupon_box">
 				<p class="title"><span>热门优惠劵</span></p>
 				<ul class="hot_coupon">
                 <?php if(is_array($hot_coupons)): foreach($hot_coupons as $key=>$coupon): ?><li>
-						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="title"><?php echo ($coupon["name"]); ?></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" target="_blank" class="title"><?php echo ($coupon["name"]); ?></a>
 						<p><?php echo ($coupon["description"]); ?></p>
-						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box"><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
+						<a href="<?php echo U("Coupon/detail","","","");?>/<?php echo ($coupon["coupon_id"]); ?>" class="img_box" target="_blank"><img src="__PUBLIC__/<?php echo ($coupon["header_path"]); ?>" alt="<?php echo ($coupon["name"]); ?>"></a>
 					</li><?php endforeach; endif; ?>
 				</ul>
 			</div>

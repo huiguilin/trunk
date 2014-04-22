@@ -340,9 +340,6 @@
 	float: left;
 	width: 345px;
 	height: 181px;
-	background-color: white;
-	background:rgba(255,255,255,0.40);
-	filter:Alpha(opacity=40);
 	position: relative;
 	margin-right: 8px;
 	margin-top: 8px;

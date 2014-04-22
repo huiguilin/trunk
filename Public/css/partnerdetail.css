@@ -121,7 +121,7 @@
 #main #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box2{
 	height: 40px;
 	line-height: 40px;
-	padding-left: 45px;
+	margin-left: 38px;
 	
 }
 #main #partnerleft #partnerleft_top_box #partnerleft_down_left p.tag_box2 a{
@@ -133,9 +133,10 @@
 	border:1px solid black;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	margin-left: 5px;
 	border:1px solid #D7D7D7;
 	border-radius: 5px;
+	margin-left: 5px;
+
 }
 #main #partnerleft #partnerleft_top_box #partnerleft_down_left .labletype{
 	color:#4467A3;

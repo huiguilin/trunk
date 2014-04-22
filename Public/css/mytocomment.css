@@ -63,6 +63,9 @@
 	position: absolute;
 	top:22px;
 	left: 170px;
+	overflow: hidden;
+	width: 470px;
+	height: 17px;
 }
 #main #left_content_box div.mycontent_box ul.mycomment_show_box li div.display_content_box p.coupon_question{
 	color: #666666;

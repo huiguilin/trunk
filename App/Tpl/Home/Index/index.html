@@ -109,7 +109,7 @@
 					</li>
                 </foreach>
 				</ul>
-				<a href="{:U('Partner/partner','','','')}" class="view_more" target=_blank>查看更多</a>
+				<a href="{:U('Partner/partner','','','')}" class="view_more" target="_blank">查看更多</a>
 			</div>
 			<div class="new_brand_box">
 				<p><span>新入驻品牌</span></p>
@@ -164,16 +164,16 @@
 					</if>
                 </foreach>
 				</ul>
-				<a href="{:U('Coupon/specialcoupon','','','')}" class="foot_type_more" target=_blank>查看更多</a>
+				<a href="{:U('Coupon/specialcoupon','','','')}" class="foot_type_more" target="_blank">查看更多</a>
 			</div>
 			<div id="hot_coupon_box">
 				<p class="title"><span>热门优惠劵</span></p>
 				<ul class="hot_coupon">
                 <foreach name="hot_coupons" item="coupon">
 					<li>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="title">{$coupon.name}</a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" target="_blank" class="title">{$coupon.name}</a>
 						<p>{$coupon.description}</p>
-						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box"><img src="__PUBLIC__/{$coupon.header_path}" alt="{$coupon.name}"></a>
+						<a href="{:U("Coupon/detail","","","")}/{$coupon.coupon_id}" class="img_box" target="_blank"><img src="__PUBLIC__/{$coupon.header_path}" alt="{$coupon.name}"></a>
 					</li>
                 </foreach>
 				</ul>
