@@ -194,6 +194,7 @@ class PartnerAction extends Action {
     }
     public function detail(){
         $partnerId = $_GET['_URL_'][3];
+        $_SESSION['pid'] = $partnerId;
         $offTime = $_GET['off_time'];
         $partnerId = array(
             'partner_id' => $partnerId,
@@ -287,7 +288,12 @@ class PartnerAction extends Action {
             'pagesId'   =>$pagesId,              //分页后页的容器id不带#target和pagesId同时定义才Ajax分页
             'template'  =>$templateName,        //ajax更新模板
         );
-        $this->do_getPageInfo($param);
+        $result = $this->do_getPageInfo($param);
+        $page = $result['show'];
+        $linkPage = $page['linkPage'];
+        $this->assign("show", $page);
+        $this->assign('linkPage',$linkPage);
+        $this->assign($listvar,$list);
 
 
         $this->assign('location_desc',$location_desc);
@@ -306,6 +312,58 @@ class PartnerAction extends Action {
         $templateName = $_GET["_URL_"][0]; 
         $this->assign('templateName',$templateName);
         $this->display();
+
+      
+    }
+
+    public function HandleAjaxPage(){
+            $param = array();
+            $param['partner_id'] = $_SESSION['pid'];
+
+            $partnerEvaluationHelper = M('Partner_evaluation','v_monkey_'); // 实例化Data数据对象
+            import('ORG.Util.AjaxPage'); // 导入分页类
+            $listvar = "partnerComments";
+            $listRows = 2;
+            $target = "alleva_box";
+            $pagesId = "page_div";
+            $templateName = "Partner:detail";
+            $nowPage = isset($_GET['p'])?$_GET['p']:1;
+            $map['partner_id'] = array('in',$param);
+            $totalRows = $partnerEvaluationHelper->where($map)->count(); // 查询满足要求的总记录数
+            $list = $partnerEvaluationHelper->where($map)->page($nowPage.','.$listRows)->select();
+            $param = array(
+                'result'    =>$list,                     //分页用的数组或sql
+                'listvar'   =>$listvar,                 //分页循环变量
+                'totalRows' =>$totalRows,                    
+                'listRows'  =>$listRows,               //每页记录数
+                'target'    =>$target,                //ajax更新内容的容器id，不带#
+                'pagesId'   =>$pagesId,              //分页后页的容器id不带#target和pagesId同时定义才Ajax分页
+                'template'  =>$templateName,        //ajax更新模板
+            );
+              $result = $this->do_getPageInfo($param);
+             
+
+                // $page = $result['show'];
+                // $linkPage = $page['linkPage'];
+                // $this->assign("show", $page);
+                // $this->assign('linkPage',$linkPage);
+                // $this->assign($listvar,$list);
+            
+            if(empty($result)){
+                $data = array(
+                    'status' => 0,
+                    'info' => '结果集为空！'
+                );
+            }else{
+                 $data = array(
+                    'status' => 1,
+                    'info' => '分页成功！',
+                    'result' =>$result,
+                    'list' =>$list,
+                );
+            }
+        
+            $this->ajaxReturn($data);
     }
     private function cutCouponWords($info) {
         if (empty($info)) {
@@ -398,11 +456,11 @@ class PartnerAction extends Action {
         $p->setConfig('last','<li style="width:55px;line-height:25px;text-align:center">末页</li>');
         /**************************************设置分页选项结束**************************************/
         //抽取数据
-        if(!empty($result)){
-            $voList = $result;
-        }else{
-            return array();
-        }
+        // if(!empty($result)){
+        //     $voList = $result;
+        // }else{
+        //     return array();
+        // }
        
         // $pages = C('PAGE');//要ajax分页配置PAGE中必须theme带%ajax%，其他字符串替换统一在配置文件中设置，
         // //可以使用该方法前用C临时改变配置
@@ -411,17 +469,22 @@ class PartnerAction extends Action {
         // }
         //分页显示
         $page = $p->show();
-        $linkPage = $page['linkPage'];
+        // $linkPage = $page['linkPage'];
         //模板赋值
-        $this->assign($listvar, $voList);
-        $this->assign("show", $page);
-        $this->assign('linkPage',$linkPage);
-        if ($this->isAjax()) {                //判断ajax请求
-            layout(false);
-            $template = (!$template) ? 'ajaxlist' : $template;
-            exit($this->fetch($template));
-        }
-        return $voList;
+
+        $result = array(
+            'show' =>$page,
+            );
+
+        // $this->assign($listvar, $voList);
+        // $this->assign("show", $page);
+        // $this->assign('linkPage',$linkPage);
+        // if ($this->isAjax()) {                //判断ajax请求
+        //     layout(false);
+        //     $template = (!$template) ? 'ajaxlist' : $template;
+        //     exit($this->fetch($template));
+        // }
+        return $result;
     }
 
 

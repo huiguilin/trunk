@@ -210,4 +210,16 @@ $(function(){
      });
     
 	//detail页面的js结束
+
+
+  $('#page_div_id a').click(function(event) {
+    var p =$(this).attr('page');
+    if(p != ""){
+        $.get(ajaxPostURL+'Partner/HandleAjaxPage',{ p:p }, function(data) {
+          alert(data.status);
+          
+       });
+    }
+    return false;
+  });
 })
