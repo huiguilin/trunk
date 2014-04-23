@@ -1254,7 +1254,11 @@ function window_change(){//用来计算top和left值的函数
 	// var jump_box_top = parseInt(($(window).height()-$('#top_nav_classification_box').height())/2);//计算top值
 	jump_box_left = parseInt(($(window).width()-$('#main').width())/2 - $('#top_nav_classification_box').width() - 10);//计算left值
  	// $('#top_nav_classification_box').css({'top':jump_box_top+'px','left':jump_box_left + 'px'})
- 	$('#top_nav_classification_box').css({'top':'194px','left':jump_box_left + 'px'})
+ 	$('#top_nav_classification_box').css({'top':'194px','left':jump_box_left + 'px'});
+
+ 	//计算右边浮动导航的Left
+ 	top_bottom_box_left = parseInt(($(window).width()+$('#main').width())/2 + $('div.right_back_top_bottom_box').width() - 75);
+ 	$('div.right_back_top_bottom_box').css('left', top_bottom_box_left+'px');
 }
 $(window).scroll( function() {
 	var n1 = parseInt($(window).scrollTop());
@@ -1265,4 +1269,26 @@ $(window).scroll( function() {
   		$('#top_nav_classification_box').css({'top':top+'px','left':jump_box_left+'px'});
   	}
   	
+ 	var n2 = parseInt($(window).height());
+    var n3 = parseInt($(document).height());
+    var middle_val = n3/2;
+    var middle_n2 = n2/2;
+    var flag = n1 + middle_n2;
+    if (flag > middle_val) {
+    	$('#back').attr('href', '#backtop').removeClass('backbottom').addClass('back');
+    	$('#back').hover(function() {
+    		$('#back').removeClass('backbottomhover').addClass('backtophover');
+    	
+    	}, function() {
+    		$('#back').removeClass('backbottomhover').removeClass('backtophover');
+    	});
+    }else{
+    	$('#back').attr('href', '#backbottom').removeClass('back').addClass('backbottom');
+    	$('#back').hover(function() {
+    		$('#back').removeClass('backtophover').addClass('backbottomhover');
+    	
+    	}, function() {
+    		$('#back').removeClass('backtophover').removeClass('backbottomhover');
+    	});
+    }
 });
