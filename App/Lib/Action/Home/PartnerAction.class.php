@@ -292,6 +292,7 @@ class PartnerAction extends Action {
         $page = $result['show'];
         $linkPage = $page['linkPage'];
         $this->assign("show", $page);
+        var_dump($list);exit;
         $this->assign('linkPage',$linkPage);
         $this->assign($listvar,$list);
 
@@ -319,6 +320,7 @@ class PartnerAction extends Action {
     public function HandleAjaxPage(){
             $param = array();
             $param['partner_id'] = $_SESSION['pid'];
+            $param['partner_id'] = 21;
 
             $partnerEvaluationHelper = M('Partner_evaluation','v_monkey_'); // 实例化Data数据对象
             import('ORG.Util.AjaxPage'); // 导入分页类
@@ -362,8 +364,42 @@ class PartnerAction extends Action {
                     'list' =>$list,
                 );
             }
+            $html = '<div class="evacontent_box">';
+            foreach ($data['list'] AS $key => $value) {
+                $rate = $value['rate']*20;
+            $html .= <<<HTML
+							<div class="evacontent">
+								<div class="evacontent_top">
+									<a class="username" href="#">{$value['nickname']}**{$value['createtime']}</a>
+									<span class="eva_rate_stars">
+										<span style="width: {$rate}%;"></span>
+									</span>
+								</div>
+								<p class="comment_desc">{$value['evaluation']}</p>
+								<p class="storename">{$value['couponname']}({$value['coupontitle']})</p>
+							</div>
+
+HTML;
+            }
+            $html .= "</div>";
+
+            $html .= <<<HTML
+            <div class="page_div" id="page_div_id">
+            <ul class="clearfix page_box">
+								{$data['result']['show']['first']}{$data['result']['show']['upPage']}
+HTML;
+foreach ($data['result']['show']['linkPage'] AS $key => $value) {
+    $html .= "<li>{$value}</li>";
+}
+
+$html .= <<<HTML
+{$data['result']['show']['downPage']}{$data['result']['show']['end']}
+            </ul>
+             </div>
+HTML;
+                                    echo $html;
+
         
-            $this->ajaxReturn($data);
     }
     private function cutCouponWords($info) {
         if (empty($info)) {
