@@ -13,9 +13,6 @@
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/M_countDownForSpecicalCoupon.js"></script>
 
 <title>惠校园首页 | 生活费终于够用了</title>
 <link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon"> 

@@ -11,10 +11,7 @@
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/partner.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/M_countDownForSpecicalCoupon.js"></script>
 </head>
 <body>
 <!-- 顶部订阅分享区域+Logo区域 -->

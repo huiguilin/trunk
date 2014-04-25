@@ -151,9 +151,6 @@ class CouponAction extends Action {
        $locationInfo = $helper->getLocationInfo($params);
        return $locationInfo;
     }
-
-
-
     public function specialCoupon(){
         $locationId = !empty($_GET['location']) ? $_GET['location'] : 0;
 
@@ -314,7 +311,7 @@ class CouponAction extends Action {
         if (empty($couponInfo)) {
             return TRUE;
         }
-
+       
         $time = date("Y-m-d H:i:s");
         $stime = date("Y-m-d H:i:s", strtotime("-2 day"));
         foreach ($couponInfo AS $key => $value) {
@@ -330,6 +327,7 @@ class CouponAction extends Action {
                  $couponInfo[$key]['Countdown_label'] = 0;
             }
         }
+        
         $catIds = $couponInfo[0]['cat_id'];
         $catHelper = new CategoryModel();
         $params = array(
@@ -399,7 +397,7 @@ class CouponAction extends Action {
            
 
         }
-     
+        
 
 
         $partnerHelper = new PartnerModel();
@@ -474,7 +472,7 @@ class CouponAction extends Action {
                 $labels = $key;
             }
         }
-        
+      
         $this->assign("coupon", $couponInfo[0]);
         $this->assign("other_coupon", $otherCoupons);
         $this->assign("partner", $partnerInfo[0]);

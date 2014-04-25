@@ -1,5 +1,9 @@
 $(function(){
-	
+
+/**************************************************************************
+     * Header部分js
+
+***************************************************************************/
 	//订阅Hover特效
 	$('#subscription').hover(function() {
 		$('#subscription_box').show();
@@ -32,9 +36,7 @@ $(function(){
 	}, function() {
 		$('#share_box').hide();
 	});
-	
-
-
+	//关注Hover特效结束
 	//我的惠桂林Hover效果
 	$('#person_center_menu').hover(function() {
 		$('#login_dropdownlist_box').show();
@@ -79,6 +81,7 @@ $(function(){
 		return false;
 	});
 	//点击订阅按钮提交验证结束
+	//左右学校导航收起和展开特效
 	$('#top_nav_classification_box ul li.expand').click(function(event) {
 		$('#top_nav_classification_box ul li').slideDown('fast');
 		$(this).hide();
@@ -89,8 +92,11 @@ $(function(){
 		$('#top_nav_classification_box ul li.expand').show();
 		return false;
 	});
+	//左右学校导航收起和展开特效结束
 
-	////////////////////////用户注册+用户登录+忘记密码特效全部代码区域////////////////////
+	/**************************************************************************
+     * 用户注册+用户登录+忘记密码特效全部代码区域
+	***************************************************************************/
 	//用户注册弹框效果
 	$('#Userreg').click(function(event) {
 		$('#Userreg_box').bPopup({
@@ -192,9 +198,7 @@ $(function(){
 		return false;
 		
 	});
-
 	//用户登录弹窗中所有验证结束
-
 	//用户登录验证码看不清特效
 	$('#Userlogin_box #u_middle_box  #vcode_not_clear').click(function(event) {
 		var imgsrc=$('#Userlogin_box #u_middle_box  #vcode_img').attr("src");
@@ -203,7 +207,6 @@ $(function(){
 		return false;
 	});
 	//用户登录验证码看不清特效结束
-
 	//忘记密码弹窗切换
 	$('#forgetpwd').click(function(event) {
 		$('#u_middle_box').css('display', 'none');
@@ -224,42 +227,6 @@ $(function(){
 		return false;
 	});
 	//忘记密码操作后返回登录界面结束
-	//忘记密码页面的验证
-	// $('#cellphone_send_btn').click(function(event) {
-	// 	var cellphone=$('#cellphone_no').val();
-	// 	if(cellphone ==""){
-	// 		$('#forgetpwd_hidebox01').css('display', 'block');
-	// 		$('#forgetpwd_hidebox01').text('请输入注册时填写的手机号码');
-	// 	}
-	// 	else{
-	// 		var reg= /^(1)[0-9]{10}$/;
-	// 		if(!reg.test(cellphone)){
-	// 			$('#forgetpwd_hidebox01').css('display', 'block');
-	// 			$('#forgetpwd_hidebox01').text('输入的手机号格式不正确，请重新输入');
-	// 		}else{
-	// 			alert('跳转到输入手机验证码页面');
-	// 		}
-	// 	}
-	// 	return false;
-	// });
-	// $('#email_send_btn').click(function(event) {
-	// 	var email=$('#email_no').val();
-	// 	if(email ==""){
-	// 		$('#forgetpwd_hidebox02').css('display', 'block');
-	// 		$('#forgetpwd_hidebox02').text('请输入注册时填写的邮箱地址');
-	// 	}
-	// 	else{
-	// 		var reg= /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
-	// 		if(!reg.test(email)){
-	// 			$('#forgetpwd_hidebox02').css('display', 'block');
-	// 			$('#forgetpwd_hidebox02').text('输入的邮箱格式不正确，请重新输入');
-	// 		}else{
-	// 			alert('跳转到邮箱地址页面');
-	// 		}
-	// 	}
-	// 	return false;
-	// });
-	
 	//验证用户修改密码信息以及执行修改
     $('#btn_modify').click(function(event) {
     	var password = $('#one').val();
@@ -287,9 +254,7 @@ $(function(){
     		return false;
     	}
     		$.post(ajaxPostURL+"User/modifyPwd", {password: password,password1: password1,checkCode: inputCode}, function(data) {
-    			// alert(ajaxPostURL+"User/modifyPwd");
-    			//alert(data.status);
-    			//alert(data.info);
+    		
     			if (data.status == 6) {
     				$('#hidden01').css('display','block');
     				$('#hidden01').text(data.info);
@@ -338,9 +303,7 @@ $(function(){
 			}else{
 
 				$.post(ajaxPostURL+"User/forgetPwd", {user_cellphone: cellphone}, function(data) {
-					/*optional stuff to do after success */
-					//alert(data.info);
-					//alert(cellphone);
+					
 					//判断手机号是否注册，没注册则不跳转到修改密码页面
 					if (data.status == 12) {
 						$('#forgetpwd_hidebox01').css('display', 'block');
@@ -360,25 +323,12 @@ $(function(){
 					}
 					
 				});
-				//alert("回调函数之外");
-
-					//忘记密码弹窗效果关闭
-				    //用户修改密码弹窗切换
-					// $('#u_middle_box').css('display', 'none');
-					// $('#u_bottom_box').css('display', 'none');
-					// $('#m_bottom_box').css('display','none');
-					// $('#UserForgetpwd_box').css('display', 'none');
-					// $('#Userlogin_box #u_top_box p').text("修改密码");
-					// $('#modify_pwd_box').css('display', 'block');
-				//alert('跳转到输入手机验证码页面');
 			}
 		}
 		return false;
 	});
 	$('#email_send_btn').click(function(event) {
-
 		var email=$('#email_no').val();
-		
 		if(email == ""){
 			$('#forgetpwd_hidebox02').css('display', 'block');
 			$('#forgetpwd_hidebox02').text('请输入注册时填写的邮箱地址');
@@ -412,23 +362,10 @@ $(function(){
 					}
 					
 				});
-				//alert("回调函数之外");
-
-					// //忘记密码弹窗效果关闭
-				    //用户修改密码弹窗切换
-					// $('#u_middle_box').css('display', 'none');
-					// $('#u_bottom_box').css('display', 'none');
-					// $('#m_bottom_box').css('display','none');
-					// $('#UserForgetpwd_box').css('display', 'none');
-					// $('#Userlogin_box #u_top_box p').text("修改密码");
-					// $('#modify_pwd_box').css('display', 'block');
 			}
 		}
 		return false;
 	});
-
-
-
 
 	//用户注册验证码看不清特效
 	$('#Userreg_box #u_bottom #email_box form #regemail_vcode_not_clear').click(function(event) {
@@ -445,26 +382,26 @@ $(function(){
 		if(cellphone.val() ==""){
 			$('#bingdingcellphone_No_hidden_tips').css('display', 'block');
 			$('#bingdingcellphone_No_hidden_tips').text('请输入手机号');
+			return false;
 		}else{
 			if(!reg.test(cellphone.val())){
 				$('#bingdingcellphone_No_hidden_tips').css('display', 'block');
 				$('#bingdingcellphone_No_hidden_tips').text('输入手机号格式不对');
+				return false;
 			}
 			else{
-				
                 $.post(ajaxPostURL+"User/sendCheckCode", { phone_number :cellphone.val()
                     },function(data){
                     //做个判断，返回成功执行下面的代码，跳转到注册成功页面
                    
                     if(data.status == 1){
-                   		$('#bingdingcellphone_No_hidden_tips').css('display', 'none');
-						$("#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #get_vcode").removeClass('special').addClass('special2').val('已发送');
-						$('#validate_vcode').removeClass('special2').addClass('special');
-						$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li p.errorTips').css('display', 'block');
-						$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #validate_vcode').removeAttr('disabled');
-                    }
+	                   		$('#bingdingcellphone_No_hidden_tips').css('display', 'none');
+							$("#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #get_vcode").removeClass('special').addClass('special2').val('已发送');
+							$('#validate_vcode').removeClass('special2').addClass('special');
+							$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li p.errorTips').css('display', 'block');
+							$('#Userreg_box #UserregSuccess_email #bindingcellphone_box ul li #validate_vcode').removeAttr('disabled');
+                    	}
                     },"json");
-
 			}
 		}
 	});
@@ -495,8 +432,14 @@ $(function(){
     $('#sendcode').click(function(event){
         var phone_number = $('#Userreg_box #u_bottom #cellphone_box form input.one').val();
 		var username =$('#Userlogin_box #u_middle_box form input.one').val();
+		var reg= /^(1)[0-9]{10}$/;
         if (phone_number == "") {
-            return;
+        	$('#Userreg_box #u_bottom #cellphone_box form p.tip_send_vcode').show().text('手机号码不能为空！');
+            return false;
+        }
+        if(!reg.test(phone_number)){
+        	 $('#Userreg_box #u_bottom #cellphone_box form p.tip_send_vcode').show().text('手机号码格式不正确！');
+        	return false;
         }
         var sta = 60;
         $(this).text("重新获取");
@@ -886,145 +829,14 @@ $(function(){
 			}
 		}	
 	});
-	
-
-	//密码复杂度判断结束
-	// $('#Userreg_box #u_bottom #email_box form input').focus(function(event) {
-	// 	var name= $(this).attr('name');
-
-	// 	if(name == "email"){
-	// 		$('#reg_hidebox01').removeClass();
-	// 		$('#reg_hidebox01').addClass('seven');
-	// 		$('#reg_hidebox01').text("用于登录和找回密码，不会公开").addClass('twelve');
-	// 	}
-	// 	else if(name == "pwd"){
-	// 		$('#reg_hidebox02').removeClass();
-	// 		$('#reg_hidebox02').addClass('eight');
-	// 		$('#reg_hidebox02').text("密码由6-20位的字母、数字或符号组成").addClass('twelve');
-	// 	}
-	// 	else if(name == "pwd2"){
-	// 		$('#reg_hidebox03').removeClass();
-	// 		$('#reg_hidebox03').addClass('nine');
-	// 		$('#reg_hidebox03').text("请再次输入密码").addClass('twelve');
-	// 	}
-	// 	else{
-	// 		$('#reg_hidebox04').removeClass();
-	// 		$('#reg_hidebox04').addClass('ten');
-	// 		$('#reg_hidebox04').text("昵称由1-16位的汉字、英文字母或数字组成").addClass('twelve');
-	// 	}
-
-	// });
-
-	// $('#Userreg_box #u_bottom #email_box form input').blur(function(event) {
-	// 	var name= $(this).attr('name');
-	// 	var value= $(this).val();
-	// 	if(value =="")
-	// 	{
-	// 		if(name == "email"){
-	// 			$('#reg_hidebox01').text("").removeClass();
-	// 			$('#reg_hidebox01').addClass('seven');
-	// 			$('#reg_hidebox01').text("请输入邮箱").addClass('eleven');
-	// 		}
-	// 		else if(name == "pwd"){
-
-	// 			$('#reg_hidebox02').text("").removeClass();
-	// 			$('#reg_hidebox02').addClass('eight');
-	// 			$('#reg_hidebox02').text("请输入密码").addClass('eleven');
-
-	// 		}
-	// 		else if(name == "pwd2"){
-	// 			$('#reg_hidebox03').text("").removeClass();
-	// 			$('#reg_hidebox03').addClass('nine');
-	// 			$('#reg_hidebox03').text("请输入确认密码").addClass('eleven');
-	// 		}
-	// 		else{
-
-	// 			$('#reg_hidebox04').text("").removeClass();
-	// 			$('#reg_hidebox04').addClass('ten');
-	// 			$('#reg_hidebox04').text("昵称至少1字符").addClass('eleven');
-	// 		}
-	// 	}
-	// 	else{
-	// 		if(name == "email"){
- // 				var reg= /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
- // 				if(!reg.test(value)){        
- //             		$('#reg_hidebox01').text("").removeClass();
-	// 				$('#reg_hidebox01').addClass('seven');
-	// 				$('#reg_hidebox01').text("请输入邮箱(邮箱的格式不正确)!").addClass('eleven');
-	// 	        }
-	// 	        else{
-	// 	           	$('#reg_hidebox01').text("OK").removeClass();
-	// 				$('#reg_hidebox01').addClass('seven');
-	// 				$('#reg_hidebox01').addClass('thirteen');
-
-	// 	        }   
-	// 		}
-	// 		else if(name == "pwd"){
-	// 			var reg = /^[a-z0-9_-]{6,20}$/;
-	// 			if(!reg.test(value)){     
- //             		$('#reg_hidebox02').text("").removeClass();
-	// 				$('#reg_hidebox02').addClass('eight');
-	// 				$('#reg_hidebox02').text("密码为6-20位字符（请输入密码）").addClass('eleven');
-	// 	        }
-	// 	        else{
-	// 	           	$('#reg_hidebox02').text("OK").removeClass();
-	// 				$('#reg_hidebox02').addClass('eight');
-	// 				$('#reg_hidebox02').addClass('thirteen');
-	// 	        }   
-	// 		}
-	// 		else if(name == "pwd2"){
-	// 			var pwd = $('#Userreg_box #u_bottom #email_box form input.two').val();
-	// 			var pwd2 = $('#Userreg_box #u_bottom #email_box form input.three').val();
-	// 			if(pwd != pwd2){
-	// 				$('#reg_hidebox03').text("").removeClass();
-	// 				$('#reg_hidebox03').addClass('nine');
-	// 				$('#reg_hidebox03').text("两次输入的密码不一致（请输入确认密码）").addClass('eleven');
-	// 			}
-	// 			else{
-	// 				$('#reg_hidebox03').text("OK").removeClass();
-	// 				$('#reg_hidebox03').addClass('nine');
-	// 				$('#reg_hidebox03').addClass('thirteen');
-	// 			}
-	// 		}
-	// 		else{
-
-	// 			// 昵称正则验证
-	// 		}
-	// 	}
-
-	// });
-	
-
-	
 	//用户邮箱注册页面验证结束
+	//登录弹窗和注册弹窗互相切换
 	$('#reg_now').click(function(event) {
 		$('#Userlogin_box').bPopup().close();
 		$('#Userreg_box').bPopup({
          
         });
         return false;
-		// var reg_zindex = $('#Userreg_box').css('z-index');
-		// var login_zindex = $('#Userlogin_box').css('z-index');
-		// var temp;
-		// if(reg_zindex == "auto" || login_zindex =="auto"){
-		// 	$('#Userreg_box').bPopup({
-  //          		modalClose: false,
-	 //        	opacity: 0.6,
-	 //        	position: [320, 15],//x, y  
-  //       	});
-        	
-		// }
-  // 		else{
-  // 			temp = reg_zindex;
-  // 			reg_zindex = login_zindex;
-  // 			login_zindex =temp;
-  // 			$('#Userlogin_box').css('z-index', login_zindex);
-  // 			$('#Userreg_box').css('z-index', reg_zindex);
-  // 			$('#Userreg_box').css('display', 'block');
-  // 			$('#Userlogin_box').css('display', 'none');
-  			
-  // 		}
-  // 		return false;
 	});
 
 	$('#login_now_cellphone').click(function(event) {
@@ -1032,26 +844,6 @@ $(function(){
 		$('#Userlogin_box').bPopup({
          
         });
-		// var reg_zindex = $('#Userreg_box').css('z-index');
-		// var login_zindex = $('#Userlogin_box').css('z-index');
-		// var temp;
-		// if(reg_zindex == "auto" || login_zindex =="auto"){
-		// 	$('#Userlogin_box').bPopup({
-  //          		modalClose: false,
-	 //        	opacity: 0.6,
-	 //        	position: [320, 15],//x, y  
-  //       	});
-        	
-		// }
-		// else{
-		// 	temp = reg_zindex;
-  // 			reg_zindex = login_zindex;
-  // 			login_zindex =temp;
-  // 			$('#Userlogin_box').css('z-index', login_zindex);
-  // 			$('#Userreg_box').css('z-index', reg_zindex);
-  // 			$('#Userreg_box').css('display', 'none');
-  // 			$('#Userlogin_box').css('display', 'block');
-		// }
   		return false;
 	});
 
@@ -1062,9 +854,7 @@ $(function(){
         });
   		return false;
 	});
-	//用户注册弹框效果结束
-	
-	//用户登录弹框关闭结束
+	//登录弹窗和注册弹窗互相切换结束
 	//邮箱注册注册button特效
 	$('#Userreg_box #u_bottom #email_box form #email_reg_btn').click(function(event) {
 		var tag = $(this).attr('tag');
@@ -1162,22 +952,9 @@ $(function(){
 		}
 		return false
 	});
-	//手机注册注册button特效结束
-
-	// ////////////////////////用户注册+用户登录+忘记密码特效全部代码区域结束////////////////////
-	////////////////////////手机版弹窗中的全部特效代码区域////////////////////////////////
-	//手机版弹窗效果
-	// $('#cellphone_version').click(function(event) {
-	// 	$('#cellphone_version_box').bPopup({
- //           	modalClose: false,
-	//         opacity: 0.6,
-	//         position: [250, 20],//x, y
- //        });
-	// 	// $('#cellphone_version_box').show();
-	// 	return false;
-	// });
-	//手机版弹窗效果结束
-
+	/**************************************************************************
+     * 手机版弹窗中的全部特效代码区域
+	***************************************************************************/
 	//手机APP弹窗区域中下载区域切换效果
 	$('#cellphone_version_box a.iphone').click(function(event) {
 		$(this).css('background-color', '#FABAC0');
@@ -1237,15 +1014,249 @@ $(function(){
 		$('#cellphone_version_box').bPopup().close();
 	});
 	//手机APP弹窗区域中关闭特效结束
-	////////////////////////手机版弹窗中的全部特效代码区域结束////////////////////////////
 
 
-	/////////学校导航特效
+
+	//学校导航特效
 	window_change();
 	$(window).resize(window_change);
 
 
+/**************************************************************************
+     * footer部分js
+     
+***************************************************************************/
+	//在线提交表单验证
+	$('#feedback_btn_submit').click(function(event) {
+		var username=$('#online_submit_username');
+		var cellphone=$('#online_submit_cellphone');
+		var content=$('#online_submit_content');
+		var type =$('#hidden_type_value')
+		if(username.val() == ""){
+			alert("请留下您的称呼!");
+			username.focus(); //获取焦点
+			return false;
+		}
+		else{
+			if(cellphone.val()==""){
+				alert('请留下您的联系方式！');
+				cellphone.focus(); //获取焦点
+				return false;
+			}
+			else{
+				if($.trim(content.val())==""){
+					alert('请留下您的意见！');
+					content.focus(); //获取焦点
+					return false;
+				}
+				else{
+					$.post(ajaxPostURL+'Intention/handle',{ nickname:username.val(),othercommunication:cellphone.val(),content:content.val(),type:type.val() }, function(returnData) {
+							if(returnData.status == 0){
+								alert(returnData.info);
+							}else if(returnData.status == 1){
+								$('#main #left_card p.three').css('display', 'block');
+								$('#online_submit_form').addClass('one');
+								$('#main #left_card form ul li input').val("");
+								$('#main #left_card form ul li textarea').val("");
+							}else if(returnData.status == 2){
+								alert(returnData.info);
+							}
+
+					},'json');
+					return false;
+				}
+			}
+		}
+	});
+	//在线提交表单验证结束
+	//商务合作意向表单验证
+	$('#intention_btn_submit').click(function(event) {
+		var intention_username =$('#intention_username');
+		var intention_cellphone =$('#intention_cellphone');
+		var intention_business =$('#intention_business');
+		var intention_content =$('#intention_contents');
+		var type =$('#hidden_type_value')
+		var intention_address = $('#intention_address');
+		var area = $('#intention_area option:selected');
+		var classification = $('#intention_classification option:selected');
+		if(intention_username.val() ==""){
+			alert('请留下您的姓名!');
+			intention_username.focus(); //获取焦点
+			return false;
+		}else{
+			if(intention_cellphone.val() == ""){
+				alert('请留下您的联系方式!');
+				intention_cellphone.focus(); //获取焦点
+				return false;
+			}else{
+				if(intention_business.val() ==""){
+					alert('请留下您公司名称');
+					intention_business.focus(); //获取焦点
+					return false;
+				}else{
+					if($.trim(intention_content.val())==""){
+						alert('请留下您的相关内容');
+						intention_content.focus(); //获取焦点
+						return false;
+					}
+					else{
+						$.post(ajaxPostURL+'Intention/handle',{ nickname:intention_username.val(),cellphone:intention_cellphone.val(),content:intention_content.val(),type:type.val(),shopname: intention_business.val(),companyaddress:intention_address.val(),area:area.val(),classification:classification.val()}, function(returnData) {
+							if(returnData.status == 0){
+								alert(returnData.info);
+							}else if(returnData.status == 1){
+								alert('提交成功！')
+								$('#main #left_card p.three').css('display', 'block');
+								$('#intention_sumbit_form').addClass('one');
+								$('#main #left_card form ul li input').val("");
+								$('#main #left_card form ul li textarea').val("");
+							}else if(returnData.status == 2){
+								alert(returnData.info);
+							}
+
+						},'json');
+						return false;
+					}
+				}
+			}
+		}
+		
+	});
+	//商务合作意向表单验证结束
+	//用户推荐合作意向表单验证
+	$('#recommend_btn_submit').click(function(event) {
+		var recommend_username =$('#recommend_username');
+		var recommend_cellphone =$('#recommend_cellphone');
+		var recommend_business =$('#recommend_business');
+		var recommend_address =$('#recommend_address');
+		var recommend_product =$('#recommend_product');
+		var recommend_content =$('#recommend_content');
+		var recommend_address =$('#recommend_address');
+		var recommend_product =$('#recommend_product');
+		var classification = $('#recommend_classification option:selected');
+		var type =$('#hidden_type_value')
+		if(recommend_username.val() ==""){
+			alert('请留下您的姓名!');
+			recommend_username.focus(); //获取焦点
+			return false;
+		}else{
+			if(recommend_cellphone.val() == ""){
+				alert('请留下您的联系方式!');
+				recommend_cellphone.focus(); //获取焦点
+				return false;
+			}else{
+				if(recommend_business.val() ==""){
+					alert('请填写推荐商户名称');
+					recommend_business.focus(); //获取焦点
+					return false;
+				}else{
+					if(recommend_address.val() ==""){
+						alert('请填写推荐商户的店面地址');
+						recommend_address.focus(); //获取焦点
+						return false;
+					}
+					else{
+						if(recommend_product.val() ==""){
+							alert('请填写推荐特色产品的名称');
+							recommend_product.focus(); //获取焦点
+							return false;
+						}
+						else{
+							if($.trim(recommend_content.val())==""){
+								alert('请填写相关备注信息1');
+								recommend_content.focus(); //获取焦点
+								return false;
+							}
+							else{
+								$.post(ajaxPostURL+'Intention/handle',{ nickname:recommend_username.val(),cellphone:recommend_cellphone.val(),content:recommend_content.val(),type:type.val(),shopname: recommend_business.val(),specialproduct:recommend_product.val(),companyaddress:recommend_address.val(),classification:classification.val()}, function(returnData) {
+										if(returnData.status == 0){
+											alert(returnData.info);
+										}else if(returnData.status == 1){
+											$('#main #left_card p.three').css('display', 'block');
+											$('#recommend_sumbit_form').addClass('one');
+											$('#main #left_card form ul li input').val("");
+											$('#main #left_card form ul li textarea').val("");
+										}else if(returnData.status == 2){
+											alert(returnData.info);
+										}
+								},'json');
+								return false;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+	});
+	//用户推荐合作意向表单验证结束
+	
+/**************************************************************************
+     * 全局Search页面js
+
+***************************************************************************/
+	//搜索位置信息隐藏特效
+	$('#main #coupon_box ul.coupon_content li').hover(function() {
+		$(this).find('p.hidden_location').show();
+	}, function() {
+		$(this).find('p.hidden_location').hide();
+	});
+	//搜索位置信息隐藏特效结束
+	var hidden_type_value = $('#hidden_type_value').val();
+	$('#coupon_box').css('height', hidden_type_value);
+
+	
+
+
+/**************************************************************************
+     * 发送优惠券到手机通用js
+
+***************************************************************************/
+	$('#closed_download_coupon_hidden_box').click(function(event) {
+    	$('#download_coupon_hidden_box').bPopup().close();
+    	
+    });
+    //点击下载手机优惠劵弹窗中验证码看不清特效
+	$('#send_to_phone_vcode_not_clear').click(function(event) {
+		var imgsrc=$('#download_coupon_hidden_box div.middle_content_box ul li img').attr("src");
+		imgsrc = imgsrc+ "/" + Math.random();
+		$('#download_coupon_hidden_box div.middle_content_box ul li img').attr("src",imgsrc);
+		return false;
+	});
+	//点击下载手机优惠劵弹窗中验证码看不清特效结束
+	//关闭发送成功弹窗
+	$('#close_middle_content_box_success').click(function(event) {
+    	$('#download_coupon_hidden_box').bPopup().close();
+    	
+    });
+	//关闭发送成功弹窗结束
 })
+
+
+
+/**************************************************************************
+     * 全局函数和变量
+
+***************************************************************************/
+
+//Ajax提交URL全局变量
+var ajaxPostURL = "http://localhost/trunk/index.php/";
+//登录成功跳转URL全部变量
+var loginSucessURL = "http://localhost";
+
+//Ajax提交URL和登录成功跳转URL
+// var Current_URL = window.location.href;
+// var ajaxPostURL;
+// var loginSucessURL;
+// Current_URL=Current_URL.substr(7,1);//截取从首个字符开始的15个字符 
+// if(Current_URL == "w" || Current_URL == "W"){
+// 	ajaxPostURL = "http://www.huixiaoyuan.com/index.php/";
+// 	loginSucessURL = "http://www.huixiaoyuan.com";
+// }else{
+// 	ajaxPostURL = "http://huixiaoyuan.com/index.php/";
+// 	loginSucessURL = "http://huixiaoyuan.com";
+// }
+//Ajax提交URL和登录成功跳转URL结束
+
 
 
 var jump_box_left;
@@ -1292,3 +1303,55 @@ $(window).scroll( function() {
     	});
     }
 });
+
+//优惠券天，小时，分，秒倒计时函数
+function Test(dayid, hourid, minid, secid) {
+    var day = parseInt($('#' + dayid).text());
+    var hour = parseInt($('#' + hourid).text());
+    var min = parseInt($('#' + minid).text());
+    var sec = parseInt($('#' + secid).text());
+    var ctimer = setInterval(countdown, 1000);
+
+	function countdown(){
+		if(sec != 0){
+			sec--;
+			changeSec(sec,secid);
+		}else{
+			if(min != 0){
+				min--;
+				changeMin(min,minid);
+				sec = 60;
+				changeSec(sec,secid);
+			}else{
+				if(hour != 0 ){
+					hour--;
+					changeHr(hour,hourid);
+					min = 60;
+					changeSec(sec,secid);
+				}else{
+					if(day != 0){
+						day--;
+						changeDay(day,dayid);
+						hour = 24;
+						changeSec(sec,secid);
+					}else{
+						clearInterval(ctimer);
+					}
+				}
+			}
+		}
+	}
+	 function changeSec(sec, secid) {
+        $('#' + secid).text(sec);
+    }
+    function changeMin(min, minid) {
+        $('#' + minid).text(min);
+    }
+    function changeHr(hour, hourid) {
+        $('#' + hourid).text(hour);
+    }
+    function changeDay(day, dayid) {
+        $('#' + dayid).text(day);
+    }
+}
+

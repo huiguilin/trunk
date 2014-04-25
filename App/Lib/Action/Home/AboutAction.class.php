@@ -4,7 +4,6 @@ class AboutAction extends Action {
 	public function _empty($name){
         $this->error("非法提交！");
     }
-
     public function about(){
 		$this->display();
     }

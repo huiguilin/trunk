@@ -11,10 +11,6 @@
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/coupon.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
-
-
 <title>校园优惠券 | 惠校园</title>
 </head>
 <body>

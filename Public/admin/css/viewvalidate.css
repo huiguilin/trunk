@@ -111,9 +111,6 @@
 	margin-right: 3px;
 	border:1px solid #E3E3E3;
 }
-#main #right_content_box div.function_content_box div.coupon_detail_box ul.page_box li.one{
-	width: 50px;
-}
 #main #right_content_box div.function_content_box div.coupon_detail_box ul.page_box li a{
 	display: block;
 	height: 25px;
@@ -122,10 +119,6 @@
 	color: #666;
 	font-style: 微软雅黑;
 	text-align: center;
-}
-#main #right_content_box div.function_content_box div.coupon_detail_box ul.page_box li a.one{
-	width: 50px;
-	font-weight: bold;
 }
 #main #right_content_box div.function_content_box div.coupon_detail_box ul.page_box li a.red{
 	background: #EB5B4C;

@@ -43,37 +43,23 @@ class ValidateManagementAction extends Action {
         $params['hash_key'] = 'coupon_id';
         $couponInfo = $couponHelper->getCoupon($params);
         $couponIds = implode(',', DataToArray($couponInfo, 'coupon_id'));
-        // $pageSize = 10;
-        // $offset = $page * $pageSize;
-        // $params = array(
-        //     'coupon_id' => $couponIds,
-        //     'partner_id' => $user['partner_id'],
-        //     'limit' => "{$offset},{$pageSize}",
-        //     //TBC
-        //     'status' => 0,
-        // );
-        // $userCouponHelper = D('Home/UserCoupon');
-        // $coupon = $userCouponHelper->getUserCoupon($params);
 
         //分页
-        $pageHelper = D('Home/Page');
-        $pageNow = !empty($_GET['pageNow']) ? $_GET['pageNow'] : 1;
-        $pageHelper->pageNow = $pageNow;
-
-        $pageHelper->pageSize = 5;
-        $pageHelper->order = "coupon_id desc";
-        $pageHelper->countTerm = $user['partner_id'];
+        $nowPage = isset($_GET['p'])?$_GET['p']:1;
+        $userCouponHelper = M('User_coupon','t_monkey_');
+        import('ORG.Util.Page'); // 导入分页类
         $map['coupon_id'] = array('in',$couponIds);
         $map['partner_id'] = array('in',$user['partner_id']);
-        $map['status'] = array('in','0');
-        $pageHelper->map = $map;
-        $coupon = $pageHelper->getPages("t_monkey_user_coupon");
-        $pageAll = $pageHelper->pageAll;
-        $url = "/index.php/admin/ValidateManagement/viewvalidate";
-        $pageArrayInfo = homePage(3,$pageAll,$pageNow,$url,'','');
-        $pageArrayInfo['url'] = $url;
-
-
+        $map['status'] = array('eq','0');
+        $count = $userCouponHelper->where($map)->count(); // 查询满足要求的总记录数
+        $Page = new Page($count,6); // 实例化分页类 传入总记录数
+        $Page->setConfig('next','<li style="width:55px;line-height:25px;text-align:center">下一页</li>');
+        $Page->setConfig('prev','<li style="width:55px;line-height:25px;text-align:center">上一页</li>');
+        $Page->setConfig('first','<li style="width:55px;line-height:25px;text-align:center">首页</li>');
+        $Page->setConfig('last','<li style="width:55px;line-height:25px;text-align:center">末页</li>');
+        $coupon = $userCouponHelper->where($map)->page($nowPage.','.$Page->listRows)->select();
+        $show = $Page->show(); // 分页显示输出
+        $linkPage = $show['linkPage'];
 
         $coupon = mergeData($coupon, $couponInfo, 'coupon_id', 'coupon_id');
        
@@ -86,9 +72,8 @@ class ValidateManagementAction extends Action {
         $this->assign('coupon_info',$coupon);
         $this->assign('couponTypes',$couponType);
         $this->assign('couponids',$couponId);
-        $this->assign("pageAll",$pageAll);
-        $this->assign("pageNow",$pageNow);
-        $this->assign("pageArrayInfo",$pageArrayInfo);
+        $this->assign('show',$show);
+        $this->assign('linkPage',$linkPage);
 		$this->display();
     }
     //用优惠券码获得优惠券对应的信息

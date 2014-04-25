@@ -5,7 +5,7 @@ class SitemapAction extends Action {
         $this->error("非法提交！");
     }
     public function sitemap(){
-	$this->display();
+	   $this->display();
     }
 
     //生成sitemap
@@ -41,7 +41,7 @@ class SitemapAction extends Action {
         }
 
         $sitemap .= '</urlset>';
-        $file = fopen(__DIR__ . "/../../../../sitemapone.xml","w+");
+        $file = fopen("./sitemapone.xml","w+");
         fwrite($file,$sitemap);    fclose($file);
         return TRUE;
         }

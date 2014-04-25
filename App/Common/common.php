@@ -12,29 +12,12 @@ function mergeData($cmsInfo, $info, $key, $cmsKey = 'id') {
     }
     return $result;
 }
-
-function getPageInfo($count, $url, $nowPage = 0, $pageSize = 10) {
-    $pageArray = array();
-    $pageArray['count_number'] = $count;
-    $pageArray['page'] = (int) ($count / $pageSize);
-    $pageArray['url'] = $url;
-    $pageArray['now_page'] = $nowPage;
-    $pageArray['front_url'] = !empty($nowPage) ? $url . "&page=" . ($nowPage - 1) : $url . "&page=0";
-    $pageArray['first_url'] = $url . "&page=0";
-    $pageArray['next_url'] = $nowPage == $pageArray['page'] ? $url . "&page=" . $nowPage: $url . "&page=" . ($nowPage + 1);
-    $pageArray['last_url'] = $url . "&page={$pageArray['page']}";
-    $links = array();
-    for($i = 0; $i <= $page; $i ++) {
-        $link = array();
-        $link['url'] = $url . "&page=$i";
-        $link['is_red'] = $page == $i ? 1 : 0;
-        $link['i'] = $i+1;
-        $links[] = $link;
-    }
-    $pageArray['links'] = $links;
-    return $pageArray;
-}
-
+/**********************************************************************
+     * 发送短信函数，发送短信函数,发送成功返回$result的值中result为1
+     * @param string $phoneNumber  手机号码
+     * @param string $text  发送短信内容
+     * @param int $timeout  延时
+***************************************************************************/
 function sendCodeToMobile($phoneNumber, $text, $timeout = 10) {
     $result = array(
         'data' => 0,
@@ -54,9 +37,6 @@ function sendCodeToMobile($phoneNumber, $text, $timeout = 10) {
     $dom->loadXML($info);
     $result = getArray($dom->documentElement);
     return $result;
-    #$info = xml_to_array($info);
-    #$info = json_encode($info, TRUE);
-    return $info;
 }
 
 
@@ -82,18 +62,13 @@ function getArray($node){
     }
     return $array;
 }
-
-function xml_to_array($xml) 
-{ 
-    $array = (array)(simplexml_load_string($xml)); 
-    foreach ($array as $key=> $item){ 
-        $array[$key]  =  struct_to_array((array)$item); 
-    } 
-    return $array; 
-} 
-
-function sendEmail($mail,$content,$subject) {
-        
+/**********************************************************************
+     * 发送邮件函数，发送成功返回1，失败返回0
+     * @param string $mail  邮箱地址
+     * @param string $content  邮件正文
+     * @param string $subject  邮件主题
+*************************************************************************/
+function sendEmail($mail,$content,$subject) {    
     import('ORG.Email');
     $data['mailto'] = $mail;
     $data['subject'] = $subject;
@@ -102,12 +77,15 @@ function sendEmail($mail,$content,$subject) {
     if ($mail->send($data)) {
         return 1;
     } else {
-        echo 'false<br>';
         return 0;
     }
     return 1;
 }
-
+/*************************************************************************
+     * 计算两个时间戳差值函数，返回Day,Hour,Min,Sec的值，用于计算倒计时
+     * @param strtotime $begin_time  开始时间
+     * @param strtotime $end_time  结束时间
+***************************************************************************/
 function timediff($begin_time,$end_time){
       if($begin_time < $end_time){
          $starttime = $begin_time;
@@ -126,40 +104,4 @@ function timediff($begin_time,$end_time){
       $secs = $remain%60;
       $res = array("day" => $days,"hour" => $hours,"min" => $mins,"sec" => $secs);
       return $res;
-}
-//分配给前台显示
-function homePage($page_whole,$pageAll,$pageNow,$url,$sortName='',$sortValue=''){
-    $start = floor(($pageNow-1)/$page_whole)*$page_whole+1;
-    if ($pageNow > $page_whole) {
-       $previou = $start-1;
-       /*
-        *整体向后翻页变量，每次整体向后翻$page_whole页
-       */
-        $previous = "<li><a href='$url?pageNow=$previou&$sortName=$sortValue'><</a></li>";
-    }else{
-        $previous = "<li><a href='$url?pageNow=1&$sortName=$sortValue'><</a></li>";
-    }
-    if (($pageAll - $pageNow) <= $page_whole) {
-        $nexts = "<li><a href='javascript:;'>></a></li>";
-    }else{
-        $next = $start+$page_whole;
-        /*
-        *整体向前翻页变量，每次整体向前翻$page_whole页
-       */
-        $nexts = "<li><a href='$url?pageNow=$next&$sortName=$sortValue'>></a></li>";
-    }
-    if ($pageAll <= $page_whole) {
-        $end = $pageAll + 1;  //$end为前台打印页码变量，for循环结束值
-    }else if($pageAll == $pageNow){
-        $end = $pageAll + 1;
-    }
-    else{
-        $end = $start+$page_whole;
-    }
-    $pageArray = array();
-    $pageArray['start'] = $start;  //$start为前台打印页码变量，for循环开始值
-    $pageArray['previous'] = $previous;
-    $pageArray['nexts'] = $nexts;
-    $pageArray['end'] = $end;
-    return $pageArray;
 }

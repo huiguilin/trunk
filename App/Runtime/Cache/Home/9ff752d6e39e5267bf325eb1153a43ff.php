@@ -10,10 +10,7 @@
 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/bPopup.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/header.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/config.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/M_sendCouponToCellphone.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/specialcoupon.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/M_countDownForSpecicalCoupon.js"></script>
 
 
 <title>限时优惠券 | 惠校园</title>
