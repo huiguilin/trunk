@@ -13,7 +13,7 @@
 class AjaxPage {
 
     // 分页栏每页显示的页数
-    public $rollPage = 10;
+    public $rollPage = 5;
     // 页数跳转时要带的参数
     public $parameter;
     // 默认列表每页显示行数
@@ -104,13 +104,13 @@ class AjaxPage {
         $upRow = $this->nowPage - 1;
         $downRow = $this->nowPage + 1;
         if ($upRow > 0) {
-            $upPage = "<a href='" . $url . "&" . $p . "=$upRow".$this->anchor."'>" . $this->config['prev'] . "</a>";
+            $upPage = "<a page = $upRow href='" . $url . "&" . $p . "=$upRow'>" . $this->config['prev'] . "</a>";
         } else {
             $upPage = "";
         }
 
         if ($downRow <= $this->totalPages) {
-            $downPage = "<a href='" . $url . "&" . $p . "=$downRow".$this->anchor."'>" . $this->config['next'] . "</a>";
+            $downPage = "<a page = $downRow href='" . $url . "&" . $p . "=$downRow'>" . $this->config['next'] . "</a>";
         } else {
             $downPage = "";
         }
@@ -121,7 +121,7 @@ class AjaxPage {
         } else {
             $preRow = $this->nowPage - $this->rollPage;
             $prePage = "<a href='" . $url . "&" . $p . "=$preRow' >上" . $this->rollPage . "页</a>";
-            $theFirst = "<a href='" . $url . "&" . $p . "=1' >" . $this->config['first'] . "</a>";
+            $theFirst = "<a page = 1 href='" . $url . "&" . $p . "=1' >" . $this->config['first'] . "</a>";
         }
         if ($nowCoolPage == $this->coolPages) {
             $nextPage = "";
@@ -130,7 +130,7 @@ class AjaxPage {
             $nextRow = $this->nowPage + $this->rollPage;
             $theEndRow = $this->totalPages;
             $nextPage = "<a href='" . $url . "&" . $p . "=$nextRow' >下" . $this->rollPage . "页</a>";
-            $theEnd = "<a href='" . $url . "&" . $p . "=$theEndRow' >" . $this->config['last'] . "</a>";
+            $theEnd = "<a page = $theEndRow href='" . $url . "&" . $p . "=$theEndRow' >" . $this->config['last'] . "</a>";
         }
         // 1 2 3 4 5
         $linkPage = array();
@@ -138,44 +138,19 @@ class AjaxPage {
             $page = ($nowCoolPage - 1) * $this->rollPage + $i;
             if ($page != $this->nowPage) {
                 if ($page <= $this->totalPages) {
-                    // $linkPage[] = "&nbsp;<a href='" . $url . "&" . $p . "=$page'>&nbsp;" . $page . "&nbsp;</a>";
-                    $linkPage[] = "<a page = $page href='" . $url . "&" . $p . "=$page".$this->anchor."'>" . $page . "</a>";
+                   
+                    $linkPage[] = "<a page = $page href='" . $url . "&" . $p . "=$page'>" . $page . "</a>";
                 } else {
                     break;
                 }
             } else {
                 if ($this->totalPages != 1) {
-                    // $linkPage[] = "&nbsp;<span class='current'>" . $page . "</span>";
+                   
                     $linkPage[] = "<a class='red'>" . $page . "</a>";
                 }
             }
         }
-        //<script>jquery分页</script>
-        $ajax = '';
-        if($this->target){
-            $ajax = <<<eco
-   <script>
-       jQuery(function($) {
-            $('#{$this->pagesId} a').click(function(){
-                $.ajax({
-                    url: $(this).attr('href'),
-                    dataType: "html",
-                    type: "GET",
-                    cache: false,
-                    success: function(html){
-                        $("#{$this->target}").html(html);
-                    }
-                });
-                return false;
-            });
-       });
-   </script>
-eco;
-        }
-        // $pageStr = str_replace(
-        //     array('%header%','%nowPage%','%totalRow%','%totalPage%','%upPage%','%downPage%','%first%','%prePage%','%linkPage%','%nextPage%','%end%','%ajax%'),array($this->config['header'],$this->nowPage, $this->totalRows, $this->totalPages,$upPage,$downPage, $theFirst,$prePage,$linkPage,$nextPage,$theEnd,$ajax), $this->config['theme']
-        // );
-        // return $pageStr;   /*原类返回变量*/
+      
 
          //自定义内容
         $pageArrInfo = array(

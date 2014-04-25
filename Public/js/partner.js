@@ -176,16 +176,17 @@ $(function(){
      });
     
 	//detail页面的js结束
-
-
-  $('#page_div_id a').click(function(event) {
+$('#page_div_id a').live('click',function(event) {
+    
     var p =$(this).attr('page');
-    if(p != ""){
+     if(p != ""){
         $.get(ajaxPostURL+'Partner/HandleAjaxPage',{ p:p }, function(data) {
-          alert(data.status);
-          
+          if(data.status == 1){
+            $('#main #alleva_box').html(data.html); //替换相关HTML代码
+          }
        });
     }
     return false;
-  });
+});
+
 })

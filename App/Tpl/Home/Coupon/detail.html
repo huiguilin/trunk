@@ -216,7 +216,7 @@
 								<li><a href="">评分</a></li>
 							</ul>
 						</div>
-						<ul class="comment_ul">
+						<ul class="comment_ul" id="comment_ul">
                         <foreach name="evaluation" item="eva">
                       		<?php 
 								$rate_vaule = $eva['rate'];
@@ -229,16 +229,8 @@
 							</li>
                         </foreach>
 						</ul>
-						<!-- <ul class="page_box clearfix">
-							<li><a href="" class="one">首页</a></li>
-							<li><a href=""><</a></li>
-							<li><a href="" class="red">1</a></li>
-							<li><a href="">2</a></li>
-							<li><a href="">3</a></li>
-							<li><a href="">></a></li>
-							<li><a href="" class="one">尾页</a></li>
-						</ul> -->
-						<div class="page_div">
+						
+						<div class="page_div" id="page_div_id">
 							<ul class="clearfix page_box">
 								{$show.first}{$show.upPage}<foreach name="linkPage" item="lp"><li>{$lp}</li></foreach>{$show.downPage}{$show.end}
 							</ul>

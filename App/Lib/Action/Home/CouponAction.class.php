@@ -298,6 +298,7 @@ class CouponAction extends Action {
             return TRUE;
         }
         $ids = (int)$_GET['_URL_'][2];
+        $_SESSION['cid'] = $ids;
         if ($ids > 0) {
             $ids = array($ids);
         }
@@ -426,11 +427,8 @@ class CouponAction extends Action {
         import('ORG.Util.AjaxPage'); // 导入分页类
         $listvar = "evaluation";
         $listRows = 10;
-        $target = "all_comment";
-        $pagesId = "page_div";
         $templateName = "Coupon:detail";
         $nowPage = isset($_GET['p'])?$_GET['p']:1;
-        // $Page->url = "coupon/detail/cid/".$couponInfo[0]['coupon_id']."/p/";
         $map['coupon_id'] = array('in',$couponInfo[0]['coupon_id']);
         $totalRows      = $helper->where($map)->count(); // 查询满足要求的总记录数
         $eInfo = $helper->where($map)->page($nowPage.','.$listRows)->select(); 
@@ -451,6 +449,7 @@ class CouponAction extends Action {
         $userHelper = new UserProfileModel();
         $userInfo = $userHelper->getUserProfileByUserId($userId);
         $eInfo = $this->mergeData($eInfo, $userInfo, 'user_id', 'user_id');
+        $_SESSION['pname'] = $partnerInfo[0]['name'];
 
          $param = array(
             'result'    =>$eInfo,                     //分页用的数组或sql
@@ -462,7 +461,12 @@ class CouponAction extends Action {
             'template'  =>$templateName,        //ajax更新模板
            
         );
-         $this->do_getPageInfo($param);
+        $result = $this->do_getPageInfo($param);
+        $page = $result['show'];
+        $linkPage = $page['linkPage'];
+        $this->assign("show", $page);
+        $this->assign('linkPage',$linkPage);
+        $this->assign($listvar,$eInfo);
 
         //获取优惠券分类标签
         $labels = $this->labelType;
@@ -477,7 +481,7 @@ class CouponAction extends Action {
         $this->assign("other_coupon", $otherCoupons);
         $this->assign("partner", $partnerInfo[0]);
         $this->assign("partnerInfo", json_encode($partnerInfo[0]));
-       
+        
         $this->assign("cat_info", $catInfo[0]);
         $this->assign("label_info", $labels);
         $this->assign("partnerPictures",$partnerPictureInfo);
@@ -492,7 +496,135 @@ class CouponAction extends Action {
     
         $this->display();
     }
+     public function HandleAjaxPage(){
+            $param = array();
+            $param['coupon_id'] = $_SESSION['cid'];
+            
 
+            $couponEvaluationHelper = M('Coupon_evaluation','t_monkey_'); // 实例化Data数据对象
+            import('ORG.Util.AjaxPage'); // 导入分页类
+            // $listvar = "partnerComments";
+            $listRows = 10;
+            $templateName = "Coupon:detail";
+            $nowPage = isset($_GET['p'])?$_GET['p']:1;
+            $map['coupon_id'] = array('in',$param);
+            $totalRows = $couponEvaluationHelper->where($map)->count(); // 查询满足要求的总记录数
+            $eInfo = $couponEvaluationHelper->where($map)->page($nowPage.','.$listRows)->select();
+           
+            $param = array(
+                'result'    =>$eInfo,                     //分页用的数组或sql
+                'listvar'   =>$listvar,                 //分页循环变量
+                'totalRows' =>$totalRows,                    
+                'listRows'  =>$listRows,               //每页记录数
+                'target'    =>$target,                //ajax更新内容的容器id，不带#
+                'pagesId'   =>$pagesId,              //分页后页的容器id不带#target和pagesId同时定义才Ajax分页
+                'template'  =>$templateName,        //ajax更新模板
+            );
+            $result = $this->do_getPageInfo($param);
+            $userId = DataToArray($eInfo, 'user_id');
+            $userHelper = new UserProfileModel();
+            $userInfo = $userHelper->getUserProfileByUserId($userId);
+            $eInfo = $this->mergeData($eInfo, $userInfo, 'user_id', 'user_id');
+            if(empty($result)){
+                $data = array(
+                    'status' => 0,
+                    'info' => '结果集为空！'
+                );
+                $this->ajaxReturn($data);   
+            }else{
+                 $data = array(
+                    'status' => 1,
+                    'info' => '分页成功！',
+
+                );
+            }
+            $html = '<ul class="comment_ul">';
+            foreach ($eInfo AS $key => $value) {
+
+            $rate = $value['rate']*20;
+            $html .= <<<HTML
+                           <li>
+                                <p class="one">{$value['nickname']}
+                                    <a class="red">@{$_SESSION['pname']}</a>
+                                    <span>{$value['createtime']}</span>
+                                    <span class="rate_stars">
+                                        <span style="width: {$rate}%;"></span>
+                                    </span>
+                                </p>
+                                <p class="two">{$value['evaluation']}</p>
+                            </li>
+HTML;
+            }
+
+            $html .= "</ul>";
+
+            $html .= <<<HTML
+            <div class="page_div" id="page_div_id">
+            <ul class="clearfix page_box">
+                                {$result['show']['first']}{$result['show']['upPage']}
+HTML;
+foreach ($result['show']['linkPage'] AS $key => $value) {
+    $html .= "<li>{$value}</li>";
+}
+
+$html .= <<<HTML
+{$result['show']['downPage']}{$result['show']['end']}
+            </ul>
+             </div>
+HTML;
+                
+
+             $data['html'] = $html;
+             $this->ajaxReturn($data);  
+            
+        
+    }
+    /**
+     *+----------------------------------------------------------
+     * 分页函数 支持sql和数据集分页 sql请用 buildSelectSql()函数生成
+     *+----------------------------------------------------------
+     * @access public
+     *+----------------------------------------------------------
+     * @param array   $result 排好序的数据集或者查询的sql语句
+     * @param int       $totalRows  每页显示记录数 默认21
+     * @param string $listvar    赋给模板遍历的变量名 默认list
+     * @param string $parameter  分页跳转的参数
+     * @param string $target  分页后点链接显示的内容id名
+     * @param string $pagesId  分页后点链接元素外层id名
+     * @param string $template ajaxlist的模板名
+     * @param string $url ajax分页自定义的url
+     * @param string $tabePrefix需要操作查询的表前缀
+     * @param string $tableName需要操作查询的数据表名
+     *+----------------------------------------------------------
+     */
+   function do_getPageInfo($param = array()) {
+        extract($param);
+        import("ORG.Util.AjaxPage");
+        //总记录数
+        $listvar   = $listvar ? $listvar : 'list';
+        $listRows  = $listRows ? $listRows : 21;
+        $totalRows = $totalRows ? $totalRows : 1;
+        //创建分页对象
+        if ($target && $pagesId)
+            $p = new AjaxPage($totalRows, $listRows, $parameter, $target, $pagesId);
+        else
+            $p = new AjaxPage($totalRows, $listRows, $parameter);
+        /*
+        *设置分页输出选项
+        */
+        $p->setConfig('next','<li style="width:55px;line-height:25px;text-align:center">下一页</li>');
+        $p->setConfig('prev','<li style="width:55px;line-height:25px;text-align:center">上一页</li>');
+        $p->setConfig('first','<li style="width:55px;line-height:25px;text-align:center">首页</li>');
+        $p->setConfig('last','<li style="width:55px;line-height:25px;text-align:center">末页</li>');
+        /**************************************设置分页选项结束**************************************/
+        //分页显示
+       $page = $p->show();
+        $result = array(
+            'show' =>$page,
+            );
+
+        return $result;
+    }
 
     private function getEvaluation($eInfo) {
         if (empty($eInfo)) {
@@ -772,78 +904,6 @@ class CouponAction extends Action {
         $this->assign('couponInfo',$res_couponInfo);
         $this->assign('couponUseRule',$couponUseRule);
         $this->display();
-    }
-
-    /**
-     *+----------------------------------------------------------
-     * 分页函数 支持sql和数据集分页 sql请用 buildSelectSql()函数生成
-     *+----------------------------------------------------------
-     * @access public
-     *+----------------------------------------------------------
-     * @param array   $result 排好序的数据集或者查询的sql语句
-     * @param int       $totalRows  每页显示记录数 默认21
-     * @param string $listvar    赋给模板遍历的变量名 默认list
-     * @param string $parameter  分页跳转的参数
-     * @param string $target  分页后点链接显示的内容id名
-     * @param string $pagesId  分页后点链接元素外层id名
-     * @param string $template ajaxlist的模板名
-     * @param string $url ajax分页自定义的url
-     * @param string $tabePrefix需要操作查询的表前缀
-     * @param string $tableName需要操作查询的数据表名
-     *+----------------------------------------------------------
-     */
-   function do_getPageInfo($param = array()) {
-        extract($param);
-        import("ORG.Util.AjaxPage");
-        //总记录数
-        $flag      = is_string($result);
-        $listvar   = $listvar ? $listvar : 'list';
-        $listRows  = $listRows ? $listRows : 21;
-        $totalRows = $totalRows ? $totalRows : 1;
-        // if ($flag)
-        //     $totalRows = M()->table($result . ' a')->count();
-        // else
-        //     $totalRows = ($result) ? count($result) : 1;
-        //创建分页对象
-        if ($target && $pagesId)
-            $p = new AjaxPage($totalRows, $listRows, $parameter, $target, $pagesId);
-        else
-            $p = new AjaxPage($totalRows, $listRows, $parameter);
-        $p->anchor = "#back_comment_performance";
-        /*
-        *设置分页输出选项
-        */
-        $p->setConfig('next','<li style="width:55px;line-height:25px;text-align:center">下一页</li>');
-        $p->setConfig('prev','<li style="width:55px;line-height:25px;text-align:center">上一页</li>');
-        $p->setConfig('first','<li style="width:55px;line-height:25px;text-align:center">首页</li>');
-        $p->setConfig('last','<li style="width:55px;line-height:25px;text-align:center">末页</li>');
-        /**************************************设置分页选项结束**************************************/
-        //抽取数据
-        if ($flag) {
-            $result .= " LIMIT {$p->firstRow},{$p->listRows}";
-            $voList = M()->query($result);
-        } else {
-            // $voList = array_slice($result, $p->firstRow, $p->listRows);
-            $voList = $result;
-        }
-        $pages = C('PAGE');//要ajax分页配置PAGE中必须theme带%ajax%，其他字符串替换统一在配置文件中设置，
-        //可以使用该方法前用C临时改变配置
-        foreach ($pages as $key => $value) {
-            $p->setConfig($key, $value); // 'theme'=>'%upPage% %linkPage% %downPage% %ajax%'; 要带 %ajax%
-        }
-        //分页显示
-        $page = $p->show();
-        $linkPage = $page['linkPage'];
-        //模板赋值
-        $this->assign($listvar, $voList);
-        $this->assign("show", $page);
-        $this->assign('linkPage',$linkPage);
-        if ($this->isAjax()) {                //判断ajax请求
-            layout(false);
-            $template = (!$template) ? 'ajaxlist' : $template;
-            exit($this->fetch($template));
-        }
-        return $voList;
     }
 
 }

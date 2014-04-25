@@ -175,4 +175,21 @@ $(function(){
     }, function() {
          $(this).find('a').removeClass('underline');
     });
+
+
+    $('#page_div_id a').live('click',function(event) {
+        var p =$(this).attr('page');
+         if(p != ""){
+            $.get(ajaxPostURL+'Coupon/HandleAjaxPage',{ p:p }, function(data) {
+              if(data.status == 1){
+               $('#main #coupon_box div.business_detail_info_box div.show_comment div.all_comment ul.comment_ul').remove();
+               $('#main #coupon_box div.business_detail_info_box div.show_comment div.all_comment div.page_div').remove();
+
+               $('#main #coupon_box div.business_detail_info_box div.show_comment div.all_comment').append(data.html);
+                // $('#comment_ul').html(data.html); //替换相关HTML代码
+              }
+           });
+        }
+        return false;
+    });
 })

@@ -271,7 +271,7 @@ class PartnerAction extends Action {
         $partnerEvaluationHelper = M('Partner_evaluation','v_monkey_'); // 实例化Data数据对象
         import('ORG.Util.AjaxPage'); // 导入分页类
         $listvar = "partnerComments";
-        $listRows = 2;
+        $listRows = 10;
         $target = "alleva_box";
         $pagesId = "page_div";
         $templateName = "Partner:detail";
@@ -292,7 +292,6 @@ class PartnerAction extends Action {
         $page = $result['show'];
         $linkPage = $page['linkPage'];
         $this->assign("show", $page);
-        var_dump($list);exit;
         $this->assign('linkPage',$linkPage);
         $this->assign($listvar,$list);
 
@@ -320,12 +319,12 @@ class PartnerAction extends Action {
     public function HandleAjaxPage(){
             $param = array();
             $param['partner_id'] = $_SESSION['pid'];
-            $param['partner_id'] = 21;
+            // $param['partner_id'] = 25;
 
             $partnerEvaluationHelper = M('Partner_evaluation','v_monkey_'); // 实例化Data数据对象
             import('ORG.Util.AjaxPage'); // 导入分页类
             $listvar = "partnerComments";
-            $listRows = 2;
+            $listRows = 10;
             $target = "alleva_box";
             $pagesId = "page_div";
             $templateName = "Partner:detail";
@@ -342,30 +341,23 @@ class PartnerAction extends Action {
                 'pagesId'   =>$pagesId,              //分页后页的容器id不带#target和pagesId同时定义才Ajax分页
                 'template'  =>$templateName,        //ajax更新模板
             );
-              $result = $this->do_getPageInfo($param);
-             
-
-                // $page = $result['show'];
-                // $linkPage = $page['linkPage'];
-                // $this->assign("show", $page);
-                // $this->assign('linkPage',$linkPage);
-                // $this->assign($listvar,$list);
+            $result = $this->do_getPageInfo($param);
             
             if(empty($result)){
                 $data = array(
                     'status' => 0,
                     'info' => '结果集为空！'
                 );
+                $this->ajaxReturn($data);   
             }else{
                  $data = array(
                     'status' => 1,
                     'info' => '分页成功！',
-                    'result' =>$result,
-                    'list' =>$list,
+
                 );
             }
             $html = '<div class="evacontent_box">';
-            foreach ($data['list'] AS $key => $value) {
+            foreach ($list AS $key => $value) {
                 $rate = $value['rate']*20;
             $html .= <<<HTML
 							<div class="evacontent">
@@ -386,19 +378,22 @@ HTML;
             $html .= <<<HTML
             <div class="page_div" id="page_div_id">
             <ul class="clearfix page_box">
-								{$data['result']['show']['first']}{$data['result']['show']['upPage']}
+								{$result['show']['first']}{$result['show']['upPage']}
 HTML;
-foreach ($data['result']['show']['linkPage'] AS $key => $value) {
+foreach ($result['show']['linkPage'] AS $key => $value) {
     $html .= "<li>{$value}</li>";
 }
 
 $html .= <<<HTML
-{$data['result']['show']['downPage']}{$data['result']['show']['end']}
+{$result['show']['downPage']}{$result['show']['end']}
             </ul>
              </div>
 HTML;
-                                    echo $html;
+                
 
+             $data['html'] = $html;
+             $this->ajaxReturn($data);   
+            
         
     }
     private function cutCouponWords($info) {
@@ -482,7 +477,7 @@ HTML;
             $p = new AjaxPage($totalRows, $listRows, $parameter, $target, $pagesId);
         else
             $p = new AjaxPage($totalRows, $listRows, $parameter);
-        $p->anchor = "#back_comment_performance";
+        // $p->anchor = "#back_comment_performance";
         /*
         *设置分页输出选项
         */
@@ -491,35 +486,13 @@ HTML;
         $p->setConfig('first','<li style="width:55px;line-height:25px;text-align:center">首页</li>');
         $p->setConfig('last','<li style="width:55px;line-height:25px;text-align:center">末页</li>');
         /**************************************设置分页选项结束**************************************/
-        //抽取数据
-        // if(!empty($result)){
-        //     $voList = $result;
-        // }else{
-        //     return array();
-        // }
        
-        // $pages = C('PAGE');//要ajax分页配置PAGE中必须theme带%ajax%，其他字符串替换统一在配置文件中设置，
-        // //可以使用该方法前用C临时改变配置
-        // foreach ($pages as $key => $value) {
-        //     $p->setConfig($key, $value); // 'theme'=>'%upPage% %linkPage% %downPage% %ajax%'; 要带 %ajax%
-        // }
         //分页显示
         $page = $p->show();
-        // $linkPage = $page['linkPage'];
-        //模板赋值
-
         $result = array(
             'show' =>$page,
             );
 
-        // $this->assign($listvar, $voList);
-        // $this->assign("show", $page);
-        // $this->assign('linkPage',$linkPage);
-        // if ($this->isAjax()) {                //判断ajax请求
-        //     layout(false);
-        //     $template = (!$template) ? 'ajaxlist' : $template;
-        //     exit($this->fetch($template));
-        // }
         return $result;
     }
 

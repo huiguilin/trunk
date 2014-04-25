@@ -662,6 +662,7 @@
 	margin-right: 18px;
 	margin-left: 18px;
 	border:1px solid #E3E3E3;
+
 }
 #main #coupon_box div.business_detail_info_box div.show_comment div.all_comment ul.comment_ul li{
 	margin-left: 8px;
@@ -710,8 +711,11 @@
 	border-top-right-radius: 0px;
 	margin-left: 0px;
 	margin-right: 0px;
+	width: 695px;
+	height: 27px;
 }
 #main #coupon_box div.business_detail_info_box div.show_comment div.all_comment div.page_div ul.page_box{
+	position: static;
 	margin: 0 auto;
 
 }
