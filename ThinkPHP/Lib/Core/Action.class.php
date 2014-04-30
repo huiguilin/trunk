@@ -412,8 +412,24 @@ abstract class Action {
     private function _initialize() {
         $user = $_SESSION['user'];
         if (empty($user)) {
-            $user['user_id'] = 0;
-            $user['nickname'] = "";
+            if ($_COOKIE['auto_login'] != 1) {
+                $user['user_id'] = 0;
+                $user['nickname'] = "";           
+            }
+            else {
+                $cookie = $_COOKIE['last_moment'];
+                $helper = new UserProfileModel();
+                $userInfo = $helper->getUserProfileByCookie($cookie);
+                if (!empty($userInfo)) {
+                    $user = $userInfo;
+                    session('user', $userInfo, 3600);
+                }
+                else {
+                    $user['user_id'] = 0;
+                    $user['nickname'] = ""; 
+                }
+            }
+
         }
         $this->assign('user', $user);
         return TRUE;

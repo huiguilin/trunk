@@ -41,6 +41,17 @@ class UserProfileModel extends Model {
         return $data;
     }
 
+    public function getUserProfileByCookie($cookie = "") {
+        if (empty($cookie)) {
+            return FALSE;
+        }
+        $data = $this->where("cookie = '{$cookie}'")->select();
+        $data = $data[0];
+        return $data;
+    }
+
+
+
     public function addUser($data = array()) {
         if (empty($data)) {
             return false;

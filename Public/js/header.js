@@ -125,6 +125,13 @@ $(function(){
 	});
 	//用户登录弹框关闭特效结束
 	//用户登录弹窗中所有验证
+    $('#Userlogin_box #u_middle_box input.two').click(function(event){
+        var record_password = getCookie('until_last_moment');
+        if (record_password != "") {
+            var number = Math.random() * 1000;
+            $('#Userlogin_box #u_middle_box input.two').val(record_password);
+        }
+        })
 	$('#Userlogin_box #u_middle_box input').blur(function(event) {
 		var input= $(this);
 		var name= $(this).attr('name');
@@ -163,9 +170,11 @@ $(function(){
 		var username =$('#Userlogin_box #u_middle_box input.one').val();
 		var password =$('#Userlogin_box #u_middle_box input.two').val();
 		var vcode =$('#Userlogin_box #u_middle_box input.three').val();
+		var autologin =$('#Userlogin_box #u_middle_box input.five').val();
+		var record_password =$('#Userlogin_box #u_middle_box input.four').val();
 		var next= $('#Userlogin').attr('next');
 		if(vcode != "" && username != "" && password != ""){
-			$.post(ajaxPostURL+"User/checkLogin", { username: username, password: password, vcode: vcode },function(data){
+			$.post(ajaxPostURL+"User/checkLogin", { username: username, password: password, vcode: vcode, autologin: autologin, record_password: record_password },function(data){
             	if(data.status == 1){
             		if (tag == 0) {
             			$('#Userlogin_box').bPopup().close();
@@ -1239,9 +1248,9 @@ $(function(){
 ***************************************************************************/
 
 //Ajax提交URL全局变量
-var ajaxPostURL = "http://localhost/trunk/index.php/";
+var ajaxPostURL = "http://test.huiguilin.com/index.php/";
 //登录成功跳转URL全部变量
-var loginSucessURL = "http://localhost";
+var loginSucessURL = "http://test.huiguilin.com/";
 
 //Ajax提交URL和登录成功跳转URL
 // var Current_URL = window.location.href;
@@ -1303,7 +1312,21 @@ $(window).scroll( function() {
     	});
     }
 });
-
+    function getCookie(c_name)
+    {
+        if (document.cookie.length>0)
+        {
+            c_start=document.cookie.indexOf(c_name + "=")
+                if (c_start!=-1)
+                { 
+                    c_start=c_start + c_name.length+1 
+                        c_end=document.cookie.indexOf(";",c_start)
+                        if (c_end==-1) c_end=document.cookie.length
+                            return unescape(document.cookie.substring(c_start,c_end))
+                } 
+        }
+        return ""
+    }
 //优惠券天，小时，分，秒倒计时函数
 function Test(dayid, hourid, minid, secid) {
     var day = parseInt($('#' + dayid).text());
@@ -1353,5 +1376,7 @@ function Test(dayid, hourid, minid, secid) {
     function changeDay(day, dayid) {
         $('#' + dayid).text(day);
     }
+
+
 }
 

@@ -6,9 +6,10 @@ class UserAction extends Action {
     public function checkLogin(){
         $userName = $_POST['username'];
         $passwd = $_POST['password'];
+        $recordpasswd = $_POST['record_password'];
         $verify = mb_strtolower($_POST['vcode']);   //把验证码统一转化成小写
         $vcodemark = $_POST['vcodemark'];
-        if (empty($userName) || empty($passwd)) {
+        if (empty($userName) || (empty($passwd) && empty($recordpasswd))) {
             $data = array();
             $data['status'] = 4;
             $data['info'] = '用户名和密码不能为空';
@@ -38,12 +39,23 @@ class UserAction extends Action {
             $this->ajaxReturn($data,'JSON');
         }
         $md5 = md5($passwd);
-        if ($md5 == $userInfo['password']) {
-            $_SESSION['user'] = $userInfo;
+        $recordpasswrd = cookie('until_last_moment');
+        if ($md5 == $userInfo['password'] || $recordpasswrd == $userInfo['password']) {
+            session('user', $userInfo, 3600);
             $data = array();
             $data['status'] = 1;
             $data['info'] = '登陆成功！';
             $data['size'] = 9;
+            if ($_POST['autologin'] == 'on') {
+                cookie('auto_login','1');
+                cookie('last_moment', $userInfo['cookie']);
+            }
+            if ($_POST['record_password'] == 'on') {
+                cookie('until_last_moment', $userInfo['password']);
+            }
+            else {
+                cookie('until_last_moment', null);
+            }
             //针对商家后台登录的判断
             if (!empty($userInfo['isBusiness'])) {
                 $partnerHelper = new PartnerModel();
@@ -52,7 +64,8 @@ class UserAction extends Action {
                 );
                 $partnerInfo = $partnerHelper->getPartner($params);
                 $partnerInfo = $partnerInfo[0];
-                $_SESSION['user'] = array_merge($userInfo, $partnerInfo);
+                $userInfo = array_merge($userInfo, $partnerInfo);
+                session('user', $userInfo, 3600);
                 $data['url'] = "/index.php/Admin/ValidateManagement/singlevalidate";  //商家后台登录成功后跳转的URL
             }
             else {
@@ -162,7 +175,7 @@ class UserAction extends Action {
         }
         if ($level == 'activeCode') {
             $activeCode = md5($mail . ":huiguilin");
-            $content = "你好!这是来自惠桂林的账号激活邮件,请点击 http://test.huiguilin.com/Index.php/user/active?ac={$activeCode}&user={$mail}";
+            $content = "你好!这是来自惠桂林的账号激活邮件,请点击 http://www.huixiaoyuan.com/Index.php/user/active?ac={$activeCode}&user={$mail}";
             import('ORG.Email'); 
             $data['mailto'] = $mail; 
             $data['subject'] = '账号激活邮件';
@@ -354,6 +367,9 @@ class UserAction extends Action {
         $data = session('user');
         if (!empty($data)) {
            session('user',null);
+           cookie('auto_login', null);
+           cookie('last_moment', null);
+           #cookie('until_last_moment', null);
            if(!empty($_GET['_URL_'][3])){
                 $this->redirect('Admin/Account/login');
            }
@@ -482,5 +498,9 @@ class UserAction extends Action {
         $data = $this->sendForgetPWDCode($phoneNumber, $code);
         $this->ajaxReturn($data,'JSON');
         return TRUE;
+    }
+
+    public function test() {
+        session('user', null);
     }
 }
