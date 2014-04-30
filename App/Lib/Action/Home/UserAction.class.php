@@ -46,11 +46,11 @@ class UserAction extends Action {
             $data['status'] = 1;
             $data['info'] = '登陆成功！';
             $data['size'] = 9;
-            if ($_POST['autologin'] == 'on') {
+            if ($_POST['autologin'] == 'true') {
                 cookie('auto_login','1');
                 cookie('last_moment', $userInfo['cookie']);
             }
-            if ($_POST['record_password'] == 'on') {
+            if ($_POST['record_password'] == 'true') {
                 cookie('until_last_moment', $userInfo['password']);
             }
             else {

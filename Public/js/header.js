@@ -170,8 +170,8 @@ $(function(){
 		var username =$('#Userlogin_box #u_middle_box input.one').val();
 		var password =$('#Userlogin_box #u_middle_box input.two').val();
 		var vcode =$('#Userlogin_box #u_middle_box input.three').val();
-		var autologin =$('#Userlogin_box #u_middle_box input.five').val();
-		var record_password =$('#Userlogin_box #u_middle_box input.four').val();
+        var record_password = document.getElementById('rememberpwd').checked
+        var autologin = document.getElementById('autologin').checked
 		var next= $('#Userlogin').attr('next');
 		if(vcode != "" && username != "" && password != ""){
 			$.post(ajaxPostURL+"User/checkLogin", { username: username, password: password, vcode: vcode, autologin: autologin, record_password: record_password },function(data){
